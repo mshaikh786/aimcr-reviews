@@ -1,331 +1,250 @@
+# app.py — place this file in the root of mshaikh786/aimcr-reviews
 import streamlit as st
-import os
 import json
-import time
-import threading
-from datetime import date, datetime
+from datetime import datetime
 from pathlib import Path
-from typing import List, Literal
+import subprocess
+import time
+import os
 
-from pydantic import BaseModel, Field, EmailStr, validator
-from git import Repo, Actor
-from dotenv import load_dotenv
+# ========================= CONFIG =========================
+st.set_page_config(page_title="KAUST AIMCR Review", layout="wide")
+st.title("KAUST AI Model Control Review (AIMCR)")
 
-# ==============================
-# Load .env
-# ==============================
-load_dotenv()
+# The repository we are currently in
+REPO_PATH = Path(__file__).parent.resolve()
+DRAFTS_DIR = REPO_PATH / "drafts"
+DRAFTS_DIR.mkdir(exist_ok=True)
 
-GITHUB_TOKEN = os.getenv("GITHUB_TOKEN",)
-REPO_OWNER   = os.getenv("REPO_OWNER")
-REPO_NAME    = os.getenv("REPO_NAME")
+# ========================= GIT HELPERS =========================
+def git_pull():
+    subprocess.run(["git", "pull", "--rebase"], cwd=REPO_PATH, capture_output=True)
 
-if not GITHUB_TOKEN:
-    st.error("GITHUB_TOKEN missing in .env file")
-    st.stop()
-if not REPO_OWNER:
-    st.error("REPO_OWNER missing in .env file")
-    st.stop()
-# Show you exactly what the app is using (very helpful!)
-st.sidebar.caption(f"Repo: {REPO_OWNER}/{REPO_NAME}")
-
-CACHE_DIR = Path(".cache_git_repo")
-DRAFT_PATH_IN_REPO = "drafts/current_draft.json"
-
-def get_repo():
-    if CACHE_DIR.exists():
-        try:
-            repo = Repo(CACHE_DIR)
-            repo.remotes.origin.pull(rebase=True)
-            return repo
-        except Exception as e:
-            st.sidebar.error(f"Pull failed: {e}")
-            CACHE_DIR.unlink(missing_ok=True)  # force fresh clone
-
-    # Fresh clone with clear error message
-    repo_url = f"https://{GITHUB_TOKEN}@github.com/{REPO_OWNER}/{REPO_NAME}.git"
+def git_add_commit_push(message: str):
     try:
-        repo = Repo.clone_from(repo_url, CACHE_DIR, depth=1)
-        st.sidebar.success("Cloned repo successfully")
-        return repo
-    except Exception as e:
-        st.error(f"Cannot clone repo. Check:")
-        st.error(f"• Token has 'repo' scope?")
-        st.error(f"• Repo {REPO_OWNER}/{REPO_NAME} exists and is private?")
-        st.code(str(e))
-        st.stop()
-
-# ==============================
-# Pydantic Models – NOW USING MAX SCORE
-# ==============================
-class CheckItem(BaseModel):
-    description: str = ""
-    score: Literal[1, 2, 3, 4, 5] = 1
-    notes: str = ""
-
-class ThirdPartySoftware(BaseModel):
-    checks: List[CheckItem] = Field(default_factory=list)
-    cumulative_score: int = 0
-
-    @validator("cumulative_score", always=True)
-    def calc_max(cls, v, values):
-        checks = values.get("checks", [])
-        return max([item.score for item in checks], default=0) if checks else 0
-
-class SourceCode(BaseModel):
-    checks: List[CheckItem] = Field(default_factory=list)
-    cumulative_score: int = 0
-    repository_url: str = ""
-
-    @validator("cumulative_score", always=True)
-    def calc_max(cls, v, values):
-        checks = values.get("checks", [])
-        return max([item.score for item in checks], default=0) if checks else 0
-
-class Datasets(BaseModel):
-    checks: List[CheckItem] = Field(default_factory=list)
-    cumulative_score: int = 0
-    sample_guideline: str = ""
-
-    @validator("cumulative_score", always=True)
-    def calc_max(cls, v, values):
-        checks = values.get("checks", [])
-        return max([item.score for item in checks], default=0) if checks else 0
-
-class Models(BaseModel):
-    checks: List[CheckItem] = Field(default_factory=list)
-    cumulative_score: int = 0
-    model_name: str = ""
-    training_flops: str = ""
-    estimated_shaheen_flops: str = ""
-    exceeds_1e27: bool = False
-
-    @validator("cumulative_score", always=True)
-    def calc_max(cls, v, values):
-        checks = values.get("checks", [])
-        return max([item.score for item in checks], default=0) if checks else 0
-
-class AIMCRReview(BaseModel):
-    reviewer_name: str
-    reviewer_email: EmailStr
-    project_name: str
-    project_id: str
-    review_date: date = Field(default_factory=date.today)
-    third_party_software: ThirdPartySoftware
-    source_code: SourceCode
-    datasets: Datasets
-    models: Models
-    final_decision: Literal["Approved", "Approved with Monitoring", "Escalated", "Rejected"]
-    final_notes: str = ""
-
-# ==============================
-# GitHub Draft Sync (cross-computer)
-# ==============================
-def get_repo():
-    if CACHE_DIR.exists():
-        try:
-            repo = Repo(CACHE_DIR)
-            repo.remotes.origin.pull(rebase=True)
-            return repo
-        except:
-            pass  # keep trying fresh clone below
-
-    # Fresh clone
-    url = f"https://{GITHUB_TOKEN}@github.com/{REPO_OWNER}/{REPO_NAME}.git"
-    try:
-        Repo.clone_from(url, CACHE_DIR, depth=1)
-        st.sidebar.success("Repo cloned")
-        return Repo(CACHE_DIR)
-    except Exception as e:
-        st.error("Cannot access GitHub repo")
-        st.code(str(e))
-        st.stop()
-
-def load_draft():
-    try:
-        repo = get_repo()
-        if any(e.path == DRAFT_PATH_IN_REPO for e in repo.tree()):
-            content = repo.git.show(f"HEAD:{DRAFT_PATH_IN_REPO}")
-            data = json.loads(content)
-            st.session_state.form_data = data.get("data", {})
-            st.sidebar.success(f"Draft loaded – {data.get('saved_at', '?')}")
-    except:
+        subprocess.run(["git", "add", "."], cwd=REPO_PATH, check=True)
+        result = subprocess.run(["git", "status", "--porcelain"], cwd=REPO_PATH,
+                                capture_output=True, text=True)
+        if result.stdout.strip():  # only commit if there are changes
+            subprocess.run(["git", "commit", "-m", message], cwd=REPO_PATH, check=True)
+            subprocess.run(["git", "push"], cwd=REPO_PATH, check=True)
+    except subprocess.CalledProcessError:
         pass
 
-def save_draft():
-    if "form_data" not in st.session_state:
-        return
-    draft = {"saved_at": datetime.now().strftime("%Y-%m-%d %H:%M"), "data": st.session_state.form_data}
-    try:
-        repo = get_repo()
-        f = CACHE_DIR / DRAFT_PATH_IN_REPO
-        f.parent.mkdir(parents=True, exist_ok=True)
-        f.write_text(json.dumps(draft, indent=2))
-        repo.git.add(DRAFT_PATH_IN_REPO)
-        if repo.is_dirty(untracked_files=True):
-            repo.index.commit("Auto-save draft", author=Actor("AIMCR", "aimcr@kaust.edu.sa"))
-            repo.remotes.origin.push()
-    except:
-        pass
+# Pull on every app (re)load so we always have latest drafts
+git_pull()
 
-if "draft_saver" not in st.session_state:
-    threading.Thread(target=lambda: [time.sleep(10) or save_draft() for _ in iter(int, 1)], daemon=True).start()
-    st.session_state.draft_saver = True
-    load_draft()
+# ========================= DRAFT FUNCTIONS =========================
+def list_drafts():
+    return sorted(DRAFTS_DIR.glob("*.json"), key=os.path.getmtime, reverse=True)
 
-if "form_data" not in st.session_state:
-    st.session_state.form_data = {}
+def save_draft(data):
+    project_id = data.get("project_id", "UNKNOWN").strip() or "UNKNOWN"
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    filename = f"{project_id}_{timestamp}.json"
+    path = DRAFTS_DIR / filename
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
+    git_add_commit_push(f"draft: {project_id} {timestamp}")
+    return filename
 
-def val(key, default=""):
-    return st.session_state.form_data.get(key, default)
+def load_draft(filename):
+    path = DRAFTS_DIR / filename
+    if path.exists():
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return None
 
-# ==============================
-# MAIN UI – DYNAMIC ENTRIES + MAX SCORE
-# ==============================
-st.set_page_config(page_title="KAUST AIMCR", layout="centered")
-st.title("KAUST Supercomputing Lab – AIMCR Form")
-st.markdown("### AI Model Control Review")
+# ========================= SIDEBAR =========================
+with st.sidebar:
+    st.header("Live Sync – mshaikh786/aimcr-reviews")
 
-# Initialize counts if missing
-for prefix in ["tp", "sc", "ds", "md"]:
-    if f"{prefix}_entries" not in st.session_state:
-        st.session_state[f"{prefix}_entries"] = []
-
-# Add new entry buttons (outside form → allowed)
-col1, col2, col3, col4 = st.columns(4)
-if col1.button("Add Library → Third-Party Software"):
-    st.session_state.tp_entries.append({})
-    st.rerun()
-if col2.button("Add Item → Source Code Checks"):
-    st.session_state.sc_entries.append({})
-    st.rerun()
-if col3.button("Add Item → Datasets Checks"):
-    st.session_state.ds_entries.append({})
-    st.rerun()
-if col4.button("Add Item → Models Checks"):
-    st.session_state.md_entries.append({})
-    st.rerun()
-
-with st.form("aimcr_form", clear_on_submit=False):
-    st.subheader("Reviewer & Project Information")
-    c1, c2 = st.columns(2)
-    with c1:
-        st.text_input("Reviewer Name *", value=val("reviewer_name", "Mohsin Ahmed Shaikh"), key="reviewer_name")
-        st.text_input("Reviewer Email *", value=val("reviewer_email", "mohsin.shaikh@kaust.edu.sa"), key="reviewer_email")
-    with c2:
-        st.text_input("Project Name *", value=val("project_name"), key="project_name")
-        st.text_input("Project ID *", value=val("project_id"), key="project_id")
-
-    # Generic section renderer
-    def render_section(title: str, entries_list: list, prefix: str):
-        st.subheader(title)
-        checks = []
-        for idx, _ in enumerate(entries_list):
-            with st.expander(f"Entry {idx+1}", expanded=True):
-                desc = st.text_input("Description", value=val(f"{prefix}_desc_{idx}"), key=f"{prefix}_desc_{idx}")
-                score = st.selectbox("Risk Level", [1,2,3,4,5],
-                                    index=val(f"{prefix}_score_{idx}", 0),
-                                    key=f"{prefix}_score_{idx}")
-                notes = st.text_area("Notes", value=val(f"{prefix}_notes_{idx}"), height=100, key=f"{prefix}_notes_{idx}")
-                checks.append(CheckItem(description=desc, score=score, notes=notes))
-
-        if checks:
-            max_score = max(c.score for c in checks)
-            st.info(f"**Highest Risk in this section: {max_score}**")
-            if max_score >= 4:
-                st.warning("High individual risk detected")
-            elif max_score >= 3:
-                st.info("Moderate risk")
-        else:
-            st.info("No entries yet – click the button above to add one")
-
-        return checks
-
-    tp_checks = render_section("Third-Party Software Screening", st.session_state.tp_entries, "tp")
-    sc_checks = render_section("Source Code Screening", st.session_state.sc_entries, "sc")
-    repo_url = st.text_input("Repository URL (if public)", value=val("repo_url"), key="repo_url")
-
-    ds_checks = render_section("Datasets & User Files Screening", st.session_state.ds_entries, "ds")
-    sample_guide = st.text_input("Sampling guideline", value=val("sample_guide"), key="sample_guide")
-    uploaded = st.file_uploader("Supporting files (optional)", accept_multiple_files=True)
-
-    md_checks = render_section("Models Screening", st.session_state.md_entries, "md")
-    c1, c2 = st.columns(2)
-    with c1:
-        st.text_input("Model name", value=val("model_name"), key="model_name")
-        st.text_input("Training FLOPs", value=val("training_flops"), key="training_flops")
-    with c2:
-        st.text_input("Est. Shaheen FLOPs", value=val("est_flops"), key="est_flops")
-        st.checkbox("Total > 10²⁷ FLOPs", value=val("exceeds", False), key="exceeds")
-
-    decision = st.selectbox("Final Decision", ["Approved", "Approved with Monitoring", "Escalated", "Rejected"],
-                            index=["Approved", "Approved with Monitoring", "Escalated", "Rejected"].index(val("decision", "Approved")),
-                            key="decision")
-    st.text_area("Final notes", value=val("final_notes"), key="final_notes")
-
-    col1, col2 = st.columns(2)
-    submitted = col1.form_submit_button("Submit Review → Save to GitHub", type="primary")
-    if col2.form_submit_button("Start New Review (clear draft)"):
-        try:
-            repo = get_repo()
-            repo.git.rm("--cached", DRAFT_PATH_IN_REPO, ignore_unmatch=True)
-            repo.index.commit("Clear draft")
-            repo.remotes.origin.push()
-        except: pass
-        st.session_state.clear()
+    if st.button("Refresh / Pull latest from GitHub"):
+        with st.spinner("Pulling…"):
+            git_pull()
+        st.success("Up to date!")
         st.rerun()
 
-    if submitted:
-        if not all([st.session_state.get(k) for k in ["reviewer_name", "reviewer_email", "project_name", "project_id"]]):
-            st.error("Fill required fields")
-        else:
-            review = AIMCRReview(
-                reviewer_name=st.session_state.reviewer_name,
-                reviewer_email=st.session_state.reviewer_email,
-                project_name=st.session_state.project_name,
-                project_id=st.session_state.project_id,
-                third_party_software=ThirdPartySoftware(checks=tp_checks),
-                source_code=SourceCode(checks=sc_checks, repository_url=repo_url),
-                datasets=Datasets(checks=ds_checks, sample_guideline=sample_guide),
-                models=Models(checks=md_checks,
-                              model_name=st.session_state.model_name,
-                              training_flops=st.session_state.training_flops,
-                              estimated_shaheen_flops=st.session_state.est_flops,
-                              exceeds_1e27=st.session_state.exceeds),
-                final_decision=decision,
-                final_notes=st.session_state.final_notes
-            )
+    # Load draft
+    drafts = list_drafts()
+    if drafts:
+        selected = st.selectbox(
+            "Resume existing draft",
+            options=[""] + [d.name for d in drafts],
+            format_func=lambda x: "— Select draft —" if not x else x[:-5].replace("_", " ")
+        )
+        if selected and st.button("Load selected draft"):
+            st.session_state.data = load_draft(selected)
+            st.success(f"Loaded {selected}")
+            st.rerun()
 
-            folder = f"{date.today()}__{st.session_state.project_id.replace('/', '-')}"
-            try:
-                repo = get_repo()
-                dir_path = Path(repo.working_dir) / folder
-                dir_path.mkdir(exist_ok=True)
-                (dir_path / "review.json").write_text(review.json(indent=2))
+    st.markdown("---")
 
-                if uploaded:
-                    up = dir_path / "uploaded_files"
-                    up.mkdir(exist_ok=True)
-                    for f in uploaded:
-                        (up / f.name).write_bytes(f.getbuffer())
+    project_id = st.text_input("Project ID", value="PROJ001", help="e.g. PROJ123")
+    today = datetime.now().strftime("%d-%m-%Y")
 
-                repo.git.add(all=True)
-                repo.index.commit(f"AIMCR: {st.session_state.project_name}")
-                repo.remotes.origin.push()
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("Save Draft", use_container_width=True):
+            st.session_state.data["project_id"] = project_id
+            st.session_state.data["date"] = today
+            name = save_draft(st.session_state.data)
+            st.success(f"Draft saved as {name}")
 
+    with col2:
+        if st.button("FINAL SUBMIT", type="primary", use_container_width=True):
+            confirm = st.checkbox("I confirm this review is complete")
+            if confirm:
+                folder = REPO_PATH / f"AIMCR-{project_id}-{today}"
+                folder.mkdir(exist_ok=True)
+                final_file = folder / "data.json"
+                with open(final_file, "w", encoding="utf-8") as f:
+                    json.dump(st.session_state.data, f, indent=4, ensure_ascii=False)
+                git_add_commit_push(f"FINAL AIMCR {project_id} {today}")
                 st.balloons()
-                st.success(f"Submitted! → https://github.com/{REPO_OWNER}/{REPO_NAME}/tree/main/{folder}")
+                st.success(f"Submitted → {folder.name}/")
+                # optional: clear session
+                if "data" in st.session_state:
+                    del st.session_state.data
+                st.rerun()
 
-                # Clear draft
-                repo.git.rm("--cached", DRAFT_PATH_IN_REPO, ignore_unmatch=True)
-                repo.index.commit("Clear after submit")
-                repo.remotes.origin.push()
+    st.caption("Auto-save every 30 seconds")
 
-            except Exception as e:
-                st.error("Failed to submit")
-                st.exception(e)
+# Auto-save every 30 s
+if "data" in st.session_state:
+    if time.time() - st.session_state.get("last_auto", 0) > 30:
+        st.session_state.data["project_id"] = project_id
+        st.session_state.data["date"] = today
+        save_draft(st.session_state.data)
+        st.session_state.last_auto = time.time()
+        st.rerun()
 
-st.sidebar.caption(f"Auto-saving → {REPO_NAME}/drafts/current_draft.json")
-if st.sidebar.button("Save draft now"):
-    save_draft()
-    st.sidebar.success("Saved!")
+# ========================= INITIALISE DATA =========================
+if "data" not in st.session_state:
+    st.session_state.data = {
+        "project_id": project_id,
+        "date": datetime.now().strftime("%d-%m-%Y"),
+        "reviewer": "",
+        "third_party_software": [],
+        "source_code": [],
+        "datasets_user_files": [],
+        "models": [],
+    }
+
+data = st.session_state.data
+data["project_id"] = project_id
+data["date"] = today
+
+# ========================= MAIN FORM =========================
+st.subheader("Reviewer Identification")
+data["reviewer"] = st.text_input("Reviewer Name", value=data.get("reviewer", ""))
+
+st.markdown("**Conformance Score:** 1 = No Risk · 2 = Low · 3 = Medium · 4 = High · 5 = Critical")
+
+# ========================= SECTIONS =========================
+sections = [
+    ("Third-Party Software (Packages, Libraries, Containers & Binaries)", "third_party_software", [
+        "Open-source license compliance",
+        "Known vulnerabilities (CVE)",
+        "Supply chain risks (typosquatting, protestware)",
+        "Binary/source origin verification",
+        "Malicious code insertion risk",
+        "Dependency pinning & reproducibility",
+    ]),
+    ("Source Code Screening Procedure", "source_code", [
+        "Static code analysis (bandit, semgrep)",
+        "Secrets scanning",
+        "Malicious code patterns",
+        "Code provenance & signing",
+        "Backdoors/trojans",
+        "Obfuscated code",
+    ]),
+    ("Datasets & User Files Screening Procedure", "datasets_user_files", [
+        "Data poisoning risk",
+        "PII / sensitive data leakage",
+        "Copyright / licensing issues",
+        "Adversarial examples",
+        "Dataset provenance",
+        "Jailbreak prompts in dataset",
+    ]),
+    ("Models Screening Procedure", "models", [
+        "Model weights integrity (hash verification)",
+        "Known unsafe/refusal-bypassed models",
+        "Backdoor/trojan in weights",
+        "Model card completeness",
+        "Unsafe fine-tuning detected",
+        "Export-controlled model",
+    ]),
+]
+
+# Risk calculation helper
+def calculate_section_risk(artifacts, checks):
+    if not artifacts:
+        return 0, False
+    maxes = []
+    for check in checks:
+        scores = [a["checks"].get(check, 1) for a in artifacts]
+        if scores:
+            maxes.append(max(scores))
+        else:
+            maxes.append(1)
+    total = sum(maxes)
+    critical = 5 in maxes
+    return total, critical
+
+overall_scores = []
+has_critical = False
+
+for title, key, checks in sections:
+    st.markdown(f"### {title}")
+
+    col_add, col_count = st.columns([3,1])
+    with col_add:
+        if st.button(f"+ Add Artifact – {title.split('(')[0].strip()}", key=f"add_{key}"):
+            data[key].append({"name": f"Artifact {len(data[key])+1}", "checks": {c: 1 for c in checks}})
+    with col_count:
+        st.metric("Artifacts", len(data[key]))
+
+    for idx, artifact in enumerate(data[key][:]):
+        with st.expander(f"Artifact: {artifact['name']} ({idx+1})", expanded=True):
+            artifact["name"] = st.text_input("Artifact name/ID", artifact["name"], key=f"name_{key}_{idx}")
+
+            cols = st.columns(4)
+            for i, check in enumerate(checks):
+                with cols[i % 4]:
+                    artifact["checks"][check] = st.selectbox(
+                        check[:35] + ("…" if len(check)>35 else ""),
+                        options=[1,2,3,4,5],
+                        format_func=lambda x: ["1-No","2-Low","3-Med","4-High","5-Critical"][x-1],
+                        index=artifact["checks"].get(check, 1)-1,
+                        key=f"score_{key}_{idx}_{i}"
+                    )
+
+            if st.button("Remove artifact", key=f"del_{key}_{idx}"):
+                data[key].pop(idx)
+                st.rerun()
+
+    # Section summary
+    if data[key]:
+        score, crit = calculate_section_risk(data[key], checks)
+        overall_scores.append(score)
+        if crit:
+            has_critical = True
+        color = "red" if crit or score >= 21 else "orange" if score >= 15 else "green"
+        st.markdown(f"**Section risk score: {score} → <span style='color:{color};font-size:1.2em;'>{
+            'CRITICAL' if crit or score >= 21 else 'HIGH' if score >= 15 else 'MEDIUM' if score >= 10 else 'LOW'}</span>**", 
+            unsafe_allow_html=True)
+    else:
+        st.info("No artifacts yet")
+    st.markdown("---")
+
+# ========================= FINAL SUMMARY =========================
+st.header("Overall Risk Summary")
+total = sum(overall_scores) if overall_scores else 0
+
+if total >= 21 or has_critical:
+    st.error(f"**CRITICAL RISK: {total}** – Senior review and mitigation required before deployment.")
+else:
+    st.success(f"**Total risk score: {total}** – Acceptable with standard controls.")
+
+st.info(f"Final folder on submit: `AIMCR-{project_id}-{today}`")
