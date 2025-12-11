@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "proposal_title": "Towards Effective Detection of N-Day Vulnerabilities in Third-Party Software Components",
+    "principal_investigator": "Charalambos Konstantinou",
+    "proposal_date": "2025-12-11",
+    "reviewer_name": "Mohsin Ahmed Shaikh",
+    "reviewer_id": "174988",
+    "aimcr_date": "2025-12-11",
+    "project_id": "65409"
+  },
+  "third_party_software": [
+    {
+      "name": "pytorch-2.9.1-ngc",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "The project is developing a model of binary code scanning for the identification of vulnerabilities through similarity detection. This is aligned with \u201cComputational Science and Visualization -> Programming models\u201d. Pytorch is a good software to develop the architecture of a model.  "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No prohibited use/functionality is included in the scope of this project. The proposed AI model is to implement cybersecurity to scan the binary codes for vulnerabilities."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "The requested software is from Non-D5 organizations. NVIDIA NGC."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source verified. nvcr.io/nvidia/pytorch:23.10-py3"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Released under NVIDIA Software License Agreement/Product terms and conditions allows the intended use."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 2,
+          "notes": "nvcr.io/nvidia/pytorch:23.10-py3 (base image: ubuntu 22.04)\nTotal: 4970 (UNKNOWN: 0, LOW: 465, MEDIUM: 4385, HIGH: 120, CRITICAL: 0).\nApplicant will use Singularity container platform provided on Shaheen III GPUP for creating the container from the image."
+        }
+      ]
+    },
+    {
+      "name": "Ubuntu:22.04 container image",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 2,
+          "notes": "The project is developing a model of binary code scanning for the identification of vulnerabilities through similarity detection. This is aligned with \u201cComputational Science and Visualization \u2192 Programming models\u201d. The ubuntu image is requested so that LLVM compiler >18.0 can be installed. The requirement of the image and the compiler is justified because it will be used to create the required training dataset on the Shaheen III CPU and GPU.  A check in an in-person meeting is recommended to confirm that the created dataset is infact the one approved. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No prohibited use/functionality is included in the scope of this project. The proposed AI model is to implement cybersecurity to scan the binary codes for vulnerabilities."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Canonical official image repo of Ubuntu. It is verified repo on DockerHub."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "docker://ubuntu:22.04"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Released under Canonical IP rights policy \u2013 allows the intended use"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "ubuntu:22.04 (ubuntu 22.04)\nTotal: 26 (UNKNOWN: 0, LOW: 21, MEDIUM: 5, HIGH: 0, CRITICAL: 0)\n Applicant will use Singularity container platform provided on Shaheen III GPUP for creating the container from the image.\n"
+        }
+      ]
+    }
+  ],
+  "source_code": [],
+  "datasets_user_files": [],
+  "models": [],
+  "observations": "",
+  "recommendation": ""
+}
