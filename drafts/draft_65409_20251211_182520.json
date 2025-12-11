@@ -1,0 +1,250 @@
+{
+  "metadata": {
+    "proposal_title": "Towards Effective Detection of N-Day Vulnerabilities in Third-Party Software Components",
+    "principal_investigator": "Charalambos Konstantinou",
+    "proposal_date": "2025-12-11",
+    "reviewer_name": "Mohsin Ahmed Shaikh",
+    "reviewer_id": "174988",
+    "aimcr_date": "2025-12-11",
+    "project_id": "65409"
+  },
+  "third_party_software": [
+    {
+      "name": "pytorch-2.9.1-ngc",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "The project is developing a model of binary code scanning for the identification of vulnerabilities through similarity detection. This is aligned with \u201cComputational Science and Visualization -> Programming models\u201d. Pytorch is a good software to develop the architecture of a model.  "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No prohibited use/functionality is included in the scope of this project. The proposed AI model is to implement cybersecurity to scan the binary codes for vulnerabilities."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "The requested software is from Non-D5 organizations. NVIDIA NGC."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source verified. nvcr.io/nvidia/pytorch:23.10-py3"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Released under NVIDIA Software License Agreement/Product terms and conditions allows the intended use."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 2,
+          "notes": "nvcr.io/nvidia/pytorch:23.10-py3 (base image: ubuntu 22.04)\nTotal: 4970 (UNKNOWN: 0, LOW: 465, MEDIUM: 4385, HIGH: 120, CRITICAL: 0).\nApplicant will use Singularity container platform provided on Shaheen III GPUP for creating the container from the image."
+        }
+      ]
+    },
+    {
+      "name": "Ubuntu:22.04 container image",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 2,
+          "notes": "The project is developing a model of binary code scanning for the identification of vulnerabilities through similarity detection. This is aligned with \u201cComputational Science and Visualization \u2192 Programming models\u201d. The ubuntu image is requested so that LLVM compiler >18.0 can be installed. The requirement of the image and the compiler is justified because it will be used to create the required training dataset on the Shaheen III CPU and GPU.  A check in an in-person meeting is recommended to confirm that the created dataset is infact the one approved. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No prohibited use/functionality is included in the scope of this project. The proposed AI model is to implement cybersecurity to scan the binary codes for vulnerabilities."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Canonical official image repo of Ubuntu. It is verified repo on DockerHub."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "docker://ubuntu:22.04"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Released under Canonical IP rights policy \u2013 allows the intended use"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "ubuntu:22.04 (ubuntu 22.04)\nTotal: 26 (UNKNOWN: 0, LOW: 21, MEDIUM: 5, HIGH: 0, CRITICAL: 0)\n Applicant will use Singularity container platform provided on Shaheen III GPUP for creating the container from the image.\n"
+        }
+      ]
+    },
+    {
+      "name": "llvm-18.1.0",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 2,
+          "notes": "The project is developing a model of binary code scanning for the identification of vulnerabilities through similarity detection. This is aligned with \u201cComputational Science and Visualization \u2192 Programming models\u201d. The LLVM version requested is possibly misquoted. 18.1.0 will be provided. It will be used to create the datasets on SIII GPUP and CPUP."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No prohibited use/functionality is included in the scope of this project. The proposed AI model is to implement cybersecurity to scan the binary codes for vulnerabilities."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 2,
+          "notes": "The project is maintained by opensource community from https://llvm.org and https://github.com/llvm/llvm-project.git\nThe community is big and has a robust code review process. New code is accepted through PRs on Github and process has been explained here: https://llvm.org/docs/DeveloperPolicy.html#introducing-new-components-into-llvm\nThis is a popular backend compiler for many common compilers including HPE Cray compiler provided on SIII GPUP"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-18.1.0.tar.gz\nGithub has over 5K PRs and 5K github issues. Its in active development."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Apache 2.0 license variant: https://llvm.org/docs/DeveloperPolicy.html#copyright-license-and-patents\nThe use of LLVM compiler in the project fits the terms. Distribution of code requires the developers to include this license if LLVM or its component is shipped with it."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies to compile LLVM are available on SIII GPUP and CPUP. \nCMake, GCC 13+"
+        }
+      ]
+    }
+  ],
+  "source_code": [],
+  "datasets_user_files": [
+    {
+      "name": "BinaryCorpus (Large-scale & IR Corpus)",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Code to create the dataset for pre-training and fine-tuning on Shaheen III CPUs/GPUs"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": " No prohibited use/functionality is included in the scope of this project. "
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "US based developer. Author of the paper for which the Github repo contains the code. Noah Fleischmann: https://www.linkedin.com/in/noah-fleischmann/"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 3,
+          "notes": "Not provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 3,
+          "notes": "Sample inspection was limited to the example JSON file included in the github repository. The JSON file has 3 keys, of which \"projects\" shows useful attributes like name, github URL, created and deleted, forked etc. Though it is mentioned in the project that similar data and ELF binaries, and bitcode will be generated on, the inspection of this data is not possible. Therefore, the risk has been elevated. If approved, the dataset created will need to be checked. "
+        },
+        {
+          "name": "Provenance",
+          "score": 2,
+          "notes": "https://github.com/FutureComputing4AI/Reverse-Engineering-Function-Search\nThe last commit was 1 year ago, by the author of the paper\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "MIT License - include the license file in all use and distribution, including commercial. The use of the software and dataset is permissible for this project."
+        }
+      ]
+    },
+    {
+      "name": "Marchetti-benchmark (Dataset-1)",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 2,
+          "notes": "The Binaries part of the dataset is going to be used for evaluations. It is in Google Drive. The script to download is part of the Binaries subfolder.  "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No prohibited use/functionality is included in the scope of this project."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Andrea Marcelli (https://www.linkedin.com/in/jimmy-sonny/) Author of the paper \u201cHow Machine Learning Is Solving the Binary Function Similarity Problem\u201d  for which the GitHub repo holds the code for. Developer associated with Cisco-Talos \u2013 https://talosintelligence.com/ "
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "Not provided."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 4,
+          "notes": "Inspection not possible because the data is in binary format. No code has been provided by the applicant to load and inspect the dataset."
+        },
+        {
+          "name": "Provenance",
+          "score": 2,
+          "notes": "https://github.com/Cisco-Talos/binary_function_similarity --\nThe last commit was 1 year ago, by the author of the paper\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "The Cisco-Talos Copyright license \u2013 include the license file in all use and distribution, including commercial"
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "name": "",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "The project proposal suggests the modification of DeBERTa open-source model. Introduction of a disentangled attention mechanism to increase context length.  Its a multilingual model and has been trained to manage the low quality of tokenization for sustained training performance. Explanation aligns with the project's objectives and requirements."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No prohibited dataset was included in the training dataset of this model \nNo intent present to fine-tune this model for prompts that can be perceived as prohibited use. "
+        },
+        {
+          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "score": 1,
+          "notes": "DeBERTa\nhttps://huggingface.co/microsoft/deberta-v3-base\nIts was trained and published by Microsoft."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "MIT License -- permits the use of the model for the project's purpose."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "Wikipedia, Bookcorpus, CCNews, Stories and OpenWebText, CommonCrawl100 \n(https://arxiv.org/pdf/2111.09543  A.2)"
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 3,
+          "notes": "No customization and fine tuning scripts have been provided."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "DeBERTa V3 is a dense model so structured sparsity dosen't apply. \n\nMaximum available FLOPs as required by proposal:\n(GPU hours * 3600 seconds * peak\u00a0FLOP/s * MFU) = 25000 x 3600 x 1979 x 10^12 x 0.6 = 1.068x10^23 \n\nPre-trained model FLOPS:\nN=304M parameters\nD = 80 billion tokens (approximately 2 to 4 tokens per byte depending on tokenizer used, DeBERTa V3 used the same dataset as V2, 160GB volume in total)\nEstimated pre-training FLOPs for DeBERTaV3 Large (according to Chinchilla scaling laws): 6xNxD= 6 x 304 x 10^6 x 80 x 10^9  = 1.46x10^20\n\nExtrapolation of FLOPs on SIII GPUP\nN=340M parameters (after modification)\nTotal number of tokens for dataset 1 and 2 = 400x10^9 + 500x10^6 = 400.5x10^9\nMax GPUs hours: 25000 \nExpected precision: FP16\nExpected Model FLOPs Utilization: 60%\nEstimated fine-tuning FLOPs for DeBERTaV3 Large-modifed: 6xNxD= 6 x 340 x 10^6 x 400.5 x 10^9 = 8.17x10^20\n\nTotal FLOPs after fine-tuning = pretraining + finetuning =  1.46x10^20 + 8.17x10^20 = 9.36x10^20 \n\nNot expected to reach 10^27 threshold.\n\n "
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": ""
+        }
+      ]
+    }
+  ],
+  "observations": "",
+  "recommendation": ""
+}
