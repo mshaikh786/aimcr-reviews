@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "proposal_title": " Scaling Multimodal Foundation Models for Physical Intelligence ",
+    "principal_investigator": "Mohamed Elhosieny",
+    "proposal_date": "2025-12-09",
+    "reviewer_name": "Mohsin Ahmed Shaikh",
+    "reviewer_id": "174988",
+    "aimcr_date": "2025-12-13",
+    "project_id": "65638"
+  },
+  "third_party_software": [],
+  "source_code": [],
+  "datasets_user_files": [
+    {
+      "name": "Objaverse-XL",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Required in O1-CompoSE for training 3D object generation models and developing text-to-3D synthesis capabilities."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": ""
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Published as artifact of the papers and appears to be maintained by  Matt Deitke who works at Meta:\nhttps://www.linkedin.com/in/mattdeitke/ \nhttps://mattdeitke.com/\n- Objaverse: A Universe of Annotated 3D Objects\n- Objaverse: A Universe of Annotated 3D Objects"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": ""
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": ""
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "https://objaverse.allenai.org/\nPublished on HuggingFace\n\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": ""
+        }
+      ]
+    }
+  ],
+  "models": [],
+  "observations": "",
+  "recommendation": ""
+}
