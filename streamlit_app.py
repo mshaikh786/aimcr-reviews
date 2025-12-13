@@ -13,7 +13,12 @@ from helper_functions import (calculate_section_risk,
                               save_final_submission,
                               save_to_json, 
                               setup_local_workspace, 
-                              push_to_github)
+                              push_to_github,
+                              get_submission_files,
+                              load_submission,
+                              archive_draft_as_checkpoint,
+                              get_checkpoints,
+                              load_checkpoint)
 
 # Page configuration
 st.set_page_config(
@@ -65,6 +70,13 @@ if 'current_section' not in st.session_state:
 if 'edit_index' not in st.session_state:
     st.session_state.edit_index = {}
 
+# Track if we're editing an existing submission
+if 'editing_submission' not in st.session_state:
+    st.session_state.editing_submission = False
+
+if 'original_submission_folder' not in st.session_state:
+    st.session_state.original_submission_folder = None
+
 # Risk scoring configuration
 RISK_LEVELS = {
     1: "No Risk",
@@ -72,6 +84,72 @@ RISK_LEVELS = {
     3: "Medium Risk",
     4: "High Risk",
     5: "Critical Risk"
+}
+
+# Help text for each check type - organized by section with exact text from AIMCR template
+# Format: {section_key: {check_name: "Description / Guidance\n\nExample(s) / Reference"}}
+SECTION_CHECK_HELP = {
+    'third_party_software': {
+        'Project & Usage Alignment': "Description / Guidance: Confirm the software is associated with an approved project and matches the project's scientific domain and objectives.\n\nExample(s) / Reference: Reference table of approved uses in 'Research Topics Descriptions' workbook.",
+        
+        'Prohibited Use Screening (LC 2.7)': "Description / Guidance: Review for any indication of prohibited uses/functionality (e.g., military, weapons, surveillance). Explicitly reference LC 2.7.\n\nExample(s) / Reference: Package description includes 'surveillance' or 'military' functionality.",
+        
+        'Restricted Entities Screening (LC 2.5)': "Description / Guidance: Scan/review software origin, contributors, and metadata for restricted countries/entities. Explicitly reference LC 2.5.\n\nExample(s) / Reference: Maintainer from D:5 country, Entity List, SDN List.",
+        
+        'Source / Provenance': "Description / Guidance: Verify source repository authenticity and integrity; review dependencies for provenance and approval status.\n\nExample(s) / Reference: Software from official GitHub repo; dependencies from trusted sources.",
+        
+        'License / Permissions': "Description / Guidance: Confirm the license allows the intended use (research, redistribution, modification). Identify any obligations or restrictions.\n\nExample(s) / Reference: Package licensed under MIT; no non-commercial clause.",
+        
+        'Bundled Tools / Dependencies': "Description / Guidance: Check bundled tools, utilities, dependencies, and sub-dependencies for prohibited functionality or untrusted sources.\n\nExample(s) / Reference: Dependency list includes only approved packages; no suspicious binaries."
+    },
+    
+    'source_code': {
+        'Project & Usage Alignment': "Description / Guidance: Confirm the code is associated with an approved project and matches the project's scientific domain and objectives.\n\nExample(s) / Reference: Reference table of approved uses in 'Research Topics Descriptions' workbook.",
+        
+        'Prohibited Use Screening (LC 2.7)': "Description / Guidance: Review the project proposal, code and documentation for any indication of prohibited uses/functionality (e.g., military, weapons, surveillance). Explicitly reference LC 2.7.\n\nExample(s) / Reference: Code contains functions or comments related to 'military' or 'surveillance' applications.",
+        
+        'Source / Provenance & Restricted Entities (LC 2.5)': "Description / Guidance: Verify source repository authenticity and integrity; review dependencies for provenance and approval status; scan/review code origin, contributors, and metadata for restricted countries/entities. Explicitly reference LC 2.5.\n\nExample(s) / Reference: Code from official GitHub repo; contributors from trusted countries; no links to D:5 country, Entity List, SDN List.",
+        
+        'License / Permissions': "Description / Guidance: Confirm the license allows the intended use (research, redistribution, modification). Identify any obligations or restrictions.\n\nExample(s) / Reference: Code licensed under MIT; no non-commercial clause.",
+        
+        'Dependencies / Bundled Components': "Description / Guidance: Check dependencies and sub-dependencies for prohibited functionality or untrusted sources.\n\nExample(s) / Reference: Dependency list includes only approved packages; no suspicious binaries.",
+        
+        'Sample Inspection': "Description / Guidance: Open a subset of the code and check for indications of prohibited use, ambiguous content, or technical parameters associated with prohibited applications.\n\nExample(s) / Reference: Review 10% of scripts for prohibited keywords or functions."
+    },
+    
+    'datasets_user_files': {
+        'Project & Usage Alignment': "Description / Guidance: Confirm the dataset & files are associated with an approved project and match the project's scientific domain and objectives.\n\nExample(s) / Reference: Reference table of approved uses in 'Research Topics Descriptions' workbook.",
+        
+        'Prohibited Use Screening (LC 2.7)': "Description / Guidance: Review for any indication of prohibited uses (e.g., military, weapons, surveillance). Explicitly reference LC 2.7.\n\nExample(s) / Reference: Dataset contains 'military' or 'surveillance' keywords.",
+        
+        'Restricted Entities Screening (LC 2.5)': "Description / Guidance: Scan/review dataset fields, variables, and metadata for restricted countries/entities. Explicitly reference LC 2.5.\n\nExample(s) / Reference: Data from/about D:5 countries, Entity List, SDN List.",
+        
+        'Prompts / Fine-tuning Scripts': "Description / Guidance: Scan/review prompts and fine-tuning scripts for keywords or instructions that could enable or encourage non-compliant outputs or domains.\n\nExample(s) / Reference: Prompt includes 'target military installation'.",
+        
+        'Sample Inspection': "Description / Guidance: Open a subset† of the data and check for indications of prohibited use (e.g., geospatial coordinates, military terminology, data from/about restricted countries/entities, technical parameters).\n\nExample(s) / Reference: 1% sample for ≤10,000 records, 0.1% for ≤100,000, etc.",
+        
+        'Provenance': "Description / Guidance: Review the dataset's provenance: source, country of origin, previous owners/custodians, modifications or transformations.\n\nExample(s) / Reference: Dataset originally collected by Org X, modified by Y.",
+        
+        'License / Permissions': "Description / Guidance: Confirm the license allows the intended use (research, redistribution, modification). Identify any obligations or restrictions.\n\nExample(s) / Reference: Dataset licensed under MIT, no non-commercial clause."
+    },
+    
+    'models': {
+        'Project & Usage Alignment': "Description / Guidance: Confirm the model is associated with an approved project and matches the project's scientific domain and objectives.\n\nExample(s) / Reference: Reference table of approved uses in 'Research Topics Descriptions' workbook.",
+        
+        'Prohibited Use Screening (LC 2.7)': "Description / Guidance: Review the model and documentation for any indication of prohibited uses/functionality (e.g., military, weapons, surveillance). Explicitly reference LC 2.7.\n\nExample(s) / Reference: Model documentation includes references to 'military' or 'surveillance' applications.",
+        
+        'Source / Provenance & Restricted Entities (LC 2.5)': "Description / Guidance: Confirm model (architecture and weights) was obtained from a trusted internal registry, approved vendor or trusted official repositories; assess training data and model provenance; flag involvement from prohibited entities. Explicitly reference LC 2.5.\n\nExample(s) / Reference: Model downloaded from official registry; training data from trusted sources; no links to D:5 country, Entity List, SDN List.",
+        
+        'License / Permissions': "Description / Guidance: Assess permissions: Confirm the license of the model and its training data allows the intended use (research, redistribution, modification). Identify any obligations or restrictions.\n\nExample(s) / Reference: Model licensed under MIT; training data with open license.",
+        
+        'Training Data Documentation': "Description / Guidance: Review training data documentation for provenance, compliance, and absence of restricted entities or prohibited content.\n\nExample(s) / Reference: Training data sourced from approved datasets; documentation complete.",
+        
+        'Customisation / Fine-tuning': "Description / Guidance: Check for evidence that the model has been customised or fine-tuned for exclusively generating outputs that support prohibited domains.\n\nExample(s) / Reference: Model fine-tuned for prohibited applications (e.g., weapon design, surveillance strategies).",
+        
+        'FLOPS Calculation': "Description / Guidance: For proprietary models, estimate training FLOPS and further usage FLOPS on Shaheen III; escalate if total exceeds 10^27.\n\nExample(s) / Reference: Model trained with 10^25 FLOPS; planned usage within allowed limits.",
+        
+        'Sample Inspection': "Description / Guidance: Open a subset of the model outputs or scripts and check for indications of prohibited use, ambiguous content, or technical parameters associated with prohibited applications.\n\nExample(s) / Reference: Review 10% of outputs for prohibited keywords or functions."
+    }
 }
 
 # Section configurations
@@ -196,6 +274,68 @@ with st.sidebar:
                             st.error(msg)
     else:
         st.info("No drafts available")
+    
+    st.divider()
+    
+    # Submission Management Section
+    st.subheader("📋 Submitted Forms")
+    
+    submissions = get_submission_files(LOCAL_REPO_PATH)
+    if submissions:
+        st.write(f"**Available Submissions ({len(submissions)})**")
+        
+        for submission in submissions[:5]:  # Show last 5 submissions
+            with st.expander(f"📄 {submission['project_id']}", expanded=False):
+                st.write(f"**Title:** {submission['proposal_title'][:30]}...")
+                st.write(f"**Folder:** {submission['folder_name']}")
+                st.write(f"**Modified:** {submission['modified'].strftime('%Y-%m-%d %H:%M')}")
+                if submission['revision_count'] > 0:
+                    st.write(f"**Revisions:** {submission['revision_count']}")
+                
+                if st.button("📝 Edit Submission", key=f"edit_sub_{submission['folder_name']}", use_container_width=True):
+                    loaded_data = load_submission(submission['path'])
+                    if loaded_data:
+                        # Store the original folder name for resubmission
+                        st.session_state.original_submission_folder = loaded_data.get('_original_submission_folder')
+                        st.session_state.editing_submission = True
+                        
+                        # Remove internal tracking fields before loading into session
+                        clean_data = {k: v for k, v in loaded_data.items() if not k.startswith('_')}
+                        st.session_state.data = clean_data
+                        
+                        st.success(f"Submission loaded for editing!")
+                        st.rerun()
+                    else:
+                        st.error("Failed to load submission")
+    else:
+        st.info("No submissions available")
+    
+    # Show editing status
+    if st.session_state.editing_submission:
+        st.divider()
+        st.warning(f"✏️ Editing: {st.session_state.original_submission_folder}")
+        if st.button("🆕 Start New Form", use_container_width=True):
+            # Reset to a new form
+            st.session_state.data = {
+                'metadata': {
+                    'proposal_title': '',
+                    'principal_investigator': '',
+                    'proposal_date': '',
+                    'reviewer_name': '',
+                    'reviewer_id': '',
+                    'aimcr_date': '',
+                    'project_id': ''
+                },
+                'third_party_software': [],
+                'source_code': [],
+                'datasets_user_files': [],
+                'models': [],
+                'observations': '',
+                'recommendation': ''
+            }
+            st.session_state.editing_submission = False
+            st.session_state.original_submission_folder = None
+            st.rerun()
     
     st.divider()
     st.subheader("Risk Score Legend")
@@ -341,13 +481,17 @@ def render_artifact_form(section_key, section_title, checks):
             # Create unique keys for edit vs add mode
             widget_suffix = f"edit_{st.session_state.edit_index[section_key]}" if edit_mode else "add"
             
+            # Get section-specific help text for this check
+            help_text = SECTION_CHECK_HELP.get(section_key, {}).get(check_name, "No description available for this check.")
+            
             with col1:
                 score = st.selectbox(
                     f"{check_name}",
                     options=[1, 2, 3, 4, 5],
                     format_func=lambda x: f"{x} - {RISK_LEVELS[x]}",
                     index=artifact['checks'][i]['score'] - 1 if artifact else 0,
-                    key=f"{section_key}_check_{i}_{widget_suffix}"
+                    key=f"{section_key}_check_{i}_{widget_suffix}",
+                    help=help_text
                 )
             
             with col2:
@@ -489,6 +633,10 @@ elif st.session_state.current_section == 'final_review':
     # Save and Export
     st.subheader("💾 Save and Export")
     
+    # Show editing status banner if editing
+    if st.session_state.editing_submission:
+        st.info(f"✏️ **Editing existing submission:** {st.session_state.original_submission_folder}")
+    
     col1, col2, col3 = st.columns(3)
     
     with col1:
@@ -513,21 +661,46 @@ elif st.session_state.current_section == 'final_review':
                     st.error(f"Error saving draft: {str(e)}")
     
     with col2:
-        if st.button("📤 Submit Final", type="primary", use_container_width=True):
+        # Change button text based on whether editing or new submission
+        button_text = "📤 Resubmit" if st.session_state.editing_submission else "📤 Submit Final"
+        
+        if st.button(button_text, type="primary", use_container_width=True):
             if not meta['project_id']:
                 st.error("Please enter a Project ID in the Metadata section")
             else:
                 try:
-                    # Save to submissions folder
-                    submission_path = save_final_submission(LOCAL_REPO_PATH, st.session_state.data, meta['project_id'])
+                    # Create a checkpoint before submission
+                    checkpoint_type = "pre_resubmission" if st.session_state.editing_submission else "pre_submission"
+                    checkpoint_path = archive_draft_as_checkpoint(
+                        LOCAL_REPO_PATH, 
+                        st.session_state.data, 
+                        meta['project_id'],
+                        checkpoint_type
+                    )
+                    
+                    # Determine if this is a resubmission or new submission
+                    original_folder = st.session_state.original_submission_folder if st.session_state.editing_submission else None
+                    
+                    # Save to submissions folder (same folder if resubmitting)
+                    submission_path = save_final_submission(
+                        LOCAL_REPO_PATH, 
+                        st.session_state.data, 
+                        meta['project_id'],
+                        original_folder_name=original_folder
+                    )
                     
                     # Push to GitHub
-                    commit_msg = f"Final submission: {meta['project_id']} - {datetime.now().strftime('%Y-%m-%d %H:%M')}"
+                    action_type = "Resubmission" if st.session_state.editing_submission else "Final submission"
+                    commit_msg = f"{action_type}: {meta['project_id']} - {datetime.now().strftime('%Y-%m-%d %H:%M')}"
                     success, message = push_to_github(LOCAL_REPO_PATH, commit_msg)
                     
                     if success:
-                        st.success(f"✅ Final submission saved and pushed to GitHub!")
+                        if st.session_state.editing_submission:
+                            st.success(f"✅ Resubmission saved to original folder and pushed to GitHub!")
+                        else:
+                            st.success(f"✅ Final submission saved and pushed to GitHub!")
                         st.info(f"📁 Submission saved in: {submission_path}")
+                        st.info(f"📋 Checkpoint saved: {checkpoint_path.name}")
                         
                         # Clean up draft if exists
                         drafts_dir = LOCAL_REPO_PATH / "drafts"
@@ -536,6 +709,10 @@ elif st.session_state.current_section == 'final_review':
                         
                         # Commit draft cleanup
                         push_to_github(LOCAL_REPO_PATH, f"Clean up drafts for {meta['project_id']}")
+                        
+                        # Reset editing state after successful submission
+                        st.session_state.editing_submission = False
+                        st.session_state.original_submission_folder = None
                         
                     else:
                         st.warning(f"⚠️ Submission saved locally but not synced: {message}")
@@ -582,6 +759,31 @@ elif st.session_state.current_section == 'final_review':
         st.write(f"**Submissions:** {len(submissions)}")
     else:
         st.write(f"**Submissions:** 0")
+    
+    # Show checkpoints if project ID exists
+    if meta['project_id']:
+        st.divider()
+        st.subheader("📋 Checkpoints")
+        checkpoints = get_checkpoints(LOCAL_REPO_PATH, meta['project_id'])
+        
+        if checkpoints:
+            st.write(f"**Available checkpoints for {meta['project_id']}:** {len(checkpoints)}")
+            
+            for checkpoint in checkpoints[:5]:  # Show last 5 checkpoints
+                with st.expander(f"📋 {checkpoint['type']} - {checkpoint['modified'].strftime('%Y-%m-%d %H:%M')}", expanded=False):
+                    st.write(f"**Type:** {checkpoint['type']}")
+                    st.write(f"**Timestamp:** {checkpoint['timestamp']}")
+                    
+                    if st.button("🔄 Restore this checkpoint", key=f"restore_{checkpoint['filename']}", use_container_width=True):
+                        restored_data = load_checkpoint(checkpoint['path'])
+                        if restored_data:
+                            st.session_state.data = restored_data
+                            st.success("Checkpoint restored! Review your data and save/submit when ready.")
+                            st.rerun()
+                        else:
+                            st.error("Failed to restore checkpoint")
+        else:
+            st.info("No checkpoints available for this project")
 
 # Footer
 st.divider()
