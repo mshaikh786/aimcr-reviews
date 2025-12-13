@@ -1,0 +1,204 @@
+{
+  "metadata": {
+    "proposal_title": "Single-Cell Informed Pathology Image Interpretation and Report Generation via Large-Scale Multimodal Foundation Models",
+    "principal_investigator": "Prof Xin Gao",
+    "proposal_date": "2025-12-02",
+    "reviewer_name": "Mohsin Ahmed Shaikh",
+    "reviewer_id": "174988",
+    "aimcr_date": "2025-12-12",
+    "project_id": "65461"
+  },
+  "third_party_software": [
+    {
+      "name": "Pytorch 2.8.0",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "PyTorch is aligned with the approved research topic, \"large scale data analysis\", and \"Computational Science and Visualization\" in general. \nThis will be provided as part of PyTorch container image 25.11 from NGC which has pytroch 2.10 among other things. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of the prohibited use/functionality. "
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "The requested software is from Non-D5 organizations."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "nvcr.io/nvidia/pytorch:25.11-py3"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Released under NVIDIA Software LicenseAgreement/Product terms and conditions allows the intended use."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "nvcr.io/nvidia/pytorch:25.11-py3 (ubuntu 24.04)\nTotal: 1405 (UNKNOWN: 0, LOW: 98, MEDIUM: 1305, HIGH: 2, CRITICAL: 0)"
+        }
+      ]
+    },
+    {
+      "name": "openslide",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "OpenSlide is a C library that provides a simple interface to read whole-slide images (also known as virtual slides)"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No prohibited use indicated in the documentation."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "According to Github: https://github.com/openslide/openslide\nAcknowledgements\nOpenSlide has been developed by Carnegie Mellon University and other contributors.\nOpenSlide has been supported by the National Institutes of Health and the Clinical and Translational Science Institute at the University of Pittsburgh.\n\nIt is not being maintained by multiple contributors on GitHub."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://github.com/openslide/openslide\nhttps://openslide.org/\nwell maintained, 2700+ commits, last PR accepted on October 28th, 2025, "
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "GPL2 license. Fit for project use."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies for building OpenSlide:\nGCC or Clang, Meson, cairo \u2265 1.2, glib \u2265 2.56, libdicom \u2265 1.2 (automatically built if missing), libjpeg-turbo \u2265 1.3 or libjpeg \u2265 9c, libpng, libtiff \u2265 4.0, libxml2, OpenJPEG \u2265 2.1, SQLite \u2265 3.14, zlib, Zstandard (by facebook)\n\nmost if not all of the above are provided by Shaheen III GPUP opreating system. The rest will by source built from sources downloaded from corresponding project's websites. \n\nIt highly probably will be provided as a container image by KSL team."
+        }
+      ]
+    },
+    {
+      "name": "Ollama",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "A CLI based runtime for interacting with a catalog of supported LLMs. For the project, it does not look mandatory, but is a more of a convenience  tool. Otherwise, the user will need to load the model in pytorch and run forward pass with inputs provided , for the case of inference, i.e. prompting."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 2,
+          "notes": "The use of Ollama is not confined to one model but a catalog of supported models. Having said this, the project members will not have access to anyother model but the ones requested in the project proposal. Therefore, ollama's use is limited in scope. "
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 3,
+          "notes": "Given access to different models, it is capable of curating information about prohibited usecases. "
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Dockerhub: ollama/ollama:0.13.3\nRegistry maintained by Ollama.inc\nOwners are Jeffery Morgan (https://www.linkedin.com/in/jmorganca/)\nand Micheal Yang (https://www.linkedin.com/in/mxyng/)"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "https://github.com/ollama/ollama?tab=MIT-1-ov-file#readme\nLicense permits project's intended use."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "ollama/ollama:0.13.3 (ubuntu 24.04)\nTotal: 16 (UNKNOWN: 0, LOW: 10, MEDIUM: 6, HIGH: 0, CRITICAL: 0)\n"
+        }
+      ]
+    }
+  ],
+  "source_code": [],
+  "datasets_user_files": [
+    {
+      "name": "TCGA dataset",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "The source of whole slide pathology images (WSI) used as raw data for image encoder training of the multimodal model. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "These dataset contains are images captured from histopathology slides from cancer patients. "
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Administered and maintained by the National Cancer Institute at the National Institutes of Health, USA. "
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No prompts and fine-tuning scripts have been provided. "
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "30 random images from TCGA project were downloaded as SVS files, converted to PNG files and visually inspected. All these images were histopathology slides."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": ""
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "name": "CellxGENE dataset",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": ""
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": ""
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": ""
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": ""
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": ""
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": ""
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": ""
+        }
+      ]
+    }
+  ],
+  "models": [],
+  "observations": "",
+  "recommendation": ""
+}
