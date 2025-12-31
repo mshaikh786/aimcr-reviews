@@ -1,0 +1,434 @@
+{
+  "metadata": {
+    "proposal_title": " Scaling Multimodal Foundation Models for Physical Intelligence ",
+    "principal_investigator": "Mohamed Elhosieny",
+    "proposal_date": "2025-12-09",
+    "reviewer_name": "Mohsin Ahmed Shaikh",
+    "reviewer_id": "174988",
+    "aimcr_date": "2025-12-13",
+    "project_id": "65638"
+  },
+  "third_party_software": [
+    {
+      "name": "Alibaba ROLL",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Needed for the RL training. Aligns with the approved topic, Datascience and engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "Alibaba DAMO Academy"
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 4,
+          "notes": "Alibaba is an organization from D5 country. \nhttps://alibaba.github.io/ROLL/"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source Channel:\nDistribution channel: GitHub (open-source repository)\nExact URL: https://github.com/alibaba/ROLL\n3.2 GitHub Repository Metadata (as of December 16th, 2025)\n\nMaintainer / Organization: Alibaba DAMO Academy\nLast Commit Date: Today\nNumber of Stars: 2.5K\nNumber of Issues (Open/Closed): 61\nNumber of PRs (Open/Closed): 6\nTotal Commits: 368\nActivity Health: Active\n3.3 Package Release History\nLatest release date: Second week of December 2025\nFrequency of releases: monthly"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License Type\nLicense: Apache 2.0\nLicense URL: https://github.com/alibaba/ROLL/blob/main/LICENSE\n4.2 Permissibility Summary\nAcademic purposes: allowed\nCommercial use: allowed\nModification: allowed "
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 3,
+          "notes": "Container image from private registry:\nroll-registry.cn-hangzhou.cr.aliyuncs.com/roll/pytorch:nvcr-25.06-py3-torch280-vllm0102\nTotal: 2074 (UNKNOWN: 0, LOW: 136, MEDIUM: 1915, HIGH: 23, CRITICAL: 0)"
+        }
+      ]
+    },
+    {
+      "name": "RLinf",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Designed for post training the foundation models increase its performance. Aligned with approved topic, datascience and engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No prohibited use indication. It is a model training framework. "
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 4,
+          "notes": "RLinf: Flexible and Efficient Large-scale Reinforcement Learning via Macro-to-Micro Flow Transformation (Sep 2025) : https://arxiv.org/html/2509.15965v1\nCorresponding author: yu-wang@tsinghua.edu.cn - Tsinghua University\nFirst author: From Tsinghua University, Bejing Zhongguancun Academy China\nAssociated with universities in D5 country."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 3,
+          "notes": "https://github.com/RLinf/RLinf\nDocker image: rlinf/rlinf:agentic-rlinf0.1-torch2.6.0-openvla-openvlaoft-pi0 -- owned by a community user \"rlinf\"\n\nMaintained by: \nChao Yu: zoeyuchao@gmail.com\nYu Wang: yu-wang@tsinghua.edu.cn\nBoth associated with the Universities from D:5 country, China\n\nMaintainer / Organization: RLinf organization on GitHub\nLast Commit Date: December 16, 2025.\nNumber of Stars: 1.7K\nNumber of Issues (Open/Closed): 65\nNumber of PRs (Open/Closed): 36\nTotal Commits: 200\nActivity Health: Active"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Apache License 2.0\nLicense URL: https://github.com/RLinf/RLinf/blob/main/LICENSE\n"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 2,
+          "notes": "Dockerhub image: rlinf/rlinf:agentic-rlinf0.1-torch2.6.0-openvla-openvlaoft-pi0 (ubuntu 22.04)\nTotal: 3979 (UNKNOWN: 0, LOW: 238, MEDIUM: 3656, HIGH: 85, CRITICAL: 0)\n"
+        }
+      ]
+    },
+    {
+      "name": "DeepSpeed",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Distributed training framework from Microsoft. Aligned with approved research topic, datascience & engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No prohibited use indicated. Its a distributed training framework. "
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "The framework is developed and maintained by Microsoft"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://github.com/microsoft/DeepSpeed\n\nMaintainer / Organization: Microsoft\nLast Commit Date: 4 days ago\nNumber of Stars: 41K\nNumber of Issues (Open/Closed): 1.1K\nNumber of PRs (Open/Closed): 102\nTotal Commits: 3,004\nActivity Health: Active"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache License 2.0\nLicense URL: https://github.com/deepspeedai/DeepSpeed/blob/master/LICENSE"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Installed using the NGC Pytorch base image:\n\nmy-ngc-pytorch28-stack:latest (ubuntu 24.04)\nTotal: 2169 (UNKNOWN: 0, LOW: 118, MEDIUM: 2026, HIGH: 25, CRITICAL: 0) "
+        }
+      ]
+    },
+    {
+      "name": "HF Accelerate",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Distributed training framework where Deepspeed can be chosen as the distributed training engine. It abstract and makes it easier to train transformer based models and other types.\nAligns with the approved topic, datascience and engieering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No prohibited use indicated."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": " None. It is maintained by HuggingFace organization."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://github.com/huggingface/accelerate\n\nMaintainer / Organization: Hugging Face\nLast Commit Date: Today\nNumber of Stars: 9.4K\nNumber of Issues (Open/Closed): 88\nNumber of PRs (Open/Closed): 11\nTotal Commits: 1,891\nActivity Health: Active\nLatest release date: Last month\nFrequency of releases: monthly\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache License 2.0\nLicense URL: https://github.com/huggingface/accelerate/blob/main/LICENSE\n"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Installed using the base image PyTorch from NGC\n\nmy-ngc-pytorch28-stack:latest (ubuntu 24.04)\nTotal: 2169 (UNKNOWN: 0, LOW: 118, MEDIUM: 2026, HIGH: 25, CRITICAL: 0)"
+        }
+      ]
+    },
+    {
+      "name": "PyTorch",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "A deep learning framework. Aligned with approved topic, datascience& engineering, "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "no prohibited use indicated."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Maintained by Meta"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://github.com/pytorch/pytorch\nKSL will provide NGC image of PyTorch with Flash Attention 2.7 pre-installed. Will negotiate the exact pytorch container image version with the applicant. "
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "NVIDIA End user license. \nPermits the proposed work."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "my-ngc-pytorch28-stack:latest (ubuntu 24.04)\n============================================\nTotal: 2169 (UNKNOWN: 0, LOW: 118, MEDIUM: 2026, HIGH: 25, CRITICAL: 0)"
+        }
+      ]
+    }
+  ],
+  "source_code": [],
+  "datasets_user_files": [
+    {
+      "name": "Objaverse",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Required in O1-CompoSE for training 3D object generation models and developing text-to-3D synthesis capabilities."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 2,
+          "notes": "800K+ images of 3D objects. Categories include:\nTotal unique categories: 18\narchitecture: 76,802\ncharacters-creatures: 59,299\ncultural-heritage-history: 55,614\nfurniture-home: 51,888\nart-abstract: 50,310\nscience-technology: 46,860\nweapons-military: 35,189\nelectronics-gadgets: 28,860\nnature-plants: 28,319\nanimals-pets: 27,479\ncars-vehicles: 26,765\nplaces-travel: 18,487\npeople: 13,199\nfood-drink: 12,047\nfashion-style: 9,595\nsports-fitness: 4,200\nmusic: 2,845\nnews-politics: 951\n\n\"weapons-military\" was inspected and had pictures of avatars of modern and historic e.g. knives, swords, pistols and guns. "
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Published as artifact of the papers and appears to be maintained by  Matt Deitke who works at Meta:\nhttps://www.linkedin.com/in/mattdeitke/ \nhttps://mattdeitke.com/\n- Objaverse: A Universe of Annotated 3D Objects\n- Objaverse: A Universe of Annotated 3D Objects"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No user files provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 2,
+          "notes": "\"weapons-military\" category was inspected and had pictures of avatars of modern and historic e.g. knives, swords, pistols and guns. "
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "https://objaverse.allenai.org/\nPublished on HuggingFace\n\nDownloads from Hubgging Face in the month of Nov 2025: 309,132\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "The use of the dataset as a whole is licensed under the ODC-By v1.0 license. Individual objects in Objaverse are licensed under different licenses.\nCreation of derivative databases is allowed under this license."
+        }
+      ]
+    },
+    {
+      "name": "RoBoMind",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Required for training generalizable robotic manipulation policies, imitation learning research, and Vision-Language-Action (VLA) model development across multiple robot embodiments.\nTotal size : 815 + 514 + 45 + 1678 \u2248 3052 episodes"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "Movies of robots manipulation tasks common objects e.g. household, industrial etc. "
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 3,
+          "notes": "Affiliated organization:\nThe Beijing Humanoid Robot Innovation Center was established in November 2023 in Beijing Economic and Technological Development Zone (Beijing Yizhuang). It is the first innovation center in China that focuses on the core technology, product development, and application ecosystem construction of humanoid robots.\nhttps://huggingface.co/X-Humanoid\nhttps://x-humanoid-robomind.github.io/"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "None provided."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "frames from different time stamps of 17 randomly sampled episodes inspected. Aritfacts in https://github.com/mshaikh786/aimcr-scripts/blob/Elhoseiny-DS/65638-Elhoseiny/Dataset-inspection/robomind/robomind.ipynb and corresponding PDF."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "The dataset is accompanied by the paper:\n\u201cRoboMIND: Benchmark on Multi-embodiment Intelligence Normative Data for Robot Manipulation\u201d  https://arxiv.org/abs/2412.13877\n\nRepository Metadata\nLast commit: ~18 days ago (as of 16/12/25)\nMaintainer: X-Humanoid (organization-owned repository)\nRepository activity\nSource page: https://huggingface.co/datasets/x-humanoid-robomind/RoboMIND\nCommits: 656\nDownloads: Downloads last month 38,252 (as of 16/12/25)"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Apache 2.0 :  http://www.apache.org/licenses/LICENSE-2.0\nRequires agreeing to T&Cs. License allow academic research and redistribution under same license conditions. Include a copy of the license with any redistribution, retain copyright and attribution notices and mark any files you modify. "
+        }
+      ]
+    },
+    {
+      "name": "Open X-Embodiment",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "To used in reinforcement learning part of the RL model (O4). Aligns with Datascience and Engineering. \n69 datasets in total. Applicant did not identify which ones they required for their research.\n67 out of 69 datasets contain real RGB image observations. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "According to the paper describing the dataset, it contains a range of household objects, from appliances to food items and utensils. https://arxiv.org/html/2310.08864v4 \nThe dataset contains over 1 million real robot trajectories from 22+ robot embodiments, spanning manipulation tasks like pick-and-place, drawer opening, object rearrangement, and more. The data comes from different labs worldwide, each with their own robot setups."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "All authors of the paper had affiliations in 2023 with organizations from non-D5 countries. \nhttps://arxiv.org/html/2310.08864v4 "
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No user files provided."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Sample artifacts were inspected in this notebook: https://github.com/mshaikh786/aimcr-scripts/blob/Elhoseiny-DS/65638-Elhoseiny/Dataset-inspection/x-embodiment/x-embodiment.pdf\nIt included RBG camera images of images manipulating objects in a lab environment. "
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Maintainer (dataset distributor)\nOrganization: Google DeepMind\nOfficial GitHub organization: google-deepmind\nPrimary repository: google-deepmind/open_x_embodiment\nStar on Github repo: 1.6k\nVery few contributors and commits."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 2,
+          "notes": "Licenses stated in the official repository\nSoftware code: Apache License 2.0\nData / other materials: Creative Commons Attribution 4.0 (CC-BY 4.0)\nPermissibility:\nAcademic & research use:  Allowed\nCommercial use:  Allowed (with conditions)\nModification: Allowed\nRedistribution:  Allowed\nObligations\nApache-2.0: Preserve license and copyright notices\nCC-BY-4.0: Attribution required when redistributing or publishing derived work\nImportant nuance\nOpen X-Embodiment is an aggregate benchmark. Developers must check individual licenses associated with each component datasets"
+        }
+      ]
+    },
+    {
+      "name": "LIBERO",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "LIBERO has been requested as a dataset by the applicant, primarily aligned with Objective O3 (ContextFlow) the in-context robot foundation model. It aligns with the approved topic Datascience and Engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "Approximately made up of a collection of 6500 multimodal recording. Inspection of images at different timestamp reveals simulated robots working on different object in a lab environment.  "
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "The dataset is maintained by the Lifelong Robot Learning group, with contributions affiliated with Google DeepMind."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No user files provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Inspection can be found in https://github.com/mshaikh786/aimcr-scripts/blob/Elhoseiny-DS/65638-Elhoseiny/Dataset-inspection/libero/libero.pdf"
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Maintainer / Organization:\nThe dataset is maintained by the Lifelong Robot Learning group, with contributions affiliated with Google DeepMind.\n\nHugging Face dataset page:\nhttps://huggingface.co/datasets/physical-intelligence/libero\n\nDownloads (last month): 25,029\nGitHub repository:\nhttps://github.com/Lifelong-Robot-Learning/LIBERO/tree/master\n\nLast commit: ~9 months ago\nMaintainer: Google DeepMind\nStatistics:\nStars: ~1.3k\nCommits: 41\nPull Requests: 9\nIssues: 69"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Hugging Face license: CC-BY-4.0\nGitHub repository license: MIT License\nPermissibility:\n- Permitted for academic and research use\n- Redistribution requires inclusion of the original license\n- Attribution to the original authors is required under CC-BY-4.0"
+        }
+      ]
+    },
+    {
+      "name": "Llava-onevision-dataset",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Algined with training  Scalable Long Video-Language Understanding (objective 2). Algins with research topic datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 2,
+          "notes": "No mention of prohibited use terms in the documentation. Inspection reveals simulated images of objects, statistical graphs and piecharts, geometrical problems and solutions, cartoon images depicting stories and captions, xray, sonograms, and MRI images, etc. \n\nDataset in English and Chinese."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Dataset owned and maintained by LMMs-Lab. It is a non-profit research-oriented organization with a group of passionate researchers, we share the sincere passion for developing multimodal intelligence.\n\nLLaVA-OneVision:\nBo Li, Yuanhan Zhang, Dong Guo, Renrui Zhang, Feng Li, Hao Zhang, Kaichen Zhang, Peiyuan Zhang, Yanwei Li, Ziwei Liu, Chunyuan Li."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No user files provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Inspection notebook available "
+        },
+        {
+          "name": "Provenance",
+          "score": 3,
+          "notes": "Dataset Card Contact (listed on https://huggingface.co/datasets/lmms-lab/LLaVA-OneVision-Data)\nBo Li: drluodian@gmail.com\nKaichen Zhang"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Apache 2.0"
+        }
+      ]
+    },
+    {
+      "name": "LLaVA-Video-178K",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Algined with training Scalable Long Video-Language Understanding (objective 2). Algins with research topic datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of prohibited use terms in the documentation."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Dataset owned and maintained by LMMs-Lab. It is a non-profit research-oriented organization with a group of passionate researchers, we share the sincere passion for developing multimodal intelligence.\nCurated by: Yuanhan Zhang (NTU, Singapore),  Jinming Wu (BUPT China), Wei Li (Bytedance)"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No user files provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 2,
+          "notes": "The dataset mixes multiple upstream sources. Only a subset of videos is physically hosted on Hugging Face. The rest are references to external academic datasets, redistributed as metadata-only pointers due to licensing constraints.\nThe curation of this dataset is most suited on Shaheen III CPUP.  "
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "No individual maintainer has been identified. Its published under the same LLMs-Lab github as other datasets. \n\n\nDataset is an artifact release with \nCommits: 499\nRecent commit: October 2024\nHF downloads: 15,283\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 2,
+          "notes": "Released under Apache 2.0\nPermissibility:\n- Academic and research use\n- Model training for non-commercial research\n-  Redistribution of raw videos requires caution\n- Commercial / production use without provenance audit is not recommended\nImportant Licensing Note:\n- The dataset aggregates videos from multiple upstream sources with potentially different licenses.\n- Use of the dataset does not grant blanket rights over all included video content.\n\nTo be used only for research and not for redistribution"
+        }
+      ]
+    }
+  ],
+  "models": [],
+  "observations": "",
+  "recommendation": ""
+}
