@@ -1,0 +1,193 @@
+{
+  "metadata": {
+    "proposal_title": "Self-Supervised Foundational Model for Chemistry and Materials Science",
+    "principal_investigator": "Bernard",
+    "proposal_date": "2025-12-04",
+    "reviewer_name": "Mohsin Ahmed Shaikh",
+    "reviewer_id": "174988",
+    "aimcr_date": "2026-01-04",
+    "project_id": "65562"
+  },
+  "third_party_software": [
+    {
+      "name": "Pytorch, Torchvision, Torchaudio",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Aligns with the proposal objectives. Aligns with the approved research topic Datascience and engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation of PyTorch."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Originally developed by Meta and now governed by Linux Foundation. "
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://github.com/pytorch/pytorch/edit/main/docs/source/index.md\nAs of Jan 4th, 2025\n96300 stars\n26400 forks\n12 Github projects\n17000 PRs\n97745 commits\nlast commit 10 hours ago \n\n\n\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "KSL will provide NGC container for the requested version of PyTorch. \nnvcr.io/nvidia/pytorch:25.12-py3\n\nNVIDIA Deep Learning Container License\nPermissions:\n- Install and Use\n- Deploy as a Service\n- Create Derived Containers\n- Open Source Development\nRestrictions:\n- No Reverse Engineering\n- No Standalone Distribution: may not distribute or sublicense the CONTAINER as a stand-alone product\n- No Circumventing Security"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "nvcr.io/nvidia/pytorch:25.12-py3 contains\n\nCUDA\ncuBLAS\nNVIDIA cuDNN\nNVIDIA NCCL (optimized for NVLink)\nNVIDIA Data Loading Library (DALI)\nTensorRT\nTorch-TensorRT"
+        }
+      ]
+    },
+    {
+      "name": "PyTorch Geometric",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "This is a library to program and train graph neural networks. The proposal mentions training GNNs as an objective. Aligns with the approved research topic Datascience and engineering. \nKSL will provide the Pyg container image from NVIDIA and update with required software."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation of PyG."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "NVIDIA is entities from non D5 countries "
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "NVIDIA container image: https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pyg?version=25.11-py3"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "PyG is distributed under MIT License and is permissive to allow:\n- Commercial use\n- Modification\n- Distribution\n- Private use\n- Sublicensing"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "The container image includes:\nCUDA\ncuBLAS\nNVIDIA cuDNN\nNVIDIA NCCL (optimized for NVLink)\nRAPIDS\nNVIDIA Data Loading Library (DALI)\nTensorRT\nTorch-TensorRT"
+        }
+      ]
+    },
+    {
+      "name": "torch-scatter",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "PyTorch Extension Library of Optimized Scatter Operations. Aligns with the approved research topic Datascience and engineering\n"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation of Pytorch-scatter."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Maintainer: Matthias Fey \nGitHub username: rusty1s\nAffiliation: TU Dortmund University (based on PyTorch Geometric paper), Germany\nEntity is from non-D5 country"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://github.com/rusty1s/pytorch_scatter\nProvided as a python wheel from Pypi.org: https://pypi.org/project/torch-scatter/\n\nOwner / Organization: rusty1s\nRepository: rusty1s/pytorch_scatter\nStars: 1716\nForks: 204\nOpen Issues: 15\nLast Commit Date: 2025-08-12T12:52:23Z\nActivity Health: Moderate\n\nIt isn't clear that the pip wheel is built for x86 or arm. Fall back is to build from source in a container image by KSL."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "torch-scatter is distributed under MIT License and is permissive to allow:\nCommercial use\nModification\nDistribution\nPrivate use\nSublicensing"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "PyTorch"
+        }
+      ]
+    },
+    {
+      "name": "torch-sparse",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "PyTorch Extension Library of Optimized Autograd Sparse Matrix Operations. Aligns with the approved research topic Datascience and engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": " No mention of sensitive terms in the documentation of Pytorch-sparse."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Matthias Fey GitHub username: rusty1s Affiliation: TU Dortmund University (based on PyTorch Geometric paper), Germany Entity is from non-D5 country"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "PyPI: https://pypi.org/project/torch-sparse/\nGitHub: https://github.com/rusty1s/pytorch_sparse\n\nOwner / Organization: rusty1s\nRepository: rusty1s/pytorch_sparse\nStars: 1093\nForks: 159\nOpen Issues: 20\nLast Commit Date: 2025-08-12"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "MIT License\n\n- Can be used for academic purposes?\tYes\n- Can be used for commercial use?\tYes\n- Modification allowed?\tYes\n- Redistribution allowed?\tYes\n- Attribution required?\tYes\n- Copyleft obligations?\tNo"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "CUDA, PyTorch, torch-scatter"
+        }
+      ]
+    },
+    {
+      "name": "torch-cluster",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "PyTorch Extension Library of Optimized Graph Cluster Algorithms. Aligns with the approved research topic Datascience and engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation of torch-cluster"
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Matthias Fey GitHub username: rusty1s Affiliation: TU Dortmund University , Germany Entity is from non-D5 country"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "PyPI: https://pypi.org/project/torch-cluster/\nGitHub: https://github.com/rusty1s/pytorch_cluster\n\nOwner / Organization: rusty1s\nRepository: rusty1s/pytorch_cluster\nDescription: PyTorch Extension Library of Optimized Graph Cluster Algorithms\nStars: 904\nForks: 161\nOpen Issues: 28\nLast Commit Date: 2025-08-12"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "MIT License\n\n- Can be used for academic purposes?\tYes\n- Can be used for commercial use?\tYes\n- Modification allowed?\tYes\n- Redistribution allowed?\tYes\n- Attribution required?\tYes\n- Copyleft obligations?\tNo"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "CUDA, PyTorch"
+        }
+      ]
+    }
+  ],
+  "source_code": [],
+  "datasets_user_files": [],
+  "models": [],
+  "observations": "",
+  "recommendation": ""
+}
