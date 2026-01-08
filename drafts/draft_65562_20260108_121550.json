@@ -1,0 +1,508 @@
+{
+  "metadata": {
+    "proposal_title": "Self-Supervised Foundational Model for Chemistry and Materials Science",
+    "principal_investigator": "Bernard Ghanem",
+    "proposal_date": "2025-12-04",
+    "reviewer_name": "Mohsin Ahmed Shaikh",
+    "reviewer_id": "174988",
+    "aimcr_date": "2026-01-04",
+    "project_id": "65562"
+  },
+  "third_party_software": [
+    {
+      "name": "Pytorch, Torchvision, Torchaudio",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Aligns with the proposal objectives. Aligns with the approved research topic Datascience and engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation of PyTorch."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Originally developed by Meta and now governed by Linux Foundation. "
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://github.com/pytorch/pytorch/edit/main/docs/source/index.md\nAs of Jan 4th, 2025\n96300 stars\n26400 forks\n12 Github projects\n17000 PRs\n97745 commits\nlast commit 10 hours ago \n\n\n\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "KSL will provide NGC container for the requested version of PyTorch. \nnvcr.io/nvidia/pytorch:25.12-py3\n\nNVIDIA Deep Learning Container License\nPermissions:\n- Install and Use\n- Deploy as a Service\n- Create Derived Containers\n- Open Source Development\nRestrictions:\n- No Reverse Engineering\n- No Standalone Distribution: may not distribute or sublicense the CONTAINER as a stand-alone product\n- No Circumventing Security"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "nvcr.io/nvidia/pytorch:25.12-py3 contains\n\nCUDA\ncuBLAS\nNVIDIA cuDNN\nNVIDIA NCCL (optimized for NVLink)\nNVIDIA Data Loading Library (DALI)\nTensorRT\nTorch-TensorRT"
+        }
+      ]
+    },
+    {
+      "name": "PyTorch Geometric",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "This is a library to program and train graph neural networks. The proposal mentions training GNNs as an objective. Aligns with the approved research topic Datascience and engineering. \nKSL will provide the Pyg container image from NVIDIA and update with required software."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation of PyG."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "NVIDIA is entities from non D5 countries "
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "NVIDIA container image: https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pyg?version=25.11-py3"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "PyG is distributed under MIT License and is permissive to allow:\n- Commercial use\n- Modification\n- Distribution\n- Private use\n- Sublicensing"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "The container image includes:\nCUDA\ncuBLAS\nNVIDIA cuDNN\nNVIDIA NCCL (optimized for NVLink)\nRAPIDS\nNVIDIA Data Loading Library (DALI)\nTensorRT\nTorch-TensorRT"
+        }
+      ]
+    },
+    {
+      "name": "torch-scatter",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "PyTorch Extension Library of Optimized Scatter Operations. Aligns with the approved research topic Datascience and engineering\n"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation of Pytorch-scatter."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Maintainer: Matthias Fey \nGitHub username: rusty1s\nAffiliation: TU Dortmund University (based on PyTorch Geometric paper), Germany\nEntity is from non-D5 country"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://github.com/rusty1s/pytorch_scatter\nProvided as a python wheel from Pypi.org: https://pypi.org/project/torch-scatter/\n\nOwner / Organization: rusty1s\nRepository: rusty1s/pytorch_scatter\nStars: 1716\nForks: 204\nOpen Issues: 15\nLast Commit Date: 2025-08-12T12:52:23Z\nActivity Health: Moderate\n\nIt isn't clear that the pip wheel is built for x86 or arm. Fall back is to build from source in a container image by KSL."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "torch-scatter is distributed under MIT License and is permissive to allow:\nCommercial use\nModification\nDistribution\nPrivate use\nSublicensing"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "PyTorch"
+        }
+      ]
+    },
+    {
+      "name": "torch-sparse",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "PyTorch Extension Library of Optimized Autograd Sparse Matrix Operations. Aligns with the approved research topic Datascience and engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": " No mention of sensitive terms in the documentation of Pytorch-sparse."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Matthias Fey GitHub username: rusty1s Affiliation: TU Dortmund University (based on PyTorch Geometric paper), Germany Entity is from non-D5 country"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "PyPI: https://pypi.org/project/torch-sparse/\nGitHub: https://github.com/rusty1s/pytorch_sparse\n\nOwner / Organization: rusty1s\nRepository: rusty1s/pytorch_sparse\nStars: 1093\nForks: 159\nOpen Issues: 20\nLast Commit Date: 2025-08-12"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "MIT License\n\n- Can be used for academic purposes?\tYes\n- Can be used for commercial use?\tYes\n- Modification allowed?\tYes\n- Redistribution allowed?\tYes\n- Attribution required?\tYes\n- Copyleft obligations?\tNo"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "CUDA, PyTorch, torch-scatter"
+        }
+      ]
+    },
+    {
+      "name": "torch-cluster",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "PyTorch Extension Library of Optimized Graph Cluster Algorithms. Aligns with the approved research topic Datascience and engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation of torch-cluster"
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Matthias Fey GitHub username: rusty1s Affiliation: TU Dortmund University , Germany Entity is from non-D5 country"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "PyPI: https://pypi.org/project/torch-cluster/\nGitHub: https://github.com/rusty1s/pytorch_cluster\n\nOwner / Organization: rusty1s\nRepository: rusty1s/pytorch_cluster\nDescription: PyTorch Extension Library of Optimized Graph Cluster Algorithms\nStars: 904\nForks: 161\nOpen Issues: 28\nLast Commit Date: 2025-08-12"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "MIT License\n\n- Can be used for academic purposes?\tYes\n- Can be used for commercial use?\tYes\n- Modification allowed?\tYes\n- Redistribution allowed?\tYes\n- Attribution required?\tYes\n- Copyleft obligations?\tNo"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "CUDA, PyTorch"
+        }
+      ]
+    },
+    {
+      "name": "PyTorch Lightning",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "A distributed training framework for PyTorch model training. Aligns with the approved research topic Datascience and engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation of pytorch lightning"
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "- Maintainers: \n- Luca Antiga (https://lantiga.github.io/)\n- Ethan Harris (https://www.linkedin.com/in/ethanwharris/)\n- Justus Schock  (https://www.linkedin.com/in/justus-schock/?locale=en_US)\n\nentity and maintainers are associated with non-D5 countries."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "\nPyTorch lightning governance:\n\nhttps://lightning.ai/docs/pytorch/latest/community/governance.html"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Apache-2.0\n- Can be used for academic purposes?\tYes\n- Can be used for commercial use?\tYes\n- Modification allowed?\tYes\n- Redistribution allowed?\tYes\n- Attribution required?\tYes\n- Copyleft obligations?\tNo"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "aiohappyeyeballs    2.6.1\naiohttp             3.13.3\naiosignal           1.4.0\nattrs               25.4.0\nbackports.zstd      1.3.0\nBrotli              1.2.0\ncertifi             2026.1.4\ncharset-normalizer  3.4.4\ncolorama            0.4.6\nfilelock            3.20.2\nfrozenlist          1.7.0\nfsspec              2025.12.0\ngmpy2               2.2.1\nh2                  4.3.0\nhpack               4.1.0\nhyperframe          6.1.0\nidna                3.11\nJinja2              3.1.6\nlightning           2.6.0\nlightning-utilities 0.15.2\nMarkupSafe          3.0.3\nmpmath              1.3.0\nmultidict           6.7.0\nnetworkx            3.6.1\nnumpy               2.4.0\noptree              0.18.0\npackaging           25.0\npip                 25.3\npropcache           0.3.1\npybind11            3.0.1\npybind11-global     3.0.1\nPySocks             1.7.1\npytorch-lightning   2.6.0\nPyYAML              6.0.3\nrequests            2.32.5\nsetuptools          80.9.0\nsympy               1.14.0\ntorch               2.9.1\ntorchmetrics        1.8.2\ntqdm                4.67.1\ntyping_extensions   4.15.0\nurllib3             2.6.2\nyarl                1.22.0\n"
+        }
+      ]
+    },
+    {
+      "name": "TorchMetrics",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Machine learning metrics for distributed, scalable PyTorch applications. Aligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation of torchmetrics"
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Owner organization is an entity from a non-D5 country. (US based)"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Owner / Organization: Lightning-AI\nRepository: Lightning-AI/torchmetrics\nDescription: Machine learning metrics for distributed, scalable PyTorch applications.\nStars: 2379\nForks: 468\nOpen Issues: 122\nLast Commit Date: 2025-12-17T23:16:59Z"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Apache-2.0\n- Can be used for academic purposes?\tYes\n- Can be used for commercial use?\tYes\n- Modification allowed?\tYes\n- Redistribution allowed?\tYes\n- Attribution required?\tYes\n- Copyleft obligations?\tNo"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "torchmetrics 1.3.2\nlightning-utilities 0.15.2\nnumpy 2.4.0\npackaging 25.0\ntorch 2.2.2\ntyping_extensions 4.15.0\nfilelock 3.20.2\nfsspec 2025.12.0\nJinja2 3.1.6\nMarkupSafe 3.0.3\nnetworkx 3.6.1\nsetuptools 80.9.0\nsympy 1.14.0\nmpmath 1.3.0"
+        }
+      ]
+    },
+    {
+      "name": "Numpy",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "The fundamental package for scientific computing with Python. Aligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Its a bonafide community with a governance model and multiple maintainers. https://numpy.org/about/\nThis is an opensource project with funding sources from entities from non-D5 countries.  \n"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "PyPI: https://pypi.org/project/numpy/\nhttps://github.com/numpy/numpy\n\nOwner / Organization: numpy\nRepository: numpy/numpy\nDescription: The fundamental package for scientific computing with Python.\nStars: 31038\nForks: 11858\nOpen Issues: 2392\nLast Commit Date: 2025-12-17T23:48:08Z"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "BSD 3-Clause License\nPermissions:\n- Use the software for any purpose, including commercial use\n- Modify the source code\n- Distribute the original or modified versions\n- Use it in proprietary/closed-source projects\n- Sublicense it as part of a larger work\n\nFit for use in proposed project."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "conda installation within container image:\n\nca-certificates 2026.1.4\nllvm-openmp 19.1.7\n_openmp_mutex 4.5\nopenssl 3.6.0\nlibgcc 15.2.0\nlibgfortran5 15.2.0\nlibgfortran 15.2.0\npython_abi 3.11\nlibopenblas 0.3.30\nlibblas 3.11.0\nlibcblas 3.11.0\nliblapack 3.11.0\nnumpy 1.26.4\n"
+        }
+      ]
+    },
+    {
+      "name": "SciPy",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": " Fundamental algorithms for scientific computing in Python. Aligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Its a bonafide community with a governance model and multiple maintainers. https://scipy.org/about/\nThis is an opensource project with funding sources from entities from non-D5 countries."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://pypi.org/project/scipy/\nhttps://github.com/scipy/scipy/\n\nOwner / Organization: scipy\nRepository: scipy/scipy\nDescription: SciPy library main repository\nStars: 14265\nForks: 5556\nOpen Issues: 1770\nLast Commit Date: 2025-12-18"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "BSD 3-Clause License \n\nPermissions:\n\nUse the software for any purpose, including commercial use\nModify the source code\nDistribute the original or modified versions\nUse it in proprietary/closed-source projects\nSublicense it as part of a larger work\nFit for use in proposed project."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "conda installation in a container image\n\nca-certificates 2026.1.4\nllvm-openmp 19.1.7\n_openmp_mutex 4.5\nopenssl 3.6.0\nlibgcc 15.2.0\nlibgfortran5 15.2.0\nlibgfortran 15.2.0\npython_abi 3.11\nlibopenblas 0.3.30\nlibblas 3.11.0\nlibcblas 3.11.0\nliblapack 3.11.0\nnumpy 1.26.4\nscipy 1.12.0"
+        }
+      ]
+    },
+    {
+      "name": "Pandas",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures similar to R data.frame objects, statistical functions, and much more. \nAligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Its a bonafide community with a governance model and multiple maintainers. \nhttps://pandas.pydata.org/about/governance.html\n\nThis is an opensource project with funding sources from entities from non-D5 countries.\n\nThis is an opensource project with funding sources from entities from non-D5 countries."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://pypi.org/project/pandas/\n\nhttps://github.com/pandas-dev/pandas/\n\nOwner / Organization: pandas-dev\nRepository: pandas-dev/pandas\nDescription: Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures similar to R data.frame objects, statistical functions, and much more\nStars: 47340\nForks: 19417\nOpen Issues: 3607\nLast Commit Date: 2025-12-18"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": ""
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "name": "Pandas",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures similar to R data.frame objects, statistical functions, and much more. \nAligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Its a bonafide community with a governance model and multiple maintainers. \nhttps://pandas.pydata.org/about/governance.html\n\nThis is an opensource project with funding sources from entities from non-D5 countries.\n\nThis is an opensource project with funding sources from entities from non-D5 countries."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://pypi.org/project/pandas/\n\nhttps://github.com/pandas-dev/pandas/\n\nOwner / Organization: pandas-dev\nRepository: pandas-dev/pandas\nDescription: Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures similar to R data.frame objects, statistical functions, and much more\nStars: 47340\nForks: 19417\nOpen Issues: 3607\nLast Commit Date: 2025-12-18"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "BSD 3-Clause License\nPermissions:\n\nUse the software for any purpose, including commercial use \n\nModify the source code \n\nDistribute the original or modified versions \n\nUse it in proprietary/closed-source projects \n\nSublicense it as part of a larger work \n\n\nFit for use in proposed project."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "ca-certificates 2026.1.4\nllvm-openmp 19.1.7\n_openmp_mutex 4.5\nopenssl 3.6.0\nlibgcc 15.2.0\nlibgfortran5 15.2.0\nlibgfortran 15.2.0\npython-tzdata 2025.3\npython_abi 3.11\npytz 2025.2\nsix 1.17.0\nlibopenblas 0.3.30\npython-dateutil 2.9.0.post0\nlibblas 3.11.0\nlibcblas 3.11.0\nliblapack 3.11.0\nnumpy 1.26.4\npandas 2.2.1\n"
+        }
+      ]
+    },
+    {
+      "name": "scikit-learn",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Machine learning in Python.  Aligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Its a bonafide community with a governance model and multiple maintainers.\n\nhttps://scikit-learn.org/stable/about.html#the-people-behind-scikit-learn\n\nThis is an opensource project with funding sources from entities from non-D5 countries."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://pypi.org/project/scikit-learn/\n\nhttps://github.com/scikit-learn/scikit-learn/\n\nOwner / Organization: scikit-learn\n\nRepository: scikit-learn/scikit-learn\n\nStars: 64318\n\nForks: 26507\n\nOpen Issues: 2127\n\nLast Commit Date: 2025-12-18"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "BSD 3-Clause License Permissions:\nUse the software for any purpose, including commercial use\n\nModify the source code\n\nDistribute the original or modified versions\n\nUse it in proprietary/closed-source projects\n\nSublicense it as part of a larger work\n\nFit for use in proposed project."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "pip installation:\n\nscikit-learn 1.4.1.post1\nnumpy 1.26.4\njoblib 1.5.3\nscipy 1.16.3\nthreadpoolctl 3.6.0"
+        }
+      ]
+    },
+    {
+      "name": "matplotlib",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Plotting tool in Python. Aligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Thomas A Caswell -- project lead -- https://www.linkedin.com/in/tcaswell/\n\nGovernance: https://matplotlib.org/governance/governance.html#main-governance-document\n\nThis is an opensource project with funding sources from entities from non-D5 countries."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://pypi.org/project/matplotlib/\n\nhttps://github.com/matplotlib/matplotlib\n\nOwner / Organization: matplotlib\nRepository: matplotlib/matplotlib\nDescription: matplotlib: plotting with Python\nStars: 22134\nForks: 8144\nOpen Issues: 1558\nLast Commit Date: 2025-12-17"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "BSD-compatible Python Software Foundation (PSF) based license.\nPermissions:\n\nCommercial use allowed\n\nModification of the source code permitted\n\nDistribution of original or modified versions allowed\n\nPrivate use permitted\n\nNo requirement to disclose source code\n\nRestrictions:\n\nMust include copyright notice and license text in distributions\n\nNo trademark use without permission\n\nSoftware is provided \"as is\" without warranty\n\nCannot hold authors liable for damages\n\nFit for this proposal's use"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Pip installation:\n\nnumpy 1.26.4\ncontourpy 1.3.3\ncycler 0.12.1\nfonttools 4.61.1\nkiwisolver 1.4.9\npackaging 25.0\npillow 12.1.0\npyparsing 3.3.1\npython-dateutil 2.9.0.post0\nsix 1.17.0\n"
+        }
+      ]
+    },
+    {
+      "name": "Numba",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "compiling Python code using LLVM. Aligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Maintained by Anaconda, Inc https://anaconda.org/numba/\nThe entity is from non-D5 country"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://pypi.org/project/numba/\n\nhttps://anaconda.org/numba/\n\nhttps://github.com/numba/numba\n\nOwner / Organization: anaconda\nRepository: numba/numba\nStars: 10800\nForks: 1200\nOpen Issues: 1600\nLast Commit Date: 2026-01-06"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "BSD 2-Clause \"Simplified\" License\n\nPermissions:\n\nUse the software for any purpose (commercial or personal)\n\nModify the source code\n\nDistribute original or modified versions in source form\n\nDistribute original or modified versions in binary/compiled form\n\nUse privately without disclosure\n\nRestrictions: \n\nMust retain the copyright notice in source code distributions\n\nMust retain the list of conditions in source code distributions\n\nMust retain the disclaimer in source code distributions\n\nMust reproduce the copyright notice in binary distributions\n\nMust reproduce the list of conditions in binary distributions\n\nMust reproduce the disclaimer in the documentation or materials accompanying binary distributions"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "conda installation in a container:\n\nlibcxx 21.1.8\nllvm-openmp 21.1.8\npython_abi 3.11\n_openmp_mutex 4.5\nlibllvm14 14.0.6\nlibgcc 15.2.0\nlibgfortran5 15.2.0\nllvmlite 0.42.0\nlibgfortran 15.2.0\nlibopenblas 0.3.30\nlibblas 3.11.0\nlibcblas 3.11.0\nliblapack 3.11.0\nnumpy 1.26.4\n"
+        }
+      ]
+    }
+  ],
+  "source_code": [],
+  "datasets_user_files": [],
+  "models": [],
+  "observations": "",
+  "recommendation": ""
+}
