@@ -355,7 +355,7 @@
         {
           "name": "Source / Provenance & Restricted Entities (LC 2.5)",
           "score": 1,
-          "notes": "Owner: Meta AI / Hugging Face\n\nNot from a D5 country."
+          "notes": "HuggingFace\n\nNo specific variant requested. The number of parameters ranges from 3B to 400B. \nOwner: Meta AI / Hugging Face\n\nNot from a D5 country."
         },
         {
           "name": "License / Permissions",
@@ -365,7 +365,7 @@
         {
           "name": "Training Data Documentation",
           "score": 1,
-          "notes": "Not specifically mentioned (mix of publicly available online data.)"
+          "notes": "Depending on the generation of Llama, 15 trillion tokens have been used to pre-train llama models. The datasets are composed of popular mix dataset"
         },
         {
           "name": "Customisation / Fine-tuning",
@@ -374,17 +374,23 @@
         },
         {
           "name": "FLOPS Calculation",
-          "score": 1,
-          "notes": "Not mentioned."
+          "score": 3,
+          "notes": "No specific model has been requested. Number of parameters range from 1-405 billion. 405B can come close to 10^26. "
         },
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "low risk. Skipping sample inspection."
+          "notes": "low risk of provenance. Skipping sample inspection."
         }
       ]
     }
   ],
-  "observations": "The GSEA Website lists multiple sets for human and mice, is it intended to use all of them.\n\nUsing LLama but didn't mention number of parameters.",
-  "recommendation": "Recommended for grand challenge. "
+  "observations": "The GSEA Website lists multiple sets for human and mice, is it intended to use all of them.\n\nUsing LLama but didn't mention number of parameters. The risk has been raised to high. Will need to consult with the applicant to choose and move correct model. ",
+  "recommendation": "Recommended for grand challenge. ",
+  "_submission_history": [
+    {
+      "timestamp": "2026-01-11T22:07:00.380770",
+      "action": "resubmission"
+    }
+  ]
 }
