@@ -263,17 +263,17 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "The only dataset listed."
+          "notes": "ERA5 (ECMWF Reanalysis v5) dataset is a popular source of global climate data. The proposal has indicated using it for training their models. Aligns with approved research topic Datascience and engineering."
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "I did not find any ERA5/CDS license language that explicitly prohibits use for \u201cmilitary\u201d, \u201cweapons\u201d, \u201cnuclear\u201d, or similar categories\u2014instead, the Copernicus licence grants access \u201cfor any purpose in so far as it is lawful\u201d (with attribution and no-endorsement requirements). "
+          "notes": "No mention of sensitive terms in the documentation."
         },
         {
           "name": "Restricted Entities Screening (LC 2.5)",
           "score": 1,
-          "notes": "\n    Copernicus (European Union)\n Non-D5"
+          "notes": "Copernicus (European Union)\n Non-D5"
         },
         {
           "name": "Prompts / Fine-tuning Scripts",
@@ -283,7 +283,7 @@
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "\n    Data sampling viewer available on https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=documentation\n    Launch example in JupyterHub available on https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=documentation (Log-in required)\n\nlow risk - inspection skipped\n"
+          "notes": "Data sampling viewer available on https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=documentation\n    Launch example in JupyterHub available on https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=documentation (Log-in required)\n\nlow risk - inspection skipped\n"
         },
         {
           "name": "Provenance",
@@ -299,6 +299,12 @@
     }
   ],
   "models": [],
-  "observations": "The proposal does not explicitly name any concrete, well-defined AI models (e.g., LLaMA-2 7B, ResNet-50, ViT-B/16); it only refers to generic model classes/architectures (e.g., MLP-based models for climate data compression) without citing specific pretrained models or fixed model variants.",
-  "recommendation": ""
+  "observations": "The custom MLP models have been indicated however, the model files have not been shared. The number of trainable parameters in the proposed models is typically 10-100 million. The maximum FLOPs expected from their proposal are of the order of 10^18 using 6xNxD after training. \n\n",
+  "recommendation": "Recommended for grand challenge. ",
+  "_submission_history": [
+    {
+      "timestamp": "2026-01-11T23:50:25.881647",
+      "action": "resubmission"
+    }
+  ]
 }
