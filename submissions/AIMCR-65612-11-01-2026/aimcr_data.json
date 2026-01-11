@@ -1,0 +1,390 @@
+{
+  "metadata": {
+    "proposal_title": "Yotta Infinite for Life Sciences",
+    "principal_investigator": "Imed Gallouzi ",
+    "proposal_date": "2025-10-23",
+    "reviewer_name": "Mohsin Ahmed Shaikh",
+    "reviewer_id": "174988",
+    "aimcr_date": "2026-01-11",
+    "project_id": "65612"
+  },
+  "third_party_software": [
+    {
+      "name": "tqdm",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "This is a library to program and train graph neural networks. Aligns with the approved research topic Datascience and engineering. KSL"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Owner / Organization: N/A"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://github.com/tqdm/tqdm\nStars: 30833\nForks: 1419\nOpen Issues: 582\nLast Commit Date: 2024-11-12T13:35:33Z"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "MPL-2.0 AND MIT\n\nCan be used for academic purposes?\tYes\nCan be used for commercial use?\tYes\nModification allowed?\tYes\nRedistribution allowed?\tYes\nAttribution required?\tYes"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "N/A"
+        }
+      ]
+    },
+    {
+      "name": "torch",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Aligns with the proposal objectives. Aligns with the approved research topic Datascience and engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation of Torch."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Originally developed by Meta and now governed by Linux Foundation.\nFrom non D5 country."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source Channel\nPyPI: https://pypi.org/project/torch/\nRepository: pytorch/pytorch\nDescription: Tensors and Dynamic neural networks in Python with strong GPU acceleration\nStars: 96379\nForks: 26428\nOpen Issues: 17907\nLast Commit Date: 2026-01-06T12:01:39Z"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "BSD-3-Clause\nPermissibility Summary\nQuestion\tAnswer\nCan be used for academic purposes?\tYes\nCan be used for commercial use?\tYes\nModification allowed?\tYes\nRedistribution allowed?\tYes\nAttribution required?\tYes\nCopyleft obligations?\tNo"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "nvidia-cublas-cu12 12.8.4.1\nnvidia-cuda-cupti-cu12 12.8.90\nnvidia-cuda-nvrtc-cu12 12.8.93\nnvidia-cuda-runtime-cu12 12.8.90\nnvidia-cudnn-cu12 9.10.2.21\nnvidia-cufft-cu12 11.3.3.83\nnvidia-cufile-cu12 1.13.1.3\nnvidia-curand-cu12 10.3.9.90\nnvidia-cusolver-cu12 11.7.3.90\nnvidia-cusparse-cu12 12.5.8.93\nnvidia-cusparselt-cu12 0.7.1\nnvidia-nccl-cu12 2.27.5\nnvidia-nvjitlink-cu12 12.8.93\nnvidia-nvshmem-cu12 3.3.20\nnvidia-nvtx-cu12 12.8.90\ntriton 3.5.1\nfsspec 2026.1.0\nnetworkx 3.4.2\nsympy 1.14.0\nmpmath 1.3.0\ntyping_extensions 4.15.0\nfilelock 3.20.3\nJinja2 3.1.6\nMarkupSafe 3.0.3"
+        }
+      ]
+    },
+    {
+      "name": "transformers",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Aligns with the proposal objectives. Aligns with the approved research topic Datascience and engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation"
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Organization: huggingface\nFrom a non D5 country."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "PyPI: https://pypi.org/project/transformers/\n\nRepository: huggingface/transformers\nDescription: \ud83e\udd17 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.\nStars: 154657\nForks: 31639\nOpen Issues: 2161\nLast Commit Date: 2026-01-06T12:51:18Z"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Apache 2.0 License\n\nCan be used for academic purposes?\tYes\nCan be used for commercial use?\tYes\nModification allowed?\tYes\nRedistribution allowed?\tYes\nAttribution required?\tYes\nCopyleft obligations?\tNo"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "huggingface-hub 0.36.0\nhf-xet 1.2.0\ntokenizers 0.22.2\nfsspec 2026.1.0\nnumpy 2.2.6\npackaging 25.0\nPyYAML 6.0.3\nregex 2025.11.3\nsafetensors 0.7.0\ntqdm 4.67.1\ntyping_extensions 4.15.0\nfilelock 3.20.3\nrequests 2.32.5\ncharset-normalizer 3.4.4\nidna 3.11\nurllib3 2.6.3\ncertifi 2026.1.4"
+        }
+      ]
+    },
+    {
+      "name": "wandb",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Aligns with the proposal objectives. Aligns with the approved research topic Datascience and engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation"
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Its a bonafide community with a governance model and multiple maintainers. https://wandb.ai/site/company/about-us/ This is an opensource project with funding sources from entities from non-D5 countries."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://github.com/wandb/wandb\n\nStars: 10702\nForks: 805\nOpen Issues: 804\nLast Commit Date: 2026-01-06T01:06:15Z"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "MIT License (MIT License)\n\nCan be used for academic purposes?\tYes\nCan be used for commercial use?\tYes\nModification allowed?\tYes\nRedistribution allowed?\tYes\nAttribution required?\tYes\nCopyleft obligations?\tNo"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "protobuf 6.33.3\npydantic 2.12.5\n\npydantic_core 2.41.5\n\nrequests 2.32.5\n\ncharset-normalizer 3.4.4\n\nidna 3.11\n\ntyping_extensions 4.15.0\n\nurllib3 2.6.3\n\nannotated-types 0.7.0\n\ncertifi 2026.1.4\n\nclick 8.3.1\n\nGitPython 3.1.46\n\ngitdb 4.0.12\n\nsmmap 5.0.2\n\nsentry-sdk 2.49.0\n\ntyping-inspection 0.4.2\n\npackaging 25.0\n\nplatformdirs 4.5.1\n\nPyYAML 6.0.3"
+        }
+      ]
+    },
+    {
+      "name": "peft",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Aligns with the proposal objectives. Aligns with the approved research topic Datascience and engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation"
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Benjamin Bossan https://www.linkedin.com/in/benjamin-bossan-3114a684\nmaintiners from non-D5 countries."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "PyPI: https://pypi.org/project/peft/0.7.0/\nRepository: huggingface/peft\nDescription: \ud83e\udd17 PEFT: State-of-the-art Parameter-Efficient Fine-Tuning.\nStars: 20403\nForks: 2148\nOpen Issues: 56\nLast Commit Date: 2025-12-18T10:52:52Z"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Apache Software License (Apache)\n\nCan be used for academic purposes?\tYes\nCan be used for commercial use?\tYes\nModification allowed?\tYes\nRedistribution allowed?\tYes\nAttribution required?\tYes\nCopyleft obligations?\tNo"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "accelerate 1.12.0\n\nhf-xet 1.2.0\n\nfsspec 2026.1.0\n\nnumpy 2.2.6\n\npackaging 25.0\n\nPyYAML 6.0.3\n\nsafetensors 0.7.0\n\ntorch 2.9.1\n\nnvidia-cublas-cu12 12.8.4.1\n\nnvidia-cuda-cupti-cu12 12.8.90\n\nnvidia-cuda-nvrtc-cu12 12.8.93\n\nnvidia-cuda-runtime-cu12 12.8.90\n\nnvidia-cudnn-cu12 9.10.2.21\n\nnvidia-cufft-cu12 11.3.3.83\n\nnvidia-cufile-cu12 1.13.1.3\n\nnvidia-curand-cu12 10.3.9.90\n\nnvidia-cusolver-cu12 11.7.3.90\n\nnvidia-cusparse-cu12 12.5.8.93\n\nnvidia-cusparselt-cu12 0.7.1\n\nnvidia-nccl-cu12 2.27.5\n\nnvidia-nvjitlink-cu12 12.8.93\n\nnvidia-nvshmem-cu12 3.3.20\n\nnvidia-nvtx-cu12 12.8.90\n\ntriton 3.5.1\n\nnetworkx 3.4.2\n\nsympy 1.14.0\n\nmpmath 1.3.0\n\ntqdm 4.67.1\n\ntyping_extensions 4.15.0\n\nidna 3.11\n\ncertifi 2026.1.4\n\nfilelock 3.20.3\n\nJinja2 3.1.6\n\nMarkupSafe 3.0.3\n\npsutil 7.2.1\n\ntransformers 4.57.3\n\nhuggingface-hub 0.36.0\n\ntokenizers 0.22.2\n\nregex 2025.11.3\n\nrequests 2.32.5\n\ncharset-normalizer 3.4.4\n\nurllib3 2.6.3"
+        }
+      ]
+    },
+    {
+      "name": "neo4j",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Aligns with the proposal objectives. Aligns with the approved research topic Datascience and engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation"
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Neo4j, Inc. (Sudhir Hasbe - https://www.linkedin.com/in/shasbe/)\nmaintiners from non-D5 countries."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "PyPI: https://pypi.org/project/neo4j/\n\nRepository: neo4j/neo4j-python-driver\nDescription: Neo4j Bolt driver for Python\nStars: 1015\nForks: 204\nOpen Issues: 2\nLast Commit Date: 2025-12-15T13:09:46Z"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Neo4j\n\nCan be used for academic purposes?\tUnknown\nCan be used for commercial use?\tUnknown\nModification allowed?\tUnknown\nRedistribution allowed?\tUnknown\nAttribution required?\tUnknown\nCopyleft obligations?\tUnknown"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "pytz 2025.2"
+        }
+      ]
+    },
+    {
+      "name": "trl",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Aligns with the proposal objectives. Aligns with the approved research topic Datascience and engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation"
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Kashif Rasul - https://de.linkedin.com/in/kashif-rasul\nmaintiners from non-D5 countries."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "PyPI: https://pypi.org/project/trl/\n\nRepository: huggingface/trl\nDescription: Train transformer language models with reinforcement learning.\nStars: 16884\nForks: 2407\nOpen Issues: 631\nLast Commit Date: 2026-01-06T07:45:38Z"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Apache-2.0\n\nCan be used for academic purposes?\tYes\nCan be used for commercial use?\tYes\nModification allowed?\tYes\nRedistribution allowed?\tYes\nAttribution required?\tYes\nCopyleft obligations?\tNo"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "accelerate 1.12.0\n\ndatasets 4.4.2\n\ndill 0.4.0\n\nfsspec 2025.10.0\n\nhttpx 0.28.1\n\nhttpcore 1.0.9\n\nhf-xet 1.2.0\n\nmultiprocess 0.70.18\n\naiohttp 3.13.3\n\nasync-timeout 5.0.1\n\nmultidict 6.7.0\n\nyarl 1.22.0\n\naiohappyeyeballs 2.6.1\n\naiosignal 1.4.0\n\nattrs 25.4.0\n\nfrozenlist 1.8.0\n\nh11 0.16.0\n\nidna 3.11\n\nnumpy 2.2.6\n\npackaging 25.0\n\npropcache 0.4.1\n\npyarrow 22.0.0\n\nPyYAML 6.0.3\n\nrequests 2.32.5\n\ncharset-normalizer 3.4.4\n\nurllib3 2.6.3\n\ncertifi 2026.1.4\n\nsafetensors 0.7.0\n\ntorch 2.9.1\n\nnvidia-cublas-cu12 12.8.4.1\n\nnvidia-cuda-cupti-cu12 12.8.90\n\nnvidia-cuda-nvrtc-cu12 12.8.93\n\nnvidia-cuda-runtime-cu12 12.8.90\n\nnvidia-cudnn-cu12 9.10.2.21\n\nnvidia-cufft-cu12 11.3.3.83\n\nnvidia-cufile-cu12 1.13.1.3\n\nnvidia-curand-cu12 10.3.9.90\n\nnvidia-cusolver-cu12 11.7.3.90\n\nnvidia-cusparse-cu12 12.5.8.93\n\nnvidia-cusparselt-cu12 0.7.1\n\nnvidia-nccl-cu12 2.27.5\n\nnvidia-nvjitlink-cu12 12.8.93\n\nnvidia-nvshmem-cu12 3.3.20\n\nnvidia-nvtx-cu12 12.8.90\n\ntriton 3.5.1\n\nnetworkx 3.4.2\n\nsympy 1.14.0\n\nmpmath 1.3.0\n\ntqdm 4.67.1\n\ntransformers 4.57.3\n\nhuggingface-hub 0.36.0\n\ntokenizers 0.22.2\n\nregex 2025.11.3\n\ntyping_extensions 4.15.0\n\nanyio 4.12.1\n\nexceptiongroup 1.3.1\n\nfilelock 3.20.3\n\nJinja2 3.1.6\n\nMarkupSafe 3.0.3\n\npandas 2.3.3\n\npython-dateutil 2.9.0.post0\n\npytz 2025.2\n\nsix 1.17.0\n\ntzdata 2025.3\n\npsutil 7.2.1\n\nxxhash 3.6.0"
+        }
+      ]
+    }
+  ],
+  "source_code": [],
+  "datasets_user_files": [
+    {
+      "name": "GSEA",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Gene Set Enrichment Analysis (GSEA), Aligns with the approved research topic Biological research."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Originating Organization: UC San Diego and BROAD institute(United States)\nNot from a D5 country."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No finetuning scripts provided."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Login gated, inspection skipped."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Owner / Curator: UC San Diego and BROAD institute\n\nPrimary Distribution Platform: MSigDB\n\nRepository: https://github.com/GSEA-MSigDB/\n\nAccess Method: download via https://www.gsea-msigdb.org/gsea/downloads.jsp#msigdb"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: BSD-style\n\nUse GSEA software and MSigDB gene sets for academic and non-profit research\n\nCite MSigDB and the Broad Institute in publications and presentations\n\nShare results and figures, not the gene set files themselves\n\nDon't Use MSigDB or GSEA for commercial purposes without explicit permission\n\nDon't redistribute or mirror MSigDB gene set files (e.g., .gmt) publicly\n\nDon't undle MSigDB gene sets into software, databases, or services for redistribution\n\nDon't remove or alter license notices or attribution"
+        }
+      ]
+    },
+    {
+      "name": "GeneLab Omics",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "The OMat24 dataset contains a mix of single point calculations of non-equilibrium structures and structural relaxations.\nAligns with the approved research topic Datascience and engineering.\n"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "NASA (via the GeneLab program)\nNot from a D5 counttry"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No finetuning scripts available."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "OMat24 is a large materials science dataset focused on inorganic atomic structures and their quantum-mechanical properties\n\nlow risk. Skipping sample inspection.\n"
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Owner / Curator: NASA (via the GeneLab program)\nPrimary Distribution Platform: AWS\nRepository: https://huggingface.co/datasets/facebook/OMAT24\nAccess Method: AWS\nProvenance: Curated and released by NASA as a standalone dataset (1225 commits and 1.9k stars on GitHub).\nMaintenance Status: Actively maintained (~20 commits; last update 2025-12)"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "There are no restrictions on the use of this data.\n"
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "name": "LLaMA",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "LLaMA is a general Large Language Model, Aligns with approved research topics Material Sciences and Datascience & engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No notes of prohibited use in documentation."
+        },
+        {
+          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "score": 1,
+          "notes": "Owner: Meta AI / Hugging Face\n\nNot from a D5 country."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "LLAMA 3.2 COMMUNITY LICENSE\n\nPermissions:\n\nUse the LLaMA 3.2 models, code, weights, and documentation (\u201cLlama Materials\u201d).\n\nCopy and reproduce the Llama Materials.\n\nModify LLaMA 3.2 and create derivative works (including fine-tuning).\n\nDistribute LLaMA 3.2 or derivative works, including as part of products or services.\n\nUse LLaMA 3.2 outputs and results for downstream applications.\n\nConditions for Distribution and Use:\n\nInclude a copy of the LLaMA 3.2 Community License Agreement with any redistributed Llama Materials.\n\nRetain the required copyright notice in a distributed \u201cNotice\u201d file.\n\nProminently display \u201cBuilt with Llama\u201d when distributing Llama Materials or products containing them.\n\nIf you distribute a new AI model trained or fine-tuned using LLaMA 3.2, the model name must start with \u201cLlama\u201d.\n\nClearly mark modified files as modified.\n\nComply with all applicable laws and regulations, including trade compliance.\n\nAdhere to the LLaMA Acceptable Use Policy, which is incorporated by reference.\n\nCommercial Restrictions:\n\nIf you (or your affiliates) exceed 700 million monthly active users at the time of release, you must obtain a separate commercial license from Meta before exercising any rights under this agreement.\n\nBelow that threshold, commercial use is allowed under the standard license.\n\nRestrictions:\n\nNo trademark rights are granted except limited use of the \u201cLlama\u201d name as explicitly required by the license.\n\nYou may not imply Meta endorsement.\n\nUse is subject to termination if you violate the license or Acceptable Use Policy.\n\nIf you sue Meta alleging IP infringement related to LLaMA 3.2, your license automatically terminates.\n\nIntellectual Property:\n\nMeta retains ownership of the original LLaMA 3.2 materials.\n\nYou own your derivative works and modifications, subject to Meta\u2019s underlying rights.\n\nYou must indemnify Meta against third-party claims arising from your use or distribution.\n\nWarranty & Liability:\n\nLLaMA 3.2 and its outputs are provided \u201cas is\u201d, with no warranties.\n\nMeta disclaims all liability for indirect, incidental, or consequential damages.\n\nTermination:\n\nMeta may terminate the license upon breach.\n\nUpon termination, you must stop using and delete all LLaMA Materials.\n\nGoverning Law:\n\nGoverned by the laws of California, with exclusive jurisdiction in California courts."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "Not specifically mentioned (mix of publicly available online data.)"
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "No fine tuning scripts provided"
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Not mentioned."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "low risk. Skipping sample inspection."
+        }
+      ]
+    }
+  ],
+  "observations": "The GSEA Website lists multiple sets for human and mice, is it intended to use all of them.\n\nUsing LLama but didn't mention number of parameters.",
+  "recommendation": "Recommended for grand challenge. "
+}

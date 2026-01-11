@@ -1,0 +1,865 @@
+{
+  "metadata": {
+    "proposal_title": "Unified Geometry and Semantic Foundation",
+    "principal_investigator": "Ivan Viola",
+    "proposal_date": "2026-01-11",
+    "reviewer_name": "Mohsin Ahmed Shaikh",
+    "reviewer_id": "174988",
+    "aimcr_date": "2026-01-11",
+    "project_id": "65614"
+  },
+  "third_party_software": [
+    {
+      "name": "PyTorch 2.8.0",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "A deep learning framework. Aligned with approved topic, datascience& engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "no prohibited use indicated."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Originally maintained by Meta."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "pytorch/pytorch:2.8.0-cuda12.6-cudnn9-devel\nlast pushed: 5 months by pytorchbot"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "4.1 License Type\nSPDX ID: N/A\nLicense name: BSD\n4.2 Permissibility Summary\nQuestion\tAnswer\nCan be used for academic purposes?\tYes\nCan be used for commercial use?\tYes\nModification allowed?\tYes\nRedistribution allowed?\tYes\nAttribution required?\tYes\nCopyleft obligations?\tNo"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "torch 2.8.0\nnvidia-cublas-cu12 12.8.4.1\nnvidia-cuda-cupti-cu12 12.8.90\nnvidia-cuda-nvrtc-cu12 12.8.93\nnvidia-cuda-runtime-cu12 12.8.90\nnvidia-cudnn-cu12 9.10.2.21\nnvidia-cufft-cu12 11.3.3.83\nnvidia-cufile-cu12 1.13.1.3\nnvidia-curand-cu12 10.3.9.90\nnvidia-cusolver-cu12 11.7.3.90\nnvidia-cusparse-cu12 12.5.8.93\nnvidia-cusparselt-cu12 0.7.1\nnvidia-nccl-cu12 2.27.3\nnvidia-nvjitlink-cu12 12.8.93\nnvidia-nvtx-cu12 12.8.90\ntriton 3.4.0\nsetuptools 80.9.0\nsympy 1.14.0\nmpmath 1.3.0\ntyping_extensions 4.15.0\nfilelock 3.20.3\nfsspec 2026.1.0\nJinja2 3.1.6\nMarkupSafe 3.0.3\nnetworkx 3.6.1\n"
+        }
+      ]
+    }
+  ],
+  "source_code": [],
+  "datasets_user_files": [
+    {
+      "name": "Aria Synthetic Environments",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "No proposal justification, or description of intended usage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "Under LC 2.7, a review of the Aria Synthetic Environments dataset documentation indicates no stated or implied prohibited or restricted functionality, and the materials describe use for general computer vision, robotics, and AR/VR research without reference to military, weapons, defense, surveillance, or intelligence applications."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Originating Organization: Meta Platforms, Inc. (United States)\n"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "Not available"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "100,000 multi-room indoor scenes\nSimulated with realistic device trajectories\nAcross ~2-minute trajectories\nPopulated with ~8000 3D objects\nWith semi-dense map representations\nSimulated sensor data per sequence:\n1 x outward-facing RGB camera stream\nSimulated Aria camera & lens characteristics\nGround Truth Annotations\n6DoF camera trajectory\n3D floor plan\n2D instance segmentation\n2D range map\nVisualization avaialable via:\njupyter notebook projects/AriaSyntheticEnvironment/tutorial/ase_tutorial_notebook.ipynb"
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Owner / Curator: Meta Project Aria team\nPrimary Distribution Platform: https://www.projectaria.com/datasets/ase/#download-dataset\nRepository: https://facebookresearch.github.io/projectaria_tools/\nAccess Method: download via download tool (also available on HuggingFace)\nProvenance: Curated and released by Meta as a standalone dataset"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Use the ASE dataset for research and non-commercial purposes\nDownload, analyze, and publish results derived from the data\nCite Project Aria / Meta as specified in the license\nUse the data to develop, evaluate, and benchmark academic models and methods\nDon't attempt to identify, track, or re-identify individuals in the data\nDon't use the data in ways that violate privacy, ethics, or applicable laws\nDon't remove or alter license terms, attribution, or usage notices"
+        }
+      ]
+    },
+    {
+      "name": "Blended MVS",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "No proposal justification, or description of intended usage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "Assessment under LC 2.7: A review of the BlendedMVS dataset documentation shows that it is a large-scale multi-view stereo dataset for training and evaluating 3D reconstruction and vision models, with no indication of prohibited or restricted use in military, defense, weapons, surveillance, or intelligence applications; no prohibited functionality is indicated."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 4,
+          "notes": "Originating Organization: Yao Yao is Associate Professor at NJU (Hong Kong SAR) - D5 Country."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "Not available"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "BlendedMVS is a synthetic multi-view stereo (MVS) dataset used for training and evaluating 3D reconstruction and depth estimation models.\n\nWhat it contains\n\nMulti-view RGB images of the same scene captured from different virtual camera viewpoints\n\nGround-truth depth maps for each image\n\nCamera parameters (intrinsics and extrinsics)\n\nScene geometry derived from rendered 3D models"
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Owner / Curator: Yao Yao\n\nPrimary Distribution Platform: GitHub\n\nRepository: https://github.com/YoYo000/BlendedMVS\n\nAccess Method: Download link\n\nProvenance: The dataset is generated by blending rendered 3D scenes with real image statistics, aiming to bridge the domain gap between purely synthetic datasets and real-world imagery. (645 stars on GitHub, 3 releases latest is on May 11, 2025)\n\nMaintenance Status: (15 commits, last commit on Sep 8, 2025)"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: CC-BY-4.0\nFree to use, modify, and redistribute\nCommercial use permitted\nAttribution to the dataset authors is required"
+        }
+      ]
+    },
+    {
+      "name": "DL3DV-10K",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "No proposal justification, or description of intended usage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "Under LC 2.7, a review of the DL3DV-10K dataset documentation indicates no stated or implied prohibited or restricted uses/functionality (military/defense, weapons, surveillance, or intelligence), and it describes the dataset as a large-scale scene resource for deep learning\u2013based 3D vision / novel view synthesis; no prohibited functionality is indicated."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 3,
+          "notes": "Originating Organization: Not explicitly restricted; developed by an international academic research team\nChinese contributors - D5 country\nhttps://www.dropbox.com/scl/fi/6k991akjoye1wt474j8q7/CV_Yichen.pdf?rlkey=5gevgzdoeso231z7thuhsql91&e=1&dl=0\nhttps://drive.google.com/file/d/1sV_BxA5qk4CfRIh1t-t3riCrXKz8eAW8/view"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "Not available"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Preview available at https://htmlpreview.github.io/?https://github.com/DL3DV-10K/Dataset/blob/main/visualize/index.html\nPictures from public places."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Owner / Curator: DL3DV-10K research team\nPrimary Distribution Platform: GitHub\nRepository: https://github.com/DL3DV-10K/Dataset\nAccess Method: Download script\nProvenance: Curated collection of real-world scene data captured and processed by the authors for 3D vision research (551 stars, 118 commits)\nMaintenance Status: last commit on Sep 16, 2025"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: CC BY-NC\nUse for research/academic purposes only.\nCite the official DL3DV-10K paper.\nKeep all license and attribution notices.\nDon\u2019t redistribute or relicense the dataset.\nDon\u2019t remove attribution or claim ownership."
+        }
+      ]
+    },
+    {
+      "name": "Dynamic Replica",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "No proposal justification, or description of intended usage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "Under LC 2.7, review of the Dynamic Replica dataset documentation (DynamicStereo project) indicates it is a synthetic benchmark for dynamic stereo depth/disparity estimation in scanned environments (humans/animals in motion) and does not describe or imply any prohibited or restricted uses/functionality related to military/defense, weapons, surveillance, or intelligence."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Originating Organization: Meta Reality Labs (USA)\n"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "Not available"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Video Preview available on website\nhttps://dynamic-stereo.github.io/\n synthetic videos of people and animals in scanned environments, which provides complementary training and evaluation data for dynamic stereo closer to real applications than existing datasets"
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Owner / Curator: Meta Facebook Research\nPrimary Distribution Platform: GitHub and Website\nRepository: https://github.com/facebookresearch/dynamic_stereo/tree/main (228 star, 7 commits)\nAccess Method: Download script\nProvenance:\nData collected and curated internally by Meta Reality Labs as part of research on dynamic scene reconstruction and stereo vision.\nScenes are captured in controlled and real-world environments, designed to include dynamic elements (moving people, objects, non-rigid motion) that challenge classical and learning-based stereo methods.\nDataset creation emphasizes high-quality ground truth, synchronized multi-view capture, and consistency with Meta\u2019s internal simulation and reconstruction pipelines.\nMaintenance Status: last commit 3 years ago"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Use the Dataset only for research, educational, or artistic purposes.\nEnsure all use is non-commercial / not-for-profit in nature.\nAccept that California state law governs disputes related to the Dataset.\nDo not share the Dataset with others unless they explicitly agree to the license terms."
+        }
+      ]
+    },
+    {
+      "name": "ETH3D",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "No proposal justification, or description of intended usage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "Under LC 2.7, a review of the ETH3D dataset documentation indicates it is intended for stereo matching, multi-view stereo, and SLAM / 3D reconstruction benchmarking, and it contains no stated or implied prohibited or restricted uses/functionality related to military/defense, weapons, surveillance, or intelligence."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Originating Organization: ETH Zurich originated in Switzerland\nNon-D5"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "Not available"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "preview available on website https://www.eth3d.net/datasets\nImages of public places - courtyards, playgrounds, etc."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Owner / Curator: ETH Zurich\nPrimary Distribution Platform: through their website\nRepository: Benchmarks repository (743 stars, 94 commits, last commit on May 11, 2022)\nAccess Method: through their website\nProvenance: Ground-truth 3D geometry acquired with precise laser scanners\nMaintenance Status: last commit on May 11, 2022"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: CC BY-NC\nUse for research/academic purposes only.\nCite the official paper.\nKeep all license and attribution notices.\nDon\u2019t redistribute or relicense the dataset.\nDon\u2019t remove attribution or claim ownership."
+        }
+      ]
+    },
+    {
+      "name": "Hyberism",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "No proposal justification, or description of intended usage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "Under LC 2.7, review of the Hypersim dataset documentation (Apple\u2019s ml-hypersim synthetic dataset) shows it is a photorealistic indoor scene understanding dataset intended for computer vision and 3D scene understanding research with richly annotated images and geometry, and it contains no stated or implied prohibited or restricted functionality related to military/defense, weapons, surveillance, or intelligence. "
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Originating Organization: Apple USA.\nNon-D5"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "Not available"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "preview available on website https://www.eth3d.net/datasets\nImages of public places - courtyards, playgrounds, etc."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Owner / Curator: Apple\n\nPrimary Distribution Platform: GitHub\n\nRepository:\n\nGitHub: https://github.com/apple/ml-hypersim/tree/main\nNumber of stars: 1.9k\nNumber of commits: 82\nNumber of releases: None\nAccess Method: Via download script\n\nMaintenance Status: Last commit: 1 Oct, 2025"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apple Software License\nUse, reproduce, modify, and redistribute the software in source and/or binary form.\nRedistribute modified versions under your own terms, subject to Apple\u2019s license conditions.\nRetain the copyright notice, license text, and disclaimers when redistributing the software unmodified and in full.\nReview and comply with third-party licenses listed in ACKNOWLEDGEMENTS.txt.\nDo not use Apple\u2019s name, trademarks, or logos to endorse or promote derived products without written permission.\nDo not assume any rights beyond those explicitly granted (e.g., no patent license is granted).\nDo not use, install, modify, or redistribute the software if you do not agree to the terms."
+        }
+      ]
+    },
+    {
+      "name": "Mapillary Planet Scale Depth & Reconstruction",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "No proposal justification, or description of intended usage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "Under LC 2.7, review of the Mapillary Planet Scale Depth & Reconstruction dataset documentation indicates it is intended for computer vision depth estimation and 3D reconstruction research (street-level imagery\u2013derived depth) and does not state or imply any prohibited or restricted uses/functionality related to military/defense, weapons, surveillance, or intelligence."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Originating Organization: Meta USA\nNon-D5"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "Not available"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No preview available.\nIt currently contains approximately 750,000 images, extracted from over 50,000 individual 3D reconstructions captured by a broad range of camera types with different focal lengths and distortion characteristics, in a broad set of environments and weather conditions, seasons, times of day, viewpoint and with real noise and motion patterns. "
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Owner / Curator: Originally founded as Mapillary AB; acquired by Meta in 2020\n\nPrimary Distribution Platform: https://www.mapillary.com/dataset/depth\n\nRepository: https://github.com/mapillary\n\nAccess Method: Via download link on website\n\nProvenance:\n\nCrowdsourced, street-level imagery contributed by a global community of users (dashcams, action cameras, smartphones).\nImages are geotagged and timestamped, then processed by Mapillary to extract map-relevant features (roads, signs, lanes, sidewalks).\nData reflects real-world public spaces, captured under diverse geographic, lighting, and weather conditions.\nHuman faces and license plates are automatically blurred for privacy prior to distribution."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: CC BY-NC-SA 4.0\n\nShare \u2014 copy and redistribute the material in any medium or format\nAdapt \u2014 remix, transform, and build upon the material\nYou must give appropriate credit\nYou may not use the material for commercial purposes.\nIf you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.\nMapillary Terms of Use\n\nUse Mapillary images and data for mapping, research, and visualization purposes.\nAccess and use data via official Mapillary tools, APIs, and datasets.\nUse derived datasets (e.g., annotations, features) according to their specific licenses.\nRely on automatic privacy protections (faces and license plates are blurred).\nAttribute Mapillary when required by the dataset or usage context.\nDo not use Mapillary content in ways that violate privacy, attempt de-anonymization, or remove blurring.\nDo not use Mapillary data for illegal, harmful, or abusive purposes.\n"
+        }
+      ]
+    },
+    {
+      "name": "MegaDepth",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "No proposal justification, or description of intended usage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "Under LC 2.7, a review of the MegaDepth dataset documentation indicates it is provided as a large-scale photo-derived depth dataset for multi-view and depth estimation research and contains no stated or implied prohibited or restricted uses/functionality related to military/defense, weapons, surveillance, or intelligence."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Originating Organization: Cornell University in New York City, USA\nNon-D5"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "Not available"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Preview available at https://www.cs.cornell.edu/projects/megadepth/\n large Internet image collections, combined with 3D reconstruction and semantic labeling methods, to generate large amounts of training data for single-view depth prediction."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Owner / Curator: Zhengqi Li and Noah Snavely from Cornell University\nPrimary Distribution Platform: https://www.cs.cornell.edu/projects/megadepth/\nRepository: https://github.com/zhengqili/MegaDepth/tree/master (753 stars)\nAccess Method:\nProvenance: MegaDepth is a derived dataset, not a directly captured one.\nImages are sourced from public Internet photo collections, primarily:\nFlickr landmark photo collections\nLarge-scale Structure-from-Motion (SfM) reconstructions\nMaintenance Status: 24 commits last one made on 11 Nov, 2018"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "\nLicense: MIT License\nUse the software for any purpose, including commercial use.\nCopy and distribute the software.\nModify, merge, and create derivative works.\nPublish, sublicense, and sell copies of the software.\nPermit others to do any of the above.\nInclude the copyright notice and license text in all copies or substantial portions of the software."
+        }
+      ]
+    },
+    {
+      "name": "MVS-Synth",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "No proposal justification, or description of intended usage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "Under LC 2.7, a review of the MVS-Synth dataset documentation (as presented on its Hugging Face dataset page) indicates it is intended for multi-view stereo and depth estimation research with synthetic rendered scenes, and it contains no stated or implied prohibited or restricted uses/functionality related to military/defense, weapons, surveillance, or intelligence."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Originating Organization: Po-Han Huang University of Illinois, Urbana Champaign, Facebook, Virginia Tech in The US.\nNon-D5"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "Not available"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Minimum samples available at: https://phuang17.github.io/DeepMVS/mvs-synth.html\nIt consists of 120 sequences, each with 100 frames of urban scenes captured in the video game Grand Theft Auto V.[note] The RGB image, the ground truth depth map, and the camera parameters of each frame are provided."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Owner / Curator: Po-Han Huang University of Illinois, Urbana Champaign, Facebook, Virginia Tech\nPrimary Distribution Platform: https://phuang17.github.io/DeepMVS/mvs-synth.html\nRepository: https://huggingface.co/datasets/phuang17/MVS-Synth\nAccess Method: HuggingFace\nProvenance:\nMVS-Synth is a fully synthetic dataset generated using computer graphics rendering pipelines rather than real-world capture.\nScenes are constructed from 3D CAD models and rendered with known camera parameters.\nMaintenance Status: 7 commits, last one on 8 Jun, 2025"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "No Specific license.\n The data is for research and educational use only."
+        }
+      ]
+    },
+    {
+      "name": "Video Panatonic Segmentation",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "No proposal justification, or description of intended usage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "Under LC 2.7, a review of the VIPSeg (Video Panoptic Segmentation) dataset documentation indicates it is intended for video panoptic segmentation research and benchmarking and does not state or imply any prohibited or restricted uses/functionality related to military/defense, weapons, surveillance, or intelligence."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 4,
+          "notes": "Originating Organization: VIPSeg-Dataset, China.\nD5 Country"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "no fine tuning scripts provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No previews available.\nCould be a candidate for sample inspection."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "\n    Owner / Curator: VIPSeg-Dataset(Jiaxu Miao; Xiaohan Wang; Yu Wu; Wei Li; Xu Zhang; Yunchao Wei)\n    Primary Distribution Platform: GitHub\n    Repository:\n        GitHub:\n            Number of stars: 145\n            Number of commits: 47\n            Number of releases: None\n    Access Method: Via Google Drive\n    Maintenance Status: Last commit: 1 May, 2023\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "No Specific license.\nThe data is released for non-commercial research purpose only."
+        }
+      ]
+    },
+    {
+      "name": "Parallel Domain",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "No proposal justification, or description of intended usage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "Under LC 2.7, review of the Parallel Domain dataset documentation (as referenced for use in computer vision / perception and simulation-generated sensor data) indicates no stated or implied prohibited or restricted uses/functionality related to military/defense, weapons development or control, surveillance, or intelligence activities."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 4,
+          "notes": "Originating Organization: Columbia University, Stanford University in The US, and Toyota Research Institute in Japan.\nNon-D5."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "no fine tuning scripts provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Previews available at https://gcd.cs.columbia.edu/#datasets \nlow risk. Skipping sample inspection."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "\n\n    Owner / Curator: Columbia University, Stanford University, and Toyota Research Institute.\n\n    Primary Distribution Platform: https://gcd.cs.columbia.edu/#datasets\n\n    Repository: https://github.com/basilevh/gcd (23 commits, 281 stars)\n\n    Access Method: Through download script\n\n    Provenance:\n\n    GCD datasets are derived research benchmarks created to study Generalized Category Discovery, where models must handle:\n        Known classes\n        Novel classes\n        Temporally consistent object identities (in videos / 4D scenes)\n        The datasets are not captured from scratch by the authors; instead they are:\n            Curated and re-labeled from existing image, video, and synthetic datasets\n            Augmented with new splits, category partitions, and annotations suitable for GCD evaluation\n\n    Maintenance Status: last commit 18 Nov 2025\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "\n\n    License: CC BY-NC-SA 4.0\n\n    Share and adapt the weights and datasets for non-commercial research and educational use.\n\n    Provide proper attribution to the original authors.\n\n    If you share adapted versions publicly, do so under the same license (ShareAlike).\n\n    Do not use the weights or datasets for commercial purposes.\n\n    Do not remove attribution to the original authors.\n\n    Do not release derivatives under a different license."
+        }
+      ]
+    },
+    {
+      "name": "SAIL-VOS 3D",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "No proposal justification, or description of intended usage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "Under LC 2.7, a review of the SAIL-VOS 3D dataset documentation indicates it is designed for video object segmentation and 3D perception research in autonomous driving and robotics contexts, and it contains no stated or implied prohibited or restricted uses/functionality related to military/defense, weapons, surveillance, or intelligence."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 3,
+          "notes": "Originating Organization: Yuan-Ting Hu, Raymond A. Yeh, Alexander G. Schwing, from The US, and Jiahong Wang from China.\nD5 Country."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "no scripts available"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "preview available at https://sailvos.web.illinois.edu/_site/_site/index.html\nThe preview shows a snippet from a game/movie with no alarming content. Skipping inspection.\n"
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "\n\n    Owner / Curator:\n        Yuan-Ting Hu from University of Illinois at Urbana-Champaign,\n        Jiahong Wang from Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences,\n        Raymond A. Yeh from Purude University,\n        Alexander G. Schwing from University of Illinois at Urbana-Champaign\n\n    Primary Distribution Platform: https://sailvos.web.illinois.edu/_site/_site/index.html\n\n    Repository: None\n\n    Access Method: Contact the team.\n\n    Provenance: It contains instance-level 3D annotation that captures dynamic scenes with diverse scenarios from the video game GTA-V.\n\n    SAIL-VOS 3D: A Synthetic Dataset and Baselines for Object Detection and 3D Mesh Reconstruction from Video Data\n\n    arXiv: 2105.08612\n\n    Publication Date: 18 May, 2021\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "\n    License: Their website stated verbatim:\n        You will use the data only for non-commercial research and educational purposes. Commercial use is prohibited.\n        You will NOT distribute the data.\n        You buy Grand Theft Auto V.\n"
+        }
+      ]
+    },
+    {
+      "name": "SA-V",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "No proposal justification, or description of intended usage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "Under LC 2.7, a review of the SA-V (Segment Anything Video) dataset documentation indicates it is provided for computer-vision research use and does not state or imply any prohibited or restricted uses/functionality related to military/defense, weapons development or control, surveillance, or intelligence activities."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Originating Organization: Meta AI, US.\nNon-D5 Country."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "no scripts available"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Jupyter notebook https://github.com/facebookresearch/sam2/blob/main/sav_dataset/sav_visualization_example.ipynb available for visualization. low risk - skipping inspection"
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "\n    Owner / Curator: Meta AI\n    Primary Distribution Platform: https://ai.meta.com/datasets/segment-anything-video-downloads/\n    Repository:\n        GitHub: https://github.com/facebookresearch/sam2/tree/main/sav_dataset\n            Number of stars: 18.2k\n            Number of commits: 76\n            Number of releases: None\n            Lastest release: None\n    Access Method: Via download link\n    Maintenance Status: Last commit: 16 Dec, 2024\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "\n    License: BSD License\n        Use the software for any purpose, including commercial use.\n    Modify and create derivative works.\n    Redistribute the software in source or binary form.\n    Include the copyright notice, license conditions, and disclaimer in redistributions.\n    Do not use the name Meta or contributors\u2019 names to endorse or promote derived products without written permission.\n    Do not remove or alter the license text in redistributions.\n"
+        }
+      ]
+    },
+    {
+      "name": "ScanNet++",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "No proposal justification, or description of intended usage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "Under LC 2.7, a review of the ScanNet++ dataset documentation indicates it is a high-fidelity 3D indoor scene dataset intended for novel view synthesis and 3D semantic scene understanding research, and it does not state or imply any prohibited or restricted uses/functionality related to military/defense, weapons development or control, surveillance, or intelligence activities."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Originating Organization: Technical University of Munich in Germany\nNon-D5"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "no scripts provided."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Some previews available at https://scannetpp.mlsg.cit.tum.de/scannetpp/\nLow risk - skipping inspection"
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "\n    Owner / Curator: Technical University of Munich\n    Primary Distribution Platform: https://scannetpp.mlsg.cit.tum.de/scannetpp/\n    Repository: https://github.com/scannetpp/scannetpp (347 stars, 251 commits)\n    Access Method: https://scannetpp.mlsg.cit.tum.de/scannetpp/\n    Provenance:\n    Maintenance Status: Actively maintained, last commit 19 Dec, 2025.\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "\n    License: ScanNet++ Terms of Use\n    Use the database only for non-commercial research and educational purposes.\n    Share data only with associates who have also agreed to the same terms.\n    Ensure compliance with GDPR, including deletion of person-specific data upon request.\n    Accept responsibility for all uses and derivatives created from the data.\n    Ensure your employer is bound by the terms if you work for a commercial entity.\n    Do not use the database for any commercial purpose.\n    Do not share the data with unauthorized parties.\n"
+        }
+      ]
+    },
+    {
+      "name": "SEED4D",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "No proposal justification, or description of intended usage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "Under LC 2.7, a review of the SEED4D dataset documentation indicates it is a synthetic large-scale 3D/4D driving and reconstruction dataset intended for computer vision and autonomous-perception research, and it does not state or imply any prohibited or restricted uses/functionality related to military/defense, weapons development or control, surveillance, or intelligence activities."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Originating Organization: Continental, Germany.\nNon-D5"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "no scripts provided."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Some previews available at https://seed4d.github.io/#datasets\nLow risk - skipping inspection"
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "\n    Owner / Curator: Continental\n    Primary Distribution Platform: GitHub\n    Repository:\n        GitHub: https://github.com/continental/seed4d (archived by owner)\n            Number of stars: 21\n            Number of commits: 4\n            Number of releases: None\n    Access Method: Generated following these steps\n    Maintenance Status: Last commit: Sep 3, 2025\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "\nUse the software for any purpose, including commercial use.\nModify and adapt the software.\nDistribute the software in source or binary form.\nInclude the copyright notice, list of conditions, and disclaimer in:\n\n    All source redistributions.\n    All binary redistributions (in documentation or other materials).\n\nDo not use the name co-pace GmbH, Continental, or contributors to endorse or promote products derived from the software without prior written permission.\nDo not remove or alter the copyright notice, license text, or disclaimers from redistributions."
+        }
+      ]
+    },
+    {
+      "name": "Spring",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "No proposal justification, or description of intended usage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "Under LC 2.7, a review of the Spring (spring-benchmark.org) dataset/benchmark documentation indicates it is a computer-generated, high-resolution benchmark for scene flow, optical flow, and stereo (rendered from the open-source Blender movie \u201cSpring\u201d) and does not state or imply any prohibited or restricted uses/functionality related to military/defense, weapons development or control, surveillance, or intelligence activities."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Originating Organization: Computer Vision Group at the University of Stuttgart, Germany\nNon-D5"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "no scripts provided."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Some previews available at https://spring-benchmark.org/\nLow risk - skipping inspection"
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "\n    Owner / Curator: Computer Vision Group at the University of Stuttgart\n    Primary Distribution Platform: https://spring-benchmark.org/\n    Repository: https://github.com/cv-stuttgart/sceneflow_from_blender (40 stars, 1 commit)\n    Access Method: download link via website\n    Maintenance Status: last commit 5 Jun, 2023\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "   License: CC BY 4.0.\n    Share \u2014 copy and redistribute the material in any medium or format for any purpose, even commercially.\n    Adapt \u2014 remix, transform, and build upon the material for any purpose, even commercially.\n    The licensor cannot revoke these freedoms as long as you follow the license terms.\n        You must give appropriate credit,\n        You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.\n"
+        }
+      ]
+    },
+    {
+      "name": "TartanAir",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "No proposal justification, or description of intended usage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "Under LC 2.7, a review of the TartanAir dataset/tooling documentation (including the TartanAir site and the castacks/tartanairpy repository) indicates it is intended to provide photo-realistic simulation data for robot navigation/visual SLAM and related perception tasks with multimodal ground-truth labels, and it contains no stated or implied prohibited or restricted uses/functionality related to military/defense, weapons development or control, surveillance, or intelligence activities. "
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "\n    Originating Organization: Carnegie Mellon University, USA.\nNon-D5 Country"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "no fine tuning scripts provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "preview available at https://tartanair.org/.\nlow risk - skipping inspection"
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "\n    Owner / Curator: AirLab Stacks (Robotics Institute, Carnegie Mellon University)\n    Primary Distribution Platform: https://tartanair.org/\n    Repository: https://github.com/castacks/tartanairpy (85 stars, 163 commits)\n    Access Method: Download link\n    Provenance: Collected variety of sensors: LiDAR, IMU, optical cameras with any lense configuration you want (we provide customizable fisheye, pinhole, and equirectangular camera models), depth cameras, segmentation \u201ccameras\u201d, and event cameras.\n    Maintenance Status: Lasst commit on 1 Nov, 2025\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "\n    License: CC-BY 40\n    Share \u2014 copy and redistribute the material in any medium or format for any purpose, even commercially.\n    Adapt \u2014 remix, transform, and build upon the material for any purpose, even commercially.\n    The licensor cannot revoke these freedoms as long as you follow the license terms.\n        You must give appropriate credit,\n        You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.\n"
+        }
+      ]
+    },
+    {
+      "name": "UnrealStero 4k",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "No proposal justification, or description of intended usage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "Under LC 2.7, a review of the UnrealStereo4K (UnrealStereo4K-Q) dataset documentation (Hugging Face page referencing the original UnrealStereo4K dataset and its source repository) indicates it is intended for stereo matching / disparity estimation research using synthetic rendered scenes, and it does not state or imply any prohibited or restricted uses/functionality related to military/defense, weapons development or control, surveillance, or intelligence activities."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Originating Organization: Fabio Tosi in Assistant Professor (RTDA) at the University of Bologna.\nNon-D5 Country"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "no fine tuning scripts provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "minimal samples available at https://huggingface.co/datasets/fabiotosi92/UnrealStereo4K\nlow risk - skipping inspection"
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "\n    Owner / Curator: Fabio Tosi\n    Primary Distribution Platform: HuggingFace\n    Repository: https://huggingface.co/datasets/fabiotosi92/UnrealStereo4K/tree/main (293 downloads)\n    Access Method: Via HugginFace\n    Provenance: UnrealStereo4K-Q is a downsampled version (quarter resolution) of the original high-resolution stereo dataset. It maintains the core structure but with reduced resolution, making it more manageable for experiments that don't require full 4K resolution.\n    Maintenance Status: 3 commits, last one on 12 Mar, 2025\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "\n    License: MIT License\n    Permits use, modification, distribution, and commercial use of the dataset and software\n    Allows redistribution of the dataset and derived subsets\n    Requires preservation of copyright notice and license text\n    No restrictions on field of use or downstream applications\n"
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "name": "Map Anything",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "MapAnything is an end-to-end transformer that regresses factored, metric 3D scene geometry from flexible inputs (images and optionally intrinsics/poses/depth), supporting 12+ feed-forward 3D reconstruction tasks in one model. \nIn the proposal, MapAnything is cited as a state-of-the-art geometric reconstruction baseline (alongside VGGT/\u03c03) to motivate and support the objectives of scaling training on large geometric datasets and building a unified transformer that outputs geometry + semantics."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "A keyword scan of the MapAnything paper page and GitHub documentation found no mentions of \u201cmilitary\u201d, \u201cweapons\u201d, or \u201cnuclear,\u201d and the stated use is general-purpose 3D reconstruction (SfM/MVS/depth/registration/depth completion). "
+        },
+        {
+          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "score": 1,
+          "notes": "\n    Owner: Meta AI\n    Organization: Meta Platforms, Inc.\nNon-D5"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "The repository indicates an Apache-2.0 license. \n\nYou may use the software for any purpose. \n\nYou may modify and create derivative works. \n\nYou may distribute source or binary forms. \n\nYou must include a copy of the license when redistributing. \n\nYou must preserve required copyright/attribution notices (e.g., NOTICE where applicable).\n\nThe license includes a patent grant from contributors, with termination conditions tied to patent litigation."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "\n\n    Dataset description:\n        Large-scale visual datasets designed for learning dense correspondences and mappings across images.\n        Emphasis on spatial alignment rather than semantic labeling.\n\n    Data provenance:\n        Public and internal research datasets commonly used within Meta AI research.\n        Exact dataset composition and licensing are not enumerated in the public release.\n\nThe paper describes training on a mix of real multi-view, synthetic multi-view, and metric-supervised depth datasets, including DL3DV-10K (10,510 scenes), ScanNet++ (100 scenes), RealEstate10K (86,830 scenes), and UnrealStereo4K (1,244,846 samples), plus others listed (e.g., Hypersim, BlenderProc, Waymo).\n"
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "Rather than separate downstream fine-tunes per task, the released model is presented as a single jointly-trained feed-forward model supporting tasks such as multi-image SfM, multi-view stereo, monocular metric depth estimation, registration, and depth completion"
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "    Not reported in the paper or repository.\n    No official training compute or utilization benchmarks are provided.\n\nThe GitHub README and the arXiv content do not explicitly state a single trainable-parameter count (they describe a DINOv2 ViT-L backbone and a multi-block transformer head, but no total parameter figure is given).\n"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Inspection skipped"
+        }
+      ]
+    },
+    {
+      "name": "Depth Anything V3",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "In the proposal, Depth Anything V3/3 is referenced as existing specialized geometric work used to motivate the project\u2019s goal of unifying geometry + semantics and to guide the choice of a multi-view transformer approach (similar to VGGT/MapAnything/Depth Anything V3), rather than being a deliverable model itself. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "The arXiv documentation page does not contain \u201cmilitary\u201d, \u201cweapons/weapon\u201d, \u201cnuclear\u201d, \u201cdefense\u201d, or \u201csurveillance\u201d (by direct keyword search), and it frames uses around robotics/mixed reality and general 3D vision tasks. "
+        },
+        {
+          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "score": 1,
+          "notes": "Contributors from D5 Country (China)\n\nThe work is authored by ByteDance Seed (with Bingyi Kang listed as corresponding author/project lead), and no LinkedIn links are provided in the paper page. \n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Source code headers indicate Apache License 2.0. \nPermission: Allows use, modification, and redistribution (including commercially) under Apache-2.0 conditions. \nRestriction/condition: You must preserve the license notice and provide attribution/NOTICE as required by Apache-2.0. \nRestriction/condition: If you distribute modified versions, you must state changes (per Apache-2.0 requirements)."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "\n\n    Dataset description:\n        A mixture of real-world depth datasets, synthetic data, and large-scale pseudo-labeled depth maps.\n        Designed to reduce domain bias and improve cross-dataset generalization.\n\n    Data provenance:\n        Public depth datasets and internally generated annotations.\n        Specific dataset names and proportions are partially described but not fully itemized.\n\nDA3 is trained exclusively on public academic datasets, with pose-geometry training datasets including (scenes): AriaSyntheticENV (99,950), Objaverse (505,557), Trellis (557,408), Co3dv2 (30,616), ARKitScenes (4,388), DL3DV (6,379), WildRGBD (23,050), ScanNet++ (230), and others.\n"
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "\n    Depth Anything V3 supports:\n        Zero-shot depth inference\n        Optional fine-tuning for domain-specific scenes (e.g., indoor robotics, autonomous driving)\n    The released checkpoints are intended to work out-of-the-box without task-specific retraining.\nThe paper fine-tunes/derives downstream models for monocular relative depth (DA3-monocular), metric depth estimation (DA3-metric), and feed-forward novel view synthesis via 3D Gaussian Splatting by adding an extra head.\n"
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Using a standard ViT-style FLOPs approximation for the backbone only (ignoring layernorm/softmax and small heads), and the paper\u2019s stated base resolution of 504 (patch size 14 \u21d2 tokens \u2248 1297), the estimated per-image compute is:\n\nDA3-Giant (ViT-g/14, 40 layers, d=1536): ~3.35 TFLOPs/image\n\nDA3-Large (ViT-L/14, 24 layers, d=1024): ~0.95 TFLOPs/image\n\nDA3-Base (ViT-B/14, 12 layers, d=768): ~0.28 TFLOPs/image\n\nDA3-Small (ViT-S/14, 12 layers, d=384): ~0.086 TFLOPs/image\n\nAssumptions used (so you can reuse/adjust): base resolution 504 is explicitly stated for training; token count uses (504/14)^2 + 1; ViT configs assumed as standard (/14 variants) and counts backbone compute only (DualDPT + camera head are comparatively small vs backbone)."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Inspection skipped"
+        }
+      ]
+    }
+  ],
+  "observations": "Observation 1 \u2014 Dataset list appears unusually large\n\nThe proposal lists an unusually large number of datasets, which may indicate over-aggregation or incomplete curation, so the authors should justify dataset necessity, clarify which datasets are actually required vs. optional, and provide a traceable mapping of each dataset to a specific objective/experiment.\n\nObservation 2 \u2014 Ambiguous provenance of xetaiz/mapanything Docker image\n\nThe provenance of the Docker image xetaiz/mapanything is unclear; the proposal should explicitly state who owns and maintains the image, whether it is an official image or community-built, provide the source Dockerfile/build pipeline, and document the exact upstream code commit(s) and dependency versions used to build it to support reproducibility and compliance.",
+  "recommendation": ""
+}
