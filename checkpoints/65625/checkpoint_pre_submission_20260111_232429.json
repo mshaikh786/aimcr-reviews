@@ -1,0 +1,316 @@
+{
+  "checkpoint_metadata": {
+    "type": "pre_submission",
+    "timestamp": "2026-01-11T23:24:29.442411",
+    "project_id": "65625"
+  },
+  "form_data": {
+    "metadata": {
+      "proposal_title": "Optimization Algorithms for Machine Learning ",
+      "principal_investigator": "Peter Richt\u00e1rik",
+      "proposal_date": "2025-10-23",
+      "reviewer_name": "Mohsin Ahmed Shaikh",
+      "reviewer_id": "174988",
+      "aimcr_date": "2026-01-11",
+      "project_id": "65625"
+    },
+    "third_party_software": [
+      {
+        "name": "Pytorch, Torchvision",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Aligns with the proposal objectives. Aligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation of PyTorch."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Originally developed by Meta and now governed by Linux Foundation."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": " https://github.com/pytorch/pytorch/edit/main/docs/source/index.md As of Jan 4th, 2025 96300 stars 26400 forks 12 Github projects 17000 PRs 97745 commits last commit 10 hours ago"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "KSL will provide NGC container for the requested version of PyTorch. nvcr.io/nvidia/pytorch:25.12-py3\n\nNVIDIA Deep Learning Container License Permissions:\n\nInstall and Use\n\nDeploy as a Service\n\nCreate Derived Containers\n\nOpen Source Development Restrictions:\n\nNo Reverse Engineering\n\nNo Standalone Distribution: may not distribute or sublicense the CONTAINER as a stand-alone product\n\nNo Circumventing Security\n"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "nvcr.io/nvidia/pytorch:25.12-py3 contains"
+          }
+        ]
+      },
+      {
+        "name": "Numpy",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "The fundamental package for scientific computing with Python. Aligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Its a bonafide community with a governance model and multiple maintainers. https://numpy.org/about/ This is an opensource project with funding sources from entities from non-D5 countries."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "PyPI: https://pypi.org/project/numpy/ https://github.com/numpy/numpy"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "numpy/numpy Description: The fundamental package for scientific computing with Python. Stars: 31038 Forks: 11858 Open Issues: 2392 Last Commit Date: 2025-12-17T23:48:08Z\n\nLicense / Permissions: Score 1 | Notes: BSD 3-Clause License Permissions:\n\nUse the software for any purpose, including commercial use\n\nModify the source code\n\nDistribute the original or modified versions\n\nUse it in proprietary/closed-source projects\n\nSublicense it as part of a larger work\n\nFit for use in proposed project.\n"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "ca-certificates 2026.1.4 llvm-openmp 19.1.7 _openmp_mutex 4.5 openssl 3.6.0 libgcc 15.2.0 libgfortran5 15.2.0 libgfortran 15.2.0 python_abi 3.11 libopenblas 0.3.30 libblas 3.11.0 libcblas 3.11.0 liblapack 3.11.0 numpy 1.26.4"
+          }
+        ]
+      },
+      {
+        "name": "wandb",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Aligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Its a bonafide community with a governance model and multiple maintainers. https://wandb.ai/site/company/about-us/ This is an opensource project with funding sources from entities from non-D5 countries."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "https://github.com/wandb/wandb"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "Description: Use W&B to build better models faster. Track and visualize all the pieces of your machine learning pipeline, from datasets to production machine learning models. Stars: 10.7K Forks: 807Open Issues: 699Last Commit Date: 2026-1-11T00:27:08Z\n\nLicense / Permissions: Score 1 | Notes: BSD 3-Clause License Permissions:\n\nUse the software for any purpose, including commercial use\n\nModify the source code\n\nDistribute the original or modified versions\n\nUse it in proprietary/closed-source projects\n\nSublicense it as part of a larger work\n\nFit for use in proposed project.\n"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "protobuf 6.33.3\n\npydantic 2.12.5\n\npydantic_core 2.41.5\n\nrequests 2.32.5\n\ncharset-normalizer 3.4.4\n\nidna 3.11\n\ntyping_extensions 4.15.0\n\nurllib3 2.6.3\n\nannotated-types 0.7.0\n\ncertifi 2026.1.4\n\nclick 8.3.1\n\nGitPython 3.1.46\n\ngitdb 4.0.12\n\nsmmap 5.0.2\n\nsentry-sdk 2.49.0\n\ntyping-inspection 0.4.2\n\npackaging 25.0\n\nplatformdirs 4.5.1\n\nPyYAML 6.0.3\n"
+          }
+        ]
+      },
+      {
+        "name": "matplotlib",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Plotting tool in Python. Aligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Thomas A Caswell \u2014 project lead \u2014 https://www.linkedin.com/in/tcaswell/\n\nGovernance: https://matplotlib.org/governance/governance.html#main-governance-document\n\nThis is an opensource project with funding sources from entities from non-D5 countries."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "https://pypi.org/project/matplotlib/\n\nhttps://github.com/matplotlib/matplotlib\n\nOwner / Organization: matplotlib Repository: matplotlib/matplotlib Description: matplotlib: plotting with Python Stars: 22134 Forks: 8144 Open Issues: 1558 Last Commit Date: 2025-12-17"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "BSD-compatible Python Software Foundation (PSF) based license. Permissions:\nCommercial use allowed\n\nModification of the source code permitted\n\nDistribution of original or modified versions allowed\n\nPrivate use permitted\n\nNo requirement to disclose source code\n\nRestrictions:\n\nMust include copyright notice and license text in distributions\n\nNo trademark use without permission\n\nSoftware is provided \"as is\" without warranty\n\nCannot hold authors liable for damages\n\nFit for this proposal's use"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "Pip installation:\nnumpy 1.26.4 contourpy 1.3.3 cycler 0.12.1 fonttools 4.61.1 kiwisolver 1.4.9 packaging 25.0 pillow 12.1.0 pyparsing 3.3.1 python-dateutil 2.9.0.post0 six 1.17.0"
+          }
+        ]
+      },
+      {
+        "name": "hydra",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Hydra is an open-source Python framework that simplifies the development of research and other complex applications.. Aligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Owned by Meta Platforms, Inc.\nEntity is not from a D5 country."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "https://github.com/facebookresearch/hydra\n\nStars: 10081\nForks: 780\nOpen Issues: 365\nLast Commit Date: 2025-11-29T13:53:02Z"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "MIT license\n\nPermissions:\n\nCan be used for academic purposes\n\nCan be used for commercial use\n\nModification allowed\n\nRedistribution allowed"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "N/A"
+          }
+        ]
+      },
+      {
+        "name": "Pandas",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures similar to R data.frame objects, statistical functions, and much more. Aligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Its a bonafide community with a governance model and multiple maintainers. https://pandas.pydata.org/about/governance.html\nThis is an opensource project with funding sources from entities from non-D5 countries."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": " https://pypi.org/project/pandas/\nhttps://github.com/pandas-dev/pandas/\n\npandas-dev/pandas Description: Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures similar to R data.frame objects, statistical functions, and much more Stars: 47340 Forks: 19417 Open Issues: 3607 Last Commit Date: 2025-12-18\n"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "SD 3-Clause License Permissions:\nUse the software for any purpose, including commercial use\n\nModify the source code\n\nDistribute the original or modified versions\n\nUse it in proprietary/closed-source projects\n\nSublicense it as part of a larger work\n\nFit for use in proposed project."
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "numpy 2.2.6\npython-dateutil 2.9.0.post0\npytz 2025.2\nsix 1.17.0\ntzdata 2025.3"
+          }
+        ]
+      }
+    ],
+    "source_code": [],
+    "datasets_user_files": [
+      {
+        "name": "fineweb",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Consists of more than 18.5T tokens (originally 15T tokens) of cleaned and deduplicated english web data from CommonCrawl. Aligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": " Owned by: HuggingFace / Fine Data (https://huggingface.co/HuggingFaceFW)\nThis organization is from a non D5 country."
+          },
+          {
+            "name": "Prompts / Fine-tuning Scripts",
+            "score": 1,
+            "notes": "no user files provided"
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "Structured tabular and representations of text articles."
+          },
+          {
+            "name": "Provenance",
+            "score": 1,
+            "notes": "Owner / Curator: HuggingFace / Fine Data\n\nPrimary Distribution Platform: Hugging Face\n\nRepository: https://huggingface.co/datasets/HuggingFaceFW/fineweb\n\nAccess Method: download via Hugging Face\n\nProvenance:\n\nHugging Face does not claim ownership of the original webpages\n\nPrimary raw source: Common Crawl\n\nHugging Face does own and license the compiled dataset artifact i.e., the database resulting from selection, transformation, and organization of the data\n\n(187k downloads on HF, 1 commit, 11 July 2025).\n\nMaintenance Status: (last update 2025-7)"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "License: ODC-BY\nUse the dataset for any purpose (research, commercial, internal, public)\nModify, transform, and build upon the dataset\nAttribution to the dataset authors is required\nIndicate if changes were made"
+          }
+        ]
+      },
+      {
+        "name": "imagenet",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "ImageNet is a large-scale visual recognition dataset designed to train and evaluate computer vision models, especially for image classification, object detection, and localization.\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Stanford University, Princeton University , UNC Chapel Hill, Facebook, Shopagon\nThese organizations are from a non D5 country."
+          },
+          {
+            "name": "Prompts / Fine-tuning Scripts",
+            "score": 1,
+            "notes": "no user files provided"
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "ImageNet consists of real-world RGB images as input, each labeled with a semantic object category making the output a class label."
+          },
+          {
+            "name": "Provenance",
+            "score": 1,
+            "notes": "Owner / Curator: Stanford University, Princeton University , UNC Chapel Hill, Facebook, Shopagon\nPrimary Distribution Platform: https://image-net.org/download.php"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "License: ImageNet Terms\n\n<add dos - and donts>\n\nUse the database only for non-commercial research and educational purposes.\n\nShare access only with research associates who agree to the same terms.\n\nAccept full responsibility for any use or derivatives created from the data.\n\nEnsure your employer is bound by the terms if you work for a commercial entity.\n\nDo not use the database for commercial purposes.\n\nDo not share the database with anyone who has not agreed to the terms.\n\nDo not assume any warranties regarding data quality, fitness, or non-infringement."
+          }
+        ]
+      }
+    ],
+    "models": [],
+    "observations": "No clear request of which models are required for different objectives. \nThe proposal proposes to use the double Chinchilla rule, which implies that the number of tokens is ~40 times the number of model parameters. By this measure, the expected parameters are as follows for the suggested models to be trained:\nNanoGPT \u2013 5B tokens - ~125M parameters\nMediumGPT \u2013 14B tokens - ~350M parameters\nLargeGPT \u2013 31B tokens - ~775M parameters\nNone of the above can reach the 10^27 threshold.\n\nAuthor(s) plan to develop, scale, and train their own AI/LLM architectures from scratch.",
+    "recommendation": "Need to consult with the applicant which models they wish to use. Conditional to it, recommended for grand challenge."
+  }
+}

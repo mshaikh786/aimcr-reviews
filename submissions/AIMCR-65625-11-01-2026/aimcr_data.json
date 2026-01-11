@@ -304,12 +304,12 @@
     }
   ],
   "models": [],
-  "observations": "No clear request of which models are required for different objectives. \nAuthor(s) plan to develop, scale, and train their own AI/LLM architectures from scratch.",
+  "observations": "No clear request of which models are required for different objectives. \nThe proposal proposes to use the double Chinchilla rule, which implies that the number of tokens is ~40 times the number of model parameters. By this measure, the expected parameters are as follows for the suggested models to be trained:\nNanoGPT \u2013 5B tokens - ~125M parameters\nMediumGPT \u2013 14B tokens - ~350M parameters\nLargeGPT \u2013 31B tokens - ~775M parameters\nNone of the above can reach the 10^27 threshold.\n\nAuthor(s) plan to develop, scale, and train their own AI/LLM architectures from scratch.",
   "recommendation": "Need to consult with the applicant which models they wish to use. Conditional to it, recommended for grand challenge.",
   "_submission_history": [
     {
-      "timestamp": "2026-01-11T23:22:26.145391",
-      "action": "resubmission"
+      "timestamp": "2026-01-11T23:24:29.443736",
+      "action": "initial_submission"
     }
   ]
 }
