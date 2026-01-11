@@ -1,0 +1,215 @@
+{
+  "metadata": {
+    "proposal_title": "Towards Next-Generation Deep Architectures For Scalable Video and Language Modelling",
+    "principal_investigator": " J\u00fcrgen Schmidhuber",
+    "proposal_date": "2025-10-23",
+    "reviewer_name": "Mohsin Ahmed Shaikh",
+    "reviewer_id": "174988",
+    "aimcr_date": "2026-01-11",
+    "project_id": "65598"
+  },
+  "third_party_software": [
+    {
+      "name": "Pytorch",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Aligns with the proposal objectives. Aligns with the approved research topic Datascience and engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation"
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "riginally developed by Meta and now governed by Linux Foundation.\nFrom a non D5 country"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://github.com/pytorch/pytorch/edit/main/docs/source/index.md As of Jan 4th, 2025 96300 stars 26400 forks 12 Github projects 17000 PRs 97745 commits last commit 10 hours ago"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "NVIDIA End user license. Permits the proposed work."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "my-ngc-pytorch28-stack:latest (ubuntu 24.04) ============================================ Total: 2169 (UNKNOWN: 0, LOW: 118, MEDIUM: 2026, HIGH: 25, CRITICAL: 0)"
+        }
+      ]
+    },
+    {
+      "name": "flash linear attention",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Triton-based implementations for state-of-the-art linear attention models. Aligned with approved topic, datascience& engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "no prohibited use indicated."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Maintained by FLA organization, Songlin Yang (https://www.linkedin.com/in/songlin-yang-b8a69728b)\nFrom a non D5 country"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://github.com/fla-org/flash-linear-attention\n349 forks, 4.2K stars, 17890 commits, last commit on 09-01-2026"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "MIT license, Permits the proposed work."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "fla-core 0.4.1\n\neinops 0.8.1\n\ntorch 2.9.1\n\nnvidia-cublas-cu12 12.8.4.1\n\nnvidia-cuda-cupti-cu12 12.8.90\n\nnvidia-cuda-nvrtc-cu12 12.8.93\n\nnvidia-cuda-runtime-cu12 12.8.90\n\nnvidia-cudnn-cu12 9.10.2.21\n\nnvidia-cufft-cu12 11.3.3.83\n\nnvidia-cufile-cu12 1.13.1.3\n\nnvidia-curand-cu12 10.3.9.90\n\nnvidia-cusolver-cu12 11.7.3.90\n\nnvidia-cusparse-cu12 12.5.8.93\n\nnvidia-cusparselt-cu12 0.7.1\n\nnvidia-nccl-cu12 2.27.5\n\nnvidia-nvjitlink-cu12 12.8.93\n\nnvidia-nvshmem-cu12 3.3.20\n\nnvidia-nvtx-cu12 12.8.90\n\ntriton 3.5.1\n\nfsspec 2026.1.0\n\nnetworkx 3.4.2\n\nsympy 1.14.0\n\nmpmath 1.3.0\n\ntyping_extensions 4.15.0\n\nfilelock 3.20.3\n\nJinja2 3.1.6\n\nMarkupSafe 3.0.3\n\ntransformers 4.57.3\n\nhuggingface-hub 0.36.0\n\nhf-xet 1.2.0\n\ntokenizers 0.22.2\n\nnumpy 2.2.6\n\npackaging 25.0\n\nPyYAML 6.0.3\n\nregex 2025.11.3\n\nsafetensors 0.7.0\n\ntqdm 4.67.1\n\nrequests 2.32.5\n\ncharset-normalizer 3.4.4\n\nidna 3.11\n\nurllib3 2.6.3\n\ncertifi 2026.1.4\n"
+        }
+      ]
+    }
+  ],
+  "source_code": [],
+  "datasets_user_files": [
+    {
+      "name": "Panda-70M",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "A Large-Scale Dataset with 70M High-Quality Video-Caption Pairs.\nAlgined with objective 3B video generation model pretraining. . \nAlgins with research topic datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of prohibited use terms in the documentation. Inspection reveals videos containing topics (sports, cooking, Animals) with captions describing the video content."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Owner / Curator: Snap Research (https://research.snap.com/index.html), and University of MERCED (https://www.ucmerced.edu/)\n\nPrimary Distribution Platform: https://snap-research.github.io/Panda-70M/"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No user files provided, no fine tuning scripts provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "low risk. Skipping sample inspection."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "PANDA-70M is a derived dataset: it does not introduce new recordings but instead repackages and processes existing public content into a structured form suitable for large-scale multimodal model training. (660 stars on GitHub)\n\n~89 commits; last update 2024-10"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Research Use of Data Agreement v1.0 \n\n \n\nThis is the Research Use of Data Agreement, Version 1.0 (the \u201cR-UDA\u201d). Capitalized terms are defined in Section 5. Data Provider and you agree as follows: \n\n \n\n \n\n1. Provision of the Data \n\n1.1. You may use, modify, and distribute the Data made available to you by the Data Provider under this R-UDA for Research Use if you follow the R-UDA\u2019s terms. \n\n1.2. Data Provider will not sue you or any Downstream Recipient for any claim arising out of the use, modification, or distribution of the Data provided you meet the terms of the R-UDA. \n\n1.3. This R-UDA does not restrict your use, modification, or distribution of any portions of the Data that are in the public domain or that may be used, modified, or distributed under any other legal exception or limitation. \n\n \n\n \n\n2. Restrictions \n\n2.1. You agree that you will use the Data solely for Computational Use for non-commercial research. This restriction means that you may engage in non-commercial research activities (including non-commercial research undertaken by or funded via a commercial entity), but you may not use the Data or any Results in any commercial offering, including as part of a product or service (or to improve any product or service) you use or provide to others. \n\n2.2. You may not receive money or other consideration in exchange for use or redistribution of Data. \n\n \n\n \n\n3. Redistribution of Data \n\n3.1. You may redistribute the Data, so long as: \n\n3.1.1. You include with any Data you redistribute all credit or attribution information that you received with the Data, and your terms require any Downstream Recipient to do the same; and \n\n3.1.2. You bind each recipient to whom you redistribute the Data to the terms of the R-UDA."
+        }
+      ]
+    },
+    {
+      "name": "Slim-Pajama",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "open-source dataset for training large language models, Algins with research topic datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of prohibited use terms in the documentation."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Owner / Curator: Cerebras (https://huggingface.co/cerebras)\n\nPrimary Distribution Platform: Hugging Face\n\nRepository: https://huggingface.co/datasets/cerebras/SlimPajama-627B"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No user files provided, no fine tuning scripts provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "low risk. Skipping sample inspection."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Repository: https://huggingface.co/datasets/cerebras/SlimPajama-627B\n\nThe dataset aggregates text from publicly available sources, including:\n\nWeb crawl data\n\nCode repositories\n\nAcademic and technical texts\n\nBooks and reference material\n\n(57k downloads on HuggingFace)"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Hugging Face license: C4 GitHub repository license: MIT License Permissibility:\n\nPermitted for academic and research use\n\nRedistribution requires inclusion of the original license\n\nAttribution to the original authors is required under C4"
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "name": "FACTS",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "FACTS (FACTored State-space) is a novel recurrent framework for spatial-temporal world modelling that constructs a graph-structured memory with a routing mechanism to learn permutable memory representations, enabling efficient long-term sequence modelling while maintaining input permutation invariance.\n\nFACTS is used for the proposal's first main objective: generating text with long-term dependency and scaling efficient alternatives to Transformers for large-scale video and language modelling tasks.\n\n"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "score": 1,
+          "notes": "https://github.com/NanboLi/FACTS\n\nOwnership and maintenance\n\nPrimary maintainer: Li Nanbo\nAffiliation: Postdoctoral Fellow at KAUST Center of Excellence for Generative AI, working with Prof. J\u00fcrgen Schmidhuber\nPrevious affiliation: PhD from University of Edinburgh under Prof. Robert Fisher and Prof. Chris Williams\nLinkedIn: https://www.linkedin.com/in/li-nanbo-424131135\nContact email: linanbo2008@gmail.com\n\nThe individual is affiliated with an entity from non-D5 country.\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "MIT License\n\nCommercial use is permitted\nModifications are permitted\nDistribution is permitted\nSublicensing is permitted\nPrivate use is permitted\nMust include the original copyright notice and license text in copies\nNo liability claims can be made against authors\n\n"
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "The FACTS model was evaluated (not pretrained in the traditional sense) on benchmark datasets rather than large-scale pretraining corpora; specific evaluation datasets include ETT (Electricity Transformer Temperature) datasets with approximately 70,080 data points each, and object-centric video datasets like CLEVR-based benchmarks, though exact token/sample counts for all benchmarks are not specified in the repository."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "Downstream tasks for fine-tuning\n\nMultivariate time series forecasting (ETT, Weather, Traffic, Electricity benchmarks)\nObject-centric world modelling (video prediction tasks)\nSpatial-temporal graph prediction"
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 2,
+          "notes": "No indication of the number of parameters. "
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "low risk. skipping inspection."
+        }
+      ]
+    }
+  ],
+  "observations": "For FACTS model, the number of parameters was not discovered from the documentation or proposal. However, the proposal sets the expectation that it wants to scale the model to 1B and 3B, which means the original is smaller than that. Given the dataset size and the observations of\n\nNo clear request of which models are required for different objectives. Need to consult with the applicant and assess based on the inputs.\nAuthor(s) plan to develop, scale, and train their own AI/LLM architectures from scratch.",
+  "recommendation": "Recommended for grand challenge. "
+}
