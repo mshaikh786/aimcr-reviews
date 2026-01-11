@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "proposal_title": "Undefined",
+    "proposal_title": "Towards Next-Generation Deep Architectures For Scalable Video and Language Modelling",
     "principal_investigator": " J\u00fcrgen Schmidhuber",
     "proposal_date": "2025-10-23",
     "reviewer_name": "Mohsin Ahmed Shaikh",
@@ -163,7 +163,104 @@
       ]
     }
   ],
-  "models": [],
-  "observations": "No clear request of which models are required for different objectives. Need to consult with the applicant and assess based on the inputs.\nAuthor(s) plan to develop, scale, and train their own AI/LLM architectures from scratch.",
-  "recommendation": "Recommended for grand challenge. "
+  "models": [
+    {
+      "name": "FACTS",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "FACTS (FACTored State-space) is a novel recurrent framework for spatial-temporal world modelling that constructs a graph-structured memory with a routing mechanism to learn permutable memory representations, enabling efficient long-term sequence modelling while maintaining input permutation invariance.\n\nFACTS is used for the proposal's first main objective: generating text with long-term dependency and scaling efficient alternatives to Transformers for large-scale video and language modelling tasks.\n\n"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "score": 1,
+          "notes": "https://github.com/NanboLi/FACTS\n\nOwnership and maintenance\n\nPrimary maintainer: Li Nanbo\nAffiliation: Postdoctoral Fellow at KAUST Center of Excellence for Generative AI, working with Prof. J\u00fcrgen Schmidhuber\nPrevious affiliation: PhD from University of Edinburgh under Prof. Robert Fisher and Prof. Chris Williams\nLinkedIn: https://www.linkedin.com/in/li-nanbo-424131135\nContact email: linanbo2008@gmail.com\n\nThe individual is affiliated with an entity from non-D5 country.\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "MIT License\n\nCommercial use is permitted\nModifications are permitted\nDistribution is permitted\nSublicensing is permitted\nPrivate use is permitted\nMust include the original copyright notice and license text in copies\nNo liability claims can be made against authors\n\n"
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "The FACTS model was evaluated (not pretrained in the traditional sense) on benchmark datasets rather than large-scale pretraining corpora; specific evaluation datasets include ETT (Electricity Transformer Temperature) datasets with approximately 70,080 data points each, and object-centric video datasets like CLEVR-based benchmarks, though exact token/sample counts for all benchmarks are not specified in the repository."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "Downstream tasks for fine-tuning\n\nMultivariate time series forecasting (ETT, Weather, Traffic, Electricity benchmarks)\nObject-centric world modelling (video prediction tasks)\nSpatial-temporal graph prediction"
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 2,
+          "notes": "No indication of the number of parameters. "
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "low risk. skipping inspection."
+        }
+      ]
+    },
+    {
+      "name": "MOSA",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "MoSA (Mixture of Sparse Attention) is a novel sparse attention mechanism that dynamically selects tokens for each attention head using expert-choice routing, reducing computational complexity from O(T\u00b2) to O(k\u00b2 + T) while achieving up to 27% better perplexity than dense attention baselines with the same compute budget.\n\nThe proposal aims to scale FACTS and MOSA to 1B-3B parameter models for large-scale video-language tasks, with MOSA specifically targeting language modeling with long-term dependencies and long-horizon video generation\u2014the repository provides the attention mechanism component to replace quadratic transformers in these foundation models.\n\nAligns with approved research topic Datascience & engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "score": 1,
+          "notes": "https://github.com/piotrpiekos/MoSA)\n\n\nThe model is owned and maintained by Piotr Pi\u0119kos, a 4th-year PhD Candidate at KAUST AI Initiative supervised by Prof. J\u00fcrgen Schmidhuber, with co-authors R\u00f3bert Csord\u00e1s (Stanford) and J\u00fcrgen Schmidhuber (KAUST/IDSIA). LinkedIn: https://www.linkedin.com/in/piotrpiekos1/\n\nThe developer is affiliated to an entity in non-D5 country."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "MIT License:\n\nPermits commercial use\nPermits modification\nPermits distribution\nPermits private use\nRequires license and copyright notice be included\nNo liability or warranty provided\nNo restrictions on military, nuclear, or other sensitive applications"
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "The paper evaluates MoSA on language modeling tasks but does not release pretrained model weights"
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "no finetuning done. "
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "The paper experiments use four model sizes: Tiny (28M), Small (113M), Medium (210M), and Large (516M) parameters for dense baselines, with MoSA variants having comparable parameter counts while achieving better perplexity within the same compute budget\u2014the repository provides the attention layer implementation without fixed parameter counts as it depends on user configuration.\n\nGiven the size of the models and the number of tokens involved, the model is well below the 10^27 threshold."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "low risk. Skipping sample inspection."
+        }
+      ]
+    }
+  ],
+  "observations": "For FACTS model, the number of parameters was not discovered from the documentation or proposal. However, the proposal sets the expectation that it wants to scale the model to 1B and 3B, which means the original is smaller than that. Given the dataset size and the observations of\n\nAuthor(s) plan to develop, scale, and train their own AI/LLM architectures from scratch.",
+  "recommendation": "Recommended for grand challenge. ",
+  "_submission_history": [
+    {
+      "timestamp": "2026-01-11T21:52:33.654403",
+      "action": "resubmission"
+    }
+  ]
 }
