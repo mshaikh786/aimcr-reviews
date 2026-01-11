@@ -124,6 +124,12 @@
     }
   ],
   "models": [],
-  "observations": "After reviewing the proposal, no concrete, named pretrained models or exact model variants are specified (e.g., \u201cLLaMA-2-7B\u201d, \u201cQwen-7B\u201d, \u201cGPT-NeoX-20B\u201d).\n\nFinding\n- The document does not name any specific existing model checkpoints or fixed model sizes to be used.\n- References to \u201cLlama/Qwen style\u201d are architectural examples only, not commitments to specific models.\n- The project instead proposes training new Transformer-based and Looped Transformer models from scratch across a range of sizes and loop depths. \n\nConclusion (as requested)\n\nNo concrete AI models are specified in the proposal.",
-  "recommendation": ""
+  "observations": "No concrete, named pretrained models or exact model variants are specified (e.g., \u201cLLaMA-2-7B\u201d, \u201cQwen-7B\u201d, \u201cGPT-NeoX-20B\u201d).\n\nFinding\n- The document does not name any specific existing model checkpoints or fixed model sizes to be used.\n- References to \u201cLlama/Qwen style\u201d are architectural examples only, not commitments to specific models.\n- The project instead proposes training new Transformer-based and Looped Transformer models from scratch across a range of sizes and loop depths. \n",
+  "recommendation": "Since the proposal is for a looped transformer, the expectation is that the number of parameters will be significantly less then any stacked transformer architecture. However, the number of FLOPs will remain undetermined due to the lack of information about the architecture. \nEven with this gap, the project can progress to grand challenge with requirement of consultation with the applicants and monitoring when in use.\n\nRecommended for grand challenge. ",
+  "_submission_history": [
+    {
+      "timestamp": "2026-01-11T12:42:25.719221",
+      "action": "resubmission"
+    }
+  ]
 }
