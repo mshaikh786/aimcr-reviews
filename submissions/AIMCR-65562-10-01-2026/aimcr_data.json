@@ -1076,11 +1076,11 @@
     }
   ],
   "observations": "In Open Catalyst dataset, a scientific review is needed to mitigate the risk of dual use.\nIn Open Materials dataset,  a scientific review is needed to mitigate the risk of dual use.\nIn Open Molecules 2025  dataset, the artifact is new and less used.\n\nIn GemNet model, a scientific review is needed to mitigate the risk of dual use.\n",
-  "recommendation": "Low risk overall. Recommended for grand challenge.",
+  "recommendation": "Recommended for grand challenge.",
   "_submission_history": [
     {
-      "timestamp": "2026-01-10T11:53:00.792953",
-      "action": "initial_submission"
+      "timestamp": "2026-01-12T10:25:57.027196",
+      "action": "resubmission"
     }
   ]
 }
