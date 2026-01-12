@@ -344,12 +344,12 @@
     }
   ],
   "models": [],
-  "observations": "Brain-3D-FM has been expressed as the target model to train, no source has been provided.\n\nNo source has been provided therefore model's analysis was not possible. ",
+  "observations": "Brain-3D-FM has been expressed as the target model to train, no source has been provided.\n\nNo source has been provided; therefore model's analysis was not possible. \n\n",
   "recommendation": "Need to contact the applicants to get access to the model. \nConditional on no flags in model evaluation, the project is recommended for the grand challenge. ",
   "_submission_history": [
     {
-      "timestamp": "2026-01-12T00:24:27.447734",
-      "action": "initial_submission"
+      "timestamp": "2026-01-12T00:34:09.183100",
+      "action": "resubmission"
     }
   ]
 }
