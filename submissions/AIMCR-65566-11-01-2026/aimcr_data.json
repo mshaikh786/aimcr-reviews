@@ -1,7 +1,7 @@
 {
   "metadata": {
     "proposal_title": " Integrated multi-scale modeling, protein foundation models, and autonomous AI agents",
-    "principal_investigator": "Hamdan",
+    "principal_investigator": "Sameer Hamdan",
     "proposal_date": "2025-10-23",
     "reviewer_name": "Mohsin Ahmed Shaikh",
     "reviewer_id": "174988",
@@ -174,6 +174,12 @@
       ]
     }
   ],
-  "observations": "Amber, Gromacs, \n\nFor the dataset (colab-fold), There is no single ColabFold dataset URL. \n\nThe core databases are available through their respective public sources: UniProt, MGnify, BFD/Mgnify, and theProtein Data Bank (PDB).",
-  "recommendation": "Recommended for grand challenge. "
+  "observations": "Amber, Gromacs, \n\nFor the dataset (colab-fold), there is no single ColabFold dataset URL. \n\nThe core databases are available through their respective public sources: UniProt, MGnify, BFD/Mgnify, and the Protein Data Bank (PDB).\nThese are hosted on Ibex at the moment and are in frequent use. Risk is mitigated by the fact that they are published by ",
+  "recommendation": "Contact the applicant about specifying which datasets are required to be moved to Shaheen III GPUP.\nRecommended for grand challenge. ",
+  "_submission_history": [
+    {
+      "timestamp": "2026-01-12T08:26:43.407546",
+      "action": "resubmission"
+    }
+  ]
 }
