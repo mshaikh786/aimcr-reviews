@@ -98,8 +98,8 @@
         },
         {
           "name": "Source / Provenance & Restricted Entities (LC 2.5)",
-          "score": 1,
-          "notes": "Owner:  (Hangzhou DeepSeek Artificial Intelligence Co., Ltd.) https://huggingface.co/deepseek-ai/collections\nFounder: Liang Wenfeng (https://www.linkedin.com/in/wenfeng-liang-837841128/)\nThe entity is from China, one of D5 countries.\n\n"
+          "score": 3,
+          "notes": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2\n\nOwner:  (Hangzhou DeepSeek Artificial Intelligence Co., Ltd.) https://huggingface.co/deepseek-ai/collections\nFounder: Liang Wenfeng (https://www.linkedin.com/in/wenfeng-liang-837841128/)\nThe entity is from China, one of D5 countries.\n\n"
         },
         {
           "name": "License / Permissions",
@@ -174,11 +174,11 @@
       ]
     }
   ],
-  "observations": "Amber, Gromacs, \n\nFor the dataset (colab-fold), there is no single ColabFold dataset URL. \n\nThe core databases are available through their respective public sources: UniProt, MGnify, BFD/Mgnify, and the Protein Data Bank (PDB).\nThese are hosted on Ibex at the moment and are in frequent use. Risk is mitigated by the fact that they are published by ",
-  "recommendation": "Contact the applicant about specifying which datasets are required to be moved to Shaheen III GPUP.\nRecommended for grand challenge. ",
+  "observations": "Amber, Gromacs, \n\nFor the dataset (colab-fold), there is no single ColabFold dataset URL. \n\nThe core databases are available through their respective public sources: UniProt, MGnify, BFD/Mgnify, and the Protein Data Bank (PDB).\nThese are hosted on Ibex at the moment and are in frequent use. Risk is mitigated by the fact that they are published by European Bioinformatics Institute (EMBL-EBI), the Swiss Institute of Bioinformatics (SIB), and the Protein Information Resource (PIR) at Georgetown University.\n\nThe group asks for DeepSeek but dosen't specify the exact model.",
+  "recommendation": "Contact the applicant about specifying which datasets and models are required to be moved to Shaheen III GPUP.\nRecommended for grand challenge. ",
   "_submission_history": [
     {
-      "timestamp": "2026-01-12T08:26:43.407546",
+      "timestamp": "2026-01-12T08:31:46.182669",
       "action": "resubmission"
     }
   ]
