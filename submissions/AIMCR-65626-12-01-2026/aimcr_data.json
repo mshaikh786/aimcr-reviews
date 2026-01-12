@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "proposal_title": "---",
-    "principal_investigator": "Cabrero",
+    "proposal_title": "Protein Function Oracle",
+    "principal_investigator": "David Gomez-Cabrero",
     "proposal_date": "2026-01-11",
     "reviewer_name": "Mohsin Ahmed Shaikh",
-    "reviewer_id": "111",
+    "reviewer_id": "174988",
     "aimcr_date": "2026-01-11",
     "project_id": "65626"
   },
@@ -939,6 +939,12 @@
     }
   ],
   "models": [],
-  "observations": "No explicit, named AI models are specified as being used or adopted in a way that allows direct identification and download. \nThe proposal consistently describes the approach as \u201ca transformer model using PyTorch\u201d without naming a concrete pretrained model, checkpoint, or architecture variant \nThe proposal states that the project does not involve proprietary or unpublished models, but still does not reference any specific public pretrained model by name \nModels such as ProTrek and FGeneBERT are mentioned only as state-of-the-art examples in the literature review, not as models that will be used, fine-tuned, or downloaded for this project\n\nThe use of very old versions of some software packages is alarming.",
-  "recommendation": ""
+  "observations": "No explicit, named AI models are specified as being used or adopted in a way that allows direct identification and download. \nThe proposal consistently describes the approach as \u201ca transformer model using PyTorch\u201d without naming a concrete pretrained model, checkpoint, or architecture variant \n\nModels such as ProTrek and FGeneBERT are mentioned only as state-of-the-art examples in the literature review, not as models that will be used, fine-tuned, or downloaded for this project\n\nThe use of very old versions of some software packages. ",
+  "recommendation": "Conditional to providing the models and checks applied to them, the recommendation is to approval the proposal for grand challenge. ",
+  "_submission_history": [
+    {
+      "timestamp": "2026-01-12T21:12:30.038585",
+      "action": "resubmission"
+    }
+  ]
 }
