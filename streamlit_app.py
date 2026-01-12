@@ -245,7 +245,16 @@ with st.sidebar:
     if drafts:
         st.write(f"**Available Drafts ({len(drafts)})**")
         
-        for draft in drafts[:5]:  # Show last 5 drafts
+        # Pagination for drafts
+        DRAFTS_PER_PAGE = 6
+        if 'drafts_page' not in st.session_state:
+            st.session_state.drafts_page = 0
+        
+        total_draft_pages = (len(drafts) + DRAFTS_PER_PAGE - 1) // DRAFTS_PER_PAGE
+        start_idx = st.session_state.drafts_page * DRAFTS_PER_PAGE
+        end_idx = min(start_idx + DRAFTS_PER_PAGE, len(drafts))
+        
+        for draft in drafts[start_idx:end_idx]:
             with st.expander(f"📄 {draft['project_id']}", expanded=False):
                 st.write(f"**Title:** {draft['proposal_title'][:30]}...")
                 st.write(f"**Modified:** {draft['modified'].strftime('%Y-%m-%d %H:%M')}")
@@ -272,6 +281,20 @@ with st.sidebar:
                             st.rerun()
                         else:
                             st.error(msg)
+        
+        # Pagination controls for drafts
+        if total_draft_pages > 1:
+            draft_nav_col1, draft_nav_col2, draft_nav_col3 = st.columns([1, 2, 1])
+            with draft_nav_col1:
+                if st.button("◀ Prev", key="drafts_prev", disabled=st.session_state.drafts_page == 0, use_container_width=True):
+                    st.session_state.drafts_page -= 1
+                    st.rerun()
+            with draft_nav_col2:
+                st.caption(f"Page {st.session_state.drafts_page + 1} of {total_draft_pages}")
+            with draft_nav_col3:
+                if st.button("Next ▶", key="drafts_next", disabled=st.session_state.drafts_page >= total_draft_pages - 1, use_container_width=True):
+                    st.session_state.drafts_page += 1
+                    st.rerun()
     else:
         st.info("No drafts available")
     
@@ -284,7 +307,16 @@ with st.sidebar:
     if submissions:
         st.write(f"**Available Submissions ({len(submissions)})**")
         
-        for submission in submissions[:5]:  # Show last 5 submissions
+        # Pagination for submissions
+        SUBMISSIONS_PER_PAGE = 6
+        if 'submissions_page' not in st.session_state:
+            st.session_state.submissions_page = 0
+        
+        total_submission_pages = (len(submissions) + SUBMISSIONS_PER_PAGE - 1) // SUBMISSIONS_PER_PAGE
+        start_idx = st.session_state.submissions_page * SUBMISSIONS_PER_PAGE
+        end_idx = min(start_idx + SUBMISSIONS_PER_PAGE, len(submissions))
+        
+        for submission in submissions[start_idx:end_idx]:
             with st.expander(f"📄 {submission['project_id']}", expanded=False):
                 st.write(f"**Title:** {submission['proposal_title'][:30]}...")
                 st.write(f"**Folder:** {submission['folder_name']}")
@@ -307,6 +339,20 @@ with st.sidebar:
                         st.rerun()
                     else:
                         st.error("Failed to load submission")
+        
+        # Pagination controls for submissions
+        if total_submission_pages > 1:
+            sub_nav_col1, sub_nav_col2, sub_nav_col3 = st.columns([1, 2, 1])
+            with sub_nav_col1:
+                if st.button("◀ Prev", key="subs_prev", disabled=st.session_state.submissions_page == 0, use_container_width=True):
+                    st.session_state.submissions_page -= 1
+                    st.rerun()
+            with sub_nav_col2:
+                st.caption(f"Page {st.session_state.submissions_page + 1} of {total_submission_pages}")
+            with sub_nav_col3:
+                if st.button("Next ▶", key="subs_next", disabled=st.session_state.submissions_page >= total_submission_pages - 1, use_container_width=True):
+                    st.session_state.submissions_page += 1
+                    st.rerun()
     else:
         st.info("No submissions available")
     
