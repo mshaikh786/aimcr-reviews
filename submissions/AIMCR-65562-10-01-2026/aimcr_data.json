@@ -350,41 +350,6 @@
         {
           "name": "License / Permissions",
           "score": 1,
-          "notes": ""
-        },
-        {
-          "name": "Bundled Tools / Dependencies",
-          "score": 1,
-          "notes": ""
-        }
-      ]
-    },
-    {
-      "name": "Pandas",
-      "checks": [
-        {
-          "name": "Project & Usage Alignment",
-          "score": 1,
-          "notes": "Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures similar to R data.frame objects, statistical functions, and much more. \nAligns with the approved research topic Datascience and engineering."
-        },
-        {
-          "name": "Prohibited Use Screening (LC 2.7)",
-          "score": 1,
-          "notes": "No mention of sensitive terms in the documentation."
-        },
-        {
-          "name": "Restricted Entities Screening (LC 2.5)",
-          "score": 1,
-          "notes": "Its a bonafide community with a governance model and multiple maintainers. \nhttps://pandas.pydata.org/about/governance.html\n\nThis is an opensource project with funding sources from entities from non-D5 countries.\n\nThis is an opensource project with funding sources from entities from non-D5 countries."
-        },
-        {
-          "name": "Source / Provenance",
-          "score": 1,
-          "notes": "https://pypi.org/project/pandas/\n\nhttps://github.com/pandas-dev/pandas/\n\nOwner / Organization: pandas-dev\nRepository: pandas-dev/pandas\nDescription: Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures similar to R data.frame objects, statistical functions, and much more\nStars: 47340\nForks: 19417\nOpen Issues: 3607\nLast Commit Date: 2025-12-18"
-        },
-        {
-          "name": "License / Permissions",
-          "score": 1,
           "notes": "BSD 3-Clause License\nPermissions:\n\nUse the software for any purpose, including commercial use \n\nModify the source code \n\nDistribute the original or modified versions \n\nUse it in proprietary/closed-source projects \n\nSublicense it as part of a larger work \n\n\nFit for use in proposed project."
         },
         {
@@ -1079,7 +1044,7 @@
   "recommendation": "Recommended for grand challenge.",
   "_submission_history": [
     {
-      "timestamp": "2026-01-12T10:39:15.536812",
+      "timestamp": "2026-01-13T09:46:32.577882",
       "action": "resubmission"
     }
   ]
