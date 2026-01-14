@@ -5,7 +5,7 @@
     "proposal_date": "2025-10-23",
     "reviewer_name": "Mohsin Ahmed Shaikh",
     "reviewer_id": "174988",
-    "aimcr_date": "2026-01-12",
+    "aimcr_date": "2026-01-13",
     "project_id": "65627"
   },
   "third_party_software": [
@@ -1179,7 +1179,7 @@
   "recommendation": "Recommended for grand challenge. ",
   "_submission_history": [
     {
-      "timestamp": "2026-01-14T19:58:22.507387",
+      "timestamp": "2026-01-14T20:09:51.233671",
       "action": "resubmission"
     }
   ]
