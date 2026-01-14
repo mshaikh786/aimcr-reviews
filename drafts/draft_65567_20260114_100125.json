@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "proposal_title": "MultiWeave: Cross\u2010Model Collaboration and Orchestration of Multi\u2010Model AI Systems",
+    "principal_investigator": "Marco Canini",
+    "proposal_date": "2025-12-09",
+    "reviewer_name": "Mohsin Ahmed Shaikh",
+    "reviewer_id": "174988",
+    "aimcr_date": "2026-01-14",
+    "project_id": "65567"
+  },
+  "third_party_software": [
+    {
+      "name": "PyTorch",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "PyTorch is a deep learning framework in Python for training AI models. The proposed research uses it for coding their MultiWeave collaboration Framework. \nAligns with the approved research topic Datascience and engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation of PyTorch."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Originally developed by Meta and now governed by Linux Foundation."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://github.com/pytorch/pytorch\n\nStars: 96600\nForks: 26500 \nGithub projects: 12 \nPRs: 1700\nCommits: 98181\nlast commit: Jan 14th, 2026\n\nKSL will provide NGC container for the requested version of PyTorch. nvcr.io/nvidia/pytorch:25.12-py3"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "KSL will provide NGC container for the requested version of PyTorch. nvcr.io/nvidia/pytorch:25.12-py3\nNVIDIA Deep Learning Container License Permissions:\n\nInstall and Use\nDeploy as a Service\nCreate Derived Containers\nOpen Source Development Restrictions:\nNo Reverse Engineering\nNo Standalone Distribution: may not distribute or sublicense the CONTAINER as a stand-alone product\nNo Circumventing Security"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Singularity"
+        }
+      ]
+    }
+  ],
+  "source_code": [],
+  "datasets_user_files": [],
+  "models": [],
+  "observations": "",
+  "recommendation": ""
+}
