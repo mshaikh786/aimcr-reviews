@@ -1,0 +1,340 @@
+{
+  "metadata": {
+    "proposal_title": "Undefined",
+    "principal_investigator": "Maurizio Filippone",
+    "proposal_date": "2025-10-23",
+    "reviewer_name": "Mohsin Ahmed Shaikh",
+    "reviewer_id": "174988",
+    "aimcr_date": "2026-01-14",
+    "project_id": "65623"
+  },
+  "third_party_software": [
+    {
+      "name": "PyTorch",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "PyTorch serves as the core deep learning framework.\nAligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation of PyTorch."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Originally developed by Meta and now governed by Linux Foundation.\nEntities are from Non-D5 country."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source Channel:\n\nPyPI: https://pypi.org/project/torch/2.7.0/\n\nGitHub: https://github.com/pytorch/pytorch\n\nConda: https://anaconda.org/pytorch/pytorch\n\nGitHub Repository Metadata:\n\nOwner / Organization: pytorch\n\nRepository: pytorch/pytorch\n\nDescription: Tensors and Dynamic neural networks in Python with strong GPU acceleration\n\nStars: 96,500+\n\nForks: 26,500+\n\nOpen Issues: ~18,000\n\nLast Commit Date: 2026-01-14 (Active daily)\n\nActivity Health: Excellent"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "BSD-3-Clause License\n\nCan be used for academic purposes?\tYes\n\nCan be used for commercial use?\tYes\n\nModification allowed?\tYes\n\nRedistribution allowed?\tYes\n\nAttribution required?\tYes\n\nCopyleft obligations?\tNo"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "CUDA cuBLAS NVIDIA cuDNN NVIDIA NCCL (optimized for NVLink) NVIDIA Data Loading Library (DALI) TensorRT Torch-TensorRT"
+        }
+      ]
+    },
+    {
+      "name": "camel-detector-training:latest",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "The container provides the training environment for distributed deep learning on satellite imagery.\n\nAligns with the approved research topic Datascience and engineering.\n"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No official documentation found.Not found publicly on Nvidia NGC"
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Not found publicly on Nvidia NGC"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Not publicly found on Nvidia NGC. Could be from Private / enterprise Nvidia NGC repo"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "container License Considerations:\n\nBase NGC Container: Governed by NVIDIA NGC License Agreement\n\nPyTorch: BSD-3-Clause\n\nCUDA Toolkit: NVIDIA CUDA EULA (free but proprietary)\n\ncuDNN: NVIDIA cuDNN License (free but proprietary)\n\nUbuntu 22.04: Various open-source licenses\n\nCan be used for academic purposes?\tYes\n\nCan be used for commercial use?\tYes (review NGC and CUDA licenses)\n\nModification allowed?\tYes (for open-source components)\n\nRedistribution allowed?\tLimited (NGC base, CUDA restrictions)\n\nAttribution required?\tYes\n\nCopyleft obligations?\tNo (BSD/Apache components)\n\nImportant Notes:\n\nNVIDIA NGC containers require acceptance of NGC terms\n\nCUDA and cuDNN are proprietary but freely available\n\nCommercial use permitted but review NVIDIA's license terms\n\nRedistribution of modified NGC containers may have restrictions"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "N/A"
+        }
+      ]
+    },
+    {
+      "name": "Container: satellite-preprocessing:latest",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "The image provides a preprocessing pipeline for satellite imagery.\n\nAligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No official documentation found.Not found publicly on DockerHub."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Not found publicly on DockerHub."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Not publicly found on DockerHub. Could be from Private repo"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "N/A, Not publicly found on DockerHub. "
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "N/A, Not publicly found on DockerHub. "
+        }
+      ]
+    }
+  ],
+  "source_code": [],
+  "datasets_user_files": [
+    {
+      "name": "SA-VHRCAMEL-1",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Saudi Arabia Very-High-Resolution Camel Mapping Dataset.\n\nAligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Owner / Curator: Google earth (https://earth.google.com/0 / Restor (https://www.restor.eco)\n\nOriginating Organization: Google Earth (United States) / Restor (Switzerland)\n\nEntities from a Non-D5 country."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No finetuning scripts provided."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Set of very high-resolution satellite images (30\u201340 cm) for training and validating camel detectors. Includes bounding-box labels and segmented masks."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Owner / Curator: Google earth (https://earth.google.com/0 / Restor (https://www.restor.eco)\n\nPrimary Distribution Platform: Restor (https://www.restor.eco)"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Restricted / Proprietary Satellite Imagery.\n\nLicense:\n\nRestricted license for research in limited territory and non-redistributable\n\nRestrictions:\n\nControlled access, no export outside Shaheen III, do not transfer images without authorization."
+        }
+      ]
+    },
+    {
+      "name": "Camel Detection Augmentation Set",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Synthetic dataset of photorealistic Camels rendered to increase robustness in heterogeneous desert areas.\n\nAligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Internal KAUST Dataset. Generated in-house with 3D models and procedural textures."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No finetuning scripts provided."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Synthetic dataset of photorealistic Camels rendered to increase robustness in heterogeneous desert areas."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Internal KAUST Dataset."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License:\n\nInternal (KAUST)\n\nProject property, free internal use."
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "name": "Faster R-CNN",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Deep convolutional neural network architecture for object detection.\n\nAligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the Documentation."
+        },
+        {
+          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "score": 1,
+          "notes": "Owner: Microsoft Research\n\nOrganization: Microsoft Corporation \n\nhttps://arxiv.org/abs/1506.01497\n\nhttps://github.com/rbgirshick/py-faster-rcnn\n\n\nEntity from a Non-D5 countries."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: MIT License\n\nFree to use, modify, and redistribute\n\nCommercial use permitted\n\nAttribution to the original authors is required\n\nNo warranty provided"
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "Training dataset: Typically trained on object detection benchmarks\n\nPASCAL VOC: ~11,000 images with bounding box annotations\n\nMS COCO: ~118,000 training images with object annotations\n\nCustom datasets can be used depending on application domain\n\nData characteristics: Images with bounding box annotations for object detection across multiple categories (80+ classes for COCO, 20 classes for VOC)"
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "No finetuning scripts provided."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Number of Trainable Parameters:\n\nApproximate parameter count: Varies by backbone architecture\n\nWith VGG-16 backbone: ~60 million parameters (including backbone and detection heads)\n\nWith ResNet-50 backbone: ~40 million parameters\n\nWith ResNet-101 backbone: ~60 million parameters"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Low risk, skipped inspection."
+        }
+      ]
+    },
+    {
+      "name": "YOLOv8",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Real-time object detection model.\n\nAligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the Documentation."
+        },
+        {
+          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "score": 1,
+          "notes": "Owner: Ultralytics / Glenn Jocher (https://es.linkedin.com/in/glenn-jocher) From a Non-D5 country.\n\nDocumentation / Code Links:\n\nhttps://github.com/ultralytics/ultralytics\n\nhttps://docs.ultralytics.com/models/yolov8/"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: AGPL-3.0 (open-source) / Commercial License available\n\nOpen-source (AGPL-3.0):\n\nFree to use, modify, and redistribute\n\nCommercial use permitted if source code is disclosed\n\nDerivative works must be licensed under AGPL-3.0\n\nNetwork use triggers copyleft requirements\n\nCommercial License:\n\nAvailable for proprietary/closed-source applications\n\nRemoves AGPL restrictions"
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "Training dataset:\n\nPre-trained models typically trained on COCO dataset with ~118,000 training images and 80 object categories\n\nSupports fine-tuning on custom datasets of varying sizes\n\nCan be trained on specialized datasets for domain-specific applications\n\nData augmentation: Incorporates extensive augmentation techniques including mosaic, mixup, and various geometric transformations"
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "No finetuning scripts provided."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Approximate parameter count: Varies by model size\n\nYOLOv8n (nano): ~3.2 million parameters\n\nYOLOv8s (small): ~11.2 million parameters\n\nYOLOv8m (medium): ~25.9 million parameters\n\nYOLOv8l (large): ~43.7 million parameters\n\nYOLOv8x (extra-large): ~68.2 million parameters"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Low risk, skipped inspection."
+        }
+      ]
+    },
+    {
+      "name": "SAM (Segment Anything Model)",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Promptable image segmentation model developed by Meta AI Research.\n\nAligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the Documentation."
+        },
+        {
+          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "score": 1,
+          "notes": "Source: Meta AI (open research release), Entity is from a Non-D5 country.\n\nDocumentation / Model Card Links:\n\nhttps://arxiv.org/abs/2304.02643\n\nhttps://github.com/facebookresearch/segment-anything\n\nhttps://segment-anything.com/"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache 2.0\n\nFree to use, modify, and redistribute\n\nCommercial use permitted\n\nPatent grant included\n\nAttribution to Meta AI is required\n\nNo trademark rights granted"
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "Training dataset: SA-1B (Segment Anything 1 Billion)\n\nImages: 11 million diverse, high-resolution images\n\nMasks: 1.1 billion segmentation masks\n\nData collection: Three-stage approach combining model-assisted annotation and fully automatic mask generation\n\nDiversity: Images span diverse geographies, contexts, and domains\n\nData characteristics:\n\nAverage of ~100 masks per image\n\nMasks range from small objects to whole-image segments\n\nIncludes complex scenes with occlusion, multiple objects, and varied lighting conditions"
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "No finetuning scripts provided."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Number of Trainable Parameters:\n\nApproximate parameter count: Varies by model size:\n\nSAM ViT-B (Base): ~94 million parameters\n\nSAM ViT-L (Large): ~312 million parameters\n\nSAM ViT-H (Huge): ~636 million parameters"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Low risk, skipped inspection."
+        }
+      ]
+    }
+  ],
+  "observations": "Software: Container images (camel-detector-training:latest and satellite-preprocessing:latest) aren't publicly\n available, (private Dockerhub repo? / Enterprise NGC?)\n\nDataset: SA-VHRCAMEL-1 isn't publicly listed, provided link leads to Google Earth / Restor websites.\n\nModels parameters are not specified.",
+  "recommendation": "Recommended for grand challenge conditional to acceptable risk."
+}

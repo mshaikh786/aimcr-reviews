@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "proposal_title": "Mineral Discovery through Supercomputing and Generative AI",
+    "principal_investigator": "George Turkiyyah",
+    "proposal_date": "2025-12-09",
+    "reviewer_name": "Mohsin Ahmed Shaikh",
+    "reviewer_id": "174988",
+    "aimcr_date": "2026-01-13",
+    "project_id": "65639"
+  },
+  "third_party_software": [
+    {
+      "name": "PyTorch",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Train UNET-3D and SWIN-UNETR networks on\nsynthetically generated 3D datasets"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in the PyTorch 2.9.0 documentation, which describes a general-purpose open-source machine learning framework; this review was conducted in accordance with LC 2.7."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "No indication of restricted-country origin or restricted-entity involvement was identified for PyTorch 2.9.0 based on available documentation, contributor information, and repository metadata."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "3.1 Source Channel\nGitHub: https://github.com/pytorch/pytorch\n3.2 GitHub Repository Metadata\nOwner / Organization: PyTorch Foundation\nRepository: pytorch/pytorch\nDescription: Tensors and Dynamic neural networks in Python with strong GPU acceleration\nStars: 96510\nForks: 26483\nOpen Issues: 17875\nLast Commit Date: 2026-01-11T03:50:11Z\nActivity Health: Healthy"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "4.1 License Type\nSPDX ID: N/A\nLicense name: BSD 3-Clause\n4.2 Permissibility Summary\nQuestion Answer\nCan be used for academic purposes? Yes\nCan be used for commercial use? Yes\nModification allowed? Yes\nRedistribution allowed? Yes\nAttribution required? Yes\nCopyleft obligations? No"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "torch 2.9.0\\nnvidia-cublas-cu12 12.8.4.1\\nnvidia-cuda-cupti-cu12 12.8.90\\nnvidia-cuda-nvrtc-cu12 12.8.93\\nnvidia-cuda-runtime-cu12 12.8.90\\nnvidia-cudnn-cu12 9.10.2.21\\nnvidia-cufft-cu12 11.3.3.83\\nnvidia-cufile-cu12 1.13.1.3\\nnvidia-curand-cu12 10.3.9.90\\nnvidia-cusolver-cu12 11.7.3.90\\nnvidia-cusparse-cu12 12.5.8.93\\nnvidia-cusparselt-cu12 0.7.1\\nnvidia-nccl-cu12 2.27.5\\nnvidia-nvjitlink-cu12 12.8.93\\nnvidia-nvshmem-cu12 3.3.20\\nnvidia-nvtx-cu12 12.8.90\\ntriton 3.5.0\\nfsspec 2026.1.0\\nnetworkx 3.6.1\\nsympy 1.14.0\\nmpmath 1.3.0\\ntyping_extensions 4.15.0\\nfilelock 3.20.3\\nJinja2 3.1.6\\nMarkupSafe 3.0.3\\nsetuptools 80.9.0\\n"
+        }
+      ]
+    }
+  ],
+  "source_code": [],
+  "datasets_user_files": [
+    {
+      "name": "Synthetically Generated 3D Dataset",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "A large synthetically generated 3D voxel dataset of subsurface geologies, including many volumes at 64\u00d764\u00d764 and 256\u00d7256\u00d7256 resolution with structures like faults, folds, dikes, and in at least one setup two channels (density + magnetic susceptibility). \nIt is used to train / pre-train and later fine-tune the project\u2019s geology foundation model and to support physics-based inversion + mineral exploration / prediction workflows. \n"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No explicit mentions or stated use-cases involving military, weapons, nuclear, surveillance, or intelligence were found in the proposal\u2019s dataset description sections. "
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "The dataset is described as generated in-house by the project team (KAUST/KSL context), and the proposal does not provide any LinkedIn links for dataset owners/maintainers. "
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "no scripts provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "not available"
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Provenance is in-house creation via a geological simulation/data-generation pipeline, and maintenance appears to remain with the same project team, with no external curator named. "
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Research-use only (explicitly stated). \nNot published / not public for download (explicitly stated; URL field is blank). \nNo formal open-source/open-data license is named in the proposal (only the \u201cresearch purposes only \u2013 not published\u201d statement)"
+        }
+      ]
+    }
+  ],
+  "models": [],
+  "observations": "1. The software listed is very minimal - only PyTorch and no docker images specified.\n2. No datasets are specified only Synthetically generated 3D samples\nof subsurface geologies. ",
+  "recommendation": ""
+}
