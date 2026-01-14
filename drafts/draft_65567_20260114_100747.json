@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "proposal_title": "MultiWeave: Cross\u2010Model Collaboration and Orchestration of Multi\u2010Model AI Systems",
+    "principal_investigator": "Marco Canini",
+    "proposal_date": "2025-12-09",
+    "reviewer_name": "Mohsin Ahmed Shaikh",
+    "reviewer_id": "174988",
+    "aimcr_date": "2026-01-14",
+    "project_id": "65567"
+  },
+  "third_party_software": [
+    {
+      "name": "PyTorch",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "PyTorch is a deep learning framework in Python for training AI models. The proposed research uses it for coding their MultiWeave collaboration Framework. \nAligns with the approved research topic Datascience and engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation of PyTorch."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Originally developed by Meta and now governed by Linux Foundation."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://github.com/pytorch/pytorch\n\nStars: 96600\nForks: 26500 \nGithub projects: 12 \nPRs: 1700\nCommits: 98181\nlast commit: Jan 14th, 2026\n\nKSL will provide NGC container for the requested version of PyTorch. nvcr.io/nvidia/pytorch:25.12-py3"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "KSL will provide NGC container for the requested version of PyTorch. nvcr.io/nvidia/pytorch:25.12-py3\nNVIDIA Deep Learning Container License Permissions:\n\nInstall and Use\nDeploy as a Service\nCreate Derived Containers\nOpen Source Development Restrictions:\nNo Reverse Engineering\nNo Standalone Distribution: may not distribute or sublicense the CONTAINER as a stand-alone product\nNo Circumventing Security"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Singularity"
+        }
+      ]
+    },
+    {
+      "name": "Transformers",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Hugging Face Transformers is an open-source Python library providing state-of-the-art pretrained models for natural language processing, computer vision, audio, and multimodal tasks for both inference and training.\n\nThe software is used to:\n\nCoordinate cross-model collaboration among multiple large language models\nImplement contextual bandit and baseline routing algorithms for the MultiWeave framework\nProvide the foundation models (LLMs) that will be orchestrated in the routing experiments\nEnable logging and evaluation of model performance\n\nAligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation. "
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Owner: Hugging Face Inc.\nFounders/Maintainers:\n\nCl\u00e9ment Delangue (CEO) - LinkedIn\nJulien Chaumond (CTO) - [LinkedIn profile available]\nThomas Wolf (Chief Science Officer)\n\n\nAffiliation: Private company based in New York, backed by investors including Salesforce, Google, Amazon, NVIDIA, Intel, AMD, and major VC firms\n\nThe entity is from non-D5 country."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://github.com/huggingface/transformers\n\nStars: 153,000+\nForks: 31,100+\nCommits: 21,136+\nLast commit: January 2026\n\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Apache 2.0\nPermissions:\n\nCommercial use allowed\nModification and derivative works permitted\nDistribution allowed\nSublicensing permitted\nPatent grant included (contributors grant patent rights)\nPrivate use allowed\n\nRestrictions:\n\nMust include original copyright notice\nMust include copy of license text\nMust document significant modifications made\nMust preserve attribution notices\nCannot use trademark without permission\nPatent license terminates if you sue over patents"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": ""
+        }
+      ]
+    }
+  ],
+  "source_code": [],
+  "datasets_user_files": [],
+  "models": [],
+  "observations": "",
+  "recommendation": ""
+}
