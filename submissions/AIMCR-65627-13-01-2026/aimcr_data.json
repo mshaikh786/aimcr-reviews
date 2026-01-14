@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "proposal_title": "CryoEMGGT - CryoEM Geometry Grounded Transformer",
+    "proposal_title": "Undefined",
     "principal_investigator": "Andreas Naschberger",
     "proposal_date": "2025-10-23",
     "reviewer_name": "Mohsin Ahmed Shaikh",
@@ -1022,7 +1022,7 @@
         },
         {
           "name": "Restricted Entities Screening (LC 2.5)",
-          "score": 3,
+          "score": 1,
           "notes": "Tsinghua University research team (Qiuchen Cao, Hongda Du, Ziyang Xu, Jiawei Zeng, Yongqi Liu, Zhiyuan Liang, Yipu Peng, Jun Yang)\n\nEntity is from a D5 country (China)."
         },
         {
@@ -1032,7 +1032,7 @@
         },
         {
           "name": "Sample Inspection",
-          "score": 2,
+          "score": 1,
           "notes": "The CryoCRAB dataset comprises 152,385 sets of raw movie frames, covering 746 datasets from EMPIAR. \n\nEach EMPIAR dataset typically includes approximately 200 cryo-EM images, consisting of raw movies, motion-corrected full-diff micrographs in MRC format along with estimated background images, and preprocessed full-diff micrographs in HDF5 format"
         },
         {
@@ -1176,11 +1176,5 @@
     }
   ],
   "observations": "Software: CryoFastAR is from China a D5 country and has a vague license, Boxx is from China a D5 country.\nDataset: CryoCRAB is from China a D5 country",
-  "recommendation": "Recommended for grand challenge. ",
-  "_submission_history": [
-    {
-      "timestamp": "2026-01-14T17:56:10.334134",
-      "action": "resubmission"
-    }
-  ]
+  "recommendation": "Recommended for grand challenge. "
 }
