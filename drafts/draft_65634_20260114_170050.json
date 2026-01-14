@@ -1,0 +1,227 @@
+{
+  "metadata": {
+    "proposal_title": "Fine-tuning of Vision Language Models for Limited Scope Scenarios",
+    "principal_investigator": "Gianluca Setti",
+    "proposal_date": "2026-01-13",
+    "reviewer_name": "Mohsin Ahmed Shaikh",
+    "reviewer_id": "174988",
+    "aimcr_date": "2026-01-13",
+    "project_id": "65634"
+  },
+  "third_party_software": [
+    {
+      "name": "PyTorch 2.6.0",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "PyTorch 2.6.0 is an open-source deep learning framework/library used to build and train neural networks.  \nIn this proposal, PyTorch is used to run the compute-intensive training/fine-tuning workflow for Vision-Language Models (Qwen 2.5/3 VL) to produce compressed \u201cexpert\u201d models deployable on XR/edge devices. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "Within the attached proposal text describing PyTorch\u2019s role, I do not see mentions or implied use cases involving \u201cmilitary\u201d, \u201cweapons\u201d, or \u201cnuclear\u201d (it is described generically as \u201cTrain neural networks\u201d). "
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "The proposal does not name a specific owner/maintainer beyond \u201cPyTorch\u201d; generally, PyTorch is a community-maintained open-source project stewarded by the PyTorch Foundation (part of the Linux Foundation). Non-D5"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "- **GitHub:** https://github.com/pytorch/pytorch/tree/v2.6.0\n\n#### 3.2 GitHub Repository Metadata\n\n- **Owner / Organization:**  PyTorch \n- **Repository:**  pytorch/pytorch\n- **Description:**  Tensors and Dynamic neural networks in Python with strong GPU acceleration\n- **Stars:**  96580\n- **Forks:**  26488\n- **Open Issues:**  17847\n- **Last Commit Date:**  2026-01-13T05:15:53Z\n- **Activity Health:**  Healthy\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Licensed under the BSD 3-Clause License. \n\nPermits use, modification, and redistribution (including in commercial contexts) as long as required notices/attribution are retained.\n\nRestricts using contributor/project names to endorse/promote derived products without permission (a standard BSD 3-Clause condition)."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "torch 2.6.0\nnvidia-cublas-cu12 12.4.5.8\nnvidia-cuda-cupti-cu12 12.4.127\nnvidia-cuda-nvrtc-cu12 12.4.127\nnvidia-cuda-runtime-cu12 12.4.127\nnvidia-cudnn-cu12 9.1.0.70\nnvidia-cufft-cu12 11.2.1.3\nnvidia-curand-cu12 10.3.5.147\nnvidia-cusolver-cu12 11.6.1.9\nnvidia-cusparse-cu12 12.3.1.170\nnvidia-cusparselt-cu12 0.6.2\nnvidia-nccl-cu12 2.21.5\nnvidia-nvjitlink-cu12 12.4.127\nnvidia-nvtx-cu12 12.4.127\nsympy 1.13.1\ntriton 3.2.0\nmpmath 1.3.0\ntyping_extensions 4.15.0\nfilelock 3.20.3\nfsspec 2026.1.0\nJinja2 3.1.6\nMarkupSafe 3.0.3\nnetworkx 3.6.1\nsetuptools 80.9.0\n"
+        }
+      ]
+    }
+  ],
+  "source_code": [],
+  "datasets_user_files": [
+    {
+      "name": "COCO",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "A large-scale collection of everyday-scene images with rich annotations (e.g., object detection/segmentation/captions) used for vision-language tasks. It is used to build hierarchically \u201cscope-narrowed\u201d image subsets and generate QA/caption labels (via an oracle) to fine-tune teacher VLMs and enable aggressive compression into lightweight expert models. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "In the COCO documentation/terms-of-use summaries reviewed, there is no stated military/weapons/nuclear purpose or restriction language indicated. "
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "The dataset is associated with the COCO Consortium and was introduced by the Microsoft COCO paper authors (academia/industry researchers); no authoritative LinkedIn profiles are listed in the official dataset pages reviewed.  Top contributors from Google Brain, Caltech, and FAIR"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "no scripts provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "low risk - skipping inspection"
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "COCO was first published/described in 2014 by Lin et al. (\u201cMicrosoft COCO: Common Objects in Context\u201d) and is maintained/distributed via the COCO Consortium/website and related tooling (e.g., cocoapi).  https://arxiv.org/abs/1405.0312"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "COCO annotations (and the website content) are licensed under Creative Commons Attribution 4.0 (CC BY 4.0). \nCOCO images are not owned by the consortium and must be used consistent with Flickr\u2019s Terms of Use (per COCO terms summaries)"
+        }
+      ]
+    },
+    {
+      "name": "The Metropolitan Museum of Art Open Access",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Open Access provides collection metadata and hundreds of thousands of images of public-domain artworks from The Met (available via API/CSV).  It is used (alongside COCO) to create museum-domain image sets and generate QA pairs for fine-tuning/compressing vision-language models into mobile/AR-ready expert models. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "In the Open Access documentation and terms reviewed, there is no stated military/weapons/nuclear use emphasis; the focus is on open reuse of public-domain works and related collection data. "
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "The dataset is owned and maintained by The Metropolitan Museum of Art (New York, USA) through its Open Access program (API/GitHub distribution); no official LinkedIn profiles for specific maintainers are provided on the referenced Open Access pages.  Non-D5"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "no scripts provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "low risk - skipping inspection"
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "The Met launched its Open Access initiative in February 2017 and continues to maintain and expand the datasets via its Open Access program and public distribution channels (API/GitHub/CSV).  https://www.metmuseum.org/hubs/open-access"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Items identified as Open Access (OA) are made available under CC0, allowing use for any purpose (commercial or noncommercial) without permission or fee. \nMaterials not identified as OA (e.g., believed under copyright/other restrictions) are available only for limited uses (e.g., noncommercial/educational/personal, or fair use) per The Met\u2019s terms"
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "name": "Qwen2.5",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Qwen2.5-VL is a vision-language model (image/video + text) used for image description and visual question answering, and it also supports agent-like \u201ccomputer/phone use\u201d and visual localization. \nIt is used as the large teacher VLM that gets fine-tuned on scope-narrowed datasets and then compressed via pruning/distillation into ultra-lightweight \u201cexpert\u201d student models for on-device VQA on XR/mobile hardware. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "A keyword scan of the publicly linked Qwen2.5-VL model card and referenced docs did not surface \u201cmilitary\u201d, \u201cweapons\u201d, or \u201cnuclear\u201d terms, and the described use is general-purpose VQA/vision understanding. "
+        },
+        {
+          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "score": 1,
+          "notes": "The model is published under the Qwen org and owned/maintained by the Qwen Team at Alibaba Cloud (Alibaba Group); no official maintainer LinkedIn profiles are provided in the primary model/repo pages. China: D5-Country"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "You may use, reproduce, distribute, and modify the materials under the Qwen License Agreement (non-exclusive, worldwide, royalty-free license grant). \nIf commercially using it in a product/service with >100M monthly active users, you must request a license from Alibaba Cloud. \nRedistribution requires providing the license text, marking modified files, and keeping specified attribution notices. \nIf you use outputs to build/train/fine-tune and distribute another AI model, you must display \u201cBuilt with Qwen\u201d or \u201cImproved using Qwen\u201d prominently in product documentation."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "The technical report states the Qwen2.5-VL family was pretrained on a large multimodal corpus totaling ~4.1T tokens, mixing text and vision(-language) data (e.g., image/video-text style data), but it does not enumerate a complete public dataset list. "
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "It is instruction-tuned/evaluated for downstream multimodal tasks including VQA, OCR/document understanding, video understanding, visual grounding/localization, and agent-style GUI tasks. "
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "The Qwen2.5-VL family includes released variants at ~3B, ~7B, and ~72B parameters\nThe proposal does not specify which variant are they planning to use.\nAssuming the largest parameter count: 72B\nInputs:\nGPU-hours: 30,000 \nPeak FLOP/s per GPU: 1979 \u00d7 10\u00b9\u00b2\nMFU: 0.6\nFormula\nMax FLOPs=(GPU hours\u00d73600)\u00d7(peak FLOP/s)\u00d7(MFU)\nCalculation\n=30000\u00d73600\u00d7(1979\u00d71012)\u00d70.6\n=30000\u00d73600\u00d7(1979\u00d710^12)\u00d70.6\n=1.282392\u00d710^23 FLOPs\n\nFine-tuning FLOPs\u22486\u00d7N\u00d7D\n=6\u00d7(72\u00d7109)\u00d7D \nWhere D = total fine-tuning tokens (not specified in the proposal; training data are GPT-5.1-generated captions/QA on COCO + Met images). -> depends on # of QA pairs they will generate and # of tokens"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "inspection skipped "
+        }
+      ],
+      "is_proprietary": false
+    },
+    {
+      "name": "Qwen3-VL ",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Qwen3-VL is a vision-language model for image/video understanding and multimodal reasoning, with capabilities that include long-context video understanding and visual-agent interaction. \nIt is used as the (large) Qwen-VL teacher foundation model to be fine-tuned on scope-narrowed datasets and then aggressively compressed into mobile/XR-ready expert models for image description and visual question answering. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "A keyword scan of the public Qwen3-VL repo/model card content accessed did not surface \u201cmilitary\u201d, \u201cweapons\u201d, or \u201cnuclear\u201d terms, and the stated usage is general multimodal/agent functionality. "
+        },
+        {
+          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "score": 1,
+          "notes": "Qwen3-VL is maintained by the Qwen Team (Alibaba Cloud) via the QwenLM GitHub organization and official Hugging Face releases; individual maintainer LinkedIns are not listed on these official pages.  China: D5-Country"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Licensed under Apache License 2.0 (permissive reuse with required notices/attribution and included patent license). "
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "Qwen3-VL pretraining is staged with token budgets of 67B (alignment), ~1T (multimodal pretraining), ~1T (long-context pretraining), and 100B (ultra-long-context adaptation), with pretraining data spanning image-caption/interleaved image-text, knowledge/entity corpora, OCR and multilingual text-in-image, document PDFs (e.g., 3M Common Crawl PDFs + 4M internal documents), long-document VQA synthesis, grounding/counting and 3D/spatial data, multimodal coding, video corpora (instructional/films/egocentric, etc.), STEM synthetic curricula (including 8M K\u201312/undergrad exercises and 12M multimodal CoT samples), and GUI/agent trajectories plus search/function-calling trajectories."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "The released \u201cInstruct\u201d variants are post-trained for instruction following across multimodal tasks (e.g., VQA, long-context video understanding, OCR/document parsing, and visual-agent style interactions). "
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "The exact variant is not specified to have an approximate parameter count for FLOPS calculation\nAssuming Qwen/Qwen3-VL-235B-A22B-Instruct\n\nTotal parameters (storage/memory footprint):\nNtotal=235\u00d7109\nNtotal=235\u00d710^9\nActivated parameters per token (compute/FLOPs driver):\nNactive=22\u00d710^9\n\nFine-tuning FLOPs\u22486\u00d7Nactive\u00d7D=6\u00d7(22\u00d710^9)\u00d7D"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Skipped"
+        }
+      ],
+      "is_proprietary": false
+    }
+  ],
+  "observations": "They specify two software containers:\nxetaiz/camelrun-qwen - Updated 6 months ago; 0 stars, 26 pulls. Source is ambiguous; community user and no associated organization \nxetaiz/camelrun-qwen3 - ",
+  "recommendation": "Need inputs for the group before making a decision . "
+}
