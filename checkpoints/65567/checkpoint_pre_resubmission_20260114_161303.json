@@ -1,0 +1,206 @@
+{
+  "checkpoint_metadata": {
+    "type": "pre_resubmission",
+    "timestamp": "2026-01-14T16:13:03.824020",
+    "project_id": "65567"
+  },
+  "form_data": {
+    "metadata": {
+      "proposal_title": "MultiWeave: Cross\u2010Model Collaboration and Orchestration of Multi\u2010Model AI Systems",
+      "principal_investigator": "Marco Canini",
+      "proposal_date": "2025-12-09",
+      "reviewer_name": "Mohsin Ahmed Shaikh",
+      "reviewer_id": "174988",
+      "aimcr_date": "2026-01-14",
+      "project_id": "65567"
+    },
+    "third_party_software": [
+      {
+        "name": "PyTorch",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "PyTorch is a deep learning framework in Python for training AI models. The proposed research uses it for coding their MultiWeave collaboration Framework. \nAligns with the approved research topic Datascience and engineering"
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation of PyTorch."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Originally developed by Meta and now governed by Linux Foundation."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "https://github.com/pytorch/pytorch\n\nStars: 96600\nForks: 26500 \nGithub projects: 12 \nPRs: 1700\nCommits: 98181\nlast commit: Jan 14th, 2026\n\nKSL will provide NGC container for the requested version of PyTorch. nvcr.io/nvidia/pytorch:25.12-py3"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "KSL will provide NGC container for the requested version of PyTorch. nvcr.io/nvidia/pytorch:25.12-py3\nNVIDIA Deep Learning Container License Permissions:\n\nInstall and Use\nDeploy as a Service\nCreate Derived Containers\nOpen Source Development Restrictions:\nNo Reverse Engineering\nNo Standalone Distribution: may not distribute or sublicense the CONTAINER as a stand-alone product\nNo Circumventing Security"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "Singularity"
+          }
+        ]
+      },
+      {
+        "name": "Transformers",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Hugging Face Transformers is an open-source Python library providing state-of-the-art pretrained models for natural language processing, computer vision, audio, and multimodal tasks for both inference and training.\n\nThe software is used to:\n\nCoordinate cross-model collaboration among multiple large language models\nImplement contextual bandit and baseline routing algorithms for the MultiWeave framework\nProvide the foundation models (LLMs) that will be orchestrated in the routing experiments\nEnable logging and evaluation of model performance\n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation. "
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Owner: Hugging Face Inc.\nFounders/Maintainers:\n\nCl\u00e9ment Delangue (CEO) - LinkedIn\nJulien Chaumond (CTO) - [LinkedIn profile available]\nThomas Wolf (Chief Science Officer)\n\n\nAffiliation: Private company based in New York, backed by investors including Salesforce, Google, Amazon, NVIDIA, Intel, AMD, and major VC firms\n\nThe entity is from non-D5 country."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "https://github.com/huggingface/transformers\n\nStars: 153,000+\nForks: 31,100+\nCommits: 21,136+\nLast commit: January 2026\n\n"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "Apache 2.0\nPermissions:\n\nCommercial use allowed\nModification and derivative works permitted\nDistribution allowed\nSublicensing permitted\nPatent grant included (contributors grant patent rights)\nPrivate use allowed\n\nRestrictions:\n\nMust include original copyright notice\nMust include copy of license text\nMust document significant modifications made\nMust preserve attribution notices\nCannot use trademark without permission\nPatent license terminates if you sue over patents"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "name": "Transformers",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Hugging Face Transformers is an open-source Python library providing state-of-the-art pretrained models for natural language processing, computer vision, audio, and multimodal tasks for both inference and training.\n\nThe software is used to:\n\nCoordinate cross-model collaboration among multiple large language models\nImplement contextual bandit and baseline routing algorithms for the MultiWeave framework\nProvide the foundation models (LLMs) that will be orchestrated in the routing experiments\nEnable logging and evaluation of model performance\n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation. "
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Owner: Hugging Face Inc.\nFounders/Maintainers:\n\nCl\u00e9ment Delangue (CEO) - LinkedIn\nJulien Chaumond (CTO) - [LinkedIn profile available]\nThomas Wolf (Chief Science Officer)\n\n\nAffiliation: Private company based in New York, backed by investors including Salesforce, Google, Amazon, NVIDIA, Intel, AMD, and major VC firms\n\nThe entity is from non-D5 country."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "https://github.com/huggingface/transformers\n\nStars: 153,000+\nForks: 31,100+\nCommits: 21,136+\nLast commit: January 2026\n\n"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "Apache 2.0\nPermissions:\n\nCommercial use allowed\nModification and derivative works permitted\nDistribution allowed\nSublicensing permitted\nPatent grant included (contributors grant patent rights)\nPrivate use allowed\n\nRestrictions:\n\nMust include original copyright notice\nMust include copy of license text\nMust document significant modifications made\nMust preserve attribution notices\nCannot use trademark without permission\nPatent license terminates if you sue over patents"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "conda installation: filelock 3.20.3 packaging 25.0 colorama 0.4.6 certifi 2026.1.4 charset-normalizer 3.4.4 idna 3.11 fsspec 2025.10.0 typing_extensions 4.15.0 dill 0.4.0 python_abi 3.11 aiohappyeyeballs 2.6.1 attrs 25.4.0 pysocks 1.7.1 sniffio 1.3.1 hpack 4.1.0 hyperframe 6.1.0 python-tzdata 2025.3 pytz 2025.2 six 1.17.0 tqdm 4.67.1 exceptiongroup 1.3.1 h11 0.16.0 typing-extensions 4.15.0 cpython 3.11.14 h2 4.3.0 python-dateutil 2.9.0.post0 anyio 4.12.1 python-gil 3.11.14 httpcore 1.0.9 _python_abi3_support 1.0 httpx 0.28.1 libcxx 21.1.8 yaml 0.2.5 aws-c-common 0.12.6 libutf8proc 2.11.2 libopentelemetry-cpp-headers 1.21.0 zlib 1.3.1 libbrotlicommon 1.2.0 zstd 1.5.7 nlohmann_json 3.12.0 c-ares 1.34.6 libev 4.33 libedit 3.1.20250104 libiconv 1.18 libevent 2.1.12 llvm-openmp 21.1.8 xxhash 0.8.3 libssh2 1.11.1 propcache 0.3.1 multidict 6.7.0 multiprocess 0.70.18 safetensors 0.7.0 regex 2025.11.3 hf-xet 1.2.1 gflags 2.2.2 libcrc32c 1.1.2 snappy 1.2.2 lz4-c 1.10.0 brotli-python 1.2.0 libabseil 20250512.1 frozenlist 1.7.0 pyyaml 6.0.3 aws-c-compression 0.3.1 aws-checksums 0.2.7 aws-c-sdkutils 0.2.4 aws-c-cal 0.9.13 libbrotlidec 1.2.0 libbrotlienc 1.2.0 backports.zstd 1.3.0 libnghttp2 1.67.0 krb5 1.21.3 libxml2-16 2.15.1 libthrift 0.22.0 _openmp_mutex 4.5 python-xxhash 3.6.0 yarl 1.22.0 glog 0.7.1 libre2-11 2025.11.05 libprotobuf 6.31.1 aws-c-io 0.23.3 libcurl 8.18.0 libxml2 2.15.1 libgcc 15.2.0 re2 2025.11.05 orc 2.2.1 aws-c-http 0.10.7 aws-c-event-stream 0.5.7 prometheus-cpp 1.3.0 azure-core-cpp 1.16.1 libgfortran5 15.2.0 libgrpc 1.73.1 aws-c-mqtt 0.13.3 aws-c-auth 0.9.3 azure-storage-common-cpp 12.11.0 azure-identity-cpp 1.13.2 libgfortran 15.2.0 libopentelemetry-cpp 1.21.0 libgoogle-cloud 2.39.0 aws-c-s3 0.11.3 azure-storage-blobs-cpp 12.15.0 libopenblas 0.3.30 libgoogle-cloud-storage 2.39.0 aws-crt-cpp 0.35.4 azure-storage-files-datalake-cpp 12.13.0 libblas 3.11.0 aws-sdk-cpp 1.11.606 libcblas 3.11.0 liblapack 3.11.0 libarrow 22.0.0 numpy 1.26.4 libarrow-compute 22.0.0 libparquet 22.0.0 pandas 2.3.3 libarrow-acero 22.0.0 pyarrow-core 22.0.0 libarrow-dataset 22.0.0 libarrow-substrait 22.0.0 pyarrow 22.0.0 aiosignal 1.4.0 urllib3 2.6.3 requests 2.32.5 huggingface_hub 0.36.0 aiohttp 3.13.3 tokenizers 0.20.4 datasets 4.4.2"
+          }
+        ]
+      },
+      {
+        "name": "vLLM  container image",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "The NVIDIA vLLM NGC container is an optimized Docker image containing vLLM, a high-throughput and memory-efficient inference and serving engine for Large Language Models with GPU acceleration.\n\nvLLM is used for high-throughput inference of multiple LLMs on GH200 GPUs as part of the MultiWeave framework's bandit-style routing experiments and model orchestration.\n\nAligns with approved research topic Datascience & engineering"
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Originally developed in Sky Computing Lab at UC Berkeley, now community-driven under PyTorch Foundation; co-created and co-led by Woosuk Kwon (LinkedIn: linkedin.com/in/woosuk-kwon-986551262) and Zhuohan Li, with advisor Ion Stoica (UC Berkeley)."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "nvcr.io/nvidia/vllm:25.12.post1-py3\nhttps://github.com/vllm-project/vllm\n\nStars: 63,100+\nForks: 11,300+\nCommits: 11,322+\nLast commit: January 12, 2026\n"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "Apache 2.0\n\nPermissions:\n\nCommercial use allowed\nModification and derivative works permitted\nDistribution allowed\nSublicensing permitted\nPatent grant included (contributors grant patent rights)\nPrivate use allowed\n\nRestrictions: \n\nMust include original copyright notice\nMust include copy of license text\nMust document significant modifications\nMust preserve attribution notices\nCannot use trademarks without permission\nPatent license terminates if patent litigation initiated"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "singularity"
+          }
+        ]
+      }
+    ],
+    "source_code": [],
+    "datasets_user_files": [
+      {
+        "name": "MultiWeave v1",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "A collection of textual tasks and scenarios (e.g., question\u2013answer datasets, case\u2010like vignettes, and synthetic evaluation prompts) used to probe multi\u2010model orchestration. \n\nIncludes both generic reasoning tasks and domain\u2010focused benchmarks, depending on the final MultiWeave scope.\n\nAligns with approved research topic of Datascience & engineering "
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 5,
+            "notes": "Can't assess as no access to dataset provided. No URL"
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": ""
+          },
+          {
+            "name": "Prompts / Fine-tuning Scripts",
+            "score": 1,
+            "notes": ""
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": ""
+          },
+          {
+            "name": "Provenance",
+            "score": 1,
+            "notes": ""
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": ""
+          }
+        ]
+      }
+    ],
+    "models": [],
+    "observations": "No Dataset URL or access provided, therefore cannot be assessed.\nNo indication of the model used. Cannot be assessed.",
+    "recommendation": "More information has been requested from the applicant."
+  }
+}
