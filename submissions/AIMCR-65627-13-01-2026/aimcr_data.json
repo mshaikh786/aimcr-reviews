@@ -654,17 +654,17 @@
         },
         {
           "name": "Restricted Entities Screening (LC 2.5)",
-          "score": 1,
+          "score": 3,
           "notes": "Owner:  cellverse tech (https://www.cellverse.tech)\n\nFrom a D5 country (China)."
         },
         {
           "name": "Source / Provenance",
-          "score": 1,
+          "score": 3,
           "notes": "Source Channel:\n\nGitHub: https://github.com/Cellverse/CryoFastAR\n\nGitHub Repository Metadata:\n\nOwner / Organization: Cellverse\n\nRepository: CryoFastAR\n\nStars: ~13 (research/software repo)\n\nForks: ~0\n\nOpen Issues: 0+ (few, if any)\n\nLast Commit Date: Updated in Oct-2025"
         },
         {
           "name": "License / Permissions",
-          "score": 1,
+          "score": 2,
           "notes": "Unspecified License\n\nCan be used for academic purposes?\tYes\n\nCan be used for commercial use?\tunknown\n\nModification allowed?\tYes\n\nRedistribution allowed?\tUnknown\n\nAttribution required?\tYes\n\nCopyleft obligations?\tNo"
         },
         {
@@ -1037,7 +1037,7 @@
         },
         {
           "name": "Provenance",
-          "score": 1,
+          "score": 2,
           "notes": "Owner / Curator: Tsinghua University research team (Qiuchen Cao, Hongda Du, Ziyang Xu, Jiawei Zeng, Yongqi Liu, Zhiyuan Liang, Yipu Peng, Jun Yang)\n\nPrimary Distribution Platform: Science Data Bank (ScienceDB) - Computer Network Information Center, Chinese Academy of Sciences\n\nRepository: https://github.com/Dylan8527/CryoCRAB (processing scripts and documentation)\n\nAccess Method: Download via https://doi.org/10.57760/sciencedb.17922; requires ScienceDB account registration; approximately 12.18 TB total (micrographs and metadata); raw movie data (86.2 TB) available via FTP paths to EMPIAR"
         },
         {
@@ -1179,7 +1179,7 @@
   "recommendation": "Recommended for grand challenge. ",
   "_submission_history": [
     {
-      "timestamp": "2026-01-14T20:09:51.233671",
+      "timestamp": "2026-01-14T20:21:50.994220",
       "action": "resubmission"
     }
   ]
