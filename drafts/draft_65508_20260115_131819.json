@@ -1,0 +1,304 @@
+{
+  "metadata": {
+    "proposal_title": "ML models for Scientific Data Compression",
+    "principal_investigator": "Panos Kalnis",
+    "proposal_date": "2025-12-04",
+    "reviewer_name": "Mohsin Ahmed Shaikh",
+    "reviewer_id": "174988",
+    "aimcr_date": "2026-01-11",
+    "project_id": "65508"
+  },
+  "third_party_software": [
+    {
+      "name": "pytorch",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Aligns with the proposal objectives. Aligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation of PyTorch.\nFrom a non D5 country."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Originally developed by Meta and now governed by Linux Foundation."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://github.com/pytorch/pytorch/edit/main/docs/source/index.md As of Jan 4th, 2025 96300 stars 26400 forks 12 Github projects 17000 PRs 97745 commits last commit 10 hours ago"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "NVIDIA End user license. Permits the proposed work.\n\nNVIDIA Deep Learning Container License Permissions:\n\nInstall and Use\nDeploy as a Service\nCreate Derived Containers\nOpen Source Development Restrictions:\nNo Reverse Engineering\nNo Standalone Distribution: may not distribute or sublicense the CONTAINER as a stand-alone product\nNo Circumventing Security"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "nvcr.io/nvidia/pytorch:25.12-py3 contains\nCUDA cuBLAS NVIDIA cuDNN NVIDIA NCCL (optimized for NVLink) NVIDIA Data Loading Library (DALI) TensorRT Torch-TensorRT"
+        }
+      ]
+    },
+    {
+      "name": "Pytorch Lightning (2.5.5)",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "In the proposal, PyTorch Lightning (v2.5.5) is used to implement and scale the training pipeline for a family of MLP models that approximate climate variables for climate-data compression. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "In the official Lightning docs, I did not find documentation indicating or implying weapons/military/nuclear functionality; however, Lightning\u2019s public site includes at least one community blog post that explicitly uses the word \u201cmilitary\u201d in a non-technical career context (not a software use-case). "
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "PyTorch Lightning is maintained under the Lightning-AI GitHub organization (Lightning AI), and the project is associated with Lightning AI (https://www.linkedin.com/company/pytorch-lightning?utm_source=chatgpt.com : USA) and its founder/creator William \u201cWill\u201d Falcon (https://www.linkedin.com/in/wfalcon?utm_source=chatgpt.com - USA).\n Non-D5  \n"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "3.1 Source Channel\n\n    GitHub: https://github.com/Lightning-AI/pytorch-lightning/tree/2.5.5\n\n3.2 GitHub Repository Metadata\n\n    Owner / Organization: N/A\n    Repository: Lightning-AI/pytorch-lightning\n    Description: Pretrain, finetune ANY AI model of ANY size on 1 or 10,000+ GPUs with zero code changes.\n    Stars: 30675\n    Forks: 3638\n    Open Issues: 939\n    Last Commit Date: 2025-12-22T12:41:14Z\n    Activity Health: Healthy\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache-2.0. \n\nPermissions: You may use, modify, and redistribute the software (including commercially) under the Apache-2.0 terms. \nConditions: Preserve copyright/license notices and include required attribution/notice files when redistributing. \nRestrictions: You may not use project trademarks to imply endorsement; patent terms apply under Apache-2.0"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "pytorch-lightning 2.5.5\nfsspec 2026.1.0\naiohttp 3.13.3\nmultidict 6.7.0\nyarl 1.22.0\naiohappyeyeballs 2.6.1\naiosignal 1.4.0\nattrs 25.4.0\nfrozenlist 1.8.0\nidna 3.11\nlightning-utilities 0.15.2\npackaging 25.0\npropcache 0.4.1\nPyYAML 6.0.3\ntorch 2.9.1\nnvidia-cublas-cu12 12.8.4.1\nnvidia-cuda-cupti-cu12 12.8.90\nnvidia-cuda-nvrtc-cu12 12.8.93\nnvidia-cuda-runtime-cu12 12.8.90\nnvidia-cudnn-cu12 9.10.2.21\nnvidia-cufft-cu12 11.3.3.83\nnvidia-cufile-cu12 1.13.1.3\nnvidia-curand-cu12 10.3.9.90\nnvidia-cusolver-cu12 11.7.3.90\nnvidia-cusparse-cu12 12.5.8.93\nnvidia-cusparselt-cu12 0.7.1\nnvidia-nccl-cu12 2.27.5\nnvidia-nvjitlink-cu12 12.8.93\nnvidia-nvshmem-cu12 3.3.20\nnvidia-nvtx-cu12 12.8.90\ntriton 3.5.1\nnetworkx 3.6.1\nsympy 1.14.0\nmpmath 1.3.0\ntorchmetrics 1.8.2\nnumpy 2.4.1\ntqdm 4.67.1\ntyping_extensions 4.15.0\nfilelock 3.20.3\nJinja2 3.1.6\nMarkupSafe 3.0.3\nsetuptools 80.9.0\n"
+        }
+      ]
+    },
+    {
+      "name": "NumPy",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "In the proposal, NumPy (v2.3.4) is listed as a helper dependency for PyTorch, supporting the project\u2019s objective of training MLP models used for climate-data compression. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "Across NumPy\u2019s official documentation and governance pages, I found no indication or implied use-cases related to military, weapons, or nuclear applications. "
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "NumPy is maintained by the NumPy Developers community under a formal Steering Council governance model and is a sponsored project of NumFOCUS (nonprofit fiscal sponsor). \nNon-D5"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "3.1 Source Channel\n\n    GitHub: https://github.com/numpy/numpy/tree/v2.3.4\n\n3.2 GitHub Repository Metadata\n\n    Owner / Organization: N/A\n    Repository: numpy/numpy\n    Description: The fundamental package for scientific computing with Python.\n    Stars: 31157\n    Forks: 11922\n    Open Issues: 2389\n    Last Commit Date: 2026-01-05T11:56:36Z\n    Activity Health: Healthy"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Primary license: BSD 3-Clause (per NumPy\u2019s LICENSE). \nUse/modify/redistribute: permitted in source or binary form. \nRedistribution condition: retain copyright and license notices. \nBundled components: NumPy distributions may include components under other permissive licenses (as reflected in PyPI metadata)."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "libgfortran5 15.2.0\nopenssl 3.6.0\nlibgfortran 15.2.0\nlibopenblas 0.3.30\nlibblas 3.11.0\nlibcblas 3.11.0\nliblapack 3.11.0\ncertifi 2026.1.4\nnumpy 2.3.4\n"
+        }
+      ]
+    },
+    {
+      "name": "Xarray (2025.10.1)",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "In the proposal, Xarray (v2025.10.1) is used to process NetCDF files as part of the workflow that prepares/handles climate datasets used for compression modeling. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "A keyword scan of Xarray\u2019s official docs/release notes and the repository license page did not surface terms like \u201cmilitary\u201d, \u201cweapons\u201d, or \u201cnuclear,\u201d and I did not see documentation implying such restricted use-cases. "
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Xarray is maintained by the xarray Developers under the pydata/xarray project and is a NumFOCUS sponsored project; examples of prominent maintainers/contributors include Stephan Hoyer (Google) and Julia Signell (Element 84) (https://www.linkedin.com/in/stephanhoyer?utm_source=chatgpt.com : San Francisco). Non-D5 "
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "3.1 Source Channel\n\n    GitHub: https://github.com/pydata/xarray/tree/v2025.10.1\n\n3.2 GitHub Repository Metadata\n\n    Owner / Organization: N/A\n    Repository: pydata/xarray\n    Description: N-D labeled arrays and datasets in Python\n    Stars: 4049\n    Forks: 1210\n    Open Issues: 1358\n    Last Commit Date: 2026-01-04T07:31:51Z\n    Activity Health: Healthy\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache-2.0. \nPermissions: You may use, modify, and redistribute (including commercially). \nConditions: Preserve copyright/license notices and include a copy of the license with distributions. \nRestrictions/limits: Trademarks are not licensed, and patent/license termination clauses apply under Apache-2.0."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "xarray 2025.10.1\nnumpy 2.4.1\npackaging 25.0\npandas 2.3.3\npython-dateutil 2.9.0.post0\npytz 2025.2\nsix 1.17.0\ntzdata 2025.3"
+        }
+      ]
+    },
+    {
+      "name": "Matplotlib (3.10.7)",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "In the proposal, Matplotlib (v3.10.7) is used for plotting/visualizing results and performance/metrics produced by the project\u2019s climate-data compression modeling workflow. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "In Matplotlib\u2019s official documentation/site materials I reviewed, I did not see Matplotlib described or positioned for military/weapons/nuclear use-cases (it is documented as a general-purpose plotting/visualization library). "
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Matplotlib is community-maintained by the Matplotlib development team under a formal governance model (Steering Council/Project Lead) and is a NumFOCUS sponsored project. Non-D5"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "3.1 Source Channel\n\n    GitHub: https://github.com/matplotlib/matplotlib/tree/v3.10.7\n\n3.2 GitHub Repository Metadata\n\n    Owner / Organization: N/A\n    Repository: matplotlib/matplotlib\n    Description: matplotlib: plotting with Python\n    Stars: 22186\n    Forks: 8170\n    Open Issues: 1539\n    Last Commit Date: 2026-01-04T06:14:22Z\n    Activity Health: Healthy"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Matplotlib\u2019s license is based on the Python Software Foundation (PSF) license and uses BSD-compatible code. \nPermissions: You may use, modify, and redistribute the software (including commercially) under the license terms. \nConditions: Keep required copyright/license notices when redistributing."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "matplotlib 3.10.7\ncontourpy 1.3.3\ncycler 0.12.1\nfonttools 4.61.1\nkiwisolver 1.4.9\nnumpy 2.4.1\npackaging 25.0\npillow 12.1.0\npyparsing 3.3.1\npython-dateutil 2.9.0.post0\nsix 1.17.0\n"
+        }
+      ]
+    },
+    {
+      "name": "Pyinterp (2025.11.0)",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "In the proposal, Pyinterp (v2025.11.0) is used to provide interpolation functions within the project workflow supporting ML-based scientific/climate data compression. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "In the Pyinterp project documentation and package descriptions reviewed, I did not find stated or implied use-cases related to \u201cmilitary\u201d, \u201cweapons\u201d, or \u201cnuclear\u201d (it is documented as a geoscience/scientific interpolation library). "
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Pyinterp is developed/maintained in the CNES/pangeo-pyinterp repository (affiliated with CNES \u2013 the French space agency), and CNES has an official LinkedIn presence. https://www.linkedin.com/company/cnes/?utm_source=chatgpt.com Non-D5"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "3.1 Source Channel\n\n    GitHub: https://github.com/CNES/pangeo-pyinterp/tree/2025.11.0\n\n3.2 GitHub Repository Metadata\n\n    Owner / Organization: N/A\n    Repository: CNES/pangeo-pyinterp\n    Description: Python library for optimized interpolation.\n    Stars: 133\n    Forks: 17\n    Open Issues: 2\n    Last Commit Date: 2025-11-11T20:47:47Z\n    Activity Health: Healthy"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: BSD 3-Clause (\u201cNew\u201d/\u201cRevised\u201d). \nGitHub\n+1\n\nPermissions: Use, modify, and redistribute in source or binary form (including commercially). \nGitHub\n\nConditions: Keep the copyright notice, license text, and disclaimer text in redistributions. \nGitHub\n\nRestrictions: Do not use contributor names to endorse/promote derived products without prior written permission."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "ca-certificates 2026.1.4\naws-c-common 0.10.6\nlibbrotlicommon 1.1.0\nlibdeflate 1.22\nlibgfortran5 15.2.0\nlibjpeg-turbo 3.1.2\nlibutf8proc 2.9.0\nlibwebp-base 1.6.0\nopenssl 3.6.0\nyaml 0.2.5\naws-c-cal 0.8.1\naws-c-compression 0.3.0\naws-c-sdkutils 0.2.1\naws-checksums 0.2.2\ngflags 2.2.2\nlerc 4.0.0\nlibabseil 20240722.0\nlibbrotlidec 1.1.0\nlibbrotlienc 1.1.0\nlibevent 2.1.12\nlibgfortran 15.2.0\ns2n 1.5.11\nsnappy 1.2.2\naws-c-io 0.15.3\nglog 0.7.1\nlibcrc32c 1.1.2\nlibopenblas 0.3.30\nlibpng 1.6.53\nlibprotobuf 5.28.2\nlibre2-11 2024.07.02\nlibthrift 0.21.0\naws-c-event-stream 0.5.0\naws-c-http 0.9.2\nlibblas 3.11.0\nlibfreetype6 2.14.1\nopenblas 0.3.30\nre2 2024.07.02\naws-c-auth 0.8.0\naws-c-mqtt 0.11.0\nlibcblas 3.11.0\nlibfreetype 2.14.1\nlibgrpc 1.67.1\nliblapack 3.11.0\nlibtiff 4.7.0\norc 2.0.3\naws-c-s3 0.7.7\nlcms2 2.17\nopenjpeg 2.5.3\naws-crt-cpp 0.29.7\naws-sdk-cpp 1.11.458\nazure-core-cpp 1.14.0\ncertifi 2026.1.4\ncloudpickle 3.1.2\nfsspec 2026.1.0\nlibgoogle-cloud 2.31.0\nlocket 1.0.0\nlz4 4.3.3\nmarkupsafe 3.0.3\nnarwhals 2.15.0\nnumpy 2.4.1\npillow 11.3.0\npsutil 7.2.1\npython-tzdata 2025.3\npytz 2025.2\npyyaml 6.0.3\nsix 1.17.0\nsortedcontainers 2.4.0\ntblib 3.2.2\ntoolz 1.1.0\ntornado 6.5.3\nxyzservices 2025.11.0\nzict 3.0.0\nzipp 3.23.0\nazure-identity-cpp 1.10.0\nazure-storage-common-cpp 12.8.0\ncontourpy 1.3.3\ncytoolz 1.1.0\nimportlib-metadata 8.7.0\njinja2 3.1.6\nlibgoogle-cloud-storage 2.31.0\npartd 1.4.2\npython-dateutil 2.9.0.post0\nazure-storage-blobs-cpp 12.13.0\ndask-core 2025.12.0\npandas 2.3.3\nazure-storage-files-datalake-cpp 12.12.0\nbokeh 3.8.1\nxarray 2025.12.0\ndistributed 2025.12.0\nlibarrow 18.1.0\nlibarrow-acero 18.1.0\nlibparquet 18.1.0\npyarrow-core 18.1.0\nlibarrow-dataset 18.1.0\nlibarrow-substrait 18.1.0\npyarrow 18.1.0\ndask 2025.12.0\npyinterp 2025.11.0\n"
+        }
+      ]
+    },
+    {
+      "name": "Scipy (1.16.3)",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "In the proposal, SciPy (v1.16.3) is used to provide interpolation functions within the project workflow supporting climate/scientific data compression experiments. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "In SciPy\u2019s official project pages and release materials I reviewed, I did not see SciPy documented for military/weapons/nuclear use-cases (it is described as general-purpose scientific computing). "
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "SciPy is community-maintained by the SciPy project (core developers / Steering Council) and is fiscally sponsored by NumFOCUS; official LinkedIn pages exist for both SciPy and NumFOCUS.  Non-D5"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "3.1 Source Channel\n\n    GitHub: https://github.com/scipy/scipy/tree/v1.16.3\n\n3.2 GitHub Repository Metadata\n\n    Owner / Organization: N/A\n    Repository: scipy/scipy\n    Description: SciPy library main repository\n    Stars: 14314\n    Forks: 5572\n    Open Issues: 1744\n    Last Commit Date: 2026-01-05T13:43:38Z\n    Activity Health: Healthy"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: BSD 3-Clause (\u201cNew\u201d/\u201cRevised\u201d). \nGitHub\n+1\n\nPermissions: Use, modify, and redistribute in source or binary form (including commercially). \nGitHub\n\nConditions: Keep copyright and license notices in redistributions. \nGitHub\n\nRestrictions: No endorsement using contributor names without prior written permission. \nGitHub\n\nBundled components: Some vendored/bundled libraries have their own compatible licenses listed in SciPy\u2019s bundled-licenses file."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "\nca-certificates 2026.1.4\nlibgfortran5 15.2.0\nopenssl 3.6.0\nlibgfortran 15.2.0\nlibopenblas 0.3.30\nlibblas 3.11.0\nlibcblas 3.11.0\nliblapack 3.11.0\ncertifi 2026.1.4\nnumpy 2.4.1\nscipy 1.16.3\n"
+        }
+      ]
+    }
+  ],
+  "source_code": [],
+  "datasets_user_files": [
+    {
+      "name": "ERA5",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "ERA5 (ECMWF Reanalysis v5) dataset is a popular source of global climate data. The proposal has indicated using it for training their models. Aligns with approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "Restricted Entities Screening (LC 2.5)",
+          "score": 1,
+          "notes": "https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5\nCopernicus (European Union)\n Non-D5"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "no finetuning scripts provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Data sampling viewer available on https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=documentation\n    Launch example in JupyterHub available on https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=documentation (Log-in required)\n\nlow risk - inspection skipped\n"
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "\n    Owner / Curator: ECMWF|50\n    Primary Distribution Platform: Copernicus Climate Data Store (CDS)\n    Repository: N/A\n    Access Method: download via Copernicus Climate Data Store (CDS)\n    Provenance: The dataset is generated using ECMWF\u2019s Integrated Forecasting System (IFS) and assimilated observational data.\n    Maintenance Status: Publication date: 2018-06-14 - Update date 2026-01-04\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "\n    License: CC-BY\n    Share \u2014 copy and redistribute the material in any medium or format for any purpose, even commercially.\n    Adapt \u2014 remix, transform, and build upon the material for any purpose, even commercially.\n    The licensor cannot revoke these freedoms as long as you follow the license terms.\n        You must give appropriate credit,\n        You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.\n"
+        }
+      ]
+    }
+  ],
+  "models": [],
+  "observations": "The custom MLP models have been indicated however, the model files have not been shared. The number of trainable parameters in the proposed models is typically 10-100 million. The maximum FLOPs expected from their proposal are of the order of 10^18 using 6xNxD after training. \n\n",
+  "recommendation": "Recommended for grand challenge. "
+}
