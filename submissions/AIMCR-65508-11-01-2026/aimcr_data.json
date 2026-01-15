@@ -273,7 +273,7 @@
         {
           "name": "Restricted Entities Screening (LC 2.5)",
           "score": 1,
-          "notes": "Copernicus (European Union)\n Non-D5"
+          "notes": "https://www.ecmwf.int/en/forecasts/d ataset/ecmwf-reanalysis-v5\nCopernicus (European Union)\n Non-D5"
         },
         {
           "name": "Prompts / Fine-tuning Scripts",
@@ -303,7 +303,7 @@
   "recommendation": "Recommended for grand challenge. ",
   "_submission_history": [
     {
-      "timestamp": "2026-01-11T23:50:25.881647",
+      "timestamp": "2026-01-15T13:17:32.879817",
       "action": "resubmission"
     }
   ]
