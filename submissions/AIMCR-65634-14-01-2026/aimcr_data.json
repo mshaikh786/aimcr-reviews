@@ -220,52 +220,6 @@
         }
       ],
       "is_proprietary": false
-    },
-    {
-      "name": "",
-      "checks": [
-        {
-          "name": "Project & Usage Alignment",
-          "score": 1,
-          "notes": ""
-        },
-        {
-          "name": "Prohibited Use Screening (LC 2.7)",
-          "score": 1,
-          "notes": ""
-        },
-        {
-          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
-          "score": 1,
-          "notes": ""
-        },
-        {
-          "name": "License / Permissions",
-          "score": 1,
-          "notes": ""
-        },
-        {
-          "name": "Training Data Documentation",
-          "score": 1,
-          "notes": ""
-        },
-        {
-          "name": "Customisation / Fine-tuning",
-          "score": 1,
-          "notes": ""
-        },
-        {
-          "name": "FLOPS Calculation",
-          "score": 1,
-          "notes": ""
-        },
-        {
-          "name": "Sample Inspection",
-          "score": 1,
-          "notes": ""
-        }
-      ],
-      "is_proprietary": false
     }
   ],
   "observations": "They specify two software containers:\nxetaiz/camelrun-qwen - Updated 6 months ago; 0 stars, 26 pulls. Source is ambiguous; community user and no associated organization \nxetaiz/camelrun-qwen3 - ",
