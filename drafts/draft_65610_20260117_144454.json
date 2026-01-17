@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "proposal_title": "Large Language Models for Wireless Communications",
+    "principal_investigator": "Ahmed Eltawil",
+    "proposal_date": "2026-01-14",
+    "reviewer_name": "Mohsin Ahmed Shaikh",
+    "reviewer_id": "174988",
+    "aimcr_date": "2026-01-14",
+    "project_id": "65610"
+  },
+  "third_party_software": [],
+  "source_code": [],
+  "datasets_user_files": [],
+  "models": [],
+  "observations": "There are no third-party software packages listed in the proposal. They only mention using tools like NVIDIA Sionna and Wireless InSite.\n\nNo specific dataset names are provided in the proposal.\nWhat they say they will use instead:\nA generated large-scale ray-tracing dataset of wireless propagation/channel data (they plan to generate it during the project) \n\u201cData Readiness\u201d section dataset entries are TBD (not filled)",
+  "recommendation": ""
+}
