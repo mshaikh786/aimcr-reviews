@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "proposal_title": "Undefined",
+    "proposal_title": "Automated Livestock Inventory for Saudi Arabia from Satellite Imaging",
     "principal_investigator": "Maurizio Filippone",
     "proposal_date": "2025-10-23",
     "reviewer_name": "Mohsin Ahmed Shaikh",
@@ -335,6 +335,12 @@
       ]
     }
   ],
-  "observations": "Software: Container images (camel-detector-training:latest and satellite-preprocessing:latest) aren't publicly\n available, (private Dockerhub repo? / Enterprise NGC?)\n\nDataset: SA-VHRCAMEL-1 isn't publicly listed, provided link leads to Google Earth / Restor websites.\n\nModels parameters are not specified.",
-  "recommendation": "Recommended for grand challenge conditional to acceptable risk."
+  "observations": "Software: Container images (camel-detector-training:latest and satellite-preprocessing:latest) aren't publicly\n available, (private Dockerhub repo? / Enterprise NGC?)\n\nDataset: SA-VHRCAMEL-1 isn't publicly listed, provided link leads to Google Earth / Restor websites.\n\n",
+  "recommendation": "",
+  "_submission_history": [
+    {
+      "timestamp": "2026-01-17T15:04:04.735948",
+      "action": "resubmission"
+    }
+  ]
 }
