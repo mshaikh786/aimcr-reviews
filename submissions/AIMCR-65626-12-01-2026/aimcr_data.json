@@ -938,12 +938,59 @@
       ]
     }
   ],
-  "models": [],
-  "observations": "No explicit, named AI models are specified as being used or adopted in a way that allows direct identification and download. \nThe proposal consistently describes the approach as \u201ca transformer model using PyTorch\u201d without naming a concrete pretrained model, checkpoint, or architecture variant \n\nModels such as ProTrek and FGeneBERT are mentioned only as state-of-the-art examples in the literature review, not as models that will be used, fine-tuned, or downloaded for this project\n\nThe use of very old versions of some software packages. ",
+  "models": [
+    {
+      "name": "ProTrek",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "ProTrek is a tri-modal protein language model that jointly models protein sequence, structure, and function using contrastive learning to associate them in a latent space.\n\nProTrek is used for objective 4 (benchmarking and validation against state-of-the-art models) and supports objectives 2 and 3 (model development and pretraining) as a scalable code base for training.\n\nAligns with approved research topics Bioscience and Datascience & engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "score": 3,
+          "notes": "https://github.com/westlake-repl/ProTrek\n\nThe model is owned and maintained by the westlake-repl organization at Westlake University, China, with Fajie Yuan as the primary maintainer (Assistant Professor at Westlake University, previously at Tencent and PhD from University of Glasgow); LinkedIn: https://uk.linkedin.com/in/fajie-yuan-6607a3aa. \nhttps://fajieyuan.github.io/ claims he is Assistant Prof at Hangzhou, China\n\nStars: 191\nForks: 22\nCommits: 177\nlast commit: Dec 2025\n\nHF: westlake-repl/ProTrek_35M\nDownloads this month: 15\nHF: westlake-repl/ProTrek_650M\nDownloads this month: 67\n\nEntity's association is from D5-country. Current association is from China. The Github repo is moderately popular."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "MIT License\n\nPermits free use of the software.\nPermits copying of the software.\nPermits modification of the software.\nPermits merging of the software.\nPermits publishing of the software.\nPermits distributing of the software.\nPermits sublicensing of the software.\nPermits selling of the software.\nRequires copyright notice inclusion in all copies.\nRequires permission notice inclusion in all copies."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "Following were identified as training datasets used:\n- Swiss-Prot: https://ngdc.cncb.ac.cn/databasecommons/database/id/5614\nMaintained by Swiss Institute of Bioinformatics,\n\n\n- TrEMBL50: TrEMBL50 refers to a non-redundant (clustered) subset of protein sequences derived from UniProtKB/TrEMBL (the unreviewed, automatically annotated section of UniProt), specifically clustered at 50% sequence identity\nSource is not clear. \n\n\n"
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "Sequence-function retrieval\nfunction-sequence retrieval\nprotein-protein search\nand 11 downstream prediction tasks (outperforms ESM-2 in 9 of 11).\n\nAll associated to Bioinformatics."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Small models of the order of 200-950M parameters. Skipping FLOPS check because the models are too small. "
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": ""
+        }
+      ],
+      "is_proprietary": false
+    }
+  ],
+  "observations": "No explicit, named AI models are specified as being used or adopted in a way that allows direct identification and download. \nThe proposal consistently describes the approach as \u201ca transformer model using PyTorch\u201d without naming a concrete pretrained model, checkpoint, or architecture variant \n\nProTrek has been reviewed and provenace is risky.\n\nThe use of very old versions of some software packages. ",
   "recommendation": "Conditional to providing the models and checks applied to them, the recommendation is to approval the proposal for grand challenge. ",
   "_submission_history": [
     {
-      "timestamp": "2026-01-13T15:27:48.940935",
+      "timestamp": "2026-01-17T15:42:54.620463",
       "action": "resubmission"
     }
   ]
