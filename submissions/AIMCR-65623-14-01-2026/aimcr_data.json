@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "proposal_title": "Automated Livestock Inventory for Saudi Arabia from Satellite Imaging",
+    "proposal_title": "Undefined",
     "principal_investigator": "Maurizio Filippone",
     "proposal_date": "2025-10-23",
     "reviewer_name": "Mohsin Ahmed Shaikh",
@@ -50,7 +50,7 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "The container provides the training environment for distributed deep learning on satellite imagery.\n\nAligns with the approved research topic Datascience and engineering.\n"
+          "notes": "The container providea the training environment for distributed deep learning on satellite imagery.\n\nAligns with the approved research topic Datascience and engineering.\n"
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
@@ -70,7 +70,7 @@
         {
           "name": "License / Permissions",
           "score": 1,
-          "notes": "container License Considerations:\n\nBase NGC Container: Governed by NVIDIA NGC License Agreement\n\nPyTorch: BSD-3-Clause\n\nCUDA Toolkit: NVIDIA CUDA EULA (free but proprietary)\n\ncuDNN: NVIDIA cuDNN License (free but proprietary)\n\nUbuntu 22.04: Various open-source licenses\n\nCan be used for academic purposes?\tYes\n\nCan be used for commercial use?\tYes (review NGC and CUDA licenses)\n\nModification allowed?\tYes (for open-source components)\n\nRedistribution allowed?\tLimited (NGC base, CUDA restrictions)\n\nAttribution required?\tYes\n\nCopyleft obligations?\tNo (BSD/Apache components)\n\nImportant Notes:\n\nNVIDIA NGC containers require acceptance of NGC terms\n\nCUDA and cuDNN are proprietary but freely available\n\nCommercial use permitted but review NVIDIA's license terms\n\nRedistribution of modified NGC containers may have restrictions"
+          "notes": "ontainer License Considerations:\n\nBase NGC Container: Governed by NVIDIA NGC License Agreement\n\nPyTorch: BSD-3-Clause\n\nCUDA Toolkit: NVIDIA CUDA EULA (free but proprietary)\n\ncuDNN: NVIDIA cuDNN License (free but proprietary)\n\nUbuntu 22.04: Various open-source licenses\n\nCan be used for academic purposes?\tYes\n\nCan be used for commercial use?\tYes (review NGC and CUDA licenses)\n\nModification allowed?\tYes (for open-source components)\n\nRedistribution allowed?\tLimited (NGC base, CUDA restrictions)\n\nAttribution required?\tYes\n\nCopyleft obligations?\tNo (BSD/Apache components)\n\nImportant Notes:\n\nNVIDIA NGC containers require acceptance of NGC terms\n\nCUDA and cuDNN are proprietary but freely available\n\nCommercial use permitted but review NVIDIA's license terms\n\nRedistribution of modified NGC containers may have restrictions"
         },
         {
           "name": "Bundled Tools / Dependencies",
@@ -333,14 +333,53 @@
           "notes": "Low risk, skipped inspection."
         }
       ]
+    },
+    {
+      "name": "Inception V3",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Inception v3 is a convolutional neural network model for image classification from PyTorch's Torchvision library. \n\nAligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the Documentation."
+        },
+        {
+          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "score": 1,
+          "notes": "Owner: The model is owned and maintained by TorchVision maintainers and contributors, which is part of the PyTorch ecosystem maintained by Soumith Chintala (https://www.linkedin.com/in/soumith), Gregory Chanan (https://www.linkedin.com/in/gregory-chanan-49530836), Dmytro Dzhulgakov (https://www.linkedin.com/in/dzhulgakov), Edward Yang, Alban Desmaison, Piotr Bialecki and Nikita Shulga, Entity from a Non-D5 country\n\nPaper: https://arxiv.org/abs/1512.00567\nGitHub Repositories:\nFor the original TensorFlow implementation:\nhttps://github.com/tensorflow/models\nFor PyTorch Torchvision implementation:\nhttps://github.com/pytorch/vision/blob/main/torchvision/models/inception.py"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Torchvision uses the BSD-3-Clause License.\n\nFree to use, modify, and distribute in source and binary forms\nMust retain copyright notice, conditions list, and disclaimer in distributions\nCannot use copyright holder's or contributors' names to endorse products without written permission\nCan be used in commercial and proprietary software"
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "The pretrained model was trained on ImageNet ILSVRC 2012 dataset containing 1,281,167 training images across 1,000 object classes."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "No finetuning scripts provided."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "The model has approximately 23.8 million trainable parameters (same as the original Google Inception v3 architecture)."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Low risk, skipped inspection."
+        }
+      ]
     }
   ],
-  "observations": "Software: Container images (camel-detector-training:latest and satellite-preprocessing:latest) aren't publicly\n available, (private Dockerhub repo? / Enterprise NGC?)\n\nDataset: SA-VHRCAMEL-1 isn't publicly listed, provided link leads to Google Earth / Restor websites.\n\n",
-  "recommendation": "",
-  "_submission_history": [
-    {
-      "timestamp": "2026-01-17T15:04:04.735948",
-      "action": "resubmission"
-    }
-  ]
+  "observations": "Software: Container images (camel-detector-training:latest and satellite-preprocessing:latest) aren't publicly\n available, (private Dockerhub repo? / Enterprise NGC?)\n\nDataset: SA-VHRCAMEL-1 isn't publicly listed, provided link leads to Google Earth / Restor websites.\n\nModels parameters are not specified.",
+  "recommendation": "Recommended for grand challenge conditional to acceptable risk."
 }
