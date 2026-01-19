@@ -23,7 +23,7 @@
           "notes": "No mention of sensitive terms in the documentation of PyTorch.\nFrom a non D5 country."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originally developed by Meta and now governed by Linux Foundation."
         },
@@ -58,7 +58,7 @@
           "notes": "In the official Lightning docs, I did not find documentation indicating or implying weapons/military/nuclear functionality; however, Lightning\u2019s public site includes at least one community blog post that explicitly uses the word \u201cmilitary\u201d in a non-technical career context (not a software use-case). "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "PyTorch Lightning is maintained under the Lightning-AI GitHub organization (Lightning AI), and the project is associated with Lightning AI (https://www.linkedin.com/company/pytorch-lightning?utm_source=chatgpt.com : USA) and its founder/creator William \u201cWill\u201d Falcon (https://www.linkedin.com/in/wfalcon?utm_source=chatgpt.com - USA).\n Non-D5  \n"
         },
@@ -93,7 +93,7 @@
           "notes": "Across NumPy\u2019s official documentation and governance pages, I found no indication or implied use-cases related to military, weapons, or nuclear applications. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "NumPy is maintained by the NumPy Developers community under a formal Steering Council governance model and is a sponsored project of NumFOCUS (nonprofit fiscal sponsor). \nNon-D5"
         },
@@ -128,7 +128,7 @@
           "notes": "A keyword scan of Xarray\u2019s official docs/release notes and the repository license page did not surface terms like \u201cmilitary\u201d, \u201cweapons\u201d, or \u201cnuclear,\u201d and I did not see documentation implying such restricted use-cases. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Xarray is maintained by the xarray Developers under the pydata/xarray project and is a NumFOCUS sponsored project; examples of prominent maintainers/contributors include Stephan Hoyer (Google) and Julia Signell (Element 84) (https://www.linkedin.com/in/stephanhoyer?utm_source=chatgpt.com : San Francisco). Non-D5 "
         },
@@ -163,7 +163,7 @@
           "notes": "In Matplotlib\u2019s official documentation/site materials I reviewed, I did not see Matplotlib described or positioned for military/weapons/nuclear use-cases (it is documented as a general-purpose plotting/visualization library). "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Matplotlib is community-maintained by the Matplotlib development team under a formal governance model (Steering Council/Project Lead) and is a NumFOCUS sponsored project. Non-D5"
         },
@@ -198,7 +198,7 @@
           "notes": "In the Pyinterp project documentation and package descriptions reviewed, I did not find stated or implied use-cases related to \u201cmilitary\u201d, \u201cweapons\u201d, or \u201cnuclear\u201d (it is documented as a geoscience/scientific interpolation library). "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Pyinterp is developed/maintained in the CNES/pangeo-pyinterp repository (affiliated with CNES \u2013 the French space agency), and CNES has an official LinkedIn presence. https://www.linkedin.com/company/cnes/?utm_source=chatgpt.com Non-D5"
         },
@@ -233,7 +233,7 @@
           "notes": "In SciPy\u2019s official project pages and release materials I reviewed, I did not see SciPy documented for military/weapons/nuclear use-cases (it is described as general-purpose scientific computing). "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "SciPy is community-maintained by the SciPy project (core developers / Steering Council) and is fiscally sponsored by NumFOCUS; official LinkedIn pages exist for both SciPy and NumFOCUS.  Non-D5"
         },
@@ -271,7 +271,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5\nCopernicus (European Union)\n Non-D5"
         },
