@@ -108,7 +108,7 @@ SECTION_CHECK_HELP = {
         
         'Prohibited Use Screening (LC 2.7)': "Description / Guidance: Review the project proposal, code and documentation for any indication of prohibited uses/functionality (e.g., military, weapons, surveillance). Explicitly reference LC 2.7.\n\nExample(s) / Reference: Code contains functions or comments related to 'military' or 'surveillance' applications.",
         
-        'Source / Provenance & Restricted Entities (LC 2.5)': "Description / Guidance: Verify source repository authenticity and integrity; review dependencies for provenance and approval status; scan/review code origin, contributors, and metadata for restricted countries/entities. Explicitly reference LC 2.5.\n\nExample(s) / Reference: Code from official GitHub repo; contributors from trusted countries; no links to D:5 country, Entity List, SDN List.",
+        'Source / Provenance Provenance & Restricted Entities D5+M Affiliation Screeing (LC 2.5)': "Description / Guidance: Verify source repository authenticity and integrity; review dependencies for provenance and approval status; scan/review code origin, contributors, and metadata for restricted countries/entities. Explicitly reference LC 2.5.\n\nExample(s) / Reference: Code from official GitHub repo; contributors from trusted countries; no links to D:5 country, Entity List, SDN List.",
         
         'License / Permissions': "Description / Guidance: Confirm the license allows the intended use (research, redistribution, modification). Identify any obligations or restrictions.\n\nExample(s) / Reference: Code licensed under MIT; no non-commercial clause.",
         
@@ -138,7 +138,7 @@ SECTION_CHECK_HELP = {
         
         'Prohibited Use Screening (LC 2.7)': "Description / Guidance: Review the model and documentation for any indication of prohibited uses/functionality (e.g., military, weapons, surveillance). Explicitly reference LC 2.7.\n\nExample(s) / Reference: Model documentation includes references to 'military' or 'surveillance' applications.",
         
-        'Source / Provenance & Restricted Entities (LC 2.5)': "Description / Guidance: Confirm model (architecture and weights) was obtained from a trusted internal registry, approved vendor or trusted official repositories; assess training data and model provenance; flag involvement from prohibited entities. Explicitly reference LC 2.5.\n\nExample(s) / Reference: Model downloaded from official registry; training data from trusted sources; no links to D:5 country, Entity List, SDN List.",
+        'Source / Provenance Provenance & Restricted Entities D5+M Affiliation Screeing (LC 2.5)': "Description / Guidance: Confirm model (architecture and weights) was obtained from a trusted internal registry, approved vendor or trusted official repositories; assess training data and model provenance; flag involvement from prohibited entities. Explicitly reference LC 2.5.\n\nExample(s) / Reference: Model downloaded from official registry; training data from trusted sources; no links to D:5 country, Entity List, SDN List.",
         
         'License / Permissions': "Description / Guidance: Assess permissions: Confirm the license of the model and its training data allows the intended use (research, redistribution, modification). Identify any obligations or restrictions.\n\nExample(s) / Reference: Model licensed under MIT; training data with open license.",
         
@@ -165,7 +165,7 @@ SECTION_CHECKS = {
     'source_code': [
         'Project & Usage Alignment',
         'Prohibited Use Screening (LC 2.7)',
-        'Source / Provenance & Restricted Entities (LC 2.5)',
+        'Source / Provenance Provenance & Restricted Entities D5+M Affiliation Screeing (LC 2.5)',
         'License / Permissions',
         'Dependencies / Bundled Components',
         'Sample Inspection'
@@ -182,7 +182,7 @@ SECTION_CHECKS = {
     'models': [
         'Project & Usage Alignment',
         'Prohibited Use Screening (LC 2.7)',
-        'Source / Provenance & Restricted Entities (LC 2.5)',
+        'Source / Provenance Provenance & Restricted Entities D5+M Affiliation Screeing (LC 2.5)',
         'License / Permissions',
         'Training Data Documentation',
         'Customisation / Fine-tuning',
