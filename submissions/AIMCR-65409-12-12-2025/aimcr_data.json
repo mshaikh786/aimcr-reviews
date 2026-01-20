@@ -23,7 +23,7 @@
           "notes": "No prohibited use/functionality is included in the scope of this project. The proposed AI model is to implement cybersecurity to scan the binary codes for vulnerabilities."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "The requested software is from Non-D5 organizations. NVIDIA NGC."
         },
@@ -58,7 +58,7 @@
           "notes": "No prohibited use/functionality is included in the scope of this project. The proposed AI model is to implement cybersecurity to scan the binary codes for vulnerabilities."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Canonical official image repo of Ubuntu. It is verified repo on DockerHub."
         },
@@ -93,7 +93,7 @@
           "notes": "No prohibited use/functionality is included in the scope of this project. The proposed AI model is to implement cybersecurity to scan the binary codes for vulnerabilities."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 2,
           "notes": "The project is maintained by opensource community from https://llvm.org and https://github.com/llvm/llvm-project.git\nThe community is big and has a robust code review process. New code is accepted through PRs on Github and process has been explained here: https://llvm.org/docs/DeveloperPolicy.html#introducing-new-components-into-llvm\nThis is a popular backend compiler for many common compilers including HPE Cray compiler provided on SIII GPUP"
         },
@@ -131,7 +131,7 @@
           "notes": " No prohibited use/functionality is included in the scope of this project. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "US based developer. Author of the paper for which the Github repo contains the code. Noah Fleischmann: https://www.linkedin.com/in/noah-fleischmann/"
         },
@@ -171,7 +171,7 @@
           "notes": "No prohibited use/functionality is included in the scope of this project."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Andrea Marcelli (https://www.linkedin.com/in/jimmy-sonny/) Author of the paper \u201cHow Machine Learning Is Solving the Binary Function Similarity Problem\u201d  for which the GitHub repo holds the code for. Developer associated with Cisco-Talos \u2013 https://talosintelligence.com/ "
         },
@@ -213,7 +213,7 @@
           "notes": "No prohibited dataset was included in the training dataset of this model \nNo intent present to fine-tune this model for prompts that can be perceived as prohibited use. "
         },
         {
-          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 1,
           "notes": "DeBERTa\nhttps://huggingface.co/microsoft/deberta-v3-base\nIts was trained and published by Microsoft."
         },
@@ -258,7 +258,7 @@
           "notes": "The model card and the llama2 paper promises that only public data and no Meta's own data was used to train the model. The datasets in particular were not disclosed. However, the details of model safety in the papers mitigates it misuse towards prohibited use. \nhttps://arxiv.org/abs/2307.09288"
         },
         {
-          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 1,
           "notes": "The model is released and maintained by Meta on HuggingFace (meta-llama/Llama-2-7b). Neither the training data nor the model belong to any entity from D5 country.  "
         },
@@ -303,7 +303,7 @@
           "notes": "There are no built in moderation safeguards\nhttps://www.bankinfosecurity.com/mistral-ai-models-fail-key-safety-tests-report-finds-a-28358"
         },
         {
-          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 1,
           "notes": "https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3\nMistral is a french entity who releases and maintains the models\nhttps://mistral.ai/about"
         },

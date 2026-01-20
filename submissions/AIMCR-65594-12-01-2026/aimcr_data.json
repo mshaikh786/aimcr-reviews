@@ -23,7 +23,7 @@
           "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in the PyTorch 2.9.0 documentation, which describes a general-purpose open-source machine learning framework; this review was conducted in accordance with LC 2.7."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "No indication of restricted-country origin or restricted-entity involvement was identified for Torchtitan v0.2.0 based on available documentation, contributor information, and repository metadata.\\nThis review was conducted in accordance with LC 2.5."
         },
@@ -58,7 +58,7 @@
           "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in the Megatron-LM v0.15.0 documentation, which describes a research-oriented large-scale language model training framework; this review was conducted in accordance with LC 2.7."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "No indication of restricted-country origin or restricted-entity involvement was identified for Torchtitan v0.2.0 based on available documentation, contributor information, and repository metadata. This review was conducted in accordance with LC 2.5."
         },
@@ -96,7 +96,7 @@
           "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in the FineWeb-Edu dataset documentation, which describes the dataset as an educationally focused web-text corpus for language model research and training; this review was conducted in accordance with LC 2.7."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originating Organization: HuggingFace and Common Crawl both in United States\n"
         },

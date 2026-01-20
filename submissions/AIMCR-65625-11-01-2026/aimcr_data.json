@@ -23,7 +23,7 @@
           "notes": "No mention of sensitive terms in the documentation of PyTorch."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originally developed by Meta and now governed by Linux Foundation."
         },
@@ -58,7 +58,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Its a bonafide community with a governance model and multiple maintainers. https://numpy.org/about/ This is an opensource project with funding sources from entities from non-D5 countries."
         },
@@ -93,7 +93,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Its a bonafide community with a governance model and multiple maintainers. https://wandb.ai/site/company/about-us/ This is an opensource project with funding sources from entities from non-D5 countries."
         },
@@ -128,7 +128,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Thomas A Caswell \u2014 project lead \u2014 https://www.linkedin.com/in/tcaswell/\n\nGovernance: https://matplotlib.org/governance/governance.html#main-governance-document\n\nThis is an opensource project with funding sources from entities from non-D5 countries."
         },
@@ -163,7 +163,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Owned by Meta Platforms, Inc.\nEntity is not from a D5 country."
         },
@@ -198,7 +198,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Its a bonafide community with a governance model and multiple maintainers. https://pandas.pydata.org/about/governance.html\nThis is an opensource project with funding sources from entities from non-D5 countries."
         },
@@ -236,7 +236,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": " Owned by: HuggingFace / Fine Data (https://huggingface.co/HuggingFaceFW)\nThis organization is from a non D5 country."
         },
@@ -276,7 +276,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Stanford University, Princeton University , UNC Chapel Hill, Facebook, Shopagon\nThese organizations are from a non D5 country."
         },

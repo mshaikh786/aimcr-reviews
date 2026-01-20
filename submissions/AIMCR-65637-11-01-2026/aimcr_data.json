@@ -23,7 +23,7 @@
           "notes": "No mention of sensitive terms in the documentation of PyTorch."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originally developed by Meta and now governed by Linux Foundation. "
         },
@@ -58,7 +58,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Its a bonafide community with a governance model and multiple maintainers. https://numpy.org/about/\nThis is an opensource project with funding sources from entities from non-D5 countries.  \n"
         },
@@ -93,7 +93,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Its a bonafide community with a governance model and multiple maintainers. https://scipy.org/about/\nThis is an opensource project with funding sources from entities from non-D5 countries."
         },
@@ -128,7 +128,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Its a bonafide community with a governance model and multiple maintainers. \nhttps://pandas.pydata.org/about/governance.html\n\nThis is an opensource project with funding sources from entities from non-D5 countries.\n\nThis is an opensource project with funding sources from entities from non-D5 countries."
         },
@@ -163,7 +163,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Its a bonafide community with a governance model and multiple maintainers.\n\nhttps://scikit-learn.org/stable/about.html#the-people-behind-scikit-learn\n\nThis is an opensource project with funding sources from entities from non-D5 countries."
         },
@@ -198,7 +198,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Thomas A Caswell -- project lead -- https://www.linkedin.com/in/tcaswell/\n\nGovernance: https://matplotlib.org/governance/governance.html#main-governance-document\n\nThis is an opensource project with funding sources from entities from non-D5 countries."
         },
@@ -233,7 +233,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintained by Databricks (USA) \nThe entity is from non-D5 country"
         },
@@ -268,7 +268,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "maintained by Meta\n\nThis is an entity from non-D5 country."
         },
@@ -303,7 +303,7 @@
           "notes": "No prohibited use indicated. Its a distributed training framework."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "The framework is developed and maintained by Microsoft. The entity is from non-D5 country."
         },
@@ -338,7 +338,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": ""
         },
@@ -373,7 +373,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "opencv-python package is owned by the non-profit organization OpenCV.org\n\nGovernance: \n\nPresident: Gary Bradski (affiliated with Bonsai Robotics as Chief Science Officer, founder of OpenCV, previously at Willow Garage and Intel; LinkedIn: https://www.linkedin.com/in/garybradski)\n\n- CEO CEO Satya Mallick (affiliated with OpenCV and UC San Diego; LinkedIn: https://www.linkedin.com/in/satyamallick)\n\nThe entites are from non-D5 countries. "
         },
@@ -408,7 +408,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "an open-source community-driven project owned by the scikit-image GitHub organization and maintained by a core team of volunteer developers (with no single corporate owner), guided by a historical steering council model and active contributors including key figures such as:\n\n- St\u00e9fan van der Walt (founder of scikit-image, researcher at UC Berkeley's Berkeley Institute for Data Science (BIDS); LinkedIn: https://www.linkedin.com/in/stefan-van-der-walt-6193221/)\n\n- Juan Nunez-Iglesias (core developer, Bioimage Informatics Research Fellow at Monash University, Australia; no public LinkedIn found in searches)\n\n- Josh Warner (core developer; affiliation not prominently listed in recent sources)\n\nGovernance leads are from non-D5 countries. "
         },
@@ -443,7 +443,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "created, owned, and maintained by Michael Waskom (GitHub: mwaskom), a computational cognitive neuroscientist with a PhD from Stanford University; he has held academic roles at NYU (Center for Neural Science) and the Simons Foundation, previously worked at Flatiron Health, and is currently a Member of Technical Staff at Modal Labs; his LinkedIn profile is available at https://www.linkedin.com/in/michaelwaskom/.\n\nFrom non-D5 country."
         },
@@ -478,7 +478,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "owned and maintained by Mata. An entity from non-D5 country."
         },
@@ -513,7 +513,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 2,
           "notes": "community-owned and primarily maintained by Casper da Costa-Luis (GitHub: casperdcl). \nhttps://cdcl.ml\nAcclaimed developer from non-D5 country.\n"
         },
@@ -552,7 +552,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 1,
           "notes": "https://github.com/1zb/3DShape2VecSet\n\nBiao Zhang (@1zb) - Postdoctoral Researcher at KAUST (biao.zhang@kaust.edu.sa), primary maintainer\nJiapeng Tang - Technical University of Munich (TUM)\nMatthias Nie\u00dfner - Professor of Computer Science at TUM\nPeter Wonka - KAUST (also the PI of the current Shaheen III proposal)\n\nThe affiliates are all, except one, from non-D5 countries.\n"
         },
@@ -597,7 +597,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 4,
           "notes": "No source for the model provided. \n\nHaonan Wang (corresponding author, whn_aurora@hust.edu.cn) - School of Artificial Intelligence and Automation, Huazhong University of Science and Technology (HUST), China\n\nHanyu Zhou - School of Computing, National University of Singapore (hy.zhou@nus.edu.sg)\n\nHaoyue Liu - School of AI and Automation, HUST\n\nLuxin Yan - School of AI and Automation, HUST (yanluxin@hust.edu.cn)"
         },
@@ -642,7 +642,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 2,
           "notes": "https://github.com/microsoft/TRELLIS\n\nMicrosoft Research Asia (Spatial Intelligence Group) - owns and maintains the repository\n\nJianfeng Xiang - Lead author, PhD student at Tsinghua University, Research Intern at MSRA\n\nJiaolong Yang - Principal Research Manager, Microsoft Research Asia (jiaoyan@microsoft.com)\n\nXin Tong - Microsoft Research Asia\n\nAll authors of the paper for which the model is the artifact are affiliated with Microsoft, which is an entity from non-D5 country. "
         },

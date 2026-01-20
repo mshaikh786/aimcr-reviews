@@ -23,7 +23,7 @@
           "notes": "No mention of sensitive terms in the documentation of PyTorch."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originally developed by Meta and now governed by Linux Foundation. "
         },
@@ -58,7 +58,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintained by Databricks (USA) \nThe entity is from non-D5 country"
         },
@@ -93,7 +93,7 @@
           "notes": "No prohibited use indicated. Its a distributed training framework."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "The framework is developed and maintained by Microsoft. The entity is from non-D5 country."
         },
@@ -128,7 +128,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Owner/Maintainer: Tri Dao (primary developer and maintainer)\nAffiliation: Princeton University (Department of Computer Science) and Together AI\nLinkedIn: https://www.linkedin.com/in/tridao/\n\nThe developer and maintainer of the repository is from non-D5 country."
         },
@@ -163,7 +163,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Primary maintainers: The scverse consortium, particularly the Theis Lab at Helmholtz Munich\nKey developers:\n\nGiovanni Palla (Helmholtz Munich, Technical University of Munich) - LinkedIn\nHannah Spitzer (Helmholtz Munich)\nFabian Theis (Helmholtz Munich, Technical University of Munich)\n\n\nInstitutional affiliation: Helmholtz Zentrum M\u00fcnchen and scverse community.\n\nAll entities are from non-D5 countries."
         },
@@ -198,7 +198,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Owner: NVIDIA Corporation (with open-source community contributions)\nPrimary maintainers: NVIDIA Healthcare AI team and Project MONAI Consortium\n\nKey leadership:\n\nWenqi Li (NVIDIA, MONAI Technical Lead)\n\nPrerna Dogra (NVIDIA, Product Manager)\n\nTigmanshu Bhatnagar (NVIDIA)\n\n\nConsortium members: King's College London, NVIDIA, various academic medical centers\n\nAll entities are from non-D5 countries."
         },
@@ -236,7 +236,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "The dataset is owned and maintained by the NIH BRAIN Initiative Cell Census Network (BICCN), with the Brain Cell Data Center (BCDC) hosted at the Allen Institute for Brain Science (Seattle, WA).\n\nThe maintainer is an entity from non-D5 country."
         },
@@ -276,7 +276,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Owner: NIH BRAIN Initiative Cell Census Network (BICCN)\n\nMaintainer: Brain Cell Data Center (BCDC) at Allen Institute for Brain Science, Seattle, WA\n\nEntities are from non-D5 country."
         },
@@ -316,7 +316,7 @@
           "notes": "Checked https://atlas.brain-map.org/\n\nNo mention of sensitive terms in the documentation.\n"
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Allen Institute owns it. \n\nEntity from non-D5 country."
         },

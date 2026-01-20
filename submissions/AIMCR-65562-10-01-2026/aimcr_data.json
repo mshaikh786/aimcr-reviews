@@ -23,7 +23,7 @@
           "notes": "No mention of sensitive terms in the documentation of PyTorch."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originally developed by Meta and now governed by Linux Foundation. "
         },
@@ -58,7 +58,7 @@
           "notes": "No mention of sensitive terms in the documentation of PyG."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "NVIDIA is entities from non D5 countries "
         },
@@ -93,7 +93,7 @@
           "notes": "No mention of sensitive terms in the documentation of Pytorch-scatter."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintainer: Matthias Fey \nGitHub username: rusty1s\nAffiliation: TU Dortmund University (based on PyTorch Geometric paper), Germany\nEntity is from non-D5 country"
         },
@@ -128,7 +128,7 @@
           "notes": " No mention of sensitive terms in the documentation of Pytorch-sparse."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Matthias Fey GitHub username: rusty1s Affiliation: TU Dortmund University (based on PyTorch Geometric paper), Germany Entity is from non-D5 country"
         },
@@ -163,7 +163,7 @@
           "notes": "No mention of sensitive terms in the documentation of torch-cluster"
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Matthias Fey GitHub username: rusty1s Affiliation: TU Dortmund University , Germany Entity is from non-D5 country"
         },
@@ -198,7 +198,7 @@
           "notes": "No mention of sensitive terms in the documentation of pytorch lightning"
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "- Maintainers: \n- Luca Antiga (https://lantiga.github.io/)\n- Ethan Harris (https://www.linkedin.com/in/ethanwharris/)\n- Justus Schock  (https://www.linkedin.com/in/justus-schock/?locale=en_US)\n\nentity and maintainers are associated with non-D5 countries."
         },
@@ -233,7 +233,7 @@
           "notes": "No mention of sensitive terms in the documentation of torchmetrics"
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Owner organization is an entity from a non-D5 country. (US based)"
         },
@@ -268,7 +268,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Its a bonafide community with a governance model and multiple maintainers. https://numpy.org/about/\nThis is an opensource project with funding sources from entities from non-D5 countries.  \n"
         },
@@ -303,7 +303,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Its a bonafide community with a governance model and multiple maintainers. https://scipy.org/about/\nThis is an opensource project with funding sources from entities from non-D5 countries."
         },
@@ -338,7 +338,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Its a bonafide community with a governance model and multiple maintainers. \nhttps://pandas.pydata.org/about/governance.html\n\nThis is an opensource project with funding sources from entities from non-D5 countries.\n\nThis is an opensource project with funding sources from entities from non-D5 countries."
         },
@@ -373,7 +373,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Its a bonafide community with a governance model and multiple maintainers.\n\nhttps://scikit-learn.org/stable/about.html#the-people-behind-scikit-learn\n\nThis is an opensource project with funding sources from entities from non-D5 countries."
         },
@@ -408,7 +408,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Thomas A Caswell -- project lead -- https://www.linkedin.com/in/tcaswell/\n\nGovernance: https://matplotlib.org/governance/governance.html#main-governance-document\n\nThis is an opensource project with funding sources from entities from non-D5 countries."
         },
@@ -443,7 +443,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintained by Anaconda, Inc https://anaconda.org/numba/\nThe entity is from non-D5 country"
         },
@@ -478,7 +478,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintainer: Alex Rogozhnikov (https://www.linkedin.com/in/alexrogozhnikov/)\nFounder of Chai Discovery https://www.chaidiscovery.com/\n\nThis is an entity from non-D5 country (California USA)"
         },
@@ -513,7 +513,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintainers: \n\n- Mit Kotak: https://mitkotak.github.io/\n\n- Mario Geiger: https://www.linkedin.com/in/mario-geiger-9a0834207/?originalSubdomain=ch\n\nThe maintainers are from non-D5 countries."
         },
@@ -548,7 +548,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "GitLab Maintainers: \n- Ask Hjorth Larsen: https://www.dtu.dk/english/person/ask-hjorth-larsen?id=17508&entity=profile\n- Jens J\u00f8rgen Mortensen: https://orbit.dtu.dk/en/persons/jens-j%C3%B8rgen-mortensen/\n- Marcin Dulak: https://data.snf.ch/grants/person/521995\n\nMaintainers are from non-D5 countries"
         },
@@ -583,7 +583,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintainers:\n- Gregory A. Landrum: https://www.linkedin.com/in/greg-landrum-2764221/\n\n- Christopher Kuenneth, https://kuenneth.dev/\n\nMaintainers are from non-D5 countries"
         },
@@ -618,7 +618,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintainers: \n\n- Atreya Majumdar: https://www.linkedin.com/in/atreyamajumdar/\n\n- Karl Leswing: https://www.linkedin.com/in/lilleswing/\n\n- Peter Eastman: https://www.linkedin.com/in/peter-eastman-47bb653/\n\n- Bharath Ramsundar: https://www.linkedin.com/in/bharath-ramsundar-13275230/\n\nMaintainers are from non-D5 countries"
         },
@@ -653,7 +653,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Developed and maintained by HuggingFace. \nThis is an entity from non-D5 country"
         },
@@ -688,7 +688,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintainer: \n- Nic Watson: Google\n\nThe maintainer and the developed software are both from entity in non-D5 country. \n"
         },
@@ -723,7 +723,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintained by Databricks (USA) \nThe entity is from non-D5 country"
         },
@@ -761,7 +761,7 @@
           "notes": "No mention of sensitive terms in the documentation"
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Developed by Lawrence Berkeley National Laboratory/DOE , USA\nIt is a entity in non-D5 country."
         },
@@ -801,7 +801,7 @@
           "notes": "Dimethylhydrazine moiety is mentioned in the Examples section of the dataset's website: https://opencatalystproject.org/index.html\nAlso known as UDMH, it is explicitly referenced by Wikipedia and scientific literature as being used in \"launch tests of satellites, spacecraft and other military devices.\"  : https://en.wikipedia.org/wiki/Unsymmetrical_dimethylhydrazine\n\nNeeds a scientific reviewer/expert's advice. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Developed and published by Meta\nIt is an entity from non-D5 country."
         },
@@ -841,7 +841,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Managed by MetaAI. \nIt is an entity from non-D5 country."
         },
@@ -881,7 +881,7 @@
           "notes": "The OMat24 dataset includes uranium, plutonium, thorium, neptunium, and other actinides in its elemental coverage. \nRaising the risk level to Low to keep in sight."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Curated and managed by Meta \nThis is an entity in non-D5 country."
         },
@@ -921,7 +921,7 @@
           "notes": "The sensitive terms are mentioned only in the license conditions sections on prohibited use. \nNo mention of sensitive terms in the documentation.   "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintained by Meta and LBL. Both are entities from non-D5 countries."
         },
@@ -963,7 +963,7 @@
           "notes": "No mention of sensitive terms in the paper or in Github reporsitory."
         },
         {
-          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 1,
           "notes": "https://github.com/atomicarchitects/equiformer_v2\n\nYi-Lun Liao - Affiliation with MIT\nCommits: 17\nlast commit: 11 months ago\nStars: 316\nFork: 43\n\nhttps://huggingface.co/yilunliao/equiformer_v2\nNo model card available"
         },
@@ -1008,7 +1008,7 @@
           "notes": "The following was found in the paper of GemNet. \n\n\"Societal impacts. Accelerating molecular simulations can have positive effects in a wide range of applications in physics and chemistry. At the same time, however, this can be used for malicious purposes such as developing chemical agents or weapons. To the best of our knowledge, this work does not promote these use cases more than regular chemistry research does. To somewhat mitigate negative effects we will publish our source code under the Hippocratic license.\"\n\nCoupled with scientific review this risk will be mitigated."
         },
         {
-          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 1,
           "notes": "https://github.com/TUM-DAML/gemnet_tf\n\nAuthors from TUM-DAML Germany. \n\nThe entity is from non-D5 country."
         },

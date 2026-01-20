@@ -23,7 +23,7 @@
           "notes": "no prohibited use indicated."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originally maintained by Meta."
         },
@@ -61,7 +61,7 @@
           "notes": "Under LC 2.7, a review of the Aria Synthetic Environments dataset documentation indicates no stated or implied prohibited or restricted functionality, and the materials describe use for general computer vision, robotics, and AR/VR research without reference to military, weapons, defense, surveillance, or intelligence applications."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originating Organization: Meta Platforms, Inc. (United States)\n"
         },
@@ -101,7 +101,7 @@
           "notes": "Assessment under LC 2.7: A review of the BlendedMVS dataset documentation shows that it is a large-scale multi-view stereo dataset for training and evaluating 3D reconstruction and vision models, with no indication of prohibited or restricted use in military, defense, weapons, surveillance, or intelligence applications; no prohibited functionality is indicated."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 4,
           "notes": "Originating Organization: Yao Yao is Associate Professor at NJU (Hong Kong SAR) - D5 Country."
         },
@@ -141,7 +141,7 @@
           "notes": "Under LC 2.7, a review of the DL3DV-10K dataset documentation indicates no stated or implied prohibited or restricted uses/functionality (military/defense, weapons, surveillance, or intelligence), and it describes the dataset as a large-scale scene resource for deep learning\u2013based 3D vision / novel view synthesis; no prohibited functionality is indicated."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 3,
           "notes": "Originating Organization: Not explicitly restricted; developed by an international academic research team\nChinese contributors - D5 country\nhttps://www.dropbox.com/scl/fi/6k991akjoye1wt474j8q7/CV_Yichen.pdf?rlkey=5gevgzdoeso231z7thuhsql91&e=1&dl=0\nhttps://drive.google.com/file/d/1sV_BxA5qk4CfRIh1t-t3riCrXKz8eAW8/view"
         },
@@ -181,7 +181,7 @@
           "notes": "Under LC 2.7, review of the Dynamic Replica dataset documentation (DynamicStereo project) indicates it is a synthetic benchmark for dynamic stereo depth/disparity estimation in scanned environments (humans/animals in motion) and does not describe or imply any prohibited or restricted uses/functionality related to military/defense, weapons, surveillance, or intelligence."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originating Organization: Meta Reality Labs (USA)\n"
         },
@@ -221,7 +221,7 @@
           "notes": "Under LC 2.7, a review of the ETH3D dataset documentation indicates it is intended for stereo matching, multi-view stereo, and SLAM / 3D reconstruction benchmarking, and it contains no stated or implied prohibited or restricted uses/functionality related to military/defense, weapons, surveillance, or intelligence."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originating Organization: ETH Zurich originated in Switzerland\nNon-D5"
         },
@@ -261,7 +261,7 @@
           "notes": "Under LC 2.7, review of the Hypersim dataset documentation (Apple\u2019s ml-hypersim synthetic dataset) shows it is a photorealistic indoor scene understanding dataset intended for computer vision and 3D scene understanding research with richly annotated images and geometry, and it contains no stated or implied prohibited or restricted functionality related to military/defense, weapons, surveillance, or intelligence. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originating Organization: Apple USA.\nNon-D5"
         },
@@ -301,7 +301,7 @@
           "notes": "Under LC 2.7, review of the Mapillary Planet Scale Depth & Reconstruction dataset documentation indicates it is intended for computer vision depth estimation and 3D reconstruction research (street-level imagery\u2013derived depth) and does not state or imply any prohibited or restricted uses/functionality related to military/defense, weapons, surveillance, or intelligence."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originating Organization: Meta USA\nNon-D5"
         },
@@ -341,7 +341,7 @@
           "notes": "Under LC 2.7, a review of the MegaDepth dataset documentation indicates it is provided as a large-scale photo-derived depth dataset for multi-view and depth estimation research and contains no stated or implied prohibited or restricted uses/functionality related to military/defense, weapons, surveillance, or intelligence."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originating Organization: Cornell University in New York City, USA\nNon-D5"
         },
@@ -381,7 +381,7 @@
           "notes": "Under LC 2.7, a review of the MVS-Synth dataset documentation (as presented on its Hugging Face dataset page) indicates it is intended for multi-view stereo and depth estimation research with synthetic rendered scenes, and it contains no stated or implied prohibited or restricted uses/functionality related to military/defense, weapons, surveillance, or intelligence."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originating Organization: Po-Han Huang University of Illinois, Urbana Champaign, Facebook, Virginia Tech in The US.\nNon-D5"
         },
@@ -421,7 +421,7 @@
           "notes": "Under LC 2.7, a review of the VIPSeg (Video Panoptic Segmentation) dataset documentation indicates it is intended for video panoptic segmentation research and benchmarking and does not state or imply any prohibited or restricted uses/functionality related to military/defense, weapons, surveillance, or intelligence."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 4,
           "notes": "Originating Organization: VIPSeg-Dataset, China.\nD5 Country"
         },
@@ -461,7 +461,7 @@
           "notes": "Under LC 2.7, review of the Parallel Domain dataset documentation (as referenced for use in computer vision / perception and simulation-generated sensor data) indicates no stated or implied prohibited or restricted uses/functionality related to military/defense, weapons development or control, surveillance, or intelligence activities."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 4,
           "notes": "Originating Organization: Columbia University, Stanford University in The US, and Toyota Research Institute in Japan.\nNon-D5."
         },
@@ -501,7 +501,7 @@
           "notes": "Under LC 2.7, a review of the SAIL-VOS 3D dataset documentation indicates it is designed for video object segmentation and 3D perception research in autonomous driving and robotics contexts, and it contains no stated or implied prohibited or restricted uses/functionality related to military/defense, weapons, surveillance, or intelligence."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 3,
           "notes": "Originating Organization: Yuan-Ting Hu, Raymond A. Yeh, Alexander G. Schwing, from The US, and Jiahong Wang from China.\nD5 Country."
         },
@@ -541,7 +541,7 @@
           "notes": "Under LC 2.7, a review of the SA-V (Segment Anything Video) dataset documentation indicates it is provided for computer-vision research use and does not state or imply any prohibited or restricted uses/functionality related to military/defense, weapons development or control, surveillance, or intelligence activities."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originating Organization: Meta AI, US.\nNon-D5 Country."
         },
@@ -581,7 +581,7 @@
           "notes": "Under LC 2.7, a review of the ScanNet++ dataset documentation indicates it is a high-fidelity 3D indoor scene dataset intended for novel view synthesis and 3D semantic scene understanding research, and it does not state or imply any prohibited or restricted uses/functionality related to military/defense, weapons development or control, surveillance, or intelligence activities."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originating Organization: Technical University of Munich in Germany\nNon-D5"
         },
@@ -621,7 +621,7 @@
           "notes": "Under LC 2.7, a review of the SEED4D dataset documentation indicates it is a synthetic large-scale 3D/4D driving and reconstruction dataset intended for computer vision and autonomous-perception research, and it does not state or imply any prohibited or restricted uses/functionality related to military/defense, weapons development or control, surveillance, or intelligence activities."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originating Organization: Continental, Germany.\nNon-D5"
         },
@@ -661,7 +661,7 @@
           "notes": "Under LC 2.7, a review of the Spring (spring-benchmark.org) dataset/benchmark documentation indicates it is a computer-generated, high-resolution benchmark for scene flow, optical flow, and stereo (rendered from the open-source Blender movie \u201cSpring\u201d) and does not state or imply any prohibited or restricted uses/functionality related to military/defense, weapons development or control, surveillance, or intelligence activities."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originating Organization: Computer Vision Group at the University of Stuttgart, Germany\nNon-D5"
         },
@@ -701,7 +701,7 @@
           "notes": "Under LC 2.7, a review of the TartanAir dataset/tooling documentation (including the TartanAir site and the castacks/tartanairpy repository) indicates it is intended to provide photo-realistic simulation data for robot navigation/visual SLAM and related perception tasks with multimodal ground-truth labels, and it contains no stated or implied prohibited or restricted uses/functionality related to military/defense, weapons development or control, surveillance, or intelligence activities. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "\n    Originating Organization: Carnegie Mellon University, USA.\nNon-D5 Country"
         },
@@ -741,7 +741,7 @@
           "notes": "Under LC 2.7, a review of the UnrealStereo4K (UnrealStereo4K-Q) dataset documentation (Hugging Face page referencing the original UnrealStereo4K dataset and its source repository) indicates it is intended for stereo matching / disparity estimation research using synthetic rendered scenes, and it does not state or imply any prohibited or restricted uses/functionality related to military/defense, weapons development or control, surveillance, or intelligence activities."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originating Organization: Fabio Tosi in Assistant Professor (RTDA) at the University of Bologna.\nNon-D5 Country"
         },
@@ -783,7 +783,7 @@
           "notes": "A keyword scan of the MapAnything paper page and GitHub documentation found no mentions of \u201cmilitary\u201d, \u201cweapons\u201d, or \u201cnuclear,\u201d and the stated use is general-purpose 3D reconstruction (SfM/MVS/depth/registration/depth completion). "
         },
         {
-          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 1,
           "notes": "\n    Owner: Meta AI\n    Organization: Meta Platforms, Inc.\nNon-D5"
         },
@@ -828,7 +828,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 2,
           "notes": "https://github.com/ByteDance-Seed/Depth-Anything-3\nhttps://huggingface.co/depth-anything/DA3-BASE\nThe work is authored by ByteDance Seed (with Bingyi Kang listed as corresponding author/project lead).\n\nContributors from an entity from D5 Country.\n\n"
         },

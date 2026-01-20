@@ -23,7 +23,7 @@
           "notes": "No mention of sensitive terms in the documentation of PyTorch."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originally developed by Meta and now governed by Linux Foundation."
         },
@@ -58,7 +58,7 @@
           "notes": "No mention of sensitive terms in the documentation. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Owner: Hugging Face Inc.\nFounders/Maintainers:\n\nCl\u00e9ment Delangue (CEO) - LinkedIn\nJulien Chaumond (CTO) - [LinkedIn profile available]\nThomas Wolf (Chief Science Officer)\n\n\nAffiliation: Private company based in New York, backed by investors including Salesforce, Google, Amazon, NVIDIA, Intel, AMD, and major VC firms\n\nThe entity is from non-D5 country."
         },
@@ -93,7 +93,7 @@
           "notes": "No mention of sensitive terms in the documentation. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Owner: Hugging Face Inc.\nFounders/Maintainers:\n\nCl\u00e9ment Delangue (CEO) - LinkedIn\nJulien Chaumond (CTO) - [LinkedIn profile available]\nThomas Wolf (Chief Science Officer)\n\n\nAffiliation: Private company based in New York, backed by investors including Salesforce, Google, Amazon, NVIDIA, Intel, AMD, and major VC firms\n\nThe entity is from non-D5 country."
         },
@@ -128,7 +128,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originally developed in Sky Computing Lab at UC Berkeley, now community-driven under PyTorch Foundation; co-created and co-led by Woosuk Kwon (LinkedIn: linkedin.com/in/woosuk-kwon-986551262) and Zhuohan Li, with advisor Ion Stoica (UC Berkeley)."
         },
@@ -166,7 +166,7 @@
           "notes": "Can't assess as no access to dataset provided. No URL"
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": ""
         },

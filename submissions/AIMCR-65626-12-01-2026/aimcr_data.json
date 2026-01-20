@@ -23,7 +23,7 @@
           "notes": "A keyword search over PyTorch\u2019s official site for \u201cmilitary/weapons/nuclear\u201d returned no hits (no explicit prohibited-use functionality described in core docs)."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "PyTorch is a community-governed open-source project under the PyTorch Foundation (Linux Foundation umbrella); LinkedIn: https://www.linkedin.com/company/pytorch?utm_source=chatgpt.com Non-D5 "
         },
@@ -58,7 +58,7 @@
           "notes": "No sensitive-use keywords were observed in the project\u2019s top-level documentation pages reviewed. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintained by the PyTorch/TorchVision maintainers and contributors within the PyTorch ecosystem (PyTorch Foundation). Non-D5"
         },
@@ -93,7 +93,7 @@
           "notes": "No sensitive-use keywords were observed in the official documentation/repo pages reviewed. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Developed/maintained in the PyTorch ecosystem (PyTorch Foundation); Non-D5"
         },
@@ -128,7 +128,7 @@
           "notes": "No sensitive-use keywords were observed in the project\u2019s public docs/repo surfaces reviewed. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintained by Lightning AI (TorchMetrics is under the Lightning-AI org); Non-D5"
         },
@@ -163,7 +163,7 @@
           "notes": "No sensitive-use keywords were observed in the project\u2019s public docs/repo surfaces reviewed. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintained by Lightning AI; USA; Non-D5"
         },
@@ -198,7 +198,7 @@
           "notes": "A keyword search over Gradio\u2019s GitHub/org surfaces for \u201cmilitary/weapons/nuclear\u201d returned no hits in the results available (no explicit sensitive-use positioning observed). "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintained by the gradio-app organization; USA; non-D5"
         },
@@ -233,7 +233,7 @@
           "notes": "No sensitive-use keywords were observed in the public docs pages reviewed for the Python client. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintained by the gradio-app organization; USA; non-D5"
         },
@@ -268,7 +268,7 @@
           "notes": "A keyword search over the Transformers GitHub surfaces for \u201cmilitary/weapons/nuclear\u201d returned no hits in available results (no explicit sensitive-use positioning observed). "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintained by Hugging Face and open-source contributors; Non-D5"
         },
@@ -303,7 +303,7 @@
           "notes": "No sensitive-use keywords were observed in the project\u2019s public repo/about materials reviewed. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Community-maintained by the scikit-learn developers (volunteer/core contributor model). ; Non-D5"
         },
@@ -338,7 +338,7 @@
           "notes": "No sensitive-use keywords were observed in the repository description reviewed. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintained as an open-source project on GitHub (python-tabulate) under the listed repository maintainers/contributors.; Italy: Non-D5"
         },
@@ -373,7 +373,7 @@
           "notes": "A keyword search over Biopython\u2019s GitHub/org surfaces for \u201cmilitary/weapons/nuclear\u201d returned no hits in available results (no explicit sensitive-use positioning observed). "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintained by the Biopython open-source community/organization.  Top collaborators from USA and Germany (Non-D5)"
         },
@@ -408,7 +408,7 @@
           "notes": "No sensitive-use keywords were observed in the repository description reviewed. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintained as an open-source project under the makinacorpus/easydict repository. Mathieu Leplatre <mathieu.leplatre@makina-corpus.com - French author - Non-D5"
         },
@@ -443,7 +443,7 @@
           "notes": "No sensitive-use keywords were observed in the license/repo surfaces reviewed. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintained as an open-source project under jnwatson/py-lmdb. Owner from USA; Non-D5"
         },
@@ -478,7 +478,7 @@
           "notes": "No sensitive-use keywords were observed in the public repo description reviewed. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintained by the Uncertainty Quantification Foundation community (uqfoundation) / project author listed in repository metadata. USA: Non-D5"
         },
@@ -513,7 +513,7 @@
           "notes": "No sensitive-use keywords were observed in the public repo description reviewed. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintained as an open-source project under barrust/pyspellchecker. USA - Non-D5"
         },
@@ -551,7 +551,7 @@
           "notes": "In UniProt\u2019s official license/help and dataset pages reviewed, I did not find indications of military/weapons/nuclear use-cases. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "\n\n    Originating Organization:\n    Maintained by the UniProt Consortium, which consists of:\n\n        EMBL-EBI \u2014 United Kingdom \ud83c\uddec\ud83c\udde7\n\n        Swiss Institute of Bioinformatics (SIB) \u2014 Switzerland \ud83c\udde8\ud83c\udded\n\n        Protein Information Resource (PIR) \u2014 United States \ud83c\uddfa\ud83c\uddf8\n\nNon-D5"
         },
@@ -591,7 +591,7 @@
           "notes": "In UniRef\u2019s official UniProt pages/help reviewed, I did not find military/weapons/nuclear-oriented terms or use-cases. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "\n\n    Originating Organization:\n    Maintained by the UniProt Consortium, which consists of:\n\n        EMBL-EBI \u2014 United Kingdom \ud83c\uddec\ud83c\udde7\n\n        Swiss Institute of Bioinformatics (SIB) \u2014 Switzerland \ud83c\udde8\ud83c\udded\n\n        Protein Information Resource (PIR) \u2014 United States \ud83c\uddfa\ud83c\uddf8\nNon-D5"
         },
@@ -631,7 +631,7 @@
           "notes": "Across NCBI RefSeq informational pages reviewed, I did not find military/weapons/nuclear-specific use-case language. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintained by NCBI, a division of the U.S. National Library of Medicine (NIH); Non-D5"
         },
@@ -671,7 +671,7 @@
           "notes": "In MetaVR\u2019s scholarly/description materials reviewed, I did not find military/weapons/nuclear-oriented terms or stated use-cases. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "The proposal lists BSRC \u201cAlexander Fleming\u201d as the origin; LinkedIn: https://gr.linkedin.com/company/bsrc-alexander-fleming Greece - Non-D5"
         },
@@ -711,7 +711,7 @@
           "notes": "In the metagRoot publication/records reviewed, I did not find military/weapons/nuclear-oriented terminology or use-cases. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "The proposal lists BSRC \u201cAlexander Fleming\u201d as the origin; LinkedIn: https://gr.linkedin.com/company/bsrc-alexander-fleming (and a relevant maintainer profile: https://gr.linkedin.com/in/gpavlopoulos). \nGreece - Non-D5"
         },
@@ -751,7 +751,7 @@
           "notes": "No sensitive terms found in publication pages."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "The proposal lists BSRC \u201cAlexander Fleming\u201d as origin; LinkedIn: BSRC Alexander Fleming and a relevant maintainer profile (Georgios Pavlopoulos). \n\nGreece - Non-D5"
         },
@@ -791,7 +791,7 @@
           "notes": "No sensitive terms found in publication pages."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "SOE Joint Genome Institute (JGI) as origin; LinkedIn: https://www.linkedin.com/company/joint-genome-institute USA - Non-D5"
         },
@@ -831,7 +831,7 @@
           "notes": "No sensitive terms found in publication pages."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "SOE Joint Genome Institute (JGI) as origin; LinkedIn: https://www.linkedin.com/company/joint-genome-institute USA - Non-D5"
         },
@@ -871,7 +871,7 @@
           "notes": "No sensitive terms found in publication pages."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintained by EMBL-EBI; LinkedIn: https://uk.linkedin.com/company/ebi (MGnify is promoted via EMBL-EBI channels). \nCambridge - Non-D5"
         },
@@ -911,7 +911,7 @@
           "notes": "No sensitive terms found in publication pages."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintained by the UniProt Consortium; LinkedIn: https://www.linkedin.com/company/uniprot (and partners such as EMBL-EBI, SIB). \nUK - Non-D5"
         },
@@ -953,7 +953,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 3,
           "notes": "https://github.com/westlake-repl/ProTrek\n\nThe model is owned and maintained by the westlake-repl organization at Westlake University, China, with Fajie Yuan as the primary maintainer (Assistant Professor at Westlake University, previously at Tencent and PhD from University of Glasgow); LinkedIn: https://uk.linkedin.com/in/fajie-yuan-6607a3aa. \nhttps://fajieyuan.github.io/ claims he is Assistant Prof at Hangzhou, China\n\nStars: 191\nForks: 22\nCommits: 177\nlast commit: Dec 2025\n\nHF: westlake-repl/ProTrek_35M\nDownloads this month: 15\nHF: westlake-repl/ProTrek_650M\nDownloads this month: 67\n\nEntity's association is from D5-country. Current association is from China. The Github repo is moderately popular."
         },

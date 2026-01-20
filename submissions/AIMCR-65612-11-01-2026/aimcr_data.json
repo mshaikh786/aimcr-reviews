@@ -23,7 +23,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Owner / Organization: N/A"
         },
@@ -58,7 +58,7 @@
           "notes": "No mention of sensitive terms in the documentation of Torch."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originally developed by Meta and now governed by Linux Foundation.\nFrom non D5 country."
         },
@@ -93,7 +93,7 @@
           "notes": "No mention of sensitive terms in the documentation"
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Organization: huggingface\nFrom a non D5 country."
         },
@@ -128,7 +128,7 @@
           "notes": "No mention of sensitive terms in the documentation"
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Its a bonafide community with a governance model and multiple maintainers. https://wandb.ai/site/company/about-us/ This is an opensource project with funding sources from entities from non-D5 countries."
         },
@@ -163,7 +163,7 @@
           "notes": "No mention of sensitive terms in the documentation"
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Benjamin Bossan https://www.linkedin.com/in/benjamin-bossan-3114a684\nmaintiners from non-D5 countries."
         },
@@ -198,7 +198,7 @@
           "notes": "No mention of sensitive terms in the documentation"
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Neo4j, Inc. (Sudhir Hasbe - https://www.linkedin.com/in/shasbe/)\nmaintiners from non-D5 countries."
         },
@@ -233,7 +233,7 @@
           "notes": "No mention of sensitive terms in the documentation"
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Kashif Rasul - https://de.linkedin.com/in/kashif-rasul\nmaintiners from non-D5 countries."
         },
@@ -271,7 +271,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originating Organization: UC San Diego and BROAD institute(United States)\nNot from a D5 country."
         },
@@ -311,7 +311,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "NASA (via the GeneLab program)\nNot from a D5 counttry"
         },
@@ -353,7 +353,7 @@
           "notes": "No notes of prohibited use in documentation."
         },
         {
-          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 1,
           "notes": "HuggingFace\n\nNo specific variant requested. The number of parameters ranges from 3B to 400B. \nOwner: Meta AI / Hugging Face\n\nNot from a D5 country."
         },

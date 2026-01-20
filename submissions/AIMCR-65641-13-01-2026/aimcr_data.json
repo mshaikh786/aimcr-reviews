@@ -23,7 +23,7 @@
           "notes": "No mention of sensitive terms in the documentation"
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originally developed by Meta and now governed by Linux Foundation. This entity is from non-D5 country."
         },
@@ -58,7 +58,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "OpenSlide is maintained by the OpenSlide project community with primary development contributions from Carnegie Mellon University and the University of Pittsburgh; the current maintainer is Benjamin Gilbert (affiliated with Carnegie Mellon University, LinkedIn not publicly listed in official documentation).\n\nThe entity is from a non-D5 country."
         },
@@ -93,7 +93,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Ollama is owned and maintained by Ollama Inc., with primary developers including Jeffrey Morgan (Co-founder, LinkedIn: linkedin.com/in/jmorganca) and Michael Chiang (Co-founder, LinkedIn: linkedin.com/in/mxyng).\n\nThe entity and maintainers are from non-D5 country."
         },
@@ -128,7 +128,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Transformers is owned and maintained by Hugging Face Inc., with primary maintainers including Sylvain Gugger (Research Engineer, LinkedIn: linkedin.com/in/sylvain-gugger), Lysandre Debut (Machine Learning Engineer, LinkedIn: linkedin.com/in/lysandre-debut), and Thomas Wolf (Co-founder & CSO, LinkedIn: linkedin.com/in/thomas-wolf-a056857).\n\nThe entity is from non-D5 country."
         },
@@ -166,7 +166,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "TCGA is owned and maintained by the National Cancer Institute (NCI) and the National Human Genome Research Institute (NHGRI), both part of the National Institutes of Health (NIH), U.S. Department of Health and Human Services; current data management is handled by the Genomic Data Commons (GDC) at the Center for Translational Data Science, University of Chicago (no individual LinkedIn profiles available as this is a large institutional consortium).\n\nThe entity is from non-D5 country. "
         },
@@ -206,7 +206,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "The dataset is owned and maintained by Chan Zuckerberg Initiative Foundation (http://www.chanzuckerberg.com/); key team leaders include Jonah Cool (Program Officer, Single-Cell Biology Program, linkedin.com/in/not-found-in-search) and Ambrose Carr (Director of Product Management, linkedin.com/in/ambrosejcarr).\n\nThe entity is from non-D5 country."
         },

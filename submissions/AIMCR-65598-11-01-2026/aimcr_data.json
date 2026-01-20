@@ -23,7 +23,7 @@
           "notes": "No mention of sensitive terms in the documentation"
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "riginally developed by Meta and now governed by Linux Foundation.\nFrom a non D5 country"
         },
@@ -58,7 +58,7 @@
           "notes": "no prohibited use indicated."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintained by FLA organization, Songlin Yang (https://www.linkedin.com/in/songlin-yang-b8a69728b)\nFrom a non D5 country"
         },
@@ -96,7 +96,7 @@
           "notes": "No mention of prohibited use terms in the documentation. Inspection reveals videos containing topics (sports, cooking, Animals) with captions describing the video content."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Owner / Curator: Snap Research (https://research.snap.com/index.html), and University of MERCED (https://www.ucmerced.edu/)\n\nPrimary Distribution Platform: https://snap-research.github.io/Panda-70M/"
         },
@@ -136,7 +136,7 @@
           "notes": "No mention of prohibited use terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Owner / Curator: Cerebras (https://huggingface.co/cerebras)\n\nPrimary Distribution Platform: Hugging Face\n\nRepository: https://huggingface.co/datasets/cerebras/SlimPajama-627B"
         },
@@ -178,7 +178,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 1,
           "notes": "https://github.com/NanboLi/FACTS\n\nOwnership and maintenance\n\nPrimary maintainer: Li Nanbo\nAffiliation: Postdoctoral Fellow at KAUST Center of Excellence for Generative AI, working with Prof. J\u00fcrgen Schmidhuber\nPrevious affiliation: PhD from University of Edinburgh under Prof. Robert Fisher and Prof. Chris Williams\nLinkedIn: https://www.linkedin.com/in/li-nanbo-424131135\nContact email: linanbo2008@gmail.com\n\nThe individual is affiliated with an entity from non-D5 country.\n"
         },
@@ -223,7 +223,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 1,
           "notes": "https://github.com/piotrpiekos/MoSA)\n\n\nThe model is owned and maintained by Piotr Pi\u0119kos, a 4th-year PhD Candidate at KAUST AI Initiative supervised by Prof. J\u00fcrgen Schmidhuber, with co-authors R\u00f3bert Csord\u00e1s (Stanford) and J\u00fcrgen Schmidhuber (KAUST/IDSIA). LinkedIn: https://www.linkedin.com/in/piotrpiekos1/\n\nThe developer is affiliated to an entity in non-D5 country."
         },

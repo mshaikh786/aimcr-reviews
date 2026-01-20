@@ -23,7 +23,7 @@
           "notes": "No indication of prohibited uses/functionality found in TorchTitan\u2019s documentation for torchtitan v0.2.0."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "No indication of restricted-country origin or restricted-entity involvement was identified for Torchtitan v0.2.0 based on available documentation, contributor information, and repository metadata.\nThis review was conducted in accordance with LC 2.5."
         },
@@ -58,7 +58,7 @@
           "notes": "No indication of prohibited or restricted use (including military, weapons, or surveillance functionality) was identified in the documentation reviewed for the software; this assessment was conducted in accordance with LC 2.7."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "No restricted-country origin or restricted-entity involvement was identified for huggingface/datasets based on the repository ownership and public organization metadata (Hugging Face; NYC + Paris); this review was conducted in accordance with LC 2.5."
         },
@@ -96,7 +96,7 @@
           "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in the DCLM-Baseline dataset documentation; it is described as a research baseline for language model training/benchmarking, and a keyword scan of the documentation did not surface the relevant red-flag terms\u2014this review was conducted in accordance with LC 2.7. \nHugging Face"
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "MLFoundations, by a Stanford professor Ludwig Schmidt (United States)"
         },
@@ -136,7 +136,7 @@
           "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in the finemath dataset documentation, which describes the dataset as intended for mathematical reasoning and model training research; this review was conducted in accordance with LC 2.7."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "\n    Originating Organization: HuggingFace in The United States\n"
         },
@@ -176,7 +176,7 @@
           "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in the FinePDFs dataset documentation, which describes the dataset as a large-scale PDF text corpus for research and model training."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originating Organization: HuggingFace and Common Crawl both in United States\nThis entity is from non-D5 country."
         },
@@ -216,7 +216,7 @@
           "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in the FineWeb-2 dataset documentation (including its Arabic portions), which describes the dataset as a large-scale clean web-text pretraining corpus for open LLM research; this review was conducted in accordance with LC 2.7. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "\n    Originating Organization: HuggingFace and Common Crawl both in United States\n"
         },
@@ -256,7 +256,7 @@
           "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in the FineWeb-Edu dataset documentation, which describes the dataset as an educationally focused web-text corpus for language model research and training; this review was conducted in accordance with LC 2.7."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "\n    Originating Organization: HuggingFace and Common Crawl both in United States\n"
         },
@@ -296,7 +296,7 @@
           "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in the smolkalam dataset documentation, which describes the dataset as a language/text corpus for research and modeling purposes."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "\n    Originating Organization: Sultan AlRashed in KSA. He is part of the research team in the proposal. \n"
         },
@@ -336,7 +336,7 @@
           "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in The Stack V2 dataset documentation, which describes the dataset as an open large-scale code corpus for language model training and research; this assessment was conducted in accordance with LC 2.7."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "\n    Originating Organization: BigCode community project jointly led by Hugging Face and ServiceNow. (United States)\n\n"
         },

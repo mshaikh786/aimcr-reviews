@@ -23,7 +23,7 @@
           "notes": "No mention of sensitive terms in the documentation of PyTorch.\nFrom a non D5 country."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Originally developed by Meta and now governed by Linux Foundation."
         },
@@ -58,7 +58,7 @@
           "notes": "No mention of sensitive terms in the documentation of vLLM."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": " Owner: Sky Computing Lab at UC Berkeley (https://sky.cs.berkeley.edu/)\nFrom a non D5 country."
         },
@@ -97,7 +97,7 @@
           "notes": "No notes of prohibited use in documentation."
         },
         {
-          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 3,
           "notes": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2\n\nOwner:  (Hangzhou DeepSeek Artificial Intelligence Co., Ltd.) https://huggingface.co/deepseek-ai/collections\nFounder: Liang Wenfeng (https://www.linkedin.com/in/wenfeng-liang-837841128/)\nThe entity is from China, one of D5 countries.\n\n"
         },
@@ -142,7 +142,7 @@
           "notes": "No mention of prohibited Use in Documentation."
         },
         {
-          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 1,
           "notes": "Owner: Google (https://huggingface.co/google/collections)\nFrom a non D5 country.\n"
         },

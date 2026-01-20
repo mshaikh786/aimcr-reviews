@@ -23,7 +23,7 @@
           "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in the PyTorch 2.9.0 documentation, which describes a general-purpose open-source machine learning framework; this review was conducted in accordance with LC 2.7."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "No indication of restricted-country origin or restricted-entity involvement was identified for PyTorch 2.9.0 based on available documentation, contributor information, and repository metadata."
         },
@@ -61,7 +61,7 @@
           "notes": "No explicit mentions or stated use-cases involving military, weapons, nuclear, surveillance, or intelligence were found in the proposal\u2019s dataset description sections. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "The dataset is described as generated in-house by the project team (KAUST/KSL context), and the proposal does not provide any LinkedIn links for dataset owners/maintainers. "
         },

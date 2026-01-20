@@ -23,7 +23,7 @@
           "notes": "Within the attached proposal text describing PyTorch\u2019s role, I do not see mentions or implied use cases involving \u201cmilitary\u201d, \u201cweapons\u201d, or \u201cnuclear\u201d (it is described generically as \u201cTrain neural networks\u201d). "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "The proposal does not name a specific owner/maintainer beyond \u201cPyTorch\u201d; generally, PyTorch is a community-maintained open-source project stewarded by the PyTorch Foundation (part of the Linux Foundation). Non-D5"
         },
@@ -61,7 +61,7 @@
           "notes": "In the COCO documentation/terms-of-use summaries reviewed, there is no stated military/weapons/nuclear purpose or restriction language indicated. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "The dataset is associated with the COCO Consortium and was introduced by the Microsoft COCO paper authors (academia/industry researchers); no authoritative LinkedIn profiles are listed in the official dataset pages reviewed.  Top contributors from Google Brain, Caltech, and FAIR"
         },
@@ -101,7 +101,7 @@
           "notes": "In the Open Access documentation and terms reviewed, there is no stated military/weapons/nuclear use emphasis; the focus is on open reuse of public-domain works and related collection data. "
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "The dataset is owned and maintained by The Metropolitan Museum of Art (New York, USA) through its Open Access program (API/GitHub distribution); no official LinkedIn profiles for specific maintainers are provided on the referenced Open Access pages.  Non-D5"
         },
@@ -143,7 +143,7 @@
           "notes": "A keyword scan of the publicly linked Qwen2.5-VL model card and referenced docs did not surface \u201cmilitary\u201d, \u201cweapons\u201d, or \u201cnuclear\u201d terms, and the described use is general-purpose VQA/vision understanding. "
         },
         {
-          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 1,
           "notes": "The model is published under the Qwen org and owned/maintained by the Qwen Team at Alibaba Cloud (Alibaba Group); no official maintainer LinkedIn profiles are provided in the primary model/repo pages. China: D5-Country"
         },
@@ -189,7 +189,7 @@
           "notes": "A keyword scan of the public Qwen3-VL repo/model card content accessed did not surface \u201cmilitary\u201d, \u201cweapons\u201d, or \u201cnuclear\u201d terms, and the stated usage is general multimodal/agent functionality. "
         },
         {
-          "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+          "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 1,
           "notes": "Qwen3-VL is maintained by the Qwen Team (Alibaba Cloud) via the QwenLM GitHub organization and official Hugging Face releases; individual maintainer LinkedIns are not listed on these official pages.  China: D5-Country"
         },
