@@ -411,7 +411,7 @@
       "is_proprietary": false
     },
     {
-      "name": "google/translategemma-27b-it, google/translategemma-12b-it",
+      "name": "google/translategemma-27b-it",
       "checks": [
         {
           "name": "Project & Usage Alignment",
@@ -421,12 +421,12 @@
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "No explicit mentions or stated use-cases involving military, weapons, nuclear, surveillance, or intelligence were found in the documentation."
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
         },
         {
           "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "Model is owned and maintained by Google, Entity is from a Non-D5 country.\n\nModel is available publicly on Hugging Face, Both 27B and 12B versions are requested.\n\nSource: \nhttps://huggingface.co/google/translategemma-27b-it\n\nhttps://huggingface.co/google/translategemma-12b-it"
+          "notes": "Model is owned and maintained by Google, Entity is from a Non-D5 country.\n\nModel is available publicly on Hugging Face, Both 27B and 12B versions are requested.\n\nSource: \nhttps://huggingface.co/google/translategemma-27b-it\n\nDownloads in Dec 2025: 20,655"
         },
         {
           "name": "License / Permissions",
@@ -441,17 +441,17 @@
         {
           "name": "Customisation / Fine-tuning",
           "score": 1,
-          "notes": "No finetuning scripts provided."
+          "notes": "Fine-tuned for translation across 55 languages"
         },
         {
           "name": "FLOPS Calculation",
           "score": 1,
-          "notes": "The indication of number of parameters is 27B. \nThe indication of number of training tokens is 4.31B. \nThe estimated FLOPs = 2 \u00d7 27 \u00d7 10^ 9 \u00d7 4.31 \u00d7 10 ^9 = 2.33\u00d7 10 ^20 FLOPs \n\nIt is less than the threshold of 10^27."
+          "notes": "The indication of number of parameters is 27B. \nThe indication of number of training tokens is 4.31B. \nThe estimated FLOPs = 6 \u00d7 27 \u00d7 10^9 \u00d7 4.31 \u00d7 10^9 = 6.9822\u00d7 10^20 FLOPs \n\nIt is less than the threshold of 10^27."
         },
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "Low risk, skipped inspection."
+          "notes": "no risk in LC2.7 check, skipping inspection."
         }
       ],
       "is_proprietary": false
@@ -467,12 +467,12 @@
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "No explicit mentions or stated use-cases involving military, weapons, nuclear, surveillance, or intelligence were found in the documentation."
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
         },
         {
           "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
-          "score": 1,
-          "notes": "The model is owned and maintained by ByteDance Seed Team, Lead author is Shanbo Cheng (https://sites.google.com/view/chengshanbo/home), Entity is from a D5 country.\n\nSource: https://huggingface.co/ByteDance-Seed/Seed-X-PPO-7B"
+          "score": 2,
+          "notes": "The model is owned and maintained by ByteDance Seed Team, Lead author is Shanbo Cheng (https://www.linkedin.com/in/shanbo-cheng-26980284/).\n\nEntity is from a D5 country.\n\nSource: https://huggingface.co/ByteDance-Seed/Seed-X-PPO-7B\n\n\nDownloads in Dec 2025: 24,960\n\nLast commit to the HF repository of files: Jul 28, 2025"
         },
         {
           "name": "License / Permissions",
@@ -482,7 +482,7 @@
         {
           "name": "Training Data Documentation",
           "score": 1,
-          "notes": "The paper indicates pre-training on diverse, high-quality dataset with both monolingual and bilingual content across 28 languages, but specific token counts for pre-training are not disclosed in the available documentation."
+          "notes": "Pre-training:\n\nMonolingual data: 6 trillion tokens across 28 languages.\n\nFocused entirely on multilingual data\nDeliberately excluded STEM, coding, and reasoning-focused data to allocate more capacity to translation\n\n\nBilingual data: Started with an initial seed bilingual dataset of 200B tokens from publicly available web data\n\n\nFine-tuning:\n\nSupervised Fine-Tuning (SFT): 236,000 translation instances, including the FLORES dev set and manually curated pairs Emergent Mind.\n\nIncludes Chain-of-Thought (CoT) reasoning examples with expert annotations.\n\n\nReinforcement Learning (PPO): Reward models trained on 20,000 high-resource language pairings with human preferences Emergent Mind.\n\nTotal pre-training appears to be dominated by the 6T token monolingual corpus"
         },
         {
           "name": "Customisation / Fine-tuning",
@@ -492,12 +492,12 @@
         {
           "name": "FLOPS Calculation",
           "score": 1,
-          "notes": "Model will be used for inference only.\nThe model has 7B parameters, No official token count found, rough estimate for similar models around 1T tokens.\nFLOPS= 2 * 7 * 10 ^ 9 * 1 * 10 ^ 12 = 1.4 * 10 ^ 22  \nIt is less than the threshold of 10^27."
+          "notes": "Model will be used for inference only.\nThe model has 7B parameters. From training data above, the count is estimated to be 6T tokens. \nFLOPS=  6 x 7 x 10^9 x 6 x 10^12 = 2.5 x 10^23\n\nIt is less than the threshold of 10^27."
         },
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "Low risk, sample inspection skipped."
+          "notes": "no risk in LC2.7 check, skipping inspection."
         }
       ],
       "is_proprietary": false
@@ -513,12 +513,12 @@
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "No explicit mentions or stated use-cases involving military, weapons, nuclear, surveillance, or intelligence were found in the documentation."
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
         },
         {
           "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
-          "score": 1,
-          "notes": "The model is published under the Qwen org and owned/maintained by the Qwen Team at Alibaba Cloud (Alibaba Group); no official maintainer LinkedIn profiles are provided in the primary model/repo pages. China: D5-Country\n\nSource: https://huggingface.co/Qwen/Qwen2.5-72B-Instruct"
+          "score": 2,
+          "notes": "The model is published under the Qwen org and owned/maintained by the Qwen Team at Alibaba Cloud (Alibaba Group); no official maintainer LinkedIn profiles are provided in the primary model/repo pages. China: D5-Country\n\nSource: https://huggingface.co/Qwen/Qwen2.5-72B-Instruct\n\nDownloads in Dec 2025: 302,719"
         },
         {
           "name": "License / Permissions",
@@ -533,43 +533,43 @@
         {
           "name": "Customisation / Fine-tuning",
           "score": 1,
-          "notes": "No finetuning scripts provided."
+          "notes": "This model, as is, has not been fine-tuned on any downstream task, according to the model card from HuggingFace."
         },
         {
           "name": "FLOPS Calculation",
           "score": 1,
-          "notes": "Model will be used for inference only. The indication of number of parameters is 7B. The indication of number of training tokens is 18T. The estimated FLOPs = 2 \u00d7 7 \u00d7 10^ 9 \u00d7 18 \u00d7 10 ^12 = 2.52\u00d7 10 ^23 FLOPs\nIt is less than the threshold of 10^27."
+          "notes": "Model will be used for inference only. The indication of number of parameters is 7B. The indication of number of training tokens is 18T. The estimated FLOPs = 2 \u00d7 7 \u00d7 10^9 \u00d7 18 \u00d7 10^12 = 2.52\u00d7 10^23 FLOPs\nIt is less than the threshold of 10^27."
         },
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "Low risk, sample inspection skipped."
+          "notes": "No risk in LC2.7 check, skipping inspection."
         }
       ],
       "is_proprietary": false
     },
     {
-      "name": "google/gemma-3-27b-it,  google/gemma-3-12b-it",
+      "name": "google/gemma-3-27b-it",
       "checks": [
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "Decoder-only transformer, Will be used to generate synthetic data for pretraining. Aligns with approved research topic Datascience and engineering."
+          "notes": "Gemma 3 is a multimodal vision-language model that handles text and image inputs to generate text outputs for tasks including question answering, summarization, reasoning, code generation, and image understanding.\nThis model (Gemma 3 27B IT) will be used for synthetic data generation using inference only. No pre-training is planned. This was mentioned in the additional information provided by the PI. \n\nAligns with the approved research topic Datascience and Engineering."
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "No explicit mentions or stated use-cases involving military, weapons, nuclear, surveillance, or intelligence were found in the documentation."
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
         },
         {
           "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "Model is owned and maintained by Google, Entity is from a Non-D5 country.\nModel is available publicly on Hugging Face, Both 27B and 12B versions are requested.\nSource: \nhttps://huggingface.co/google/gemma-3-27b-it\n\nhttps://huggingface.co/google/gemma-3-12b-it"
+          "notes": "Model is owned and maintained by Google, Entity is from a Non-D5 country.\nModel is available publicly on Hugging Face\nSource: \nhttps://huggingface.co/google/gemma-3-27b-it\n"
         },
         {
           "name": "License / Permissions",
           "score": 1,
-          "notes": "The model uses the Gemma Terms of Use (custom license, not standard open source): \nPermissions:\nYou may use, reproduce, modify, distribute, perform, or display the model \nYou can create Model Derivatives (modifications, fine-tuned versions, distillations) \nCommercial use is allowed\nYou can distribute via hosted services (APIs, web access) \nGoogle claims no rights to outputs you generate\n\nRestrictions:\n\nMust comply with the Gemma Prohibited Use Policy (no illegal activities, child abuse content, harassment, spam, misinformation, sexually explicit content for pornography, etc.) \nMust include use restrictions in any redistribution agreements \nMust provide copy of license to recipients \nModified files must carry prominent notices of modification \nCannot violate copyright or intellectual property rights \nGoogle reserves right to remotely restrict usage if violations are detected \nModel Derivatives must also comply with Gemma license terms \nGoverned by California law with Santa Clara County jurisdiction"
+          "notes": "License is under Gemma terms\nRequires users to review and agree to Google's usage license before access\nModels may not be used for generation of harmful content, malicious purposes, or privacy violations\nUsers must implement appropriate content safety safeguards based on their specific use cases\nDevelopers encouraged to perform continuous monitoring and de-biasing techniques"
         },
         {
           "name": "Training Data Documentation",
@@ -579,17 +579,17 @@
         {
           "name": "Customisation / Fine-tuning",
           "score": 1,
-          "notes": "No finetuning scripts provided."
+          "notes": "The instruction-tuned variant is fine-tuned for conversational AI, text generation, chatbots, text summarization, image data extraction, NLP research, language learning tools, and knowledge exploration across various reasoning, STEM, multilingual, and multimodal benchmarks."
         },
         {
           "name": "FLOPS Calculation",
           "score": 1,
-          "notes": "The model will be used for inference only.\nThe indication of number of parameters is 27B. The indication of number of training tokens is 14T. The estimated FLOPs = 2 \u00d7 27 \u00d7 10^ 9 \u00d7 14 \u00d7 10 ^12= 7.56 * 10 ^ 23  FLOPs\nIt is less than the threshold of 10^27."
+          "notes": "The model will be used for inference only.\n\nThe indication of number of parameters is 27B. The indication of number of training tokens is 14T. The estimated FLOPs = 6 \u00d7 27 \u00d7 10^ 9 \u00d7 14 \u00d7 10 ^12= 2.268 x 10^24  FLOPs\nIt is less than the threshold of 10^27."
         },
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "Low risk, skipped inspection."
+          "notes": "The model card explicitly addresses ethical considerations, prohibited uses via the Gemma Prohibited Use Policy, and includes CSAM filtering in data preprocessing.\n\nno risk in LC2.7 check. Skipping inspection. "
         }
       ],
       "is_proprietary": false
@@ -605,7 +605,7 @@
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "No explicit mentions or stated use-cases involving military, weapons, nuclear, surveillance, or intelligence were found in the documentation."
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7"
         },
         {
           "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
@@ -635,12 +635,110 @@
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "Low risk, skipped inspection."
+          "notes": "no risk indicated in LC2.7 check, skipping inspection."
+        }
+      ],
+      "is_proprietary": false
+    },
+    {
+      "name": "google/translategemma-12b-it",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "TranslateGemma is a lightweight, state-of-the-art translation model that handles text-to-text and image-to-text translation across 55 languages, designed for deployment in resource-limited environments.\n\nThis model (TranslateGemma) does not appear to be used in the submitted proposal; the proposal focuses on training a custom Arabic/English LLM from scratch using Torchtitan, not using pre-existing translation models.\n\nAligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. "
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "https://huggingface.co/google/translategemma-12b-it\n\nOwner/Maintainer: Google Translate Research Team and Google DeepMind\nKey authors: Mara Finkelstein, Isaac Caswell, Tobias Domhan, Jan-Thorsten Peter, Juraj Juraska, Parker Riley, Daniel Deutsch, and others (full author list in citation)\n\nEntity is from non-D5+M country. "
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License is under Gemma terms\nRequires users to review and agree to Google's usage license before access\nRefer to Gemma Terms of Use and Gemma Prohibited Use Policy\nModels may not be used for generation of harmful content, malicious purposes, privacy violations, or perpetuation of biases\nUsers must implement appropriate content safety safeguards based on their specific use cases"
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "Supervised Fine-Tuning (SFT): 4.3 billion tokens\nReinforcement Learning phase: 10.2 million tokens\nSources: Monolingual web documents paired with high-quality translations into various languages generated by Gemini, and publicly available parallel documents\nData was filtered for removal of certain personal information and sensitive data"
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "The model was fine-tuned from Gemma 3 checkpoints specifically for translation tasks across 55 languages, supporting both direct text translation and text-extraction-and-translation from images."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Model parameters: 12B\nTotal tokens = 4.3B + 10.2M = 4.3102 x 10^9\n\nFLOPS = 6 x 12 x 10^9 x 4.3102 x 10^9 = 3.10334 x 10^9"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "The model card explicitly states the model was \"trained with the explicit goal of producing text translation\" and references the Gemma Prohibited Use Policy for restrictions on malicious applications.\n\nno risk in LC2.7 check, skipping inspection."
+        }
+      ],
+      "is_proprietary": false
+    },
+    {
+      "name": "google/gemma-3-27b-it",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Gemma 3 is a multimodal vision-language model that handles text and image inputs to generate text outputs for tasks including question answering, summarization, reasoning, code generation, and image understanding.\nThis model (Gemma 3 12B IT) will be used for synthetic data generation using inference only. No pre-training is planned. This was mentioned in the additional information provided by the PI. \n\nAligns with the approved research topic Datascience and Engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "\nhttps://huggingface.co/google/gemma-3-12b-it\nOwner/Maintainer: Google DeepMind\nAuthors: Gemma Team (Google DeepMind)\n\nEntity from non-D5 country."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License is under Gemma terms\nRequires users to review and agree to Google's usage license before access\nModels may not be used for generation of harmful content, malicious purposes, or privacy violations\nUsers must implement appropriate content safety safeguards based on their specific use cases\nDevelopers encouraged to perform continuous monitoring and de-biasing techniques"
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "Sources: Web documents in over 140 languages, code, mathematics, and images\nData underwent CSAM filtering, sensitive data filtering, and quality/safety filtering\n12B model: 12 trillion tokens"
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "The instruction-tuned variant is fine-tuned for conversational AI, text generation, chatbots, text summarization, image data extraction, NLP research, language learning tools, and knowledge exploration across various reasoning, STEM, multilingual, and multimodal benchmarks."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Number of parameters: 27B\nNumber of training tokens for the pre-trianed model: 12T\n\nFLOPS= 6 x 12 x 10^9 x 12 x 10^12 = 8.64 x 10^23"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "The model card explicitly addresses ethical considerations, prohibited uses via the Gemma Prohibited Use Policy, and includes CSAM filtering in data preprocessing.\n\nno risk in LC2.7 check. Skipping inspection."
         }
       ],
       "is_proprietary": false
     }
   ],
-  "observations": "The software list is minimal but the dependencies should take care of the libraries deemed necessary for the project goals.\nSmolKalam dataset has been published on HF by a member of the group, without a license. \n\nThe applicant has not provided a source for their model and claim that it will be developed on Shaheen III GPUP based on the Llama decoder with Group Query Attention (introduced in Llama 2). The risk is mitigated because all the public and custom data is generic Arabic text and the model size indicated is approximately 3B. \nEven with the large token count for training, the estimated FLOPS reached will be orders of magnitude less than the threshold. \n\nQuarterly monitoring to check the model will be sufficient to build more trust. ",
-  "recommendation": "Positive check passed.\nNegative check passed. \n10^27 check passed.\nRecommended for grand challenge. "
+  "observations": "Although the software list is unusually short w.r.t. the work that has been discussed, most of the usual software is included in the dependencies. Its a long list.\n\nSmolKalam dataset has been published on HF by a member of the group, without a license. \n\nThe applicant has not provided a source for their in-house  and claim that it will be developed on Shaheen III GPUP based on the Llama decoder with Group Query Attention (introduced in Llama 2). The risk is mitigated because all the public and custom data is generic Arabic text and the model size indicated is approximately 3B. \nEven with the large token count for training, the estimated FLOPS reached will be orders of magnitude less than the threshold. \n\nThere are 7 different models requested in the additional information for inference usecase to generate synthetic datasets before pre-training of the in-house model can begin. They were not discussed in the original proposal. \nTwo models requested are from developed and maintained by entities in D5+M country. However, these are popular language and multimodal models with substantial downloads from HuggingFace. These too have been requested for generation of synthetic multilingual datasets. \n\nQuarterly monitoring to check the model will be sufficient to build more trust. A check needs also to be designed to demonstrate that no other model is being trained further other than the in-house model. ",
+  "recommendation": "Positive check passed.\nNegative check passed. \n10^27 check passed.\nRecommended for the grand challenge with a strong condition of monitoring that the PI will share the in-house developed model for LC2.7 check and jobscripts to demonstrate that the only being pre-trained is the in-house developed model. ",
+  "_submission_history": [
+    {
+      "timestamp": "2026-01-21T22:40:52.594409",
+      "action": "resubmission"
+    }
+  ]
 }
