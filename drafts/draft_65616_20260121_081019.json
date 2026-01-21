@@ -1,0 +1,416 @@
+{
+  "metadata": {
+    "proposal_title": "Open Source Pre-Training of an Arabic/English LLM",
+    "principal_investigator": "Francesco Orabona",
+    "proposal_date": "2025-12-09",
+    "reviewer_name": "Mohsin Ahmed Shaikh",
+    "reviewer_id": "174988",
+    "aimcr_date": "2026-01-08",
+    "project_id": "65616"
+  },
+  "third_party_software": [
+    {
+      "name": "Torchtitan",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Software Paper: https://openreview.net/forum?id=SFN6Wm7YBI\nRequired for large-scale distributed LLM pretraining. Aligns with the approved topic, Data Science and Engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No indication of prohibited uses/functionality found in TorchTitan\u2019s documentation for torchtitan v0.2.0."
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "No indication of restricted-country origin or restricted-entity involvement was identified for Torchtitan v0.2.0 based on available documentation, contributor information, and repository metadata.\nThis review was conducted in accordance with LC 2.5."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "3.1 Source Channel\nGitHub: https://github.com/pytorch/torchtitan\n3.2 GitHub Repository Metadata\nOwner / Organization: N/A\nRepository: pytorch/torchtitan\nDescription: A PyTorch native platform for training generative AI models\nStars: 4931\nForks: 660\nOpen Issues: 328\nLast Commit Date: 2025-12-30T01:34:49Z\nActivity Health: Unknown"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "4.1 License Type\nSPDX ID: N/A\nLicense name: BSD-3 License\n4.2 Permissibility Summary\nQuestion\tAnswer\nCan be used for academic purposes?\tYes\nCan be used for commercial use?\tYes\nModification allowed?\tYes\nRedistribution allowed?\tYes\nAttribution required?\tYes\nCopyleft obligations?\tNo"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "ca-certificates 2026.1.4\ncuda-version 13.1\nnomkl 1.0\ncuda-crt-tools 13.1.80\ncuda-cudart_linux-64 13.1.80\naws-c-common 0.10.6\ncuda-nvvm-tools 13.1.80\nlibbrotlicommon 1.1.0\nlibdeflate 1.22\nlibgfortran5 15.2.0\nlibjpeg-turbo 3.1.2\nlibutf8proc 2.9.0\nlibuv 1.51.0\nlibwebp-base 1.6.0\nopenssl 3.6.0\nxxhash 0.8.3\nyaml 0.2.5\naws-c-cal 0.8.1\naws-c-compression 0.3.0\naws-c-sdkutils 0.2.1\naws-checksums 0.2.2\ncuda-cudart 13.1.80\ncuda-cupti 13.1.75\ncuda-nvcc-tools 13.1.80\ncuda-nvdisasm 13.1.80\ngflags 2.2.2\nlerc 4.0.0\nlibabseil 20240722.0\nlibbrotlidec 1.1.0\nlibbrotlienc 1.1.0\nlibevent 2.1.12\nlibgfortran 15.2.0\ns2n 1.5.11\nsleef 3.9.0\nsnappy 1.2.2\naws-c-io 0.15.3\ncuda-cuobjdump 13.1.80\nglog 0.7.1\ngmp 6.3.0\nlibcrc32c 1.1.2\nlibopenblas 0.3.30\nlibpng 1.6.53\nlibprotobuf 5.28.2\nlibre2-11 2024.07.02\nlibthrift 0.21.0\naws-c-event-stream 0.5.0\naws-c-http 0.9.2\nlibblas 3.11.0\nlibfreetype6 2.14.1\nlibsentencepiece 0.2.0\nmpfr 4.2.1\nre2 2024.07.02\naws-c-auth 0.8.0\naws-c-mqtt 0.11.0\nlibcblas 3.11.0\nlibfreetype 2.14.1\nlibgrpc 1.67.1\nliblapack 3.11.0\nlibtiff 4.7.0\nlibxslt 1.1.43\nmpc 1.3.1\norc 2.0.3\nsentencepiece-spm 0.2.0\naws-c-s3 0.7.7\nlcms2 2.17\nlibtorch 2.5.1\nopenjpeg 2.5.3\naws-crt-cpp 0.29.7\nabsl-py 2.3.1\naiohappyeyeballs 2.6.1\nappdirs 1.4.4\nattrs 25.4.0\naws-sdk-cpp 1.11.458\nazure-core-cpp 1.14.0\ncertifi 2026.1.4\ncolorama 0.4.6\ncpython 3.13.11\ndill 0.3.8\ndocstring_parser 0.17.0\neinops 0.8.1\neval_type_backport 0.3.1\nfilelock 3.20.2\nfrozenlist 1.7.0\nfsspec 2025.3.0\ngmpy2 2.2.1\ngrpcio 1.67.1\nlibgoogle-cloud 2.31.0\nlxml 6.0.2\nmarkupsafe 3.0.3\nmpmath 1.3.0\nmultidict 6.7.0\nnetworkx 3.6.1\nnumpy 2.4.0\npillow 11.3.0\npropcache 0.3.1\nprotobuf 5.28.2\npsutil 7.2.1\npycryptodomex 3.23.0\npython-tzdata 2025.3\npython-xxhash 3.6.0\npytz 2025.2\npyyaml 6.0.3\nregex 2025.11.3\nsafetensors 0.7.0\nsentencepiece-python 0.2.0\nsetproctitle 1.3.7\nshtab 1.8.0\nsix 1.17.0\nsmmap 5.0.2\ntabulate 0.9.0\ntensorboard-data-server 0.7.0\ntyping 3.10.0.0\nzipp 3.23.0\naiosignal 1.4.0\nazure-identity-cpp 1.10.0\nazure-storage-common-cpp 12.8.0\ndocker-pycreds 0.4.0\ngitdb 4.0.12\nimportlib-metadata 8.7.0\njinja2 3.1.6\nlibgoogle-cloud-storage 2.31.0\nmultiprocess 0.70.16\npython-dateutil 2.9.0.post0\npython-gil 3.13.11\nsentencepiece 0.2.0\nsympy 1.14.0\ntriton 3.5.1\nwerkzeug 3.1.5\nyarl 1.22.0\n_python_abi3_support 1.0\naiohttp 3.13.3\nazure-storage-blobs-cpp 12.13.0\ngitpython 3.1.46\nmarkdown 3.4.4\npandas 2.3.3\npytorch 2.5.1\ntypeguard 4.4.4\nazure-storage-files-datalake-cpp 12.12.0\nhf-xet 1.2.1\ntensorboard 2.20.0\ntyro 1.0.3\nblobfile 3.1.0\nlibarrow 18.1.0\nsentry-sdk 2.49.0\nhuggingface_hub 0.36.0\nlibarrow-acero 18.1.0\nlibparquet 18.1.0\npyarrow-core 18.1.0\ntiktoken 0.12.0\ntorchdata 0.11.0\nwandb 0.23.1\nlibarrow-dataset 18.1.0\ntokenizers 0.22.2\nlibarrow-substrait 18.1.0\npyarrow 18.1.0\ndatasets 4.0.0\ntransformers 4.57.3\ntorchtitan 0.2.0\n"
+        }
+      ]
+    },
+    {
+      "name": "Datasets ",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Needed for efficient dataset loading, preprocessing, and streaming pipelines to support bilingual Arabic/English LLM pretraining objectives. Aligns with the approved topic, Data Science and Engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No indication of prohibited or restricted use (including military, weapons, or surveillance functionality) was identified in the documentation reviewed for the software; this assessment was conducted in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "No restricted-country origin or restricted-entity involvement was identified for huggingface/datasets based on the repository ownership and public organization metadata (Hugging Face; NYC + Paris); this review was conducted in accordance with LC 2.5."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "3.1 Source Channel\nGitHub: https://github.com/huggingface/datasets\n3.2 GitHub Repository Metadata\nOwner / Organization: N/A\nRepository: huggingface/datasets\nDescription: \ud83e\udd17 The largest hub of ready-to-use datasets for AI models with fast, easy-to-use and efficient data manipulation tools\nStars: 21054\nForks: 3059\nOpen Issues: 1032\nLast Commit Date: 2025-12-19T15:06:29Z\nActivity Health: Healthy"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "4.1 License Type\nSPDX ID: N/A\nLicense name: Apache\n4.2 Permissibility Summary\nQuestion\tAnswer\nCan be used for academic purposes?\tYes\nCan be used for commercial use?\tYes\nModification allowed?\tYes\nRedistribution allowed?\tYes\nAttribution required?\tYes\nCopyleft obligations?\tNo"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "ca-certificates 2026.1.4\nlibopentelemetry-cpp-headers 1.21.0\npybind11-abi 4\naws-c-common 0.12.4\nlibbrotlicommon 1.1.0\nlibgfortran5 15.2.0\nliblzma 5.8.1\nlibutf8proc 2.11.2\nlzo 2.10\nopenssl 3.6.0\nxxhash 0.8.3\nyaml 0.2.5\naws-c-cal 0.9.2\naws-c-compression 0.3.1\naws-c-sdkutils 0.2.4\naws-checksums 0.2.7\ngflags 2.2.2\nlibabseil 20250512.1\nlibbrotlidec 1.1.0\nlibbrotlienc 1.1.0\nlibevent 2.1.12\nlibgfortran 15.2.0\nliblzma-devel 5.8.1\nlz4-c 1.10.0\ns2n 1.5.26\nsimdjson 3.13.0\nsnappy 1.2.2\nxz-gpl-tools 5.8.1\nxz-tools 5.8.1\naws-c-io 0.22.0\nglog 0.7.1\nlibcrc32c 1.1.2\nlibopenblas 0.3.30\nlibprotobuf 6.31.1\nlibre2-11 2025.11.05\nlibsolv 0.7.35\nlibthrift 0.22.0\nnlohmann_json 3.11.3\nxz 5.8.1\nzstd 1.5.7\naws-c-event-stream 0.5.6\naws-c-http 0.10.4\nlibblas 3.11.0\norc 2.2.1\nre2 2025.11.05\naws-c-auth 0.9.1\naws-c-mqtt 0.13.3\nlibarchive 3.8.1\nlibcblas 3.11.0\nlibgrpc 1.73.1\nliblapack 3.11.0\naws-c-s3 0.8.6\naws-crt-cpp 0.34.4\naiohappyeyeballs 2.6.1\nattrs 25.4.0\naws-sdk-cpp 1.11.606\nazure-core-cpp 1.16.0\ncertifi 2026.1.4\ncpython 3.13.11\ndill 0.4.0\nfilelock 3.20.2\nfrozenlist 1.7.0\nfsspec 2025.10.0\nhpack 4.1.0\nhyperframe 6.1.0\nlibgoogle-cloud 2.39.0\nlibmamba 2.3.2\nmultidict 6.7.0\nnumpy 2.4.0\nprometheus-cpp 1.3.0\npropcache 0.3.1\npython-tzdata 2025.3\npython-xxhash 3.6.0\npytz 2025.2\npyyaml 6.0.3\nsix 1.17.0\nsniffio 1.3.1\naiosignal 1.4.0\nazure-identity-cpp 1.12.0\nazure-storage-common-cpp 12.10.0\nexceptiongroup 1.3.1\nh11 0.16.0\nh2 4.3.0\nlibgoogle-cloud-storage 2.39.0\nlibmambapy 2.3.2\nlibopentelemetry-cpp 1.21.0\nmultiprocess 0.70.18\npython-dateutil 2.9.0.post0\npython-gil 3.13.11\nyarl 1.22.0\n_python_abi3_support 1.0\naiohttp 3.13.3\nanyio 4.12.1\nazure-storage-blobs-cpp 12.14.0\npandas 2.3.3\nazure-storage-files-datalake-cpp 12.12.0\nhf-xet 1.2.1\nhttpcore 1.0.9\nhttpx 0.28.1\nlibarrow 21.0.0\nhuggingface_hub 1.2.4\nlibarrow-compute 21.0.0\nlibparquet 21.0.0\nlibarrow-acero 21.0.0\npyarrow-core 21.0.0\nlibarrow-dataset 21.0.0\nlibarrow-substrait 21.0.0\npyarrow 21.0.0\ndatasets 4.4.1"
+        }
+      ]
+    }
+  ],
+  "source_code": [],
+  "datasets_user_files": [
+    {
+      "name": "DLCM - Baseline",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Used as a large-scale text pretraining corpus to support training a bilingual Arabic/English LLM as defined in the project objectives. Aligns with the approved topic, Data Science and Engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in the DCLM-Baseline dataset documentation; it is described as a research baseline for language model training/benchmarking, and a keyword scan of the documentation did not surface the relevant red-flag terms\u2014this review was conducted in accordance with LC 2.7. \nHugging Face"
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "MLFoundations, by a Stanford professor Ludwig Schmidt (United States)"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No files provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Dataset preview available on https://huggingface.co/datasets/mlfoundations/dclm-baseline-1.0 \nText from the web"
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "\n    Owner / Curator: ML Foundations\n    Primary Distribution Platform: Hugging Face\n    Repository: https://huggingface.co/datasets/mlfoundations/dclm-baseline-1.0/tree/main\n    Access Method: download via Hugging Face\n    Provenance: Curated and released by Meta as a standalone dataset (474,556 downloads on HF, 1737 commits).\n    Maintenance Status: last update 2024-7\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "\n    License: CC-BY-4.0\n    Free to use, modify, and redistribute\n    Commercial use permitted\n    Attribution to the dataset authors is required\n"
+        }
+      ]
+    },
+    {
+      "name": "FineMath",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Math pretraining data."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in the finemath dataset documentation, which describes the dataset as intended for mathematical reasoning and model training research; this review was conducted in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "\n    Originating Organization: HuggingFace in The United States\n"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No files provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Preview available by HuggingFace https://huggingface.co/datasets/HuggingFaceTB/finemath"
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "\n    Owner / Curator: HuggingFace / Hugging Face Smol Models Research\n    Primary Distribution Platform: Hugging Face\n    Repository: https://huggingface.co/datasets/HuggingFaceTB/finemath\n    Access Method: download via Hugging Face\n    Provenance:\n        (11k downloads on HF, 11 commits, Feb 2025).\n    Maintenance Status: Actively maintained (last update 2025-2)\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "\n    License: ODC-BY\n    Use the dataset for any purpose (research, commercial, internal, public)\n    Modify, transform, and build upon the dataset\n    Attribution to the dataset authors is required\n    Indicate if changes were made\n"
+        }
+      ]
+    },
+    {
+      "name": "FinePDF",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Web pretraining data. Aligns with approved research topic Datascience and engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in the FinePDFs dataset documentation, which describes the dataset as a large-scale PDF text corpus for research and model training."
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Originating Organization: HuggingFace and Common Crawl both in United States\nThis entity is from non-D5 country."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No files provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Preview available by HuggingFace https://huggingface.co/datasets/HuggingFaceFW/finepdfs"
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "\n\n    Owner / Curator: HuggingFace / Fine Data\n\n    Primary Distribution Platform: Hugging Face\n\n    Repository: https://huggingface.co/datasets/HuggingFaceFW/finepdfs\n\n    Access Method: download via Hugging Face\n\n    Provenance:\n        Hugging Face does not claim ownership of the original PDFs\n            Primary raw source: Common Crawl\n        Hugging Face does own and license the compiled dataset artifact i.e., the database resulting from the selection, transformation, and organization of the data\n        (24k downloads on HF, 1 commit, Dec 2025).\n\n    Maintenance Status: Actively maintained (last update 2025-12)\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "\n    License: ODC-BY\n    Use the dataset for any purpose (research, commercial, internal, public)\n    Modify, transform, and build upon the dataset\n    Attribution to the dataset authors is required\n    Indicate if changes were made\n"
+        }
+      ]
+    },
+    {
+      "name": "FineWeb-2 Arabic",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Web pretraining data."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in the FineWeb-2 dataset documentation (including its Arabic portions), which describes the dataset as a large-scale clean web-text pretraining corpus for open LLM research; this review was conducted in accordance with LC 2.7. "
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "\n    Originating Organization: HuggingFace and Common Crawl both in United States\n"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No files provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "\n    Preview available by HuggingFace\n https://huggingface.co/datasets/HuggingFaceFW/fineweb-2"
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "\n\n    Owner / Curator: HuggingFace / Fine Data\n\n    Primary Distribution Platform: Hugging Face\n\n    Repository: https://huggingface.co/datasets/HuggingFaceFW/fineweb-2\n\n    Access Method: download via Hugging Face\n\n    Provenance:\n        Hugging Face does not claim ownership of the original webpages\n            Primary raw source: Common Crawl\n        Hugging Face does own and license the compiled dataset artifact i.e., the database resulting from selection, transformation, and organization of the data\n        (59k downloads on HF, 1 commit, Nov 2025).\n\n    Maintenance Status: Actively maintained (last update 2025-11)\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "\n    License: ODC-BY\n    Use the dataset for any purpose (research, commercial, internal, public)\n    Modify, transform, and build upon the dataset\n    Attribution to the dataset authors is required\n    Indicate if changes were made\n"
+        }
+      ]
+    },
+    {
+      "name": "FineWeb-Edu",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "\n\n    It's the only mentioned dataset.\n"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in the FineWeb-Edu dataset documentation, which describes the dataset as an educationally focused web-text corpus for language model research and training; this review was conducted in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "\n    Originating Organization: HuggingFace and Common Crawl both in United States\n"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No files"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "\n    Preview available by HuggingFace\nhttps://huggingface.co/datasets/HuggingFaceFW/fineweb-edu/viewer/default/train?row=0"
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "\n\n    Owner / Curator: HuggingFace / Fine Data\n\n    Primary Distribution Platform: Hugging Face\n\n    Repository: https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu\n\n    Access Method: download via Hugging Face\n\n    Provenance:\n        Hugging Face does not claim ownership of the original webpages\n            Primary raw source: Common Crawl\n        Hugging Face does own and license the compiled dataset artifact i.e., the database resulting from selection, transformation, and organization of the data\n        (277k downloads on HF, 1 commit, July 2025).\n\n    Maintenance Status: Actively maintained (~20 commits; last update 2025-12)\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "\n    License: ODC-BY\n    Use the dataset for any purpose (research, commercial, internal, public)\n    Modify, transform, and build upon the dataset\n    Attribution to the dataset authors is required\n    Indicate if changes were made\n"
+        }
+      ]
+    },
+    {
+      "name": "SmolKalam",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Coding pretraining data. Aligns with approved research topic Datascience and engineering.\n"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in the smolkalam dataset documentation, which describes the dataset as a language/text corpus for research and modeling purposes."
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "\n    Originating Organization: Sultan AlRashed in KSA. He is part of the research team in the proposal. \n"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No user files"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Low risk. No sample inspection conducted."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "\n    Owner / Curator: Sultan AlRashed\n    Primary Distribution Platform: Hugging Face\n    Repository: https://huggingface.co/datasets/SultanR/smolkalam\n    Access Method: download via Hugging Face\n    Provenance: (29 downloads on HF, 1 commit).\n    Maintenance Status: last update 2025-12\n\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 2,
+          "notes": "No license attached to the release. \nThe risk is reduced to low because this is a member of the research team. "
+        }
+      ]
+    },
+    {
+      "name": "The Stack V2",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "\n    Coding pretraining data.\n\n"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in The Stack V2 dataset documentation, which describes the dataset as an open large-scale code corpus for language model training and research; this assessment was conducted in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "\n    Originating Organization: BigCode community project jointly led by Hugging Face and ServiceNow. (United States)\n\n"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No files"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Dataset preview available on HuggingFace https://huggingface.co/datasets/bigcode/the-stack-v2"
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "\n    Owner / Curator: BigCode community project jointly led by Hugging Face and ServiceNow.\n    Primary Distribution Platform: Hugging Face\n    Repository: https://huggingface.co/datasets/bigcode/the-stack-v2\n    Access Method: download via Hugging Face\n    Provenance: Curated and released by Meta as a standalone dataset (7,727 downloads on HF, 1 commits).\n    Maintenance Status: last update 2024-4\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "\n    On HuggingFace listed as other, while on GitHub listed as Apache 2.0\n    Free to use, modify, and redistribute\n    Commercial use permitted\n    Attribution to the dataset authors is required\n    Must include a copy of the Apache 2.0 license\n    Clearly mark modified files as changed\n"
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "name": "In-house model",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Applicants want to train their own model from scratch on Shaheen III GPUP.\nIt is a Llama decoder with  grouped query attention.\nThe goal is to pretrain a primarily bilingual Arabic-English language model . As standard in the literature, the pretraining task is next-token prediction. \n\nAligns with approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No documentation available. However, similar models have available on HuggingFace have no mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "No URL as this code will be developed on Shaheen III GPUP."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "No license as this is an in-house code to be developed by the applicant and the research group. "
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "This is not a pre-trained model. The training dataset is the same as inspected in teh Datasets sections. "
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "No fine tuning planned."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "The indication of number of parameters is 3B. \nThe indication of number of training tokens is 1T. \nThe estimated FLOPs on ShaheenIII GPUP to train a model from scratch is:\n\n6 x 3 x 10^9 x 1 x 10^12 = 1.8 x 10^22 FLOPS\n\nIt is less than the threshold of 10^27."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No sample inspection as the code doesn't exist yet."
+        }
+      ],
+      "is_proprietary": false
+    }
+  ],
+  "observations": "No \n\nSmolKalam dataset has been published on HF by a member of the group, without a license. \n",
+  "recommendation": "Recommended for grand challenge. "
+}
