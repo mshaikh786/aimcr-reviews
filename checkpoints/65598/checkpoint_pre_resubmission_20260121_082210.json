@@ -1,0 +1,269 @@
+{
+  "checkpoint_metadata": {
+    "type": "pre_resubmission",
+    "timestamp": "2026-01-21T08:22:10.096557",
+    "project_id": "65598"
+  },
+  "form_data": {
+    "metadata": {
+      "proposal_title": "Towards Next-Generation Deep Architectures For Scalable Video and Language Modelling",
+      "principal_investigator": " J\u00fcrgen Schmidhuber",
+      "proposal_date": "2025-10-23",
+      "reviewer_name": "Mohsin Ahmed Shaikh",
+      "reviewer_id": "174988",
+      "aimcr_date": "2026-01-11",
+      "project_id": "65598"
+    },
+    "third_party_software": [
+      {
+        "name": "Pytorch",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Aligns with the proposal objectives. Aligns with the approved research topic Datascience and engineering"
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation"
+          },
+          {
+            "name": "D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "riginally developed by Meta and now governed by Linux Foundation.\nFrom a non D5 country"
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "https://github.com/pytorch/pytorch/edit/main/docs/source/index.md As of Jan 4th, 2025 96300 stars 26400 forks 12 Github projects 17000 PRs 97745 commits last commit 10 hours ago"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "NVIDIA End user license. Permits the proposed work."
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "my-ngc-pytorch28-stack:latest (ubuntu 24.04) ============================================ Total: 2169 (UNKNOWN: 0, LOW: 118, MEDIUM: 2026, HIGH: 25, CRITICAL: 0)"
+          }
+        ]
+      },
+      {
+        "name": "flash linear attention",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Triton-based implementations for state-of-the-art linear attention models. Aligned with approved topic, datascience& engineering"
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "no prohibited use indicated."
+          },
+          {
+            "name": "D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Maintained by FLA organization, Songlin Yang (https://www.linkedin.com/in/songlin-yang-b8a69728b)\nFrom a non D5 country"
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "https://github.com/fla-org/flash-linear-attention\n349 forks, 4.2K stars, 17890 commits, last commit on 09-01-2026"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "MIT license, Permits the proposed work."
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "fla-core 0.4.1\n\neinops 0.8.1\n\ntorch 2.9.1\n\nnvidia-cublas-cu12 12.8.4.1\n\nnvidia-cuda-cupti-cu12 12.8.90\n\nnvidia-cuda-nvrtc-cu12 12.8.93\n\nnvidia-cuda-runtime-cu12 12.8.90\n\nnvidia-cudnn-cu12 9.10.2.21\n\nnvidia-cufft-cu12 11.3.3.83\n\nnvidia-cufile-cu12 1.13.1.3\n\nnvidia-curand-cu12 10.3.9.90\n\nnvidia-cusolver-cu12 11.7.3.90\n\nnvidia-cusparse-cu12 12.5.8.93\n\nnvidia-cusparselt-cu12 0.7.1\n\nnvidia-nccl-cu12 2.27.5\n\nnvidia-nvjitlink-cu12 12.8.93\n\nnvidia-nvshmem-cu12 3.3.20\n\nnvidia-nvtx-cu12 12.8.90\n\ntriton 3.5.1\n\nfsspec 2026.1.0\n\nnetworkx 3.4.2\n\nsympy 1.14.0\n\nmpmath 1.3.0\n\ntyping_extensions 4.15.0\n\nfilelock 3.20.3\n\nJinja2 3.1.6\n\nMarkupSafe 3.0.3\n\ntransformers 4.57.3\n\nhuggingface-hub 0.36.0\n\nhf-xet 1.2.0\n\ntokenizers 0.22.2\n\nnumpy 2.2.6\n\npackaging 25.0\n\nPyYAML 6.0.3\n\nregex 2025.11.3\n\nsafetensors 0.7.0\n\ntqdm 4.67.1\n\nrequests 2.32.5\n\ncharset-normalizer 3.4.4\n\nidna 3.11\n\nurllib3 2.6.3\n\ncertifi 2026.1.4\n"
+          }
+        ]
+      }
+    ],
+    "source_code": [],
+    "datasets_user_files": [
+      {
+        "name": "Panda-70M",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "A Large-Scale Dataset with 70M High-Quality Video-Caption Pairs.\nAlgined with objective 3B video generation model pretraining. . \nAlgins with research topic datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of prohibited use terms in the documentation. Inspection reveals videos containing topics (sports, cooking, Animals) with captions describing the video content."
+          },
+          {
+            "name": "D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Owner / Curator: Snap Research (https://research.snap.com/index.html), and University of MERCED (https://www.ucmerced.edu/)\n\nPrimary Distribution Platform: https://snap-research.github.io/Panda-70M/"
+          },
+          {
+            "name": "Prompts / Fine-tuning Scripts",
+            "score": 1,
+            "notes": "No user files provided, no fine tuning scripts provided"
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "low risk. Skipping sample inspection."
+          },
+          {
+            "name": "Provenance",
+            "score": 1,
+            "notes": "PANDA-70M is a derived dataset: it does not introduce new recordings but instead repackages and processes existing public content into a structured form suitable for large-scale multimodal model training. (660 stars on GitHub)\n\n~89 commits; last update 2024-10"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "Research Use of Data Agreement v1.0 \n\n \n\nThis is the Research Use of Data Agreement, Version 1.0 (the \u201cR-UDA\u201d). Capitalized terms are defined in Section 5. Data Provider and you agree as follows: \n\n \n\n \n\n1. Provision of the Data \n\n1.1. You may use, modify, and distribute the Data made available to you by the Data Provider under this R-UDA for Research Use if you follow the R-UDA\u2019s terms. \n\n1.2. Data Provider will not sue you or any Downstream Recipient for any claim arising out of the use, modification, or distribution of the Data provided you meet the terms of the R-UDA. \n\n1.3. This R-UDA does not restrict your use, modification, or distribution of any portions of the Data that are in the public domain or that may be used, modified, or distributed under any other legal exception or limitation. \n\n \n\n \n\n2. Restrictions \n\n2.1. You agree that you will use the Data solely for Computational Use for non-commercial research. This restriction means that you may engage in non-commercial research activities (including non-commercial research undertaken by or funded via a commercial entity), but you may not use the Data or any Results in any commercial offering, including as part of a product or service (or to improve any product or service) you use or provide to others. \n\n2.2. You may not receive money or other consideration in exchange for use or redistribution of Data. \n\n \n\n \n\n3. Redistribution of Data \n\n3.1. You may redistribute the Data, so long as: \n\n3.1.1. You include with any Data you redistribute all credit or attribution information that you received with the Data, and your terms require any Downstream Recipient to do the same; and \n\n3.1.2. You bind each recipient to whom you redistribute the Data to the terms of the R-UDA."
+          }
+        ]
+      },
+      {
+        "name": "Slim-Pajama",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "open-source dataset for training large language models, Algins with research topic datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of prohibited use terms in the documentation."
+          },
+          {
+            "name": "D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Owner / Curator: Cerebras (https://huggingface.co/cerebras)\n\nPrimary Distribution Platform: Hugging Face\n\nRepository: https://huggingface.co/datasets/cerebras/SlimPajama-627B"
+          },
+          {
+            "name": "Prompts / Fine-tuning Scripts",
+            "score": 1,
+            "notes": "No user files provided, no fine tuning scripts provided"
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "low risk. Skipping sample inspection."
+          },
+          {
+            "name": "Provenance",
+            "score": 1,
+            "notes": "Repository: https://huggingface.co/datasets/cerebras/SlimPajama-627B\n\nThe dataset aggregates text from publicly available sources, including:\n\nWeb crawl data\n\nCode repositories\n\nAcademic and technical texts\n\nBooks and reference material\n\n(57k downloads on HuggingFace)"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "Hugging Face license: C4 GitHub repository license: MIT License Permissibility:\n\nPermitted for academic and research use\n\nRedistribution requires inclusion of the original license\n\nAttribution to the original authors is required under C4"
+          }
+        ]
+      }
+    ],
+    "models": [
+      {
+        "name": "FACTS",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "FACTS (FACTored State-space) is a novel recurrent framework for spatial-temporal world modelling that constructs a graph-structured memory with a routing mechanism to learn permutable memory representations, enabling efficient long-term sequence modelling while maintaining input permutation invariance.\n\nFACTS is used for the proposal's first main objective: generating text with long-term dependency and scaling efficient alternatives to Transformers for large-scale video and language modelling tasks.\n\n"
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "https://github.com/NanboLi/FACTS\n\nOwnership and maintenance\n\nPrimary maintainer: Li Nanbo\nAffiliation: Postdoctoral Fellow at KAUST Center of Excellence for Generative AI, working with Prof. J\u00fcrgen Schmidhuber\nPrevious affiliation: PhD from University of Edinburgh under Prof. Robert Fisher and Prof. Chris Williams\nLinkedIn: https://www.linkedin.com/in/li-nanbo-424131135\nContact email: linanbo2008@gmail.com\n\nThe individual is affiliated with an entity from non-D5 country.\n"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "MIT License\n\nCommercial use is permitted\nModifications are permitted\nDistribution is permitted\nSublicensing is permitted\nPrivate use is permitted\nMust include the original copyright notice and license text in copies\nNo liability claims can be made against authors\n\n"
+          },
+          {
+            "name": "Training Data Documentation",
+            "score": 1,
+            "notes": "Small-scale proof-of-concept pretraining on the MOVi dataset (https://cove.thecvf.com/datasets/848), in total 50000 samples (256x256 images)"
+          },
+          {
+            "name": "Customisation / Fine-tuning",
+            "score": 1,
+            "notes": "Downstream tasks for fine-tuning\n\nMultivariate time series forecasting (ETT, Weather, Traffic, Electricity benchmarks)\nObject-centric world modelling (video prediction tasks)\nSpatial-temporal graph prediction"
+          },
+          {
+            "name": "FLOPS Calculation",
+            "score": 1,
+            "notes": "According to additional information provided by the PI:\n\napproximately 3B parameters = 24 layers, 150 M parameters per layer.\n24 * 150 M = 3600 M or 3.6B\n\nPretrained FLOPs:\n6 x 3.6B x 50000 = 1.080 x 10^15 \n\nTraining on Shaheen III GPUP:\n6x3.6Bx(10^12 + 627x10^9) = 5.5857x10^21 FLOPS expected after proposed compute in the project."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "low risk. skipping inspection."
+          }
+        ],
+        "is_proprietary": false
+      },
+      {
+        "name": "MOSA",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "MoSA (Mixture of Sparse Attention) is a novel sparse attention mechanism that dynamically selects tokens for each attention head using expert-choice routing, reducing computational complexity from O(T\u00b2) to O(k\u00b2 + T) while achieving up to 27% better perplexity than dense attention baselines with the same compute budget.\n\nThe proposal aims to scale FACTS and MOSA to 1B-3B parameter models for large-scale video-language tasks, with MOSA specifically targeting language modeling with long-term dependencies and long-horizon video generation\u2014the repository provides the attention mechanism component to replace quadratic transformers in these foundation models.\n\nAligns with approved research topic Datascience & engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "https://github.com/piotrpiekos/MoSA)\n\n\nThe model is owned and maintained by Piotr Pi\u0119kos, a 4th-year PhD Candidate at KAUST AI Initiative supervised by Prof. J\u00fcrgen Schmidhuber, with co-authors R\u00f3bert Csord\u00e1s (Stanford) and J\u00fcrgen Schmidhuber (KAUST/IDSIA). LinkedIn: https://www.linkedin.com/in/piotrpiekos1/\n\nThe developer is affiliated to an entity in non-D5 country."
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "MIT License:\n\nPermits commercial use\nPermits modification\nPermits distribution\nPermits private use\nRequires license and copyright notice be included\nNo liability or warranty provided\nNo restrictions on military, nuclear, or other sensitive applications"
+          },
+          {
+            "name": "Training Data Documentation",
+            "score": 1,
+            "notes": "C4, 6.5B tokens used for pretraining. (according to additional information provided by the PI)"
+          },
+          {
+            "name": "Customisation / Fine-tuning",
+            "score": 1,
+            "notes": "no finetuning done. "
+          },
+          {
+            "name": "FLOPS Calculation",
+            "score": 1,
+            "notes": "\nAccording to additional information provided by the PI:\napproximately 1.2B parameters pre-trained model. On Shaheen III GPUP it will be modified to 40B. \n\nPre-training tokens = 6.5 x 10^9\n\nPre-training FLOPs= 6 x 1.2x10^9 x 6.5x10^9 = 46.8 x 10^18\n\nOn Shaheen III GPUP training plan;\nTarget model parameters = 40B\nTarget tokens = 100B\nEstimated additional FlOPS on Shaheen III GPUP: \n6x 40 x 10^9 x 100 x 10^9 = 2.4 x 10^22\n\nTotal FLOPS =  2.4 x 10^22 + 4.68 x 10^19 = 2.4 x 10^22\n\nbelow threshold of 10^27"
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "low risk. Skipping sample inspection."
+          }
+        ],
+        "is_proprietary": false
+      }
+    ],
+    "observations": "Models are well below threshold. \nFACTS is the applicant's own model. \nDatasets and software are safe with no risk.\n",
+    "recommendation": "Positive check passed.\n\nNegative check passed.\n\n10^27 check passed.\n\nRecommended for grand challenge. "
+  }
+}
