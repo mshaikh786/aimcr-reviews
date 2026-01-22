@@ -1,0 +1,745 @@
+{
+  "checkpoint_metadata": {
+    "type": "pre_resubmission",
+    "timestamp": "2026-01-22T12:30:12.746707",
+    "project_id": "65616"
+  },
+  "form_data": {
+    "metadata": {
+      "proposal_title": "Open Source Pre-Training of an Arabic/English LLM",
+      "principal_investigator": "Francesco Orabona",
+      "proposal_date": "2025-12-09",
+      "reviewer_name": "Mohsin Ahmed Shaikh",
+      "reviewer_id": "174988",
+      "aimcr_date": "2026-01-22",
+      "project_id": "65616"
+    },
+    "third_party_software": [
+      {
+        "name": "Torchtitan",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Software Paper: https://openreview.net/forum?id=SFN6Wm7YBI\nRequired for large-scale distributed LLM pretraining. Aligns with the approved topic, Data Science and Engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No indication of prohibited uses/functionality found in TorchTitan\u2019s documentation for torchtitan v0.2.0."
+          },
+          {
+            "name": "D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "No indication of restricted-country origin or restricted-entity involvement was identified for Torchtitan v0.2.0 based on available documentation, contributor information, and repository metadata.\nThis review was conducted in accordance with LC 2.5."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "3.1 Source Channel\nGitHub: https://github.com/pytorch/torchtitan\n3.2 GitHub Repository Metadata\nOwner / Organization: N/A\nRepository: pytorch/torchtitan\nDescription: A PyTorch native platform for training generative AI models\nStars: 4931\nForks: 660\nOpen Issues: 328\nLast Commit Date: 2025-12-30T01:34:49Z\nActivity Health: Unknown"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "4.1 License Type\nSPDX ID: N/A\nLicense name: BSD-3 License\n4.2 Permissibility Summary\nQuestion\tAnswer\nCan be used for academic purposes?\tYes\nCan be used for commercial use?\tYes\nModification allowed?\tYes\nRedistribution allowed?\tYes\nAttribution required?\tYes\nCopyleft obligations?\tNo"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "ca-certificates 2026.1.4\ncuda-version 13.1\nnomkl 1.0\ncuda-crt-tools 13.1.80\ncuda-cudart_linux-64 13.1.80\naws-c-common 0.10.6\ncuda-nvvm-tools 13.1.80\nlibbrotlicommon 1.1.0\nlibdeflate 1.22\nlibgfortran5 15.2.0\nlibjpeg-turbo 3.1.2\nlibutf8proc 2.9.0\nlibuv 1.51.0\nlibwebp-base 1.6.0\nopenssl 3.6.0\nxxhash 0.8.3\nyaml 0.2.5\naws-c-cal 0.8.1\naws-c-compression 0.3.0\naws-c-sdkutils 0.2.1\naws-checksums 0.2.2\ncuda-cudart 13.1.80\ncuda-cupti 13.1.75\ncuda-nvcc-tools 13.1.80\ncuda-nvdisasm 13.1.80\ngflags 2.2.2\nlerc 4.0.0\nlibabseil 20240722.0\nlibbrotlidec 1.1.0\nlibbrotlienc 1.1.0\nlibevent 2.1.12\nlibgfortran 15.2.0\ns2n 1.5.11\nsleef 3.9.0\nsnappy 1.2.2\naws-c-io 0.15.3\ncuda-cuobjdump 13.1.80\nglog 0.7.1\ngmp 6.3.0\nlibcrc32c 1.1.2\nlibopenblas 0.3.30\nlibpng 1.6.53\nlibprotobuf 5.28.2\nlibre2-11 2024.07.02\nlibthrift 0.21.0\naws-c-event-stream 0.5.0\naws-c-http 0.9.2\nlibblas 3.11.0\nlibfreetype6 2.14.1\nlibsentencepiece 0.2.0\nmpfr 4.2.1\nre2 2024.07.02\naws-c-auth 0.8.0\naws-c-mqtt 0.11.0\nlibcblas 3.11.0\nlibfreetype 2.14.1\nlibgrpc 1.67.1\nliblapack 3.11.0\nlibtiff 4.7.0\nlibxslt 1.1.43\nmpc 1.3.1\norc 2.0.3\nsentencepiece-spm 0.2.0\naws-c-s3 0.7.7\nlcms2 2.17\nlibtorch 2.5.1\nopenjpeg 2.5.3\naws-crt-cpp 0.29.7\nabsl-py 2.3.1\naiohappyeyeballs 2.6.1\nappdirs 1.4.4\nattrs 25.4.0\naws-sdk-cpp 1.11.458\nazure-core-cpp 1.14.0\ncertifi 2026.1.4\ncolorama 0.4.6\ncpython 3.13.11\ndill 0.3.8\ndocstring_parser 0.17.0\neinops 0.8.1\neval_type_backport 0.3.1\nfilelock 3.20.2\nfrozenlist 1.7.0\nfsspec 2025.3.0\ngmpy2 2.2.1\ngrpcio 1.67.1\nlibgoogle-cloud 2.31.0\nlxml 6.0.2\nmarkupsafe 3.0.3\nmpmath 1.3.0\nmultidict 6.7.0\nnetworkx 3.6.1\nnumpy 2.4.0\npillow 11.3.0\npropcache 0.3.1\nprotobuf 5.28.2\npsutil 7.2.1\npycryptodomex 3.23.0\npython-tzdata 2025.3\npython-xxhash 3.6.0\npytz 2025.2\npyyaml 6.0.3\nregex 2025.11.3\nsafetensors 0.7.0\nsentencepiece-python 0.2.0\nsetproctitle 1.3.7\nshtab 1.8.0\nsix 1.17.0\nsmmap 5.0.2\ntabulate 0.9.0\ntensorboard-data-server 0.7.0\ntyping 3.10.0.0\nzipp 3.23.0\naiosignal 1.4.0\nazure-identity-cpp 1.10.0\nazure-storage-common-cpp 12.8.0\ndocker-pycreds 0.4.0\ngitdb 4.0.12\nimportlib-metadata 8.7.0\njinja2 3.1.6\nlibgoogle-cloud-storage 2.31.0\nmultiprocess 0.70.16\npython-dateutil 2.9.0.post0\npython-gil 3.13.11\nsentencepiece 0.2.0\nsympy 1.14.0\ntriton 3.5.1\nwerkzeug 3.1.5\nyarl 1.22.0\n_python_abi3_support 1.0\naiohttp 3.13.3\nazure-storage-blobs-cpp 12.13.0\ngitpython 3.1.46\nmarkdown 3.4.4\npandas 2.3.3\npytorch 2.5.1\ntypeguard 4.4.4\nazure-storage-files-datalake-cpp 12.12.0\nhf-xet 1.2.1\ntensorboard 2.20.0\ntyro 1.0.3\nblobfile 3.1.0\nlibarrow 18.1.0\nsentry-sdk 2.49.0\nhuggingface_hub 0.36.0\nlibarrow-acero 18.1.0\nlibparquet 18.1.0\npyarrow-core 18.1.0\ntiktoken 0.12.0\ntorchdata 0.11.0\nwandb 0.23.1\nlibarrow-dataset 18.1.0\ntokenizers 0.22.2\nlibarrow-substrait 18.1.0\npyarrow 18.1.0\ndatasets 4.0.0\ntransformers 4.57.3\ntorchtitan 0.2.0\n"
+          }
+        ]
+      },
+      {
+        "name": "Datasets ",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Needed for efficient dataset loading, preprocessing, and streaming pipelines to support bilingual Arabic/English LLM pretraining objectives. Aligns with the approved topic, Data Science and Engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No indication of prohibited or restricted use (including military, weapons, or surveillance functionality) was identified in the documentation reviewed for the software; this assessment was conducted in accordance with LC 2.7."
+          },
+          {
+            "name": "D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "No restricted-country origin or restricted-entity involvement was identified for huggingface/datasets based on the repository ownership and public organization metadata (Hugging Face; NYC + Paris); this review was conducted in accordance with LC 2.5."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "3.1 Source Channel\nGitHub: https://github.com/huggingface/datasets\n3.2 GitHub Repository Metadata\nOwner / Organization: N/A\nRepository: huggingface/datasets\nDescription: \ud83e\udd17 The largest hub of ready-to-use datasets for AI models with fast, easy-to-use and efficient data manipulation tools\nStars: 21054\nForks: 3059\nOpen Issues: 1032\nLast Commit Date: 2025-12-19T15:06:29Z\nActivity Health: Healthy"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "4.1 License Type\nSPDX ID: N/A\nLicense name: Apache\n4.2 Permissibility Summary\nQuestion\tAnswer\nCan be used for academic purposes?\tYes\nCan be used for commercial use?\tYes\nModification allowed?\tYes\nRedistribution allowed?\tYes\nAttribution required?\tYes\nCopyleft obligations?\tNo"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "ca-certificates 2026.1.4\nlibopentelemetry-cpp-headers 1.21.0\npybind11-abi 4\naws-c-common 0.12.4\nlibbrotlicommon 1.1.0\nlibgfortran5 15.2.0\nliblzma 5.8.1\nlibutf8proc 2.11.2\nlzo 2.10\nopenssl 3.6.0\nxxhash 0.8.3\nyaml 0.2.5\naws-c-cal 0.9.2\naws-c-compression 0.3.1\naws-c-sdkutils 0.2.4\naws-checksums 0.2.7\ngflags 2.2.2\nlibabseil 20250512.1\nlibbrotlidec 1.1.0\nlibbrotlienc 1.1.0\nlibevent 2.1.12\nlibgfortran 15.2.0\nliblzma-devel 5.8.1\nlz4-c 1.10.0\ns2n 1.5.26\nsimdjson 3.13.0\nsnappy 1.2.2\nxz-gpl-tools 5.8.1\nxz-tools 5.8.1\naws-c-io 0.22.0\nglog 0.7.1\nlibcrc32c 1.1.2\nlibopenblas 0.3.30\nlibprotobuf 6.31.1\nlibre2-11 2025.11.05\nlibsolv 0.7.35\nlibthrift 0.22.0\nnlohmann_json 3.11.3\nxz 5.8.1\nzstd 1.5.7\naws-c-event-stream 0.5.6\naws-c-http 0.10.4\nlibblas 3.11.0\norc 2.2.1\nre2 2025.11.05\naws-c-auth 0.9.1\naws-c-mqtt 0.13.3\nlibarchive 3.8.1\nlibcblas 3.11.0\nlibgrpc 1.73.1\nliblapack 3.11.0\naws-c-s3 0.8.6\naws-crt-cpp 0.34.4\naiohappyeyeballs 2.6.1\nattrs 25.4.0\naws-sdk-cpp 1.11.606\nazure-core-cpp 1.16.0\ncertifi 2026.1.4\ncpython 3.13.11\ndill 0.4.0\nfilelock 3.20.2\nfrozenlist 1.7.0\nfsspec 2025.10.0\nhpack 4.1.0\nhyperframe 6.1.0\nlibgoogle-cloud 2.39.0\nlibmamba 2.3.2\nmultidict 6.7.0\nnumpy 2.4.0\nprometheus-cpp 1.3.0\npropcache 0.3.1\npython-tzdata 2025.3\npython-xxhash 3.6.0\npytz 2025.2\npyyaml 6.0.3\nsix 1.17.0\nsniffio 1.3.1\naiosignal 1.4.0\nazure-identity-cpp 1.12.0\nazure-storage-common-cpp 12.10.0\nexceptiongroup 1.3.1\nh11 0.16.0\nh2 4.3.0\nlibgoogle-cloud-storage 2.39.0\nlibmambapy 2.3.2\nlibopentelemetry-cpp 1.21.0\nmultiprocess 0.70.18\npython-dateutil 2.9.0.post0\npython-gil 3.13.11\nyarl 1.22.0\n_python_abi3_support 1.0\naiohttp 3.13.3\nanyio 4.12.1\nazure-storage-blobs-cpp 12.14.0\npandas 2.3.3\nazure-storage-files-datalake-cpp 12.12.0\nhf-xet 1.2.1\nhttpcore 1.0.9\nhttpx 0.28.1\nlibarrow 21.0.0\nhuggingface_hub 1.2.4\nlibarrow-compute 21.0.0\nlibparquet 21.0.0\nlibarrow-acero 21.0.0\npyarrow-core 21.0.0\nlibarrow-dataset 21.0.0\nlibarrow-substrait 21.0.0\npyarrow 21.0.0\ndatasets 4.4.1"
+          }
+        ]
+      }
+    ],
+    "source_code": [],
+    "datasets_user_files": [
+      {
+        "name": "DLCM - Baseline",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Used as a large-scale text pretraining corpus to support training a bilingual Arabic/English LLM as defined in the project objectives. Aligns with the approved topic, Data Science and Engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in the DCLM-Baseline dataset documentation; it is described as a research baseline for language model training/benchmarking, and a keyword scan of the documentation did not surface the relevant red-flag terms\u2014this review was conducted in accordance with LC 2.7. \nHugging Face"
+          },
+          {
+            "name": "D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "MLFoundations, by a Stanford professor Ludwig Schmidt (United States)"
+          },
+          {
+            "name": "Prompts / Fine-tuning Scripts",
+            "score": 1,
+            "notes": "No files provided"
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "Dataset preview available on https://huggingface.co/datasets/mlfoundations/dclm-baseline-1.0 \nText from the web"
+          },
+          {
+            "name": "Provenance",
+            "score": 1,
+            "notes": "\n    Owner / Curator: ML Foundations\n    Primary Distribution Platform: Hugging Face\n    Repository: https://huggingface.co/datasets/mlfoundations/dclm-baseline-1.0/tree/main\n    Access Method: download via Hugging Face\n    Provenance: Curated and released by Meta as a standalone dataset (474,556 downloads on HF, 1737 commits).\n    Maintenance Status: last update 2024-7\n"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "\n    License: CC-BY-4.0\n    Free to use, modify, and redistribute\n    Commercial use permitted\n    Attribution to the dataset authors is required\n"
+          }
+        ]
+      },
+      {
+        "name": "FineMath",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Math pretraining data."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in the finemath dataset documentation, which describes the dataset as intended for mathematical reasoning and model training research; this review was conducted in accordance with LC 2.7."
+          },
+          {
+            "name": "D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "\n    Originating Organization: HuggingFace in The United States\n"
+          },
+          {
+            "name": "Prompts / Fine-tuning Scripts",
+            "score": 1,
+            "notes": "No files provided"
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "Preview available by HuggingFace https://huggingface.co/datasets/HuggingFaceTB/finemath"
+          },
+          {
+            "name": "Provenance",
+            "score": 1,
+            "notes": "\n    Owner / Curator: HuggingFace / Hugging Face Smol Models Research\n    Primary Distribution Platform: Hugging Face\n    Repository: https://huggingface.co/datasets/HuggingFaceTB/finemath\n    Access Method: download via Hugging Face\n    Provenance:\n        (11k downloads on HF, 11 commits, Feb 2025).\n    Maintenance Status: Actively maintained (last update 2025-2)\n"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "\n    License: ODC-BY\n    Use the dataset for any purpose (research, commercial, internal, public)\n    Modify, transform, and build upon the dataset\n    Attribution to the dataset authors is required\n    Indicate if changes were made\n"
+          }
+        ]
+      },
+      {
+        "name": "FinePDF",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Web pretraining data. Aligns with approved research topic Datascience and engineering"
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in the FinePDFs dataset documentation, which describes the dataset as a large-scale PDF text corpus for research and model training."
+          },
+          {
+            "name": "D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Originating Organization: HuggingFace and Common Crawl both in United States\nThis entity is from non-D5 country."
+          },
+          {
+            "name": "Prompts / Fine-tuning Scripts",
+            "score": 1,
+            "notes": "No files provided"
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "Preview available by HuggingFace https://huggingface.co/datasets/HuggingFaceFW/finepdfs"
+          },
+          {
+            "name": "Provenance",
+            "score": 1,
+            "notes": "\n\n    Owner / Curator: HuggingFace / Fine Data\n\n    Primary Distribution Platform: Hugging Face\n\n    Repository: https://huggingface.co/datasets/HuggingFaceFW/finepdfs\n\n    Access Method: download via Hugging Face\n\n    Provenance:\n        Hugging Face does not claim ownership of the original PDFs\n            Primary raw source: Common Crawl\n        Hugging Face does own and license the compiled dataset artifact i.e., the database resulting from the selection, transformation, and organization of the data\n        (24k downloads on HF, 1 commit, Dec 2025).\n\n    Maintenance Status: Actively maintained (last update 2025-12)\n"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "\n    License: ODC-BY\n    Use the dataset for any purpose (research, commercial, internal, public)\n    Modify, transform, and build upon the dataset\n    Attribution to the dataset authors is required\n    Indicate if changes were made\n"
+          }
+        ]
+      },
+      {
+        "name": "FineWeb-2 Arabic",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Web pretraining data."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in the FineWeb-2 dataset documentation (including its Arabic portions), which describes the dataset as a large-scale clean web-text pretraining corpus for open LLM research; this review was conducted in accordance with LC 2.7. "
+          },
+          {
+            "name": "D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "\n    Originating Organization: HuggingFace and Common Crawl both in United States\n"
+          },
+          {
+            "name": "Prompts / Fine-tuning Scripts",
+            "score": 1,
+            "notes": "No files provided"
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "\n    Preview available by HuggingFace\n https://huggingface.co/datasets/HuggingFaceFW/fineweb-2"
+          },
+          {
+            "name": "Provenance",
+            "score": 1,
+            "notes": "\n\n    Owner / Curator: HuggingFace / Fine Data\n\n    Primary Distribution Platform: Hugging Face\n\n    Repository: https://huggingface.co/datasets/HuggingFaceFW/fineweb-2\n\n    Access Method: download via Hugging Face\n\n    Provenance:\n        Hugging Face does not claim ownership of the original webpages\n            Primary raw source: Common Crawl\n        Hugging Face does own and license the compiled dataset artifact i.e., the database resulting from selection, transformation, and organization of the data\n        (59k downloads on HF, 1 commit, Nov 2025).\n\n    Maintenance Status: Actively maintained (last update 2025-11)\n"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "\n    License: ODC-BY\n    Use the dataset for any purpose (research, commercial, internal, public)\n    Modify, transform, and build upon the dataset\n    Attribution to the dataset authors is required\n    Indicate if changes were made\n"
+          }
+        ]
+      },
+      {
+        "name": "FineWeb-Edu",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "\n\n    It's the only mentioned dataset.\n"
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in the FineWeb-Edu dataset documentation, which describes the dataset as an educationally focused web-text corpus for language model research and training; this review was conducted in accordance with LC 2.7."
+          },
+          {
+            "name": "D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "\n    Originating Organization: HuggingFace and Common Crawl both in United States\n"
+          },
+          {
+            "name": "Prompts / Fine-tuning Scripts",
+            "score": 1,
+            "notes": "No files"
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "\n    Preview available by HuggingFace\nhttps://huggingface.co/datasets/HuggingFaceFW/fineweb-edu/viewer/default/train?row=0"
+          },
+          {
+            "name": "Provenance",
+            "score": 1,
+            "notes": "\n\n    Owner / Curator: HuggingFace / Fine Data\n\n    Primary Distribution Platform: Hugging Face\n\n    Repository: https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu\n\n    Access Method: download via Hugging Face\n\n    Provenance:\n        Hugging Face does not claim ownership of the original webpages\n            Primary raw source: Common Crawl\n        Hugging Face does own and license the compiled dataset artifact i.e., the database resulting from selection, transformation, and organization of the data\n        (277k downloads on HF, 1 commit, July 2025).\n\n    Maintenance Status: Actively maintained (~20 commits; last update 2025-12)\n"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "\n    License: ODC-BY\n    Use the dataset for any purpose (research, commercial, internal, public)\n    Modify, transform, and build upon the dataset\n    Attribution to the dataset authors is required\n    Indicate if changes were made\n"
+          }
+        ]
+      },
+      {
+        "name": "SmolKalam",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Coding pretraining data. Aligns with approved research topic Datascience and engineering.\n"
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in the smolkalam dataset documentation, which describes the dataset as a language/text corpus for research and modeling purposes."
+          },
+          {
+            "name": "D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "\n    Originating Organization: Sultan AlRashed in KSA. He is part of the research team in the proposal. \n"
+          },
+          {
+            "name": "Prompts / Fine-tuning Scripts",
+            "score": 1,
+            "notes": "No user files"
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "Low risk. No sample inspection conducted."
+          },
+          {
+            "name": "Provenance",
+            "score": 1,
+            "notes": "\n    Owner / Curator: Sultan AlRashed\n    Primary Distribution Platform: Hugging Face\n    Repository: https://huggingface.co/datasets/SultanR/smolkalam\n    Access Method: download via Hugging Face\n    Provenance: (29 downloads on HF, 1 commit).\n    Maintenance Status: last update 2025-12\n\n"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 2,
+            "notes": "No license attached to the release. \nThe risk is reduced to low because this is a member of the research team. "
+          }
+        ]
+      },
+      {
+        "name": "The Stack V2",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "\n    Coding pretraining data.\n\n"
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No indication of prohibited or restricted use (including military, weapons, surveillance, or intelligence functionality) is stated or implied in The Stack V2 dataset documentation, which describes the dataset as an open large-scale code corpus for language model training and research; this assessment was conducted in accordance with LC 2.7."
+          },
+          {
+            "name": "D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "\n    Originating Organization: BigCode community project jointly led by Hugging Face and ServiceNow. (United States)\n\n"
+          },
+          {
+            "name": "Prompts / Fine-tuning Scripts",
+            "score": 1,
+            "notes": "No files"
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "Dataset preview available on HuggingFace https://huggingface.co/datasets/bigcode/the-stack-v2"
+          },
+          {
+            "name": "Provenance",
+            "score": 1,
+            "notes": "\n    Owner / Curator: BigCode community project jointly led by Hugging Face and ServiceNow.\n    Primary Distribution Platform: Hugging Face\n    Repository: https://huggingface.co/datasets/bigcode/the-stack-v2\n    Access Method: download via Hugging Face\n    Provenance: Curated and released by Meta as a standalone dataset (7,727 downloads on HF, 1 commits).\n    Maintenance Status: last update 2024-4\n"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "\n    On HuggingFace listed as other, while on GitHub listed as Apache 2.0\n    Free to use, modify, and redistribute\n    Commercial use permitted\n    Attribution to the dataset authors is required\n    Must include a copy of the Apache 2.0 license\n    Clearly mark modified files as changed\n"
+          }
+        ]
+      }
+    ],
+    "models": [
+      {
+        "name": "In-house model",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Applicants want to train their own model from scratch on Shaheen III GPUP.\nIt is a Llama decoder with  grouped query attention.\nThe goal is to pretrain a primarily bilingual Arabic-English language model . As standard in the literature, the pretraining task is next-token prediction. \n\nAligns with approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No documentation available. However, similar models have available on HuggingFace have no mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+          },
+          {
+            "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "No URL as this code will be developed on Shaheen III GPUP."
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "No license as this is an in-house code to be developed by the applicant and the research group. "
+          },
+          {
+            "name": "Training Data Documentation",
+            "score": 1,
+            "notes": "This is not a pre-trained model. The training dataset is the same as inspected in teh Datasets sections. "
+          },
+          {
+            "name": "Customisation / Fine-tuning",
+            "score": 1,
+            "notes": "No fine tuning planned."
+          },
+          {
+            "name": "FLOPS Calculation",
+            "score": 1,
+            "notes": "The indication of number of parameters is 3B. \nThe indication of number of training tokens is 1T. \nThe estimated FLOPs on ShaheenIII GPUP to train a model from scratch is:\n\n6 x 3 x 10^9 x 1 x 10^12 = 1.8 x 10^22 FLOPS\n\nIt is less than the threshold of 10^27."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "No sample inspection as the code doesn't exist yet."
+          }
+        ],
+        "is_proprietary": false
+      },
+      {
+        "name": "google/translategemma-27b-it",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Decoder-only transformer, will be used to translate data for pretraining. Aligns with approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+          },
+          {
+            "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Model is owned and maintained by Google, Entity is from a Non-D5 country.\n\nModel is available publicly on Hugging Face, Both 27B and 12B versions are requested.\n\nSource: \nhttps://huggingface.co/google/translategemma-27b-it\n\nDownloads in Dec 2025: 20,655"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "The model uses the Gemma Terms of Use (custom license, not standard open source):\nPermissions:\n\nYou may use, reproduce, modify, distribute, perform, or display the model\nYou can create Model Derivatives (modifications, fine-tuned versions, distillations)\nCommercial use is allowed\nYou can distribute via hosted services (APIs, web access)\nGoogle claims no rights to outputs you generate\n\nRestrictions:\n\nMust comply with the Gemma Prohibited Use Policy (no illegal activities, child abuse content, harassment, spam, misinformation, sexually explicit content for pornography, etc.)\nMust include use restrictions in any redistribution agreements\nMust provide copy of license to recipients\nModified files must carry prominent notices of modification\nCannot violate copyright or intellectual property rights\nGoogle reserves right to remotely restrict usage if violations are detected\nModel Derivatives must also comply with Gemma license terms\nGoverned by California law with Santa Clara County jurisdiction"
+          },
+          {
+            "name": "Training Data Documentation",
+            "score": 1,
+            "notes": "The SFT phase uses 4.3 billion tokens from MADLAD-400 monolingual data, SMOL (123 languages), GATITOS (170 languages), and Gemini 2.5 Flash-generated synthetic parallel data. The RL phase uses 10.2 million tokens."
+          },
+          {
+            "name": "Customisation / Fine-tuning",
+            "score": 1,
+            "notes": "Fine-tuned for translation across 55 languages"
+          },
+          {
+            "name": "FLOPS Calculation",
+            "score": 1,
+            "notes": "The indication of number of parameters is 27B. \nThe indication of number of training tokens is 4.31B. \nThe estimated FLOPs = 6 \u00d7 27 \u00d7 10^9 \u00d7 4.31 \u00d7 10^9 = 6.9822\u00d7 10^20 FLOPs \n\nIt is less than the threshold of 10^27."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "no risk in LC2.7 check, skipping inspection."
+          }
+        ],
+        "is_proprietary": false
+      },
+      {
+        "name": "ByteDance-Seed/Seed-X-PPO-7B",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Decoder-only transformer, will be used to translate data for pretraining. Aligns with approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+          },
+          {
+            "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+            "score": 2,
+            "notes": "The model is owned and maintained by ByteDance Seed Team, Lead author is Shanbo Cheng (https://www.linkedin.com/in/shanbo-cheng-26980284/).\n\nEntity is from a D5 country.\n\nSource: https://huggingface.co/ByteDance-Seed/Seed-X-PPO-7B\n\n\nDownloads in Dec 2025: 24,960\n\nLast commit to the HF repository of files: Jul 28, 2025"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "OpenMDW License (permissive):\n\nFree to use, modify, and distribute for any purpose including commercial use\nMust retain license copy and copyright notices when distributing\nOutputs generated by the model have no restrictions\nPatent grant included with defensive termination clause (terminates if you sue over patents)\nNo warranty provided (as-is basis)"
+          },
+          {
+            "name": "Training Data Documentation",
+            "score": 1,
+            "notes": "Pre-training:\n\nMonolingual data: 6 trillion tokens across 28 languages.\n\nFocused entirely on multilingual data\nDeliberately excluded STEM, coding, and reasoning-focused data to allocate more capacity to translation\n\n\nBilingual data: Started with an initial seed bilingual dataset of 200B tokens from publicly available web data\n\n\nFine-tuning:\n\nSupervised Fine-Tuning (SFT): 236,000 translation instances, including the FLORES dev set and manually curated pairs Emergent Mind.\n\nIncludes Chain-of-Thought (CoT) reasoning examples with expert annotations.\n\n\nReinforcement Learning (PPO): Reward models trained on 20,000 high-resource language pairings with human preferences Emergent Mind.\n\nTotal pre-training appears to be dominated by the 6T token monolingual corpus"
+          },
+          {
+            "name": "Customisation / Fine-tuning",
+            "score": 1,
+            "notes": "No fine tuning scripts provided"
+          },
+          {
+            "name": "FLOPS Calculation",
+            "score": 1,
+            "notes": "Model will be used for inference only.\nThe model has 7B parameters. From training data above, the count is estimated to be 6T tokens. \nFLOPS=  6 x 7 x 10^9 x 6 x 10^12 = 2.5 x 10^23\n\nIt is less than the threshold of 10^27."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "no risk in LC2.7 check, skipping inspection."
+          }
+        ],
+        "is_proprietary": false
+      },
+      {
+        "name": "Qwen/Qwen2.5-72B-Instruct",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Qwen2.5 instruct is a general-purpose large language model for text generation, instruction following, long-text generation, structured data analysis, coding, mathematics, and multilingual conversations across 29+ languages.\n\nAligns with approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+          },
+          {
+            "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+            "score": 2,
+            "notes": "The model is published under the Qwen org and owned/maintained by the Qwen Team at Alibaba Cloud (Alibaba Group); no official maintainer LinkedIn profiles are provided in the primary model/repo pages. China: D5-Country\n\nSource: https://huggingface.co/Qwen/Qwen2.5-72B-Instruct\n\nDownloads in Dec 2025: 302,719"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "Qwen License (custom, based on Tongyi Qianwen License):\n\nFree to use, reproduce, modify, and distribute for commercial and non-commercial purposes\nMust include copy of license and attribution notices with distributions\nModified files must carry prominent modification notices\nIf commercial use exceeds 100 million monthly active users, must request additional license from Alibaba\nCannot use model outputs to improve other LLMs (except Qwen derivatives)\nMust comply with export controls and applicable laws\nYou own derivative works you create\nNo trademark license granted except for required notices"
+          },
+          {
+            "name": "Training Data Documentation",
+            "score": 1,
+            "notes": "pre-trained from scratch on 18 trillion tokens from proprietary Alibaba datasets covering 29+ languages, with emphasis on knowledge, coding, and mathematics."
+          },
+          {
+            "name": "Customisation / Fine-tuning",
+            "score": 1,
+            "notes": "This model, as is, has not been fine-tuned on any downstream task, according to the model card from HuggingFace."
+          },
+          {
+            "name": "FLOPS Calculation",
+            "score": 1,
+            "notes": "Model will be used for inference only. The indication of number of parameters is 7B. The indication of number of training tokens is 18T. The estimated FLOPs = 2 \u00d7 7 \u00d7 10^9 \u00d7 18 \u00d7 10^12 = 2.52\u00d7 10^23 FLOPs\nIt is less than the threshold of 10^27."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "No risk in LC2.7 check, skipping inspection."
+          }
+        ],
+        "is_proprietary": false
+      },
+      {
+        "name": "google/gemma-3-27b-it",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Gemma 3 is a multimodal vision-language model that handles text and image inputs to generate text outputs for tasks including question answering, summarization, reasoning, code generation, and image understanding.\nThis model (Gemma 3 27B IT) will be used for synthetic data generation using inference only. No pre-training is planned. This was mentioned in the additional information provided by the PI. \n\nAligns with the approved research topic Datascience and Engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+          },
+          {
+            "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Model is owned and maintained by Google, Entity is from a Non-D5 country.\nModel is available publicly on Hugging Face\nSource: \nhttps://huggingface.co/google/gemma-3-27b-it\n"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "License is under Gemma terms\nRequires users to review and agree to Google's usage license before access\nModels may not be used for generation of harmful content, malicious purposes, or privacy violations\nUsers must implement appropriate content safety safeguards based on their specific use cases\nDevelopers encouraged to perform continuous monitoring and de-biasing techniques"
+          },
+          {
+            "name": "Training Data Documentation",
+            "score": 1,
+            "notes": "The 27B model was trained with 14 trillion tokens, including diverse web documents in 140+ languages, code for programming languages, mathematical text for logical reasoning, and a wide range of images for multimodal tasks; data filtered for CSAM, personal information, and low-quality content."
+          },
+          {
+            "name": "Customisation / Fine-tuning",
+            "score": 1,
+            "notes": "The instruction-tuned variant is fine-tuned for conversational AI, text generation, chatbots, text summarization, image data extraction, NLP research, language learning tools, and knowledge exploration across various reasoning, STEM, multilingual, and multimodal benchmarks."
+          },
+          {
+            "name": "FLOPS Calculation",
+            "score": 1,
+            "notes": "The model will be used for inference only.\n\nThe indication of number of parameters is 27B. The indication of number of training tokens is 14T. The estimated FLOPs = 6 \u00d7 27 \u00d7 10^ 9 \u00d7 14 \u00d7 10 ^12= 2.268 x 10^24  FLOPs\nIt is less than the threshold of 10^27."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "The model card explicitly addresses ethical considerations, prohibited uses via the Gemma Prohibited Use Policy, and includes CSAM filtering in data preprocessing.\n\nno risk in LC2.7 check. Skipping inspection. "
+          }
+        ],
+        "is_proprietary": false
+      },
+      {
+        "name": "QCRI/Fanar-1-9B-Instruct",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Decoder-only transformer, Will be used to generate synthetic data for pretraining. Aligns with approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7"
+          },
+          {
+            "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Developed and maintained by Qatar Computing Research Institute (QCRI) at Hamad Bin Khalifa University (HBKU), Qatar Foundation; QCRI is a national research institute focused on computing research including Arabic language technologies. Entity from Non-D5 country.\n\nSource: https://huggingface.co/QCRI/Fanar-1-9B-Instruct"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "Apache 2.0 License:\n\nAllows commercial and non-commercial use.\n\nPermits modification and distribution.\n\nRequires inclusion of license and copyright notices.\n\nGrants patent rights from contributors."
+          },
+          {
+            "name": "Training Data Documentation",
+            "score": 1,
+            "notes": "Pretrained on ~1 trillion tokens (Arabic and English) including ~515 B English tokens from Dolma, ~410 B Arabic tokens from curated sources, and ~102 B code tokens from The Stack."
+          },
+          {
+            "name": "Customisation / Fine-tuning",
+            "score": 1,
+            "notes": "No finetuning scripts provided."
+          },
+          {
+            "name": "FLOPS Calculation",
+            "score": 1,
+            "notes": "The model will be used for inference only.\nThe indication of number of parameters is 8.7B. The indication of number of training tokens is 1T. The estimated FLOPs = 2 \u00d7 8.7 \u00d7 10^ 9 \u00d7 1 \u00d7 10 ^12= 1.74* 10 ^ 22  FLOPs\nIt is less than the threshold of 10^27."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "no risk indicated in LC2.7 check, skipping inspection."
+          }
+        ],
+        "is_proprietary": false
+      },
+      {
+        "name": "google/translategemma-12b-it",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "TranslateGemma is a lightweight, state-of-the-art translation model that handles text-to-text and image-to-text translation across 55 languages, designed for deployment in resource-limited environments.\n\nThis model (TranslateGemma) does not appear to be used in the submitted proposal; the proposal focuses on training a custom Arabic/English LLM from scratch using Torchtitan, not using pre-existing translation models.\n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. "
+          },
+          {
+            "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "https://huggingface.co/google/translategemma-12b-it\n\nOwner/Maintainer: Google Translate Research Team and Google DeepMind\nKey authors: Mara Finkelstein, Isaac Caswell, Tobias Domhan, Jan-Thorsten Peter, Juraj Juraska, Parker Riley, Daniel Deutsch, and others (full author list in citation)\n\nEntity is from non-D5+M country. "
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "License is under Gemma terms\nRequires users to review and agree to Google's usage license before access\nRefer to Gemma Terms of Use and Gemma Prohibited Use Policy\nModels may not be used for generation of harmful content, malicious purposes, privacy violations, or perpetuation of biases\nUsers must implement appropriate content safety safeguards based on their specific use cases"
+          },
+          {
+            "name": "Training Data Documentation",
+            "score": 1,
+            "notes": "Supervised Fine-Tuning (SFT): 4.3 billion tokens\nReinforcement Learning phase: 10.2 million tokens\nSources: Monolingual web documents paired with high-quality translations into various languages generated by Gemini, and publicly available parallel documents\nData was filtered for removal of certain personal information and sensitive data"
+          },
+          {
+            "name": "Customisation / Fine-tuning",
+            "score": 1,
+            "notes": "The model was fine-tuned from Gemma 3 checkpoints specifically for translation tasks across 55 languages, supporting both direct text translation and text-extraction-and-translation from images."
+          },
+          {
+            "name": "FLOPS Calculation",
+            "score": 1,
+            "notes": "Model parameters: 12B\nTotal tokens = 4.3B + 10.2M = 4.3102 x 10^9\n\nFLOPS = 6 x 12 x 10^9 x 4.3102 x 10^9 = 3.10334 x 10^9"
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "The model card explicitly states the model was \"trained with the explicit goal of producing text translation\" and references the Gemma Prohibited Use Policy for restrictions on malicious applications.\n\nno risk in LC2.7 check, skipping inspection."
+          }
+        ],
+        "is_proprietary": false
+      },
+      {
+        "name": "google/gemma-3-27b-it",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Gemma 3 is a multimodal vision-language model that handles text and image inputs to generate text outputs for tasks including question answering, summarization, reasoning, code generation, and image understanding.\nThis model (Gemma 3 12B IT) will be used for synthetic data generation using inference only. No pre-training is planned. This was mentioned in the additional information provided by the PI. \n\nAligns with the approved research topic Datascience and Engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+          },
+          {
+            "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "\nhttps://huggingface.co/google/gemma-3-12b-it\nOwner/Maintainer: Google DeepMind\nAuthors: Gemma Team (Google DeepMind)\n\nEntity from non-D5 country."
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "License is under Gemma terms\nRequires users to review and agree to Google's usage license before access\nModels may not be used for generation of harmful content, malicious purposes, or privacy violations\nUsers must implement appropriate content safety safeguards based on their specific use cases\nDevelopers encouraged to perform continuous monitoring and de-biasing techniques"
+          },
+          {
+            "name": "Training Data Documentation",
+            "score": 1,
+            "notes": "Sources: Web documents in over 140 languages, code, mathematics, and images\nData underwent CSAM filtering, sensitive data filtering, and quality/safety filtering\n12B model: 12 trillion tokens"
+          },
+          {
+            "name": "Customisation / Fine-tuning",
+            "score": 1,
+            "notes": "The instruction-tuned variant is fine-tuned for conversational AI, text generation, chatbots, text summarization, image data extraction, NLP research, language learning tools, and knowledge exploration across various reasoning, STEM, multilingual, and multimodal benchmarks."
+          },
+          {
+            "name": "FLOPS Calculation",
+            "score": 1,
+            "notes": "Number of parameters: 27B\nNumber of training tokens for the pre-trianed model: 12T\n\nFLOPS= 6 x 12 x 10^9 x 12 x 10^12 = 8.64 x 10^23"
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "The model card explicitly addresses ethical considerations, prohibited uses via the Gemma Prohibited Use Policy, and includes CSAM filtering in data preprocessing.\n\nno risk in LC2.7 check. Skipping inspection."
+          }
+        ],
+        "is_proprietary": false
+      }
+    ],
+    "observations": "Although the software list is unusually short w.r.t. the work that has been discussed, most of the usual software is included in the dependencies. Its a long list.\n\nSmolKalam dataset has been published on HF by a member of the group, without a license. \n\nThe applicant has not provided a source for their in-house  and claim that it will be developed on Shaheen III GPUP based on the Llama decoder with Group Query Attention (introduced in Llama 2). The risk is mitigated because all the public and custom data is generic Arabic text and the model size indicated is approximately 3B. \nEven with the large token count for training, the estimated FLOPS reached will be orders of magnitude less than the threshold. \n\nThere are 7 different models requested in the additional information for inference usecase to generate synthetic datasets before pre-training of the in-house model can begin. They were not discussed in the original proposal. \nTwo models requested are from developed and maintained by entities in D5+M country. However, these are popular language and multimodal models with substantial downloads from HuggingFace. These too have been requested for generation of synthetic multilingual datasets. \n\nQuarterly monitoring to check the model will be sufficient to build more trust. A check needs also to be designed to demonstrate that no other model is being trained further other than the in-house model. ",
+    "recommendation": "Positive check passed.\nNegative check passed. \n10^27 check passed.\nInitial recommendation is to proceed with the grand challenge with a strong condition of monitoring that the PI will share the in-house developed model for LC2.7 check and jobscripts to demonstrate that the only being pre-trained is the in-house developed model."
+  }
+}
