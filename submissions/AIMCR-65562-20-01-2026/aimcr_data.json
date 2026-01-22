@@ -1025,7 +1025,7 @@
         {
           "name": "FLOPS Calculation",
           "score": 1,
-          "notes": "EquiformerV2-L (Large) has 153 x 10^6 parameters. \n\npretraining dataset tokens estimate is : 89 x 10^9 + 1.8 x 10^12 ~ 1.889 x 10^12\nTherefore pre-trained model will have:\n \n6 x 153 x 10^6 x 1.889 x 10^12 = 1.734 x 10^21\n\nIf the applicants, as they suggest, decide to train this model from the scratch using the pre-training dataset indicated:\n\nODAC23: 657 x 10^9\nODAC25: 1.2  x 10^12\nOC20      :  89  x 10^9\nOMol      :  384 x 10^9\nOMat25 :    50  x 10^9\n\nand for fine-tuning \nMatBench: 400 x 10^6\nin-house: 5.6 x 10^9\n\nTotal tokens for pre-training: 2.38x10^12 \nTotal tokens for fine-tuning:   6x10^9\n\nPre-training FLOPS estimated to be used on SIII: 6 x 153 x 10^6 x 2.38x10^12  = 2.184 x 10^21\n\nFine-tuning  FLOPS estimated to be used on SIII: 6 x 153 x 10^6 x  6 x 10^9  = 5.508 x 10^18\n\nTotal FLOPS after pretraining and fine-tuning = 2.184 x 10^21 + 5.508 x 10^18 = 2.184 x 10^21\n\n\n2.184 x 10^21 is orders of magnitude less than 10^27 therefore below threshold. "
+          "notes": "EquiformerV2-L (Large) has 153 x 10^6 parameters. \n\npretraining dataset tokens estimate is : 89 x 10^9 + 1.8 x 10^12 ~ 1.889 x 10^12\nTherefore pre-trained model will have:\n \n6 x 153 x 10^6 x 1.889 x 10^12 = 1.734 x 10^21\n\n1.734 x 10^21 is orders of magnitude less than 10^27, therefore below threshold. "
         },
         {
           "name": "Sample Inspection",
@@ -1071,7 +1071,7 @@
         {
           "name": "FLOPS Calculation",
           "score": 1,
-          "notes": "The JMP work reports scaling up to a model with ~235M trainable parameters (parameter count depends on the specific checkpoint/config). \n\nPretraining dataset tokens estimate is : 89 x 10^9 + 1.8 x 10^12 ~ 1.889 x 10^12\nTherefore pre-trained model will have:\n \n6 x 153 x 10^6 x 1.889 x 10^12 = 1.734 x 10^21\n\nIf the applicants, as they suggest, decide to train this model from the scratch using the pre-training dataset indicated:\n\nODAC23: 657 x 10^9\nODAC25: 1.2  x 10^12\nOC20      :  89  x 10^9\nOMol      :  384 x 10^9\nOMat25 :    50  x 10^9\n\nand for fine-tuning \nMatBench: 400 x 10^6\nin-house: 5.6 x 10^9\n\nTotal tokens for pre-training: 2.38x10^12 \nTotal tokens for fine-tuning:   6x10^9\n\nPre-training FLOPS estimated to be used on SIII: 6 x 235 x 10^6 x 2.38x10^12  = 3.355 x 10^21\n\nFine-tuning  FLOPS estimated to be used on SIII: 6 x 235 x 10^6 x  6 x 10^9  = 8.64 x 10^18\n\nTotal FLOPS after pretraining and fine-tuning = 3.335 x 10^21 + 8.64 x 10^18 = 3.3436 x 10^21\n\n\n3.3436 x 10^21is orders of magnitude less than 10^27 therefore below threshold. "
+          "notes": "The JMP work reports scaling up to a model with ~235M trainable parameters (parameter count depends on the specific checkpoint/config). \n\nPretraining dataset tokens estimate is : 89 x 10^9 + 1.8 x 10^12 ~ 1.889 x 10^12\nTherefore pre-trained model will have:\n \n6 x 153 x 10^6 x 1.889 x 10^12 = 1.734 x 10^21\n\n1.734 x 10^21 is orders of magnitude less than 10^27, therefore below threshold. "
         },
         {
           "name": "Sample Inspection",
@@ -1117,12 +1117,12 @@
         {
           "name": "FLOPS Calculation",
           "score": 1,
-          "notes": "The paper reports multiple UMA sizes, including UMA-S ~150M total params, UMA-M ~1.4B total params (~50M \u201cactive\u201d per structure via MoLE), and UMA-L ~700M params.\nConsidering 1.4B as trainable parameters.\n\nPretraining dataset tokens estimate is : 89 x 10^9 + 1.8 x 10^12 ~ 1.889 x 10^12\nTherefore pre-trained model will have:\n \n6 x 153 x 10^6 x 1.889 x 10^12 = 1.734 x 10^21\n\nIf the applicants, as they suggest, decide to train this model from the scratch using the pre-training dataset indicated:\n\nODAC23: 657 x 10^9\nODAC25: 1.2  x 10^12\nOC20      :  89  x 10^9\nOMol      :  384 x 10^9\nOMat25 :    50  x 10^9\n\nand for fine-tuning \nMatBench: 400 x 10^6\nin-house: 5.6 x 10^9\n\nTotal tokens for pre-training: 2.38x10^12 \nTotal tokens for fine-tuning:   6x10^9\n\nPre-training FLOPS estimated to be used on SIII: 6 x 1.4 x 10^9 x 2.38x10^12  = 1.9992 x 10^22\n\nFine-tuning  FLOPS estimated to be used on SIII: 6 x 1.4 x 10^9  x  6 x 10^9  = 50.4 x 10^18\n\nTotal FLOPS after pretraining and fine-tuning = 1.9992 x 10^22 + 50.4 x 10^18 = 2.00424 x 10^22\n\n\n 2.00424 x 10^22 is orders of magnitude less than 10^27 therefore below threshold. "
+          "notes": "The paper reports multiple UMA sizes, including UMA-S ~150M total params, UMA-M ~1.4B total params (~50M \u201cactive\u201d per structure via MoLE), and UMA-L ~700M params.\nConsidering 1.4B as trainable parameters.\n\nPretraining dataset tokens estimate is : 89 x 10^9 + 1.8 x 10^12 ~ 1.889 x 10^12\nTherefore pre-trained model will have:\n \n6 x 153 x 10^6 x 1.889 x 10^12 = 1.734 x 10^21\n\n1.734 x 10^21 is orders of magnitude less than 10^27, therefore below threshold. "
         },
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "Inspection skipped."
+          "notes": "No risk in LC2.7 check, skipping inspection."
         }
       ],
       "is_proprietary": false
@@ -1132,7 +1132,7 @@
   "recommendation": "Positive check passed. \n\nNegative check passed with potential risk identified. \n\n10^27 check passed. \n\nThe initial recommendation is to refer to RCAC for the mitigation of potential risks found in said datasets and model.  Conditional on clearance from the RCAC, the project is otherwise recommended for the grand challenge.  ",
   "_submission_history": [
     {
-      "timestamp": "2026-01-22T12:31:59.600783",
+      "timestamp": "2026-01-22T14:23:37.469934",
       "action": "resubmission"
     }
   ]
