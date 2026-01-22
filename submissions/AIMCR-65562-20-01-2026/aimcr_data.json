@@ -5,7 +5,7 @@
     "proposal_date": "2025-12-04",
     "reviewer_name": "Mohsin Ahmed Shaikh",
     "reviewer_id": "174988",
-    "aimcr_date": "2026-01-04",
+    "aimcr_date": "2026-01-22",
     "project_id": "65562"
   },
   "third_party_software": [
@@ -1132,7 +1132,7 @@
   "recommendation": "Positive check passed. \n\nNegative check passed with potential risk identified. \n\n10^27 check passed. \n\nThe initial recommendation is to refer to RCAC for the mitigation of potential risks found in said datasets and model.  Conditional on clearance from the RCAC, the project is otherwise recommended for the grand challenge.  ",
   "_submission_history": [
     {
-      "timestamp": "2026-01-22T12:17:18.295723",
+      "timestamp": "2026-01-22T12:31:59.600783",
       "action": "resubmission"
     }
   ]
