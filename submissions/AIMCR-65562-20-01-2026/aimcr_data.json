@@ -1128,11 +1128,11 @@
       "is_proprietary": false
     }
   ],
-  "observations": "In the Open Catalyst dataset, a potential risk of dual use has been identified. A suggestion is to refer to RCAC for mitigation.\nIn the Open Materials dataset, a potential risk of dual use has been identified. A suggestion is to refer to RCAC for mitigation.\nIn the Open Molecules 2025  dataset, the artifact is new and less used.\n\nIn GemNet model, a potential risk of dual use has been identified. A suggestion is to refer to RCAC for mitigation.\n",
+  "observations": "In the Open Catalyst dataset, a potential risk of dual use has been identified. A suggestion is to refer to the RCAC Chair for the scientific assessment of potential risk. \nIn the Open Materials dataset, a potential risk of dual use has been identified. A suggestion is to refer to the RCAC Chair for the scientific assessment of potential risk. \nIn the Open Molecules 2025  dataset, the artifact is new and less used.\n\nIn GemNet model, a potential risk of dual use has been identified. A suggestion is to refer to the RCAC Chair for the scientific assessment of potential risk. \n",
   "recommendation": "Positive check passed. \n\nNegative check passed with potential risk identified. \n\n10^27 check passed. \n\nThe initial recommendation is to refer to RCAC for the mitigation of potential risks found in said datasets and model.  Conditional on clearance from the RCAC, the project is otherwise recommended for the grand challenge.  ",
   "_submission_history": [
     {
-      "timestamp": "2026-01-22T14:23:37.469934",
+      "timestamp": "2026-01-22T14:52:56.115068",
       "action": "resubmission"
     }
   ]
