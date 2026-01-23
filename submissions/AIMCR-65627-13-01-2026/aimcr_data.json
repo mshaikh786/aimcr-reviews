@@ -901,7 +901,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Owner / Curator: European Molecular Biology Laboratory - European Bioinformatics Institute (EMBL-EBI) https://www.ebi.ac.uk/empiar/\n\nEntity is from a non-D5 country."
         },
@@ -918,7 +918,7 @@
         {
           "name": "Provenance",
           "score": 1,
-          "notes": "Owner / Curator: European Molecular Biology Laboratory - European Bioinformatics Institute (EMBL-EBI)\n\nPrimary Distribution Platform: EMPIAR (empiar.org)\n\nRepository: https://github.com/GSEA-MSigDB/ (for related tools and documentation)\n\nAccess Method: Browse, search, and download via https://www.ebi.ac.uk/empiar/ or REST API; FTP and HTTP(S) transfers supported"
+          "notes": "Owner / Curator: European Molecular Biology Laboratory - European Bioinformatics Institute (EMBL-EBI)\n\nPrimary Distribution Platform: EMPIAR (empiar.org)\n\nRepository: https://github.com/GSEA-MSigDB/ (for related tools and documentation)\n\nAccess Method: Browse, search, and download via https://www.ebi.ac.uk/empiar/ or REST API; FTP and HTTP(S) transfers supported\n\nAdditional information requested and provided by the PI explains that they need the following four datasets on Shaheen III GPUP for their work. \n\nhttps://www.ebi.ac.uk/empiar/EMPIAR-10028/\nhttps://www.ebi.ac.uk/empiar/EMPIAR-10049/\nhttps://www.ebi.ac.uk/empiar/EMPIAR-10076/\nhttps://www.ebi.ac.uk/empiar/EMPIAR-10180/\n\nAll downloads are in XML format."
         },
         {
           "name": "License / Permissions",
@@ -1128,22 +1128,22 @@
       ]
     },
     {
-      "name": "CryoFastAR version of cryoDRGN",
+      "name": "Examples from cryoDRGN listed on CryoFastAR",
       "checks": [
         {
           "name": "Project & Usage Alignment",
-          "score": 1,
-          "notes": "Aligns with the approved research topic Datascience and engineering"
+          "score": 3,
+          "notes": "The PI has listed an ambiguous request for a dataset which is provided as a zip file on a model's github repository CryoFastAR which is capable to creating synthetic data. The Zip file contains example of real CTF parameter data and synthetically generated data for validation of the CryoFastAR model. It is not clear how the PI is planning to use this data. \nThe alignment with any research objective from the proposal was not found. \n\nAligns with the approved research topic Computational Science and Visualization,  Datascience and Engineering"
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "No mention of sensitive terms in the documentation."
+          "notes": "Sample check in progress. The screening needs to happen on the dataset itself by inspecting for sensitive terms."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
-          "score": 1,
-          "notes": "Cellverse is originated in Shanghai, China, a D-5 country."
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 3,
+          "notes": "Cellverse is an entity which maintains the CryoFastAR repository which also publishes the link to the requested data as data.zip. \nThis entity is from is a D-5+M country."
         },
         {
           "name": "Prompts / Fine-tuning Scripts",
@@ -1153,17 +1153,17 @@
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "skipped"
+          "notes": "Sample check is in progress."
         },
         {
           "name": "Provenance",
-          "score": 1,
-          "notes": "The original Dataset comes from Priceton A.Z. Lab (https://github.com/ml-struct-bio/cryodrgn)\nbut this version is processed by Cellverse and provided via their github repo.\n\nOwner / Curator: https://www.cellverse.tech/#About originated in China\nPrimary Distribution Platform: https://github.com/Cellverse/CryoFastAR?tab=readme-ov-file\nAccess Method: Download link provided by repo readme: https://drive.google.com/file/d/1ryYszBurL6_vyQ9VDcArP6oGk1PNFElZ/view"
+          "score": 4,
+          "notes": "The original Dataset comes from Princeton A.Z. Lab (https://github.com/ml-struct-bio/cryodrgn) but this requested version has been processed by Cellverse and provided via their github repo as a Zip file.\n\nOwner / Curator: https://www.cellverse.tech/#About originated in China\nPrimary Distribution Platform: https://github.com/Cellverse/CryoFastAR?tab=readme-ov-file\nAccess Method: Download link provided by repo readme: https://drive.google.com/file/d/1ryYszBurL6_vyQ9VDcArP6oGk1PNFElZ/view\n"
         },
         {
           "name": "License / Permissions",
-          "score": 1,
-          "notes": "Can't find it. they only provide citation."
+          "score": 4,
+          "notes": "No license was attached to the dataset or the model documentation."
         }
       ]
     }
@@ -1216,6 +1216,12 @@
       "is_proprietary": false
     }
   ],
-  "observations": "Software: CryoFastAR is from China a D5 country and has a vague license, Boxx is from China a D5 country.\nDataset: CryoCRAB is from China a D5 country",
-  "recommendation": "Recommended for grand challenge. "
+  "observations": "Software: CryoFastAR is from a D5 country and has a vague license, Boxx is from a D5 country.\nDataset: CryoCRAB is from  a D5 country",
+  "recommendation": "Pending sample inspection on a dataset.",
+  "_submission_history": [
+    {
+      "timestamp": "2026-01-22T16:51:19.821052",
+      "action": "resubmission"
+    }
+  ]
 }
