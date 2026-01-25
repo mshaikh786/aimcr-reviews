@@ -1032,8 +1032,8 @@
         },
         {
           "name": "Sample Inspection",
-          "score": 2,
-          "notes": "The CryoCRAB dataset comprises 152,385 sets of raw movie frames, covering 746 datasets from EMPIAR. \n\nEach EMPIAR dataset typically includes approximately 200 cryo-EM images, consisting of raw movies, motion-corrected full-diff micrographs in MRC format along with estimated background images, and preprocessed full-diff micrographs in HDF5 format"
+          "score": 1,
+          "notes": "Download a random subset of micrograph in h5 format and view with H5web viewer plugin in VSCode. There are two groups /diff and /full in each of the viewed files, for example, one shown below. Each group has mixed scalars in FP16 and FP64. These scalars describe the descriptive statistics of some combinations of data. No sensitive data such as coordinates, lon or lats, energies etc have been noticed.\n\n> h5ls -rv 038268_empiar_10597_full_diff.h5\nOpened \"038268_empiar_10597_full_diff.h5\" with sec2 driver.\n/                        Group\n    Attribute: even_mean scalar\n        Type:      native float\n    Attribute: even_std scalar\n        Type:      native float\n    Attribute: even_vmax scalar\n        Type:      native double\n    Attribute: even_vmin scalar\n        Type:      native double\n    Attribute: full_mean scalar\n        Type:      native double\n    Attribute: full_std scalar\n        Type:      native double\n    Attribute: full_vmax scalar\n        Type:      native double\n    Attribute: full_vmin scalar\n        Type:      native double\n    Attribute: odd_mean scalar\n        Type:      native float\n    Attribute: odd_std scalar\n        Type:      native float\n    Attribute: odd_vmax scalar\n        Type:      native double\n    Attribute: odd_vmin scalar\n        Type:      native double\n    Location:  1:96\n    Links:     1\n/diff                    Dataset {1100/1100, 1549/1549}\n    Location:  1:4591992\n    Links:     1\n    Chunks:    {256, 256} 131072 bytes\n    Storage:   3407800 logical bytes, 4587520 allocated bytes, 74.28% utilization\n    Type:      IEEE 16-bit little-endian float\n/full                    Dataset {1100/1100, 1549/1549}\n    Location:  1:1256\n    Links:     1\n    Chunks:    {256, 256} 131072 bytes\n    Storage:   3407800 logical bytes, 4587520 allocated bytes, 74.28% utilization\n    Type:      IEEE 16-bit little-endian float"
         },
         {
           "name": "Provenance",
@@ -1216,11 +1216,11 @@
       "is_proprietary": false
     }
   ],
-  "observations": "Software: CryoFastAR is from a D5 country and has a vague license, Boxx is from a D5 country.\nDataset: CryoCRAB is from  a D5 country",
+  "observations": "Software: CryoFastAR is from a D5 country and has a vague license; Boxx is from a D5 country.\nDataset: CryoCRAB is from  a D5 country\n\nDataset: Examples from cryoDRGN  is a zip download from a model called CryoFastAR, which is not in the requested list. Only the synthetic/real example data.zip has been requested. The provenance, LC2.7 check and LC2.5 check all cannot be executed because of lack of information. ",
   "recommendation": "Pending sample inspection on a dataset.",
   "_submission_history": [
     {
-      "timestamp": "2026-01-26T00:25:32.364129",
+      "timestamp": "2026-01-26T00:51:34.383594",
       "action": "resubmission"
     }
   ]
