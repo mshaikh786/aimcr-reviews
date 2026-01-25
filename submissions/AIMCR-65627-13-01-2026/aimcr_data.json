@@ -1013,17 +1013,17 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "A Large-scale Curated and Filterable Dataset for Cryo-EM Foundation Model Pre-training.\n\nAligns with the approved research topic Datascience and engineering."
+          "notes": "The CryoCRAB dataset comprises 152,385 sets of raw movie frames, covering 746 datasets from EMPIAR.  It is planned to be used for self-supervised cryo-EM contrastive representation learning.\n\nAligns with the approved research topic Datascience and engineering and Computational science and visualization."
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "No mention of sensitive terms in the documentation."
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
-          "score": 3,
-          "notes": "Tsinghua University research team (Qiuchen Cao, Hongda Du, Ziyang Xu, Jiawei Zeng, Yongqi Liu, Zhiyuan Liang, Yipu Peng, Jun Yang)\n\nEntity is from a D5 country (China)."
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 2,
+          "notes": "Maintainer: \nQihe Chen: https://orcid.org/0009-0008-1715-6403\nYuan Pei: https://orcid.org/0000-0003-4065-2540\nAffiliation: ShanghaiTech University\n\nMaintainers are from a D5 country."
         },
         {
           "name": "Prompts / Fine-tuning Scripts",
@@ -1038,7 +1038,7 @@
         {
           "name": "Provenance",
           "score": 2,
-          "notes": "Owner / Curator: Tsinghua University research team (Qiuchen Cao, Hongda Du, Ziyang Xu, Jiawei Zeng, Yongqi Liu, Zhiyuan Liang, Yipu Peng, Jun Yang)\n\nPrimary Distribution Platform: Science Data Bank (ScienceDB) - Computer Network Information Center, Chinese Academy of Sciences\n\nRepository: https://github.com/Dylan8527/CryoCRAB (processing scripts and documentation)\n\nAccess Method: Download via https://doi.org/10.57760/sciencedb.17922; requires ScienceDB account registration; approximately 12.18 TB total (micrographs and metadata); raw movie data (86.2 TB) available via FTP paths to EMPIAR"
+          "notes": "https://github.com/Dylan8527/CryoCRAB\nStars: 14\nForks: 1\n\nMaintainer: \nQihe Chen: https://orcid.org/0009-0008-1715-6403\nYuan Pei: https://orcid.org/0000-0003-4065-2540\n\nAffiliation: ShanghaiTech University\n\nRepository: https://github.com/Dylan8527/CryoCRAB (processing scripts and documentation)\n\nAccess Method: Download via https://doi.org/10.57760/sciencedb.17922; requires ScienceDB account registration; approximately 12.18 TB total (micrographs and metadata); raw movie data (86.2 TB) available via FTP paths to EMPIAR"
         },
         {
           "name": "License / Permissions",
@@ -1220,7 +1220,7 @@
   "recommendation": "Pending sample inspection on a dataset.",
   "_submission_history": [
     {
-      "timestamp": "2026-01-25T13:49:17.506892",
+      "timestamp": "2026-01-26T00:25:32.364129",
       "action": "resubmission"
     }
   ]
