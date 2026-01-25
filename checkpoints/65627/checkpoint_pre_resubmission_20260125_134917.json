@@ -1,0 +1,1228 @@
+{
+  "checkpoint_metadata": {
+    "type": "pre_resubmission",
+    "timestamp": "2026-01-25T13:49:17.503029",
+    "project_id": "65627"
+  },
+  "form_data": {
+    "metadata": {
+      "proposal_title": "CryoEMGGT - CryoEM Geometry Grounded Transformer",
+      "principal_investigator": "Andreas Naschberger",
+      "proposal_date": "2025-10-23",
+      "reviewer_name": "Mohsin Ahmed Shaikh",
+      "reviewer_id": "174988",
+      "aimcr_date": "2026-01-13",
+      "project_id": "65627"
+    },
+    "third_party_software": [
+      {
+        "name": "pytorch",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Aligns with the proposal objectives. Aligns with the approved research topic Datascience and engineering"
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation of PyTorch."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Originally developed by Meta and now governed by Linux Foundation."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "https://github.com/pytorch/pytorch/edit/main/docs/source/index.md As of Jan 4th, 2025 96300 stars 26400 forks 12 Github projects 17000 PRs 97745 commits last commit 10 hours ago"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "BSD-3-Clause Permissibility Summary Question Answer Can be used for academic purposes? Yes Can be used for commercial use? Yes Modification allowed? Yes Redistribution allowed? Yes Attribution required? Yes Copyleft obligations? No"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "nvidia-cublas-cu12 12.8.4.1 nvidia-cuda-cupti-cu12 12.8.90 nvidia-cuda-nvrtc-cu12 12.8.93 nvidia-cuda-runtime-cu12 12.8.90 nvidia-cudnn-cu12 9.10.2.21 nvidia-cufft-cu12 11.3.3.83 nvidia-cufile-cu12 1.13.1.3 nvidia-curand-cu12 10.3.9.90 nvidia-cusolver-cu12 11.7.3.90 nvidia-cusparse-cu12 12.5.8.93\n\n nvidia-cusparselt-cu12 0.7.1 \n\nnvidia-nccl-cu12 2.27.5 \n\nnvidia-nvjitlink-cu12 12.8.93 \n\nnvidia-nvshmem-cu12 3.3.20 \n\nnvidia-nvtx-cu12 12.8.90 \n\ntriton 3.5.1 \n\nfsspec 2026.1.0 \n\nnetworkx 3.4.2 \n\nsympy 1.14.0 \n\nmpmath 1.3.0 \n\ntyping_extensions 4.15.0 \n\nfilelock 3.20.3 \n\nJinja2 3.1.6 \n\nMarkupSafe 3.0.3"
+          }
+        ]
+      },
+      {
+        "name": "Transformers",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Aligns with the proposal objectives. Aligns with the approved research topic Datascience and engineering"
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation of Transformers."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Huggingface From a non D5 country."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "PyPI: https://pypi.org/project/transformers/\n\nRepository: huggingface/transformers \n\nDescription: \ud83e\udd17 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. \n\nStars: 154657 Forks: 31639 Open Issues: 2161 Last Commit Date: 2026-01-06T12:51:18Z"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "Apache 2.0 License\nCan be used for academic purposes? Yes \n\nCan be used for commercial use? Yes \n\nModification allowed? Yes \n\nRedistribution allowed? Yes \n\nAttribution required? Yes \n\nCopyleft obligations? No"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "huggingface-hub 0.36.0\n\nhf-xet 1.2.0\n\ntokenizers 0.22.2\n\nfsspec 2026.1.0\n\nnumpy 2.2.6\n\npackaging 25.0\n\nPyYAML 6.0.3\n\nregex 2025.11.3\n\nsafetensors 0.7.0\n\ntqdm 4.67.1\n\ntyping_extensions 4.15.0\n\nfilelock 3.20.3\n\nrequests 2.32.5\n\ncharset-normalizer 3.4.4\n\nidna 3.11\n\nurllib3 2.6.3\n\ncertifi 2026.1.4"
+          }
+        ]
+      },
+      {
+        "name": "Pytorch lightning",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Aligns with the proposal objectives. Aligns with the approved research topic Datascience and engineering"
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Owned by: Lightning-AI team, William Falcon (https://www.linkedin.com/in/wfalcon)\nFrom an non D5 country."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "Source Channel:\n\nPyPI: https://pypi.org/project/pytorch-lightning/2.6.0/\n\nGitHub: https://github.com/Lightning-AI/pytorch-lightning\n\nGitHub Repository Metadata:\n\nOwner / Organization: Lightning-AI\n\nRepository: Lightning-AI/pytorch-lightning\n\nStars: ~31,000+\n\nForks: ~3,700+\n\nOpen Issues: ~950"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "Apache 2.0 License\nCan be used for academic purposes? Yes \n\nCan be used for commercial use? Yes \n\nModification allowed? Yes \n\nRedistribution allowed? Yes \n\nAttribution required? Yes \n\nCopyleft obligations? No"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "pytorch-lightning 2.6.0\n\nfsspec 2026.1.0\n\naiohttp 3.13.3\n\nasync-timeout 5.0.1\n\nmultidict 6.7.0\n\nyarl 1.22.0\n\naiohappyeyeballs 2.6.1\n\naiosignal 1.4.0\n\nattrs 25.4.0\n\nfrozenlist 1.8.0\n\nidna 3.11\n\nlightning-utilities 0.15.2\n\npackaging 25.0\n\npropcache 0.4.1\n\nPyYAML 6.0.3\n\ntorch 2.9.1\n\nnvidia-cublas-cu12 12.8.4.1\n\nnvidia-cuda-cupti-cu12 12.8.90\n\nnvidia-cuda-nvrtc-cu12 12.8.93\n\nnvidia-cuda-runtime-cu12 12.8.90\n\nnvidia-cudnn-cu12 9.10.2.21\n\nnvidia-cufft-cu12 11.3.3.83\n\nnvidia-cufile-cu12 1.13.1.3\n\nnvidia-curand-cu12 10.3.9.90\n\nnvidia-cusolver-cu12 11.7.3.90\n\nnvidia-cusparse-cu12 12.5.8.93\n\nnvidia-cusparselt-cu12 0.7.1\n\nnvidia-nccl-cu12 2.27.5\n\nnvidia-nvjitlink-cu12 12.8.93\n\nnvidia-nvshmem-cu12 3.3.20\n\nnvidia-nvtx-cu12 12.8.90\n\ntriton 3.5.1\n\nnetworkx 3.4.2\n\nsympy 1.14.0\n\nmpmath 1.3.0\n\ntorchmetrics 1.8.2\n\nnumpy 2.2.6\n\ntqdm 4.67.1\n\ntyping_extensions 4.15.0\n\nfilelock 3.20.3\n\nJinja2 3.1.6\n\nMarkupSafe 3.0.3\n\nsetuptools 80.9.0"
+          }
+        ]
+      },
+      {
+        "name": "FINUFFT",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Aligns with the proposal objectives. Aligns with the approved research topic Datascience and engineering"
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Owned by: Faltiron institute, Simon Aiola (https://www.linkedin.com/in/simone-aiola)\nFrom an non D5 country."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "Source Channel:\n\nPyPI: https://pypi.org/project/finufft/\n\nGitHub: https://github.com/flatironinstitute/finufft\n\nGitHub Repository Metadata:\n\nOwner / Organization: flatiron institute\n\nRepository: flatironinstitute/finufft\n\nStars: ~300+\n\nForks: ~60+\n\nOpen Issues: ~20-30"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "Apache 2.0 License\nCan be used for academic purposes? Yes \n\nCan be used for commercial use? Yes \n\nModification allowed? Yes \n\nRedistribution allowed? Yes \n\nAttribution required? Yes \n\nCopyleft obligations? No"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "numpy 2.2.6\n\npackaging 25.0"
+          }
+        ]
+      },
+      {
+        "name": "einops",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Aligns with the proposal objectives. Aligns with the approved research topic Datascience and engineering"
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Owned by: Alex Rogozhnikov (https://www.linkedin.com/in/alexrogozhnikov/)\nFrom a non D5 country."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "Source Channel:\n\nPyPI: https://pypi.org/project/einops/\n\nGitHub: https://github.com/arogozhnikov/einops\n\nGitHub Repository Metadata:\n\nOwner / Organization: arogozhnikov\n\nRepository: arogozhnikov/einops\n\nStars: ~8,500+\n\nForks: ~350+\n\nOpen Issues: ~40"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "MIT  License\nCan be used for academic purposes? Yes \n\nCan be used for commercial use? Yes \n\nModification allowed? Yes \n\nRedistribution allowed? Yes \n\nAttribution required? Yes \n\nCopyleft obligations? No"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "N/A"
+          }
+        ]
+      },
+      {
+        "name": "Numpy",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Aligns with the proposal objectives. Aligns with the approved research topic Datascience and engineering"
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Its a bonafide community with a governance model and multiple maintainers. https://numpy.org/about/ This is an opensource project with funding sources from entities from non-D5 countries."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "PyPI: https://pypi.org/project/numpy/ https://github.com/numpy/numpy\n\nOwner / Organization: numpy Repository: numpy/numpy \n\nDescription: The fundamental package for scientific computing with Python. \n\nStars: 31038 Forks: 11858 Open Issues: 2392 Last Commit Date: 2025-12-17T23:48:08Z"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "BSD 3-Clause License Permissions:\n\nUse the software for any purpose, including commercial use\n\nModify the source code\n\nDistribute the original or modified versions\n\nUse it in proprietary/closed-source projects\n\nSublicense it as part of a larger work\n\nFit for use in proposed project."
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "ca-certificates 2026.1.4 llvm-openmp 19.1.7 _openmp_mutex 4.5 openssl 3.6.0 libgcc 15.2.0 libgfortran5 15.2.0 libgfortran 15.2.0 python_abi 3.11 libopenblas 0.3.30 libblas 3.11.0 libcblas 3.11.0 liblapack 3.11.0 numpy 1.26.4"
+          }
+        ]
+      },
+      {
+        "name": "Scipy",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Aligns with the proposal objectives. Aligns with the approved research topic Datascience and engineering"
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Its a bonafide community with a governance model and multiple maintainers. https://scipy.org/about/ This is an opensource project with funding sources from entities from non-D5 countries."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "Source Channel:\n\nPyPI: https://pypi.org/project/scipy/\n\nGitHub: https://github.com/scipy/scipy\n\nGitHub Repository Metadata:\n\nOwner / Organization: scipy\n\nRepository: scipy/scipy\n\nDescription: SciPy library main repository\n\nStars: ~13,000+\n\nForks: ~5,000+\n\nOpen Issues: ~2,000\n\nLast Commit Date: Active (daily commits)"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "BSD 3-Clause License Permissions:\n\nUse the software for any purpose, including commercial use\n\nModify the source code\n\nDistribute the original or modified versions\n\nUse it in proprietary/closed-source projects\n\nSublicense it as part of a larger work\n\nFit for use in proposed project."
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "numpy 2.2.6"
+          }
+        ]
+      },
+      {
+        "name": "PyTorch Geometric",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "This is a library to program and train graph neural networks. The proposal mentions training GNNs as an objective. Aligns with the approved research topic Datascience and engineering. KSL will provide the Pyg container image from NVIDIA and update with required software."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "NVIDIA is entities from non D5 countries"
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "NVIDIA container image: https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pyg?version=25.11-py3"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "PyG is distributed under MIT License and is permissive to allow:\n\nCommercial use\n\nModification\n\nDistribution\n\nPrivate use\n\nSublicensing"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "The container image includes: CUDA cuBLAS NVIDIA cuDNN NVIDIA NCCL (optimized for NVLink) RAPIDS NVIDIA Data Loading Library (DALI) TensorRT Torch-TensorRT"
+          }
+        ]
+      },
+      {
+        "name": "PyTorch3D",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "PyTorch3D provides efficient, reusable components for 3D deep learning. Used in cryo-EM for 3D visualization, volumetric operations, rendering, and geometric transformations of reconstructed molecular structures.\n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Facebook research / Meta is entities from non D5 countries"
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "Source Channel:\n\nGitHub: https://github.com/facebookresearch/pytorch3d\n\nConda: https://anaconda.org/pytorch3d/pytorch3d\n\nGitHub Repository Metadata:\n\nOwner / Organization: facebookresearch\n\nRepository: facebookresearch/pytorch3d\n\nStars: ~8,800+\n\nForks: ~1,300+\n\nOpen Issues: ~300"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "BSD-3-Clause License\n\nCan be used for academic purposes?\tYes\n\nCan be used for commercial use?\tYes\n\nModification allowed?\tYes\n\nRedistribution allowed?\tYes\n\nAttribution required?\tYes\n\nCopyleft obligations?\tNo"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "ca-certificates 2026.1.4\n\ncuda-version 12.9\n\nnomkl 1.0\n\ncuda-crt-tools 12.9.86\n\ncuda-cudart_linux-64 12.9.79\n\nattr 2.5.2\n\ncuda-nvvm-tools 12.9.86\n\nlibdeflate 1.25\n\nlibgfortran5 15.2.0\n\nlibjpeg-turbo 3.1.2\n\nlibnl 3.11.0\n\nlibuv 1.51.0\n\nlibwebp-base 1.6.0\n\npthread-stubs 0.4\n\nrav1e 0.7.1\n\nxorg-libxau 1.0.12\n\nxorg-libxdmcp 1.1.5\n\nyaml 0.2.5\n\ncuda-cudart 12.9.79\n\ncuda-cupti 12.9.79\n\ncuda-nvcc-tools 12.9.86\n\ncuda-nvdisasm 12.9.88\n\ncuda-nvrtc 12.9.86\n\ncuda-nvtx 12.9.79\n\ncusparselt 0.7.0.0\n\ndav1d 1.2.1\n\ngiflib 5.2.2\n\nlerc 4.0.0\n\nlibabseil 20240722.0\n\nlibcap 2.77\n\nlibcufft 11.4.1.4\n\nlibcurand 10.3.10.19\n\nlibgfortran 15.2.0\n\nlibnvjitlink 12.9.86\n\nlibnvjpeg 12.4.0.76\n\nlibpng 1.6.53\n\nlibxcb 1.17.0\n\nnccl 2.29.2.1\n\nsleef 3.9.0\n\nsvt-av1 3.1.2\n\nzlib-ng 2.3.2\n\naom 3.9.1\n\ncuda-cuobjdump 12.9.82\n\ngmp 6.3.0\n\nlibcublas 12.9.1.4\n\nlibcusparse 12.5.10.65\n\nlibde265 1.0.15\n\nlibfreetype6 2.14.1\n\nlibopenblas 0.3.30\n\nlibprotobuf 5.28.3\n\nlibsystemd0 258.3\n\nlibtiff 4.7.1\n\nlibudev1 258.3\n\nx265 3.5\n\nlcms2 2.18\n\nlibavif16 1.3.0\n\nlibblas 3.11.0\n\nlibcudnn 9.10.2.21\n\nlibcudss0 0.4.0.2\n\nlibcusolver 11.7.5.82\n\nlibfreetype 2.14.1\n\nlibllvm20 20.1.8\n\nmpfr 4.2.1\n\nopenjpeg 2.5.4\n\nrdma-core 60.0\n\nlibcblas 3.11.0\n\nlibcudnn-dev 9.10.2.21\n\nlibcufile 1.14.1.1\n\nlibheif 1.19.7\n\nliblapack 3.11.0\n\nmpc 1.3.1\n\ncertifi 2026.1.4\n\ncpython 3.12.12\n\ncudnn 9.10.2.21\n\ndataclasses 0.8\n\nfilelock 3.20.3\n\nfsspec 2026.1.0\n\ngmpy2 2.2.1\n\nlibmagma 2.8.0\n\nmarkupsafe 3.0.3\n\nmpmath 1.3.0\n\nnetworkx 3.6.1\n\nnumpy 2.4.1\n\npillow 12.1.0\n\nportalocker 3.2.0\n\npybind11-global 3.0.1\n\npyyaml 6.0.3\n\ntabulate 0.9.0\n\ntermcolor 3.3.0\n\ntyping_extensions 4.15.0\n\njinja2 3.1.6\n\nlibtorch 2.6.0\n\npybind11 3.0.1\n\nsympy 1.14.0\n\ntriton 3.2.0\n\ntyping-extensions 4.15.0\n\nyacs 0.1.8\n\nfvcore 0.1.5.post20221221\n\niopath 0.1.10\n\noptree 0.18.0\n\npytorch 2.6.0\n\ntorchvision-extra-decoders 0.0.2\n\ntorchvision 0.21.0"
+          }
+        ]
+      },
+      {
+        "name": "cryoDRGN ",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "cryoDRGN (Deep Reconstructing Generative Networks) is a neural network-based approach for heterogeneous cryo-EM reconstruction.\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": " E.Z. Lab (Princeton University)  / Ellen Zhong (https://www.linkedin.com/in/zhonge) \nOwner is  from non D5 countries"
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "Source Channel:\n\nGitHub: https://github.com/zhonge/cryodrgn\n\nGitHub Repository Metadata:\n\nOwner / Organization: zhonge\n\nRepository: zhonge/cryodrgn\n\nDescription: Neural networks for cryo-EM reconstruction\n\nStars: ~600+\n\nForks: ~120+\n\nOpen Issues: ~50-70"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "GPL-3.0 license\n\nCan be used for academic purposes?\tYes\n\nCan be used for commercial use?\tYes (with GPL restrictions)\n\nModification allowed?\tYes\n\nRedistribution allowed?\tYes (must share source)\n\nAttribution required?\tYes\n\nCopyleft obligations?\tYes (GPL-3.0)"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "ipywidgets 7.8.5\n\nipython-genutils 0.2.0\n\njupyterlab_widgets 1.1.11\n\nnotebook 6.5.7\n\njupyter_client 7.4.9\n\nnumpy 1.26.4\n\npandas 2.3.3\n\nplotly 5.24.1\n\ntorch 2.5.1\n\nnvidia-cublas-cu12 12.4.5.8\n\nnvidia-cuda-cupti-cu12 12.4.127\n\nnvidia-cuda-nvrtc-cu12 12.4.127\n\nnvidia-cuda-runtime-cu12 12.4.127\n\nnvidia-cudnn-cu12 9.1.0.70\n\nnvidia-cufft-cu12 11.2.1.3\n\nnvidia-curand-cu12 10.3.5.147\n\nnvidia-cusolver-cu12 11.6.1.9\n\nnvidia-cusparse-cu12 12.3.1.170\n\nnvidia-nccl-cu12 2.21.5\n\nnvidia-nvjitlink-cu12 12.4.127\n\nnvidia-nvtx-cu12 12.4.127\n\nsympy 1.13.1\n\ntriton 3.1.0\n\nmpmath 1.3.0\n\nwidgetsnbextension 3.6.10\n\ncomm 0.2.3\n\nipython 8.38.0\n\nprompt_toolkit 3.0.52\n\njedi 0.19.2\n\nparso 0.8.5\n\njupyter_core 5.9.1\n\nnbclassic 1.3.3\n\nnbconvert 7.16.6\n\nmistune 3.2.0\n\nbleach 6.3.0\n\ntinycss2 1.4.0\n\nJinja2 3.1.6\n\nMarkupSafe 3.0.3\n\nnbclient 0.10.4\n\nnbformat 5.10.4\n\nfastjsonschema 2.21.2\n\njsonschema 4.26.0\n\nattrs 25.4.0\n\njsonschema-specifications 2025.9.1\n\nnest-asyncio 1.6.0\n\nnotebook_shim 0.2.4\n\njupyter_server 2.17.0\n\nanyio 4.12.1\n\nargon2-cffi 25.1.0\n\nexceptiongroup 1.3.1\n\nidna 3.11\n\njupyter-events 0.12.0\n\njsonpointer 3.0.0\n\njupyter_server_terminals 0.5.3\n\noverrides 7.7.0\n\npackaging 25.0\n\npandocfilters 1.5.1\n\npexpect 4.9.0\n\nplatformdirs 4.5.1\n\nprometheus_client 0.23.1\n\nptyprocess 0.7.0\n\nPygments 2.19.2\n\npython-dateutil 2.9.0.post0\n\npython-json-logger 4.0.0\n\npytz 2025.2\n\nPyYAML 6.0.3\n\npyzmq 27.1.0\n\nreferencing 0.37.0\n\nrfc3986-validator 0.1.1\n\nrfc3987-syntax 1.1.0\n\nlark 1.3.1\n\nrpds-py 0.30.0\n\nscipy 1.15.3\n\nSend2Trash 2.0.0\n\nsix 1.17.0\n\ntenacity 9.1.2\n\nterminado 0.18.1\n\ntornado 6.5.4\n\ntraitlets 5.14.3\n\ntyping_extensions 4.15.0\n\ntzdata 2025.3\n\nwebcolors 25.10.0\n\nwebencodings 0.5.1\n\nwebsocket-client 1.9.0\n\nargon2-cffi-bindings 25.1.0\n\ncffi 2.0.0\n\nbeautifulsoup4 4.14.3\n\nsoupsieve 2.8.1\n\ncufflinks 0.17.3\n\ncolorlover 0.3.0\n\nsetuptools 80.9.0\n\ndecorator 5.2.1\n\ndefusedxml 0.7.1\n\nentrypoints 0.4\n\nfilelock 3.20.3\n\nfqdn 1.5.1\n\nfsspec 2026.1.0\n\nhealpy 1.19.0\n\nastropy 6.1.7\n\nastropy-iers-data 0.2026.1.12.0.42.13\n\npyerfa 2.0.1.5\n\nigraph 1.0.0\n\ntexttable 1.7.0\n\nipykernel 6.29.5\n\ndebugpy 1.8.19\n\nmatplotlib-inline 0.2.1\n\nisoduration 20.11.0\n\narrow 1.4.0\n\njupyterlab 4.5.2\n\nhttpx 0.28.1\n\nhttpcore 1.0.9\n\njupyterlab_server 2.28.0\n\nasync-lru 2.0.5\n\nbabel 2.17.0\n\nh11 0.16.0\n\njson5 0.13.0\n\njupyter-lsp 2.3.0\n\nrequests 2.32.5\n\ncharset-normalizer 3.4.4\n\nurllib3 2.6.3\n\ncertifi 2026.1.4\n\ntomli 2.4.0\n\njupyterlab_pygments 0.3.0\n\nmatplotlib 3.10.8\n\ncontourpy 1.3.2\n\ncycler 0.12.1\n\nfonttools 4.61.1\n\nkiwisolver 1.4.9\n\npillow 12.1.0\n\npyparsing 3.3.1\n\nnetworkx 3.4.2\n\npsutil 7.2.1\n\npycparser 2.23\n\nrfc3339-validator 0.1.4\n\nscikit-learn 1.7.2\n\njoblib 1.5.3\n\nthreadpoolctl 3.6.0\n\nseaborn 0.13.2\n\nstack-data 0.6.3\n\nasttokens 3.0.1\n\nexecuting 2.2.1\n\npure_eval 0.2.3\n\nstarfile 0.5.13\n\npyarrow 22.0.0\n\numap-learn 0.5.9.post2\n\nnumba 0.63.1\n\nllvmlite 0.46.0\n\npynndescent 0.6.0\n\ntqdm 4.67.1\n\nuri-template 1.3.0\n\nwcwidth 0.2.14"
+          }
+        ]
+      },
+      {
+        "name": "Relion",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "RELION (REgularised LIkelihood OptimisatioN) is a widely-used software for cryo-EM data processing.\n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Owned by: 3dem / Jose Miguel de la Rosa Trevin (https://www.linkedin.com/in/jose-miguel-de-la-rosa-trevin-44863865)\nFrom a non D5 country"
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "Source Channel:\n\nGitHub: https://github.com/3dem/relion\n\nGitHub Repository Metadata:\n\nOwner / Organization: 3dem\n\nRepository: 3dem/relion\n\nDescription: REgularised LIkelihood OptimisatioN\n\nStars: ~600+\n\nForks: ~200+\n\nOpen Issues: ~100+"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "GPL-2.0 License\n\nCan be used for academic purposes?\tYes\n\nCan be used for commercial use?\tYes (with GPL restrictions)\n\nModification allowed?\tYes\n\nRedistribution allowed?\tYes (must share source)\n\nAttribution required?\tYes\n\nCopyleft obligations?\tYes (GPL-2.0)"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "pydantic 1.10.7\n\ntyping_extensions 4.15.0\n\ngemmi 0.7.4\n\nhtcondor 25.5.1\n\nimportlib_metadata 8.7.1\n\nzipp 3.23.0\n\nispyb 11.1.0\n\nSQLAlchemy 2.0.45\n\ngreenlet 3.3.0\n\nmysql-connector-python 9.5.0\n\nmarshmallow-sqlalchemy 1.4.2\n\nmarshmallow 4.2.0\n\nbackports-datetime-fromisoformat 2.0.3\n\nmatplotlib 3.10.8\n\ncontourpy 1.3.2\n\ncycler 0.12.1\n\nfonttools 4.61.1\n\nkiwisolver 1.4.9\n\nnumpy 2.2.6\n\npackaging 25.0\n\npillow 12.1.0\n\npyparsing 3.3.1\n\npython-dateutil 2.9.0.post0\n\nsix 1.17.0\n\nmrcfile 1.5.4\n\nopencv-python-headless 4.12.0.88\n\npandas 2.3.3\n\npytz 2025.2\n\ntzdata 2025.3\n\nplotly 6.5.1\n\nnarwhals 2.15.0\n\nPyYAML 6.0.3\n\nstarfile 0.5.13\n\npyarrow 22.0.0\n\ntabulate 0.9.0\n\nworkflows 3.2\n\nstomp.py 8.2.0\n\ndocopt 0.6.2\n\nwebsocket-client 1.9.0\n\nbidict 0.23.1\n\npika 1.3.2\n\nsetuptools 80.9.0\n\nzocalo 0.32.0\n\ngraypy 2.1.0\n\nrequests 2.32.5\n\ncharset-normalizer 3.4.4\n\nidna 3.11\n\nurllib3 2.6.3\n\ncertifi 2026.1.4"
+          }
+        ]
+      },
+      {
+        "name": "CryoSPARC",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "CryoSPARC is a commercial cryo-EM data processing platform with advanced algorithms for particle picking, ab-initio reconstruction, heterogeneous refinement, and non-uniform refinement\n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Owned by: Structura Biotechnology Inc.\nFrom a non D5 country"
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "Official Website: https://cryosparc.com\nDownload: Requires license/registration"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "Proprietary\n\nCan be used for academic purposes?\tYes (with academic license)\n\nCan be used for commercial use?\tYes (with commercial license)\n\nModification allowed?\tNo (proprietary)\n\nRedistribution allowed?\tNo\n\nAttribution required?\tYes\n\nCopyleft obligations?\tNo"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "N/A"
+          }
+        ]
+      },
+      {
+        "name": "EMAN2",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "EMAN2 is a comprehensive suite of scientific image processing tools for single particle reconstruction and analysis.\n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Owned by: cryoem / Steve Ludtke (https://www.linkedin.com/in/steven-ludtke-1569aa4)\nFrom a non D5 country"
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "Official Website: https://blake.bcm.edu/emanwiki/EMAN2\n\nGitHub: https://github.com/cryoem/eman2\n\n3.2 GitHub Repository Metadata\n\nOwner / Organization: cryoem\n\nRepository: cryoem/eman2\n\nStars: ~200+\n\nForks: ~80+\n\nOpen Issues: ~50+"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "GPL-2.0\n\nCan be used for academic purposes?\tYes\n\nCan be used for commercial use?\tCheck specific components\n\nModification allowed?\tYes (GPL components)\n\nRedistribution allowed?\tYes (GPL components)\n\nAttribution required?\tYes\n\nCopyleft obligations?\tYes (GPL components)"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "Install using conda:\n\nca-certificates 2026.1.4\ncuda-version 12.9\nfont-ttf-dejavu-sans-mono 2.37\nfont-ttf-inconsolata 3.000\nfont-ttf-source-code-pro 2.038\nfont-ttf-ubuntu 0.83\nlibboost-headers 1.85.0\nlibglvnd 1.7.0\nlibml_dtypes-headers 0.5.4\nmpi 1.0\ncuda-crt-tools 12.9.86\ncuda-cudart_linux-64 12.9.79\nfonts-conda-forge 1\nlibegl 1.7.0\nlibopengl 1.7.0\nfonts-conda-ecosystem 1\nlibopengl-devel 1.7.0\nalsa-lib 1.2.15.2\nattr 2.5.2\ncuda-nvvm-tools 12.9.86\nlibbrotlicommon 1.2.0\nlibdeflate 1.25\nlibgfortran5 15.2.0\nlibjpeg-turbo 3.1.2\nlibntlm 1.8\nlibogg 1.3.5\nlibopus 1.6\nlibpciaccess 0.18\nlibuv 1.51.0\nlibwebp-base 1.6.0\npthread-stubs 0.4\nrhash 1.4.6\nxorg-libice 1.1.2\nxorg-libxau 1.0.12\nxorg-libxdmcp 1.1.5\nxorg-libxshmfence 1.3.3\nyaml 0.2.5\ncuda-cudart 12.9.79\ncuda-cupti 12.9.79\ncuda-nvcc-tools 12.9.86\ncuda-nvrtc 12.9.86\ncuda-nvtx 12.9.79\ndouble-conversion 3.4.0\nflatbuffers 25.2.10\ngiflib 5.2.2\ngraphite2 1.3.14\nlame 3.100\nlerc 4.0.0\nlibabseil 20250512.1\nlibaec 1.1.4\nlibbrotlidec 1.2.0\nlibbrotlienc 1.2.0\nlibcap 2.77\nlibcufft 11.4.1.4\nlibcurand 10.3.10.19\nlibdrm 2.4.125\nlibevent 2.1.12\nlibflac 1.5.0\nlibgfortran 15.2.0\nlibglu 9.0.3\nliblzma-devel 5.8.1\nlibnvjitlink 12.9.86\nlibpng 1.6.53\nlibsodium 1.0.20\nlibvorbis 1.3.7\nlibxcb 1.17.0\nmpg123 1.32.9\nnccl 2.29.2.1\nnspr 4.38\npcre2 10.47\npixman 0.46.4\nsnappy 1.2.2\nwayland 1.24.0\nxorg-libsm 1.2.6\nxz-gpl-tools 5.8.1\nxz-tools 5.8.1\nzlib 1.3.1\nzlib-ng 2.3.2\nbrotli-bin 1.2.0\nfftw 3.3.10\nicu 75.1\nlibcublas 12.9.1.4\nlibcusparse 12.5.10.65\nlibfreetype6 2.14.1\nlibgfortran-ng 15.2.0\nlibglib 2.86.3\nlibopenblas 0.3.30\nlibprotobuf 6.31.1\nlibre2-11 2025.11.05\nlibsndfile 1.2.2\nlibsystemd0 258.3\nlibtiff 4.7.1\nnss 3.118\nqhull 2020.2\nxcb-util 0.4.1\nxcb-util-keysyms 0.4.1\nxcb-util-renderutil 0.3.10\nxcb-util-wm 0.4.2\nxorg-libx11 1.8.12\nxz 5.8.1\nbrotli 1.2.0\ncyrus-sasl 2.1.28\ndbus 1.16.2\nglib-tools 2.86.3\nlcms2 2.18\nlibblas 3.11.0\nlibboost 1.85.0\nlibcudnn 9.10.2.21\nlibcups 2.3.3\nlibcusolver 11.7.5.82\nlibfreetype 2.14.1\nlibglx 1.7.0\nlibxml2-16 2.15.1\nnodejs 24.10.0\nopenjpeg 2.5.4\nopenmpi 4.1.6\nre2 2025.11.05\nxcb-util-image 0.4.0\nxkeyboard-config 2.46\nxorg-libxext 1.3.6\nxorg-libxfixes 6.0.2\nxorg-libxrender 0.9.12\nzeromq 4.3.5\ncmake 4.2.1\nfreetype 2.14.1\nhdf5 1.14.6\nlibboost-devel 1.85.0\nlibcblas 3.11.0\nlibcudnn-dev 9.10.2.21\nlibgl 1.7.0\nlibgrpc 1.73.1\nliblapack 3.11.0\nlibxml2 2.15.1\nopenldap 2.6.10\npulseaudio-client 17.0\nxcb-util-cursor 0.1.6\nxorg-libxcomposite 0.4.6\nxorg-libxcursor 1.2.3\nxorg-libxdamage 1.1.6\nxorg-libxi 1.8.2\nxorg-libxrandr 1.5.4\nxorg-libxxf86vm 1.1.6\nabsl-py 2.3.1\nasttokens 3.0.1\nattrs 25.4.0\ncached_property 1.5.2\ncertifi 2026.1.4\ncomm 0.2.3\nconfigparser 7.2.0\ncpython 3.12.12\ncudnn 9.10.2.21\ncycler 0.12.1\ndebugpy 1.8.19\ndecorator 5.2.1\ndefusedxml 0.7.1\nexecuting 2.2.1\nfontconfig 2.15.0\nftgl 2.4.0\nfuture 1.0.0\ngast 0.7.0\ngrpcio 1.73.1\ngsl 2.7\njson5 0.13.0\njupyterlab_widgets 3.0.16\nkiwisolver 1.4.9\nlark 1.3.1\nlibhwloc 2.12.2\nlibllvm21 21.1.8\nlibpq 18.1\nlibtensorflow_framework 2.19.1\nlibvulkan-loader 1.4.328.1\nlibxkbcommon 1.13.1\nlibxslt 1.1.43\nllvmlite 0.46.0\nmarkupsafe 3.0.3\nmdurl 0.1.2\nmunkres 1.1.4\nnamex 0.1.0\nnest-asyncio 1.6.0\nnumpy 1.26.4\nopt_einsum 3.4.0\npandocfilters 1.5.0\nparso 0.8.5\npillow 12.1.0\nply 3.11\nprometheus_client 0.23.1\nprotobuf 6.31.1\npsutil 7.2.1\nptyprocess 0.7.0\npure_eval 0.2.3\npygments 2.19.2\npyopengl 3.1.10\npyparsing 3.3.1\npython-fastjsonschema 2.21.2\npython-flatbuffers 25.9.23\npython-json-logger 2.0.7\npython-tzdata 2025.3\npytz 2025.2\npyyaml 6.0.3\nrfc3986-validator 0.1.1\nrpds-py 0.30.0\nsend2trash 2.0.0\nsix 1.17.0\nsniffio 1.3.1\nsoupsieve 2.8.1\ntensorboard-data-server 0.7.0\ntermcolor 3.3.0\nthreadpoolctl 3.6.0\ntoml 0.10.2\ntomli 2.4.0\ntornado 6.5.4\ntraitlets 5.14.3\ntyping_extensions 4.15.0\ntyping_utils 0.1.0\nunicodedata2 17.0.0\nuri-template 1.3.0\nwcwidth 0.2.14\nwebcolors 25.10.0\nwebencodings 0.5.1\nwebsocket-client 1.9.0\nwidgetsnbextension 4.0.15\nwrapt 2.0.1\nxorg-libxtst 1.2.5\nzipp 3.23.0\nastunparse 1.6.3\nasync-lru 2.0.5\nbabel 2.17.0\nbiopython 1.86\nbleach 6.3.0\ncached-property 1.5.2\ncairo 1.18.4\ncontourpy 1.3.3\nexceptiongroup 1.3.1\nfonttools 4.61.1\nglib 2.86.3\ngoogle-pasta 0.2.0\nh11 0.16.0\nimportlib-metadata 8.7.0\nipython_pygments_lexers 1.1.1\njedi 0.19.2\njinja2 3.1.6\njoblib 1.5.3\njupyter_core 5.9.1\njupyterlab_pygments 0.3.0\nlibboost-python 1.85.0\nlibclang-cpp21.1 21.1.8\nlibclang13 21.1.8\nlibtensorflow_cc 2.19.1\nmarkdown-it-py 4.0.0\nmatplotlib-inline 0.2.1\nmistune 3.2.0\nml_dtypes 0.5.4\nnumba 0.63.1\noverrides 7.7.0\npexpect 4.9.0\nprompt-toolkit 3.0.52\npydusa 4.0.0\npython-dateutil 2.9.0.post0\npython-gil 3.12.12\nreferencing 0.37.0\nrfc3339-validator 0.1.4\nrfc3987-syntax 1.1.0\nscipy 1.17.0\nsip 6.10.0\nstack_data 0.6.3\ntbb 2022.3.0\nterminado 0.18.1\ntinycss2 1.5.1\ntyping-extensions 4.15.0\nwerkzeug 3.1.5\n_python_abi3_support 1.0\nanyio 4.12.1\nargon2-cffi-bindings 25.1.0\narrow 1.4.0\nbeautifulsoup4 4.14.3\nbleach-with-css 6.3.0\nfqdn 1.5.1\ngstreamer 1.24.11\nh5py 3.15.1\nharfbuzz 12.2.0\nipython 9.9.0\njsonschema-specifications 2025.9.1\njupyter_server_terminals 0.5.3\nlibboost-python-devel 1.85.0\nmarkdown 3.10\nmatplotlib-base 3.10.8\noptree 0.18.0\npandas 2.3.3\npyqt5-sip 12.17.0\nrich 14.2.0\nscikit-learn 1.8.0\nargon2-cffi 25.1.0\nboost 1.85.0\ngst-plugins-base 1.24.11\nhttpcore 1.0.9\nipywidgets 8.1.8\nisoduration 20.11.0\njsonschema 4.26.0\nkeras 3.12.0\npynndescent 0.5.13\npyzmq 27.1.0\nqt6-main 6.10.1\ntensorboard 2.19.0\nhttpx 0.28.1\njsonschema-with-format-nongpl 4.26.0\njupyter_client 8.8.0\nnbformat 5.10.4\npyside6 6.10.1\nqt-main 5.15.15\numap-learn 0.5.9.post2\nipykernel 7.1.0\njupyter_events 0.12.0\nmatplotlib 3.10.8\nnbclient 0.10.4\npyqt 5.15.11\ntensorflow-base 2.19.1\nnbconvert-core 7.16.6\ntensorflow-estimator 2.19.1\njupyter_server 2.17.0\ntensorflow 2.19.1\njupyter-lsp 2.3.0\njupyterlab_server 2.28.0\nnotebook-shim 0.2.4\ntf-keras 2.15.0\njupyterlab 4.5.2"
+          }
+        ]
+      },
+      {
+        "name": "mrcfile",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "mrcfile is a Python library for reading and writing MRC/CCP4 file format, the standard format for cryo-EM density maps.\n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Owned by: ccpem / Colin Palmer (https://www.ccpem.ac.uk/people/colin-palmer/, https://scholar.google.com/citations?hl=en&user=CIeO9pIAAAAJ&view_op=list_works)\nFrom a non D5 country"
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "Source Channel:\n\nPyPI: https://pypi.org/project/mrcfile/\n\nGitHub: https://github.com/ccpem/mrcfile\n\nGitHub Repository Metadata:\n\nOwner / Organization: ccpem\n\nRepository: ccpem/mrcfile\n\nDescription: Python implementation of the MRC2014 file format\n\nStars: ~80+\n\nForks: ~30+\n\nOpen Issues: ~10"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "BSD-3-Clause\n\nCan be used for academic purposes?\tYes\n\nCan be used for commercial use?\tYes\n\nModification allowed?\tYes\n\nRedistribution allowed?\tYes\n\nAttribution required?\tYes\n\nCopyleft obligations?\tNo"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "numpy 2.2.6"
+          }
+        ]
+      },
+      {
+        "name": "starfile",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "starfile is a Python library for reading and writing STAR files, the metadata format used by RELION and other cryo-EM software.\n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Owned by: teamtomo / Pranav NM Shah (https://uk.linkedin.com/in/pnmshah)\nFrom a non D5 country"
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "Source Channel:\n\nPyPI: https://pypi.org/project/starfile/\n\nGitHub: https://github.com/teamtomo/starfile\n\n3.2 GitHub Repository Metadata\n\nOwner / Organization: teamtomo\n\nRepository: teamtomo/starfile\n\nStars: ~60+\n\nForks: ~15+\n\nOpen Issues: ~5"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "BSD-3-Clause\n\nCan be used for academic purposes?\tYes\n\nCan be used for commercial use?\tYes\n\nModification allowed?\tYes\n\nRedistribution allowed?\tYes\n\nAttribution required?\tYes\n\nCopyleft obligations?\tNo"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "pandas 2.3.3\n\nnumpy 2.2.6\n\npython-dateutil 2.9.0.post0\n\npytz 2025.2\n\nsix 1.17.0\n\ntzdata 2025.3\n\npyarrow 22.0.0\n\ntyping_extensions 4.15.0"
+          }
+        ]
+      },
+      {
+        "name": "scikit-image",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "scikit-image provides image processing algorithms for Python.\n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Its a bonafide community with a governance model and multiple maintainers. https://scikit-image.org/#our-team This is an opensource project with funding sources from entities from non-D5 countries."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "Source Channel:\n\nPyPI: https://pypi.org/project/scikit-image/\n\nGitHub: https://github.com/scikit-image/scikit-image\n\nGitHub Repository Metadata:\n\nOwner / Organization: scikit-image\n\nRepository: scikit-image/scikit-image\n\nDescription: Image processing in Python\n\nStars: ~6,100+\n\nForks: ~2,300+\n\nOpen Issues: ~600"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "BSD-3-Clause\n\nCan be used for academic purposes?\tYes\n\nCan be used for commercial use?\tYes\n\nModification allowed?\tYes\n\nRedistribution allowed?\tYes\n\nAttribution required?\tYes\n\nCopyleft obligations?\tNo"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "ImageIO 2.37.2\n\nlazy_loader 0.4\n\nnetworkx 3.4.2\n\nnumpy 2.2.6\n\npackaging 25.0\n\npillow 12.1.0\n\nscipy 1.15.3\n\ntifffile 2025.5.10"
+          }
+        ]
+      },
+      {
+        "name": "OpenCV-Python",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "OpenCV (Open Source Computer Vision Library) Python bindings provide comprehensive computer vision and image processing capabilities.\n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Its a bonafide community with a governance model and multiple maintainers. https://opencv.org/leadership/ This is an opensource project with funding sources from entities from non-D5 countries."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "Source Channel:\n\nPyPI: https://pypi.org/project/opencv-python/\n\nGitHub: https://github.com/opencv/opencv-python\n\nGitHub Repository Metadata:\n\nOwner / Organization: opencv\n\nRepository: opencv/opencv-python\n\nDescription: Automated CI toolchain to produce precompiled opencv-python packages\n\nStars: ~4,500+\n\nForks: ~900+\n\nOpen Issues: ~700+"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "Apache-2.0 License\n\nCan be used for academic purposes?\tYes\n\nCan be used for commercial use?\tYes\n\nModification allowed?\tYes\n\nRedistribution allowed?\tYes\n\nAttribution required?\tYes\n\nCopyleft obligations?\tNo"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "numpy 2.2.6"
+          }
+        ]
+      },
+      {
+        "name": "CryoSPIN",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "CryoSPIN is a tool for cryo-EM data analysis.\n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Owner: Shayan Shekarforoush (https://ca.linkedin.com/in/shayan-shekarforoush-597508136)\n\nFrom non-D5 countries."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "Source Channel\nGitHub: https://github.com/shekshaa/semi-amortized-cryoem\n3.2 GitHub Repository Metadata\nOwner / Organization: shekshaa (academic / individual researcher)\nRepository: semi-amortized-cryoem\nDescription: Semi-amortized neural inference framework for cryo-EM 3D reconstruction\nStars: 16\nForks: 4\nOpen Issues: 2"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "MIT License\n\nCan be used for academic purposes?\tYes\n\nCan be used for commercial use?\tYes\n\nModification allowed?\tYes\n\nRedistribution allowed?\tYes\n\nAttribution required?\tYes\n\nCopyleft obligations?\tNo"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "torch==1.12.1+cu113 \n\ntorchvision==0.13.1+cu113 \n\ntorchaudio==0.12.1\n\nscipy==1.9.3 \n\nscikit-image==0.22.0 \n\ntqdm \n\nPyYAML \n\nmatplotlib \n\nkornia \n\nnotebook \n\ntensorboard \n\nnumpy==1.23.4\n\nstarfile==0.4.5 mrcfile\n\npytorch3d"
+          }
+        ]
+      },
+      {
+        "name": "CryoFastAR",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "CryoFastAR is aFast geometric foundation model for ab initio cryo-EM reconstruction.\n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 3,
+            "notes": "Owner:  cellverse tech (https://www.cellverse.tech)\n\nFrom a D5 country (China)."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 3,
+            "notes": "Source Channel:\n\nGitHub: https://github.com/Cellverse/CryoFastAR\n\nGitHub Repository Metadata:\n\nOwner / Organization: Cellverse\n\nRepository: CryoFastAR\n\nStars: ~13 (research/software repo)\n\nForks: ~0\n\nOpen Issues: 0+ (few, if any)\n\nLast Commit Date: Updated in Oct-2025"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 2,
+            "notes": "Unspecified License\n\nCan be used for academic purposes?\tYes\n\nCan be used for commercial use?\tunknown\n\nModification allowed?\tYes\n\nRedistribution allowed?\tUnknown\n\nAttribution required?\tYes\n\nCopyleft obligations?\tNo"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "torch\n\ntorchvision\n\nroma\n\nmatplotlib\n\ntqdm\n\nopencv-python\n\nscipy\n\neinops\n\ntensorboard\n\npandas"
+          }
+        ]
+      },
+      {
+        "name": "Hydra",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Hydra is a python package for Neural Multiclass Ab Initio Reconstruction for Cryo-EM.\n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Owner: E.Z. Lab (Princeton University)\n\nFrom a non-D5 country."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "GitHub: https://github.com/ml-struct-bio/hydra\n\nGitHub Repository Metadata:\n\nOwner / Organization: ml-struct-bio\n\nRepository: hydra\n\nStars: ~13\n\nForks: ~1\n\nOpen Issues: 1"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "GPL-3.0 License\n\nCan be used for academic purposes?\tYes\n\nCan be used for commercial use?\tOnly if GPL-3.0 terms are met (copyleft)\n\nModification allowed?\tYes (GPL-3.0)\n\nRedistribution allowed?\tYes (GPL-3.0)\n\nAttribution required?\tYes\n\nCopyleft obligations?\tYes (source openness required on redistribution)"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "cryodrgn\n\npillow\n\ntensorboard\n \npytest"
+          }
+        ]
+      },
+      {
+        "name": "Boxx",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Toolbox for efficient build and debug in Python with common utilities and helpers.\n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Owner: Xiao Lei (https://www.zhihu.com/people/ylxx/answers) (Beijing University of Chemical Technology)\n\nFrom a D5 country (China)."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "Source Channel:\n\nGitHub: https://github.com/DIYer22/boxx\n\nPyPI: https://pypi.org/project/boxx/\n\nGitHub Repository Metadata:\n\nOwner / Organization: DIYer22\n\nRepository: boxx\n\nStars: ~515\n\nForks: ~40\n\nOpen Issues: 1\n\nLast Commit Date: May 2025"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "MIT License\n\nCan be used for academic purposes?\tYes\n\nCan be used for commercial use?\tYes\n\nModification allowed?\tYes\n\nRedistribution allowed?\tYes\n\nAttribution required?\tYes\n\nCopyleft obligations?\tNo"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "ImageIO 2.37.2\n\npillow 12.1.0\n\nmatplotlib 3.10.8\n\ncontourpy 1.3.2\n\ncycler 0.12.1\n\nfonttools 4.61.1\n\nkiwisolver 1.4.9\n\nnumpy 2.2.6\n\npackaging 25.0\n\npyparsing 3.3.1\n\npython-dateutil 2.9.0.post0\n\nsix 1.17.0\n\npandas 2.3.3\n\npytz 2025.2\n\ntzdata 2025.3\n\nPyOpenGL 3.1.10\n\nscikit-image 0.25.2\n\nlazy_loader 0.4\n\nnetworkx 3.4.2\n\nscipy 1.15.3\n\ntifffile 2025.5.10\n\nseaborn 0.13.2\n\nsnakeviz 2.2.2\n\ntornado 6.5.4"
+          }
+        ]
+      },
+      {
+        "name": "Tensorboard",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Tensorboard is TensorFlow's Visualization Toolkit.\n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Owner: Tensorflow / Google\n\nEntity is from a Non-D5 country."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "Source Channel:\n\nPyPI: https://pypi.org/project/tensorboard/\n\nGitHub: https://github.com/tensorflow/tensorboard\n\nGitHub Repository Metadata:\n\nOwner / Organization: tensorflow\n\nRepository: tensorflow/tensorboard\n\nStars: ~6,700+\n\nForks: ~1,600+\n\nOpen Issues: ~900"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "Apache-2.0 License\n\nCan be used for academic purposes?\tYes\n\nCan be used for commercial use?\tYes\n\nModification allowed?\tYes\n\nRedistribution allowed?\tYes\n\nAttribution required?\tYes\n\nCopyleft obligations?\tNo"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "tensorboard-data-server 0.7.2\n\nabsl-py 2.3.1\n\ngrpcio 1.76.0\n\ntyping_extensions 4.15.0\n\nMarkdown 3.10\n\nnumpy 2.2.6\n\nprotobuf 6.33.4\n\nsetuptools 80.9.0\n\nWerkzeug 3.1.5\n\nMarkupSafe 3.0.3\n\npackaging 25.0\n\npillow 12.1.0"
+          }
+        ]
+      },
+      {
+        "name": "Matplotlib",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Plotting tool in Python. \n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Thomas A Caswell \u2014 project lead \u2014 https://www.linkedin.com/in/tcaswell/\nGovernance: https://matplotlib.org/governance/governance.html#main-governance-document\n\nThis is an opensource project with funding sources from entities from non-D5 countries."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "https://pypi.org/project/matplotlib/\n\nhttps://github.com/matplotlib/matplotlib\n\nOwner / Organization: matplotlib \n\nRepository: matplotlib/matplotlib \n\nDescription: matplotlib: plotting with Python \n\nStars: 22134 \n\nForks: 8144 \n\nOpen Issues: 1558 \n\nLast Commit Date: 2025-12-17"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "BSD-compatible Python Software Foundation (PSF) based license. Permissions: Commercial use allowed\nModification of the source code permitted\n\nDistribution of original or modified versions allowed\n\nPrivate use permitted\n\nNo requirement to disclose source code\n\nRestrictions:\n\nMust include copyright notice and license text in distributions\n\nNo trademark use without permission\n\nSoftware is provided \"as is\" without warranty\n\nCannot hold authors liable for damages\n\nFit for this proposal's use."
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "Pip installation: numpy 1.26.4 contourpy 1.3.3 cycler 0.12.1 fonttools 4.61.1 kiwisolver 1.4.9 packaging 25.0 pillow 12.1.0 pyparsing 3.3.1 python-dateutil 2.9.0.post0 six 1.17.0"
+          }
+        ]
+      },
+      {
+        "name": "CryoDRGN-AI",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Framework for neural ab initio cryo-EM/cryo-ET reconstruction.\n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Owner:  E.Z. Lab (Princeton University)\n\nEntity from non-D5 countries."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "Source Channel:\n\nGitHub: https://github.com/ml-struct-bio/drgnai\n\nGitHub Repository Metadata:\n\nOwner / Organization: ml-struct-bio\n\nRepository: drgnai\n\nStars: ~56 stars\n\nForks: ~8 forks\n\nOpen Issues: 16\n\nLast Commit Date: Jul 2025"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "GPL-3.0 License\n\nCan be used for academic purposes?\tYes\n\nCan be used for commercial use?\tYes, if GPL-3.0 obligations are satisfied\n\nModification allowed?\tYes (GPL-3.0)\n\nRedistribution allowed?\tYes (GPL-3.0)\n\nAttribution required?\tYes\n\nCopyleft obligations?\tYes (source disclosure on redistribution)"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "cryodrgn\n\npillow\n \ntensorboard\n \npytest"
+          }
+        ]
+      },
+      {
+        "name": "PyTorch Image Models (timm)",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Largest collection of PyTorch image encoders and vision models with training and utility scripts.\n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Owner:  Huggingface\n\nEntity from non-D5 countries."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "Source Channel:\n\nGitHub: https://github.com/huggingface/pytorch-image-models\n\nGitHub Repository Metadata:\n\nOwner / Organization: huggingface\n\nRepository: pytorch-image-models\n\nStars: ~36,000+\n\nForks: ~5,100+\n\nOpen Issues: 54\n\nLast Commit Date: 9 Jan 2026"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "Apache\u20112.0 License\n\nCan be used for academic purposes?\tYes\n\nCan be used for commercial use?\tYes\n\nModification allowed?\tYes\n\nRedistribution allowed?\tYes\n\nAttribution required?\tYes\n\nCopyleft obligations?\tNo"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "torch>=1.7\n\ntorchvision\n\npyyaml\n\nhuggingface_hub>=0.17.0\n\nsafetensors>=0.2\n\nnumpy"
+          }
+        ]
+      }
+    ],
+    "source_code": [],
+    "datasets_user_files": [
+      {
+        "name": "EMPIAR",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Electron Microscopy Public Image Dataset.\n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "D5+M affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Owner / Curator: European Molecular Biology Laboratory - European Bioinformatics Institute (EMBL-EBI) https://www.ebi.ac.uk/empiar/\n\nEntity is from a non-D5 country."
+          },
+          {
+            "name": "Prompts / Fine-tuning Scripts",
+            "score": 1,
+            "notes": "No finetuning scripts provided."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "Low risk, inspection skipped."
+          },
+          {
+            "name": "Provenance",
+            "score": 1,
+            "notes": "Owner / Curator: European Molecular Biology Laboratory - European Bioinformatics Institute (EMBL-EBI)\n\nPrimary Distribution Platform: EMPIAR (empiar.org)\n\nRepository: https://github.com/GSEA-MSigDB/ (for related tools and documentation)\n\nAccess Method: Browse, search, and download via https://www.ebi.ac.uk/empiar/ or REST API; FTP and HTTP(S) transfers supported\n\nAdditional information requested and provided by the PI explains that they need the following four datasets on Shaheen III GPUP for their work. \n\nhttps://www.ebi.ac.uk/empiar/EMPIAR-10028/\nhttps://www.ebi.ac.uk/empiar/EMPIAR-10049/\nhttps://www.ebi.ac.uk/empiar/EMPIAR-10076/\nhttps://www.ebi.ac.uk/empiar/EMPIAR-10180/\n\nAll downloads are in XML format."
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "License: CC0 (Public Domain)\n\nUse freely for any purpose without restrictions\n\nUse for academic research, commercial applications, methods development, validation, and machine learning\n\nCite EMPIAR and individual entries in publications using DOI or accession code\n\nShare and re-use data without any conditions or restrictions\n\nUse for training and teaching purposes\n\nRestrictions:\n\nDon't use EMPIAR logos or branding on public-facing websites without explicit prior permission from EMBL-EBI (presentations and reports \nallowed royalty-free)"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic PDB cryo-EM dataset",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "RCSB Protein Data Bank (PDB).\n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Owner / Curator: Worldwide Protein Data Bank (wwPDB) partnership  (https://www.wwpdb.org/)\n\nRCSB PDB (United States - Rutgers University and UC San Diego)\n\nPDBe (Europe - EMBL-EBI)\n\nPDBj (Japan)\n\nBMRB (United States)\n\nEMDB (Europe)\n\nEntity is from a non-D5 country."
+          },
+          {
+            "name": "Prompts / Fine-tuning Scripts",
+            "score": 1,
+            "notes": "No finetuning scripts provided."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "Low risk, inspection skipped."
+          },
+          {
+            "name": "Provenance",
+            "score": 1,
+            "notes": "Owner / Curator: Worldwide Protein Data Bank (wwPDB) partnership\n\nRCSB PDB (United States - Rutgers University and UC San Diego)\n\nPDBe (Europe - EMBL-EBI)\n\nPDBj (Japan)\n\nBMRB (United States)\n\nEMDB (Europe)\n\nPrimary Distribution Platform: RCSB.org (US data center), also available via PDBe and PDBj\n\nRepository: Multiple synchronized repositories across wwPDB partners\n\nAccess Method: Browse and download via https://www.rcsb.org/, REST API, programmatic access; FTP archive available"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "License: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication\n\nUse freely for any purpose including academic research, commercial applications, drug discovery, biotechnology, and education\n\nCite the original structure authors and RCSB PDB in publications where possible\n\nShare and re-use data without any conditions or restrictions\n\nAccess via web portal, APIs, and downloadable archives at no charge\n\nUse for teaching, training, and educational purposes at all levels\n\nNo limitations on usage for any user including commercial entities\n\nRestrictions:\n\nNone for data usage - data provided \"as is\" without warranties\n\nUsers encouraged (but not required) to attribute original structure authors"
+          }
+        ]
+      },
+      {
+        "name": "Real-CTF-Parameter Bank",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Table of realistic microscope/CTF parameter tuples sampled from real experiments to drive synthetic forward model..\n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Owner / Curator: European Molecular Biology Laboratory - European Bioinformatics Institute (EMBL-EBI) https://www.ebi.ac.uk/empiar/\n\nEntity is from a non-D5 country."
+          },
+          {
+            "name": "Prompts / Fine-tuning Scripts",
+            "score": 1,
+            "notes": "No finetuning scripts provided."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "Low risk, inspection skipped."
+          },
+          {
+            "name": "Provenance",
+            "score": 1,
+            "notes": "Owner / Curator: European Molecular Biology Laboratory - European Bioinformatics Institute (EMBL-EBI)\n\nPrimary Distribution Platform: EMPIAR (empiar.org)\n\nRepository: https://github.com/GSEA-MSigDB/ (for related tools and documentation)\n\nAccess Method: Browse, search, and download via https://www.ebi.ac.uk/empiar/ or REST API; FTP and HTTP(S) transfers supported; mirror available at PDBj (Japan)"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "License: CC0 (Public Domain)\n\nUse freely for any purpose without restrictions\n\nUse for academic research, commercial applications, methods development, validation, and machine learning\n\nCite EMPIAR and individual entries in publications using DOI or accession code\n\nShare and re-use data without any conditions or restrictions\n\nUse for training and teaching purposes\n\nRestrictions:\n\nDon't use EMPIAR logos or branding on public-facing websites without explicit prior permission from EMBL-EBI (presentations and reports allowed royalty-free)"
+          }
+        ]
+      },
+      {
+        "name": "CryoCRAB",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "A Large-scale Curated and Filterable Dataset for Cryo-EM Foundation Model Pre-training.\n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 3,
+            "notes": "Tsinghua University research team (Qiuchen Cao, Hongda Du, Ziyang Xu, Jiawei Zeng, Yongqi Liu, Zhiyuan Liang, Yipu Peng, Jun Yang)\n\nEntity is from a D5 country (China)."
+          },
+          {
+            "name": "Prompts / Fine-tuning Scripts",
+            "score": 1,
+            "notes": "No finetuning scripts provided."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 2,
+            "notes": "The CryoCRAB dataset comprises 152,385 sets of raw movie frames, covering 746 datasets from EMPIAR. \n\nEach EMPIAR dataset typically includes approximately 200 cryo-EM images, consisting of raw movies, motion-corrected full-diff micrographs in MRC format along with estimated background images, and preprocessed full-diff micrographs in HDF5 format"
+          },
+          {
+            "name": "Provenance",
+            "score": 2,
+            "notes": "Owner / Curator: Tsinghua University research team (Qiuchen Cao, Hongda Du, Ziyang Xu, Jiawei Zeng, Yongqi Liu, Zhiyuan Liang, Yipu Peng, Jun Yang)\n\nPrimary Distribution Platform: Science Data Bank (ScienceDB) - Computer Network Information Center, Chinese Academy of Sciences\n\nRepository: https://github.com/Dylan8527/CryoCRAB (processing scripts and documentation)\n\nAccess Method: Download via https://doi.org/10.57760/sciencedb.17922; requires ScienceDB account registration; approximately 12.18 TB total (micrographs and metadata); raw movie data (86.2 TB) available via FTP paths to EMPIAR"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "License: CC BY-NC-ND 4.0 (Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International)\nUse freely for non-commercial research and academic purposes\nCite CryoCRAB paper and ScienceDB repository in publications using DOI (10.57760/sciencedb.17922)\nShare and reference the dataset for research collaboration\nUse for foundation model training, denoising research, and feature extraction studies\nRestrictions:\nDon't use for commercial purposes without explicit permission from copyright holder\nDon't create derivative datasets or modified versions for redistribution\nDon't remove or alter attribution, license notices, or metadata\nDon't redistribute the dataset on other platforms (link to original ScienceDB repository instead)"
+          }
+        ]
+      },
+      {
+        "name": "CESPED",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "A Cryo-EM Supervised Pose Estimation Dataset.\n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Ruben Sanchez-Garcia - https://www.linkedin.com/in/rub%C3%A9n-sanchez-garcia-52b5121a9\n\nOwner is from a non-D5 country."
+          },
+          {
+            "name": "Prompts / Fine-tuning Scripts",
+            "score": 1,
+            "notes": "No finetuning scripts provided."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "Low risk, inspection skipped."
+          },
+          {
+            "name": "Provenance",
+            "score": 1,
+            "notes": "Owner / Curator:\n\nPrimary: Ruben Sanchez-Garcia (University of Oxford, Department of Statistics & Astex Pharmaceuticals)\n\nCo-authors: Michael Saur (Astex Pharmaceuticals), Javier Vargas (Universidad Complutense de Madrid), Carl Poelking (Astex \nPharmaceuticals), Charlotte M. Deane (University of Oxford)\n\nPrimary Distribution Platform: GitHub repositories\n\nMain: https://github.com/rsanchezgarc/cesped\n\nMirror: https://github.com/oxpig/cesped (Oxford Protein Informatics Group)\n\nRepository: https://github.com/rsanchezgarc/cesped\n\nAccess Method:\n\nInstall via pip: pip install cesped\n\nAutomatic download of datasets when requested via Python API\n\nData stored in standard Relion starfile format (metadata) and .mrcs stacks (images)\n\n Includes 61 diverse EMPIAR entries with at least 200,000 particles each"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "License: BSD-3-Clause\n\nUse freely for academic research and non-commercial purposes\n\nCite CESPED paper (Physical Review Research) in publications using DOI: 10.1103/PhysRevResearch.6.023245\n\nShare and reference the dataset for research collaboration and benchmarking\n\nUse for supervised pose estimation, deep learning model training, and cryo-EM methods development\n\nRestrictions:\n\nIntended primarily for academic and research use\n\nCommercial use should follow standard academic citation and attribution practices\n\nDataset derived from EMPIAR entries (which have CC0 license), but CESPED curation adds value requiring attribution"
+          }
+        ]
+      },
+      {
+        "name": "CryoPPP",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Cryo-EM Particle Preprocessing and Processing Dataset.\n\nAligns with the approved research topic Datascience and engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Restricted Entities Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Owners: Ashwin Dhakal - https://www.linkedin.com/in/ashwin-dhakal\nJianlin Cheng - https://www.linkedin.com/in/jianlin-cheng-26b3135\n\nOwners are from a non-D5 country."
+          },
+          {
+            "name": "Prompts / Fine-tuning Scripts",
+            "score": 1,
+            "notes": "No finetuning scripts provided."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "Low risk, inspection skipped."
+          },
+          {
+            "name": "Provenance",
+            "score": 1,
+            "notes": "Owner / Curator:\nPrimary Authors: Ashwin Dhakal, Liguo Wang, Jianlin Cheng\nDepartment of Electrical Engineering and Computer Science, NextGen Precision Health, University of Missouri, Columbia, MO\nPrimary Distribution Platform:\nUniversity of Missouri server: http://calla.rnet.missouri.edu/cryoppp\nZenodo repository for particle labels: https://zenodo.org/record/7934683\nRepository: https://github.com/BioinfoMachineLearning/cryoppp (data curation and processing scripts)\nAccess Method:\nDirect download via HTTP from University of Missouri server\nDownload individual EMPIAR ID compressed files (.tar.gz format)\nAlternative: CryoPPP_Lite (lightweight version, 121 GB) available at http://calla.rnet.missouri.edu/cryoppp_lite\nDownload scripts available for automated retrieval from EMPIAR and Zenodo"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "License: MIT License\n\nUse freely for any purpose including academic research, commercial applications, and educational purposes\n\nCite CryoPPP paper (Scientific Data) in publications using DOI: 10.1038/s41597-023-02280-2\n\nShare, modify, and distribute the dataset and processing scripts\n\nUse for machine learning model training, particle picking algorithm development, and benchmarking\n\nCreate derivative works and modified versions\n\nRestrictions:\n\nMust include copyright notice and permission notice in all copies or substantial portions\n\nSoftware provided \"as is\" without warranty of any kind"
+          }
+        ]
+      },
+      {
+        "name": "Examples from cryoDRGN listed on CryoFastAR",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 3,
+            "notes": "The PI has listed an ambiguous request for a dataset which is provided as a zip file on a model's github repository CryoFastAR which is capable to creating synthetic data. The Zip file contains example of real CTF parameter data and synthetically generated data for validation of the CryoFastAR model. It is not clear how the PI is planning to use this data. \nThe alignment with any research objective from the proposal was not found. \n\nAligns with the approved research topic Computational Science and Visualization,  Datascience and Engineering"
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "Sample check in progress. The screening needs to happen on the dataset itself by inspecting for sensitive terms."
+          },
+          {
+            "name": "D5+M affiliation Screening (LC 2.5)",
+            "score": 3,
+            "notes": "Cellverse is an entity which maintains the CryoFastAR repository which also publishes the link to the requested data as data.zip. \nThis entity is from is a D-5+M country."
+          },
+          {
+            "name": "Prompts / Fine-tuning Scripts",
+            "score": 1,
+            "notes": "No finetuning scripts provided."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "Two examples provided in the GitHub repository of the project CryoFastAR where recreated on a GPU enabled machine for sample checks. \n\nExample 1: Inference (Experimental Data)\n    - From the datasets for example 1 included in data.zip i.e. the artifact, was used to process and visualize of the resulting descriptive statistics as a graph.   \n    - The example however had broken code. The import of \"import in transform.py: sses: failed. Providing correct path for the import from current working directory fixed the issue and allowed to proceed with the inspection.\n\nExample 2: Reconstruction Progress Visualization\n    - There is a bug in the code provided to replicate the example. The program is expecting a directory; however, the filename is for a file instead. \n\n"
+          },
+          {
+            "name": "Provenance",
+            "score": 4,
+            "notes": "The original Dataset comes from Princeton A.Z. Lab (https://github.com/ml-struct-bio/cryodrgn) but this requested version has been processed by Cellverse and provided via their github repo as a Zip file.\n\nOwner / Curator: https://www.cellverse.tech/#About originated in China\nPrimary Distribution Platform: https://github.com/Cellverse/CryoFastAR?tab=readme-ov-file\nAccess Method: Download link provided by repo readme: https://drive.google.com/file/d/1ryYszBurL6_vyQ9VDcArP6oGk1PNFElZ/view\n"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 4,
+            "notes": "No license was attached to the dataset or the model documentation."
+          }
+        ]
+      }
+    ],
+    "models": [
+      {
+        "name": "VGGT",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Visual Geometry Grounded Transformer model.\n\nAligns with the approved research topic Biological research."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "Source / Provenance & Restricted Entities (LC 2.5)",
+            "score": 1,
+            "notes": "Owner: Visual Geometry Group\n\nOrganization: University of Oxford; Meta AI\n\nEntity is from Non-D5 country."
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "VGGT License\n\nAllowed: Use, copy, modify, and redistribute (including derivatives), royalty-free.\n\nRedistribution rule: Must include the same license and Acceptable Use Policy.\n\nResearch credit: Must acknowledge VGGT in publications.\n\nProhibited uses: Illegal activity, violence, weapons, military/nuclear use, malware, fraud, disinformation, harassment, sensitive personal data misuse, professional medical/legal advice, self-harm, or impersonation.\n\nCompliance: Must follow laws, trade controls, and Meta\u2019s Acceptable Use Policy.\n\nOwnership: You own your derivatives; Meta owns the original materials.\n\nNo warranties, no liability: Use at your own risk.\n\nTermination: License ends if you violate terms or sue Meta over IP.\n\nLaw & venue: California law, California courts.\n\nChanges: Meta can update the license; continued use = acceptance."
+          },
+          {
+            "name": "Training Data Documentation",
+            "score": 1,
+            "notes": "VGGT is trained on a large, diverse collection of 3D/multi-view datasets, including both real-world captures and synthetic scenes. The major datasets include:\n\nCo3Dv2 \u2013 real multi-view object/scene captures with 3D information.\n\nBlendMVS \u2013 multi-view stereo synthetic data.\n\nMegaDepth \u2013 large outdoor multi-view depth dataset.\n\nKubric \u2013 synthetic environment scenes.\n\nScanNet \u2013 indoor captured scenes with depth and poses.\n\nHabitat \u2013 diverse environment simulation data.\n\nReplica \u2013 high-fidelity indoor scene dataset.\n\nPointOdyssey \u2013 dataset with point-cloud/scene geometry.\n\nVirtual KITTI \u2013 synthetic driving scenes with perfect 3D annotations.\n\nAria Synthetic Environments / Aria Digital Twin \u2013 synthetic rich environments."
+          },
+          {
+            "name": "Customisation / Fine-tuning",
+            "score": 1,
+            "notes": "No fine tuning scripts provided"
+          },
+          {
+            "name": "FLOPS Calculation",
+            "score": 1,
+            "notes": "There is no single official FLOPs number published for VGGT.\n\nEstimate for training:\n\nViews\tApprox FLOPs\n\n1 view\t~120 GFLOPs\n2 views\t~360\u2013400GFLOPs\n4 views\t~720\u2013800GFLOPs\n\n\nProvided MFU: 15.6%\nFLOPs = 3.09 x 10e6 "
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "low risk. Skipping sample inspection."
+          }
+        ],
+        "is_proprietary": false
+      }
+    ],
+    "observations": "Software: CryoFastAR is from a D5 country and has a vague license, Boxx is from a D5 country.\nDataset: CryoCRAB is from  a D5 country",
+    "recommendation": "Pending sample inspection on a dataset."
+  }
+}

@@ -1153,7 +1153,7 @@
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "- Recreating Inference (Experimental Data)\n    - Broken import in transform.py: sses from utils import ..., which is an invalid absolute import and causes module collisions.\n\n- Recreating Reconstruction Progress Visualization\n    - Dataset path construction bug: script treats .npy files (e.g. poses.npy) as directories, leading to paths like:\nposes.npy/particle_stack.npy.\n\nThus, I was unable to sample the data as instructed by the repo's readmde.\n\n"
+          "notes": "Two examples provided in the GitHub repository of the project CryoFastAR where recreated on a GPU enabled machine for sample checks. \n\nExample 1: Inference (Experimental Data)\n    - From the datasets for example 1 included in data.zip i.e. the artifact, was used to process and visualize of the resulting descriptive statistics as a graph.   \n    - The example however had broken code. The import of \"import in transform.py: sses: failed. Providing correct path for the import from current working directory fixed the issue and allowed to proceed with the inspection.\n\nExample 2: Reconstruction Progress Visualization\n    - There is a bug in the code provided to replicate the example. The program is expecting a directory; however, the filename is for a file instead. \n\n"
         },
         {
           "name": "Provenance",
@@ -1217,5 +1217,11 @@
     }
   ],
   "observations": "Software: CryoFastAR is from a D5 country and has a vague license, Boxx is from a D5 country.\nDataset: CryoCRAB is from  a D5 country",
-  "recommendation": "Pending sample inspection on a dataset."
+  "recommendation": "Pending sample inspection on a dataset.",
+  "_submission_history": [
+    {
+      "timestamp": "2026-01-25T13:49:17.506892",
+      "action": "resubmission"
+    }
+  ]
 }
