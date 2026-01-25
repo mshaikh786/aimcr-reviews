@@ -1,0 +1,1130 @@
+{
+  "metadata": {
+    "proposal_title": "4D Reconstruction and Volume Estimation",
+    "principal_investigator": "Peter Wonka",
+    "proposal_date": "2025-12-09",
+    "reviewer_name": "Mohsin Ahmed Shaikh",
+    "reviewer_id": "174988",
+    "aimcr_date": "2026-01-10",
+    "project_id": "65637"
+  },
+  "third_party_software": [
+    {
+      "name": "Pytorch, Torchvision, Torchaudio",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Aligns with the proposal objectives. Aligns with the approved research topic Datascience and engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation of PyTorch."
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Originally developed by Meta and now governed by Linux Foundation. "
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://github.com/pytorch/pytorch/edit/main/docs/source/index.md\nAs of Jan 4th, 2025\n96300 stars\n26400 forks\n12 Github projects\n17000 PRs\n97745 commits\nlast commit 10 hours ago \n\n\n\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "KSL will provide NGC container for the requested version of PyTorch. \nnvcr.io/nvidia/pytorch:25.12-py3\n\nNVIDIA Deep Learning Container License\nPermissions:\n- Install and Use\n- Deploy as a Service\n- Create Derived Containers\n- Open Source Development\nRestrictions:\n- No Reverse Engineering\n- No Standalone Distribution: may not distribute or sublicense the CONTAINER as a stand-alone product\n- No Circumventing Security"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "nvcr.io/nvidia/pytorch:25.12-py3 contains\n\nCUDA\ncuBLAS\nNVIDIA cuDNN\nNVIDIA NCCL (optimized for NVLink)\nNVIDIA Data Loading Library (DALI)\nTensorRT\nTorch-TensorRT"
+        }
+      ]
+    },
+    {
+      "name": "Numpy",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "The fundamental package for scientific computing with Python. Aligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Its a bonafide community with a governance model and multiple maintainers. https://numpy.org/about/\nThis is an opensource project with funding sources from entities from non-D5 countries.  \n"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "PyPI: https://pypi.org/project/numpy/\nhttps://github.com/numpy/numpy\n\nOwner / Organization: numpy\nRepository: numpy/numpy\nDescription: The fundamental package for scientific computing with Python.\nStars: 31038\nForks: 11858\nOpen Issues: 2392\nLast Commit Date: 2025-12-17T23:48:08Z"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "BSD 3-Clause License\nPermissions:\n- Use the software for any purpose, including commercial use\n- Modify the source code\n- Distribute the original or modified versions\n- Use it in proprietary/closed-source projects\n- Sublicense it as part of a larger work\n\nFit for use in proposed project."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "conda installation within container image:\n\nca-certificates 2026.1.4\nllvm-openmp 19.1.7\n_openmp_mutex 4.5\nopenssl 3.6.0\nlibgcc 15.2.0\nlibgfortran5 15.2.0\nlibgfortran 15.2.0\npython_abi 3.11\nlibopenblas 0.3.30\nlibblas 3.11.0\nlibcblas 3.11.0\nliblapack 3.11.0\nnumpy 1.26.4\n"
+        }
+      ]
+    },
+    {
+      "name": "SciPy",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": " Fundamental algorithms for scientific computing in Python. Aligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Its a bonafide community with a governance model and multiple maintainers. https://scipy.org/about/\nThis is an opensource project with funding sources from entities from non-D5 countries."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://pypi.org/project/scipy/\nhttps://github.com/scipy/scipy/\n\nOwner / Organization: scipy\nRepository: scipy/scipy\nDescription: SciPy library main repository\nStars: 14265\nForks: 5556\nOpen Issues: 1770\nLast Commit Date: 2025-12-18"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "BSD 3-Clause License \n\nPermissions:\n\nUse the software for any purpose, including commercial use\nModify the source code\nDistribute the original or modified versions\nUse it in proprietary/closed-source projects\nSublicense it as part of a larger work\nFit for use in proposed project."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "conda installation in a container image\n\nca-certificates 2026.1.4\nllvm-openmp 19.1.7\n_openmp_mutex 4.5\nopenssl 3.6.0\nlibgcc 15.2.0\nlibgfortran5 15.2.0\nlibgfortran 15.2.0\npython_abi 3.11\nlibopenblas 0.3.30\nlibblas 3.11.0\nlibcblas 3.11.0\nliblapack 3.11.0\nnumpy 1.26.4\nscipy 1.12.0"
+        }
+      ]
+    },
+    {
+      "name": "Pandas",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures similar to R data.frame objects, statistical functions, and much more. \nAligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Its a bonafide community with a governance model and multiple maintainers. \nhttps://pandas.pydata.org/about/governance.html\n\nThis is an opensource project with funding sources from entities from non-D5 countries.\n\nThis is an opensource project with funding sources from entities from non-D5 countries."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://pypi.org/project/pandas/\n\nhttps://github.com/pandas-dev/pandas/\n\nOwner / Organization: pandas-dev\nRepository: pandas-dev/pandas\nDescription: Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures similar to R data.frame objects, statistical functions, and much more\nStars: 47340\nForks: 19417\nOpen Issues: 3607\nLast Commit Date: 2025-12-18"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "BSD 3-Clause License\nPermissions:\n\nUse the software for any purpose, including commercial use \n\nModify the source code \n\nDistribute the original or modified versions \n\nUse it in proprietary/closed-source projects \n\nSublicense it as part of a larger work \n\n\nFit for use in proposed project."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "ca-certificates 2026.1.4\nllvm-openmp 19.1.7\n_openmp_mutex 4.5\nopenssl 3.6.0\nlibgcc 15.2.0\nlibgfortran5 15.2.0\nlibgfortran 15.2.0\npython-tzdata 2025.3\npython_abi 3.11\npytz 2025.2\nsix 1.17.0\nlibopenblas 0.3.30\npython-dateutil 2.9.0.post0\nlibblas 3.11.0\nlibcblas 3.11.0\nliblapack 3.11.0\nnumpy 1.26.4\npandas 2.2.1\n"
+        }
+      ]
+    },
+    {
+      "name": "scikit-learn",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Machine learning in Python.  Aligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Its a bonafide community with a governance model and multiple maintainers.\n\nhttps://scikit-learn.org/stable/about.html#the-people-behind-scikit-learn\n\nThis is an opensource project with funding sources from entities from non-D5 countries."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://pypi.org/project/scikit-learn/\n\nhttps://github.com/scikit-learn/scikit-learn/\n\nOwner / Organization: scikit-learn\n\nRepository: scikit-learn/scikit-learn\n\nStars: 64318\n\nForks: 26507\n\nOpen Issues: 2127\n\nLast Commit Date: 2025-12-18"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "BSD 3-Clause License Permissions:\nUse the software for any purpose, including commercial use\n\nModify the source code\n\nDistribute the original or modified versions\n\nUse it in proprietary/closed-source projects\n\nSublicense it as part of a larger work\n\nFit for use in proposed project."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "pip installation:\n\nscikit-learn 1.4.1.post1\nnumpy 1.26.4\njoblib 1.5.3\nscipy 1.16.3\nthreadpoolctl 3.6.0"
+        }
+      ]
+    },
+    {
+      "name": "matplotlib",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Plotting tool in Python. Aligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Thomas A Caswell -- project lead -- https://www.linkedin.com/in/tcaswell/\n\nGovernance: https://matplotlib.org/governance/governance.html#main-governance-document\n\nThis is an opensource project with funding sources from entities from non-D5 countries."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://pypi.org/project/matplotlib/\n\nhttps://github.com/matplotlib/matplotlib\n\nOwner / Organization: matplotlib\nRepository: matplotlib/matplotlib\nDescription: matplotlib: plotting with Python\nStars: 22134\nForks: 8144\nOpen Issues: 1558\nLast Commit Date: 2025-12-17"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "BSD-compatible Python Software Foundation (PSF) based license.\nPermissions:\n\nCommercial use allowed\n\nModification of the source code permitted\n\nDistribution of original or modified versions allowed\n\nPrivate use permitted\n\nNo requirement to disclose source code\n\nRestrictions:\n\nMust include copyright notice and license text in distributions\n\nNo trademark use without permission\n\nSoftware is provided \"as is\" without warranty\n\nCannot hold authors liable for damages\n\nFit for this proposal's use"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Pip installation:\n\nnumpy 1.26.4\ncontourpy 1.3.3\ncycler 0.12.1\nfonttools 4.61.1\nkiwisolver 1.4.9\npackaging 25.0\npillow 12.1.0\npyparsing 3.3.1\npython-dateutil 2.9.0.post0\nsix 1.17.0\n"
+        }
+      ]
+    },
+    {
+      "name": "MLFlow",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "AI experiment management of logs and metrics. Aligns with the approved research topic Datascience and engineering.\n\nWeights & Biases (wandb) was requested but due to no-internet policy on Shaheen III, MLFlow as an alternative to do local logging and metric collection will be proposed to the applicants."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Maintained by Databricks (USA) \nThe entity is from non-D5 country"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://pypi.org/project/mlflow/\n\nhttps://github.com/mlflow/mlflow\n\nOwner / Organization: databricks\nRepository: mlflow/mlflow\nStars: 23600\nForks: 5100\nOpen Issues: 1500\nLast Commit Date: 2026-01-08\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Apache License 2.0:\n\nPermissions: \n\nReproduce the Work\n\nPrepare Derivative Works (modifications)\n\nPublicly display the Work\n\nPublicly perform the Work\n\nSublicense the Work\n\nDistribute the Work and Derivative Works in Source or Object form\n\nCommercial use (no charge, royalty-free)\n\nRestrictions:\n\nCannot use trade names, trademarks, service marks, or product names of the Licensor\n\nException: Can use them for reasonable description of the Work's origin or reproducing NOTICE file content"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "pip installation: \n\nmlflow-skinny 3.8.1\nmlflow-tracing 3.8.1\nalembic 1.17.2\ncachetools 6.2.4\nclick 8.3.1\ncloudpickle 3.1.2\ncryptography 46.0.3\ndatabricks-sdk 0.77.0\ndocker 7.1.0\nfastapi 0.128.0\nFlask 3.1.2\nflask-cors 6.0.2\nGitPython 3.1.46\ngitdb 4.0.12\ngoogle-auth 2.47.0\ngraphene 3.4.3\ngraphql-core 3.2.7\ngraphql-relay 3.2.0\ngunicorn 23.0.0\nhuey 2.6.0\nimportlib_metadata 8.7.1\nmatplotlib 3.10.8\nnumpy 2.4.0\nopentelemetry-api 1.39.1\nopentelemetry-proto 1.39.1\nopentelemetry-sdk 1.39.1\nopentelemetry-semantic-conventions 0.60b1\npackaging 25.0\npandas 2.3.3\nprotobuf 6.33.2\npyarrow 22.0.0\npydantic 2.12.5\npydantic_core 2.41.5\npython-dateutil 2.9.0.post0\npython-dotenv 1.2.1\nPyYAML 6.0.3\nrequests 2.32.5\ncharset-normalizer 3.4.4\nidna 3.11\nrsa 4.9.1\nscikit-learn 1.8.0\nscipy 1.16.3\nsmmap 5.0.2\nSQLAlchemy 2.0.45\nsqlparse 0.5.5\nstarlette 0.50.0\nanyio 4.12.1\ntyping_extensions 4.15.0\nurllib3 2.6.3\nuvicorn 0.40.0\nannotated-doc 0.0.4\nannotated-types 0.7.0\nblinker 1.9.0\ncertifi 2026.1.4\ncffi 2.0.0\ncontourpy 1.3.3\ncycler 0.12.1\nfonttools 4.61.1\ngreenlet 3.3.0\nh11 0.16.0\nitsdangerous 2.2.0\nJinja2 3.1.6\njoblib 1.5.3\nkiwisolver 1.4.9\nMarkupSafe 3.0.3\npillow 12.1.0\npyasn1 0.6.1\npyasn1_modules 0.4.2\npyparsing 3.3.1\npytz 2025.2\nsix 1.17.0\nthreadpoolctl 3.6.0\ntyping-inspection 0.4.2\ntzdata 2025.3\nWerkzeug 3.1.4\nzipp 3.23.0\nMako 1.3.10\npycparser 2.23"
+        }
+      ]
+    },
+    {
+      "name": "PyTorch3D",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "The software is used for deep learning with 3D data. It is used in the project for the development of generative 4D modeling (specifically the Parallel Material Latent Branch). Aligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "maintained by Meta\n\nThis is an entity from non-D5 country."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://pytorch3d.org\n\nMaintained by Meta. \n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "BSD License\n\nCan be used for academic purposes?\tYes\n\nCan be used for commercial use?\tYes\n\nModification allowed?\tYes\n\nRedistribution allowed?\tYes\n\nAttribution required?\tYes\n\nCopyleft obligations?\tNo"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "ca-certificates 2026.1.4\nlibdeflate 1.19\nlibjpeg-turbo 2.1.5.1\nlibuv 1.51.0\nlibwebp-base 1.6.0\nllvm-openmp 21.1.8\npthread-stubs 0.4\ntbb 2021.10.0\nxorg-libxau 1.0.12\nxorg-libxdmcp 1.1.5\nyaml 0.2.5\n_openmp_mutex 4.5\ngmp 6.3.0\nlerc 4.0.0\nlibpng 1.6.43\nlibprotobuf 3.21.12\nlibxcb 1.15\nmkl 2022.2.1\nopenssl 3.6.0\nsleef 3.6.1\nfreetype 2.12.1\nlibgcc 15.2.0\nlibtiff 4.6.0\nmpfr 4.2.1\nlcms2 2.15\nlibgfortran5 15.2.0\nmpc 1.3.1\nopenjpeg 2.5.0\ncertifi 2024.8.30\ndataclasses 0.8\nfilelock 3.16.1\ngmpy2 2.1.5\nlibgfortran 15.2.0\nmarkupsafe 2.1.5\nmpmath 1.3.0\nnetworkx 3.1\npillow 10.0.1\nportalocker 2.10.1\npyyaml 6.0.2\ntabulate 0.9.0\ntermcolor 2.4.0\ntyping_extensions 4.12.2\njinja2 3.1.4\nlibopenblas 0.3.30\nsympy 1.13.3\ntyping-extensions 4.12.2\nyacs 0.1.8\niopath 0.1.10\nlibblas 3.11.0\nlibcblas 3.11.0\nliblapack 3.11.0\nnumpy 1.24.4\nfvcore 0.1.5.post20221221\npytorch 2.0.0\ntorchvision 0.15.2\npytorch3d 0.7.4"
+        }
+      ]
+    },
+    {
+      "name": "Deepspeed",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Distributed training framework from Microsoft. Aligned with approved research topic, datascience & engineering"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No prohibited use indicated. Its a distributed training framework."
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "The framework is developed and maintained by Microsoft. The entity is from non-D5 country."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://github.com/microsoft/DeepSpeed\n\nMaintainer / Organization: Microsoft\n\nLast Commit Date: 4 days ago\n\nNumber of Stars: 41K\n\nNumber of Issues (Open/Closed): 1.1K\n\nNumber of PRs (Open/Closed): 102\n\nTotal Commits: 3,004"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache License 2.0\n\nPermissions (Apache License 2.0 \u2013 concise version):\n\nUse, reproduce, modify, and create derivative works of the software.\n\nPublicly display, perform, sublicense, and distribute the original work or derivatives (source or binary).\n\nUse patent claims from contributors (if necessarily infringed by their contribution).\n\nSell, offer to sell, import, or transfer the work.\n\nAdd your own copyright notice and apply different license terms to your modifications (if overall redistribution complies).\n\nOffer support, warranty, or indemnity for a fee (on your own responsibility).\n\nUse for any purpose, including commercial.\n\nRestrictions:\n\nProvide recipients with a copy of this license.\n\nInclude prominent notices of changes in modified files.\n\nKeep all original copyright, patent, trademark, and attribution notices in source form.\n\nInclude the NOTICE file (if present) in derivatives, with readable attribution.\n\nDo not use licensor's trademarks, trade names, or product names (except for origin description and NOTICE reproduction).\n\nPatent license ends if you sue any entity for patent infringement related to the work."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "deepspeed 0.18.2\npackaging 25.0\npydantic 2.10.6\npydantic_core 2.27.2\neinops 0.8.1\nhjson 3.1.0\nmsgpack 1.1.1\nninja 1.13.0\nnumpy 1.24.4\npsutil 7.2.1\npy-cpuinfo 9.0.0\ntorch 2.2.2\ntqdm 4.67.1\nannotated-types 0.7.0\ntyping_extensions 4.13.2\nfilelock 3.16.1\nfsspec 2025.3.0\nJinja2 3.1.6\nnetworkx 3.1\nsympy 1.13.3\nMarkupSafe 2.1.5\nmpmath 1.3.0"
+        }
+      ]
+    },
+    {
+      "name": "Open3D",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "An open-source library that supports rapid development of software dealing with 3D data, providing efficient data structures. The project is developing 4D foundation model and will be using the tool for efficient data representation. Aligns with approved research topic Datascience and engineering. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": ""
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "GitHub: https://github.com/isl-org/Open3D\n\n\nRepository: isl-org/Open3D\nAuthors and maintainers:\n\nQian-Yi Zhou (CTO and co-founder at Enso AI LLC): https://www.linkedin.com/in/qianyi-zhou-73746316/\n\nJaesik Park (Associate Professor at Seoul National University): https://www.linkedin.com/in/jaesik-park-aa8b1458/\n\nVladlen Koltun (Distinguished Scientist at Apple Inc.): https://www.linkedin.com/in/vladlenkoltun/\n\nStars: 13176\nForks: 2507\nOpen Issues: 1328\nLast Commit Date: 2026-01-05T22:38:56Z\nActivity Health: Unknown"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "MIT License\n\nPermissions:\n\nUse the software freely for any purpose.\n\nCopy the software.\n\nModify the software.\n\nMerge it with other code.\n\nPublish, distribute, sublicense, and/or sell copies.\n\nPermit others to do the same.\n\nRestrictions:\n\nInclude the original copyright notice and permission notice in all copies or substantial portions."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Python\nPyTorch\nC++ compiler\nOpenMP\nhttps://github.com/isl-org/Open3D-ML"
+        }
+      ]
+    },
+    {
+      "name": "opencv-python",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Python wrapper package for OpenCV (Open Source Computer Vision Library). Used for manipulation of images in the project. Aligns with approved research topic Datascience & engineering. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "opencv-python package is owned by the non-profit organization OpenCV.org\n\nGovernance: \n\nPresident: Gary Bradski (affiliated with Bonsai Robotics as Chief Science Officer, founder of OpenCV, previously at Willow Garage and Intel; LinkedIn: https://www.linkedin.com/in/garybradski)\n\n- CEO CEO Satya Mallick (affiliated with OpenCV and UC San Diego; LinkedIn: https://www.linkedin.com/in/satyamallick)\n\nThe entites are from non-D5 countries. "
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://pypi.org/project/opencv-python/\n\nhttps://github.com/opencv/opencv-python\n\nStars: 5139\nForks: 981\nOpen Issues: 181\nLast Commit Date: 2026-01-06"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Apache 2.0\n\nCan be used for academic purposes?\tYes\nCan be used for commercial use?\tYes\nModification allowed?\tYes\nRedistribution allowed?\tYes\nAttribution required?\tYes\nCopyleft obligations?\tNo"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "pip installation:\n\npython\nnumpy"
+        }
+      ]
+    },
+    {
+      "name": "scikit-image",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "An open-source Python library that provides a collection of algorithms for image processing related functionality. Used for manipulation of images in the project. Aligns with approved research topic Datascience & engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "an open-source community-driven project owned by the scikit-image GitHub organization and maintained by a core team of volunteer developers (with no single corporate owner), guided by a historical steering council model and active contributors including key figures such as:\n\n- St\u00e9fan van der Walt (founder of scikit-image, researcher at UC Berkeley's Berkeley Institute for Data Science (BIDS); LinkedIn: https://www.linkedin.com/in/stefan-van-der-walt-6193221/)\n\n- Juan Nunez-Iglesias (core developer, Bioimage Informatics Research Fellow at Monash University, Australia; no public LinkedIn found in searches)\n\n- Josh Warner (core developer; affiliation not prominently listed in recent sources)\n\nGovernance leads are from non-D5 countries. "
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://pypi.org/project/scikit-image/0.25.2/\n\nhttps://github.com/scikit-image/scikit-image\n\nStars: 6418\n\nForks: 2353\n\nOpen Issues: 857\n\nLast Commit Date: 2026-01-06"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "BSD-3 Clause license\n\nPermissions: \n\nYou may redistribute the software in source or binary form, with or without modification.\n\nYou may use the software for any purpose, including commercial applications.\n\nYou may modify the software freely.\n\nYou may sublicense the software.\n\nRedistributions of source code must retain the original copyright notice, list of conditions, and disclaimer.\n\nRedistributions in binary form must reproduce the copyright notice, conditions, and \ndisclaimer in documentation or other provided materials.\n\nRestrictions:\n\nYou may not use the names of the copyright holders or contributors to endorse or promote derived products without prior written permission."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Conda installation:\n\nc-ares 1.34.6\nca-certificates 2026.1.4\ndav1d 1.2.1\nfribidi 1.0.16\ngiflib 5.2.2\nicu 73.2\njpeg 9e\njxrlib 1.2\nlibbrotlicommon 1.0.9\nlibdeflate 1.22\nlibev 4.33\nlibiconv 1.18\nlibwebp-base 1.6.0\nllvm-openmp 19.1.7\nrav1e 0.7.1\nzlib-ng 2.0.7\n_openmp_mutex 4.5\naom 3.9.1\ncharls 2.2.0\ngraphite2 1.3.14\nlerc 4.0.0\nlibaec 1.1.4\nlibasprintf 0.25.1\nlibbrotlidec 1.0.9\nlibbrotlienc 1.0.9\nlibedit 3.1.20250104\nlibintl 0.25.1\nlibpng 1.6.39\nlibxml2 2.13.8\nlibzopfli 1.0.3\nlz4-c 1.9.4\nopenssl 3.6.0\npcre2 10.42\npixman 0.46.4\nsnappy 1.2.2\nsvt-av1 3.1.2\nzfp 1.0.1\nbrotli-bin 1.0.9\nfreetype 2.13.3\ngettext-tools 0.25.1\nkrb5 1.19.3\nlibasprintf-devel 0.25.1\nlibavif16 1.3.0\nlibgcc 15.2.0\nlibgettextpo 0.25.1\nlibintl-devel 0.25.1\nlibnghttp2 1.43.0\nlibssh2 1.10.0\nzstd 1.5.6\nblosc 1.21.6\nbrotli 1.0.9\nfontconfig 2.14.1\nlibavif 1.3.0\nlibcurl 7.79.1\nlibgettextpo-devel 0.25.1\nlibgfortran5 15.2.0\nlibtiff 4.7.0\nbrunsli 0.1\ngettext 0.25.1\nlcms2 2.16\nlibgfortran 15.2.0\nnetworkx 3.6.1\nopenjpeg 2.5.2\npackaging 25.0\npython_abi 3.11\nzipp 3.23.0\ncfitsio 3.470\nimportlib-metadata 8.7.0\nlibglib 2.84.2\nlibopenblas 0.3.30\ncairo 1.16.0\nlazy-loader 0.4\nlibblas 3.11.0\nharfbuzz 10.2.0\nlibcblas 3.11.0\nliblapack 3.11.0\nnumpy 2.4.0\npillow 11.3.0\nimagecodecs 2024.9.22\nimageio 2.37.0\npywavelets 1.9.0\nscipy 1.16.3\ntifffile 2024.12.12"
+        }
+      ]
+    },
+    {
+      "name": "Seaborn",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Python data visualization library. Use in the project for visualization. Aligns with approved research topics of Computational Science and Visualization and Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "created, owned, and maintained by Michael Waskom (GitHub: mwaskom), a computational cognitive neuroscientist with a PhD from Stanford University; he has held academic roles at NYU (Center for Neural Science) and the Simons Foundation, previously worked at Flatiron Health, and is currently a Member of Technical Staff at Modal Labs; his LinkedIn profile is available at https://www.linkedin.com/in/michaelwaskom/.\n\nFrom non-D5 country."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://pypi.org/project/seaborn/\n\nhttps://github.com/mwaskom/seaborn\n\nStars: 13660\nForks: 2074\nOpen Issues: 200\nLast Commit Date: 2025-12-24\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "BSD 3-Clause license:\n\nPermissions:\nThe license is BSD 3-Clause.\n\nYou may freely redistribute the software in source or binary form.\n\nYou may modify the software and create derivative works.\n\nYou must retain the original copyright notice and license text in redistributions.\n\nYou must include the copyright notice in any substantial portions of the software.\n\nThe license permits use for any purpose, including commercial applications.\n"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "conda installation:\n\nca-certificates 2026.1.4\ndav1d 1.2.1\nfribidi 1.0.16\nicu 73.2\njpeg 9e\nlibbrotlicommon 1.2.0\nlibdeflate 1.22\nlibiconv 1.18\nlibwebp-base 1.6.0\nllvm-openmp 19.1.7\nrav1e 0.7.1\n_openmp_mutex 4.5\naom 3.9.1\ngraphite2 1.3.14\nlerc 4.0.0\nlibasprintf 0.25.1\nlibbrotlidec 1.2.0\nlibbrotlienc 1.2.0\nlibintl 0.25.1\nlibpng 1.6.39\nlibxml2 2.13.8\nlz4-c 1.9.4\nopenssl 3.6.0\npcre2 10.42\npixman 0.46.4\nqhull 2020.2\nsvt-av1 3.1.2\nbrotli-bin 1.2.0\nfreetype 2.13.3\ngettext-tools 0.25.1\nlibasprintf-devel 0.25.1\nlibavif16 1.3.0\nlibgcc 15.2.0\nlibgettextpo 0.25.1\nlibintl-devel 0.25.1\nzstd 1.5.6\nbrotli 1.2.0\nfontconfig 2.14.1\nlibavif 1.3.0\nlibgettextpo-devel 0.25.1\nlibgfortran5 15.2.0\nlibtiff 4.7.0\ncycler 0.12.1\ngettext 0.25.1\nlcms2 2.16\nlibgfortran 15.2.0\nmunkres 1.1.4\nopenjpeg 2.5.2\npackaging 25.0\npyparsing 3.3.1\npython-tzdata 2025.3\npython_abi 3.11\npytz 2025.2\nsix 1.17.0\nkiwisolver 1.4.9\nlibglib 2.84.2\nlibopenblas 0.3.30\npython-dateutil 2.9.0.post0\nunicodedata2 17.0.0\ncairo 1.16.0\nfonttools 4.61.1\nlibblas 3.11.0\nharfbuzz 10.2.0\nlibcblas 3.11.0\nliblapack 3.11.0\nnumpy 2.4.0\npillow 11.3.0\ncontourpy 1.3.3\npandas 2.3.3\npatsy 1.0.2\nscipy 1.16.3\nmatplotlib-base 3.10.1\nstatsmodels 0.14.6\nseaborn-base 0.13.2"
+        }
+      ]
+    },
+    {
+      "name": "Hydra (hydra-core)",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Python framework (from the Hydra project) for elegantly configuring complex applications. Projects usually use it for source code management for clean and readable code practices. Algins with Computational science and visualizations. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "owned and maintained by Mata. An entity from non-D5 country."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://pypi.org/project/hydra-core/\n\nhttps://github.com/facebookresearch/hydra\n\nStars: 10082\nForks: 780\nOpen Issues: 365\nLast Commit Date: 2025-11-29T13:53"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "MIT License\n\nCan be used for academic purposes?\tYes\n\nCan be used for commercial use?\tYes\n\nModification allowed?\tYes\n\nRedistribution allowed?\tYes\n\nAttribution required?\tYes\n\nCopyleft obligations?\tNo"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Conda installation:\n\nca-certificates 2026.1.4\nyaml 0.2.5\nopenssl 3.6.0\nantlr-python-runtime 4.9.3\npackaging 25.0\npython_abi 3.11\ntyping_extensions 4.15.0\npyyaml 6.0.3\nomegaconf 2.3.0"
+        }
+      ]
+    },
+    {
+      "name": "tqdm",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Python library for progress bars for loops, iterables, and command-line tools. The project will use for logging. Alings with approved research topic of Computatoinal science and Visualization."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 2,
+          "notes": "community-owned and primarily maintained by Casper da Costa-Luis (GitHub: casperdcl). \nhttps://cdcl.ml\nAcclaimed developer from non-D5 country.\n"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://pypi.org/project/tqdm/\n\nhttps://github.com/tqdm/tqdm\n\nStars: 30834\nForks: 1419\nOpen Issues: 582\nLast Commit Date: 2024-11-12"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "MIT License\n\nCan be used for academic purposes?\tYes\n\nCan be used for commercial use?\tYes\n\nModification allowed?\tYes\n\nRedistribution allowed?\tYes\n\nAttribution required?\tYes\n\nCopyleft obligations?\tNo"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Python"
+        }
+      ]
+    },
+    {
+      "name": "Infingen",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Infinigen is a Blender-based procedural generator that creates photorealistic 3D scenes/assets entirely from randomized mathematical rules (shape + materials) to produce unlimited synthetic worlds and renders. Infinigen directly supports\nthe goal of expanding limited datasets for underrepresented classes, particularly corals, by procedurally generating additional 3D volumes.\n\nThis was identified as model in \u201cadditional information\u201d but review deems is as a software because it is not an AI model in traditional term."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Princeton Vision & Learning Lab - USA: Non-D5\n"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "URL: https://github.com/princeton-vl/infinigen\n6.8K stars, 3K commits, last updated 2 weeks ago\nThe project is maintained by the Princeton Vision & Learning Lab / Princeton University team (repo: princeton-vl/infinigen), with authors listed (e.g., Jia Deng); LinkedIn profiles are publicly available for Jia Deng and Alex Raistrick. https://www.linkedin.com/in/jia-deng-73bb4430 and https://www.linkedin.com/in/araistrick"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "BSD 3-Clause License (permissive).\n\nAllows use, modification, and redistribution (source/binary) with required notices and without using contributors\u2019 names for endorsement (per BSD-3 terms"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "From requirements.txt in the Github repo:\nabsl-py==2.3.0\nbpy==4.2.0\ncertifi==2025.6.15\ncharset-normalizer==3.4.2\ncloudpickle==3.1.1\ncoacd==1.0.7\ncontourpy==1.3.2\ncycler==0.12.1\nCython==3.1.2\ndaqp==0.7.2\netils==1.12.2\nevdev==1.9.2\nexecnet==2.1.1\nFarama-Notifications==0.0.4\nfonttools==4.58.4\nfrozendict==2.4.6\nfsspec==2025.5.1\ngeomdl==5.4.0\ngin-config==0.5.0\nglfw==2.9.0\ngymnasium==1.2.0\nh5py==3.15.1\nidna==3.10\nimageio==2.31.6\nimportlib_resources==6.5.2\n-e git+ssh://git@github.com/princeton-vl/infinigen_internal.git@5d8872a2ea5bca11470c958c822836df735e4545#egg=infinigen\niniconfig==2.1.0\njoblib==1.5.1\nkiwisolver==1.4.8\nlazy_loader==0.4\nllvmlite==0.45.1\nmathutils==3.3.0\nmatplotlib==3.10.3\nmink==0.0.5\nmujoco==3.3.7\nnetworkx==3.5\nnumba==0.62.1\nnumpy==1.26.4\nopencv-python==4.8.1.78\nOpenEXR==3.3.4\npackaging==25.0\npandas==2.3.0\nPillow==10.0.1\npluggy==1.6.0\npsutil==7.0.0\npybullet==3.2.7\npyglet==1.5.31\nPygments==2.19.1\npynput==1.8.1\nPyOpenGL==3.1.9\npyparsing==3.2.3\npytest==8.4.0\npytest-timeout==2.4.0\npytest-xdist==3.7.0\npython-dateutil==2.9.0.post0\npython-fcl==0.7.0.8\npython-xlib==0.33\npytz==2025.2\nPyWavelets==1.8.0\nqpsolvers==4.8.1\nquadprog==0.1.13\nrequests==2.32.4\n-e git+ssh://git@github.com/ARISE-Initiative/robosuite.git@cb173eb465089b1b4d7038dc8e913f18817f2b0f#egg=robosuite\nrobosuite_models==1.0.0\nrtree==1.4.0\nruff==0.12.0\nscikit-image==0.19.3\nscikit-learn==1.3.2\nscipy==1.15.3\nshapely==2.0.5\nsix==1.17.0\nsubmitit==1.5.3\ntermcolor==3.2.0\nthreadpoolctl==3.6.0\ntifffile==2025.6.11\ntqdm==4.67.1\ntrimesh==3.22.5\ntyping_extensions==4.14.0\ntzdata==2025.2\nurllib3==2.4.0\nusd-core==25.5.1\nuv==0.8.22\nvnoise==0.1.0\nzipp==3.23.0\nzstandard==0.23.0"
+        }
+      ]
+    }
+  ],
+  "source_code": [],
+  "datasets_user_files": [
+    {
+      "name": "Objaverse-XL",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Objaverse-XL contains 10M+ 3D objects sourced from GitHub, Sketchfab (Objaverse 1.0), Thingiverse, and Polycam platforms, predominantly consisting of GLB and STL files with various textures and geometries.\n\nObjaverse-XL is listed as one of the requested datasets that supports training generative 3D foundation models and diverse shape priors for 4D generation objectives.\n\n"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7.\n"
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Owned by: Allen Institute for AI (Ai2)\nMaintained by: PRIOR team at Allen Institute for AI\nLead author: Matt Deitke (now at Meta Superintelligence Lab, formerly at Allen Institute for AI) - LinkedIn: https://www.linkedin.com/in/mattdeitke/\nCo-authors: Ruoshi Liu, Matthew Wallingford, Huong Ngo, Oscar Michel, Aditya Kusupati, Alan Fan, Christian Laforte, Vikram Voleti, Samir Yitzhak Gadre, Eli VanderBilt, Aniruddha Kembhavi, Carl Vondrick, Georgia Gkioxari, Kiana Ehsani, Ludwig Schmidt, Ali Farhadi\n\nEntity is from a non-D5 country."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No user files provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "\"weapons-military\" category was inspected and had pictures of avatars of modern and historic e.g. knives, swords, pistols and guns."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "https://objaverse.allenai.org/ \n\nPublished on HuggingFace https://huggingface.co/datasets/allenai/objaverse-xl\nDownloads from Hubgging Face in the month of Nov 2025: 309,132\n\nCreated: July 2023 by Matt Deitke and the PRIOR team at Allen Institute for AI in collaboration with University of Washington, Columbia University, Stability AI, LAION, and Caltech\nCurrent maintainer: Allen Institute for AI PRIOR team (Matt Deitke was the lead developer until 2024 when he left for Meta)"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 2,
+          "notes": "ODC-By v1.0 License:\n\nPermitted: Use for any purpose including commercial applications\nPermitted: Share, modify, and create derivative works\nRequired: Attribute the dataset in any public use\nNote: Individual objects retain their original source licenses\n\nIndividual objects - Various licenses:\n\nNote: Objects sourced from different platforms have different licenses (Creative Commons, platform-specific licenses)\nRequired: Users must assess and comply with individual object licenses for downstream use\nNote: Polycam data requires separate approval for academic non-commercial use\n\nCode repository - Apache 2.0 License:\n\nPermitted: Use, modify, distribute code for commercial and non-commercial purposes\nRequired: Include copyright notice and Apache 2.0 license text"
+        }
+      ]
+    },
+    {
+      "name": "TRELLIS-500K",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "TRELLIS-500K contains 500K 3D assets curated from Objaverse(XL), ABO, 3D-FUTURE, HSSD, and Toys4k, filtered by aesthetic scores, with text captions for ~495K assets.\n\nTRELLIS-500K supports training generative 4D models with sparse voxel-based latent representations for combining generative modeling with 4D reconstruction pipelines as cited in the proposal.\n\nAligns with the approved research topic Datascience and Engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 2,
+          "notes": "Owned and maintained by: Microsoft Research, Tsinghua University, and USTC\nAuthors:\n\nJianfeng Xiang (PhD student, Tsinghua University & Microsoft Research intern)\nZelong Lv (USTC & Microsoft Research intern)\nSicheng Xu (Microsoft Research)\nYu Deng (Microsoft Research)\nRuicheng Wang (USTC & Microsoft Research intern)\nBowen Zhang (USTC & Microsoft Research intern)\nDong Chen (Microsoft Research)\nXin Tong (Microsoft Research)\nJiaolong Yang (Microsoft Research)\n\nTsinghua University is from D5 country. Microsoft Research (Asia) is from a non-D5 country. "
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No user files provided."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "low risk in LC 2.7 and 2.5. Skipping inspection. "
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "https://huggingface.co/datasets/JeffreyXiang/TRELLIS-500K\n\nCreated: December 2024 by the TRELLIS research team at Microsoft Research, Tsinghua University, and USTC for the CVPR 2025 paper \"Structured 3D Latents for Scalable and Versatile 3D Generation\"\nCurrent maintainer: Jianfeng Xiang (JeffreyXiang on HuggingFace), PhD student at Tsinghua University and research intern at Microsoft Research Asia since July 2021"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "MIT License:\n\nPermitted: Use for both non-commercial and commercial purposes\nPermitted: Modify, distribute, sublicense the dataset\nPermitted: Private use without disclosure requirements\nRequired: Include copyright notice and license in all copies or substantial portions\n"
+        }
+      ]
+    },
+    {
+      "name": "ScanNet++",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "ScanNet++ contains 1000+ 3D indoor scenes with sub-millimeter resolution laser scans, registered 33-megapixel DSLR images, commodity RGB-D streams from iPhone, and 3D reconstructions annotated with long-tail and label-ambiguous semantics for benchmarking novel view synthesis and semantic understanding.\n\nScanNet++ supports the proposal's objectives for 4D generative modeling training, 4D reconstruction from sparse views with temporal consistency, semantic scene understanding for dynamic environments, and novel view synthesis benchmarking applicable to coral reef monitoring applications.\n\nAligns with the approved research topic Datascience and Engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Owned by: Technical University of Munich (TUM)\nCreated and maintained by:\nChandan Yeshwanth (PhD Candidate, TUM 3D AI Lab) - LinkedIn: https://www.linkedin.com/in/chandan-yeshwanth/\nYueh-Cheng Liu (PhD Student, TUM 3D AI Lab) - LinkedIn: https://www.linkedin.com/in/yueh-cheng-liu-66a42912b/\nMatthias Nie\u00dfner (Professor, TUM Visual Computing Lab) - LinkedIn: https://de.linkedin.com/in/matthias-niessner-a0a43a48\nAngela Dai (Associate Professor, TUM 3D AI Lab) - LinkedIn: https://de.linkedin.com/in/angela-dai-5526ba48\n\nEntity is from non-D5 country."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "Created: 2023 by Chandan Yeshwanth, Yueh-Cheng Liu, Matthias Nie\u00dfner, and Angela Dai at Technical University of Munich, published at ICCV 2023 (Oral presentation)\nCurrent maintainers: Same research team at TUM (Chandan Yeshwanth and Yueh-Cheng Liu as co-first authors, supervised by Matthias Nie\u00dfner and Angela Dai)"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk in LC 2.7 and 2.5 checks. Skipping inspection."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "To download the data, an account needs to be created:\nhttps://scannetpp.mlsg.cit.tum.de/scannetpp/\n\nTechnical University of Munich Primary Distribution Platform: https://scannetpp.mlsg.cit.tum.de/scannetpp/ Repository: https://github.com/scannetpp/scannetpp (347 stars, 251 commits) Access Method: https://scannetpp.mlsg.cit.tum.de/scannetpp/ Provenance: Maintenance Status: Actively maintained, last commit 19 Dec, 2025."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "ScanNet++ Terms of Use (Custom License):\n\nRequires account creation and application approval for data access\nUsers receive a personalized token upon approval for downloading\nDataset is released under custom ScanNet++ Terms of Use (not standard open-source license)\nData is anonymized to protect personally identifiable information\nAcademic and research use permitted (specific commercial restrictions available in full terms document)\nUsers must agree to terms before accessing data\nDistribution and sublicensing terms governed by the specific agreement"
+        }
+      ]
+    },
+    {
+      "name": "RealEstate10K",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "RealEstate10K contains camera poses (position and orientation trajectories) corresponding to 10 million frames derived from approximately 80,000 video clips gathered from about 10,000 YouTube videos, with timestamps and poses specified in text files for view synthesis training.\n\nRealEstate10K is listed in the proposal's dataset section and supports objectives for camera trajectory learning, view synthesis training, 4D reconstruction with sparse multi-view data, and temporal consistency evaluation across dynamic scenes.\n\nAligns with the approved research topic of Datascience and Engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7.\n"
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Owned by: Google LLC\nCreated by: Tinghui Zhou (UC Berkeley/Google, now at Roblox), Richard Tucker (Google), John Flynn (Google), Graham Fyffe (Google), and Noah Snavely (Cornell University & Google DeepMind)\nLinkedIn profiles:\n\nNoah Snavely: https://www.linkedin.com/in/noah-snavely-a236723/\nTinghui Zhou: https://www.linkedin.com/in/tinghui-zhou-3a622177/\nContact: realestate10k@googlegroups.com\n\nEntities are from non-D5+M country."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No user files provided."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk in LC2.7 checks. Skipping inspection."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Created by: Tinghui Zhou, Richard Tucker, John Flynn, Graham Fyffe, and Noah Snavely at Google Research (2018) for the SIGGRAPH 2018 paper \"Stereo Magnification: Learning view synthesis using multiplane images\"\nMaintainer: Google Research team (contact via realestate10k@googlegroups.com)"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "CC BY 4.0 License\n\nPermitted: Share and redistribute in any medium or format; remix, transform, and build upon the material for any purpose, including commercially\nRequired: Provide appropriate credit to Google LLC; provide link to license; indicate if changes were made\nCannot: Apply legal terms or technological measures that restrict others from doing anything the license permits"
+        }
+      ]
+    },
+    {
+      "name": "Stereo4D",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "No proposal justification, or description of intended usage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "The dataset was created and is maintained by researchers Linyi Jin (affiliated with Google DeepMind & University of Michigan), Richard Tucker, Zhengqi Li (Google DeepMind), David Fouhey (New York University), Noah Snavely (Google DeepMind), and Aleksander Ho\u0142y\u0144ski (Google DeepMind & UC Berkeley). Entities are from Non-D5 countries."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No user files provided."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Stereo4D contains real-world 4D scene reconstructions from internet stereoscopic VR180 videos, including per-frame camera poses, per-pixel pseudo-metric depth, long-term 3D point tracks, and dynamic 3D motion trajectories extracted via depth estimation and tracking methods."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Stereo4D was first created by the research group from ( Google DeepMind, New York University, UC Berkeley & University of Michigan) for their CVPR 2025 paper; the dataset and associated code are maintained through the Stereo4D project\u2019s GitHub repository\n\nhttps://github.com/Stereo4d/stereo4d-code"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Released under the CC0-1.0 license, dedicating the data to the public domain.\n\nAnybody may use, modify, and redistribute the data for any purpose, including commercial use.\n\nNo copyright rights are asserted, so no obligations like attribution are legally required under CC0.\n\nPatent rights are not granted by CC0, as CC0 focuses on copyright waiver.\n\nUsers should still respect privacy or other legal restrictions inherent in the raw internet videos that the dataset is based on."
+        }
+      ]
+    },
+    {
+      "name": "KITTI2",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Virtual KITTI 2 contains 21,260 stereo pairs (5 scene clones with 10 weather/camera variants) providing RGB images, depth maps, class/instance segmentation, optical flow, scene flow, camera parameters, 2D/3D bounding boxes, and object tracking annotations.\n\nVKITTI2 is listed in the proposal's dataset section and supports objectives for dynamic scene understanding, 4D reconstruction training with temporal consistency, optical/scene flow estimation for motion tracking in dynamic outdoor scenes.\n\nAligns with the approved research topic of Datascience and Engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7.\n"
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Owned by: Naver Corporation\nMaintained by: Yohann Cabon (NAVER LABS Europe, Research Engineer), Naila Murray (formerly NAVER LABS Europe Director of Science, now Meta AI), and Martin Humenberger (NAVER LABS Europe, Director of Science)\nLinkedIn profiles:\n\nYohann Cabon: https://europe.naverlabs.com/people_user_naverlabs/yohann-cabon/\nNaila Murray: Currently at Meta AI (left NAVER LABS Europe in 2020)\nMartin Humenberger: https://www.linkedin.com/in/martin-humenberger-38954820/ (Director Naver Labs)"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No user files provided."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "no risk in LC2.7 and 2.5 checks. skipping inspection."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Originally created by: Virtual KITTI 1.3.1 was created by Adrien Gaidon, Qiao Wang, Yohann Cabon, and Eleonora Vig at Xerox Research Centre Europe (2016).\nVirtual KITTI 2 creators: Yohann Cabon, Naila Murray, and Martin Humenberger at NAVER LABS Europe (2020, adaptation of v1.3.1).\nCurrent maintainer: Yohann Cabon (contact: Yohann.Cabon@naverlabs.com) at NAVER LABS Europe."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "CC BY-NC-SA 3.0 License\n\nPermitted: Share and redistribute for non-commercial purposes; remix, transform, and build upon the material.\nRequired: Provide appropriate attribution citing both the Virtual KITTI 2 paper and the original Virtual KITTI paper; cite Naver as the originator.\n\nRedistribution or adaptation for commercial purposes is prohibited.\n\nAny modifications or derived works must be licensed similarly (NonCommercial-ShareAlike)."
+        }
+      ]
+    },
+    {
+      "name": "PointOdyssey",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "The PointOdyssey dataset contains multi-modal synthetic data including RGB images, depth maps, surface normals, instance segmentation, camera intrinsics/extrinsics, ground truth 2D trajectories with visibility labels, and 3D point trajectories across 159 videos (~200,000 frames, ~20,000 trajectories per video).\n\nPointOdyssey is listed in the proposal's dataset section (page 22) and supports the project's objectives for 4D reconstruction training, long-term point tracking evaluation, and temporal consistency in dynamic scene understanding.\n\nAligns with approved research topic Datascience & Engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Owned and maintained by: Yang Zheng (Stanford University, PhD candidate) and Adam W. Harley (Meta Reality Labs Research, formerly Stanford postdoc)\nLinkedIn profiles:\n\nYang Zheng: https://www.linkedin.com/in/yang-zheng-977b71221/  -- PhD student at Standford University\nAdam W. Harley: https://www.linkedin.com/in/adam-harley-860b26287/ -- Research Scientist at Meta\n\nIndividuals are affiliated with entities from Non-D5 country."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No user files provided."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk in LC 2.7 and 2.5, skipping inspection. "
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Created by: Yang Zheng, Adam W. Harley, Bokui Shen, Gordon Wetzstein, and Leonidas J. Guibas at Stanford University in 2023\n\nCurrent maintainer: Yang Zheng (Stanford) maintains the simulation code repository; Adam Harley (Meta) maintains the PIPs++ model repository"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "CC BY-NC-SA 4.0 License\n\nPermitted: Share and redistribute in any format; remix, transform, and build upon the material for non-commercial purposes\nRestricted: No commercial use; derivative works must use same license (ShareAlike); cannot apply additional legal/technological restrictions\n"
+        }
+      ]
+    },
+    {
+      "name": "DynamicReplica",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "The dataset was added in the additional information and was only listed in the original proposal without any associated information.\n\nThe Dynamic Replica dataset is a benchmark dataset for training and evaluating stereo depth estimation methods on dynamic scenes\nand focuses on temporal consistency in depth predictions from stereo videos.\n\nThe dataset will be used for training and evaluation for pretraining the foundation model. \n\nAligns with approved research topic of Datascience & Engineering. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Created and are maintained by Nikita Karaev (https://uk.linkedin.com/in/nikitakaraev), Ignacio Rocco (https://www.irocco.info/), Benjamin Graham (https://ai.meta.com/people/1287685102197850/benjamin-graham/), Natalia Neverova (https://www.linkedin.com/in/natalia-neverova-14066133), Andrea Vedaldi (https://uk.linkedin.com/in/andreavedaldi), and Christian Rupprecht (https://uk.linkedin.com/in/christian-rupprecht-a46192130?original_referer=https%3A%2F%2Fwww.google.com%2F) affiliated with Meta AI (Meta Platforms, Inc.) and the Visual Geometry Group, University of Oxford. Entities from Non-D5 countries."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No user files provided."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk in LC 2.7 checks. Skipping inspection."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "The Dynamic Replica dataset was first introduced alongside the **DynamicStereo model at CVPR 2023 by the above authors, and is hosted via the DynamicStereo project page (https://dynamic-stereo.github.io/) and associated GitHub repository (https://github.com/facebookresearch/dynamic_stereo), with ongoing maintenance tied to Meta AI research releases."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "The DynamicStereo codebase is primarily licensed under a non-commercial Creative Commons (CC-BY-NC) license for dataset usage, meaning it\u2019s intended for research, educational, or artistic purposes only.\n\nUse, modification, and publication are allowed for research or educational use.\n\nUsage must comply with the Dynamic Replica License Agreement terms, especially regarding non-commercial research; commercial use is restricted to research purposes under the agreement.\n\nPortions of the project code (e.g., third-party components like RAFT-Stereo) are under MIT or Apache 2.0 licenses, but the dataset access terms are separate.\n\nThe dataset download requires accepting a license agreement restricting use to permitted research contexts."
+        }
+      ]
+    },
+    {
+      "name": "Pre-Generated Data by Infinigen",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Pre-generated dataset as a example, ready to be downloaded from https://infinigen-data.cs.princeton.edu/ , the link is listed on the GitHub repository of the software: https://github.com/princeton-vl/infinigen/tree/main\n\nThe alignment with the research objectives in not clear. \n\nAligns with the approved research topic Datascience and Engineering.\n"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 3,
+          "notes": "There is no documentation to scan."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Maintained by Princeton Vision & Learning Lab - USA. \nThe entity is a Non-D5 country."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No user files provided."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Synthetic photorealistic 3D scenes of different landscapes and interior environments, it includes images heatmaps and depth data files."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "https://github.com/princeton-vl/infinigen 6.8K stars, 3K commits, last updated 2 weeks ago.\n\nThe project is maintained by the Princeton Vision & Learning Lab / Princeton University team (repo: princeton-vl/infinigen), with authors listed (e.g., Jia Deng); \n\nLinkedIn profiles are publicly available for Jia Deng and Alex Raistrick. \nhttps://www.linkedin.com/in/jia-deng-73bb4430 and https://www.linkedin.com/in/araistrick"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "The permissibility of use of the pre-generated dataset is embedded in the license of the software itself. \n\nThe core Infinigen system is released under the BSD-3-Clause License, permitting broad use, modification, and redistribution.\n\n"
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "name": "Trellis  (TRELLIS-image-large)",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "TRELLIS is a large 3D asset generation model built around a unified Structured LATent\n(SLAT) representation and Rectified Flow Transformers. It\nuses a two-stage pipeline: first generate the sparse SLAT\nstructure, then generate latent vectors for non-empty\ncells, enabling decoding into multiple 3D formats (radiance\nfields / 3D Gaussians / meshes\nTRELLIS is directly relevant as a strong\n3D generative prior / baseline to build upon, adapt, and\nextend toward your proposed 4D foundations (e.g., as an\ninitial generative component before/while developing\nyour own 4D model, and as a comparison point for\nstructured-latent approaches"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 2,
+          "notes": "https://github.com/microsoft/TRELLIS\nHugging Face: microsoft/TRELLIS-image-large -> 2,398,114  Downloads last month\n\nMicrosoft Research Asia (Spatial Intelligence Group) - owns and maintains the repository\n\nJianfeng Xiang - Lead author, PhD student at Tsinghua University, Research Intern at MSRA\n\nJiaolong Yang - Principal Research Manager, Microsoft Research Asia (jiaoyan@microsoft.com)\n\nXin Tong - Microsoft Research Asia\n\n\nAll authors of the paper for which the model is the artifact are affiliated with Microsoft, which is an entity from non-D5 country. "
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "MIT License\n\nPermissions:\n\nCommercial use permitted\n\nModification allowed\n\nDistribution permitted\n\nPrivate use allowed\n\nSublicensing permitted\n\nRestrictions:\n\nMust include original copyright notice and MIT license text\n\nNo warranty provided (software \"as-is\")\n\nAuthors not liable for damages"
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "TRELLIS-500K dataset - 500,000 3D assets curated from five sources:\n\nObjaverse(XL) - largest component\nABO (Amazon Berkeley Objects)\n3D-FUTURE (Alibaba furniture dataset)\nHSSD (Habitat Synthetic Scenes Dataset)\nToys4k\n\nPretraining data: a carefully collected dataset of ~500K\ndiverse 3D assets (paper states 500K objects; the repo\nalso describes the 500K scale).\nTokens: TRELLIS is primarily trained on 3D assets (and\nrendered views); it is not a text-token pretraining setup in\nthe usual LLM sense. The public materials emphasize\n#assets (500K) rather than a \u201ctoken count.\u201d"
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "No separate \u201cdownstream fine-tuning task\u201d is called out\nfor the released HF artifact; the released weights\ncorrespond to the TRELLIS generative model trained for its\nprimary objective (text/image-conditioned 3D generation)"
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "TRELLIS-image-large: 1.2 billion parameters\nMFU not provided.\nMissing information to be able to calculate FLOPS\n"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "skipping inspection because of low risk."
+        }
+      ],
+      "is_proprietary": false
+    },
+    {
+      "name": "Hunyuan3D 2.0",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Hunyuan3D 2.0 is a two-stage 3D asset generation system that converts images into high-resolution 3D meshes with textures via Hunyuan3D-DiT (shape generation) and Hunyuan3D-Paint (texture synthesis).\n\nThe model could serve as a baseline comparison for Objective 2 (Combining Generative Modeling and 4D Reconstruction) and Objective 3 (Coral Reef Application) for image-to-3D generation before implementing the custom 4DVecSet approach.\n\nAligns with the approved research topic Datascience and Engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 3,
+          "notes": "https://huggingface.co/tencent/Hunyuan3D-2\nDownload in Dec 2025: 64947  \n\nhttps://github.com/Tencent-Hunyuan/Hunyuan3D-2\nStars: 13000\nForks: 1300\nPRs: 14\nCommits: 184\nLast commit: 3 months ago\n\nThis model is an artifact of the paper: https://arxiv.org/html/2501.12202v3 \n\nOwned and maintained by Tencent Corporation through the Tencent Hunyuan3D Team (affiliations include Tencent, Microsoft Research, Tsinghua University, USTC, Microsoft AI).\n\nThe entity is from a D5 country. "
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License name: \u201cTencent Hunyuan 3D 2.0 Community License Agreement\u201d (release date stated as Jan 21, 2025).\n\nPermits commercial use, modification, distribution, and derivative works\n\nRequires preservation of copyright notices and attribution"
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 4,
+          "notes": "Self-collected large-scale 3D dataset including Objaverse, Objaverse-XL, and rendered multi-view images under white-light illumination; exact dataset size not specified in paper.\n\nObjaverse and Objaverse-XL consist of approximately 800K 3D assets. However, the third dataset, \"Self-collected large-scale 3D dataset\" has not been clearly indicated neither on the model card nor in the paper. The information provided for this is:\n- For Texture information\n- Rendered under white-light illumination\n- Reference images with random azimuth and elevation from -20 to 20 degrees\n\nThe sequence length are between 1024 to 3072 (latent token lenght) for multi-resolution training of the model. \nAssuming the all the sequences were of long lenght, i.e. 3072 tokens per 3D asset, and evaluating for the number of assets for two of the 3 datasets, i.e. 800000 3D assets, the total number of token will be:\n\n3072 x 800000 ~ 2.46x10^9 or 2.46B\n\nAdditional information provided by the PI suggests that the number of assets in the training dataset cumulatively exceed 1M objects. Since the upper bound isn't clear, the risk has been elevated. Moreover, the information about the custom dataset used in the pre-training is not sufficient to conclude the nature of the dataset. \n\n\n\n"
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "No fine-tuning on any downstream tasks"
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 3,
+          "notes": "Assumed Number of tokens: 2.46B\n\nNumber of parameters:\nHunyuan3D-DiT: 3.0B\nHunyuan3D-Paint: 1.3B \n\nEstimated FLOPS accumulate in Hunyuan3D-DiT: 6 x 3 x 10^9 x 2.46 x 10^9 = 4.428 x 10^19 \n\nEstimated FLOPS accumulate in Hunyuan3D-Paint: 6 x 1.1 x 10^9 x 2.46 x 10^9 = 1.6236 x 10^19 \n\nTotal FLOPS, excluding those used in training the tokens from the custom dataset: 6.0516 x 10^19\n\n\nThe as-is estimated baseline is orders of magnitude less than 10^27. More information about the custom dataset will bring the estimate closer to reality. \n"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": ""
+        }
+      ],
+      "is_proprietary": false
+    },
+    {
+      "name": "TRELLIS.2",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "TRELLIS.2-4B is a large 3D generative model (4 billion parameters) that performs high-fidelity image-to-3D generation, converting single images into fully textured 3D assets with PBR (Physical-Based Rendering) materials including geometry, albedo, roughness, metallic properties, and opacity.\n\nThe model aligns with the proposal's objectives for:\n\nGenerative Modeling for 4D Data: generates 3D assets with texture and material properties.\nCombining Generative Modeling and 3D Reconstruction: performs image to 3D reconstruction with generative completion. \nApplication to Coral Reef Conservation: the proposal explicitly mentions using Trellis as a baseline for 3D/4D reconstruction before implementing their custom 4DVecSet framework\n\nAligns with the approved research topic Datascience & Engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "https://huggingface.co/microsoft/TRELLIS.2-4B \nhttps://github.com/microsoft/TRELLIS.2\n\nOwner: Microsoft Corporation\nDevelopers: Jianfeng Xiang, Xiaoxue Chen, Sicheng Xu, Ruicheng Wang, Zelong Lv, Yu Deng, Hongyuan Zhu, Yue Dong, Hao Zhao, Nicholas Jing Yuan, Jiaolong Yang\nAffiliation: Microsoft \n\nEntity is from non-D5 country."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "MIT License \n\nPermits commercial use, modification, distribution, and private use\n\n"
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "\nFrom the paper https://arxiv.org/abs/2512.14692 , the model was trained on approximately 800,000 3D assets from the following sources:\n\n- Objaverse-XL - Large-scale 3D object dataset\n- ABO (Amazon Berkeley Objects) - 3D product models\n- HSSD - High-resolution scene dataset\n- TexVerse - Added to enrich PBR (Physically-Based Rendering) diversity and realism\n\nNumber of 3D assets: ~800,000\nTokens per asset (1024\u00b3 resolution): ~9,600 latent tokens \nTotal tokens D \u2248 800,000 \u00d7 9,600 = 7.68 B tokens"
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "The model is described as a \"pre-trained foundation model\" that has not been aligned with human preferences (no RLHF) or fine-tuned for specific aesthetic standards."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Number of trainable parameters: 4 x 10^9\n\nNumber of tokens: 7.68x10^9\n\nEstimated FLOPs= 6 x 4 x 10^9 x 7.68 x 10^9 = 1.86 x 10^20\n"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk in LC2.7 or 2.5. Skipping inspection. "
+        }
+      ],
+      "is_proprietary": false
+    },
+    {
+      "name": "SPAR3D (Stable Point-Aware 3D)",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "SPAR3D generates a textured UV-unwrapped 3D mesh asset from a single image in under one second using a two-stage architecture combining point cloud diffusion with mesh generation.\n\nThe model supports objective (2) - 4D reconstruction combining generative priors with sparse views, as it provides single-image 3D reconstruction capabilities that can serve as geometric priors for multi-view 4D reconstruction pipelines.\n\n\nAligns with the approved research topic, Datascience and Engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "https://github.com/Stability- AI/stable-point-aware-3d\n\nhttps://huggingface.co/stabilityai/stable-point-aware-3d -> 813 Downloads last month\nDeveloped by: Stability AI - https://stability.ai/ - UK-based; Non-D5 Country\n\nOwned and maintained by Stability AI in collaboration with University of Illinois Urbana-Champaign; Authors: Zixuan Huang (Research Scientist, Meta Reality Labs, formerly PhD student at UIUC, LinkedIn: linkedin.com/in/zxhuang97/), Mark Boss (Co-Head of 3D & Image at Stability AI, LinkedIn: linkedin.com/in/markbboss/), Aaryaman Vasishta (3D ML Research Engineer at Stability AI, formerly at AMD, LinkedIn: linkedin.com/in/adyaman/), James M. Rehg (Founder Professor at University of Illinois Urbana-Champaign, LinkedIn: linkedin.com/in/jimrehg/), Varun Jampani (formerly VP Research at Stability AI, now Chief AI Officer at Arcade AI, LinkedIn: linkedin.com/in/varun-jampani-002095283/).\n\nIndividuals affiliated to entities from non-D5 countries."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Stability AI Community License \n\nPermissions:\n\nUse, reproduce, distribute, and create derivative works for research and non-commercial purposes free of charge\nUse for commercial purposes if annual revenue is below $1,000,000 USD\nOwn derivative works created from the Stability AI materials\nOwn outputs generated from the models\nMake modifications to the Stability AI materials\n\nRestrictions:\n\nMust register with Stability AI for commercial use at stability.ai/community-license\nLicense automatically terminates if annual revenue exceeds $1,000,000 USD (must request separate enterprise license)\nMust provide copy of agreement when distributing to third parties\nMust retain attribution notice \"This Stability AI Model is licensed under the Stability AI Community License, Copyright \u00a9 Stability AI Ltd. All Rights Reserved\"\nMust prominently display \"Powered by Stability AI\" on related websites, user interfaces, documentation\nCannot use Stability AI trademarks except as required for attribution\nMust comply with applicable laws, trade control regulations, and Stability AI's Acceptable Use Policy\nCannot use materials or outputs to create or improve other foundational generative AI models (excluding licensed models or derivative works)\nLicense terminates if litigation is filed against Stability AI regarding infringement claims\nMust delete and cease use of all materials upon termination"
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "Trained on renders from Objaverse dataset containing 800K+ 3D objects with curated subset filtered based on license review; training utilized over 100 million multi-view rendered images with enhanced rendering methods. The exact number of samples is not publicly disclosed in the model card, repository, or associated documentation. Based on Objaverse's ~800k objects, typical curation to several hundred thousand high-quality items, and common multi-view rendering practices (20\u201350 views per object) in similar Stability AI 3D models, the training data likely consists of an estimated 10\u201340 million image-3D pairs."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "No downstream \u201cfine-tuned tasks\u201d are explicitly listed in the model card beyond its primary task of single-image 3D reconstruction (mesh + texture/material prediction)."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Number of trainable parameters: 2B\nEstimated number of training samples : 40M\n\nEstimated FLOPS: 6 x 2 x 10^9 x 40 x 10^6 = 4.8x10^17\nThis is orders of magnitude less than the threshold 10^27.\n\n\n"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk in LC2.7 and 2.5 checks. Skipping inspection. "
+        }
+      ],
+      "is_proprietary": false
+    }
+  ],
+  "observations": "TRELLIS-500K was created by a PhD student from Tsinghua University who also works at Microsoft Research Aisa since 2021. \nSame is the case with the model TRELLIS-image-large. The developer and maintainer has the same affiliation as above. \nThe licensing scheme for Objaverse-xl is slightly complex, and the PI must be notified to check if their ultimate release of the model doesn't violate any condition of individual objects from different sources containing their own license. \n\n",
+  "recommendation": "Sample inspection of Hunyuan3D model is in progress.",
+  "_submission_history": [
+    {
+      "timestamp": "2026-01-25T09:45:37.358336",
+      "action": "initial_submission"
+    }
+  ]
+}
