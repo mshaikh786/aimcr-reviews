@@ -5,7 +5,7 @@
     "proposal_date": "2025-10-23",
     "reviewer_name": "Mohsin Ahmed Shaikh",
     "reviewer_id": "174988",
-    "aimcr_date": "2026-01-13",
+    "aimcr_date": "2026-01-26",
     "project_id": "65627"
   },
   "third_party_software": [
@@ -1217,5 +1217,11 @@
     }
   ],
   "observations": "Software: CryoFastAR is from a D5 country and has a vague license; Boxx is from a D5 country.\nDataset: CryoCRAB is from  a D5 country\n\nDataset: The cryoDRGN synthetic example dataset originates from the Princeton A.Z. Lab but has been processed by Cellverse's CryoFastAR and is distributed via their GitHub repository. The dataset carries a medium to high risk score and its example code is only partially functional, with the synthetic data example failing during sample inspection. More information is available at Cellverse/CryoFastAR - GitHub.",
-  "recommendation": "The suggestion is that if the PI foregoes the potential high risk datasets, the overall risk score of the project will improve. The initial recommendation is to refer to the RCAC Chair for the scientific assessment of potential risks with a suggestion to the PI that if the dataset is avoidable, it can mitigate the potential high risk and result in an overall low risk score for the project. "
+  "recommendation": "The suggestion is that if the PI foregoes the potential high risk datasets, the overall risk score of the project will improve. The initial recommendation is to refer to the RCAC Chair for the scientific assessment of potential risks with a suggestion to the PI that if the dataset is avoidable, it can mitigate the potential high risk and result in an overall low risk score for the project. ",
+  "_submission_history": [
+    {
+      "timestamp": "2026-01-26T15:21:38.705572",
+      "action": "resubmission"
+    }
+  ]
 }
