@@ -1185,7 +1185,7 @@
         {
           "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "https://github.com/facebookresearch/vggt\nStars\nForks\nPRs\nCommits\nLast commit\n\nPrimary owners: Meta AI (Facebook Research) and Visual Geometry Group, University of Oxford\nMain authors: Jianyuan Wang (supported by Facebook Research), Minghao Chen, Nikita Karaev, Andrea Vedaldi, Christian Rupprecht, David Novotny\nAffiliations: Meta Platforms and University of Oxford VGG\n\nEntity is from Non-D5 country."
+          "notes": "https://github.com/facebookresearch/vggt\nStars: 11600\nForks: 1200\nPRs: 18 \nCommits: 91 \nLast commit: July 29, 2025\n\nPrimary owners: Meta AI (Facebook Research) and Visual Geometry Group, University of Oxford\nMain authors: Jianyuan Wang (supported by Facebook Research), Minghao Chen, Nikita Karaev, Andrea Vedaldi, Christian Rupprecht, David Novotny\nAffiliations: Meta Platforms and University of Oxford VGG\n\nEntity is from Non-D5 country."
         },
         {
           "name": "License / Permissions",
@@ -1205,7 +1205,7 @@
         {
           "name": "FLOPS Calculation",
           "score": 1,
-          "notes": "There is no single official FLOPs number published for VGGT.\n\nEstimate for training:\n\nViews\tApprox FLOPs\n\n1 view\t~120 GFLOPs\n2 views\t~360\u2013400GFLOPs\n4 views\t~720\u2013800GFLOPs\n\n\nProvided MFU: 15.6%\nFLOPs = 3.09 x 10e6 "
+          "notes": "The approximate number of parameters in VGGT is : 1.2B\nThe approximate number of visual tokens including the number of Epochs is: 54-125B\nTaking 125B as the upper bound \n\nEstimate pretrianing FLOPS: 6 x 1.2 x 10^9 x 125 x 10^9 = 9 x 10^20\n\nThis is lower than the 10^27 threshold."
         },
         {
           "name": "Sample Inspection",
@@ -1217,11 +1217,11 @@
     }
   ],
   "observations": "Software: CryoFastAR is from a D5 country and has a vague license; Boxx is from a D5 country.\nDataset: CryoCRAB is from  a D5 country\n\nDataset: The cryoDRGN synthetic example dataset originates from the Princeton A.Z. Lab but has been processed by Cellverse's CryoFastAR and is distributed via their GitHub repository. The dataset carries a medium to high risk score and its example code is only partially functional, with the synthetic data example failing during sample inspection. More information is available at Cellverse/CryoFastAR - GitHub.",
-  "recommendation": "The suggestion is that if the PI foregoes the potential high risk datasets, the overall risk score of the project will improve. The initial recommendation is to refer to the RCAC Chair for the scientific assessment of potential risks with a suggestion to the PI that if the dataset is avoidable, it can mitigate the potential high risk and result in an overall low risk score for the project. ",
+  "recommendation": "The suggestion is that if the PI foregoes the potential high risk datasets, the overall risk score of the project will improve. The initial recommendation is to refer to the RCAC Chair for the scientific assessment of potential risks with a suggestion to the PI that if the dataset is avoidable, it can mitigate the potential high risk and result in an overall low risk score for the project. \n\nPositive check passed.\n\nNegative check failed (specifically for the dataset ",
   "_submission_history": [
     {
-      "timestamp": "2026-01-26T15:28:03.716523",
-      "action": "initial_submission"
+      "timestamp": "2026-01-26T15:52:40.707472",
+      "action": "resubmission"
     }
   ]
 }
