@@ -5,7 +5,7 @@
     "proposal_date": "2025-12-04",
     "reviewer_name": "Mohsin Ahmed Shaikh",
     "reviewer_id": "174988",
-    "aimcr_date": "2026-01-11",
+    "aimcr_date": "2026-01-27",
     "project_id": "65508"
   },
   "third_party_software": [
@@ -347,5 +347,11 @@
     }
   ],
   "observations": "The custom MLP models have been indicated however, the model files have not been shared. The number of trainable parameters in the proposed models is typically 10-100 million. The maximum FLOPs expected from their proposal are of the order of 10^18 using 6xNxD after training. Based on the above stated checks, the inspection of the model can be deferred for execution at the time of moving the models to Shaheen III GPUP. \n\nThe specific ranges (lon, lat) for downloading the dataset from ERA5 has not clearly been stated. A request for additional information has been sent but is still pending. However, given the source has no risk attached to it under LC 2.5, 2.6 and 2.7, AIMCR can move forward with a condition that the exact ranges for the datasets will be confirmed with the PI if RCAC approves the project. \n\n\n",
-  "recommendation": "The overall risk profile of the project is low. Though the model source is not available, the information about the model has been captured and checked, and there is no risk. These attributes can be verified at the time the movement of the model to Shaheen III GPUP and in accordance with the collected information in the AIMCR. \n\nAt the time of the data movement of the dataset, the longitudes and latitudes will be analysed to ensure they do not contain the coordinates of any sensitive locations. \n\nKeeping in view the overall risk of the artifacts listed in this project being low, it is safe to proceed with this proposal from AIMCR perspective. \n  "
+  "recommendation": "The overall risk profile of the project is low. Though the model source is not available, the information about the model has been captured and checked, and there is no risk. These attributes can be verified at the time the movement of the model to Shaheen III GPUP and in accordance with the collected information in the AIMCR. \n\nAt the time of the data movement of the dataset, the longitudes and latitudes will be analysed to ensure they do not contain the coordinates of any sensitive locations. \n\nKeeping in view the overall risk of the artifacts listed in this project being low, it is safe to proceed with this proposal from AIMCR perspective. \n  ",
+  "_submission_history": [
+    {
+      "timestamp": "2026-01-27T14:07:44.848444",
+      "action": "resubmission"
+    }
+  ]
 }
