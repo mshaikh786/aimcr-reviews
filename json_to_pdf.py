@@ -109,6 +109,13 @@ def create_styles():
     return styles
 
 
+def format_text_with_breaks(text: str) -> str:
+    """Convert newline characters to HTML breaks for proper PDF rendering."""
+    if not text:
+        return ""
+    return text.strip().replace('\n', '<br/>')
+
+
 def calculate_total_risk(checks) -> int:
     """Calculate total risk score from checks (handles both dict and list format)."""
     total = 0
@@ -236,12 +243,39 @@ def calculate_section_totals(data: dict) -> dict:
             total_score = calculate_section_total_score(items)
             highest_score = get_highest_score_in_section(items)
             pass_fail = "FAIL" if total_score >= 21 else "PASS"
+            
+            # Get artifacts that contributed to the highest score
+            high_score_artifacts = []
+            for item in items:
+                checks = item.get("checks", [])
+                item_has_high_score = False
+                
+                # Handle checks as dictionary (Streamlit format)
+                if isinstance(checks, dict):
+                    for check_data in checks.values():
+                        score = check_data.get("score")
+                        if isinstance(score, (int, float)) and int(score) == highest_score:
+                            item_has_high_score = True
+                            break
+                # Handle checks as list (original format)
+                elif isinstance(checks, list):
+                    for check in checks:
+                        score = check.get("score")
+                        if isinstance(score, (int, float)) and int(score) == highest_score:
+                            item_has_high_score = True
+                            break
+                
+                if item_has_high_score:
+                    artifact_name = item.get("name", "Unnamed").strip() or "Unnamed"
+                    high_score_artifacts.append(artifact_name)
+            
             section_info[display_name] = {
                 'total': total_score,
                 'highest': highest_score,
                 'category': get_risk_category(highest_score),
                 'count': len(items),
-                'pass_fail': pass_fail
+                'pass_fail': pass_fail,
+                'artifacts': high_score_artifacts
             }
         else:
             section_info[display_name] = {
@@ -249,7 +283,8 @@ def calculate_section_totals(data: dict) -> dict:
                 'highest': 0,
                 'category': 'No Data',
                 'count': 0,
-                'pass_fail': 'N/A'
+                'pass_fail': 'N/A',
+                'artifacts': []
             }
     
     return section_info
@@ -259,8 +294,8 @@ def create_risk_summary_table(section_info: dict, styles) -> list:
     """Create the risk score summary table showing section scores and categories."""
     elements = []
     
-    # Section scores table
-    table_data = [["Section", "Section Score", "Risk Category", "Status", "Items"]]
+    # Section scores table with artifacts column
+    table_data = [["Section", "Section Score", "Risk Category", "Status", "Items", "Artifacts"]]
     
     for section_name, info in section_info.items():
         if info['count'] > 0:
@@ -273,12 +308,24 @@ def create_risk_summary_table(section_info: dict, styles) -> list:
             pass_fail_color = '#10b981' if pass_fail == 'PASS' else '#dc2626'  # green or red
             pass_fail_text = f"<font color='{pass_fail_color}'><b>{pass_fail}</b></font>"
             
+            # Format artifacts list
+            artifacts = info.get('artifacts', [])
+            if artifacts:
+                # Use bullet points for multiple artifacts
+                if len(artifacts) == 1:
+                    artifacts_text = artifacts[0]
+                else:
+                    artifacts_text = "<br/>".join([f"• {name}" for name in artifacts])
+            else:
+                artifacts_text = "—"
+            
             table_data.append([
                 Paragraph(section_name, styles['TableText']),
                 Paragraph(score_text, styles['TableText']),
                 Paragraph(category_text, styles['TableText']),
                 Paragraph(pass_fail_text, styles['TableText']),
-                Paragraph(str(info['count']), styles['TableText'])
+                Paragraph(str(info['count']), styles['TableText']),
+                Paragraph(artifacts_text, styles['TableText'])
             ])
         else:
             table_data.append([
@@ -286,10 +333,11 @@ def create_risk_summary_table(section_info: dict, styles) -> list:
                 Paragraph("—", styles['TableText']),
                 Paragraph("<i>No Data</i>", styles['TableText']),
                 Paragraph("—", styles['TableText']),
-                Paragraph("0", styles['TableText'])
+                Paragraph("0", styles['TableText']),
+                Paragraph("—", styles['TableText'])
             ])
     
-    table = Table(table_data, colWidths=[2.2*inch, 1.0*inch, 1.5*inch, 0.8*inch, 0.8*inch])
+    table = Table(table_data, colWidths=[1.5*inch, 0.9*inch, 1.2*inch, 0.7*inch, 0.5*inch, 2.2*inch])
     table.setStyle(TableStyle([
         ('BACKGROUND', (0, 0), (-1, 0), HexColor('#2c5282')),
         ('TEXTCOLOR', (0, 0), (-1, 0), colors.white),
@@ -305,7 +353,7 @@ def create_risk_summary_table(section_info: dict, styles) -> list:
         ('RIGHTPADDING', (0, 0), (-1, -1), 8),
         ('TOPPADDING', (0, 0), (-1, -1), 8),
         ('BOTTOMPADDING', (0, 0), (-1, -1), 8),
-        ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
+        ('VALIGN', (0, 0), (-1, -1), 'TOP'),
     ]))
     elements.append(table)
     
@@ -389,7 +437,7 @@ def create_check_elements(checks, styles) -> list:
         name = check.get("name", "—")
         score = check.get("score", "—")
         notes_raw = (check.get("notes") or "").strip()
-        notes_html = notes_raw.replace('\n', '<br/>')
+        notes_html = format_text_with_breaks(notes_raw)
         score_display = f"<b>{score}</b>" if score != "—" else "—"
         
         if len(notes_raw) > MAX_NOTES_IN_TABLE:
@@ -555,11 +603,13 @@ def json_to_pdf(json_filepath: str, output_filepath: str = None) -> str:
     story.append(Spacer(1, 30))
 
     story.append(Paragraph("General Observations", styles['SectionHeader']))
-    story.append(Paragraph(data.get("observations", "").strip() or "None recorded.", styles['TableText']))
+    observations_text = format_text_with_breaks(data.get("observations", "")) or "None recorded."
+    story.append(Paragraph(observations_text, styles['TableText']))
     story.append(Spacer(1, 20))
 
     story.append(Paragraph("Final Recommendation", styles['SectionHeader']))
-    story.append(Paragraph(data.get("recommendation", "").strip() or "Not provided.", styles['TableText']))
+    recommendation_text = format_text_with_breaks(data.get("recommendation", "")) or "Not provided."
+    story.append(Paragraph(recommendation_text, styles['TableText']))
 
     story.append(Spacer(1, 40))
     story.append(HRFlowable(width="100%", thickness=1, color=HexColor('#cbd5e0')))
