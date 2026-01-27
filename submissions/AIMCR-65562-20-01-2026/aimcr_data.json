@@ -1060,8 +1060,8 @@
         },
         {
           "name": "Training Data Documentation",
-          "score": 1,
-          "notes": "Pre-training Datasets:\n    - OC20 and OC22\n    - ANI-1x\n    - Transition-1x\nFine-tuning Datasets:\n- QM9\n- rMD17\n-  MatBench\n- QMOF\n- SPICE\n- MD22\n"
+          "score": 2,
+          "notes": "Pre-training Datasets:\n    - OC20 and OC22\n    - ANI-1x\n    - Transition-1x\nFine-tuning Datasets:\n- QM9\n- rMD17\n-  MatBench\n- QMOF\n- SPICE\n- MD22\n\nSince Open Catalyst was used to pretrain GemNet, a cautionary risk score shall apply."
         },
         {
           "name": "Customisation / Fine-tuning",
@@ -1128,11 +1128,11 @@
       "is_proprietary": false
     }
   ],
-  "observations": "In the Open Catalyst dataset, a potential risk of dual use has been identified. A suggestion is to refer to the RCAC Chair for the scientific assessment of potential risk. \nIn the Open Materials dataset, a potential risk of dual use has been identified. A suggestion is to refer to the RCAC Chair for the scientific assessment of potential risk. \nIn the Open Molecules 2025  dataset, the artifact is new and less used.\n\nIn GemNet model, a potential risk of dual use has been identified. A suggestion is to refer to the RCAC Chair for the scientific assessment of potential risk. \n",
+  "observations": "In the Open Catalyst dataset, a potential risk of dual use has been identified. A suggestion is to refer to the RCAC Chair for the scientific assessment of potential risk. \nIn the Open Materials dataset, a potential risk of dual use has been identified. A suggestion is to refer to the RCAC Chair for the scientific assessment of potential risk. \nIn the Open Molecules 2025  dataset, the artifact is new and less used.\n\nIn GemNet model, a potential risk of dual use has been identified because Open Catalyst was used to pre-train this model. A suggestion is to refer to the RCAC Chair for the scientific assessment of potential risk. \n",
   "recommendation": "Positive check passed. \n\nNegative check passed with potential risk identified. \n\n10^27 check passed. \n\nThe initial recommendation is to refer to RCAC for the scientific assessment of potential risks found in said datasets and model. Conditional on clearance from the RCAC, the project is otherwise recommended for the grand challenge.  ",
   "_submission_history": [
     {
-      "timestamp": "2026-01-22T15:03:31.936123",
+      "timestamp": "2026-01-27T17:10:11.020165",
       "action": "resubmission"
     }
   ]
