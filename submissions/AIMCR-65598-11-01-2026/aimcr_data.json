@@ -5,7 +5,7 @@
     "proposal_date": "2025-10-23",
     "reviewer_name": "Mohsin Ahmed Shaikh",
     "reviewer_id": "174988",
-    "aimcr_date": "2026-01-22",
+    "aimcr_date": "2026-01-27",
     "project_id": "65598"
   },
   "third_party_software": [
@@ -261,7 +261,7 @@
   "recommendation": "Positive check passed.\n\nNegative check passed.\n\n10^27 check passed.\n\nThe artifacts have no risk. This project is safe to proceed from AIMCR perspective. ",
   "_submission_history": [
     {
-      "timestamp": "2026-01-27T10:34:36.425387",
+      "timestamp": "2026-01-27T10:37:25.212640",
       "action": "resubmission"
     }
   ]
