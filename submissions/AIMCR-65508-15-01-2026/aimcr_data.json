@@ -268,10 +268,10 @@
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "No mention of sensitive terms in the documentation."
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
         },
         {
-          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5\nCopernicus (European Union)\n Non-D5"
         },
@@ -283,12 +283,12 @@
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "Data sampling viewer available on https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=documentation\n    Launch example in JupyterHub available on https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=documentation (Log-in required)\n\nlow risk - inspection skipped\n"
+          "notes": "Data sampling viewer available on https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=documentation\n    Launch example in JupyterHub available on https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=documentation (Log-in required)\n\nno risk in LC2.7 - inspection skipped\n"
         },
         {
           "name": "Provenance",
           "score": 1,
-          "notes": "\n    Owner / Curator: ECMWF|50\n    Primary Distribution Platform: Copernicus Climate Data Store (CDS)\n    Repository: N/A\n    Access Method: download via Copernicus Climate Data Store (CDS)\n    Provenance: The dataset is generated using ECMWF\u2019s Integrated Forecasting System (IFS) and assimilated observational data.\n    Maintenance Status: Publication date: 2018-06-14 - Update date 2026-01-04\n"
+          "notes": "Owner / Curator: ECMWF|50\nPrimary Distribution Platform: Copernicus Climate Data Store (CDS)\nRepository: N/A\nAccess Method: download via Copernicus Climate Data Store (CDS)\nProvenance: The dataset is generated using ECMWF\u2019s Integrated Forecasting System (IFS) and assimilated observational data.\nMaintenance Status: Publication date: 2018-06-14 - Update date 2026-01-04\n\n"
         },
         {
           "name": "License / Permissions",
@@ -298,13 +298,60 @@
       ]
     }
   ],
-  "models": [],
-  "observations": "The custom MLP models have been indicated however, the model files have not been shared. The number of trainable parameters in the proposed models is typically 10-100 million. The maximum FLOPs expected from their proposal are of the order of 10^18 using 6xNxD after training. \n\n",
-  "recommendation": "Recommended for grand challenge. ",
+  "models": [
+    {
+      "name": "In-house Multi-Layer Perceptron",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "The model trains coordinate-based multilayer perceptrons (MLPs) to represent atmospheric variables as continuous functions of spatial coordinates, compressing climate data by learning to predict values at any (longitude, latitude, pressure level) point.\n\nTrain neural networks for error-bounded lossy compression of six atmospheric variables (Geopotential, Temperature, U/V wind components, Vertical Velocity, Specific Humidity)\nScale NNCompression approach from ~16 GB to ~200 GB datasets per variable\nIntegrate explicit error-bounding module for guaranteed accuracy\nDevelop scalable training pipeline for high-resolution atmospheric data compression\n\nAligns with approved research topics  Computational science and visualization, large-scale data analysis and Data science & engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 2,
+          "notes": "In-house code but source not provided. Check is not possible. \n\nHowever, risk reduced to low because the developers are KAUST faculty's students and staff. The "
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "In-house code but source not provided. License requirement is relaxed in this case because the ownership is there own. \n"
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "Pre-training of models is not in the scope as the model will be trained on Shaheen III GPUP from scratch. \nThe forecast of trainning data requested is as follows:\n\nDataset: ERA5 reanalysis (European Centre for Medium-Range Weather Forecasts)\n\nTotal size: 15 TB raw data\n\nTraining scale: ~200 GB per variable (6 variables total)\n\nGrid dimensions: 1020 \u00d7 37 \u00d7 721 \u00d7 1440 = 39,183,177,600 spatial gridpoints (39B)\n\nSample structure: Mini-batches of K=43,200 samples; 907,018 steps/epoch\n"
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "No fine tuning mentioned in the proposal."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Two models have been mentioned:\n\n512-width MLP and 2048 width MLP. The indicated number of trainable parameters from the proposal are 10-100 million. \n\nTaking 100x 10^6 as the model parameter estimate, and 39x10^9 grid points as number of tokens, \n\nEstimated FLOPs after training on Shaheen III GPUP = 6 x 100 x 10^6 x 39  x 10^9 = 2.34 x 10^19\n\nThis is orders of magnitude less than the threshold 10^27. "
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "low risk in LC 2.7, skipping inspection. "
+        }
+      ],
+      "is_proprietary": false
+    }
+  ],
+  "observations": "The custom MLP models have been indicated however, the model files have not been shared. The number of trainable parameters in the proposed models is typically 10-100 million. The maximum FLOPs expected from their proposal are of the order of 10^18 using 6xNxD after training. Based on the above stated checks, the inspection of the model can be deferred for execution at the time of moving the models to Shaheen III GPUP. \n\nThe specific ranges (lon, lat) for downloading the dataset from ERA5 has not clearly been stated. A request for additional information has been sent but is still pending. However, given the source has no risk attached to it under LC 2.5, 2.6 and 2.7, AIMCR can move forward with a condition that the exact ranges for the datasets will be confirmed with the PI if RCAC approves the project. \n\n\n",
+  "recommendation": "The overall risk profile of the project is low. Though the model source is not available, the information about the model has been captured and checked, and there is no risk. These attributes can be verified at the time the movement of the model to Shaheen III GPUP and in accordance with the collected information in the AIMCR. \n\n",
   "_submission_history": [
     {
-      "timestamp": "2026-01-15T13:18:23.658935",
-      "action": "initial_submission"
+      "timestamp": "2026-01-27T13:53:09.288605",
+      "action": "resubmission"
     }
   ]
 }
