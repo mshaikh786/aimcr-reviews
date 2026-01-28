@@ -5,7 +5,7 @@
     "proposal_date": "2025-12-09",
     "reviewer_name": "Mohsin Ahmed Shaikh",
     "reviewer_id": "174988",
-    "aimcr_date": "2026-01-26",
+    "aimcr_date": "2026-01-28",
     "project_id": "65627"
   },
   "third_party_software": [
@@ -1180,7 +1180,7 @@
   "recommendation": "For CryoFastAR software is developed and maintained by an entity from D5+M country. Though the risk is set to medium, the fact that LC2.6 is not a concern due to the use of the software as only third party product and no upstream or downstream collaboration with the entity itself, this artifact is safe to proceed with on Shaheen III GPUP. \n\nPositive check passed.\n\nNegative check passed.\n\n10^27 check passed.\n\nThe storage request is high (800TB). Monitoring is recommended to check how many tokens or samples or views are created to keep the 10^27 FLOPS threshold in check.\n",
   "_submission_history": [
     {
-      "timestamp": "2026-01-28T13:12:30.963378",
+      "timestamp": "2026-01-28T13:13:22.936380",
       "action": "resubmission"
     }
   ]
