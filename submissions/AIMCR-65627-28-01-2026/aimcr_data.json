@@ -1177,10 +1177,10 @@
     }
   ],
   "observations": "Software: CryoFastAR is from a D5 country and has a vague license; Boxx is from a D5 country. The risk is set to low because no collaboration or data sharing is stated in the proposal, nor does the PI plan to run any work on behalf of the maintainers listed above. This is in accordance with LC 2.6.\n\nDataset: CryoCRAB is from a D5 country, and the dataset is less popular, but bearing in mind that this is a niche and not a broad spectrum usecase. The risk is set to low because no collaboration or data sharing is stated in the proposal, nor does the PI plan to run any work on behalf of the maintainers listed above. This is in accordance with LC 2.6.\n",
-  "recommendation": "For CryoFastAR software is developed and maintained by an entity from D5+M country. The the risk is set to low because it does not violate LC2.6. The software will only be used by the account holders of Shaheen III GPUP and  there is no mention of sharing and collaboration with the developers and maintainers of the software.\n\nPositive check passed.\n\nNegative check passed.\n\n10^27 check passed.\n\nThe artifacts have an acceptable risk. This project is safe to proceed from AIMCR perspective.",
+  "recommendation": "For CryoFastAR software is developed and maintained by an entity from D5+M country. The risk is set to low because it does not violate LC2.6. The software will only be used by the account holders of Shaheen III GPUP and there is no sharing or collaboration with the developers and maintainers of the software.\n\nPositive check passed.\n\nNegative check passed.\n\n10^27 check passed.\n\nThe artifacts have an acceptable risk. This project is safe to proceed from AIMCR perspective.",
   "_submission_history": [
     {
-      "timestamp": "2026-01-28T16:19:43.468275",
+      "timestamp": "2026-01-28T16:22:41.175770",
       "action": "resubmission"
     }
   ]
