@@ -653,14 +653,14 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
-          "score": 3,
-          "notes": "Owner:  cellverse tech (https://www.cellverse.tech)\n\nFrom a D5 country (China)."
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 2,
+          "notes": "Owner:  cellverse tech (https://www.cellverse.tech)\n\nFrom a D5 country (China).\n\nSetting the risk to low because there is no collaboration sharing of outputs mentioned in the proposal. The software will only be used by the account holders of Shaheen III GPUP and no dataset is coming from Cellverse tech."
         },
         {
           "name": "Source / Provenance",
-          "score": 3,
-          "notes": "Source Channel:\n\nGitHub: https://github.com/Cellverse/CryoFastAR\n\nGitHub Repository Metadata:\n\nOwner / Organization: Cellverse\n\nRepository: CryoFastAR\n\nStars: ~13 (research/software repo)\n\nForks: ~0\n\nOpen Issues: 0+ (few, if any)\n\nLast Commit Date: Updated in Oct-2025"
+          "score": 1,
+          "notes": "Source Channel:\n\nGitHub: https://github.com/Cellverse/CryoFastAR\n\nGitHub Repository Metadata:\n\nOwner / Organization: Cellverse\n\nRepository: CryoFastAR\n\nStars: ~13 (research/software repo)\n\nForks: ~0\n\nOpen Issues: 0+ (few, if any)\n\nLast Commit Date: Updated in Oct-2025\n\nSetting to no risk. Although the artifact is not popular, its use is expected to be niche because of the domain it is associated with, i.e. Cryo Electro Microscope, and associated data.\n"
         },
         {
           "name": "License / Permissions",
@@ -1176,11 +1176,11 @@
       "is_proprietary": false
     }
   ],
-  "observations": "Software: CryoFastAR is from a D5 country and has a vague license; Boxx is from a D5 country. The risk is set to medium because no collaboration or data sharing is stated in the proposal, nor does the PI plan to run any work on behalf of the maintainers listed above. This is in accordance with LC 2.6.\n\nDataset: CryoCRAB is from a D5 country, and the dataset is less popular, but bearing in mind that this is a niche and not a broad spectrum usecase. The risk is set to low because no collaboration or data sharing is stated in the proposal, nor does the PI plan to run any work on behalf of the maintainers listed above. This is in accordance with LC 2.6.\n",
-  "recommendation": "For CryoFastAR software is developed and maintained by an entity from D5+M country. Though the risk is set to medium, the fact that LC2.6 is not a concern due to the use of the software as only third party product and no upstream or downstream collaboration with the entity itself, this artifact is safe to proceed with on Shaheen III GPUP. \n\nPositive check passed.\n\nNegative check passed.\n\n10^27 check passed.\n\nThe artifacts have an acceptable risk. This project is safe to proceed from AIMCR perspective.",
+  "observations": "Software: CryoFastAR is from a D5 country and has a vague license; Boxx is from a D5 country. The risk is set to low because no collaboration or data sharing is stated in the proposal, nor does the PI plan to run any work on behalf of the maintainers listed above. This is in accordance with LC 2.6.\n\nDataset: CryoCRAB is from a D5 country, and the dataset is less popular, but bearing in mind that this is a niche and not a broad spectrum usecase. The risk is set to low because no collaboration or data sharing is stated in the proposal, nor does the PI plan to run any work on behalf of the maintainers listed above. This is in accordance with LC 2.6.\n",
+  "recommendation": "For CryoFastAR software is developed and maintained by an entity from D5+M country. The the risk is set to low because it does not violate LC2.6. The software will only be used by the account holders of Shaheen III GPUP and  there is no mention of sharing and collaboration with the developers and maintainers of the software.\n\nPositive check passed.\n\nNegative check passed.\n\n10^27 check passed.\n\nThe artifacts have an acceptable risk. This project is safe to proceed from AIMCR perspective.",
   "_submission_history": [
     {
-      "timestamp": "2026-01-28T13:17:02.928401",
+      "timestamp": "2026-01-28T15:34:15.887152",
       "action": "resubmission"
     }
   ]
