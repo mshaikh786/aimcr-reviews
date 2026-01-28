@@ -1177,11 +1177,11 @@
     }
   ],
   "observations": "Software: CryoFastAR is from a D5 country and has a vague license; Boxx is from a D5 country. The risk is set to medium because no collaboration or data sharing is stated in the proposal, nor does the PI plan to run any work on behalf of the maintainers listed above. This is in accordance with LC 2.6.\n\nDataset: CryoCRAB is from a D5 country, and the dataset is less popular, but bearing in mind that this is a niche and not a broad spectrum usecase. The risk is set to low because no collaboration or data sharing is stated in the proposal, nor does the PI plan to run any work on behalf of the maintainers listed above. This is in accordance with LC 2.6.\n",
-  "recommendation": "For cryoDRGN synthetic example dataset, the suggestion is that if the PI foregoes the potential high risk datasets, the overall risk score of the project will improve. The initial recommendation is to refer to the RCAC Chair for the scientific assessment of potential risks with a suggestion to the PI that if the dataset is avoidable, it can mitigate the potential high risk and result in an overall low risk score for the project. \n\n\nPositive check passed.\n\nNegative check failed (specifically for the dataset cryoDRGN).\n\n10^27 check passed.\n\nThe storage request is high (800TB). Monitoring is recommended to check how many tokens or samples or views are created to keep the 10^27 FLOPS threshold in check.\n",
+  "recommendation": "For CryoFastAR software is developed and maintained by an entity from D5+M country. Though the risk is set to medium, the fact that LC2.6 is not a concern due to the use of the software as only third party product and no upstream or downstream collaboration with the entity itself, this artifact is safe to proceed with on Shaheen III GPUP. \n\nPositive check passed.\n\nNegative check passed.\n\n10^27 check passed.\n\nThe storage request is high (800TB). Monitoring is recommended to check how many tokens or samples or views are created to keep the 10^27 FLOPS threshold in check.\n",
   "_submission_history": [
     {
-      "timestamp": "2026-01-28T13:08:28.972247",
-      "action": "initial_submission"
+      "timestamp": "2026-01-28T13:12:30.963378",
+      "action": "resubmission"
     }
   ]
 }
