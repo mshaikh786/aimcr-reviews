@@ -353,7 +353,284 @@
       ]
     }
   ],
-  "models": [],
+  "models": [
+    {
+      "name": "Multiweave (CoMed)",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": " A bandit\u2011based routing for better understanding of when and how multi\u2011model AI systems can be made both more accurate and more computationally efficient.\n\nAligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "Model was developed internally at KAUST, No documentation available. "
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "No URL as this code will be developed on Shaheen III GPUP."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": " No license as this is an in-house code to be developed by the applicant and the research group."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "This is not a pre-trained model. The training dataset is the same as inspected in the Datasets section."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "Finetuning is planned using medical questions datasets same as inspected in the Datasets section."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "The indication of number of parameters for bandit network is 210K. \nThe indication of number of training tokens is 27M. \nThe estimated FLOPs on ShaheenIII GPUP to train a model from scratch is: 6 x N x D=\n6 x  210 x 10^3 x 27 x 10^6 = 3.4 x 10^13 FLOPS\n\nIt is less than the threshold of 10^27."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "The system uses collaborative reasoning (LeaP - Learning from Peer Feedback) across multiple LLMs with contextual bandit algorithms for optimal subset selection."
+        }
+      ],
+      "is_proprietary": false
+    },
+    {
+      "name": "Llama3-Med42-8B",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "an 8 billion-parameter clinical large language model fine-tuned from LLaMA-3 to answer medical questions and assist with healthcare-related information and reasoning.\n\nAligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "The model is owned and maintained by the M42 Health AI Team, part of M42 (https://m42.ae/), a global health technology organization based in Abu Dhabi, UAE, Entity from a Non-D5 country.\n\nSource: https://huggingface.co/m42-health/Llama3-Med42-8B"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Licensed under the Llama 3 Community License Agreement governing use of Meta\u2019s LLaMA-3 materials.\n\nUsers may use, reproduce, distribute, and modify the model under license terms.\n\nRedistribution must include the license and attribution requirements per the Meta Community License.\n\nLicense includes adherence to the LLaMA acceptable use policy and may limit scale or commercial use under certain conditions."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "It was instruction-tuned on a medical corpus of ~1 billion tokens drawn from open clinical sources like flashcards, exam Q&A, and dialogues (pretraining data for base LLaMA-3 itself isn\u2019t disclosed publicly)."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "Fine-tuned for medical question answering, clinical reasoning, patient record summarization, and general healthcare Q&A tasks."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Model has 8 billion parameters\nFLOPS = 6 x N x D = 6 x 8 x 10^9 x 1 x 10^9 = 4.8 x 10^19"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risks found under LC 2.7, inspection skipped."
+        }
+      ],
+      "is_proprietary": false
+    },
+    {
+      "name": "deepseek-math-7b-instruct",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "A 7 billion-parameter instruction-tuned language model designed for solving mathematical problems, proofs, and quantitative reasoning tasks in natural language.\n\nAligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Owner: (Hangzhou DeepSeek Artificial Intelligence Co., Ltd.) https://huggingface.co/deepseek-ai/collections Founder: Liang Wenfeng (https://www.linkedin.com/in/wenfeng-liang-837841128/) The entity is from China, one of D5 countries.\n\nSource: https://huggingface.co/deepseek-ai/deepseek-math-7b-instruct"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Released under a DeepSeek custom model license with use-based conditions.\n\nThe license lets you use, modify, and distribute the model and derivatives with attribution and compliance.\n\nUse-based restrictions prohibit certain harmful or misuse scenarios (see Attachment A of the license).\n\nOutput generated by the model is not claimed by DeepSeek, but users are responsible for how it\u2019s used."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "The DeepSeekMath series was pretrained starting from a base model and further trained on a mathematics-focused corpus of ~120 billion tokens of domain-specific content, leveraged along with broader web and code data (total tokens likely in the hundreds of billions)."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "It was fine-tuned for instruction conditioning to answer math questions and generate step-by-step mathematical reasoning in a conversational/instruct style."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "The indication of number of parameters for bandit network is 7B. \nThe indication of number of training tokens is 120B. \nThe estimated FLOPs on ShaheenIII GPUP to train a model from scratch is: 6 x N x D= 6 x 7x 10^9 x 120 x 10^9 = 5.04 x 10^21 FLOPS\n\nIt is less than the threshold of 10^27."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risks found under LC 2.7, inspection skipped."
+        }
+      ],
+      "is_proprietary": false
+    },
+    {
+      "name": "Qwen2.5-7B-Instruct",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Qwen2.5 instruct is a general-purpose large language model for text generation, instruction following, long-text generation, structured data analysis, coding, mathematics, and multilingual conversations across 29+ languages.\n\nAligns with approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "The model is published under the Qwen org and owned/maintained by the Qwen Team at Alibaba Cloud (Alibaba Group); no official maintainer LinkedIn profiles are provided in the primary model/repo pages. China: D5-Country\n\nSource: https://huggingface.co/Qwen/Qwen2.5-72B-Instruct\n\nDownloads in Dec 2025: 302,719"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Qwen License (custom, based on Tongyi Qianwen License):\nFree to use, reproduce, modify, and distribute for commercial and non-commercial purposes.\nMust include copy of license and attribution notices with distributions. \nModified files must carry prominent modification notices. \nIf commercial use exceeds 100 million monthly active users, must request additional license from Alibaba. \nCannot use model outputs to improve other LLMs (except Qwen derivatives). \nMust comply with export controls and applicable laws. \nYou own derivative works you create. \nNo trademark license granted except for required notices."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "pre-trained from scratch on 18 trillion tokens from proprietary Alibaba datasets covering 29+ languages, with emphasis on knowledge, coding, and mathematics."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "This model, as is, has not been fine-tuned on any downstream task, according to the model card from HuggingFace."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "The indication of number of parameters is 7B. \nThe indication of number of training tokens is 18T. \nThe estimated FLOPs = 6 \u00d7 7 \u00d7 10^9 \u00d7 18 \u00d7 10^12 = 7.56\u00d7 10^23 FLOPs.\nIt is less than the threshold of 10^27."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk in LC2.7 check, skipping inspection."
+        }
+      ],
+      "is_proprietary": false
+    },
+    {
+      "name": "Mistral-7B-Instruct-v0.2",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "A 7 billion-parameter instruction-tuned generative language model designed to follow natural language instructions and generate text across conversational and completion tasks.\n\nAligns with approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms like \u201cmilitary,\u201d \u201cweapons,\u201d or \u201cnuclear\u201d in the model documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "The model is owned and maintained by Mistral AI (https://mistral.ai/about), a French AI company specializing in open and performant large language models. Entity from a Non-D5 country.\n\nSource: https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache 2.0\n\nYou are free to use the model for any purpose, including commercial applications under the Apache 2.0 license.\n\nYou may modify and distribute original or derived models.\n\nYou must include copyright notices and the full license text when redistributing.\n\nNo warranty or liability is provided by the licensors (as per Apache 2.0 terms)."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "The base Mistral-7B-Instruct was fine-tuned from Mistral-7B-v0.2 using publicly available conversational and instruction datasets (exact corpus not fully documented), and broadly the underlying base models of this family are in the tens-to-hundreds of billions of tokens range typical for open transformer LLMs."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "It was fine-tuned for instruction following and conversational tasks, making it suitable for chat, question answering, and general text generation when prompted with [INST]\u2026[/INST]-formatted instructions."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "The indication of number of parameters for bandit network is 7B. \nThe estimation of number of training tokens is 2T (No official numbers found). \nThe estimated FLOPs on ShaheenIII GPUP to train a model from scratch is: 6 x N x D= 6 x 7x 10^9 x 2x 10^12 = 8.4 x 10^22 FLOPS\nIt is less than the threshold of 10^27."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk in LC2.7 check, skipping inspection."
+        }
+      ],
+      "is_proprietary": false
+    },
+    {
+      "name": "gte-large-en-v1.5",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "An English text embedding model that converts input text into 1024-dimensional vectors for semantic similarity, retrieval, clustering, or classification tasks with support for up to 8192 tokens of context.\n\nAligns with approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms (e.g., \u201cmilitary\u201d, \u201cweapons\u201d, \u201cnuclear\u201d) in the model documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "The model is developed and maintained by the Institute for Intelligent Computing, Alibaba Group, part of the larger Chinese tech company Alibaba. Entity is from a D5 country (China).\n\nSource: https://huggingface.co/Alibaba-NLP/gte-large-en-v1.5"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache-2.0\n\nFree for commercial or research use with nearly unrestricted reuse rights under the Apache License 2.0 (permissive open-source).\n\nYou may modify and distribute the model and derivative works.\n\nRedistributions must include copyright & license text.\n\nPatent rights are granted under the license, but any patent litigation terminates those rights."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "Training included masked language modeling (C4-en), weak-supervised contrastive pre-training, and supervised contrastive fine-tuning on GTE-specific data; the exact token count is not published, but the dataset size listed is ~10.4 billion tokens from allenai/c4 in the Hugging Face dataset viewer."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "It\u2019s pre-trained/contrastively tuned for general text representation (embeddings), optimized for tasks like semantic similarity, text retrieval, clustering, and reranking."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "The indication of number of parameters for bandit network is 0.43B. \nThe indication of number of training tokens is ~10\u201315 B tokens. \nThe estimated FLOPs on ShaheenIII GPUP to train a model from scratch is: 6 x N x D= 6 x 0.43x 10^9 x 15 x 10^9 = 3.9 x 10^19 FLOPS\nIt is less than the threshold of 10^27."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk in LC2.7 check, skipping inspection."
+        }
+      ],
+      "is_proprietary": false
+    }
+  ],
   "observations": "Model is developed internally in KAUST.",
   "recommendation": "Recommended for Grand Challenge."
 }
