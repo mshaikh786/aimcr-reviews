@@ -1094,7 +1094,7 @@
   "recommendation": "The requested software will be curated by KSL from general-purpose resources such as pipy .org instead of downloading from Alibaba Cloud. This way, the risk will be mitigated for identified software artifacts. \n\nThe datasets are massive and subject to approval of the project, a coordination with the PI will be required to select which subsets are needed for the proposed work on Shaheen III GPUP. While deciding to download the components, the Llava Video 178K will be inspected on the go to make certain that the content in the samples correspond the description in the documentation. \n\nThe suggestion for the training of the Qwen 2.5 and 3  on Shaheen III GPUP is a periodic check with the PI to see that they are training these models on the video datasets indicated. \n ",
   "_submission_history": [
     {
-      "timestamp": "2026-02-11T14:40:51.130602",
+      "timestamp": "2026-02-11T14:46:44.869659",
       "action": "initial_submission"
     }
   ]
