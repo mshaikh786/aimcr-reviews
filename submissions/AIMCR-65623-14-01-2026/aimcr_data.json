@@ -55,17 +55,17 @@
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "No official documentation found.Not found publicly on Nvidia NGC"
+          "notes": "Internally developed by the project team"
         },
         {
-          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "Not found publicly on Nvidia NGC"
+          "notes": "Internally developed by the project team."
         },
         {
           "name": "Source / Provenance",
           "score": 1,
-          "notes": "Not publicly found on Nvidia NGC. Could be from Private / enterprise Nvidia NGC repo"
+          "notes": "The requested container images are developed and maintained by the project team specifically for this research project. They are not third-party or publicly distributed images.\u2028\u2028 \nAccess: The container image, Dockerfile, and documentation will be provided to Shaheen III GPUP administrators upon project approval. \nContents: PyTorch, torchvision, segmentation-models-pytorch, and supporting scientific Python libraries required for model training.\u2028\u2028"
         },
         {
           "name": "License / Permissions",
@@ -90,27 +90,27 @@
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "No official documentation found.Not found publicly on DockerHub."
+          "notes": "No official documentation found.Not found publicly on DockerHub. \nInternally developed by the project team.\u2028\u2028 "
         },
         {
-          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "Not found publicly on DockerHub."
+          "notes": " Internally developed by the project team.\u2028\u2028 "
         },
         {
           "name": "Source / Provenance",
           "score": 1,
-          "notes": "Not publicly found on DockerHub. Could be from Private repo"
+          "notes": "Internally developed by the project team.\u2028\u2028     \nContents: Python-based image and geospatial processing tools.\u2028\u2028 \nAccess: The container image, Dockerfile, and documentation will be made available upon project approval."
         },
         {
           "name": "License / Permissions",
           "score": 1,
-          "notes": "N/A, Not publicly found on DockerHub. "
+          "notes": "Research and internal use only, with open-source dependencies under their original licenses"
         },
         {
           "name": "Bundled Tools / Dependencies",
           "score": 1,
-          "notes": "N/A, Not publicly found on DockerHub. "
+          "notes": "Not mentioned."
         }
       ]
     }
@@ -131,7 +131,7 @@
           "notes": "No mention of sensitive terms."
         },
         {
-          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Owner / Curator: Google earth (https://earth.google.com/0 / Restor (https://www.restor.eco)\n\nOriginating Organization: Google Earth (United States) / Restor (Switzerland)\n\nEntities from a Non-D5 country."
         },
@@ -148,7 +148,7 @@
         {
           "name": "Provenance",
           "score": 1,
-          "notes": "Owner / Curator: Google earth (https://earth.google.com/0 / Restor (https://www.restor.eco)\n\nPrimary Distribution Platform: Restor (https://www.restor.eco)"
+          "notes": "Owner / Curator: Google earth (https://earth.google.com/0 / Restor (https://www.restor.eco)\n\nPrimary Distribution Platform: Restor (https://www.restor.eco)\n\nAccess mechanism: The curated research dataset that is not publicly downloadable,  The dataset will be accessed via an API. The team rely on the collaboration between Restor and Google to access this data.\u2028\u2028 "
         },
         {
           "name": "License / Permissions",
@@ -378,6 +378,52 @@
           "notes": "Low risk, skipped inspection."
         }
       ]
+    },
+    {
+      "name": "CAMELNET (U-Net++ (UnetPlusPlus) with ResNet-50 encoder)",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "CAMELNET is a U-Net++ semantic segmentation model that produces binary pixel-level masks to accurately extract camels from very-high-resolution aerial and satellite imagery.\n\nThe model supports the objective of performing a nationwide livestock census by detecting and segmenting camels in satellite imagery to generate geolocated population estimates.\n"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "U-Net++: Originally proposed by Zongwei Zhou et al. (D5 country), obtained from https://github.com/qubvel-org/segmentation_models.pytorch Stars: 11.3k, Forks:1.8k,  Commits:580, Last Commit:Dec, 2025, Owned by: Pavel lakubovskii https://github.com/qubvel\n\nResNet-50 was developed by Kaiming He et al. (Microsoft Research), PyTorch is maintained by the PyTorch Foundation (Linux Foundation). https://docs.pytorch.org/vision/stable/models/generated/torchvision.models.resnet50.html#torchvision.models.resnet50\n\nCAMELNET the fine-tuned  model and weights are owned by the KAUST project team  (no individual LinkedIn profiles specified in the proposal)."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "PyTorch \u2192 BSD 3-Clause License (permissive use allowed).\n\nsegmentation-models-pytorch \u2192 MIT License (permissive use allowed).\n\nResNet-50 pretrained weights \u2192 Subject to ImageNet usage terms.\n\nGoogle Earth satellite imagery \u2192 Restricted, non-redistributable .\n\nFine-tuned model ownership \u2192 Project team / KAUST, subject to upstream licenses."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "Encoder pretrained on ImageNet-1K (~1.2 million images, 1,000 classes).\n\nFine-tuned on SA-VHR-CAMEL-1 dataset (~300TB satellite imagery) .\n\nPretraining D \u2248 1.2M image samples (usable for 6ND FLOPs estimate); fine-tuning D depends on number of labeled tiles (not explicitly specified)."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "The ImageNet-pretrained ResNet-50 encoder was fine-tuned for binary semantic segmentation of camels in satellite imagery for spatial counting and density estimation."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Number of parameters: Approximately 31\u201335 million parameters (ResNet-50 encoder ~25.6M plus U-Net++ decoder layers, depending on configuration).\nNumber of tokens: The proposal does not specify the number of labeled training samples; only total storage volume (300TB) is provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Skipped"
+        }
+      ],
+      "is_proprietary": false
     }
   ],
   "observations": "Software: Container images (camel-detector-training:latest and satellite-preprocessing:latest) aren't publicly\n available, (private Dockerhub repo? / Enterprise NGC?)\n\nDataset: SA-VHRCAMEL-1 isn't publicly listed, provided link leads to Google Earth / Restor websites.\n\nModels parameters are not specified.",

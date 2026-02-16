@@ -43,6 +43,41 @@
           "notes": "torch 2.9.0\\nnvidia-cublas-cu12 12.8.4.1\\nnvidia-cuda-cupti-cu12 12.8.90\\nnvidia-cuda-nvrtc-cu12 12.8.93\\nnvidia-cuda-runtime-cu12 12.8.90\\nnvidia-cudnn-cu12 9.10.2.21\\nnvidia-cufft-cu12 11.3.3.83\\nnvidia-cufile-cu12 1.13.1.3\\nnvidia-curand-cu12 10.3.9.90\\nnvidia-cusolver-cu12 11.7.3.90\\nnvidia-cusparse-cu12 12.5.8.93\\nnvidia-cusparselt-cu12 0.7.1\\nnvidia-nccl-cu12 2.27.5\\nnvidia-nvjitlink-cu12 12.8.93\\nnvidia-nvshmem-cu12 3.3.20\\nnvidia-nvtx-cu12 12.8.90\\ntriton 3.5.0\\nfsspec 2026.1.0\\nnetworkx 3.6.1\\nsympy 1.14.0\\nmpmath 1.3.0\\ntyping_extensions 4.15.0\\nfilelock 3.20.3\\nJinja2 3.1.6\\nMarkupSafe 3.0.3\\nsetuptools 80.9.0\\n"
         }
       ]
+    },
+    {
+      "name": "StructuralGeo",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "StructuralGeo is an open-source, physics/geometry-based geological simulation package that generates synthetic 3D voxelated subsurface geology volumes by modeling stratigraphic/tectonic processes (e.g., folds, faults, intrusions) to produce training data for downstream generative AI. \nStructuralGeo is used to support Objective (1) by providing the calibrated synthetic data pipeline needed to fine-tune / train a geology foundation model, and it indirectly supports Objective (2) by enabling a generative model that can be used as an AI-based regularizer for physics-based inversion. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "The software is publicly released under the GitHub account of Eldad Haber, who is affiliated with the University of British Columbia (EOAS), and his LinkedIn profile is available. https://ca.linkedin.com/in/eldad-haber-49240bb based in Canada. \nNo D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/eldadHaber/StructuralGeo/tree/main\nStars: 16\nForks: 1\nCommits: 250\nLast commit: 10 months ago"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Use of the software is permitted for any purpose, including commercial use.\n\nCopying and redistribution of the software is permitted.\n\nModification and creation of derivative works are permitted.\n\nPublishing, sublicensing, and selling copies of the software are permitted.\n\nThe copyright notice and permission notice must be included in all copies or substantial portions of the software."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "aiohappyeyeballs          2.6.1\naiohttp                   3.13.3\naiosignal                 1.4.0\nanyio                     4.12.1\nargon2-cffi               25.1.0\nargon2-cffi-bindings      25.1.0\narrow                     1.4.0\nasttokens                 3.0.1\nattrs                     25.4.0\nbeautifulsoup4            4.14.3\nbleach                    6.3.0\ncertifi                   2026.1.4\ncffi                      2.0.0\ncharset-normalizer        3.4.4\ncmcrameri                 1.9\ncmocean                   4.0.3\ncolorcet                  3.1.0\ncomm                      0.2.3\ncontourpy                 1.3.3\ncycler                    0.12.1\ncyclopts                  4.5.2\ndebugpy                   1.8.20\ndecorator                 5.2.1\ndefusedxml                0.7.1\ndocstring_parser          0.17.0\ndocutils                  0.22.4\nexecuting                 2.2.1\nfastjsonschema            2.21.2\nfonttools                 4.61.1\nfqdn                      1.5.1\nfrozenlist                1.8.0\nGeoGen                    0.1.0       \nidna                      3.11\nImageIO                   2.37.2\nipykernel                 7.2.0\nipython                   9.10.0\nipython_pygments_lexers   1.1.1\nipywidgets                8.1.8\nisoduration               20.11.0\njedi                      0.19.2\nJinja2                    3.1.6\njsonpointer               3.0.0\njsonschema                4.26.0\njsonschema-specifications 2025.9.1\njupyter_client            8.8.0\njupyter_core              5.9.1\njupyter-events            0.12.0\njupyter_server            2.17.0\njupyter_server_proxy      4.4.0\njupyter_server_terminals  0.5.4\njupyterlab_pygments       0.3.0\njupyterlab_widgets        3.0.16\nkiwisolver                1.4.9\nlark                      1.3.1\nmarkdown-it-py            4.0.0\nMarkupSafe                3.0.3\nmatplotlib                3.7.3\nmatplotlib-inline         0.2.1\nmdurl                     0.1.2\nmeshio                    5.3.5\nmistune                   3.2.0\nmore-itertools            10.8.0\nmsgpack                   1.1.2\nmultidict                 6.7.1\nnbclient                  0.10.4\nnbconvert                 7.17.0\nnbformat                  5.10.4\nnest-asyncio              1.6.0\nnest-asyncio2             1.7.2\nnetworkx                  3.6.1\nnumpy                     1.26.4\npackaging                 25.0\npandocfilters             1.5.1\nparso                     0.8.6\npexpect                   4.9.0\npillow                    12.1.1\npip                       26.0.1\nplatformdirs              4.9.2\npooch                     1.9.0\nprometheus_client         0.24.1\nprompt_toolkit            3.0.52\npropcache                 0.4.1\npsutil                    7.2.2\nptyprocess                0.7.0\npure_eval                 0.2.3\npycparser                 3.0\nPyDTMC                    8.7.0\nPygments                  2.19.2\npyparsing                 3.3.2\npython-dateutil           2.9.0.post0\npython-json-logger        4.0.0\npyvista                   0.47.0\npyvistaqt                 0.11.3\nPyYAML                    6.0.3\npyzmq                     27.1.0\nQtPy                      2.4.3\nreferencing               0.37.0\nrequests                  2.32.5\nrfc3339-validator         0.1.4\nrfc3986-validator         0.1.1\nrfc3987-syntax            1.1.0\nrich                      14.3.2\nrich-rst                  1.3.2\nrpds-py                   0.30.0\nscipy                     1.17.0\nscooby                    0.11.0\nSend2Trash                2.1.0\nsetuptools                80.10.2\nsimpervisor               1.0.0\nsix                       1.17.0\nsoupsieve                 2.8.3\nstack-data                0.6.3\nterminado                 0.18.1\ntinycss2                  1.4.0\ntornado                   6.5.4\ntqdm                      4.67.3\ntraitlets                 5.14.3\ntrame                     3.12.0\ntrame-client              3.11.2\ntrame-common              1.1.1\ntrame-server              3.10.0\ntrame-vtk                 2.11.1\ntrame-vuetify             3.2.1\ntyping_extensions         4.15.0\ntzdata                    2025.3\nuri-template              1.3.0\nurllib3                   2.6.3\nvtk                       9.6.0\nwcwidth                   0.6.0\nwebcolors                 25.10.0\nwebencodings              0.5.1\nwebsocket-client          1.9.0\nwheel                     0.46.3\nwidgetsnbextension        4.0.15\nwslink                    2.5.0\nyarl                      1.22.0\n"
+        }
+      ]
     }
   ],
   "source_code": [],
@@ -88,7 +123,100 @@
       ]
     }
   ],
-  "models": [],
+  "models": [
+    {
+      "name": "SwinUNTER",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Swin-UNETR is used as a 3D encoder\u2013decoder model that learns latent representations of subsurface geology and reconstructs high-resolution voxelized geological structures from sparse or indirect observations.\nSwin-UNETR directly supports objectives (1) fine-tuning a geology foundation model on Saudi data and (2) guiding physics-based inversion for mineral exploration."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "https://github.com/Project-MONAI/research-contributions/tree/main Starts: 1.2k, Forks: 376, Commits:300, Last Commit: May, 2025.\nThis model is an artifact of the paper: https://arxiv.org/abs/2201.01266"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Apache-2.0 permits use, modification, and distribution (including commercial use).\n\nYou must include the license text and preserve required copyright/notice attributions.\n\nIf you distribute modified versions, you must mark significant changes.\n\nContributors grant a patent license under Apache-2.0 terms (and there are conditions around termination if you initiate certain patent claims).\n\nThe license does not grant trademark rights"
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "publicly available 3D CT scans drawn from datasets including HNSCC, LUNA16, and multiple TCIA CT collections (CT Colonography Trial, COVID-19, LIDC).\nThe Swin-UNETR model was pretrained on approximately 1,000 synthetically generated 3D geological volumes (256\u00d7256\u00d7256 voxels, two channels), with random 96\u00b3 voxel patches used per step, yielding an estimated D on the order of 10\u2078\u201310\u2079 voxel-tokens depending on patch sampling frequency"
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "The pre-trained SwinUNETR encoder is fine-tuned for 3D segmentation benchmarks such as Beyond the Cranial Vault (BTCV) multi-organ CT segmentation and Medical Segmentation Decathlon (MSD) tasks, and MONAI provides examples/tutorials for BTCV and BraTS21-style brain tumor segmentation."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Number of tokens: 110,592,000\nNumber of parameters: 70M\nTotal FLOPS: 6\u00d770,000,000\u00d7110,592,000 =  4.644864\u00d710\u00b9\u2076\nThe as-is estimated baseline is orders of magnitude less than 10^27"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Skipped"
+        }
+      ],
+      "is_proprietary": false
+    },
+    {
+      "name": "3D U-Net",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "The 3D U-Net with attention is a volumetric encoder\u2013decoder architecture designed for diffusion pretraining and velocity prediction within a stochastic interpolation (ODE-based) framework to model 3D subsurface geological structures.\nThe model supports proposal objectives (1) training a geology foundation model on synthetic Saudi-calibrated data and (2) integrating generative priors with physics-based inversion for mineral exploration."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "The model is developed collaboratively by KAUST researchers and the University of British Columbia (UBC) research team (as referenced in arXiv:2506.11164), with no LinkedIn profiles specified in the documentation.\n\nUnable to access the GitHub repository or the IBEX instance of the model because they require explicit access permissions.\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Internal research code hosted on IBEX and GitHub repository.\n\nCollaborative academic research use permitted.\n\nNo public commercial redistribution terms explicitly stated.\n\nLicensing terms not formally declared in the provided documentation (requires repository verification)."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "The model is pretrained on synthetically generated 3D geological volumes produced on-the-fly by a physics-based geological simulation engine, with 262,144 tokens per instance, and total D equals (number of training instances processed \u00d7 262,144 tokens) (exact D depends on total training steps, not specified in the documentation)."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "The model is fine-tuned for task-specific geological reconstruction and mineral exploration workflows following large-scale diffusion pretraining"
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Number of tokens: 262,144 tokens/instance\nNumber of parameters: 22M\nTotal FLOPS: (3.4603008 \u00d7 10\u00b9\u00b3) \u00d7 M\nM being total training instances processed which is not mentioned "
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Skipped"
+        }
+      ],
+      "is_proprietary": false
+    }
+  ],
   "observations": "1. The software listed is very minimal - only PyTorch and no docker images specified.\n2. No datasets are specified only Synthetically generated 3D samples\nof subsurface geologies. ",
   "recommendation": ""
 }
