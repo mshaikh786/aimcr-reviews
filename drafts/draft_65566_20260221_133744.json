@@ -1,0 +1,806 @@
+{
+  "metadata": {
+    "proposal_title": " Integrated multi-scale modeling, protein foundation models, and autonomous AI agents",
+    "principal_investigator": "Sameer Hamdan",
+    "proposal_date": "2025-10-23",
+    "reviewer_name": "Mohsin Ahmed Shaikh",
+    "reviewer_id": "174988",
+    "aimcr_date": "2026-01-11",
+    "project_id": "65566"
+  },
+  "third_party_software": [
+    {
+      "name": "pytorch",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Aligns with the proposal objectives. Aligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation of PyTorch.\nFrom a non D5 country."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Originally developed by Meta and now governed by Linux Foundation."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://github.com/pytorch/pytorch/edit/main/docs/source/index.md \n\nAs of Jan 4th, 2025 \n\n96300 stars \n\n26400 forks \n\n12 Github projects \n\n17000 PRs \n\n97745 commits last commit 10 hours ago"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "NVIDIA End user license. Permits the proposed work.\n\nNVIDIA Deep Learning Container License Permissions:\n\nInstall and Use\nDeploy as a Service\nCreate Derived Containers\nOpen Source Development Restrictions:\nNo Reverse Engineering\nNo Standalone Distribution: may not distribute or sublicense the CONTAINER as a stand-alone product\nNo Circumventing Security"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "nvcr.io/nvidia/pytorch:25.12-py3 contains\nCUDA cuBLAS NVIDIA cuDNN NVIDIA NCCL (optimized for NVLink) NVIDIA Data Loading Library (DALI) TensorRT Torch-TensorRT"
+        }
+      ]
+    },
+    {
+      "name": "vLLM",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Inference engine for LLMs. \nAligns with the proposal objectives. \nAligns with the approved research topic Datascience and engineering."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation of vLLM."
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": " Owner: Sky Computing Lab at UC Berkeley (https://sky.cs.berkeley.edu/)\nFrom a non D5 country."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://github.com/vllm-project/vllm\n\nStars: 66997\n\nForks: 12428\n\nOpen Issues: 3099\n\nLast Commit Date: 2026-01-07T07:36:13Z"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": " Apache-2.0 license (open-source):\n\nUse, modify, distribute: You can use the code/data freely in academic, personal, or commercial projects.\n\nPatent grant: Contributors grant you a license to any patents covering their contributions.\n\nNotice required: Must include the original copyright, license notice, and any changes you made.\n\nNo warranty: Comes \u201cas-is,\u201d so you\u2019re responsible for any issues.\n\nNo obligation to share modifications:  you don\u2019t have to release your derivative works under the same license."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "anthropic 0.71.0\n\ncompressed-tensors 0.12.2\n\ndepyf 0.20.0\n\ndiskcache 5.6.3\n\nflashinfer-python 0.5.3\n\nlark 1.2.2\n\nlm-format-enforcer 0.11.3\n\nnumba 0.61.2\n\noutlines_core 0.2.11\n\ntorch 2.9.0\n\nnvidia-cublas-cu12 12.8.4.1\n\nnvidia-cuda-cupti-cu12 12.8.90\n\nnvidia-cuda-nvrtc-cu12 12.8.93\n\nnvidia-cuda-runtime-cu12 12.8.90\n\nnvidia-cudnn-cu12 9.10.2.21\n\nnvidia-cufft-cu12 11.3.3.83\n\nnvidia-cufile-cu12 1.13.1.3\n\nnvidia-curand-cu12 10.3.9.90\n\nnvidia-cusolver-cu12 11.7.3.90\n\nnvidia-cusparse-cu12 12.5.8.93\n\nnvidia-cusparselt-cu12 0.7.1\n\nnvidia-nccl-cu12 2.27.5\n\nnvidia-nvjitlink-cu12 12.8.93\n\nnvidia-nvshmem-cu12 3.3.20\n\nnvidia-nvtx-cu12 12.8.90\n\ntorchaudio 2.9.0\n\ntorchvision 0.24.0\n\ntriton 3.5.0\n\nxgrammar 0.1.27\n\nanyio 4.12.1\n\napache-tvm-ffi 0.1.7\n\ndistro 1.9.0\n\ndocstring_parser 0.17.0\n\nhttpx 0.28.1\n\nhttpcore 1.0.9\n\njiter 0.12.0\n\nllguidance 1.3.0\n\nllvmlite 0.44.0\n\nmodel-hosting-container-standards 0.1.13\n\nnumpy 2.2.6\n\npydantic 2.12.5\n\npydantic_core 2.41.5\n\ntransformers 4.57.3\n\nhuggingface-hub 0.36.0\n\nhf-xet 1.2.0\n\ntokenizers 0.22.2\n\ntyping_extensions 4.15.0\n\nannotated-types 0.7.0\n\nexceptiongroup 1.3.1\n\nfastapi 0.128.0\n\nstarlette 0.50.0\n\nannotated-doc 0.0.4\n\nemail-validator 2.3.0\n\ndnspython 2.8.0\n\nfastapi-cli 0.0.20\n\nfastapi-cloud-cli 0.9.0\n\nfastar 0.8.0\n\nfilelock 3.20.3\n\nfsspec 2026.1.0\n\ngguf 0.17.1\n\nh11 0.16.0\n\nidna 3.11\n\ninteregular 0.3.3\n\nJinja2 3.1.6\n\nMarkupSafe 3.0.3\n\nmistral_common 1.8.8\n\njsonschema 4.26.0\n\nattrs 25.4.0\n\njsonschema-specifications 2025.9.1\n\nnetworkx 3.4.2\n\nnvidia-cudnn-frontend 1.17.0\n\nnvidia-cutlass-dsl 4.3.5\n\ncuda-python 13.1.1\n\ncuda-bindings 13.1.1\n\ncuda-pathfinder 1.3.3\n\nopenai 2.15.0\n\nopenai-harmony 0.0.8\n\nopencv-python-headless 4.12.0.88\n\npackaging 25.0\n\npillow 12.1.0\n\nprometheus_client 0.23.1\n\nprometheus-fastapi-instrumentator 7.1.0\n\npydantic-extra-types 2.11.0\n\npycountry 24.6.1\n\npydantic-settings 2.12.0\n\npython-dotenv 1.2.1\n\npython-multipart 0.0.21\n\nPyYAML 6.0.3\n\npyzmq 27.1.0\n\nray 2.53.0\n\nmsgpack 1.1.2\n\nclick 8.3.1\n\nprotobuf 6.33.3\n\nreferencing 0.37.0\n\nregex 2025.11.3\n\nrequests 2.32.5\n\ncharset-normalizer 3.4.4\n\nurllib3 2.6.3\n\ncertifi 2026.1.4\n\nrich-toolkit 0.17.1\n\nrich 14.2.0\n\nPygments 2.19.2\n\nmarkdown-it-py 4.0.0\n\nmdurl 0.1.2\n\nrignore 0.7.6\n\nrpds-py 0.30.0\n\nsafetensors 0.7.0\n\nsentry-sdk 2.49.0\n\nsupervisor 4.3.0\n\nsympy 1.14.0\n\nmpmath 1.3.0\n\ntiktoken 0.12.0\n\ntomli 2.4.0\n\ntqdm 4.67.1\n\ntyper 0.21.1\n\nshellingham 1.5.4\n\ntyping-inspection 0.4.2\n\nuvicorn 0.40.0\n\nhttptools 0.7.1\n\nuvloop 0.22.1\n\nwatchfiles 1.1.1\n\nwebsockets 16.0\n\naiohttp 3.13.3\n\nasync-timeout 5.0.1\n\nmultidict 6.7.0\n\nyarl 1.22.0\n\naiohappyeyeballs 2.6.1\n\naiosignal 1.4.0\n\nfrozenlist 1.8.0\n\npropcache 0.4.1\n\nastor 0.8.1\n\nblake3 1.0.8\n\ncachetools 6.2.4\n\ncbor2 5.8.0\n\ncloudpickle 3.1.2\n\ncupy-cuda12x 13.6.0\n\nfastrlock 0.8.3\n\ndill 0.4.0\n\neinops 0.8.1\n\nijson 3.4.0.post0\n\njmespath 1.0.1\n\nloguru 0.7.3\n\nmcp 1.25.0\n\nhttpx-sse 0.4.3\n\nPyJWT 2.10.1\n\ncryptography 46.0.3\n\ncffi 2.0.0\n\nsse-starlette 3.1.2\n\nmsgspec 0.20.0\n\nninja 1.13.0\n\nnvidia-ml-py 13.590.44\n\npartial-json-parser 0.2.1.1.post7\n\npsutil 7.2.1\n\npy-cpuinfo 9.0.0\n\npybase64 1.4.3\n\npycparser 2.23\n\npython-json-logger 4.0.0\n\nscipy 1.15.3\n\nsentencepiece 0.2.1\n\nsetproctitle 1.3.7\n\nsetuptools 80.9.0\n\nsniffio 1.3.1\n\ntabulate 0.9.0\n"
+        }
+      ]
+    }
+  ],
+  "source_code": [],
+  "datasets_user_files": [
+    {
+      "name": "ColabFold Official Databases (UniRef30, BFD/MGnify, EnvDB, PDB70/100)",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "This section contains clustered protein sequences, metagenomic sequences, environmental sequences, and curated PDB-derived sequences/structures used primarily for MSA generation and template-based structure prediction.\nThese datasets support Objectives 2.1, 3.1, and 4.2 by enabling MSA construction, structural context retrieval, and feature generation for protein, enzyme, and peptide foundation models, as well as Objective 5.1 for automated agentic workflows.\n\nAligns with the approved research topic of Bioscience. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "UniRef30 (2023-02)\nOwner/Maintainer (Country): UniProt Consortium \u2014 United Kingdom / Switzerland / United States\n\nBFD (Big Fantastic Database)\nOwner/Maintainer (Country): Academic research consortium (MMseqs/ColabFold ecosystem) \u2014 Germany / South Korea\n\nMGnify\nOwner/Maintainer (Country): EMBL-EBI \u2014 United Kingdom\n\nColabFold EnvDB\nOwner/Maintainer (Country): ColabFold project (Max Planck\u2013led academic consortium) \u2014 Germany\n\nPDB100 (FASTA)\nOwner/Maintainer (Country): Worldwide Protein Data Bank (wwPDB) \u2014 United States / United Kingdom / Japan\n\nPDB100 (FoldSeek format)\nOwner/Maintainer (Country): wwPDB (data origin) with FoldSeek indexing by ColabFold/MMseqs \u2014 United States / United Kingdom / Japan (data), Germany / South Korea (indexing)\n\nPDB70 (FASTA)\nOwner/Maintainer (Country): wwPDB \u2014 United States / United Kingdom / Japan\n\nPDB70 (mmCIF)\nOwner/Maintainer (Country): wwPDB \u2014 United States / United Kingdom / Japan\n\nNo entities from D5 countries. "
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No files provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk identified in LC 2.7 check. Skipping inspection."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Ownership and maintenance are shared across UniProt Consortium, EMBL-EBI (MGnify), wwPDB, and the ColabFold project as a redistribution and indexing platform.\nSource: https://colabfold.mmseqs.com/\nSetup:\n```\n# Automated setup\nwget https://raw.githubusercontent.com/sokrypton/ColabFold/main/setup_databases.sh\nchmod +x setup_databases.sh\n./setup_databases.sh /path/to/database/\n\n# Manual download\nwget https://colabfold.mmseqs.com/uniref30_2302.tar.gz\nwget https://colabfold.mmseqs.com/bfd_mgy_colabfold.tar.gz\nwget https://colabfold.mmseqs.com/pdb70_from_mmcif_220313.tar.gz\n\n# Extract\ntar -xzf uniref30_2302.tar.gz\ntar -xzf bfd_mgy_colabfold.tar.gz\ntar -xzf pdb70_from_mmcif_220313.tar.gz\n```\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "UniProt/UniRef components: CC BY 4.0 (attribution required)\n\nPDB-derived data: CC0 1.0 (public domain)\n\nMGnify proteins: CC0 1.0"
+        }
+      ]
+    },
+    {
+      "name": "AlphaFold3 Reference Databases",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "The AlphaFold3 v3.0 database contains genetic and structural reference databases for protein structure prediction, including PDB mmCIF files (~750 GB uncompressed), MGnify clusters, BFD sequences, UniRef90, UniProt, PDB SeqRes, RNACentral, NT RNA, and Rfam\u2014totaling approximately 252 GB compressed and 630 GB uncompressed.\n\n\nThe AlphaFold3 database supports Thrust 2 (Foundation Models for Peptides, Enzymes, and Protein Fusions) particularly Objectives 2.1, 3.1, 4.1, and 4.2 for training Enzyme Foundation Models (EFMs), Peptide Foundation Models (PFMs), and Protein Fusion Foundation Models (PFFMs), as well as Thrust 1 objectives involving protein structure prediction and molecular dynamics simulations for biomolecular design.\n\nAligns with the approved research topics of Bioscience. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "PDB mmCIF / PDB SeqRes\nOwner/Maintainer (Country): wwPDB \u2014 United States / United Kingdom / Japan\n\nMGnify Clusters\nOwner/Maintainer (Country): EMBL-EBI \u2014 United Kingdom\n\nBFD Sequences\nOwner/Maintainer (Country): Academic research consortium (MMseqs/ColabFold ecosystem) \u2014 Germany / South Korea\n\nUniRef90\nOwner/Maintainer (Country): UniProt Consortium \u2014 United Kingdom / Switzerland / United States\n\nUniProt (All)\nOwner/Maintainer (Country): UniProt Consortium \u2014 United Kingdom / Switzerland / United States\n\nRNAcentral\nOwner/Maintainer (Country): RNAcentral Consortium (coordinated by EMBL-EBI) \u2014 United Kingdom\n\nNT RNA (NCBI)\nOwner/Maintainer (Country): National Center for Biotechnology Information (NIH) \u2014 United States\n\nRfam\nOwner/Maintainer (Country): EMBL-EBI \u2014 United Kingdom\n\nNo entities from D5 countries. "
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No files provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk identified in LC 2.7 check. Skipping inspection."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Maintenance is distributed across wwPDB, UniProt Consortium, EMBL-EBI, RNAcentral Consortium, Rfam community, and NCBI, with AlphaFold3 providing standardized integration scripts.\nEach component originates from its authoritative upstream scientific repository and is assembled into a unified database bundle by the AlphaFold3 project for structure inference workflows.\n\nOfficial Repository: https://github.com/google-deepmind/alphafold3 Database Source: https://storage.googleapis.com/alphafold-databases/v3.0\n\nAutomated Download Script:\n```\nwget https://raw.githubusercontent.com/google-deepmind/alphafold3/main/fetch_databases.sh\nchmod +x fetch_databases.sh\n./fetch_databases.sh /path/to/databases/\n```"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "PDB data: CC0 1.0\n\nUniProt/UniRef: CC BY 4.0\n\nRNAcentral & Rfam: CC0 1.0\n\nNCBI nt RNA: Public domain (US Government works)"
+        }
+      ]
+    },
+    {
+      "name": "UniClust Databases",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "UniClust provides clustered protein sequence alignments and mappings optimized for profile-based homology search and MSA construction.\nIt supports Objectives 2.1, 3.1, and 4.2 by supplying profile-level evolutionary information for training and inference in protein foundation models."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "UniClust30 / UniClust Mapping\n\nOwner/Maintainer (Country): Max Planck\u2013led academic research group \u2014 Germany\n\nNo D5 Countries"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No files provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Low risk. Skipping inspection."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "UniClust is produced and maintained by its original academic authors and distributed via their institutional hosting infrastructure.\nThe dataset is generated by clustering UniProt-derived protein sequences into families and alignments using HHsuite-compatible workflows.\n\nSource: https://wwwuser.gwdguser.de/~compbiol/uniclust/2023_02/\n\n\nDownload Command:\n```\n# Download UniClust30 (latest 2023-02)\nwget https://wwwuser.gwdguser.de/~compbiol/uniclust/2023_02/UniRef30_2023_02_hhsuite.tar.gz\ntar -xzf UniRef30_2023_02_hhsuite.tar.gz\n\n# Alternative: AWS S3 sync for unfiltered clusters\naws s3 sync --no-sign-request s3://openfold/uniclust30_unfiltered/ ./uniclust30_unfiltered_zips --only-show-errors --no-progress\n```"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Distributed under CC BY-SA 4.0 (attribution and share-alike required)"
+        }
+      ]
+    },
+    {
+      "name": "OpenFold / OpenProteinSet",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "This dataset provides precomputed MSAs and template hits for hundreds of thousands of protein chains generated using AlphaFold-style pipelines.\nIt supports Objectives 2.1, 3.1, and 4.2 by accelerating training, benchmarking, and validation of protein structure prediction models."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "OpenProteinSet\n\nOwner/Maintainer (Country): AlQuraishi Lab, Columbia University \u2014 United States\n\nNo D5 Countries"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No files provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Low risk. Skipping inspection."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "The dataset is published by the OpenFold/OpenProteinSet authors and hosted via the AWS Registry of Open Data.\nIt is derived from standardized AlphaFold-style MSA and template generation against public protein databases.\n\nSource: https://registry.opendata.aws/openfold/\n\n\nDownload Command:\n```\n# List available files\naws s3 ls --no-sign-request s3://openfold/\n\n# Download specific MSA data\naws s3 sync --no-sign-request s3://openfold/msa_data/ ./openfold_msa/ --only-show-errors --no-progress\n\n# Download template hits\naws s3 sync --no-sign-request s3://openfold/template_hits/ ./openfold_templates/ --only-show-errors --no-progress\n```"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Released under CC BY 4.0 (attribution required)"
+        }
+      ]
+    },
+    {
+      "name": "PDB Structure Database (Full Archive)",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "The PDB archive contains experimentally determined 3D macromolecular structures with associated metadata.\nIt supports Objectives 1.3, 2.1, 3.1, and 4.2 by providing structural ground truth for validation, benchmarking, and MD simulation."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Protein Data Bank (Full Archive)\n\nOwner/Maintainer (Country): wwPDB \u2014 United States / United Kingdom / Japan\n\nNo D5 Countries"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No files provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Low risk. Skipping inspection."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "The archive is owned and maintained by the Worldwide Protein Data Bank (wwPDB) consortium.\nStructures are deposited by researchers worldwide, validated by wwPDB partners, and released as a public scientific archive.\n\nSource: https://www.rcsb.org/docs/programmatic-access/file-download-services\n\n\n\nRsync Download Method:\n```\nbash\n# Full PDB archive download (recommended)\nrsync -rlpt -v -z --delete rsync://rsync.rcsb.org/pub/pdb/ /path/to/pdb/\n\n# Alternative: AWS S3 sync (faster for some regions)\naws s3 sync s3://pdb-rcsb/pub/pdb/ /path/to/pdb/ --no-sign-request\n\n#Using wget for specific structures\nwget -r ftp://ftp.wwpdb.org/pub/pdb/data/structures/all/\n```"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Distributed under CC0 1.0 (public domain)"
+        }
+      ]
+    },
+    {
+      "name": "UniRef Databases (50 / 90 / 100)",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "These datasets contain clustered protein sequences at multiple identity thresholds used for redundancy reduction and homology search.They support Objectives 2.1, 3.1, and 4.2 by providing scalable protein sequence corpora for training and retrieval."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "UniRef50\n\nOwner/Maintainer (Country): UniProt Consortium \u2014 United Kingdom / Switzerland / United States\n\nUniRef90\n\nOwner/Maintainer (Country): UniProt Consortium \u2014 United Kingdom / Switzerland / United States\n\nUniRef100\n\nOwner/Maintainer (Country): UniProt Consortium \u2014 United Kingdom / Switzerland / United States\n\nNo D5 Countries"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No files provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Low risk. Skipping inspection."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Maintained and released by the UniProt Consortium. UniRef datasets are computed directly from UniProtKB and released as standardized clustered snapshots.\nSource: https://ftp.uniprot.org/pub/databases/uniprot/uniref/\nDownload Command:\n```\nbash\n#Download latest versions\nwget https://ftp.uniprot.org/pub/databases/uniprot/uniref/uniref50/uniref50.fasta.gz\nwget https://ftp.uniprot.org/pub/databases/uniprot/uniref/uniref90/uniref90.fasta.gz\nwget https://ftp.uniprot.org/pub/databases/uniprot/uniref/uniref100/uniref100.fasta.gz\n\n#Extract\ngunzip uniref50.fasta.gz\ngunzip uniref90.fasta.gz\ngunzip uniref100.fasta.gz\n```"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Copyrightable components under CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "name": "mdCATH",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "mdCATH provides large-scale all-atom molecular dynamics trajectories for thousands of curated protein domains.\nIt directly supports Objective 1.3 and model development in Objectives 2.1 and 3.1 by enabling MD-driven learning and validation on Shaheen III GPUs."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "mdCATH\n\nOwner/Maintainer (Country): Academic research consortium (Universitat Pompeu Fabra & collaborators) \u2014 Spain / Italy\n\nNo D5 Countries"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No files provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Low risk. Skipping inspection."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Maintained by the Computational Science Laboratory research team and distributed via Hugging Face. Generated by running standardized MD simulations on CATH domain structures using validated force fields.\n\nSource: https://huggingface.co/datasets/compsciencelab/mdCATH\nDownload Command:\n```\nbash\n# Using Hugging Face CLI\nhuggingface-cli download compsciencelab/mdCATH --repo-type dataset --local-dir ./mdCATH/\n\n# Or using git-lfs\ngit clone https://huggingface.co/datasets/compsciencelab/mdCATH\ncd mdCATH\ngit lfs pull\n```\n\n\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Released under CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "name": "AlphaFold-EBI Database",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "This database contains AlphaFold-predicted protein structures with confidence metrics for large proteome coverage.\nIt supports Objectives 2.1, 3.1, and 4.2 by providing structure supervision and validation signals for biologics design."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "AlphaFold Protein Structure Database\n\nOwner/Maintainer (Country): EMBL-EBI (in collaboration with DeepMind) \u2014 United Kingdom\n\nNo D5 Countries"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No files provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Low risk. Skipping inspection."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Maintained by EMBL-EBI in collaboration with the AlphaFold development team. Structures are generated using AlphaFold models and published as a continuously updated public database.\n\nSource: https://alphafold.ebi.ac.uk/\n\n\n\nDownload Command:\n```\nbash\n# Bulk download from EBI\nwget -r https://alphafold.ebi.ac.uk/files/\n\n# Or using rsync\nrsync -rlpt -v -z --delete rsync://ftp.ebi.ac.uk/pub/databases/alphafold/ /path/to/alphafold_ebi/\n```"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Distributed under CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "name": "EZSpecificity",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "EZSpecificity contains enzyme\u2013substrate docking structures and predictions for enzyme specificity modeling. It supports Objective 2.1 by enabling supervised learning and validation for enzyme foundation models."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No documentation scanned"
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "EZSpecificity Enzyme-Substrate Docking Dataset\n\nOwner/Maintainer (Country): University of Illinois research group \u2014 United States\n\nNo D5 Countries"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No files provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Low risk. Skipping inspection."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Owned and maintained by the University of Illinois EZSpecificity research team. Created by the EZSpecificity authors as part of an academic research project and shared via institutional storage.\n\nSource: ` /ibex/scratch/projects/c2108/zhac/public_data/ezspecifiy_db`"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License not specified in the provided documentation and must be confirmed with the authors."
+        }
+      ]
+    },
+    {
+      "name": "Protenix Dataset",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "This dataset is a training-data release used for Protenix protein modeling, distributed as a compressed bundle. It supports Objectives 2.1, 3.1, and 4.2 by providing additional supervised data for protein foundation model training."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Protenix Training Dataset\n\nOwner/Maintainer (Country): ByteDance AI4Science / Protenix team \u2014 China\n\nD5 Country affiliation found."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No files provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Low risk. Skipping inspection."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Maintained by the Protenix research team. Released directly by the Protenix authors, with upstream curation details not fully specified in the documentation.\n\nDownload Method:\n```\nbash\n\n\n# Download via wget\nwget https://af3-dev.tos-cn-beijing.volces.com/release_data.tar.gz\n\n# Or download via curl\ncurl -O https://af3-dev.tos-cn-beijing.volces.com/release_data.tar.gz\n```"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License not explicitly stated and must be verified prior to redistribution or derivative use."
+        }
+      ]
+    },
+    {
+      "name": "UniProtKB (Swiss-Prot & TrEMBL)",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "UniProtKB contains protein sequences and functional annotations, combining expert-curated Swiss-Prot entries and large-scale TrEMBL records.\nIt underpins Objectives 2.1, 3.1, 4.2, and 5.2 as the core biological knowledge source for training and fine-tuning domain-specific LLMs and foundation models."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "UniProtKB / Swiss-Prot\nOwner/Maintainer (Country): UniProt Consortium \u2014 United Kingdom / Switzerland / United States\n\nUniProtKB / TrEMBL\nOwner/Maintainer (Country): UniProt Consortium \u2014 United Kingdom / Switzerland / United States\n\nUniProtKB (All)\nOwner/Maintainer (Country): UniProt Consortium \u2014 United Kingdom / Switzerland / United States\n\nNo D5 Country"
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No files provided"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "low risk. skipping inspection"
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "Owned and maintained by the UniProt Consortium. The dataset is curated from primary sequence submissions and scientific literature through UniProt\u2019s consortium pipelines.\nSource: https://www.uniprot.org/downloads\n\nDownload Command:\n```\nbash\n# SwissProt\nwget https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.dat.gz\n\n# TrEMBL\nwget https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_trembl.dat.gz\n\n# UniProtKB All (FASTA format)\nwget https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprotkb.fasta.gz\n\n# Extract\ngunzip uniprot_sprot.dat.gz\ngunzip uniprot_trembl.dat.gz\ngunzip uniprotkb.fasta.gz\n```"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Distributed under CC BY 4.0"
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "name": "Gemma-2-27b-it",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Google\u2019s Gemma 2 27B Instruction-Tuned model is a text-to-text, decoder-only LLM intended for general text generation use cases such as question answering, summarization, reasoning, and chat.\nIn the proposal, Gemma is used under the Agentic AI thrust to fine-tune a domain-specific LLM for efficient biomedical text understanding and to create biologics-design research agents, aligning directly with Objective 5.2 (fine-tune domain-specific LLMs). "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Source: https://huggingface.co/google/gemma-2-27b-it\nOwned by: Google \n346,138  Downloads Last Month\n23 papers referenced on the HF model page\nNo D5+M affiliation found.\n\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Gemma License: \nYou may use, reproduce, modify, and distribute Gemma and derivatives only under the Gemma Terms of Use.\n\nRedistribution requires passing along the terms, marking modifications, and including the required notice file language.\n\nYou must not use Gemma for restricted uses listed in the Gemma Prohibited Use Policy (incorporated by reference)."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "Gemma 2 27B was pretrained on a mixture including web documents, code, and science articles, with ~13 trillion tokens (so D \u2248 13\u00d710\u00b9\u00b2 tokens for 6\u00b7N\u00b7D estimation)."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "As an instruction-tuned (\u201c-it\u201d) variant, it was fine-tuned for instruction following / conversational chat-style generation (general assistant behavior over text prompts)."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Gemma 2 comes in multiple sizes, and this checkpoint is the ~27B-parameter variant (commonly referred to as 27B).\nTraining FLOPs\u22486\u22c5N\u22c5D\n6\u22c527\u22c513\u00d710^21=2.106\u00d710^24 FLOPS\n"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk in LC 2.5 or LC 2.7. Skipping sample inspection."
+        }
+      ],
+      "is_proprietary": false
+    },
+    {
+      "name": "DeepSeek-R1-Distill-Llama-70B",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "DeepSeek-R1-Distill-Llama-70B is a text-generation LLM distilled for strong reasoning/math/code-style responses (i.e., it generates answers in text given text prompts).\nIn the proposal, it is used for Objective 5.2 (finetuning domain-specific LLMs) as a candidate base (\u201cDeepSeek\u2026for superior code generation and reasoning\u201d) for biologics-design research agents. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Source: https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-70B\nOwned by: DeepSeek-AI; a Chinese company. D5-Country\n330,603  Downloads Last Month\nPaper: https://arxiv.org/abs/2501.12948\n\n\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Model weights/repo are under the MIT License (broad permission to use/modify/distribute).\n\nThe checkpoint is derived from Meta\u2019s Llama 3.3 70B Instruct, which is originally licensed under the \u201cllama3.3\u201d license (so downstream use should also respect that upstream license)."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "This distilled model is fine-tuned using samples generated by DeepSeek-R1 , while its underlying pretraining comes from the Llama 3.3 base which was pretrained on ~15T tokens of publicly available online data (so D \u2248 15\u00d710\u00b9\u00b2 tokens for a 6\u00b7N\u00b7D-style pretraining estimate)"
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "It is distilled/fine-tuned to enhance reasoning performance, with reported strengths across math and code benchmarks (e.g., AIME/MATH-500/LiveCodeBench/Codeforces in the model card tables)."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "The model card lists ~71B parameters (commonly referred to as \u201c70B\u201d class).\nTraining FLOPs\u22486\u22c5N\u22c5D\n6\u22c5(71\u00d710^9)\u22c5(15\u00d710^12)\n= 6.39\u00d710^24 FLOPS"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": ""
+        }
+      ],
+      "is_proprietary": false
+    },
+    {
+      "name": "DeepSeek-V3",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "DeepSeek-V3 is a Mixture-of-Experts text-generation LLM that produces natural-language outputs (and code) from text prompts.\nFor the proposal, it maps to Objective 5.2 (finetune domain-specific LLMs) to build biologics-design research agents (the proposal explicitly cites \u201cDeepSeek\u201d as an LLM option for code generation/reasoning). "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Source: https://huggingface.co/deepseek-ai/DeepSeek-V3\nOwned by: DeepSeek-AI; a Chinese company. D5-Country\n888,260  Downloads Last Month\nPaper: https://arxiv.org/abs/2412.19437\n\n\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "DEEPSEEK LICENSE AGREEMENT: \nGrants copyright rights to reproduce/prepare/display/sublicense/distribute the model and \u201ccomplementary material,\u201d subject to conditions.\n\nGrants a patent license, but it terminates if you initiate patent litigation alleging infringement.\n\nRedistribution requires providing a copy of the license, retaining notices, and marking modified files.\n\nUse-based restrictions apply (Attachment A), explicitly including no military use."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "DeepSeek reports pretraining on 14.8T \u201cdiverse and high-quality\u201d tokens."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "DeepSeek states it is followed by Supervised Fine-Tuning (SFT) and Reinforcement Learning (RL) stages (i.e., tuned toward instruction-following/chat-style helpfulness)."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "DeepSeek-V3 is reported as 671B total parameters with 37B activated per token (MoE).\n\nTraining FLOPs\u22486\u22c5N\u22c5D\n=6\u22c5(37\u00d710^9)\u22c5(14.8\u00d710^12) = 3.29\u00d710^24 FLOPs Using activated parameters for compute"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": ""
+        }
+      ],
+      "is_proprietary": false
+    },
+    {
+      "name": "DeepSeek-R1",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "DeepSeek-R1 is a reasoning-focused text-generation LLM designed to perform strongly on math, code, and general reasoning tasks via long chain-of-thought style generation.\nIn the proposal, it is used for Objective 5.2 (Finetune domain-specific LLMs) to adapt models like DeepSeek into biologics-design research agents trained on enzyme/peptide/fusion-protein corpora. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Source: https://huggingface.co/deepseek-ai/DeepSeek-R1\nOwned by: DeepSeek-AI; a Chinese company. D5-Country\n416,766   Downloads Last Month\nPaper: https://arxiv.org/abs/2501.12948\n\n\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Check the license for permission and restrictions\n\nMIT License allows use, copying, modification, merging, publishing, distribution, sublicensing, and selling.\n\nRequires including the copyright notice and permission notice in copies/substantial portions."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "DeepSeek-R1 is trained based on DeepSeek-V3-Base (so its pretraining data provenance tracks that base model), and DeepSeek reports the base was trained on ~14.8T high-quality tokens."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "It is post-trained with a pipeline including large-scale reinforcement learning (plus SFT stages) to improve reasoning behaviors and human-aligned responses across math/code/reasoning."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "It is a MoE model with 671B total parameters and 37B activated parameters per token (context length 128K).\n\nFLOPs\u22486\u22c5N\u22c5D=6\u22c5(37\u00d710^9)\u22c5(14.8\u00d710^12) = 3.29 x 10^24 FLOPs"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": ""
+        }
+      ],
+      "is_proprietary": false
+    },
+    {
+      "name": "Janus-Pro-7B",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "DeepSeek AI\u2019s Janus-Pro-7B is a unified multimodal model that performs multimodal understanding (image+text) and text-to-image generation / instruction-following in a single autoregressive framework.\nIn the proposal, it is used under Objective 5.2 (Finetune domain-specific LLMs) to adapt models like DeepSeek (and Gemma) into expert biologics-design agents trained on enzyme/peptide/fusion-p\n"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Source: https://huggingface.co/deepseek-ai/Janus-Pro-7B\nOwned by: DeepSeek; a Chinese company - D5-Country\n    21,558 downloads last month\nPaper: https://arxiv.org/abs/2501.17811"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Code is MIT-licensed (per the model listing).\n\nModel usage is subject to the DeepSeek Model License (a \u201cresponsible use\u201d license with enforceable restrictions).\n\nRedistribution requires passing through the same use-based restrictions to downstream recipients.\n\nProhibits military use (and other restricted uses listed in the license)."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "Janus-Pro\u2019s paper describes multimodal training components (e.g., ImageNet-based steps and ~72M synthetic aesthetic image samples, plus real text-to-image data at a 1:1 real:synthetic ratio in unified pretraining), but it does not provide a single consolidated \u201ctoken count\u201d for the full multimodal mix.\nPractical D estimate for 6\u00b7N\u00b7D: since the 7B backbone aligns with DeepSeek\u2019s 7B LLM family, a defensible text-side D is ~2 trillion tokens (from DeepSeek LLM 7B pretraining), which we can use as a minimum D for LLM-style FLOPs accounting"
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "It is fine-tuned to improve multimodal understanding and text-to-image instruction-following / generation stability via staged training and supervised fine-tuning."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "The Janus-Pro-7B variant is ~7B parameters.\n\nFLOPs\u22486ND=6\u00d77\u00d710^9\u00d72\u00d710^12=8.4\u00d710^22 FLOPs"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": ""
+        }
+      ],
+      "is_proprietary": false
+    },
+    {
+      "name": "Qwen2-VL-72B-Instruct",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Qwen2-VL-72B-Instruct (hosted on Hugging Face) is a 72B-parameter vision\u2013language chat model that takes text + images (and videos) and generates text for tasks like VQA, document/image understanding, and multimodal assistant/agent behaviors.\nIt maps to the proposal's agentic workflow chapter"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Source: https://huggingface.co/Qwen/Qwen2-VL-72B-Instruct\nOwned and maintained by the Qwen Team under Alibaba Cloud / Alibaba Group; Chinese -> D5-Country\n26,348  downloads last month\nPaper: https://arxiv.org/abs/2409.12191"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "You may use, reproduce, distribute, copy, modify, and create derivative works under the Qwen LICENSE AGREEMENT.\n\nIf you commercially use the materials and your product/service has >100M monthly active users, you must request a separate license.\n\nRedistribution requires including the license, marking modified files, and carrying attribution/notice requirements.\n\nIf you use outputs/results to create/train/fine-tune/improve and distribute another AI model, you must display \u201cBuilt with Qwen\u201d / \u201cImproved using Qwen\u201d in product documentation.\n\nYou must comply with applicable export-control laws."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "Public docs state the underlying Qwen2 family was pre-trained on a high-quality large-scale dataset of over 7 trillion tokens spanning many domains and languages (note: the Qwen2-VL docs don\u2019t fully enumerate multimodal data composition on the model card)"
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "It is instruction-tuned for multimodal assistant/chat behaviors across image & video understanding, OCR/document VQA, and agent-style tasks (as reflected by the model\u2019s evaluation sections and \u201cInstruct\u201d positioning)."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "It is the 72B-parameter Qwen2-VL instruction-tuned model.\n\nFLOPs\u22486\u22c5N\u22c5D=6\u22c572\u00d710^9\u22c57\u00d710^12\u22483.024\u00d710^24 FLOPs\n"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": ""
+        }
+      ],
+      "is_proprietary": false
+    }
+  ],
+  "observations": "- Protenix Dataset has D5 country affiliation\n- EZSpecificity dataset is available on /ibex/scratch/projects/c2108/zhac/public_data/ezspecifiy_db - no documentation scanned\n- Qwen2-VL-72B-Instruct, Janus-Pro-7B, DeepSeek-R1, DeepSeek-V3, and DeepSeek-R1-Distill-Llama-70B have D5 country affiliations.",
+  "recommendation": ""
+}
