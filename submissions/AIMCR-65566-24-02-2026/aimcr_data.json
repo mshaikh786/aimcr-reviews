@@ -5,7 +5,7 @@
     "proposal_date": "2025-10-23",
     "reviewer_name": "Mohsin Ahmed Shaikh",
     "reviewer_id": "174988",
-    "aimcr_date": "2026-02-24",
+    "aimcr_date": "2026-03-03",
     "project_id": "65566"
   },
   "third_party_software": [
@@ -805,7 +805,7 @@
   "recommendation": "The software list is a bit short. There is a possibility that the PI may request more software after the first experiments on  Shaheen III GPUP. \n\nThe Protenix dataset is set to low risk because the findings in sample inspection align with the description of the dataset, and the files contain protein sequences.   \n\nThe PI has requested 4 models developed and maintained in the D5 country. Some are text-to-text, and others are multimodal with visual and text capabilities. The risk has been lowered to low because they are well-recognized and popular models. Also, the intent to use these models for fine-tuning using protein datasets for biologics tasks, along with visual input of protein structure, aligns with the documented capabilities of the model architectures. All models all pass the LC 2.7 check. \n\nAs an additional precaution, monitoring of the use of the models is proposed midway through the project to ensure that only the proposed datasets are used to train the models from D5 entities. This check will ensure no new dataset(s) have been introduced in the training process that deviates from the proposed plan in the project proposal.\n\nPositive check pass.\n\nNegative check pass. \n\n10^27 check pass. \n\nRecommended to proceed with the grand challenge. \n\n\n\n",
   "_submission_history": [
     {
-      "timestamp": "2026-03-03T23:54:24.566949",
+      "timestamp": "2026-03-03T23:55:57.699119",
       "action": "resubmission"
     }
   ]
