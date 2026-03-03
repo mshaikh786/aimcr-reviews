@@ -596,11 +596,11 @@
       "is_proprietary": false
     }
   ],
-  "observations": "- MultiWeave CoMed is not a model but a pipeline used to route the parts of a query to appropriate LLMs based on suitability to optimize the response performance. The PI has provided the source code in  /ibex/project/c2320/AIMCR/65567-amicr/. Although the PI has not requested any models either in the project proposal or in the additional information they have provided, their code lists some models by default. The AIMCR has added these models in the review. \n\n- Three of the five default models are from the D5 country. Since the intent of use for the project is understood as for inference, as they will called in the CoMed pipeline, the risk has been reduced to low. \n\n- All the datasets are small scale benchmarks. It has been mentioned in the additional information provided by the PI that they plan to move to bigger benchmark datasets, not included in the project at the moment. \n",
-  "recommendation": "- Since multiple models from D5 country will be used, the proposal is to monitor the workflows midway in the project to check that no model has been further trained, as this does not appear to be the scope of the project. \n\n- Positive check passed\n\n- Negative check passed\n\n- 10^27 check passed\n\nRecommendation is to proceed with Grand Challanage. ",
+  "observations": "- MultiWeave CoMed is not a model but a pipeline used to route the parts of a query to appropriate LLMs based on suitability to optimize the response performance. The PI has provided the source code in  /ibex/project/c2320/AIMCR/65567-amicr/. Although the PI has not requested any models either in the project proposal or in the additional information they have provided, their code lists some models by default. The AIMCR has added these models to the review. \n\n- Three of the five default models are from the D5 country. Since the intent of use for the project is understood as for inference, as they will be called in the CoMed pipeline, the risk has been reduced to low. \n\n- All the datasets are small scale benchmarks. It has been mentioned in the additional information provided by the PI that they plan to move to bigger benchmark datasets, not included in the project at the moment. \n\n",
+  "recommendation": "- Since multiple models from D5 country will be used, the proposal is to monitor the workflows midway in the project to check that no model has been further trained, as this does not appear to be the scope of the project. \n\n- Positive check passed\n\n- Negative check passed\n\n- 10^27 check passed\n\nRecommendation is to proceed with Grand Challenge. ",
   "_submission_history": [
     {
-      "timestamp": "2026-03-04T02:13:45.124186",
+      "timestamp": "2026-03-04T02:20:32.270022",
       "action": "resubmission"
     }
   ]
