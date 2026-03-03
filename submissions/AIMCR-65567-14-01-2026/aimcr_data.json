@@ -5,7 +5,7 @@
     "proposal_date": "2025-12-09",
     "reviewer_name": "Mohsin Ahmed Shaikh",
     "reviewer_id": "174988",
-    "aimcr_date": "2026-01-20",
+    "aimcr_date": "2026-03-04",
     "project_id": "65567"
   },
   "third_party_software": [
@@ -41,41 +41,6 @@
           "name": "Bundled Tools / Dependencies",
           "score": 1,
           "notes": "Singularity"
-        }
-      ]
-    },
-    {
-      "name": "Transformers",
-      "checks": [
-        {
-          "name": "Project & Usage Alignment",
-          "score": 1,
-          "notes": "Hugging Face Transformers is an open-source Python library providing state-of-the-art pretrained models for natural language processing, computer vision, audio, and multimodal tasks for both inference and training.\n\nThe software is used to:\n\nCoordinate cross-model collaboration among multiple large language models\nImplement contextual bandit and baseline routing algorithms for the MultiWeave framework\nProvide the foundation models (LLMs) that will be orchestrated in the routing experiments\nEnable logging and evaluation of model performance\n\nAligns with the approved research topic Datascience and engineering."
-        },
-        {
-          "name": "Prohibited Use Screening (LC 2.7)",
-          "score": 1,
-          "notes": "No mention of sensitive terms in the documentation. "
-        },
-        {
-          "name": "D5+M Affiliation Screening (LC 2.5)",
-          "score": 1,
-          "notes": "Owner: Hugging Face Inc.\nFounders/Maintainers:\n\nCl\u00e9ment Delangue (CEO) - LinkedIn\nJulien Chaumond (CTO) - [LinkedIn profile available]\nThomas Wolf (Chief Science Officer)\n\n\nAffiliation: Private company based in New York, backed by investors including Salesforce, Google, Amazon, NVIDIA, Intel, AMD, and major VC firms\n\nThe entity is from non-D5 country."
-        },
-        {
-          "name": "Source / Provenance",
-          "score": 1,
-          "notes": "https://github.com/huggingface/transformers\n\nStars: 153,000+\nForks: 31,100+\nCommits: 21,136+\nLast commit: January 2026\n\n"
-        },
-        {
-          "name": "License / Permissions",
-          "score": 1,
-          "notes": "Apache 2.0\nPermissions:\n\nCommercial use allowed\nModification and derivative works permitted\nDistribution allowed\nSublicensing permitted\nPatent grant included (contributors grant patent rights)\nPrivate use allowed\n\nRestrictions:\n\nMust include original copyright notice\nMust include copy of license text\nMust document significant modifications made\nMust preserve attribution notices\nCannot use trademark without permission\nPatent license terminates if you sue over patents"
-        },
-        {
-          "name": "Bundled Tools / Dependencies",
-          "score": 1,
-          "notes": ""
         }
       ]
     },
@@ -163,10 +128,10 @@
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "No mention of sensitive terms in the documentation"
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Owner: Wenhu Chen (TIGER-Lab, University of Waterloo) (https://www.linkedin.com/in/wenhu-chen-ab59317b), From a Non-D5 country."
         },
@@ -178,12 +143,12 @@
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "This dataset contains 12K complex questions and answers across various disciplines. Low risk."
+          "notes": "No risk identified in LC2.7 or 2.5 checks. Skipping inspection. "
         },
         {
           "name": "Provenance",
           "score": 1,
-          "notes": "Primary Distribution Platform: Hugging Face Datasets (https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro)"
+          "notes": "Primary Distribution Platform: Hugging Face Datasets (https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro)\n\nDownloads in Feb 2026: 87,794\n\nMaintainers: Text and Image GEnerative Research (TIGER) Lab at the University of Waterloo. \n\n"
         },
         {
           "name": "License / Permissions",
@@ -198,17 +163,17 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "A benchmark for large language models' capabilities in multi-task language understanding. Aligns with the approved research topic Datascience and engineering"
+          "notes": "MedQA contains multiple-choice questions from professional medical board exams (USMLE in US, medical licensing exams in Mainland China and Taiwan) with 12,723 English, 34,251 simplified Chinese, and 14,123 traditional Chinese questions, along with medical textbook corpora for knowledge retrieval.\n\nBased on the proposal, MedQA is used for Objective 1 (building a scalable routing framework across multiple scenarios), Objective 2 (evaluating bandit-style routing algorithms), and Objective 3 (implementing and comparing non-bandit baselines), specifically as one of the public benchmarks for evaluating multi-model orchestration and collaboration approaches in the medical domain.\n\nAligns with the approved research topic Datascience and Engineering"
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "No mention of sensitive terms in the documentation"
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "Owner: Di Jin (MIT) (https://www.linkedin.com/in/jindi11/en) From a Non-D5 country"
+          "notes": "Di Jin \u2014 PhD from MIT CSAIL (2015-2020), currently at Eigen AI (previously Amazon AGI); LinkedIn: https://www.linkedin.com/in/jindi11/\n\nPeter Szolovits \u2014 Professor of Computer Science and Engineering, MIT CSAIL, Head of Clinical Decision-\n\nMaking Group; LinkedIn: https://www.linkedin.com/in/peter-szolovits-33b88a36/\n\nOther co-authors: Eileen Pan, Nassim Oufattole, Wei-Hung Weng, Hanyi Fang (MIT affiliations)\n\nAll entities are from non-D5 countries."
         },
         {
           "name": "Prompts / Fine-tuning Scripts",
@@ -223,12 +188,12 @@
         {
           "name": "Provenance",
           "score": 1,
-          "notes": "Primary Distribution Platform: Hugging Face Datasets (https://huggingface.co/datasets/bigbio/med_qa)"
+          "notes": "URL: https://huggingface.co/datasets/bigbio/med_qa\n\nOriginal Creator: Di Jin and co-authors at MIT CSAIL (2020), published in arXiv:2009.13081 and subsequently in Applied Sciences (2021).\n\nCurrent Maintainer: The Hugging Face version at bigbio/med_qa is maintained by the BigScience Biomedical Working Group, which provides a standardized dataloader wrapper around the original dataset hosted at https://github.com/jind11/MedQA."
         },
         {
           "name": "License / Permissions",
           "score": 1,
-          "notes": "License: MIT License\nUse freely for any purpose including academic research, commercial applications, model evaluation, and educational purposes\nCite MMLU-Pro paper in publications using arXiv: 2406.01574 or NeurIPS 2024 proceedings\nShare, modify, and distribute the dataset\nUse for language model benchmarking, evaluation, training validation, and comparative studies\nCreate derivative works and modified versions\nRestrictions:\n\nMust include copyright notice and permission notice in all copies or substantial portions\nDataset provided \"as is\" without warranty of any kind"
+          "notes": "On HuggingFace the License is \"unknown\". However, on the Github repository of the developer: https://github.com/jind11/MedQA, there is a License.\n\nLicense type: MIT License\n\nOriginal dataset distributed via Google Drive with citation requirement\n\narXiv version uses arXiv's non-exclusive distribution license (http://arxiv.org/licenses/nonexclusive-distrib/1.0/)\n\nPermissions:\n\nResearch and academic use permitted with proper citation\nData can be downloaded from the official GitHub/Google Drive source\n\n\nRestrictions:\n\nMust cite the original paper (Jin et al., 2020/2021) when using the dataset\n\nQuestions were scraped from exam preparation websites and official examination materials, which may have underlying source restrictions\n\nNo explicit commercial use license granted\n\nTextbook materials included may have separate copyright considerations"
         }
       ]
     },
@@ -238,17 +203,17 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "MedMCQA is a large-scale, Multiple-Choice Question Answering (MCQA) dataset designed to address real-world medical entrance exam questions.. Aligns with the approved research topic Datascience and engineering"
+          "notes": "MedMCQA contains over 194,000 multiple-choice questions from Indian medical entrance exams (AIIMS & NEET PG, years 1991-present), covering 2,400 healthcare topics across 21 medical subjects, with each question including answer options, correct answer, and expert explanations.\n\nBased on the proposal, MedMCQA (\"medmcqa\") is explicitly listed as one of the public benchmarks for evaluating multi-model orchestration, supporting Objective 1 (scalable routing framework evaluation), Objective 2 (bandit-style routing algorithm testing), and Objective 3 (baseline comparison), specifically for validating routing and collaboration approaches across medical domain question-answering scenarios.\n\n\nAligns with the approved research topic Datascience and engineering"
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "No mention of sensitive terms in the documentation"
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "Owner: Ankit Pal (Saama AI Research) (https://www.linkedin.com/in/aadityaura/)  From a Non-D5 country."
+          "notes": "Current maintainer: Ankit Pal (Aaditya Ura) \u2014 Senior Research Engineer at Saama AI Research, Chennai, India (now PhD candidate at Harvard); LinkedIn: https://www.linkedin.com/in/aadityaura/\n\nLogesh Kumar Umapathi \u2014 Saama AI Research, Chennai, India\n\nMalaikannan Sankarasubbu \u2014 Vice President of Engineering and Research at Saama Technologies; LinkedIn: https://www.linkedin.com/in/malaikannan/\n\nAll entities are from non-D5 countries. "
         },
         {
           "name": "Prompts / Fine-tuning Scripts",
@@ -258,12 +223,12 @@
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "Dataset contains Multiple-Choice Question designed to address real-world medical entrance exam questions. Low risk.\n\nMedMCQA has more than 194k high-quality AIIMS & NEET PG entrance exam MCQs covering 2.4k healthcare topics and 21 medical subjects are collected with an average token length of 12.77 and high topical diversity."
+          "notes": "No risk identified in LC 2.7 and 2.5 check. Skipping inspection."
         },
         {
           "name": "Provenance",
           "score": 1,
-          "notes": "Primary Distribution Platform: Hugging Face Datasets (https://huggingface.co/datasets/openlifescienceai/medmcqa)"
+          "notes": "URL: https://huggingface.co/datasets/openlifescienceai/medmcqa\n\nOriginal Creator: Ankit Pal, Logesh Kumar Umapathi, and Malaikannan Sankarasubbu at Saama AI Research, Chennai, India (2022), published in Proceedings of the Conference on Health, Inference, and Learning (CHIL 2022), PMLR Volume 174.\n\nCurrent Maintainer: The Hugging Face version at openlifescienceai/medmcqa is maintained by Open Life Science AI, with the original source code and leaderboard at https://github.com/medmcqa/medmcqa and https://medmcqa.github.io."
         },
         {
           "name": "License / Permissions",
@@ -278,17 +243,17 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "Large-scale real-world medical questions benchmark for Large Language Models. Aligns with the approved research topic Datascience and engineering"
+          "notes": "The dataset contains 1,273 multiple-choice questions from the United States Medical Licensing Examination (USMLE) test split, each with four answer options, correct answer index, USMLE step classification (step1 or step2&3), and MetaMap phrase annotations.\n\nBased on the proposal, MedQA-USMLE is listed as one of the public benchmarks supporting Objectives 1-3: building the scalable routing framework, implementing/evaluating bandit-style routing algorithms, and comparing non-bandit baselines for medical domain question-answering.\n\nAligns with the approved research topic Datascience and engineering"
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "No mention of sensitive terms in the documentation"
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "Owner: Shuyue Jia (Boston University) (https://www.linkedin.com/in/bruceshuyuejia) From a Non-D5 country."
+          "notes": "Hugging Face Wrapper Maintainer:\n\nShuyue Jia (Bruce) \u2014 Ph.D. Student, Boston University (Kolachalama Lab); LinkedIn: https://www.linkedin.com/in/bruceshuyuejia/\n\nThe maintainer is affiliated with an entity in non-D5 country."
         },
         {
           "name": "Prompts / Fine-tuning Scripts",
@@ -298,17 +263,17 @@
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "Dataset contains Medical questions / answers. Low risk."
+          "notes": "No risk identified in LC 2.7 and 2.5. Skipping inspection. "
         },
         {
           "name": "Provenance",
           "score": 1,
-          "notes": "Primary Distribution Platform: Hugging Face Datasets (https://huggingface.co/datasets/shuyuej/MedQA-USMLE-Benchmark)"
+          "notes": "URL: https://huggingface.co/datasets/shuyuej/MedQA-USMLE-Benchmark\n\nCurrent Maintainer: Shuyue Jia at Boston University maintains this Hugging Face reformatted version containing only the English USMLE test split with added MetaMap annotations.\n\n"
         },
         {
           "name": "License / Permissions",
           "score": 1,
-          "notes": "License: Apache 2.0\nUse freely for any purpose, including academic research, commercial use, and internal or external deployments\nShare, copy, modify, and distribute the work in source or object form\nCreate derivative works and release them under your own license terms\nUse in software, datasets, models, benchmarks, and downstream products\nReceive a royalty-free patent license from contributors for necessary patent claims\n\nRestrictions:\nMust include the Apache 2.0 license text with all redistributions\nMust clearly state any changes made to the original work when modified\nMust retain existing copyright, patent, and attribution notices\nMust preserve and reproduce the NOTICE file contents if provided\nNo trademark rights are granted (names/logos stay off-limits)\nPatent license terminates if you initiate patent litigation related to the work\nWork is provided \u201cas is\u201d, without warranties or liability"
+          "notes": "License: Apache-2.0\nPermissions:\n\nFree to use, modify, and distribute for commercial and non-commercial purposes\n\nCan create derivative works\n\nCan use for training and evaluation of ML models\n\nRestrictions:\n\nMust cite original paper: Jin et al. \"What Disease does this Patient Have?\" arXiv:2009.13081 (2020)\n\nQuestions sourced from USMLE exam materials may have underlying source restrictions\n\nNo warranty provided; use at own risk"
         }
       ]
     },
@@ -318,17 +283,17 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "This is a massive multitask test consisting of multiple-choice questions from various branches of knowledge. The test spans subjects in the humanities, social sciences, hard sciences, and other areasas a benchmark for Large Language Models. Aligns with the approved research topic Datascience and engineering"
+          "notes": "MMLU is a massive multitask test consisting of multiple-choice questions from various branches of knowledge spanning 57 tasks including elementary mathematics, US history, computer science, law, and covering subjects in the humanities, social sciences, hard sciences, and other areas.\n\nBased on the proposal, MMLU is listed as one of the public benchmarks supporting Objectives 1-3: building the scalable routing framework, implementing/evaluating bandit-style routing algorithms, and comparing non-bandit baselines for multi-domain question-answering evaluation.\n\n\n\nAligns with the approved research topic Datascience and engineering"
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "No mention of sensitive terms in the documentation"
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
         },
         {
-          "name": "Restricted Entities Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "Owner: Center for AI Safety (CAIS) (https://www.linkedin.com/company/center-for-ai-safety?utm_source=chatgpt.com) is a nonprofit organization based in San Francisco, California that conducts research and advocacy to reduce risks associated with artificial intelligence. It was founded by Dan Hendrycks (https://www.linkedin.com/in/dan-hendrycks-04062395)  , Entity is From a Non-D5 country."
+          "notes": "Maintainer Organization: Center for AI Safety (CAIS), an American nonprofit organization based in San Francisco that promotes the safe development and deployment of AI, founded in 2022 by Dan Hendrycks and Oliver Zhang.\n\nThe maintainer entity is from non-D5 country."
         },
         {
           "name": "Prompts / Fine-tuning Scripts",
@@ -338,12 +303,12 @@
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "Dataset contains Multiple choice questions from various fields of knowledge / answers. Low risk."
+          "notes": "No risk identified in LC 2.7 and 2.5. Skipping inspection. "
         },
         {
           "name": "Provenance",
           "score": 1,
-          "notes": "Primary Distribution Platform: Hugging Face Datasets (https://huggingface.co/datasets/cais/mmlu)"
+          "notes": "URL: https://huggingface.co/datasets/cais/mmlu\n\nOriginal Creator: Dan Hendrycks et al. introduced the MMLU benchmark, published in the Proceedings of the International Conference on Learning Representations (ICLR 2021).\n\nCurrent Maintainer: Center for AI Safety (CAIS) maintains the Hugging Face version at cais/mmlu, with the original source code available at https://github.com/hendrycks/test.\n"
         },
         {
           "name": "License / Permissions",
@@ -360,22 +325,22 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": " A bandit\u2011based routing for better understanding of when and how multi\u2011model AI systems can be made both more accurate and more computationally efficient.\n\nAligns with the approved research topic Datascience and engineering."
+          "notes": "MultiWeave is a cross-model collaboration framework that orchestrates multiple foundation AI models using contextual bandit algorithms to learn which model(s) to query for a given input, balancing accuracy, latency, and compute cost trade-offs rather than relying on a single model or static ensembles.\n\nMultiWeave directly supports all five proposal objectives: (1) building a scalable routing framework on GH200 GPUs, (2) implementing/evaluating bandit-style routing algorithms, (3) implementing non-bandit baselines for comparison, (4) quantifying quality-compute trade-offs, and (5) releasing reproducible code and evaluation tools.\n\nIt is an in-house code developed by the PI's group. \n\nThis is a pipeline rather than a model. \n\nAligns with the approved research topic Datascience and engineering."
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "Model was developed internally at KAUST, No documentation available. "
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. Check the source code provided by the PI in /ibex/project/c2320/AIMCR/65567-amicr/"
         },
         {
           "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "No URL as this code will be developed on Shaheen III GPUP."
+          "notes": "Own code, PI has provided a copy in /ibex/project/c2320/AIMCR/65567-amicr/. "
         },
         {
           "name": "License / Permissions",
           "score": 1,
-          "notes": " No license as this is an in-house code to be developed by the applicant and the research group."
+          "notes": " No license, as this is an in-house code to be developed by the PI's research group."
         },
         {
           "name": "Training Data Documentation",
@@ -385,17 +350,17 @@
         {
           "name": "Customisation / Fine-tuning",
           "score": 1,
-          "notes": "Finetuning is planned using medical questions datasets same as inspected in the Datasets section."
+          "notes": "No finetuning done as this is a pipeline not a model "
         },
         {
           "name": "FLOPS Calculation",
           "score": 1,
-          "notes": "The indication of number of parameters for bandit network is 210K. \nThe indication of number of training tokens is 27M. \nThe estimated FLOPs on ShaheenIII GPUP to train a model from scratch is: 6 x N x D=\n6 x  210 x 10^3 x 27 x 10^6 = 3.4 x 10^13 FLOPS\n\nIt is less than the threshold of 10^27."
+          "notes": "This is a pipeline and not a model itself. The number of parameters will depend on which models will be used within the pipeline. \n\nNot applicable. "
         },
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "The system uses collaborative reasoning (LeaP - Learning from Peer Feedback) across multiple LLMs with contextual bandit algorithms for optimal subset selection."
+          "notes": "no risk identified in LC 2.7 and 2.5. The source code was searched for sensitive terms, which were not found. "
         }
       ],
       "is_proprietary": false
@@ -406,7 +371,7 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "an 8 billion-parameter clinical large language model fine-tuned from LLaMA-3 to answer medical questions and assist with healthcare-related information and reasoning.\n\nAligns with the approved research topic Datascience and engineering."
+          "notes": "An 8 billion-parameter clinical large language model fine-tuned from LLaMA-3 to answer medical questions and assist with healthcare-related information and reasoning.\n\nIncluded as a default model in /ibex/project/c2320/AIMCR/65567-amicr/multiweave_code_20260121_1120/code/comed_run_multi.py\n\nAligns with the approved research topic Datascience and engineering."
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
@@ -441,7 +406,7 @@
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "No risks found under LC 2.7, inspection skipped."
+          "notes": "No risks found under LC 2.7 and 2.5 checks, inspection skipped."
         }
       ],
       "is_proprietary": false
@@ -452,7 +417,7 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "A 7 billion-parameter instruction-tuned language model designed for solving mathematical problems, proofs, and quantitative reasoning tasks in natural language.\n\nAligns with the approved research topic Datascience and engineering."
+          "notes": "DeepSeekMath-7B-Instruct is a mathematically specialized language model designed for step-by-step mathematical reasoning, solving math problems using chain-of-thought prompting, and providing structured answers to quantitative questions in English and Chinese.\n\nIncluded as a default model in /ibex/project/c2320/AIMCR/65567-amicr/multiweave_code_20260121_1120/code/comed_run_multi.py\n\n\nAligns with the approved research topic Datascience and engineering."
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
@@ -461,33 +426,33 @@
         },
         {
           "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
-          "score": 1,
-          "notes": "Owner: (Hangzhou DeepSeek Artificial Intelligence Co., Ltd.) https://huggingface.co/deepseek-ai/collections Founder: Liang Wenfeng (https://www.linkedin.com/in/wenfeng-liang-837841128/) The entity is from China, one of D5 countries.\n\nSource: https://huggingface.co/deepseek-ai/deepseek-math-7b-instruct"
+          "score": 2,
+          "notes": "\nURL : https://huggingface.co/deepseek-ai/deepseek-math-7b-instruct\n\nOwner/Maintainer: DeepSeek (deepseek-ai), a Chinese AI company based in Hangzhou, Zhejiang, founded in July 2023 by Liang Wenfeng, the co-founder of High-Flyer, who also serves as the CEO for both companies Wikipedia; DeepSeek is owned and funded by the Chinese hedge fund High-Flyer\n\nDownloads in Feb 2026: 5087\n\n\nThe entity is a D5 country."
         },
         {
           "name": "License / Permissions",
           "score": 1,
-          "notes": "Released under a DeepSeek custom model license with use-based conditions.\n\nThe license lets you use, modify, and distribute the model and derivatives with attribution and compliance.\n\nUse-based restrictions prohibit certain harmful or misuse scenarios (see Attachment A of the license).\n\nOutput generated by the model is not claimed by DeepSeek, but users are responsible for how it\u2019s used."
+          "notes": "License: DeepSeek Model License (Version 1.0, 23 October 2023)\nPermissions:\n\nCommercial use is permitted\n\nPerpetual, worldwide, non-exclusive, royalty-free copyright license to reproduce, prepare, publicly display, sublicense, and distribute the model\n\nPatent license to make, use, sell, import, and transfer the model\n\nMay host for third-party remote access (SaaS)\n\nMay add own copyright statement and provide additional license terms for modifications\n\nOutput generated by users is owned by the user\n\nRestrictions:\n\nMilitary use is explicitly prohibited\n\nCannot use for exploiting or harming minors\n\nCannot generate verifiably false information to harm others\n\nCannot generate inappropriate content violating regulations\n\nCannot process personal identifiable information without authorization\n\nCannot defame or harass others\n\nCannot use for fully automated decision-making adversely affecting legal rights\n\nCannot discriminate against individuals based on protected characteristics\n\nCannot exploit vulnerabilities of specific groups\n\nMust include use-based restrictions in any redistribution\n\nMust provide copy of license to recipients\n\nMust retain copyright and attribution notices"
         },
         {
           "name": "Training Data Documentation",
           "score": 1,
-          "notes": "The DeepSeekMath series was pretrained starting from a base model and further trained on a mathematics-focused corpus of ~120 billion tokens of domain-specific content, leveraged along with broader web and code data (total tokens likely in the hundreds of billions)."
+          "notes": "DeepSeekMath is initialized with DeepSeek-Coder-v1.5 7B and continues pre-training on math-related tokens sourced from Common Crawl, together with natural language and code data for 500B tokens.\n\nPre-training data composition:\n\n120B math-related tokens sourced from Common Crawl arXiv (DeepSeekMath Corpus)\n\n4% AlgebraicStack, 10% arXiv texts, 20% GitHub code, 10% natural language (EN/ZH) Emergent Mind\n\nTotal continued pre-training: 500 billion tokens"
         },
         {
           "name": "Customisation / Fine-tuning",
           "score": 1,
-          "notes": "It was fine-tuned for instruction conditioning to answer math questions and generate step-by-step mathematical reasoning in a conversational/instruct style."
+          "notes": "DeepSeekMath-Instruct 7B was fine-tuned on 776K training examples covering:\n\nMathematical problem-solving with chain-of-thought (CoT) reasoning\n\nProgram-of-thought (PoT) reasoning\n\nTool-integrated reasoning\n\nGSM8K and MATH benchmark problems with tool-integrated solutions\n\nEnglish and Chinese mathematical problems across varying complexity levels"
         },
         {
           "name": "FLOPS Calculation",
           "score": 1,
-          "notes": "The indication of number of parameters for bandit network is 7B. \nThe indication of number of training tokens is 120B. \nThe estimated FLOPs on ShaheenIII GPUP to train a model from scratch is: 6 x N x D= 6 x 7x 10^9 x 120 x 10^9 = 5.04 x 10^21 FLOPS\n\nIt is less than the threshold of 10^27."
+          "notes": "The indication of number of parameters for bandit network is 7B. \nThe indication of number of training tokens is 500B. \nThe estimated FLOPs on ShaheenIII GPUP to train a model from scratch is: 6 x N x D= 6 x 7x 10^9 x 500 x 10^9 = 2.1 x 10^22 FLOPS\n\nIt is less than the threshold of 10^27."
         },
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "No risks found under LC 2.7, inspection skipped."
+          "notes": "o risk in LC2.7 check. The model is not intended for pre-training, therefore, reducing LC 2.7 risk to low. Since LC2.7 is no-risk and 2.5 is low, skipping the inspection."
         }
       ],
       "is_proprietary": false
@@ -498,7 +463,7 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "Qwen2.5 instruct is a general-purpose large language model for text generation, instruction following, long-text generation, structured data analysis, coding, mathematics, and multilingual conversations across 29+ languages.\n\nAligns with approved research topic Datascience and engineering."
+          "notes": "Qwen2.5 instruct is a general-purpose large language model for text generation, instruction following, long-text generation, structured data analysis, coding, mathematics, and multilingual conversations across 29+ languages.\n\nIncluded as a default model in /ibex/project/c2320/AIMCR/65567-amicr/multiweave_code_20260121_1120/code/comed_run_multi.py\n\nAligns with approved research topic Datascience and engineering."
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
@@ -507,7 +472,7 @@
         },
         {
           "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
-          "score": 1,
+          "score": 2,
           "notes": "The model is published under the Qwen org and owned/maintained by the Qwen Team at Alibaba Cloud (Alibaba Group); no official maintainer LinkedIn profiles are provided in the primary model/repo pages. China: D5-Country\n\nSource: https://huggingface.co/Qwen/Qwen2.5-72B-Instruct\n\nDownloads in Dec 2025: 302,719"
         },
         {
@@ -533,7 +498,7 @@
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "No risk in LC2.7 check, skipping inspection."
+          "notes": "No risk in LC2.7 check. The model is not intended for pre-training, therefore, reducing LC 2.7 risk to low. Since LC2.7 is no-risk and 2.5 is low, skipping inspection."
         }
       ],
       "is_proprietary": false
@@ -544,7 +509,7 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "A 7 billion-parameter instruction-tuned generative language model designed to follow natural language instructions and generate text across conversational and completion tasks.\n\nAligns with approved research topic Datascience and engineering."
+          "notes": "A 7 billion-parameter instruction-tuned generative language model designed to follow natural language instructions and generate text across conversational and completion tasks.\n\nIncluded as a default model in /ibex/project/c2320/AIMCR/65567-amicr/multiweave_code_20260121_1120/code/comed_run_multi.py\n\n\nAligns with approved research topic Datascience and engineering."
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
@@ -590,17 +555,17 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "An English text embedding model that converts input text into 1024-dimensional vectors for semantic similarity, retrieval, clustering, or classification tasks with support for up to 8192 tokens of context.\n\nAligns with approved research topic Datascience and engineering."
+          "notes": "GTE-large-en-v1.5 is a text embedding model that generates dense vector representations (1024-dimensional) for text inputs up to 8192 tokens, achieving state-of-the-art scores on the MTEB benchmark for tasks like information retrieval, semantic textual similarity, and text reranking.\n\nIncluded as a default model in /ibex/project/c2320/AIMCR/65567-amicr/multiweave_code_20260121_1120/code/llm_subset_bandit.py\n\n\nAligns with approved research topic Datascience and engineering."
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "No mention of sensitive terms (e.g., \u201cmilitary\u201d, \u201cweapons\u201d, \u201cnuclear\u201d) in the model documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
         },
         {
           "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
-          "score": 1,
-          "notes": "The model is developed and maintained by the Institute for Intelligent Computing, Alibaba Group, part of the larger Chinese tech company Alibaba. Entity is from a D5 country (China).\n\nSource: https://huggingface.co/Alibaba-NLP/gte-large-en-v1.5"
+          "score": 2,
+          "notes": "Source: https://huggingface.co/Alibaba-NLP/gte-large-en-v1.5\n\nOwner/Maintainer: Institute for Intelligent Computing, Alibaba Group Hugging Face (also known as Tongyi Lab)\n\nThe entity is from a D5 country.\n\n"
         },
         {
           "name": "License / Permissions",
@@ -610,7 +575,7 @@
         {
           "name": "Training Data Documentation",
           "score": 1,
-          "notes": "Training included masked language modeling (C4-en), weak-supervised contrastive pre-training, and supervised contrastive fine-tuning on GTE-specific data; the exact token count is not published, but the dataset size listed is ~10.4 billion tokens from allenai/c4 in the Hugging Face dataset viewer."
+          "notes": "Training included masked language modeling (C4-en), weak-supervised contrastive pre-training, and supervised contrastive fine-tuning on GTE-specific data; the exact token count is not published, however, a fair estimate from literature is approximately 100 B tokens. "
         },
         {
           "name": "Customisation / Fine-tuning",
@@ -620,17 +585,23 @@
         {
           "name": "FLOPS Calculation",
           "score": 1,
-          "notes": "The indication of number of parameters for bandit network is 0.43B. \nThe indication of number of training tokens is ~10\u201315 B tokens. \nThe estimated FLOPs on ShaheenIII GPUP to train a model from scratch is: 6 x N x D= 6 x 0.43x 10^9 x 15 x 10^9 = 3.9 x 10^19 FLOPS\nIt is less than the threshold of 10^27."
+          "notes": "The indication of number of parameters for bandit network is 434M. \nThe indication of number of training tokens is ~100 B tokens. \nThe estimated FLOPs on ShaheenIII GPUP to train a model from scratch is: 6 x N x D= 6 x 434 x 10^6 x 100 x 10^9 = 2.603 x 10^20 FLOPS\n\nIt is less than the threshold of 10^27."
         },
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "No risk in LC2.7 check, skipping inspection."
+          "notes": "No risk in LC2.7 check. The model is not intended for pre-training, therefore, reducing LC 2.7 risk to low. Since LC2.7 is no-risk and 2.5 is low, skipping inspection."
         }
       ],
       "is_proprietary": false
     }
   ],
-  "observations": "Model is developed internally in KAUST.",
-  "recommendation": "Recommended for Grand Challenge."
+  "observations": "- MultiWeave CoMed is not a model but a pipeline used to route the parts of a query to appropriate LLMs based on suitability to optimize the response performance. The PI has provided the source code in  /ibex/project/c2320/AIMCR/65567-amicr/. Although the PI has not requested any models either in the project proposal or in the additional information they have provided, their code lists some models by default. The AIMCR has added these models in the review. \n\n- Three of the five default models are from the D5 country. Since the intent of use for the project is understood as for inference, as they will called in the CoMed pipeline, the risk has been reduced to low. \n\n- All the datasets are small scale benchmarks. It has been mentioned in the additional information provided by the PI that they plan to move to bigger benchmark datasets, not included in the project at the moment. \n",
+  "recommendation": "- Since multiple models from D5 country will be used, the proposal is to monitor the workflows midway in the project to check that no model has been further trained, as this does not appear to be the scope of the project. \n\n- Positive check passed\n\n- Negative check passed\n\n- 10^27 check passed\n\nRecommendation is to proceed with Grand Challanage. ",
+  "_submission_history": [
+    {
+      "timestamp": "2026-03-04T02:13:45.124186",
+      "action": "resubmission"
+    }
+  ]
 }
