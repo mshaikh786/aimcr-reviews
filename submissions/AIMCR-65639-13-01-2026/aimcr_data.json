@@ -130,7 +130,7 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "Swin-UNETR is used as a 3D encoder\u2013decoder model that learns latent representations of subsurface geology and reconstructs high-resolution voxelized geological structures from sparse or indirect observations.\nSwin-UNETR directly supports objectives (1) fine-tuning a geology foundation model on Saudi data and (2) guiding physics-based inversion for mineral exploration."
+          "notes": "Swin-UNETR is used as a 3D encoder\u2013decoder model that learns latent representations of subsurface geology and reconstructs high-resolution voxelized geological structures from sparse or indirect observations.\nSwin-UNETR directly supports objectives (1) fine-tuning a geology foundation model on Saudi data and (2) guiding physics-based inversion for mineral exploration.\n\nIt aligns with the approved research topic, Datasicence and Engineering."
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
@@ -171,12 +171,12 @@
       "is_proprietary": false
     },
     {
-      "name": "3D U-Net",
+      "name": "U-Net 3D",
       "checks": [
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "The 3D U-Net with attention is a volumetric encoder\u2013decoder architecture designed for diffusion pretraining and velocity prediction within a stochastic interpolation (ODE-based) framework to model 3D subsurface geological structures.\nThe model supports proposal objectives (1) training a geology foundation model on synthetic Saudi-calibrated data and (2) integrating generative priors with physics-based inversion for mineral exploration."
+          "notes": "flowtrain is a flow-matching generative model (3D attention U-Net architecture with stochastic interpolation) that generates synthetic 3D lithological/subsurface geology volumes, both unconditionally and conditioned on surface topography and sparse borehole observations, for probabilistic subsurface reconstruction.\n\nThe architecture preserves U-Net structure with attention blocks at each consecutive stage.\n\nThe model directly supports Objective 1 (fine-tuning a foundation model for geology) and Objective 2 (combining generative capabilities with physics-based inversion), specifically serving as the generative prior/foundation model for 3D subsurface reconstruction and aeromagnetic inversion guidance.\n\n\nAligns with the approved research topic Datascience and Engineering."
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
@@ -186,27 +186,27 @@
         {
           "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "The model is developed collaboratively by KAUST researchers and the University of British Columbia (UBC) research team (as referenced in arXiv:2506.11164), with no LinkedIn profiles specified in the documentation.\n\nUnable to access the GitHub repository or the IBEX instance of the model because they require explicit access permissions.\n"
+          "notes": "Source: https://github.com/chipnbits/flowtrain_stochastic_interpolation\nor \n/ibex/user/okhmakv/flowtrain_stochastic_interpolation/src/flowtrain/models/unet_attn_3d.py\n\nThe model is developed collaboratively by KAUST researchers and the University of British Columbia (UBC) research team (as referenced in arXiv:2506.11164), with no LinkedIn profiles specified in the documentation.\n\n"
         },
         {
           "name": "License / Permissions",
           "score": 1,
-          "notes": "Internal research code hosted on IBEX and GitHub repository.\n\nCollaborative academic research use permitted.\n\nNo public commercial redistribution terms explicitly stated.\n\nLicensing terms not formally declared in the provided documentation (requires repository verification)."
+          "notes": "License type: MIT License:\n\nCommercial use permitted\n\nModification permitted\n\nDistribution permitted\n\nPrivate use permitted\n\nNo warranty provided; liability disclaimed\n\nLicense and copyright notice must be included in distributions"
         },
         {
           "name": "Training Data Documentation",
           "score": 1,
-          "notes": "The model is pretrained on synthetically generated 3D geological volumes produced on-the-fly by a physics-based geological simulation engine, with 262,144 tokens per instance, and total D equals (number of training instances processed \u00d7 262,144 tokens) (exact D depends on total training steps, not specified in the documentation)."
+          "notes": "The model is trained on synthetically generated 3D voxelated subsurface geology samples produced by the StructuralGeo simulation engine (in-house, not published as a public dataset). The proposal documents two training runs: ~20 million samples at 64\u00d764\u00d764 resolution, and ~1,000 samples at 256\u00d7256\u00d7256 resolution; the repository's pretrained model used data at 64\u00b3 resolution. For Chinchilla D estimation: treating each 3D voxel grid sample as a data point, D \u2248 20,000,000 samples at 64\u00b3 (each sample = 262,144 voxels)"
         },
         {
           "name": "Customisation / Fine-tuning",
           "score": 1,
-          "notes": "The model is fine-tuned for task-specific geological reconstruction and mineral exploration workflows following large-scale diffusion pretraining"
+          "notes": "A 3D U-Net architecture augmented with attention blocks at each resolution stage, designed for diffusion pretraining and velocity prediction within a stochastic interpolation framework (ODE)."
         },
         {
           "name": "FLOPS Calculation",
           "score": 1,
-          "notes": "Number of tokens: 262,144 tokens/instance\nNumber of parameters: 22M\nTotal FLOPS: (3.4603008 \u00d7 10\u00b9\u00b3) \u00d7 M\nM being total training instances processed which is not mentioned "
+          "notes": "Number of tokens: 20M\n\nNumber of parameters: 22M\n\nTotal FLOPS:  6 x 22 x 10^6 x 20 x 10^6 = 2.640 x 10^13\n\n\nIts orders of magnitude less than 10^27. "
         },
         {
           "name": "Sample Inspection",
@@ -217,6 +217,12 @@
       "is_proprietary": false
     }
   ],
-  "observations": "1. The software listed is very minimal - only PyTorch and no docker images specified.\n2. No datasets are specified only Synthetically generated 3D samples\nof subsurface geologies. ",
-  "recommendation": ""
+  "observations": "Software, datasets and models have been clearly defined",
+  "recommendation": "There is no risk artifact requested in this project. \n\nPositive check passed\n\nNegative check passed\n\n10^27 check passed\n\nRecommended to proceed with the grand challenge. ",
+  "_submission_history": [
+    {
+      "timestamp": "2026-03-10T17:47:54.965767",
+      "action": "resubmission"
+    }
+  ]
 }
