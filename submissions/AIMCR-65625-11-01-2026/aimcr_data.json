@@ -303,13 +303,54 @@
       ]
     }
   ],
-  "models": [],
-  "observations": "No clear request of which models are required for different objectives. \nThe proposal proposes to use the double Chinchilla rule, which implies that the number of tokens is ~40 times the number of model parameters. By this measure, the expected parameters are as follows for the suggested models to be trained:\nNanoGPT \u2013 5B tokens - ~125M parameters\nMediumGPT \u2013 14B tokens - ~350M parameters\nLargeGPT \u2013 31B tokens - ~775M parameters\nNone of the above can reach the 10^27 threshold.\n\nAuthor(s) plan to develop, scale, and train their own AI/LLM architectures from scratch.",
-  "recommendation": "Need to consult with the applicant which models they wish to use. Conditional to it, recommended for grand challenge.",
-  "_submission_history": [
+  "models": [
     {
-      "timestamp": "2026-01-11T23:24:29.443736",
-      "action": "initial_submission"
+      "name": "GPT-2 ",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "The model is used for general pre-training from scratch on large-scale web text, which aligns with the proposal\u2019s stated objective of general \u201c(pre-)training\u201d rather than downstream fine-tuning."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7"
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "NOTE: This repo serves as the reference implementation for the architecture used in this project. According to the proposal description, the researchers train their own models rather than use a pretrained artifact.\n\nhttps://github.com/KellerJordan/modded-nanogpt?tab=readme-ov-file\n\nKeller Jordan\u2019s public LinkedIn identifies him as Technical Staff at OpenAI and a UC San Diego alumnus, and the repo also credits many contributorsCommits: 1386\nlast commit: 3 days ago\nStars: 4.8k\nFork: 655"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "The modded-nanogpt code is under the MIT License, which permits use, copying, modification, merging, publishing, distribution, sublicensing, and sale of the software.\nThe MIT License requires preservation of the copyright notice and license text in copies or substantial portions of the software.\nFineWeb is released under ODC-By v1.0, which allows use and sharing of the dataset with attribution.\nFineWeb use is also subject to Common Crawl\u2019s Terms of Use, as noted in the dataset card."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "FineWeb\n\nsource: HuggingFace\ntokens:18.5T"
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "No fine-tuning for downstream tasks are available."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Number of trainable parameters: 124 M \u2013 1 B \nNumber of tokens: up to 350 B\n\nEstimated FLOPs= 6 x 1 x 10^9 x 350 x 10^9 = 2.1k x 10^21"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": ""
+        }
+      ],
+      "is_proprietary": true
     }
-  ]
+  ],
+  "observations": "No clear request of which models are required for different objectives. \nThe proposal proposes to use the double Chinchilla rule, which implies that the number of tokens is ~40 times the number of model parameters. By this measure, the expected parameters are as follows for the suggested models to be trained:\nNanoGPT \u2013 5B tokens - ~125M parameters\nMediumGPT \u2013 14B tokens - ~350M parameters\nLargeGPT \u2013 31B tokens - ~775M parameters\nNone of the above can reach the 10^27 threshold.\n\nAuthor(s) plan to develop, scale, and train their own AI/LLM architectures from scratch.",
+  "recommendation": "Need to consult with the applicant which models they wish to use. Conditional to it, recommended for grand challenge."
 }
