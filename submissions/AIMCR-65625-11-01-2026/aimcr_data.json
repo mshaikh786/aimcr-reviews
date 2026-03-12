@@ -80,6 +80,41 @@
       ]
     },
     {
+      "name": "MLFlow",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "AI experiment management of logs and metrics. Aligns with the approved research topic Datascience and engineering.\n\nWeights & Biases (wandb) was requested but due to no-internet policy on Shaheen III, MLFlow as an alternative to do local logging and metric collection will be proposed to the applicants."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation."
+        },
+        {
+          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Maintained by Databricks (USA) \nThe entity is from non-D5 country"
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://pypi.org/project/mlflow/\n\nhttps://github.com/mlflow/mlflow\n\nOwner / Organization: databricks\nRepository: mlflow/mlflow\nStars: 23600\nForks: 5100\nOpen Issues: 1500\nLast Commit Date: 2026-01-08\n"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Apache License 2.0:\n\nPermissions: \n\nReproduce the Work\n\nPrepare Derivative Works (modifications)\n\nPublicly display the Work\n\nPublicly perform the Work\n\nSublicense the Work\n\nDistribute the Work and Derivative Works in Source or Object form\n\nCommercial use (no charge, royalty-free)\n\nRestrictions:\n\nCannot use trade names, trademarks, service marks, or product names of the Licensor\n\nException: Can use them for reasonable description of the Work's origin or reproducing NOTICE file content"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "pip installation: \n\nmlflow-skinny 3.8.1\nmlflow-tracing 3.8.1\nalembic 1.17.2\ncachetools 6.2.4\nclick 8.3.1\ncloudpickle 3.1.2\ncryptography 46.0.3\ndatabricks-sdk 0.77.0\ndocker 7.1.0\nfastapi 0.128.0\nFlask 3.1.2\nflask-cors 6.0.2\nGitPython 3.1.46\ngitdb 4.0.12\ngoogle-auth 2.47.0\ngraphene 3.4.3\ngraphql-core 3.2.7\ngraphql-relay 3.2.0\ngunicorn 23.0.0\nhuey 2.6.0\nimportlib_metadata 8.7.1\nmatplotlib 3.10.8\nnumpy 2.4.0\nopentelemetry-api 1.39.1\nopentelemetry-proto 1.39.1\nopentelemetry-sdk 1.39.1\nopentelemetry-semantic-conventions 0.60b1\npackaging 25.0\npandas 2.3.3\nprotobuf 6.33.2\npyarrow 22.0.0\npydantic 2.12.5\npydantic_core 2.41.5\npython-dateutil 2.9.0.post0\npython-dotenv 1.2.1\nPyYAML 6.0.3\nrequests 2.32.5\ncharset-normalizer 3.4.4\nidna 3.11\nrsa 4.9.1\nscikit-learn 1.8.0\nscipy 1.16.3\nsmmap 5.0.2\nSQLAlchemy 2.0.45\nsqlparse 0.5.5\nstarlette 0.50.0\nanyio 4.12.1\ntyping_extensions 4.15.0\nurllib3 2.6.3\nuvicorn 0.40.0\nannotated-doc 0.0.4\nannotated-types 0.7.0\nblinker 1.9.0\ncertifi 2026.1.4\ncffi 2.0.0\ncontourpy 1.3.3\ncycler 0.12.1\nfonttools 4.61.1\ngreenlet 3.3.0\nh11 0.16.0\nitsdangerous 2.2.0\nJinja2 3.1.6\njoblib 1.5.3\nkiwisolver 1.4.9\nMarkupSafe 3.0.3\npillow 12.1.0\npyasn1 0.6.1\npyasn1_modules 0.4.2\npyparsing 3.3.1\npytz 2025.2\nsix 1.17.0\nthreadpoolctl 3.6.0\ntyping-inspection 0.4.2\ntzdata 2025.3\nWerkzeug 3.1.4\nzipp 3.23.0\nMako 1.3.10\npycparser 2.23"
+        }
+      ]
+    },
+    {
       "name": "wandb",
       "checks": [
         {
