@@ -93,7 +93,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Maintained by Databricks (USA) \nThe entity is from non-D5 country"
         },
@@ -111,41 +111,6 @@
           "name": "Bundled Tools / Dependencies",
           "score": 1,
           "notes": "pip installation: \n\nmlflow-skinny 3.8.1\nmlflow-tracing 3.8.1\nalembic 1.17.2\ncachetools 6.2.4\nclick 8.3.1\ncloudpickle 3.1.2\ncryptography 46.0.3\ndatabricks-sdk 0.77.0\ndocker 7.1.0\nfastapi 0.128.0\nFlask 3.1.2\nflask-cors 6.0.2\nGitPython 3.1.46\ngitdb 4.0.12\ngoogle-auth 2.47.0\ngraphene 3.4.3\ngraphql-core 3.2.7\ngraphql-relay 3.2.0\ngunicorn 23.0.0\nhuey 2.6.0\nimportlib_metadata 8.7.1\nmatplotlib 3.10.8\nnumpy 2.4.0\nopentelemetry-api 1.39.1\nopentelemetry-proto 1.39.1\nopentelemetry-sdk 1.39.1\nopentelemetry-semantic-conventions 0.60b1\npackaging 25.0\npandas 2.3.3\nprotobuf 6.33.2\npyarrow 22.0.0\npydantic 2.12.5\npydantic_core 2.41.5\npython-dateutil 2.9.0.post0\npython-dotenv 1.2.1\nPyYAML 6.0.3\nrequests 2.32.5\ncharset-normalizer 3.4.4\nidna 3.11\nrsa 4.9.1\nscikit-learn 1.8.0\nscipy 1.16.3\nsmmap 5.0.2\nSQLAlchemy 2.0.45\nsqlparse 0.5.5\nstarlette 0.50.0\nanyio 4.12.1\ntyping_extensions 4.15.0\nurllib3 2.6.3\nuvicorn 0.40.0\nannotated-doc 0.0.4\nannotated-types 0.7.0\nblinker 1.9.0\ncertifi 2026.1.4\ncffi 2.0.0\ncontourpy 1.3.3\ncycler 0.12.1\nfonttools 4.61.1\ngreenlet 3.3.0\nh11 0.16.0\nitsdangerous 2.2.0\nJinja2 3.1.6\njoblib 1.5.3\nkiwisolver 1.4.9\nMarkupSafe 3.0.3\npillow 12.1.0\npyasn1 0.6.1\npyasn1_modules 0.4.2\npyparsing 3.3.1\npytz 2025.2\nsix 1.17.0\nthreadpoolctl 3.6.0\ntyping-inspection 0.4.2\ntzdata 2025.3\nWerkzeug 3.1.4\nzipp 3.23.0\nMako 1.3.10\npycparser 2.23"
-        }
-      ]
-    },
-    {
-      "name": "wandb",
-      "checks": [
-        {
-          "name": "Project & Usage Alignment",
-          "score": 1,
-          "notes": "NumPy is a core Python scientific computing library providing multidimensional arrays, numerical operations, and linear algebra utilities.\nAligns with the approved research topic Datascience and engineering."
-        },
-        {
-          "name": "Prohibited Use Screening (LC 2.7)",
-          "score": 1,
-          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
-        },
-        {
-          "name": "D5+M affiliation Screening (LC 2.5)",
-          "score": 1,
-          "notes": " https://wandb.ai/site/company/about-us/\nIts a bonafide community with a governance model and multiple maintainers.\nThis is an opensource project with funding sources.\nThe entities are from non-D5 countries."
-        },
-        {
-          "name": "Source / Provenance",
-          "score": 1,
-          "notes": "https://github.com/wandb/wandb\n\n\u2043 Stars: 10.9k\n\u2043 Fork: 832\n\u2043 Commits:9k \n\u2043 last commit: Mar 2026 "
-        },
-        {
-          "name": "License / Permissions",
-          "score": 1,
-          "notes": "License / Permissions: Score 1 | Notes: BSD 3-Clause License Permissions:\n\nUse the software for any purpose, including commercial use\nModify the source code\nDistribute the original or modified versions\nUse it in proprietary/closed-source projects\n\nSublicense it as part of a larger work\n\nFit for use in proposed project.\n"
-        },
-        {
-          "name": "Bundled Tools / Dependencies",
-          "score": 1,
-          "notes": "protobuf 6.33.3\n\npydantic 2.12.5\n\npydantic_core 2.41.5\n\nrequests 2.32.5\n\ncharset-normalizer 3.4.4\n\nidna 3.11\n\ntyping_extensions 4.15.0\n\nurllib3 2.6.3\n\nannotated-types 0.7.0\n\ncertifi 2026.1.4\n\nclick 8.3.1\n\nGitPython 3.1.46\n\ngitdb 4.0.12\n\nsmmap 5.0.2\n\nsentry-sdk 2.49.0\n\ntyping-inspection 0.4.2\n\npackaging 25.0\n\nplatformdirs 4.5.1\n\nPyYAML 6.0.3\n"
         }
       ]
     },
@@ -345,7 +310,7 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "The model is used for general pre-training from scratch on large-scale web text, which aligns with the proposal\u2019s stated objective of general \u201c(pre-)training\u201d rather than downstream fine-tuning."
+          "notes": "The model is used for general pre-training from scratch on large-scale web text, which aligns with the proposal\u2019s stated objective of general \u201c(pre-)training\u201d rather than downstream fine-tuning.\n\nAligns with the approved research project, Datascience & engineering. "
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
@@ -355,17 +320,17 @@
         {
           "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "- The project template is a modified fork of https://github.com/victoresque/pytorch-template\n and https://github.com/WrathOfGrapes/asr_project_template\n           - pytorch template: \n                  - stars: 5.1k\n                  - forks: 1.1k\n                  - commits: 233\n                  - last commit: 6 years ago\n                  - Maintained by: Victor Huang (fron a non-D5 country) \n           -asr_project template \n                  - stars: 8\n                  - forks: 38\n                  - commits: 36\n                  - last commit: 4 years ago\n                  - Maintained by: Daniel Ivanov (fron a non-D5 country) \n\n- The model implementation builds on https://github.com/KellerJordan/modded-nanogpt\n            - Commits: 1386\n            - last commit: 3 days ago\n           - Stars: 4.8k\n           - Fork: 655\n           - Maintained by: Keller Jordan, Technical Staff at OpenAI and a UC San Diego alumnus (fron non-D5 country)\n\n- The file model/GPT.py also adapts code from https://github.com/artem-riabinin/Experiments-estimating-smoothness-for-NanoGPT-and-CNN\n            - Commits: 15\n            - last commit: May 2025\n           - Stars: 10\n           - Fork: 2\n           - Maintained by: Artem riabinin, Graduate Student Researcher at KAUST (from non-D5 country)\n\n\n\n\n\n\n\n. All sources are\n\nNOTE: This repo serves as the reference implementation for the architecture used in this project. According to the proposal description, the researchers train their own models rather than use a pretrained artifact.\n\nhttps://github.com/KellerJordan/modded-nanogpt?tab=readme-ov-file\n\nKeller Jordan\u2019s public LinkedIn identifies him as Technical Staff at OpenAI and a UC San Diego alumnus, and the repo also credits many contributors"
+          "notes": "Source: https://drive.google.com/drive/folders/1l2dr8pACQTvgnL-_rAoWXXe5xfDI71HG?usp=sharing \nThe source is from a Google Drive. Access was provided by PI's group and the source was downloaded and inspected.\n\n- The project template is a modified fork of https://github.com/victoresque/pytorch-template\n and https://github.com/WrathOfGrapes/asr_project_template\n           - pytorch template: \n                  - stars: 5.1k\n                  - forks: 1.1k\n                  - commits: 233\n                  - last commit: 6 years ago\n                  - Maintained by: Victor Huang (fron a non-D5 country) \n           -asr_project template \n                  - stars: 8\n                  - forks: 38\n                  - commits: 36\n                  - last commit: 4 years ago\n                  - Maintained by: Daniel Ivanov (fron a non-D5 country) \n\n- The model implementation builds on https://github.com/KellerJordan/modded-nanogpt\n            - Commits: 1386\n            - last commit: 3 days ago\n           - Stars: 4.8k\n           - Fork: 655\n           - Maintained by: Keller Jordan, Technical Staff at OpenAI and a UC San Diego alumnus (fron non-D5 country)\n\n- The file model/GPT.py also adapts code from https://github.com/artem-riabinin/Experiments-estimating-smoothness-for-NanoGPT-and-CNN\n            - Commits: 15\n            - last commit: May 2025\n           - Stars: 10\n           - Fork: 2\n           - Maintained by: Artem riabinin, Graduate Student Researcher at KAUST (from non-D5 country)\n\n\n\n\n\n\n\n. All sources are\n\nNOTE: This repo serves as the reference implementation for the architecture used in this project. According to the proposal description, the researchers train their own models rather than use a pretrained artifact.\n\nhttps://github.com/KellerJordan/modded-nanogpt?tab=readme-ov-file\n\nKeller Jordan\u2019s public LinkedIn identifies him as Technical Staff at OpenAI and a UC San Diego alumnus, and the repo also credits many contributors"
         },
         {
           "name": "License / Permissions",
           "score": 1,
-          "notes": "The modded-nanogpt code is under the MIT License, which permits use, copying, modification, merging, publishing, distribution, sublicensing, and sale of the software.\nThe MIT License requires preservation of the copyright notice and license text in copies or substantial portions of the software.\nFineWeb is released under ODC-By v1.0, which allows use and sharing of the dataset with attribution.\nFineWeb use is also subject to Common Crawl\u2019s Terms of Use, as noted in the dataset card."
+          "notes": "License type: MIT License \n\nThe license permits use, copying, modification, merging, publishing, distribution, sublicensing, and sale of the software.\n\nThe MIT License requires preservation of the copyright notice and license text in copies or substantial portions of the software.\n"
         },
         {
           "name": "Training Data Documentation",
           "score": 1,
-          "notes": "FineWeb\n\nsource: HuggingFace\ntokens:18.5T"
+          "notes": "FineWeb\n\nsource: HuggingFace\n\ntokens:18.5T\n\nThough the original model was trained on FineWeb which has 15-18 trillion tokens, the intent of the project is to pre-train from scratch on a subset of 350B.  However, the FineWeb dataset requested is as-is and  no subset has been identified. For evaluation of the 10^27, 18.5T is being considered as total number of tokens."
         },
         {
           "name": "Customisation / Fine-tuning",
@@ -375,17 +340,23 @@
         {
           "name": "FLOPS Calculation",
           "score": 1,
-          "notes": "Number of trainable parameters: 124 M \u2013 1 B \nNumber of tokens: up to 350 B\n\nEstimated FLOPs= 6 x 1 x 10^9 x 350 x 10^9 = 2.1k x 10^21"
+          "notes": "Number of trainable parameters: 124 M \u2013 1 B (considering 1B parameter)\nNumber of tokens: up to 350 B \n\nEstimated FLOPs= 6 x 1 x 10^9 x 18.5 x 10^12 = 1.11 x 10^23\n\nThe estimated FLOPs after pre-training on Shaheen III are orders of magnitude less than 10^27."
         },
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": ""
+          "notes": "No risk identified in 2.7 and 2.5 checks. Skipping inspection."
         }
       ],
       "is_proprietary": false
     }
   ],
-  "observations": "No clear request of which models are required for different objectives. \nThe proposal proposes to use the double Chinchilla rule, which implies that the number of tokens is ~40 times the number of model parameters. By this measure, the expected parameters are as follows for the suggested models to be trained:\nNanoGPT \u2013 5B tokens - ~125M parameters\nMediumGPT \u2013 14B tokens - ~350M parameters\nLargeGPT \u2013 31B tokens - ~775M parameters\nNone of the above can reach the 10^27 threshold.\n\nAuthor(s) plan to develop, scale, and train their own AI/LLM architectures from scratch.",
-  "recommendation": "Need to consult with the applicant which models they wish to use. Conditional to it, recommended for grand challenge."
+  "observations": "Additional information provides the information that a modified GPT-2 model will be used. The model architecture is inherited from an open source github repository from non-D5 entity. The number of parameters after modifications can be between 124M to 1B. \n\nThe datasets requested is FineWeb which is composed 15-18T tokens, however, the project claims to pre-train the model on a subset. The subset has not been identified so the 10^27 calculation has been done for the full dataset. Additionally, ImageNet 21K has been requested. There is no expression of intent of a multimodal pre-training so considering both dataset together to train a common(single) model is not applicable. \n\nWandb package is requested which cannot be provided. It is for observability and experiment management. KSL will provide MLFlow instead. \n\n",
+  "recommendation": "The artifacts all have no risk. The only confirmation will be to check the output models were not trained for multimodal capability. \n\nPositive checks passed\n\nNegative checks passed\n\n10^27 check passed.\n\nRecommended for approval for grand challenge. ",
+  "_submission_history": [
+    {
+      "timestamp": "2026-03-12T11:36:56.152010",
+      "action": "resubmission"
+    }
+  ]
 }
