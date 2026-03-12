@@ -15,32 +15,32 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "Aligns with the proposal objectives. Aligns with the approved research topic Datascience and engineering."
+          "notes": "PyTorch is an open-source deep learning framework providing tensor computation with GPU acceleration and automatic differentiation for training machine learning models.\nUsed to implement, train, and evaluate deep learning models and neural network architectures required for the proposal\u2019s machine learning experiments.\nAligns with the proposal objectives. Aligns with the approved research topic Datascience and engineering."
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "No mention of sensitive terms in the documentation of PyTorch."
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
         },
         {
-          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "Originally developed by Meta and now governed by Linux Foundation."
+          "notes": "Originally developed by Meta and now governed by Linux Foundation.\nThe entity is from a non-D5 country "
         },
         {
           "name": "Source / Provenance",
           "score": 1,
-          "notes": " https://github.com/pytorch/pytorch/edit/main/docs/source/index.md As of Jan 4th, 2025 96300 stars 26400 forks 12 Github projects 17000 PRs 97745 commits last commit 10 hours ago"
+          "notes": " https://github.com/pytorch/pytorch/edit/main/docs/source/index.md\n\u2043 Stars: 96300\n\u2043 Fork: 26400\n\u2043 Commits: 99745\n\u2043 last commit: 10 hours ago\n As of Jan 4th\n"
         },
         {
           "name": "License / Permissions",
           "score": 1,
-          "notes": "KSL will provide NGC container for the requested version of PyTorch. nvcr.io/nvidia/pytorch:25.12-py3\n\nNVIDIA Deep Learning Container License Permissions:\n\nInstall and Use\n\nDeploy as a Service\n\nCreate Derived Containers\n\nOpen Source Development Restrictions:\n\nNo Reverse Engineering\n\nNo Standalone Distribution: may not distribute or sublicense the CONTAINER as a stand-alone product\n\nNo Circumventing Security\n"
+          "notes": "KSL will provide NGC container for the requested version of PyTorch. nvcr.io/nvidia/pytorch:25.12-py3\n\nNVIDIA Deep Learning Container License Permissions:\n\nInstall and Use\nDeploy as a Service\nCreate Derived Containers\nOpen Source Development Restrictions:\nNo Reverse Engineering\nNo Standalone Distribution: may not distribute or sublicense the CONTAINER as a stand-alone product\nNo Circumventing Security"
         },
         {
           "name": "Bundled Tools / Dependencies",
           "score": 1,
-          "notes": "nvcr.io/nvidia/pytorch:25.12-py3 contains"
+          "notes": "nvcr.io/nvidia/pytorch:25.12-py3 container"
         }
       ]
     },
@@ -55,22 +55,22 @@
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "No mention of sensitive terms in the documentation."
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
         },
         {
-          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "Its a bonafide community with a governance model and multiple maintainers. https://numpy.org/about/ This is an opensource project with funding sources from entities from non-D5 countries."
+          "notes": "https://numpy.org/about/ \nIts a bonafide community with a governance model and multiple maintainers. This is an opensource project with funding sources. \nThe entities are from non-D5 countries."
         },
         {
           "name": "Source / Provenance",
           "score": 1,
-          "notes": "PyPI: https://pypi.org/project/numpy/ https://github.com/numpy/numpy"
+          "notes": "PyPI: https://pypi.org/project/numpy/\n https://github.com/numpy/numpy\n\n\u2043 Stars: 31.6\n\u2043 Fork: 12.1k \n\u2043 Commits: 40k\n\u2043 last commit: Feb 2026"
         },
         {
           "name": "License / Permissions",
           "score": 1,
-          "notes": "numpy/numpy Description: The fundamental package for scientific computing with Python. Stars: 31038 Forks: 11858 Open Issues: 2392 Last Commit Date: 2025-12-17T23:48:08Z\n\nLicense / Permissions: Score 1 | Notes: BSD 3-Clause License Permissions:\n\nUse the software for any purpose, including commercial use\n\nModify the source code\n\nDistribute the original or modified versions\n\nUse it in proprietary/closed-source projects\n\nSublicense it as part of a larger work\n\nFit for use in proposed project.\n"
+          "notes": "License / Permissions: Score 1 | Notes: BSD 3-Clause License Permissions:\nUse the software for any purpose, including commercial use\nModify the source code\nDistribute the original or modified versions\nUse it in proprietary/closed-source projects\nSublicense it as part of a larger work\nFit for use in proposed project.\n"
         },
         {
           "name": "Bundled Tools / Dependencies",
@@ -85,27 +85,27 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "Aligns with the approved research topic Datascience and engineering."
+          "notes": "NumPy is a core Python scientific computing library providing multidimensional arrays, numerical operations, and linear algebra utilities.\nAligns with the approved research topic Datascience and engineering."
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "No mention of sensitive terms in the documentation."
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
         },
         {
-          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "Its a bonafide community with a governance model and multiple maintainers. https://wandb.ai/site/company/about-us/ This is an opensource project with funding sources from entities from non-D5 countries."
+          "notes": " https://wandb.ai/site/company/about-us/\nIts a bonafide community with a governance model and multiple maintainers.\nThis is an opensource project with funding sources.\nThe entities are from non-D5 countries."
         },
         {
           "name": "Source / Provenance",
           "score": 1,
-          "notes": "https://github.com/wandb/wandb"
+          "notes": "https://github.com/wandb/wandb\n\n\u2043 Stars: 10.9k\n\u2043 Fork: 832\n\u2043 Commits:9k \n\u2043 last commit: Mar 2026 "
         },
         {
           "name": "License / Permissions",
           "score": 1,
-          "notes": "Description: Use W&B to build better models faster. Track and visualize all the pieces of your machine learning pipeline, from datasets to production machine learning models. Stars: 10.7K Forks: 807Open Issues: 699Last Commit Date: 2026-1-11T00:27:08Z\n\nLicense / Permissions: Score 1 | Notes: BSD 3-Clause License Permissions:\n\nUse the software for any purpose, including commercial use\n\nModify the source code\n\nDistribute the original or modified versions\n\nUse it in proprietary/closed-source projects\n\nSublicense it as part of a larger work\n\nFit for use in proposed project.\n"
+          "notes": "License / Permissions: Score 1 | Notes: BSD 3-Clause License Permissions:\n\nUse the software for any purpose, including commercial use\nModify the source code\nDistribute the original or modified versions\nUse it in proprietary/closed-source projects\n\nSublicense it as part of a larger work\n\nFit for use in proposed project.\n"
         },
         {
           "name": "Bundled Tools / Dependencies",
@@ -120,27 +120,27 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "Plotting tool in Python. Aligns with the approved research topic Datascience and engineering."
+          "notes": "Matplotlib is a Python visualization library used for creating static, animated, and interactive plots and charts.\nUsed to visualize experimental results, model outputs, and statistical analyses during the research workflow.\n Aligns with the approved research topic Datascience and engineering."
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "No mention of sensitive terms in the documentation."
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
         },
         {
-          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "Thomas A Caswell \u2014 project lead \u2014 https://www.linkedin.com/in/tcaswell/\n\nGovernance: https://matplotlib.org/governance/governance.html#main-governance-document\n\nThis is an opensource project with funding sources from entities from non-D5 countries."
+          "notes": "Project Lead: Thomas A Caswell \u2014 project lead \u2014 https://www.linkedin.com/in/tcaswell/\n\nGovernance: https://matplotlib.org/governance/governance.html#main-governance-document\n\nThe entities are from non-D5 countries."
         },
         {
           "name": "Source / Provenance",
           "score": 1,
-          "notes": "https://pypi.org/project/matplotlib/\n\nhttps://github.com/matplotlib/matplotlib\n\nOwner / Organization: matplotlib Repository: matplotlib/matplotlib Description: matplotlib: plotting with Python Stars: 22134 Forks: 8144 Open Issues: 1558 Last Commit Date: 2025-12-17"
+          "notes": "https://pypi.org/project/matplotlib/\nhttps://github.com/matplotlib/matplotlib\n\n\u2043 Stars: 22.6k\n\u2043 Fork: 8.3k\n\u2043 Commits: 53k\n\u2043 last commit: March 2026\n\nMaintained by: matplotlib Repository: matplotlib/matplotlib Description: matplotlib: plotting with Python."
         },
         {
           "name": "License / Permissions",
           "score": 1,
-          "notes": "BSD-compatible Python Software Foundation (PSF) based license. Permissions:\nCommercial use allowed\n\nModification of the source code permitted\n\nDistribution of original or modified versions allowed\n\nPrivate use permitted\n\nNo requirement to disclose source code\n\nRestrictions:\n\nMust include copyright notice and license text in distributions\n\nNo trademark use without permission\n\nSoftware is provided \"as is\" without warranty\n\nCannot hold authors liable for damages\n\nFit for this proposal's use"
+          "notes": "Licensed under the Matplotlib License (BSD-style).\n\nAllows commercial use.\nAllows modification and redistribution.\nRequires attribution and license notice."
         },
         {
           "name": "Bundled Tools / Dependencies",
@@ -155,15 +155,15 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "Hydra is an open-source Python framework that simplifies the development of research and other complex applications.. Aligns with the approved research topic Datascience and engineering."
+          "notes": "Hydra is an open-source Python framework that simplifies the development of research and other complex applications.\nUsed to manage experiment configurations, hyperparameters, and runtime settings for machine learning training pipelines.\nAligns with the approved research topic Datascience and engineering."
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "No mention of sensitive terms in the documentation."
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
         },
         {
-          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Owned by Meta Platforms, Inc.\nEntity is not from a D5 country."
         },
@@ -190,22 +190,22 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures similar to R data.frame objects, statistical functions, and much more. Aligns with the approved research topic Datascience and engineering."
+          "notes": "Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures similar to R data.frame objects, statistical functions, and much more. \nUsed in the project for data preprocessing, tabular dataset manipulation, and analysis required for machine learning experiments.\nAligns with the approved research topic Datascience and engineering."
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "No mention of sensitive terms in the documentation."
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
         },
         {
-          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "Its a bonafide community with a governance model and multiple maintainers. https://pandas.pydata.org/about/governance.html\nThis is an opensource project with funding sources from entities from non-D5 countries."
+          "notes": "Its a bonafide community with a governance model and multiple maintainers. https://pandas.pydata.org/about/governance.html\nThe entities are from non-D5 countries."
         },
         {
           "name": "Source / Provenance",
           "score": 1,
-          "notes": " https://pypi.org/project/pandas/\nhttps://github.com/pandas-dev/pandas/\n\npandas-dev/pandas Description: Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures similar to R data.frame objects, statistical functions, and much more Stars: 47340 Forks: 19417 Open Issues: 3607 Last Commit Date: 2025-12-18\n"
+          "notes": "https://pypi.org/project/pandas/\nhttps://github.com/pandas-dev/pandas/\n\n\u2043 Stars: 48.1k\n\u2043 Fork: 19.7k\n\u2043 Commits: 37k\n\u2043 last commit: Mar 2026\n"
         },
         {
           "name": "License / Permissions",
@@ -320,7 +320,7 @@
         {
           "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "NOTE: This repo serves as the reference implementation for the architecture used in this project. According to the proposal description, the researchers train their own models rather than use a pretrained artifact.\n\nhttps://github.com/KellerJordan/modded-nanogpt?tab=readme-ov-file\n\nKeller Jordan\u2019s public LinkedIn identifies him as Technical Staff at OpenAI and a UC San Diego alumnus, and the repo also credits many contributorsCommits: 1386\nlast commit: 3 days ago\nStars: 4.8k\nFork: 655"
+          "notes": "- The project template is a modified fork of https://github.com/victoresque/pytorch-template\n and https://github.com/WrathOfGrapes/asr_project_template\n           - pytorch template: \n                  - stars: 5.1k\n                  - forks: 1.1k\n                  - commits: 233\n                  - last commit: 6 years ago\n                  - Maintained by: Victor Huang (fron a non-D5 country) \n           -asr_project template \n                  - stars: 8\n                  - forks: 38\n                  - commits: 36\n                  - last commit: 4 years ago\n                  - Maintained by: Daniel Ivanov (fron a non-D5 country) \n\n- The model implementation builds on https://github.com/KellerJordan/modded-nanogpt\n            - Commits: 1386\n            - last commit: 3 days ago\n           - Stars: 4.8k\n           - Fork: 655\n           - Maintained by: Keller Jordan, Technical Staff at OpenAI and a UC San Diego alumnus (fron non-D5 country)\n\n- The file model/GPT.py also adapts code from https://github.com/artem-riabinin/Experiments-estimating-smoothness-for-NanoGPT-and-CNN\n            - Commits: 15\n            - last commit: May 2025\n           - Stars: 10\n           - Fork: 2\n           - Maintained by: Artem riabinin, Graduate Student Researcher at KAUST (from non-D5 country)\n\n\n\n\n\n\n\n. All sources are\n\nNOTE: This repo serves as the reference implementation for the architecture used in this project. According to the proposal description, the researchers train their own models rather than use a pretrained artifact.\n\nhttps://github.com/KellerJordan/modded-nanogpt?tab=readme-ov-file\n\nKeller Jordan\u2019s public LinkedIn identifies him as Technical Staff at OpenAI and a UC San Diego alumnus, and the repo also credits many contributors"
         },
         {
           "name": "License / Permissions",
@@ -348,7 +348,7 @@
           "notes": ""
         }
       ],
-      "is_proprietary": true
+      "is_proprietary": false
     }
   ],
   "observations": "No clear request of which models are required for different objectives. \nThe proposal proposes to use the double Chinchilla rule, which implies that the number of tokens is ~40 times the number of model parameters. By this measure, the expected parameters are as follows for the suggested models to be trained:\nNanoGPT \u2013 5B tokens - ~125M parameters\nMediumGPT \u2013 14B tokens - ~350M parameters\nLargeGPT \u2013 31B tokens - ~775M parameters\nNone of the above can reach the 10^27 threshold.\n\nAuthor(s) plan to develop, scale, and train their own AI/LLM architectures from scratch.",
