@@ -513,8 +513,8 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "D5+M Affiliation Screening (LC 2.5)",
-          "score": 2,
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
           "notes": "community-owned and primarily maintained by Casper da Costa-Luis (GitHub: casperdcl). \nhttps://cdcl.ml\nAcclaimed developer from non-D5 country.\n"
         },
         {
@@ -1073,11 +1073,11 @@
       "is_proprietary": false
     }
   ],
-  "observations": "- TRELLIS-500K was created by a PhD student from Tsinghua University who also works at Microsoft Research Aisa since 2021. \n- Same is the case with the model TRELLIS-image-large. The developer and maintainer has the same affiliation as above. \n- The licensing scheme for Objaverse-xl is slightly complex, and the PI must be notified to check if their ultimate release of the model doesn't violate any condition of individual objects from different sources containing their own license. \n- Although there is no documentation to scan for the pre-generated data by Infinigen, sample inspection was used to screen for LC2.7. \n- Infinigen was identified as model in \u201cadditional information\u201d but review deems it as a software because it is not an AI model in traditional term.\n- In the Objaverse-xl dataset, \"weapons-military\" category was inspected and had pictures of avatars of modern and historic e.g. knives, swords, pistols and guns.\n- In ScanNet++ dataset, an account needs to be created: https://scannetpp.mlsg.cit.tum.de/scannetpp/ to download the data\n",
-  "recommendation": "- Positive check passed.\n\nThe TRELLIS model and datasets maintainers have affiliations with academic institutions from a D5 country but are also employed at Microsoft Research Aisa. Also, Objaverse-XL has weapons and military related objects which categorized differently than Objaverse v1.0. KSL AI/ML team is working on isolating the related objects to delete and repackage the datasets.\nPI have confirmed there is  no active or planned collaboration with Tsinghua University.\nThe models are from the same developers/maintainers. The risk level is set to low because there is a confirmation from the PI that there is no collaboration from them.  \n- Negative check passed.\n\n- 10^27 FLOPS check passed.\n\n\nFinal recommendation is to approve the grand challenge.",
+  "observations": "- TRELLIS-500K was created by a PhD student from Tsinghua University who also works at Microsoft Research Aisa since 2021. \n- Same is the case with the model TRELLIS-image-large. The developer and maintainer has the same affiliation as above. \n- The licensing scheme for Objaverse-xl is slightly complex, and the PI must be notified to check if their ultimate release of the model doesn't violate any condition of individual objects from different sources containing their own license. \n- Although there is no documentation to scan for the pre-generated data by Infinigen, sample inspection was used to screen for LC2.7. \n- Infinigen was identified as model in \u201cadditional information\u201d but review deems it as a software because it is not an AI model in traditional term.\n- In the Objaverse-xl dataset, \"weapons-military\" category was inspected and had pictures of avatars of modern and historic e.g. knives, swords, pistols and guns.\n- In ScanNet++ dataset, an account needs to be created: https://scannetpp.mlsg.cit.tum.de/scannetpp/ to download the data\n- The PI had originally requested a model from D5+M country which was trained on a self-generated large dataset with no information on provenance or number of objects in it. This was escalated with TPSC and was discussed with the PI who agreed to drop this model from the project.\n",
+  "recommendation": "- Positive check passed.\n\nThe TRELLIS model and datasets maintainers have affiliations with academic institutions from a D5 country but are also employed at Microsoft Research Aisa. Also, Objaverse-XL has weapons and military related objects which categorized differently than Objaverse v1.0. Objaverse v1.0 has been escalated with the TPSC in another project proposal (65638) which is pending decision on a proposed mitigation which is to isolate the object and delete from the dataset before transferring it to Shaheen III GPUP.  Depending on the decision, the same mitigation will be applied to Objaverse-XL. KSL AI/ML team is going to isolate the related objects to delete and repackage the datasets. \nPI have confirmed there is  no active or planned collaboration with Tsinghua University.\nThe models are from the same developers/maintainers. The risk level is set to low because there is a confirmation from the PI that there is no collaboration from them.  \n- Negative check passed.\n\n- 10^27 FLOPS check passed.\n\n\nFinal recommendation is to approve the grand challenge.",
   "_submission_history": [
     {
-      "timestamp": "2026-04-29T15:01:53.581535",
+      "timestamp": "2026-04-29T15:21:23.672351",
       "action": "resubmission"
     }
   ]
