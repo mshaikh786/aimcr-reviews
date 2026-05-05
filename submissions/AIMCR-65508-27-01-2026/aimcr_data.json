@@ -283,7 +283,7 @@
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "Data sampling viewer available on https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=documentation\n    Launch example in JupyterHub available on https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=documentation (Log-in required)\n\nno risk in LC2.7 - inspection skipped\n"
+          "notes": "Dataset on Ibex downloaded by the PI and pre-processed. The following information was shared in a the RT ticket as additional information:\n\n\nPath: /ibex/project/c2137/muhannad/jobs/weather/aurora/opt/era5_opt_v2.zarr\nStats file: /ibex/project/c2137/muhannad/jobs/weather/aurora/opt/upd_era5_stats.pkl\nClaimed source: Google Cloud mirror of official ERA5 (ECMWF), converted from NetCDF to Zarr with a 6-hour precipitation transformation\n\n/ibex/project/c2320/AIMCR/dataset-check/era5-65508/ERA5-verification-report.pdf\n"
         },
         {
           "name": "Provenance",
@@ -346,11 +346,11 @@
       "is_proprietary": false
     }
   ],
-  "observations": "The custom MLP models have been indicated however, the model files have not been shared. The number of trainable parameters in the proposed models is typically 10-100 million. The maximum FLOPs expected from their proposal are of the order of 10^18 using 6xNxD after training. Based on the above stated checks, the inspection of the model can be deferred for execution at the time of moving the models to Shaheen III GPUP. \n\nThe specific ranges (lon, lat) for downloading the dataset from ERA5 has not clearly been stated. A request for additional information has been sent but is still pending. However, given the source has no risk attached to it under LC 2.5, 2.6 and 2.7, AIMCR can move forward with a condition that the exact ranges for the datasets will be confirmed with the PI if RCAC approves the project. \n\n\n",
-  "recommendation": "The overall risk profile of the project is low. Though the model source is not available, the information about the model has been captured and checked, and there is no risk. These attributes can be verified at the time the movement of the model to Shaheen III GPUP and in accordance with the collected information in the AIMCR. \n\nAt the time of the data movement of the dataset, the longitudes and latitudes will be analysed to ensure they do not contain the coordinates of any sensitive locations. \n\nKeeping in view the overall risk of the artifacts listed in this project being low, it is safe to proceed with this proposal from AIMCR perspective. \n  ",
+  "observations": "The custom MLP models have been indicated however, the model files have not been shared. The number of trainable parameters in the proposed models is typically 10-100 million. The maximum FLOPs expected from their proposal are of the order of 10^18 using 6xNxD after training. Based on the above stated checks, the inspection of the model can be deferred for execution at the time of moving the models to Shaheen III GPUP. \nAs additional information, the PI has provided the ERA 5 dataset that was downloaded and preprocessed on Ibex. This has been investigated and it matches the claimed dataset from the source URL of ERA 5.\n\n",
+  "recommendation": "The overall risk profile of the project is low. Though the model source is not available, the information about the model has been captured and checked, and there is no risk. These attributes can be verified at the time the movement of the model to Shaheen III GPUP and in accordance with the collected information in the AIMCR. \n\nKeeping in view the overall risk of the artifacts listed in this project being low, it is safe to proceed with this proposal from AIMCR perspective. \n  ",
   "_submission_history": [
     {
-      "timestamp": "2026-01-27T14:07:44.848444",
+      "timestamp": "2026-05-05T18:49:07.339633",
       "action": "resubmission"
     }
   ]
