@@ -866,7 +866,7 @@
   "recommendation": "For VIPSeg dataset, the PI has confirmed that they will not use the annotations of the dataset. This reduces the risk of erroneous annotations which in this case become redundant and the main focus in on the visuals in the stack of JPG constituting the video dataset. \nThe issue of the license is de-risked by the fact that the line in the README states the permissible terms of use to be non-commercial. \nFor both the VIPSeg dataset and the Deep Anything model, the association with the D5+M country is set to low risk. The sample inspection has no sensitivity flagged, derisks the dataset. \nFor BlendedMVS, since the samples were not easy to visualize with accessing the full dataset, the inspection has been deferred to when the dataset will be moved. Inspection can be carried out by AIMCR team before the artifact movement.\nFor the datasets and the model, the PI has confirmed that there is no collaboration planned for the related entities, and there will be no sharing of the output. This de-risks all the marked artifacts. \n\nPositive check passed\nNegative check passed\n10^27 check passed\n\nRecommended for the grand challenge.",
   "_submission_history": [
     {
-      "timestamp": "2026-05-19T22:25:03.037342",
+      "timestamp": "2026-05-19T22:27:34.782046",
       "action": "resubmission"
     }
   ]
