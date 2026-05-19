@@ -148,12 +148,12 @@
         {
           "name": "Provenance",
           "score": 1,
-          "notes": "Owner / Curator: Google earth (https://earth.google.com/0 / Restor (https://www.restor.eco)\n\nPrimary Distribution Platform: Restor (https://www.restor.eco)\n\nAccess mechanism: The curated research dataset that is not publicly downloadable,  The dataset will be accessed via an API. The team rely on the collaboration between Restor and Google to access this data.\u2028\u2028 "
+          "notes": "Owner / Curator: Google earth (https://earth.google.com/0 / Restor (https://www.restor.eco)\n\nPrimary Distribution Platform: Restor (https://www.restor.eco)\n\nAccess mechanism: The curated research dataset that is not publicly downloadable,  The dataset will be accessed via an API. The team relies on the collaboration between Restor and Google to access this data.\u2028The images will either come from restor.eco or Wayback product by esri.com. Both are open repositories of GIS images. "
         },
         {
           "name": "License / Permissions",
           "score": 1,
-          "notes": "License: ESRI proprietary imagery license (current terms do not permit analysis use).\n\nPermissions:\n- Limited to the original distribution context granted by ESRI.\n\nObligations:\n- Use of the imagery for the proposed analysis requires a written license amendment from ESRI.\n\nRestrictions:\n- No analysis use under the current license.\n- No redistribution.\n\nThe applicant has reported an established relationship with ESRI and intends to request that ESRI license the proposed analysis use-case. Pending the outcome of that discussion. The dataset is to be excluded from staging on Shaheen III GPUP until a written license amendment covering the analysis use-case is obtained from ESRI and shared with KSL."
+          "notes": "License: ESRI (Environmental Systems Research Institute) proprietary imagery license (current terms do not permit analysis use).\n\nPermissions:\n- Limited to the original distribution context granted by ESRI.\n\nObligations:\n- Use of the imagery for the proposed analysis requires a written license amendment from ESRI.\n\nRestrictions:\n- No analysis use under the current license.\n- No redistribution.\n\nThe applicant has reported an established relationship with ESRI and intends to request that ESRI license the proposed analysis use-case through this contact in Restor."
         }
       ]
     },
@@ -426,6 +426,12 @@
       "is_proprietary": false
     }
   ],
-  "observations": "Software: Container images (camel-detector-training:latest and satellite-preprocessing:latest) aren't publicly\n available, (private Dockerhub repo? / Enterprise NGC?)\n\nDataset: SA-VHRCAMEL-1:\nThis dataset currently has license restrictions that do not permit analysis use. The user group has reported an existing relationship with ESRI and intends to request a license amendment covering the proposed analysis use-case.\nTwo operational paths are open:\n- KSL-staged: the PI resolves the ESRI license amendment, then KSL AI/ML team handles artifact creation and staging.\n- PI-curated: the applicant handles both the licensing and the data curation end-to-end, and shares a curated dataset path on IBEX with the KSL AI/ML team.\n\nEither path requires written confirmation of the ESRI licensing position to be shared with KSL before the data is used.\n\nModels parameters are not specified.",
-  "recommendation": "Recommended for grand challenge conditional to acceptable risk."
+  "observations": "Software: Requested container images have been developed by the PI's team. In the additional information provided by the PI, they will hand over the Dockerfiles and associated documentation upon approval of the project.\n\nDataset: SA-VHRCAMEL-1:\nThis dataset currently has license restrictions that do not permit analysis use. The user group informed in the additional information and the RT ticket thread that they are in contact with ESRI and intend to request a license amendment covering the proposed analysis use-case. They have shared the response from their contact at Restor who will work with the PI to get the license to the imagery. The correspondence and tentative plan is provided in the email thread in the ticket.\nKSL AI/ML team has provided the guideline that since API downloads will not be available on Shaheen III GPUP, the PI will download and provide the path on Ibex. ",
+  "recommendation": "The PI has made access to the software container images conditional on the approval of the project. Given that the PI's team is a developer of the Dockerfiles, the AIMCR team can defer the inspection to be done at the time of the data movement. \n\nThe SA-VHRCAMEL-1 dataset is to be downloaded by the PI on Ibex because it requires API access to the licensed imagery repository. Also the licensing approval to access the imagery is work in progress between the provider and the PI. The ESRI container GIS imagery for open research, and as a source, has been assessed for having no risk from LC 2.7 and 2.5 perspectives. Before the data movement the the license availability can be checked by AIMCR team, and also the dataset can be accessed to contain the images as proposed in the project proposal and this review document. \n\nPositive check passed\nNegative check passed\n10^27 check passed\n\nRecommended for the grand challenge. ",
+  "_submission_history": [
+    {
+      "timestamp": "2026-05-19T11:43:56.590307",
+      "action": "resubmission"
+    }
+  ]
 }
