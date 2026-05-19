@@ -112,8 +112,8 @@
         },
         {
           "name": "Sample Inspection",
-          "score": 1,
-          "notes": "BlendedMVS is a synthetic multi-view stereo dataset; contents are rendered scene images with depth maps and camera parameters. No risk in LC 2.7 check; affiliation flagged in LC 2.5 — sample inspection to be carried out before staging on Shaheen III GPUP."
+          "score": 2,
+          "notes": "BlendedMVS is a synthetic multi-view stereo dataset; contents are rendered scene images with depth maps and camera parameters. No risk in LC 2.7 check; affiliation flagged in LC 2.5 — sample inspection blocked due to dataset being structured as split zips, all zips must be downloaded to access/extract any file, this needs to be inspected on data movement for confirmation of LC 2.7 and 2.5 check."
         },
         {
           "name": "Provenance",
@@ -713,7 +713,7 @@
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "No public preview is available. Risk has been raised due to D5 affiliation; sample inspection to be carried out before staging on Shaheen III GPUP."
+          "notes": "No public preview is available. Risk has been raised due to D5 affiliation; sample inspection: we identified that the object (visuals) and the captions/labels of the categories do not match is the randomly selected samples, however no content is flagged."
         },
         {
           "name": "Provenance",
