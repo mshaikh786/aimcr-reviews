@@ -102,7 +102,7 @@
         },
         {
           "name": "D5+M Affiliation Screening (LC 2.5)",
-          "score": 4,
+          "score": 2,
           "notes": "Primary creators: Yao Yao, Zixin Luo, Shiwei Li, Jingyang Zhang, Yufan Ren, Lei Zhou, Tian Fang, Long Quan. Yao Yao is now Associate Professor at Nanjing University (mainland China). The dataset originates from the Hong Kong University of Science and Technology (HKUST).\n\nEntity is from D5 country."
         },
         {
@@ -142,7 +142,7 @@
         },
         {
           "name": "D5+M Affiliation Screening (LC 2.5)",
-          "score": 3,
+          "score": 1,
           "notes": "Primary creators include Lu Ling, Yichen Sheng, Zhi Tu, Wentian Zhao, Cheng Xin, Kun Wan, Lantao Yu, Qianyu Guo, Zixun Yu, Yawen Lu, Xuanmao Li, Xingpeng Sun, Rohan Ashok, Aniruddha Mukherjee, Hao Kang, Xiangrui Kong, Gang Hua, Tianyi Zhang, Bedrich Benes, and Aniket Bera (CVPR 2024). Several lead authors have Chinese institutional affiliations.\n\nEntity is from D5 country."
         },
         {
@@ -382,7 +382,7 @@
         },
         {
           "name": "D5+M Affiliation Screening (LC 2.5)",
-          "score": 4,
+          "score": 1,
           "notes": "Primary creators: Basile Van Hoorick, Rundi Wu, Ege Ozguroglu, Kyle Sargent, Ruoshi Liu, Pavel Tokmakov, Achal Dave, Changxi Zheng, Carl Vondrick. Affiliations: Columbia University and Stanford University (United States), and Toyota Research Institute (US-based subsidiary of Toyota, Japan). All organizations are in non-D5 countries.\n\nNote: the underlying simulation platform is Parallel Domain, Inc. (San Francisco, USA)."
         },
         {
@@ -422,7 +422,7 @@
         },
         {
           "name": "D5+M Affiliation Screening (LC 2.5)",
-          "score": 3,
+          "score": 1,
           "notes": "Primary creators: Yuan-Ting Hu (University of Illinois at Urbana-Champaign), Jiahong Wang (Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences), Raymond A. Yeh (Purdue University), Alexander G. Schwing (UIUC). One co-author is affiliated with an institution in mainland China.\n\nEntity is from D5 country."
         },
         {
@@ -702,7 +702,7 @@
         },
         {
           "name": "D5+M Affiliation Screening (LC 2.5)",
-          "score": 4,
+          "score": 2,
           "notes": "Primary creators: Jiaxu Miao, Xiaohan Wang, Yu Wu, Wei Li, Xu Zhang, Yunchao Wei. Maintained at https://github.com/VIPSeg-Dataset/VIPSeg-Dataset.\n\nEntity is from D5 country (China)."
         },
         {
@@ -722,8 +722,8 @@
         },
         {
           "name": "License / Permissions",
-          "score": 1,
-          "notes": "License: No specific OSS license is published on the repository.\nPermissions: The data is released for non-commercial research purposes only, as stated by the authors.\nRestrictions: No commercial use; redistribution under unclear terms."
+          "score": 2,
+          "notes": "License: not formally licensed under any known scheme however README states \" The data is released for non-commercial research purpose only.\".\nPermissions: The data is released for non-commercial research purposes only, as stated by the authors.\nRestrictions: No commercial use; redistribution under unclear terms."
         }
       ]
     },
@@ -862,7 +862,7 @@
       "is_proprietary": false
     }
   ],
-  "observations": "The provenance of some datasets has been flagged. ",
+  "observations": "The provenance of some datasets has been flagged.\n 1. DL3DV-10K sampled:nothing to flag content-wise; dataset is predominantly Chinese landscapes and architecture, noted for geographic context.\n 2. DL3DV-10k: derisked to 1, affiliated with non-D5 organization\n 3. SAIL-VOS 3D: derisked to 1, affiliated with non-D5 organization.\n 4. Parallel Domain: derisked to 1, affiliated with non-D5 organization.\n VIPSeg: derisked to 2 after sampling passed.",
   "recommendation": "Recommended for grand challenge ",
   "_submission_history": [
     {
