@@ -113,7 +113,7 @@
         {
           "name": "Sample Inspection",
           "score": 2,
-          "notes": "BlendedMVS is a synthetic multi-view stereo dataset; contents are rendered scene images with depth maps and camera parameters. No risk in LC 2.7 check; affiliation flagged in LC 2.5 — sample inspection blocked due to dataset being structured as split zips, all zips must be downloaded to access/extract any file, this needs to be inspected on data movement for confirmation of LC 2.7 and 2.5 check."
+          "notes": "BlendedMVS is a synthetic multi-view stereo dataset; contents are rendered scene images with depth maps and camera parameters. No risk in LC 2.7 check; affiliation flagged in LC 2.5 \u2014 sample inspection blocked due to dataset being structured as split zips, all zips must be downloaded to access/extract any file, this needs to be inspected on data movement for confirmation of LC 2.7 and 2.5 check."
         },
         {
           "name": "Provenance",
@@ -153,7 +153,7 @@
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "A preview gallery is available at https://htmlpreview.github.io/?https://github.com/DL3DV-10K/Dataset/blob/main/visualize/index.html — pictures are of public places. Risk has been raised due to D5 affiliation; sample inspection to be carried out before staging on Shaheen III GPUP."
+          "notes": "A preview gallery is available at https://htmlpreview.github.io/?https://github.com/DL3DV-10K/Dataset/blob/main/visualize/index.html \u2014 pictures are of public places. Risk has been raised due to D5 affiliation; sample inspection to be carried out before staging on Shaheen III GPUP."
         },
         {
           "name": "Provenance",
@@ -193,7 +193,7 @@
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection.\n\nFor reference, a preview is available on https://www.eth3d.net/datasets — images of public outdoor and indoor environments (courtyards, playgrounds, etc.)."
+          "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection.\n\nFor reference, a preview is available on https://www.eth3d.net/datasets \u2014 images of public outdoor and indoor environments (courtyards, playgrounds, etc.)."
         },
         {
           "name": "Provenance",
@@ -263,7 +263,7 @@
         {
           "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "Owner: Originally Mapillary AB (Sweden); acquired by Meta in 2020 — Meta Platforms, Inc. (United States). Non-D5 entity."
+          "notes": "Owner: Originally Mapillary AB (Sweden); acquired by Meta in 2020 \u2014 Meta Platforms, Inc. (United States). Non-D5 entity."
         },
         {
           "name": "Prompts / Fine-tuning Scripts",
@@ -283,7 +283,7 @@
         {
           "name": "License / Permissions",
           "score": 1,
-          "notes": "License: CC BY-NC-SA 4.0.\nPermissions:\n- Share — copy and redistribute the material in any medium or format\n- Adapt — remix, transform, and build upon the material\nObligations:\n- Attribution to Mapillary required\n- Derived/adapted versions must be distributed under the same license (ShareAlike)\nRestrictions:\n- No commercial use\n- No de-anonymization or removal of privacy blurring\n- No use in ways that violate privacy or applicable laws"
+          "notes": "License: CC BY-NC-SA 4.0.\nPermissions:\n- Share \u2014 copy and redistribute the material in any medium or format\n- Adapt \u2014 remix, transform, and build upon the material\nObligations:\n- Attribution to Mapillary required\n- Derived/adapted versions must be distributed under the same license (ShareAlike)\nRestrictions:\n- No commercial use\n- No de-anonymization or removal of privacy blurring\n- No use in ways that violate privacy or applicable laws"
         }
       ]
     },
@@ -313,7 +313,7 @@
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection.\n\nFor reference, a preview is available at https://www.cs.cornell.edu/projects/megadepth/ — content is depth maps derived from Flickr landmark photo collections."
+          "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection.\n\nFor reference, a preview is available at https://www.cs.cornell.edu/projects/megadepth/ \u2014 content is depth maps derived from Flickr landmark photo collections."
         },
         {
           "name": "Provenance",
@@ -353,7 +353,7 @@
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection.\n\nFor reference, minimal samples are available at https://phuang17.github.io/DeepMVS/mvs-synth.html — content is rendered urban scenes from GTA-V."
+          "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection.\n\nFor reference, minimal samples are available at https://phuang17.github.io/DeepMVS/mvs-synth.html \u2014 content is rendered urban scenes from GTA-V."
         },
         {
           "name": "Provenance",
@@ -393,7 +393,7 @@
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "No risk in LC 2.7 check. Skipping inspection.\n\nFor reference, previews are available at https://gcd.cs.columbia.edu/#datasets — content is rendered synthetic driving / scene-flow imagery."
+          "notes": "No risk in LC 2.7 check. Skipping inspection.\n\nFor reference, previews are available at https://gcd.cs.columbia.edu/#datasets \u2014 content is rendered synthetic driving / scene-flow imagery."
         },
         {
           "name": "Provenance",
@@ -421,7 +421,7 @@
           "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. The dataset is described as a synthetic 3D video-object-segmentation benchmark."
         },
         {
-          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "Primary creators: Yuan-Ting Hu (University of Illinois at Urbana-Champaign), Jiahong Wang (Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences), Raymond A. Yeh (Purdue University), Alexander G. Schwing (UIUC). One co-author is affiliated with an institution in mainland China.\n\nEntity is from D5 country."
         },
@@ -433,12 +433,12 @@
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "Preview available at https://sailvos.web.illinois.edu/_site/_site/index.html — the preview shows snippets from GTA-V gameplay with no alarming content. Risk has been raised due to D5 affiliation; sample inspection to be carried out before staging on Shaheen III GPUP."
+          "notes": "Preview available at https://sailvos.web.illinois.edu/_site/_site/index.html \u2014 the preview shows snippets from GTA-V gameplay with no alarming content. Risk has been raised due to D5 affiliation; sample inspection to be carried out before staging on Shaheen III GPUP."
         },
         {
           "name": "Provenance",
           "score": 1,
-          "notes": "Owner / Curator: Yuan-Ting Hu (UIUC), Jiahong Wang (Shenzhen Institutes of Advanced Technology, CAS), Raymond A. Yeh (Purdue University), Alexander G. Schwing (UIUC)\nPrimary Distribution Platform: https://sailvos.web.illinois.edu/_site/_site/index.html\nRepository: None public\nAccess Method: Request via the team\nProvenance: Instance-level 3D annotations captured from GTA-V dynamic scenes (CVPR 2021 paper, arXiv:2105.08612).\nPublication Date: 18 May 2021."
+          "notes": "Owner / Curator: Yuan-Ting Hu (UIUC), Jiahong Wang (Shenzhen Institutes of Advanced Technology, CAS), Raymond A. Yeh (Purdue University), Alexander G. Schwing (UIUC)\nPrimary Distribution Platform: https://sailvos.web.illinois.edu/_site/_site/index.html\nRepository: None public\nAccess Method: Request via the team\nProvenance: Instance-level 3D annotations captured from GTA-V dynamic scenes (CVPR 2021 paper, arXiv:2105.08612).\nPublication Date: 18 May 2021.\n\nThe PI has access to the dataset and has it available on IBEX /ibex/project/c2324/data/SAILVOS_3D"
         },
         {
           "name": "License / Permissions",
@@ -458,12 +458,12 @@
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. The dataset is described as a high-fidelity indoor 3D scene dataset for novel view synthesis and scene understanding."
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. "
         },
         {
-          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "Owner: Technical University of Munich (Germany), Visual Computing Group (Matthias Nießner et al.). Non-D5 entity."
+          "notes": "Owner: Technical University of Munich (Germany), Visual Computing Group (Matthias Nie\u00dfner et al.). Non-D5 entity."
         },
         {
           "name": "Prompts / Fine-tuning Scripts",
@@ -473,12 +473,12 @@
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection.\n\nFor reference, previews are available at https://scannetpp.mlsg.cit.tum.de/scannetpp/ — content is indoor scene scans."
+          "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection.\n\nFor reference, previews are available at https://scannetpp.mlsg.cit.tum.de/scannetpp/ \u2014 content is indoor scene scans."
         },
         {
           "name": "Provenance",
           "score": 1,
-          "notes": "Owner / Curator: Technical University of Munich (Chandan Yeshwanth, Yueh-Cheng Liu, Matthias Nießner, Angela Dai — ICCV 2023 paper)\nPrimary Distribution Platform: https://scannetpp.mlsg.cit.tum.de/scannetpp/\nRepository: https://github.com/scannetpp/scannetpp (~347 stars, 251 commits)\nAccess Method: Via the project website (requires Terms-of-Use agreement)\nMaintenance Status: Actively maintained, last commit 19 Dec 2025."
+          "notes": "Owner / Curator: Technical University of Munich (Chandan Yeshwanth, Yueh-Cheng Liu, Matthias Nie\u00dfner, Angela Dai \u2014 ICCV 2023 paper)\nPrimary Distribution Platform: https://scannetpp.mlsg.cit.tum.de/scannetpp/\nRepository: https://github.com/scannetpp/scannetpp (~347 stars, 251 commits)\nAccess Method: Via the project website (requires Terms-of-Use agreement)\nMaintenance Status: Actively maintained, last commit 19 Dec 2025.\n\nThe PI has accessed the dataset in the past and has this available on IBEX /ibex/project/c2324/data/scannetpp \n"
         },
         {
           "name": "License / Permissions",
@@ -503,7 +503,7 @@
         {
           "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "Owner: Computer Vision Group at the University of Stuttgart (Germany) — CVPR 2023 paper by Mehl, Schmalfuss, Jahedi, Nalivayko, Bruhn. Non-D5 entity."
+          "notes": "Owner: Computer Vision Group at the University of Stuttgart (Germany) \u2014 CVPR 2023 paper by Mehl, Schmalfuss, Jahedi, Nalivayko, Bruhn. Non-D5 entity."
         },
         {
           "name": "Prompts / Fine-tuning Scripts",
@@ -513,7 +513,7 @@
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection.\n\nFor reference, previews are available at https://spring-benchmark.org/ — content is rendered frames from the open-source Blender movie \"Spring\"."
+          "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection.\n\nFor reference, previews are available at https://spring-benchmark.org/ \u2014 content is rendered frames from the open-source Blender movie \"Spring\"."
         },
         {
           "name": "Provenance",
@@ -523,7 +523,7 @@
         {
           "name": "License / Permissions",
           "score": 1,
-          "notes": "License: CC BY 4.0.\nPermissions:\n- Share — copy and redistribute the material in any medium or format, even commercially\n- Adapt — remix, transform, and build upon the material, even commercially\nObligations:\n- Attribution required\nRestrictions:\n- No legal/technical measures that restrict others from doing anything the license permits"
+          "notes": "License: CC BY 4.0.\nPermissions:\n- Share \u2014 copy and redistribute the material in any medium or format, even commercially\n- Adapt \u2014 remix, transform, and build upon the material, even commercially\nObligations:\n- Attribution required\nRestrictions:\n- No legal/technical measures that restrict others from doing anything the license permits"
         }
       ]
     },
@@ -543,7 +543,7 @@
         {
           "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "Owner: AirLab, Robotics Institute, Carnegie Mellon University (United States) — IROS 2020 paper by Wang, Zhu, Wang, Hu, Qiu, Wang, Hu, Kapoor, Scherer. Non-D5 entity."
+          "notes": "Owner: AirLab, Robotics Institute, Carnegie Mellon University (United States) \u2014 IROS 2020 paper by Wang, Zhu, Wang, Hu, Qiu, Wang, Hu, Kapoor, Scherer. Non-D5 entity."
         },
         {
           "name": "Prompts / Fine-tuning Scripts",
@@ -563,7 +563,7 @@
         {
           "name": "License / Permissions",
           "score": 1,
-          "notes": "License: CC BY 4.0.\nPermissions:\n- Share — copy and redistribute the material in any medium or format, even commercially\n- Adapt — remix, transform, and build upon the material, even commercially\nObligations:\n- Attribution required\nRestrictions:\n- No legal/technical measures that restrict others from doing anything the license permits"
+          "notes": "License: CC BY 4.0.\nPermissions:\n- Share \u2014 copy and redistribute the material in any medium or format, even commercially\n- Adapt \u2014 remix, transform, and build upon the material, even commercially\nObligations:\n- Attribution required\nRestrictions:\n- No legal/technical measures that restrict others from doing anything the license permits"
         }
       ]
     },
@@ -583,7 +583,7 @@
         {
           "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "Owner: Fabio Tosi (Associate Professor (RTDA), University of Bologna, Italy), with co-authors Yiyi Liao, Carolin Schmitt, Andreas Geiger — CVPR 2021 paper. Non-D5 entity."
+          "notes": "Owner: Fabio Tosi (Associate Professor (RTDA), University of Bologna, Italy), with co-authors Yiyi Liao, Carolin Schmitt, Andreas Geiger \u2014 CVPR 2021 paper. Non-D5 entity."
         },
         {
           "name": "Prompts / Fine-tuning Scripts",
@@ -653,7 +653,7 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "Hypersim (Apple's ml-hypersim) is a photorealistic synthetic indoor-scene dataset intended for computer vision and 3D scene-understanding research, with richly annotated images and geometry. (The proposal spells it \"Hyperism\" — the correct upstream name is Hypersim.)\n\nThe dataset is used in this proposal as one of the synthetic scene-understanding datasets that scale the unified foundation model's semantic + geometric objective.\n\nAligns with the approved research topic, datascience and engineering."
+          "notes": "Hypersim (Apple's ml-hypersim) is a photorealistic synthetic indoor-scene dataset intended for computer vision and 3D scene-understanding research, with richly annotated images and geometry. (The proposal spells it \"Hyperism\" \u2014 the correct upstream name is Hypersim.)\n\nThe dataset is used in this proposal as one of the synthetic scene-understanding datasets that scale the unified foundation model's semantic + geometric objective.\n\nAligns with the approved research topic, datascience and engineering."
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
@@ -673,7 +673,7 @@
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection.\n\nFor reference, sample renders and annotations are documented in the repository README at https://github.com/apple/ml-hypersim — content is photorealistic indoor scene renders."
+          "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection.\n\nFor reference, sample renders and annotations are documented in the repository README at https://github.com/apple/ml-hypersim \u2014 content is photorealistic indoor scene renders."
         },
         {
           "name": "Provenance",
@@ -701,9 +701,9 @@
           "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. The dataset is described as a video panoptic segmentation benchmark."
         },
         {
-          "name": "D5+M Affiliation Screening (LC 2.5)",
+          "name": "D5+M affiliation Screening (LC 2.5)",
           "score": 2,
-          "notes": "Primary creators: Jiaxu Miao, Xiaohan Wang, Yu Wu, Wei Li, Xu Zhang, Yunchao Wei. Maintained at https://github.com/VIPSeg-Dataset/VIPSeg-Dataset.\n\nEntity is from D5 country (China)."
+          "notes": "Primary creators: Jiaxu Miao, Xiaohan Wang, Yu Wu, Wei Li, Xu Zhang, Yunchao Wei. Maintained at https://github.com/VIPSeg-Dataset/VIPSeg-Dataset.\n\nThe related paper's code is published in : https://github.com/VSPW-dataset/VSPW_code\nThe association of the lead authors is with Zhejiang University (CCAI) & Baidu Research China.  \n\nEntities are from D5 country."
         },
         {
           "name": "Prompts / Fine-tuning Scripts",
@@ -713,7 +713,7 @@
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": "No public preview is available. Risk has been raised due to D5 affiliation; sample inspection: we identified that the object (visuals) and the captions/labels of the categories do not match is the randomly selected samples, however no content is flagged."
+          "notes": "No public preview is available. \nSample inspection reveals that the object (visuals) are stack of JPG (i.e. video dataset) and the captions/labels of the categories do not match is the randomly selected samples. The content is was not sensitive. Samples available in /ibex/project/c2320/AIMCR/dataset-check/VIPSeg/VIPSeg_inspect.ipynb \n\nThe PI confirms that they might exclude its labels from training in this case, but the raw video data will still be useful to us, they would like to proceed with this dataset as well. For due diligence, a question has been asked about the effect of this change on the alignment of this dataset with their research goals. It is understood that this dataset will now be used in the self-distillation component of your training scheme, where pseudo-labels are generated for data lacking ground truth.\nSelf-distillation: the model generates its own predictions for data where no real labels exist, then uses those predictions as training targets to improve itself iteratively, bootstrapping quality over time rather than relying on external ground truth. This implies that the lack of ground truth shall not affect the training scheme. \n"
         },
         {
           "name": "Provenance",
@@ -795,7 +795,7 @@
         {
           "name": "Training Data Documentation",
           "score": 1,
-          "notes": "Per the Model Readiness additional section, MapAnything was pre-trained on 189,552 3D reconstruction scenes drawn from 14 public datasets: BlendedMVS, Mapillary Planet-Scale Depth, ScanNet++ v2, Spring, TartanAirV2-WB, UnrealStereo4K, Aria Synthetic Environments, DL3DV-10K, Dynamic Replica, MegaDepth, MVS-Synth, ParallelDomain-4D, SAIL-VOS 3D, ETH3D. The PI reports approximately 1.4B image-token-equivalents were actually fed through the model during pre-training, and estimates ~4B image-token equivalents in the pre-training pool overall.\n\nFor Chinchilla-style FLOPS estimation, D ≈ 1.4 × 10^9 image-token equivalents (tokens fed)."
+          "notes": "Per the Model Readiness additional section, MapAnything was pre-trained on 189,552 3D reconstruction scenes drawn from 14 public datasets: BlendedMVS, Mapillary Planet-Scale Depth, ScanNet++ v2, Spring, TartanAirV2-WB, UnrealStereo4K, Aria Synthetic Environments, DL3DV-10K, Dynamic Replica, MegaDepth, MVS-Synth, ParallelDomain-4D, SAIL-VOS 3D, ETH3D. The PI reports approximately 1.4B image-token-equivalents were actually fed through the model during pre-training, and estimates ~4B image-token equivalents in the pre-training pool overall.\n\nFor Chinchilla-style FLOPS estimation, D \u2248 1.4 \u00d7 10^9 image-token equivalents (tokens fed)."
         },
         {
           "name": "Customisation / Fine-tuning",
@@ -805,7 +805,7 @@
         {
           "name": "FLOPS Calculation",
           "score": 1,
-          "notes": "Theoretical training FLOPs (6·N·D)\nN = 1 × 10^9 parameters (1B, per the Model Readiness section)\nD ≈ 1.4 × 10^9 image-token equivalents (tokens fed through the model during pre-training, per the Model Readiness section)\n\nF = 6 · N · D = 6 · 1 × 10^9 · 1.4 × 10^9 = 8.4 × 10^18 FLOPs\n\nDelivered FLOPs (GPU-hours × peak × MFU):\nThe applicant has requested 6 training runs × 16 nodes × 4 GPUs × 240 hours = 92,160 GH200 GPU-hours total for fine-tuning. The PI has not measured MFU yet (~95% GPU utilization reported); assuming a conservative MFU of 0.3 and GH200 BF16 peak of ~990 TFLOPS:\nDelivered = 92,160 × 3,600 × 990 × 10^12 × 0.3 ≈ 9.85 × 10^22 FLOPs\n\nWell below the 10^27 FLOPs threshold."
+          "notes": "Theoretical training FLOPs (6\u00b7N\u00b7D)\nN = 1 \u00d7 10^9 parameters (1B, per the Model Readiness section)\nD \u2248 1.4 \u00d7 10^9 image-token equivalents (tokens fed through the model during pre-training, per the Model Readiness section)\n\nF = 6 \u00b7 N \u00b7 D = 6 \u00b7 1 \u00d7 10^9 \u00b7 1.4 \u00d7 10^9 = 8.4 \u00d7 10^18 FLOPs\n\nDelivered FLOPs (GPU-hours \u00d7 peak \u00d7 MFU):\nThe applicant has requested 6 training runs \u00d7 16 nodes \u00d7 4 GPUs \u00d7 240 hours = 92,160 GH200 GPU-hours total for fine-tuning. The PI has not measured MFU yet (~95% GPU utilization reported); assuming a conservative MFU of 0.3 and GH200 BF16 peak of ~990 TFLOPS:\nDelivered = 92,160 \u00d7 3,600 \u00d7 990 \u00d7 10^12 \u00d7 0.3 \u2248 9.85 \u00d7 10^22 FLOPs\n\nWell below the 10^27 FLOPs threshold."
         },
         {
           "name": "Sample Inspection",
@@ -851,7 +851,7 @@
         {
           "name": "FLOPS Calculation",
           "score": 1,
-          "notes": "Model parameters range from 0.35B to 1.4B across released variants.\n\nFrom the paper (https://arxiv.org/abs/2511.10647), the giant variant of DA3 could take 10 days to train on 128 H100 GPUs. Considering BF16 and an MFU of 0.45:\n\nGPU-hours = 128 GPUs × 10 days × 24 hours = 30,720 GPU-hours\nGPU-seconds = 30,720 × 3,600 = 110,592,000 GPU-seconds\nH100 BF16 peak = 989 TFLOPS\nEffective TFLOPS (45% MFU) = 989 × 0.45 = 445 TFLOPS\n\nTotal FLOPs = 445 × 10^12 × 110,592,000 ≈ 4.92 × 10^22 FLOPs\n\nWell below the 10^27 FLOPs threshold."
+          "notes": "Model parameters range from 0.35B to 1.4B across released variants.\n\nFrom the paper (https://arxiv.org/abs/2511.10647), the giant variant of DA3 could take 10 days to train on 128 H100 GPUs. Considering BF16 and an MFU of 0.45:\n\nGPU-hours = 128 GPUs \u00d7 10 days \u00d7 24 hours = 30,720 GPU-hours\nGPU-seconds = 30,720 \u00d7 3,600 = 110,592,000 GPU-seconds\nH100 BF16 peak = 989 TFLOPS\nEffective TFLOPS (45% MFU) = 989 \u00d7 0.45 = 445 TFLOPS\n\nTotal FLOPs = 445 \u00d7 10^12 \u00d7 110,592,000 \u2248 4.92 \u00d7 10^22 FLOPs\n\nWell below the 10^27 FLOPs threshold."
         },
         {
           "name": "Sample Inspection",
@@ -862,11 +862,11 @@
       "is_proprietary": false
     }
   ],
-  "observations": "The provenance of some datasets has been flagged.\n 1. DL3DV-10K sampled:nothing to flag content-wise; dataset is predominantly Chinese landscapes and architecture, noted for geographic context.\n 2. DL3DV-10k: derisked to 1, affiliated with non-D5 organization\n 3. SAIL-VOS 3D: derisked to 1, affiliated with non-D5 organization.\n 4. Parallel Domain: derisked to 1, affiliated with non-D5 organization.\n VIPSeg: derisked to 2 after sampling passed.",
-  "recommendation": "Recommended for grand challenge ",
+  "observations": "The developers of VIPSeg dataset have an association with Zhejiang University (CCAI) & Baidu Research, from a D5+M country. The sample inspection revealed that the annotation of the JPG and JSON stack, which is a video dataset, was not correct. The samples checked, however, were found to be not sensitive. \nThis dataset does not have a formal license attached to it. The Readme file in the GitHub repo states that it shall be only used for non-commercial use.\n\nDepth Anything is a model maintained by Bytedance, an entity from D5+M country. ",
+  "recommendation": "For VIPSeg dataset, the PI has confirmed that they will not use the annotations of the dataset. This reduces the risk of erroneous annotations which in this case become redundant and the main focus in on the visuals in the stack of JPG constituting the video dataset. \nThe issue of the license is de-risked by the fact that the line in the README states the permissible terms of use to be non-commercial. \nFor both the VIPSeg dataset and the Deep Anything model, the association with the D5+M country is set to low risk. The sample inspection has no sensitivity flagged, derisks the dataset. For both the dataset and the model, the PI has confirmed that there is no collaboration planned for the related entities, and there will be no sharing of the output. This de-risks both the artifacts. \n\nPositive check passed\nNegative check passed\n10^27 check passed\n\nRecommended for the grand challenge.",
   "_submission_history": [
     {
-      "timestamp": "2026-01-11T23:19:23.568025",
+      "timestamp": "2026-05-19T21:42:19.393974",
       "action": "resubmission"
     }
   ]
