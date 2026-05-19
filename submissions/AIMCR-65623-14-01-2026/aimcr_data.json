@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "proposal_title": "Undefined",
+    "proposal_title": "Automated Livestock Inventory for Saudi Arabia from Satellite Imaging",
     "principal_investigator": "Maurizio Filippone",
     "proposal_date": "2025-10-23",
     "reviewer_name": "Mohsin Ahmed Shaikh",
@@ -430,7 +430,7 @@
   "recommendation": "The PI has made access to the software container images conditional on the approval of the project. Given that the PI's team is a developer of the Dockerfiles, the AIMCR team can defer the inspection to be done at the time of the data movement. \n\nThe SA-VHRCAMEL-1 dataset is to be downloaded by the PI on Ibex because it requires API access to the licensed imagery repository. Also the licensing approval to access the imagery is work in progress between the provider and the PI. The ESRI container GIS imagery for open research, and as a source, has been assessed for having no risk from LC 2.7 and 2.5 perspectives. Before the data movement the the license availability can be checked by AIMCR team, and also the dataset can be accessed to contain the images as proposed in the project proposal and this review document. \n\nPositive check passed\nNegative check passed\n10^27 check passed\n\nRecommended for the grand challenge. ",
   "_submission_history": [
     {
-      "timestamp": "2026-05-19T11:45:02.767130",
+      "timestamp": "2026-05-19T11:51:11.933733",
       "action": "resubmission"
     }
   ]
