@@ -70,12 +70,12 @@
         {
           "name": "License / Permissions",
           "score": 1,
-          "notes": "ontainer License Considerations:\n\nBase NGC Container: Governed by NVIDIA NGC License Agreement\n\nPyTorch: BSD-3-Clause\n\nCUDA Toolkit: NVIDIA CUDA EULA (free but proprietary)\n\ncuDNN: NVIDIA cuDNN License (free but proprietary)\n\nUbuntu 22.04: Various open-source licenses\n\nCan be used for academic purposes?\tYes\n\nCan be used for commercial use?\tYes (review NGC and CUDA licenses)\n\nModification allowed?\tYes (for open-source components)\n\nRedistribution allowed?\tLimited (NGC base, CUDA restrictions)\n\nAttribution required?\tYes\n\nCopyleft obligations?\tNo (BSD/Apache components)\n\nImportant Notes:\n\nNVIDIA NGC containers require acceptance of NGC terms\n\nCUDA and cuDNN are proprietary but freely available\n\nCommercial use permitted but review NVIDIA's license terms\n\nRedistribution of modified NGC containers may have restrictions"
+          "notes": "Internally developed by the project team."
         },
         {
           "name": "Bundled Tools / Dependencies",
           "score": 1,
-          "notes": "N/A"
+          "notes": "Details deferred until the data movement step after the approval."
         }
       ]
     },
@@ -105,12 +105,12 @@
         {
           "name": "License / Permissions",
           "score": 1,
-          "notes": "Research and internal use only, with open-source dependencies under their original licenses"
+          "notes": "Internally developed by the project team.\u2028\u2028     "
         },
         {
           "name": "Bundled Tools / Dependencies",
           "score": 1,
-          "notes": "Not mentioned."
+          "notes": "Details deferred until the data movement step after the approval."
         }
       ]
     }
@@ -430,7 +430,7 @@
   "recommendation": "The PI has made access to the software container images conditional on the approval of the project. Given that the PI's team is a developer of the Dockerfiles, the AIMCR team can defer the inspection to be done at the time of the data movement. \n\nThe SA-VHRCAMEL-1 dataset is to be downloaded by the PI on Ibex because it requires API access to the licensed imagery repository. Also the licensing approval to access the imagery is work in progress between the provider and the PI. The ESRI container GIS imagery for open research, and as a source, has been assessed for having no risk from LC 2.7 and 2.5 perspectives. Before the data movement the the license availability can be checked by AIMCR team, and also the dataset can be accessed to contain the images as proposed in the project proposal and this review document. \n\nPositive check passed\nNegative check passed\n10^27 check passed\n\nRecommended for the grand challenge. ",
   "_submission_history": [
     {
-      "timestamp": "2026-05-19T11:51:11.933733",
+      "timestamp": "2026-05-19T11:56:08.079202",
       "action": "resubmission"
     }
   ]
