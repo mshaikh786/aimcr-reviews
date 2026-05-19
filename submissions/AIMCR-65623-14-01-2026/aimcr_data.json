@@ -153,7 +153,7 @@
         {
           "name": "License / Permissions",
           "score": 1,
-          "notes": "Restricted / Proprietary Satellite Imagery.\n\nLicense:\n\nRestricted license for research in limited territory and non-redistributable\n\nRestrictions:\n\nControlled access, no export outside Shaheen III, do not transfer images without authorization."
+          "notes": "License: ESRI proprietary imagery license (current terms do not permit analysis use).\n\nPermissions:\n- Limited to the original distribution context granted by ESRI.\n\nObligations:\n- Use of the imagery for the proposed analysis requires a written license amendment from ESRI.\n\nRestrictions:\n- No analysis use under the current license.\n- No redistribution.\n\nThe applicant has reported an established relationship with ESRI and intends to request that ESRI license the proposed analysis use-case. Pending the outcome of that discussion. The dataset is to be excluded from staging on Shaheen III GPUP until a written license amendment covering the analysis use-case is obtained from ESRI and shared with KSL."
         }
       ]
     },
@@ -426,6 +426,6 @@
       "is_proprietary": false
     }
   ],
-  "observations": "Software: Container images (camel-detector-training:latest and satellite-preprocessing:latest) aren't publicly\n available, (private Dockerhub repo? / Enterprise NGC?)\n\nDataset: SA-VHRCAMEL-1 isn't publicly listed, provided link leads to Google Earth / Restor websites.\n\nModels parameters are not specified.",
+  "observations": "Software: Container images (camel-detector-training:latest and satellite-preprocessing:latest) aren't publicly\n available, (private Dockerhub repo? / Enterprise NGC?)\n\nDataset: SA-VHRCAMEL-1:\nThis dataset currently has license restrictions that do not permit analysis use. The user group has reported an existing relationship with ESRI and intends to request a license amendment covering the proposed analysis use-case.\nTwo operational paths are open:\n- KSL-staged: the PI resolves the ESRI license amendment, then KSL AI/ML team handles artifact creation and staging.\n- PI-curated: the applicant handles both the licensing and the data curation end-to-end, and shares a curated dataset path on IBEX with the KSL AI/ML team.\n\nEither path requires written confirmation of the ESRI licensing position to be shared with KSL before the data is used.\n\nModels parameters are not specified.",
   "recommendation": "Recommended for grand challenge conditional to acceptable risk."
 }
