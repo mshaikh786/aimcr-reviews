@@ -5,7 +5,7 @@
     "proposal_date": "2026-01-11",
     "reviewer_name": "Mohsin Ahmed Shaikh",
     "reviewer_id": "174988",
-    "aimcr_date": "2026-01-11",
+    "aimcr_date": "2026-05-19",
     "project_id": "65614"
   },
   "third_party_software": [
@@ -866,7 +866,7 @@
   "recommendation": "For VIPSeg dataset, the PI has confirmed that they will not use the annotations of the dataset. This reduces the risk of erroneous annotations which in this case become redundant and the main focus in on the visuals in the stack of JPG constituting the video dataset. \nThe issue of the license is de-risked by the fact that the line in the README states the permissible terms of use to be non-commercial. \nFor both the VIPSeg dataset and the Deep Anything model, the association with the D5+M country is set to low risk. The sample inspection has no sensitivity flagged, derisks the dataset. For both the dataset and the model, the PI has confirmed that there is no collaboration planned for the related entities, and there will be no sharing of the output. This de-risks both the artifacts. \n\nPositive check passed\nNegative check passed\n10^27 check passed\n\nRecommended for the grand challenge.",
   "_submission_history": [
     {
-      "timestamp": "2026-05-19T22:00:51.134901",
+      "timestamp": "2026-05-19T22:01:07.702994",
       "action": "initial_submission"
     }
   ]
