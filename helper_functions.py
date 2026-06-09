@@ -32,6 +32,19 @@ def get_risk_color(score):
     else:
         return "green"
 
+
+def compute_merged_section_risk(data, section_key):
+    """Merge original section artifacts with all addendum artifacts for the same
+    section_key, then run calculate_section_risk on the combined list.
+    Returns (total_score, max_scores) — same contract as calculate_section_risk."""
+    merged = list(data.get(section_key, []))
+    for add in data.get('addenda', []):
+        if add.get('category') == section_key:
+            merged.extend(add.get('artifacts', []))
+    if not merged:
+        return 0, []
+    return calculate_section_risk(merged)
+
 def create_folder_structure(project_id):
     """Create folder structure for the project"""
     date_str = datetime.now().strftime("%d-%m-%Y")
