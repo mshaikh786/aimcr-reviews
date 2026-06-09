@@ -48,13 +48,57 @@
   "source_code": [],
   "datasets_user_files": [],
   "models": [],
-  "observations": "good omen",
-  "recommendation": "very good omen",
-  "addenda": [],
+  "observations": "good omen\n\n--- Addendum 1 added: 2026-06-09 (Third-Party Software) ---\nbad package",
+  "recommendation": "very good omen\n\n--- Addendum 1 added: 2026-06-09 (Third-Party Software) ---\nvery bad package",
+  "addenda": [
+    {
+      "date": "2026-06-09",
+      "category": "third_party_software",
+      "artifacts": [
+        {
+          "name": "lib-2",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 4,
+              "notes": "not aligned with project"
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "none"
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "none"
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "none"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "none"
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "none"
+            }
+          ]
+        }
+      ],
+      "observations": "",
+      "recommendation": ""
+    }
+  ],
   "_submission_history": [
     {
-      "timestamp": "2026-06-09T22:37:22.563932",
-      "action": "initial_submission"
+      "timestamp": "2026-06-09T22:39:10.798416",
+      "action": "resubmission"
     }
   ]
 }

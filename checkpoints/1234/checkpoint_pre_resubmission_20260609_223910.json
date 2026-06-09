@@ -1,0 +1,105 @@
+{
+  "checkpoint_metadata": {
+    "type": "pre_resubmission",
+    "timestamp": "2026-06-09T22:39:10.797295",
+    "project_id": "1234"
+  },
+  "form_data": {
+    "metadata": {
+      "proposal_title": "abcd",
+      "principal_investigator": "efgh",
+      "proposal_date": "2026-06-09",
+      "reviewer_name": "wxyz",
+      "reviewer_id": "123456",
+      "aimcr_date": "2026-06-09",
+      "project_id": "1234"
+    },
+    "third_party_software": [
+      {
+        "name": "lib1",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "one"
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 3,
+            "notes": "one"
+          },
+          {
+            "name": "D5+M affiliation Screening (LC 2.5)",
+            "score": 2,
+            "notes": "one"
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "ok"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 2,
+            "notes": "ok"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "bundle of joy"
+          }
+        ]
+      }
+    ],
+    "source_code": [],
+    "datasets_user_files": [],
+    "models": [],
+    "observations": "good omen\n\n--- Addendum 1 added: 2026-06-09 (Third-Party Software) ---\nbad package",
+    "recommendation": "very good omen\n\n--- Addendum 1 added: 2026-06-09 (Third-Party Software) ---\nvery bad package",
+    "addenda": [
+      {
+        "date": "2026-06-09",
+        "category": "third_party_software",
+        "artifacts": [
+          {
+            "name": "lib-2",
+            "checks": [
+              {
+                "name": "Project & Usage Alignment",
+                "score": 4,
+                "notes": "not aligned with project"
+              },
+              {
+                "name": "Prohibited Use Screening (LC 2.7)",
+                "score": 1,
+                "notes": "none"
+              },
+              {
+                "name": "D5+M affiliation Screening (LC 2.5)",
+                "score": 1,
+                "notes": "none"
+              },
+              {
+                "name": "Source / Provenance",
+                "score": 1,
+                "notes": "none"
+              },
+              {
+                "name": "License / Permissions",
+                "score": 1,
+                "notes": "none"
+              },
+              {
+                "name": "Bundled Tools / Dependencies",
+                "score": 1,
+                "notes": "none"
+              }
+            ]
+          }
+        ],
+        "observations": "",
+        "recommendation": ""
+      }
+    ]
+  }
+}
