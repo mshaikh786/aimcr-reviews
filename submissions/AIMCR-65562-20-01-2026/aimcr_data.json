@@ -1626,5 +1626,14 @@
       "observations": "Adapt model (in-house): Sample inspection completed. The artifact consists solely of the training codebase (architecture source code, training configurations, Slurm job scripts) with no pretrained weights present, consistent with the full training from scratch objective. No prohibited-use indicators identified. Artifact copied to /ibex/project/c2358/AIMCR/data-movement/65562/models/model/adapt/.",
       "recommendation": "Project aligns with approved research topics (Material Science and Data Science and Engineering). Model purpose and training objectives are fully documented.\nPositive checks passed\n\nModel developer (Gergo Ignacz, KAUST) is non-D5 affiliated. No prohibited-use indicators found.\nNegative checks passed\n\nEstimated training compute is 1.8 x 10^16 FLOPS, well below the 10^27 threshold.\n10^27 FLOPS check passed\n\nRecommended for staging."
     }
+<<<<<<< HEAD
+=======
+  ],
+  "_submission_history": [
+    {
+      "timestamp": "2026-06-17T11:45:21.734272",
+      "action": "resubmission"
+    }
+>>>>>>> 64d19f80be94ad6f509bcb8ceb63f063239ab11b
   ]
 }
