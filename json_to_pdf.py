@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """
-KSL AI Model Control Review → PDF Generator (v2)
+KSL AI Model Control Review → PDF Generator (v3)
 - Addendum artifacts appear inline within their original section, blue-bordered with date badge
-- Risk Score Summary shows Original vs Updated (incl. addenda) side-by-side when addenda exist
-- Maximum Risk Score label (not cumulative)
-- Dedicated addendum pages at the end retain per-addendum observations/recommendations
+- Final "Summary" page: Overall Risk Score (Original vs Updated incl. addenda), then a single
+  dated trail of Observations and Recommendation covering the original review and every addendum
 """
 
 import json
@@ -60,15 +59,6 @@ def create_styles():
         keepWithNext=True
     ))
     styles.add(ParagraphStyle(
-        name='AddendumItemHeader',
-        parent=styles['Heading2'],
-        fontSize=12,
-        spaceBefore=14,
-        spaceAfter=6,
-        textColor=HexColor('#1d4ed8'),
-        keepWithNext=True
-    ))
-    styles.add(ParagraphStyle(
         name='AddendumBadge',
         parent=styles['Normal'],
         fontSize=9,
@@ -117,22 +107,7 @@ def create_styles():
         leftIndent=5
     ))
     styles.add(ParagraphStyle(
-        name='AddendumTitle',
-        parent=styles['Normal'],
-        fontSize=18,
-        fontName='Helvetica-Bold',
-        textColor=colors.white,
-        alignment=1,
-    ))
-    styles.add(ParagraphStyle(
-        name='AddendumMeta',
-        parent=styles['Normal'],
-        fontSize=11,
-        textColor=colors.white,
-        alignment=1,
-    ))
-    styles.add(ParagraphStyle(
-        name='AddendumObsHeader',
+        name='SummarySubHeader',
         parent=styles['Heading2'],
         fontSize=12,
         spaceBefore=18,
@@ -218,56 +193,12 @@ def calculate_section_total_score(items: list) -> int:
     return sum(check_max.values())
 
 
-def _build_section_info_entry(display_name: str, items: list) -> dict:
-    if not items:
-        return {'total': 0, 'highest': 0, 'category': 'No Data',
-                'count': 0, 'pass_fail': 'N/A', 'artifacts': []}
-    total = calculate_section_total_score(items)
-    highest = get_highest_score_in_items(items)
-    high_arts = [
-        item.get("name", "Unnamed").strip() or "Unnamed"
-        for item in items
-        if get_highest_score_in_items([item]) == highest
-    ]
-    return {
-        'total': total,
-        'highest': highest,
-        'category': get_risk_category(highest),
-        'count': len(items),
-        'pass_fail': 'FAIL' if total >= 21 else 'PASS',
-        'artifacts': high_arts,
-    }
-
-
 SECTION_KEYS = {
     'Third-Party Software': 'third_party_software',
     'Source Code':          'source_code',
     'Datasets / User Files': 'datasets_user_files',
     'AI Models':            'models',
 }
-
-ADDENDUM_CATEGORY_LABELS = {v: k for k, v in SECTION_KEYS.items()}
-
-
-def calculate_section_totals(data: dict) -> dict:
-    """Original artifacts only."""
-    return {
-        display: _build_section_info_entry(display, data.get(key, []))
-        for display, key in SECTION_KEYS.items()
-    }
-
-
-def calculate_merged_section_totals(data: dict) -> dict:
-    """Original + all addendum artifacts merged per section."""
-    result = {}
-    for display, key in SECTION_KEYS.items():
-        merged = list(data.get(key, []))
-        for add in data.get('addenda', []):
-            if add.get('category') == key:
-                merged.extend(add.get('artifacts', []))
-        result[display] = _build_section_info_entry(display, merged)
-    return result
-
 
 def get_addendum_artifacts_for_section(data: dict, section_key: str) -> list:
     """Return list of (add_n, date, art_idx, artifact) 4-tuples for a section.
@@ -662,41 +593,101 @@ def create_addendum_header_table(addendum_num: int, addendum: dict, styles) -> T
     return banner
 
 
-def add_addendum_pages(story: list, addenda: list, styles) -> None:
-    """Dedicated page(s) per addendum — retains per-addendum obs/rec."""
-    if not addenda:
-        return
+def _group_addenda_by_date(addenda: list) -> list:
+    """Group addenda that share a date together so the date isn't repeated.
+    Returns [(date, [addenda...]), ...] sorted chronologically; addenda with
+    a missing/placeholder date are grouped last."""
+    groups: dict = {}
+    for addendum in addenda:
+        date = addendum.get('date') or '—'
+        groups.setdefault(date, []).append(addendum)
+    return sorted(groups.items(), key=lambda kv: (kv[0] == '—', kv[0]))
 
-    for idx, addendum in enumerate(addenda, start=1):
-        story.append(PageBreak())
-        story.append(create_addendum_header_table(idx, addendum, styles))
-        story.append(Spacer(1, 20))
 
-        artifacts = addendum.get('artifacts', [])
-        cat_key   = addendum.get('category', '')
-        cat_label = ADDENDUM_CATEGORY_LABELS.get(cat_key, cat_key.replace('_', ' ').title())
+def _append_dated_trail(story, original_text: str, addenda: list, field_name: str,
+                         styles, empty_label: str) -> None:
+    """Original text, followed by one entry per unique addendum date —
+    addenda sharing a date are consolidated under that single date heading,
+    and dates are listed chronologically. Used identically for Observations
+    and Recommendation in the Summary."""
+    original = format_text_with_breaks(original_text) or empty_label
+    story.append(Paragraph(original, styles['TableText']))
 
-        add_component_section(
-            story, title=cat_label, items=artifacts, styles=styles,
-            is_models_section=(cat_key == 'models'),
-        )
+    for date, group in _group_addenda_by_date(addenda):
+        texts = []
+        for addendum in group:
+            text = format_text_with_breaks(addendum.get(field_name, '')).strip()
+            if text:
+                texts.append(text)
+        combined = "<br/>".join(texts) if texts else empty_label
+        story.append(Spacer(1, 8))
+        story.append(Paragraph(f"<b>{date}:</b> {combined}", styles['TableText']))
 
-        if artifacts:
-            section_info = {cat_label: _build_section_info_entry(cat_label, artifacts)}
-            story.append(Spacer(1, 10))
-            story.extend(create_risk_summary_table(section_info, styles))
-            story.append(Spacer(1, 20))
 
-        story.append(HRFlowable(width="100%", thickness=1, color=HexColor('#fcd34d'), spaceAfter=10))
-        story.append(Paragraph("General Observations", styles['AddendumObsHeader']))
-        obs = format_text_with_breaks(addendum.get('observations', '')) or "<i>None recorded.</i>"
-        story.append(Paragraph(obs, styles['TableText']))
+def build_summary_section(story: list, data: dict, styles) -> None:
+    """Final page of the report: overall risk score, then the full
+    observation/recommendation trail (original + every addendum, dated)."""
+    addenda = data.get('addenda', [])
+    has_addenda = bool(addenda)
+
+    story.append(PageBreak())
+    story.append(Paragraph("Summary", styles['SectionHeader']))
+
+    # ── Overall Risk Score ────────────────────────────────────────────────
+    story.append(Paragraph("Overall Risk Score", styles['SummarySubHeader']))
+
+    orig_info = calculate_section_totals_anchored(data)
+
+    if has_addenda:
+        story.append(Paragraph(
+            "<b>Original Assessment</b>",
+            ParagraphStyle('SubLabel', parent=styles['TableText'],
+                           fontSize=11, spaceBefore=6, spaceAfter=4,
+                           textColor=HexColor('#2c5282'))
+        ))
+        story.extend(create_risk_summary_table(orig_info, styles))
         story.append(Spacer(1, 14))
 
-        story.append(Paragraph("Final Recommendation", styles['AddendumObsHeader']))
-        rec = format_text_with_breaks(addendum.get('recommendation', '')) or "<i>Not provided.</i>"
-        story.append(Paragraph(rec, styles['TableText']))
-        story.append(Spacer(1, 30))
+        updated_info = calculate_merged_section_totals_anchored(data)
+        story.append(Paragraph(
+            "<b>Updated Assessment (incl. Addenda)</b>",
+            ParagraphStyle('SubLabel2', parent=styles['TableText'],
+                           fontSize=11, spaceBefore=6, spaceAfter=4,
+                           textColor=HexColor('#1d4ed8'))
+        ))
+        story.extend(create_risk_summary_table(updated_info, styles))
+        story.append(Spacer(1, 20))
+
+        story.extend(create_dual_maximum_risk_boxes(orig_info, updated_info, styles))
+    else:
+        story.extend(create_risk_summary_table(orig_info, styles))
+        story.append(Spacer(1, 20))
+        story.extend(create_maximum_risk_box(orig_info, styles))
+
+    story.append(Spacer(1, 30))
+
+    # ── Observations ──────────────────────────────────────────────────────
+    story.append(Paragraph("Observations", styles['SummarySubHeader']))
+    _append_dated_trail(
+        story, data.get("observations", ""), addenda, "observations",
+        styles, "<i>None recorded.</i>"
+    )
+    story.append(Spacer(1, 20))
+
+    # ── Recommendation ────────────────────────────────────────────────────
+    story.append(Paragraph("Recommendation", styles['SummarySubHeader']))
+    _append_dated_trail(
+        story, data.get("recommendation", ""), addenda, "recommendation",
+        styles, "<i>Not provided.</i>"
+    )
+    story.append(Spacer(1, 40))
+
+    # ── Footer ─────────────────────────────────────────────────────────────
+    story.append(HRFlowable(width="100%", thickness=1, color=HexColor('#cbd5e0')))
+    story.append(Paragraph(
+        f"Report generated on {datetime.now():%Y-%m-%d %H:%M:%S}",
+        ParagraphStyle(name='Footer', alignment=1, fontSize=9, textColor=HexColor('#718096'))
+    ))
 
 
 # ── Main PDF builder ──────────────────────────────────────────────────────────
@@ -741,62 +732,8 @@ def json_to_pdf(json_filepath: str, output_filepath: str = None) -> str:
         )
         story.append(PageBreak())
 
-    # ── Risk Score Summary ────────────────────────────────────────────────────
-    story.append(Paragraph("Risk Score Summary", styles['SectionHeader']))
-
-    orig_info = calculate_section_totals_anchored(data)
-
-    if has_addenda:
-        # Original table
-        story.append(Paragraph(
-            "<b>Original Assessment</b>",
-            ParagraphStyle('SubLabel', parent=styles['TableText'],
-                           fontSize=11, spaceBefore=6, spaceAfter=4,
-                           textColor=HexColor('#2c5282'))
-        ))
-        story.extend(create_risk_summary_table(orig_info, styles))
-        story.append(Spacer(1, 14))
-
-        # Updated table (merged)
-        updated_info = calculate_merged_section_totals_anchored(data)
-        story.append(Paragraph(
-            "<b>Updated Assessment (incl. Addenda)</b>",
-            ParagraphStyle('SubLabel2', parent=styles['TableText'],
-                           fontSize=11, spaceBefore=6, spaceAfter=4,
-                           textColor=HexColor('#1d4ed8'))
-        ))
-        story.extend(create_risk_summary_table(updated_info, styles))
-        story.append(Spacer(1, 20))
-
-        # Dual maximum risk boxes
-        story.extend(create_dual_maximum_risk_boxes(orig_info, updated_info, styles))
-    else:
-        story.extend(create_risk_summary_table(orig_info, styles))
-        story.append(Spacer(1, 20))
-        story.extend(create_maximum_risk_box(orig_info, styles))
-
-
-    story.append(Spacer(1, 30))
-
-    # ── Observations & Recommendation ─────────────────────────────────────────
-    story.append(Paragraph("General Observations", styles['SectionHeader']))
-    obs = format_text_with_breaks(data.get("observations", "")) or "None recorded."
-    story.append(Paragraph(obs, styles['TableText']))
-    story.append(Spacer(1, 20))
-
-    story.append(Paragraph("Final Recommendation", styles['SectionHeader']))
-    rec = format_text_with_breaks(data.get("recommendation", "")) or "Not provided."
-    story.append(Paragraph(rec, styles['TableText']))
-    story.append(Spacer(1, 40))
-
-    story.append(HRFlowable(width="100%", thickness=1, color=HexColor('#cbd5e0')))
-    story.append(Paragraph(
-        f"Report generated on {datetime.now():%Y-%m-%d %H:%M:%S}",
-        ParagraphStyle(name='Footer', alignment=1, fontSize=9, textColor=HexColor('#718096'))
-    ))
-
-    # ── Dedicated addendum pages at end ───────────────────────────────────────
-    add_addendum_pages(story, addenda, styles)
+    # ── Summary (overall risk score + full observation/recommendation trail) ──
+    build_summary_section(story, data, styles)
 
     doc.build(story)
     return output_filepath

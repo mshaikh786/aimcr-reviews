@@ -441,7 +441,7 @@ if st.session_state.current_section == 'metadata':
         ).strftime("%Y-%m-%d")
 
 # Function to render artifact form
-def _render_addendum_artifacts_readonly(addendum_artifacts):
+def _render_addendum_artifacts_readonly(section_key, addendum_artifacts):
     """Render addendum artifacts inline, color-coded and read-only."""
     if not addendum_artifacts:
         return
@@ -577,7 +577,7 @@ def render_artifact_form(section_key, section_title, checks, artifacts_ref=None,
     
     # Show addendum artifacts for this section (read-only, color-coded)
     if addendum_artifacts and artifacts_ref is None:
-        _render_addendum_artifacts_readonly(addendum_artifacts)
+        _render_addendum_artifacts_readonly(section_key, addendum_artifacts)
 
     st.divider()
 
