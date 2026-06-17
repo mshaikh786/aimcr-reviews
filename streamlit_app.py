@@ -6,13 +6,14 @@ from pathlib import Path
 import subprocess
 import shutil
 from helper_functions import (calculate_section_risk,
+                              compute_merged_section_risk,
                               create_folder_structure,
                               get_risk_color,
                               load_draft, delete_draft,
-                              get_draft_files, save_draft, 
+                              get_draft_files, save_draft,
                               save_final_submission,
-                              save_to_json, 
-                              setup_local_workspace, 
+                              save_to_json,
+                              setup_local_workspace,
                               push_to_github,
                               get_submission_files,
                               load_submission,
@@ -61,7 +62,8 @@ if 'data' not in st.session_state:
         'datasets_user_files': [],
         'models': [],
         'observations': '',
-        'recommendation': ''
+        'recommendation': '',
+        'addenda': []
     }
 
 if 'current_section' not in st.session_state:
@@ -69,6 +71,12 @@ if 'current_section' not in st.session_state:
 
 if 'edit_index' not in st.session_state:
     st.session_state.edit_index = {}
+
+if 'addendum_edit_index' not in st.session_state:
+    st.session_state.addendum_edit_index = {}  # key: (addendum_idx, section_key) -> artifact_idx
+
+if 'active_addendum' not in st.session_state:
+    st.session_state.active_addendum = None  # index of addendum being expanded/edited
 
 # Track if we're editing an existing submission
 if 'editing_submission' not in st.session_state:
@@ -201,7 +209,7 @@ with st.sidebar:
     st.header("Navigation")
     section = st.radio(
         "Select Section",
-        ["Metadata", "Third-Party Software", "Source Code", "Datasets & User Files", "Models", "Final Review"],
+        ["Metadata", "Third-Party Software", "Source Code", "Datasets & User Files", "Models", "Final Review", "Addendum"],
         key="navigation"
     )
     st.session_state.current_section = section.lower().replace(" & ", "_").replace(" ", "_").replace("-", "_")
@@ -377,7 +385,8 @@ with st.sidebar:
                 'datasets_user_files': [],
                 'models': [],
                 'observations': '',
-                'recommendation': ''
+                'recommendation': '',
+                'addenda': []
             }
             st.session_state.editing_submission = False
             st.session_state.original_submission_folder = None
@@ -432,50 +441,108 @@ if st.session_state.current_section == 'metadata':
         ).strftime("%Y-%m-%d")
 
 # Function to render artifact form
-def render_artifact_form(section_key, section_title, checks):
-    st.header(f"📦 {section_title}")
+def _render_addendum_artifacts_readonly(addendum_artifacts):
+    """Render addendum artifacts inline, color-coded and read-only."""
+    if not addendum_artifacts:
+        return
+    st.markdown("#### 📎 Addendum Artifacts")
+    for entry in addendum_artifacts:
+        add_n = entry['addendum_idx'] + 1
+        date  = entry['date']
+        artifact = entry['artifact']
+        name = artifact.get('name', 'Unnamed')
+        st.markdown(
+            f"<div style='border-left:5px solid #3b82f6; background-color:#eff6ff; "
+            f"padding:8px 14px; margin:6px 0; border-radius:4px;'>"
+            f"<b>📎 Addendum {add_n} &mdash; Added: {date}</b> &nbsp;|&nbsp; {name}"
+            f"</div>",
+            unsafe_allow_html=True
+        )
+        with st.expander(f"View details — {name} (Addendum {add_n})", expanded=False):
+            if section_key == 'models' and artifact.get('is_proprietary', False):
+                st.write("**Marked as Proprietary:** Yes ✓")
+            total = sum(c['score'] for c in artifact.get('checks', []))
+            has_crit = any(c['score'] == 5 for c in artifact.get('checks', []))
+            if has_crit or total >= 21:
+                st.markdown(
+                    f"**Total Score:** <span style='color:red;font-weight:bold;'>{total}</span>",
+                    unsafe_allow_html=True
+                )
+            else:
+                st.write(f"**Total Score:** {total}")
+            for check in artifact.get('checks', []):
+                st.write(f"- {check['name']}: Score **{check['score']}** | {check['notes']}")
+
+
+def render_artifact_form(section_key, section_title, checks, artifacts_ref=None,
+                         key_prefix='', show_header=True, addendum_artifacts=None):
+    """
+    Renders the artifact add/edit/list UI for a given section.
+
+    artifacts_ref      – if provided, reads/writes to this list instead of
+                         st.session_state.data[section_key] (used by addenda).
+    key_prefix         – string prepended to all widget keys to avoid collisions
+                         when the same section_key appears in both main form and addenda.
+    show_header        – whether to render the section header (False when embedded in addendum).
+    addendum_artifacts – list of {addendum_idx, date, artifact} dicts to show read-only
+                         after the main artifact list (only used by top-level section calls).
+    """
+    if show_header:
+        st.header(f"📦 {section_title}")
+    
+    # Resolve the artifact list we are operating on
+    if artifacts_ref is None:
+        artifacts = st.session_state.data[section_key]
+        def _get_artifacts():
+            return st.session_state.data[section_key]
+        def _set_artifacts(lst):
+            st.session_state.data[section_key] = lst
+    else:
+        artifacts = artifacts_ref
+        def _get_artifacts():
+            return artifacts_ref
+        def _set_artifacts(lst):
+            artifacts_ref.clear()
+            artifacts_ref.extend(lst)
+    
+    # Edit-index namespace (scoped by key_prefix so addenda don't clash with main form)
+    edit_ns = f"{key_prefix}{section_key}"
     
     # Display existing artifacts
-    artifacts = st.session_state.data[section_key]
+    artifacts = _get_artifacts()
     
     if artifacts:
         st.subheader("Existing Artifacts")
         
         for idx, artifact in enumerate(artifacts):
-            # Create a container for each artifact
             artifact_container = st.container()
             
             with artifact_container:
-                # Header row with artifact name and buttons
                 col1, col2, col3 = st.columns([6, 1, 1])
                 
                 with col1:
                     artifact_name = artifact.get('name', 'Unnamed')
-                    # Add proprietary indicator for models
                     if section_key == 'models' and artifact.get('is_proprietary', False):
                         st.markdown(f"### Artifact {idx + 1}: {artifact_name} 🔒 *Proprietary*")
                     else:
                         st.markdown(f"### Artifact {idx + 1}: {artifact_name}")
                 
                 with col2:
-                    if st.button("✏️ Edit", key=f"edit_{section_key}_{idx}", use_container_width=True):
-                        st.session_state.edit_index[section_key] = idx
+                    if st.button("✏️ Edit", key=f"edit_{edit_ns}_{idx}", use_container_width=True):
+                        st.session_state.edit_index[edit_ns] = idx
                         st.rerun()
                 
                 with col3:
-                    if st.button("🗑️ Delete", key=f"delete_{section_key}_{idx}", use_container_width=True):
-                        st.session_state.data[section_key].pop(idx)
+                    if st.button("🗑️ Delete", key=f"delete_{edit_ns}_{idx}", use_container_width=True):
+                        _get_artifacts().pop(idx)
                         st.rerun()
                 
-                # Details in expander
                 with st.expander("View Details", expanded=False):
-                    # Show proprietary status for models
                     if section_key == 'models':
                         proprietary_status = "Yes ✓" if artifact.get('is_proprietary', False) else "No"
                         st.write(f"**Marked as Proprietary in Proposal:** {proprietary_status}")
                         st.write("")
                     
-                    # Calculate individual artifact score
                     artifact_score = sum(check['score'] for check in artifact['checks'])
                     has_critical = any(check['score'] == 5 for check in artifact['checks'])
                     
@@ -484,18 +551,16 @@ def render_artifact_form(section_key, section_title, checks):
                     else:
                         st.write(f"**Total Score:** {artifact_score}")
                     
-                    # Display checks
                     for check in artifact['checks']:
                         st.write(f"- {check['name']}: Score {check['score']} | Notes: {check['notes']}")
                 
                 st.divider()
         
-        # Calculate cumulative risk
         total_risk, max_scores = calculate_section_risk(artifacts)
         has_critical = any(score == 5 for score in max_scores)
         
         st.divider()
-        st.subheader("Section Cumulative Risk Score")
+        st.subheader("Section Maximum Risk Score")
         
         if has_critical or total_risk >= 21:
             st.markdown(f"### <span style='color:red; font-weight:bold;'>Total: {total_risk}</span>", unsafe_allow_html=True)
@@ -510,18 +575,23 @@ def render_artifact_form(section_key, section_title, checks):
             else:
                 st.write(f"- {check_name}: {max_score}")
     
+    # Show addendum artifacts for this section (read-only, color-coded)
+    if addendum_artifacts and artifacts_ref is None:
+        _render_addendum_artifacts_readonly(addendum_artifacts)
+
     st.divider()
-    
+
     # Add/Edit artifact form
-    edit_mode = section_key in st.session_state.edit_index
+    edit_mode = edit_ns in st.session_state.edit_index
     if edit_mode:
-        st.info(f"✏️ **Editing Artifact {st.session_state.edit_index[section_key] + 1}** - Make your changes below and click 'Save Artifact' when done.")
-        artifact = artifacts[st.session_state.edit_index[section_key]]
-        form_key = f"{section_key}_form_edit_{st.session_state.edit_index[section_key]}"
+        artifact_edit_idx = st.session_state.edit_index[edit_ns]
+        st.info(f"✏️ **Editing Artifact {artifact_edit_idx + 1}** - Make your changes below and click 'Save Artifact' when done.")
+        artifact = _get_artifacts()[artifact_edit_idx]
+        form_key = f"{edit_ns}_form_edit_{artifact_edit_idx}"
     else:
         st.subheader("Add New Artifact")
         artifact = None
-        form_key = f"{section_key}_form_add"
+        form_key = f"{edit_ns}_form_add"
     
     with st.form(form_key):
         artifact_name = st.text_input(
@@ -535,10 +605,8 @@ def render_artifact_form(section_key, section_title, checks):
         for i, check_name in enumerate(checks):
             col1, col2 = st.columns([1, 2])
             
-            # Create unique keys for edit vs add mode
-            widget_suffix = f"edit_{st.session_state.edit_index[section_key]}" if edit_mode else "add"
+            widget_suffix = f"edit_{st.session_state.edit_index[edit_ns]}" if edit_mode else "add"
             
-            # Get section-specific help text for this check
             help_text = SECTION_CHECK_HELP.get(section_key, {}).get(check_name, "No description available for this check.")
             
             with col1:
@@ -547,7 +615,7 @@ def render_artifact_form(section_key, section_title, checks):
                     options=[1, 2, 3, 4, 5],
                     format_func=lambda x: f"{x} - {RISK_LEVELS[x]}",
                     index=artifact['checks'][i]['score'] - 1 if artifact else 0,
-                    key=f"{section_key}_check_{i}_{widget_suffix}",
+                    key=f"{edit_ns}_check_{i}_{widget_suffix}",
                     help=help_text
                 )
             
@@ -555,7 +623,7 @@ def render_artifact_form(section_key, section_title, checks):
                 notes = st.text_area(
                     f"Notes for {check_name}",
                     value=artifact['checks'][i]['notes'] if artifact else "",
-                    key=f"{section_key}_notes_{i}_{widget_suffix}",
+                    key=f"{edit_ns}_notes_{i}_{widget_suffix}",
                     height=100
                 )
             
@@ -565,16 +633,15 @@ def render_artifact_form(section_key, section_title, checks):
                 'notes': notes
             })
         
-        # Add proprietary checkbox for Models section only (not part of risk scoring)
         is_proprietary = False
         if section_key == 'models':
             st.write("---")
             st.write("### Additional Information (Not part of risk scoring)")
-            widget_suffix = f"edit_{st.session_state.edit_index[section_key]}" if edit_mode else "add"
+            widget_suffix = f"edit_{st.session_state.edit_index[edit_ns]}" if edit_mode else "add"
             is_proprietary = st.checkbox(
                 "Has the model been marked proprietary in the proposal?",
                 value=artifact.get('is_proprietary', False) if artifact else False,
-                key=f"{section_key}_proprietary_{widget_suffix}"
+                key=f"{edit_ns}_proprietary_{widget_suffix}"
             )
         
         col1, col2, col3 = st.columns([1, 1, 2])
@@ -586,7 +653,7 @@ def render_artifact_form(section_key, section_title, checks):
             if edit_mode:
                 cancel = st.form_submit_button("Cancel Edit")
                 if cancel:
-                    del st.session_state.edit_index[section_key]
+                    del st.session_state.edit_index[edit_ns]
                     st.rerun()
         
         if submit:
@@ -595,31 +662,162 @@ def render_artifact_form(section_key, section_title, checks):
                 'checks': checks_data
             }
             
-            # Add proprietary field for Models section
             if section_key == 'models':
                 new_artifact['is_proprietary'] = is_proprietary
             
             if edit_mode:
-                st.session_state.data[section_key][st.session_state.edit_index[section_key]] = new_artifact
-                del st.session_state.edit_index[section_key]
+                _get_artifacts()[st.session_state.edit_index[edit_ns]] = new_artifact
+                del st.session_state.edit_index[edit_ns]
             else:
-                st.session_state.data[section_key].append(new_artifact)
+                _get_artifacts().append(new_artifact)
             
             st.success("Artifact saved successfully!")
             st.rerun()
 
+def get_addendum_artifacts_for_section(section_key):
+    """Return list of {addendum_idx, date, artifact} for all addenda matching section_key."""
+    result = []
+    for idx, add in enumerate(st.session_state.data.get('addenda', [])):
+        if add.get('category') == section_key:
+            for artifact in add.get('artifacts', []):
+                result.append({'addendum_idx': idx, 'date': add['date'], 'artifact': artifact})
+    return result
+
+
 # Render sections
 if st.session_state.current_section == 'third_party_software':
-    render_artifact_form('third_party_software', 'Third-Party Software (Packages, Libraries, Containers & Binaries)', SECTION_CHECKS['third_party_software'])
+    render_artifact_form(
+        'third_party_software',
+        'Third-Party Software (Packages, Libraries, Containers & Binaries)',
+        SECTION_CHECKS['third_party_software'],
+        addendum_artifacts=get_addendum_artifacts_for_section('third_party_software')
+    )
 
 elif st.session_state.current_section == 'source_code':
-    render_artifact_form('source_code', 'Source Code', SECTION_CHECKS['source_code'])
+    render_artifact_form(
+        'source_code', 'Source Code', SECTION_CHECKS['source_code'],
+        addendum_artifacts=get_addendum_artifacts_for_section('source_code')
+    )
 
 elif st.session_state.current_section == 'datasets_user_files':
-    render_artifact_form('datasets_user_files', 'Datasets & User Files', SECTION_CHECKS['datasets_user_files'])
+    render_artifact_form(
+        'datasets_user_files', 'Datasets & User Files', SECTION_CHECKS['datasets_user_files'],
+        addendum_artifacts=get_addendum_artifacts_for_section('datasets_user_files')
+    )
 
 elif st.session_state.current_section == 'models':
-    render_artifact_form('models', 'Models', SECTION_CHECKS['models'])
+    render_artifact_form(
+        'models', 'Models', SECTION_CHECKS['models'],
+        addendum_artifacts=get_addendum_artifacts_for_section('models')
+    )
+
+# ── Addendum Section ──────────────────────────────────────────────────────────
+elif st.session_state.current_section == 'addendum':
+    st.header("📎 Addendum")
+    st.markdown("Append supplementary artifact reviews to an existing AIMCR submission. Each addendum carries its own date, category, artifact assessments, observations, and recommendation.")
+
+    # Ensure addenda list exists in data (backwards-compat with older loaded drafts)
+    if 'addenda' not in st.session_state.data:
+        st.session_state.data['addenda'] = []
+
+    ADDENDUM_CATEGORY_OPTIONS = {
+        'Third-Party Software': 'third_party_software',
+        'Source Code': 'source_code',
+        'Datasets & User Files': 'datasets_user_files',
+        'Models': 'models'
+    }
+    ADDENDUM_CATEGORY_LABELS = {v: k for k, v in ADDENDUM_CATEGORY_OPTIONS.items()}
+
+    # ── Existing addenda ──────────────────────────────────────────────────────
+    addenda = st.session_state.data['addenda']
+
+    if addenda:
+        st.subheader(f"Existing Addenda ({len(addenda)})")
+        for add_idx, addendum in enumerate(addenda):
+            cat_key   = addendum.get('category', 'third_party_software')
+            cat_label = ADDENDUM_CATEGORY_LABELS.get(cat_key, cat_key)
+            add_date  = addendum.get('date', '—')
+            n_arts    = len(addendum.get('artifacts', []))
+
+            with st.expander(f"📎 Addendum {add_idx + 1}  |  {add_date}  |  {cat_label}  |  {n_arts} artifact(s)", expanded=(st.session_state.active_addendum == add_idx)):
+
+                # Header controls
+                col_del, col_expand = st.columns([1, 5])
+                with col_del:
+                    if st.button("🗑️ Delete", key=f"del_addendum_{add_idx}", use_container_width=True):
+                        st.session_state.data['addenda'].pop(add_idx)
+                        if st.session_state.active_addendum == add_idx:
+                            st.session_state.active_addendum = None
+                        st.rerun()
+
+                st.divider()
+
+                # Observations & Recommendation (saved inline with each addendum)
+                obs_col, rec_col = st.columns(2)
+                with obs_col:
+                    new_obs = st.text_area(
+                        "General Observations",
+                        value=addendum.get('observations', ''),
+                        height=120,
+                        key=f"addendum_obs_{add_idx}"
+                    )
+                    addendum['observations'] = new_obs
+                with rec_col:
+                    new_rec = st.text_area(
+                        "Recommendations",
+                        value=addendum.get('recommendation', ''),
+                        height=120,
+                        key=f"addendum_rec_{add_idx}"
+                    )
+                    addendum['recommendation'] = new_rec
+
+                st.divider()
+
+                # Artifact form for this addendum (reuses the same checks & rubric)
+                checks = SECTION_CHECKS[cat_key]
+                render_artifact_form(
+                    section_key   = cat_key,
+                    section_title = cat_label,
+                    checks        = checks,
+                    artifacts_ref = addendum['artifacts'],
+                    key_prefix    = f"add{add_idx}_",
+                    show_header   = False
+                )
+
+    else:
+        st.info("No addenda yet. Use the form below to add the first one.")
+
+    st.divider()
+
+    # ── Add a new addendum ────────────────────────────────────────────────────
+    st.subheader("➕ New Addendum")
+    with st.form("new_addendum_form"):
+        col_date, col_cat = st.columns(2)
+        with col_date:
+            new_add_date = st.date_input("Addendum Date", value=datetime.now()).strftime("%Y-%m-%d")
+        with col_cat:
+            new_add_cat_label = st.selectbox("Artifact Category", list(ADDENDUM_CATEGORY_OPTIONS.keys()))
+
+        if st.form_submit_button("Create Addendum", type="primary"):
+            new_addendum = {
+                'date': new_add_date,
+                'category': ADDENDUM_CATEGORY_OPTIONS[new_add_cat_label],
+                'artifacts': [],
+                'observations': '',
+                'recommendation': ''
+            }
+            st.session_state.data['addenda'].append(new_addendum)
+            # Expand the newly created addendum automatically
+            add_n = len(st.session_state.data['addenda'])
+            st.session_state.active_addendum = add_n - 1
+            # Insert date demarcation into observations and recommendation
+            marker = f"\n\n--- Addendum {add_n} added: {new_add_date} ({new_add_cat_label}) ---\n"
+            st.session_state.data['observations'] = (
+                st.session_state.data.get('observations', '') + marker)
+            st.session_state.data['recommendation'] = (
+                st.session_state.data.get('recommendation', '') + marker)
+            st.success(f"Addendum {add_n} created — scroll up to fill in artifacts.")
+            st.rerun()
 
 # Final Review Section
 elif st.session_state.current_section == 'final_review':
@@ -641,129 +839,253 @@ elif st.session_state.current_section == 'final_review':
     
     st.divider()
     
+    # Backwards-compat: addenda may be absent in older drafts/submissions
+    if 'addenda' not in st.session_state.data:
+        st.session_state.data['addenda'] = []
+
     # Display all section scores
     st.subheader("Risk Score Summary")
-    
+
     sections_summary = {
         'Third-Party Software': ('third_party_software', SECTION_CHECKS['third_party_software']),
         'Source Code': ('source_code', SECTION_CHECKS['source_code']),
         'Datasets & User Files': ('datasets_user_files', SECTION_CHECKS['datasets_user_files']),
         'Models': ('models', SECTION_CHECKS['models'])
     }
-    
+
+    has_addenda = bool(st.session_state.data.get('addenda'))
+
     overall_critical = False
-    section_scores_list = []
-    
-    # Display section scores with risk categories
+    section_scores_list = []        # original scores
+    section_scores_updated = []     # merged (original + addenda) scores
+
     for section_name, (section_key, checks) in sections_summary.items():
-        artifacts = st.session_state.data[section_key]
-        if artifacts:
-            total_risk, max_scores = calculate_section_risk(artifacts)
-            
-            # Find the highest individual score in this section
+        orig_artifacts = st.session_state.data[section_key]
+
+        # ── Original scores ──────────────────────────────────────────────────
+        if orig_artifacts:
+            total_risk, max_scores = calculate_section_risk(orig_artifacts)
             highest_score = max(max_scores) if max_scores else 1
-            
-            # Determine risk category based on highest score
             risk_category = RISK_LEVELS.get(highest_score, "Unknown")
             risk_color = get_risk_color(highest_score)
-            
-            # Check if critical
             if highest_score == 5:
                 overall_critical = True
-            
-            # Determine Pass/Fail based on total_risk (sum of max scores per question)
-            # total_risk is already calculated as sum of max values from calculate_section_risk
             pass_fail = "FAIL" if total_risk >= 21 else "PASS"
-            pass_fail_color = "red" if total_risk >= 21 else "green"
-            
             section_scores_list.append({
-                'name': section_name,
-                'total_score': total_risk,
-                'highest_score': highest_score,
-                'risk_category': risk_category,
-                'artifacts': len(artifacts),
-                'max_scores': max_scores,
-                'checks': checks,
-                'pass_fail': pass_fail
+                'name': section_name, 'key': section_key,
+                'total_score': total_risk, 'highest_score': highest_score,
+                'risk_category': risk_category, 'risk_color': risk_color,
+                'n_artifacts': len(orig_artifacts), 'max_scores': max_scores,
+                'checks': checks, 'pass_fail': pass_fail
             })
-            
-            # Display section with score and category
-            st.markdown(f"""
-            <div style='padding: 15px; border-left: 5px solid {risk_color}; margin: 10px 0; background-color: rgba(128,128,128,0.05);'>
-                <div style='font-size: 18px; font-weight: bold;'>{section_name}</div>
-                <div style='margin-top: 8px;'>
-                    <span style='font-size: 16px;'>Total Score: <strong>{total_risk}</strong></span>
-                    <span style='margin-left: 20px; font-size: 16px;'>Risk Category: <strong style='color: {risk_color};'>{risk_category}</strong></span>
-                    <span style='margin-left: 20px; font-size: 16px;'>Status: <strong style='color: {pass_fail_color};'>{pass_fail}</strong></span>
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
-            
-            with st.expander(f"View {section_name} Details"):
-                st.write(f"**Number of artifacts:** {len(artifacts)}")
-                st.write(f"**Highest individual score:** {highest_score} ({risk_category})")
-                st.write("**Maximum scores per check:**")
-                for check_name, max_score in zip(checks, max_scores):
-                    check_color = get_risk_color(max_score)
-                    check_risk = RISK_LEVELS.get(max_score, "Unknown")
-                    st.markdown(f"- {check_name}: <span style='color:{check_color}; font-weight:bold;'>{max_score}</span> ({check_risk})", unsafe_allow_html=True)
+        else:
+            section_scores_list.append({
+                'name': section_name, 'key': section_key,
+                'total_score': 0, 'highest_score': 0,
+                'risk_category': 'No Data', 'risk_color': 'gray',
+                'n_artifacts': 0, 'max_scores': [], 'checks': checks, 'pass_fail': 'N/A'
+            })
+
+        # ── Updated scores (original + addenda merged) ────────────────────────
+        if has_addenda:
+            upd_total, upd_max = compute_merged_section_risk(st.session_state.data, section_key)
+            upd_highest = max(upd_max) if upd_max else 0
+            upd_category = RISK_LEVELS.get(upd_highest, "No Data")
+            upd_color = get_risk_color(upd_highest) if upd_highest else "gray"
+            upd_pass_fail = "FAIL" if upd_total >= 21 else ("PASS" if upd_total > 0 else "N/A")
+            if upd_highest == 5:
+                overall_critical = True
+            section_scores_updated.append({
+                'name': section_name, 'key': section_key,
+                'total_score': upd_total, 'highest_score': upd_highest,
+                'risk_category': upd_category, 'risk_color': upd_color,
+                'pass_fail': upd_pass_fail
+            })
+
+    # ── Section-by-section display ───────────────────────────────────────────
+    for i, s in enumerate(section_scores_list):
+        if s['n_artifacts'] > 0 or (has_addenda and section_scores_updated[i]['total_score'] > 0):
+            rc = s['risk_color']
+            pf_color = "red" if s['pass_fail'] == "FAIL" else "green"
+
+            if has_addenda:
+                upd = section_scores_updated[i]
+                upd_pf_color = "red" if upd['pass_fail'] == "FAIL" else ("green" if upd['pass_fail'] == "PASS" else "gray")
+                orig_part = (
+                    f"<span style='font-size:14px;'>Original — Score: <strong>{s['total_score']}</strong> &nbsp;"
+                    f"<strong style='color:{rc};'>{s['risk_category']}</strong> &nbsp;"
+                    f"<strong style='color:{pf_color};'>{s['pass_fail']}</strong></span>"
+                ) if s['n_artifacts'] > 0 else "<span style='font-size:14px; color:gray;'>Original — No artifacts</span>"
+                upd_part = (
+                    f"<span style='font-size:14px; color:#3b82f6;'>📎 After Addenda — Score: <strong>{upd['total_score']}</strong> &nbsp;"
+                    f"<strong style='color:{upd['risk_color']};'>{upd['risk_category']}</strong> &nbsp;"
+                    f"<strong style='color:{upd_pf_color};'>{upd['pass_fail']}</strong></span>"
+                )
+                border_color = upd['risk_color'] if upd['total_score'] > 0 else rc
+                st.markdown(f"""
+                <div style='padding:12px 15px; border-left:5px solid {border_color}; margin:10px 0; background-color:rgba(128,128,128,0.05);'>
+                    <div style='font-size:18px; font-weight:bold; margin-bottom:6px;'>{s['name']}</div>
+                    <div>{orig_part}</div>
+                    <div style='margin-top:4px;'>{upd_part}</div>
+                </div>""", unsafe_allow_html=True)
+            else:
+                pf_color = "red" if s['pass_fail'] == "FAIL" else "green"
+                st.markdown(f"""
+                <div style='padding:15px; border-left:5px solid {rc}; margin:10px 0; background-color:rgba(128,128,128,0.05);'>
+                    <div style='font-size:18px; font-weight:bold;'>{s['name']}</div>
+                    <div style='margin-top:8px;'>
+                        <span style='font-size:16px;'>Total Score: <strong>{s['total_score']}</strong></span>
+                        <span style='margin-left:20px; font-size:16px;'>Risk Category: <strong style='color:{rc};'>{s['risk_category']}</strong></span>
+                        <span style='margin-left:20px; font-size:16px;'>Status: <strong style='color:{pf_color};'>{s['pass_fail']}</strong></span>
+                    </div>
+                </div>""", unsafe_allow_html=True)
+
+            with st.expander(f"View {s['name']} Details"):
+                st.write(f"**Original artifacts:** {s['n_artifacts']}")
+                if s['max_scores']:
+                    st.write(f"**Highest original score:** {s['highest_score']} ({s['risk_category']})")
+                    st.write("**Original max scores per check:**")
+                    for check_name, max_score in zip(s['checks'], s['max_scores']):
+                        check_color = get_risk_color(max_score)
+                        check_risk = RISK_LEVELS.get(max_score, "Unknown")
+                        st.markdown(f"- {check_name}: <span style='color:{check_color}; font-weight:bold;'>{max_score}</span> ({check_risk})", unsafe_allow_html=True)
+                if has_addenda:
+                    upd = section_scores_updated[i]
+                    add_arts = get_addendum_artifacts_for_section(s['key'])
+                    st.write(f"**Addendum artifacts in this section:** {len(add_arts)}")
+                    if upd['total_score'] > 0:
+                        st.write(f"**Updated highest score:** {upd['highest_score']} ({upd['risk_category']})")
         else:
             st.markdown(f"""
-            <div style='padding: 15px; border-left: 5px solid gray; margin: 10px 0; background-color: rgba(128,128,128,0.05);'>
-                <div style='font-size: 18px; font-weight: bold;'>{section_name}</div>
-                <div style='margin-top: 8px; color: gray;'>No artifacts added</div>
-            </div>
-            """, unsafe_allow_html=True)
-    
+            <div style='padding:15px; border-left:5px solid gray; margin:10px 0; background-color:rgba(128,128,128,0.05);'>
+                <div style='font-size:18px; font-weight:bold;'>{s['name']}</div>
+                <div style='margin-top:8px; color:gray;'>No artifacts added</div>
+            </div>""", unsafe_allow_html=True)
+
     st.divider()
-    
+
     # Overall status
     if overall_critical:
         st.error("⚠️ CRITICAL RISK DETECTED: One or more sections have critical risk scores!")
     else:
         st.success("✅ All sections are within acceptable risk levels")
+
+    st.divider()
+
+    # ── Cumulative risk (original) ────────────────────────────────────────────
+    orig_scores_with_data = [s for s in section_scores_list if s['highest_score'] > 0]
+    cumulative_risk_score = max(s['highest_score'] for s in orig_scores_with_data) if orig_scores_with_data else 1
+    cumulative_risk_category = RISK_LEVELS.get(cumulative_risk_score, "No Risk")
+    cumulative_risk_color = get_risk_color(cumulative_risk_score)
+    any_section_failed = any(s['pass_fail'] == 'FAIL' for s in section_scores_list)
+    cumulative_pass_fail = "FAIL" if any_section_failed else "PASS"
+    cumulative_pass_fail_color = "red" if any_section_failed else "green"
+
+    # ── Cumulative risk (updated with addenda) ────────────────────────────────
+    if has_addenda:
+        upd_scores_with_data = [s for s in section_scores_updated if s['highest_score'] > 0]
+        upd_cumulative_score = max(s['highest_score'] for s in upd_scores_with_data) if upd_scores_with_data else cumulative_risk_score
+        upd_cumulative_category = RISK_LEVELS.get(upd_cumulative_score, "No Risk")
+        upd_cumulative_color = get_risk_color(upd_cumulative_score)
+        any_upd_failed = any(s['pass_fail'] == 'FAIL' for s in section_scores_updated)
+        upd_cumulative_pass_fail = "FAIL" if any_upd_failed else "PASS"
+        upd_pass_fail_color = "red" if any_upd_failed else "green"
+
+        col_orig, col_updated = st.columns(2)
+        with col_orig:
+            st.markdown(f"""
+            <div style='padding:20px; border:4px solid {cumulative_risk_color}; border-radius:10px;
+                        text-align:center; background-color:rgba(128,128,128,0.05);'>
+                <div style='font-size:14px; font-weight:bold; margin-bottom:10px;'>ORIGINAL MAXIMUM RISK</div>
+                <div style='font-size:42px; font-weight:bold; color:{cumulative_risk_color};'>{cumulative_risk_score}</div>
+                <div style='font-size:18px; font-weight:bold; color:{cumulative_risk_color};'>{cumulative_risk_category}</div>
+                <div style='font-size:16px; font-weight:bold; color:{cumulative_pass_fail_color}; margin-top:10px;'>{cumulative_pass_fail}</div>
+                <div style='font-size:11px; margin-top:8px; color:gray;'>Based on original submission artifacts</div>
+            </div>""", unsafe_allow_html=True)
+        with col_updated:
+            st.markdown(f"""
+            <div style='padding:20px; border:4px solid {upd_cumulative_color}; border-radius:10px;
+                        text-align:center; background-color:#eff6ff;'>
+                <div style='font-size:14px; font-weight:bold; margin-bottom:10px; color:#1d4ed8;'>📎 UPDATED MAXIMUM RISK</div>
+                <div style='font-size:42px; font-weight:bold; color:{upd_cumulative_color};'>{upd_cumulative_score}</div>
+                <div style='font-size:18px; font-weight:bold; color:{upd_cumulative_color};'>{upd_cumulative_category}</div>
+                <div style='font-size:16px; font-weight:bold; color:{upd_pass_fail_color}; margin-top:10px;'>{upd_cumulative_pass_fail}</div>
+                <div style='font-size:11px; margin-top:8px; color:gray;'>Includes all addenda</div>
+            </div>""", unsafe_allow_html=True)
+    else:
+        # No addenda — single cumulative risk box centred
+        col_l, col_mid, col_r = st.columns([1, 2, 1])
+        with col_mid:
+            st.markdown(f"""
+            <div style='padding:20px; border:4px solid {cumulative_risk_color}; border-radius:10px;
+                        text-align:center; background-color:rgba(128,128,128,0.05);'>
+                <div style='font-size:16px; font-weight:bold; margin-bottom:15px;'>MAXIMUM RISK LEVEL</div>
+                <div style='font-size:48px; font-weight:bold; color:{cumulative_risk_color};'>{cumulative_risk_score}</div>
+                <div style='font-size:20px; font-weight:bold; color:{cumulative_risk_color};'>{cumulative_risk_category}</div>
+                <div style='font-size:18px; font-weight:bold; color:{cumulative_pass_fail_color}; margin-top:15px;'>{cumulative_pass_fail}</div>
+                <div style='font-size:12px; margin-top:10px; color:gray;'>Highest risk across all sections</div>
+            </div>""", unsafe_allow_html=True)
+
+    # Observations and Recommendations
+    st.subheader("Observations and Recommendations")
+
+    st.session_state.data['observations'] = st.text_area(
+        "Observations",
+        value=st.session_state.data['observations'],
+        height=150
+    )
+
+    st.session_state.data['recommendation'] = st.text_area(
+        "Recommendation",
+        value=st.session_state.data['recommendation'],
+        height=150
+    )
     
     st.divider()
     
-    # Calculate cumulative risk level (highest across all sections)
-    cumulative_risk_score = max([s['highest_score'] for s in section_scores_list]) if section_scores_list else 1
-    cumulative_risk_category = RISK_LEVELS.get(cumulative_risk_score, "No Risk")
-    cumulative_risk_color = get_risk_color(cumulative_risk_score)
-    
-    # Determine cumulative Pass/Fail - fails if ANY section fails (total >= 21)
-    any_section_failed = any(s.get('pass_fail') == 'FAIL' for s in section_scores_list)
-    cumulative_pass_fail = "FAIL" if any_section_failed else "PASS"
-    cumulative_pass_fail_color = "red" if any_section_failed else "green"
-    
-    # Observations and Recommendations
-    st.subheader("Observations and Recommendations")
-    
-    col1, col2 = st.columns([2, 1])
-    
-    with col1:
-        st.session_state.data['observations'] = st.text_area(
-            "Observations",
-            value=st.session_state.data['observations'],
-            height=150
-        )
-        
-        st.session_state.data['recommendation'] = st.text_area(
-            "Recommendation",
-            value=st.session_state.data['recommendation'],
-            height=150
-        )
-    
-    with col2:
-        st.markdown(f"""
-        <div style='padding: 20px; border: 4px solid {cumulative_risk_color}; border-radius: 10px; text-align: center; background-color: rgba(128,128,128,0.05); height: 100%; display: flex; flex-direction: column; justify-content: center;'>
-            <div style='font-size: 16px; font-weight: bold; margin-bottom: 15px;'>CUMULATIVE RISK LEVEL</div>
-            <div style='font-size: 48px; font-weight: bold; color: {cumulative_risk_color}; margin: 10px 0;'>{cumulative_risk_score}</div>
-            <div style='font-size: 20px; font-weight: bold; color: {cumulative_risk_color};'>{cumulative_risk_category}</div>
-            <div style='font-size: 18px; font-weight: bold; color: {cumulative_pass_fail_color}; margin-top: 15px;'>{cumulative_pass_fail}</div>
-            <div style='font-size: 12px; margin-top: 10px; color: gray;'>Highest risk across all sections</div>
-        </div>
-        """, unsafe_allow_html=True)
-    
+    # ── Addenda Summary ───────────────────────────────────────────────────────
+    addenda = st.session_state.data.get('addenda', [])
+    if addenda:
+        st.subheader(f"📎 Addenda ({len(addenda)})")
+        ADDENDUM_CATEGORY_LABELS_FR = {
+            'third_party_software': 'Third-Party Software',
+            'source_code': 'Source Code',
+            'datasets_user_files': 'Datasets & User Files',
+            'models': 'Models'
+        }
+        for add_idx, addendum in enumerate(addenda):
+            cat_key   = addendum.get('category', '')
+            cat_label = ADDENDUM_CATEGORY_LABELS_FR.get(cat_key, cat_key)
+            add_date  = addendum.get('date', '—')
+            artifacts = addendum.get('artifacts', [])
+
+            with st.expander(f"📎 Addendum {add_idx + 1}  |  {add_date}  |  {cat_label}  |  {len(artifacts)} artifact(s)"):
+                if artifacts:
+                    total_risk, max_scores = calculate_section_risk(artifacts)
+                    has_crit = any(s == 5 for s in max_scores)
+                    risk_color = get_risk_color(max(max_scores) if max_scores else 1)
+                    risk_label = RISK_LEVELS.get(max(max_scores) if max_scores else 1, 'No Risk')
+                    st.markdown(
+                        f"**Risk Score:** <span style='color:{risk_color}; font-weight:bold;'>{total_risk} — {risk_label}</span>",
+                        unsafe_allow_html=True
+                    )
+                    if has_crit:
+                        st.error("⚠️ CRITICAL risk in this addendum")
+                    for art in artifacts:
+                        art_score = sum(c['score'] for c in art['checks'])
+                        st.write(f"- **{art['name']}**: total score {art_score}")
+                else:
+                    st.write("_No artifacts recorded._")
+
+                obs = addendum.get('observations', '')
+                rec = addendum.get('recommendation', '')
+                if obs:
+                    st.write(f"**Observations:** {obs}")
+                if rec:
+                    st.write(f"**Recommendations:** {rec}")
+    else:
+        st.info("No addenda attached to this review.")
+
     st.divider()
     
     # Save and Export
