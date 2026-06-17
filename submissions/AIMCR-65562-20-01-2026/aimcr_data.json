@@ -1578,10 +1578,11 @@
       "artifacts": [
         {
           "name": "Adapt (based on UMA)",
+          "is_proprietary": true,
           "checks": [
             {
               "name": "Project & Usage Alignment",
-              "score": 4,
+              "score": 1,
               "notes": "Adapt is a KAUST-internal, unpublished variant of the UMA (Universal Models for Atoms) equivariant graph neural network architecture. The model has been significantly modified from the upstream UMA codebase to accommodate Shaheen III requirements \u2014 including MLflow integration for experiment tracking. It is an MLIP (machine learning interatomic potential) architecture that takes atomic position, atom type, charge, and spin as inputs and predicts energy and forces, aiming to replace traditional DFT calculations.\n\nThe model will be trained from scratch on the OMOL25 4M subset and other datasets on Shaheen III GPUP, directly implementing the project's core objective of developing a foundational MLIP through supervised pretraining. The developer is Gergo Ignacz, a researcher in the Ghanem group at KAUST.\n\nAligns with the approved research topics Material Science (soft, composite, and nanomaterials) and Data Science and Engineering."
             },
             {
@@ -1619,18 +1620,11 @@
               "score": 1,
               "notes": "Inspection completed. KSL gained access to /tmp/IMS0000027 and copied the artifact to /ibex/project/c2358/AIMCR/data-movement/65562/models/model/adapt/.\n\nThe submitted artifact consists solely of the Adapt model training codebase, including model architecture source code, training configurations, and Slurm job scripts; no pretrained weights are present, which is consistent with the proposal's full training from scratch objective.\n\nNo undocumented functionality or prohibited-use indicators were identified."
             }
-          ],
-          "is_proprietary": true
+          ]
         }
       ],
       "observations": "Adapt model (in-house): Sample inspection completed. The artifact consists solely of the training codebase (architecture source code, training configurations, Slurm job scripts) with no pretrained weights present, consistent with the full training from scratch objective. No prohibited-use indicators identified. Artifact copied to /ibex/project/c2358/AIMCR/data-movement/65562/models/model/adapt/.",
       "recommendation": "Project aligns with approved research topics (Material Science and Data Science and Engineering). Model purpose and training objectives are fully documented.\nPositive checks passed\n\nModel developer (Gergo Ignacz, KAUST) is non-D5 affiliated. No prohibited-use indicators found.\nNegative checks passed\n\nEstimated training compute is 1.8 x 10^16 FLOPS, well below the 10^27 threshold.\n10^27 FLOPS check passed\n\nRecommended for staging."
-    }
-  ],
-  "_submission_history": [
-    {
-      "timestamp": "2026-06-17T10:45:14.739453",
-      "action": "resubmission"
     }
   ]
 }
