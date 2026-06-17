@@ -5,7 +5,7 @@
     "proposal_date": "2025-12-04",
     "reviewer_name": "Mohsin Ahmed Shaikh",
     "reviewer_id": "174988",
-    "aimcr_date": "2026-01-22",
+    "aimcr_date": "2026-06-10",
     "project_id": "65562"
   },
   "third_party_software": [
@@ -1130,10 +1130,501 @@
   ],
   "observations": "In the Open Catalyst dataset, a potential risk of dual use has been identified. A suggestion is to refer to the RCAC Chair for the scientific assessment of potential risk. \nIn the Open Materials dataset, a potential risk of dual use has been identified. A suggestion is to refer to the RCAC Chair for the scientific assessment of potential risk. \nIn the Open Molecules 2025  dataset, the artifact is new and less used.\n\nIn GemNet model, a potential risk of dual use has been identified because Open Catalyst was used to pre-train this model. A suggestion is to refer to the RCAC Chair for the scientific assessment of potential risk. \n",
   "recommendation": "Positive check passed. \n\nNegative check passed with potential risk identified. \n\n10^27 check passed. \n\nThe initial recommendation is to refer to RCAC for the scientific assessment of potential risks found in said datasets and model. Conditional on clearance from the RCAC, the project is otherwise recommended for the grand challenge.  ",
-  "_submission_history": [
+  "addenda": [
     {
-      "timestamp": "2026-01-27T17:10:11.020165",
-      "action": "resubmission"
+      "date": "2026-06-10",
+      "category": "third_party_software",
+      "artifacts": [
+        {
+          "name": "triton",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Triton is an open-source GPU programming language and compiler that generates optimized CUDA kernels, used by PyTorch (torch.compile) to accelerate deep-learning computations on GPU. Its use here supports efficient training of the Adapt/MLIP model on Shaheen III GPUP.\nAligns with the approved research topic Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. Triton is a compiler infrastructure for GPU kernel generation with no prohibited-use functionality documented."
+            },
+            {
+              "name": "D5+M Affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Originally created by Philippe Tillet at OpenAI; the repository was moved to the community-style triton-lang GitHub organization in 2024. Core maintainers include contributors from OpenAI, Meta, AMD, Intel, NVIDIA, IBM, Microsoft, and Red Hat \u2014 all non-D5 entities.\nhttps://github.com/triton-lang/triton\nNon-D5."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "https://pypi.org/project/triton/\nhttps://github.com/triton-lang/triton\n\nOwner / Organization: triton-lang\nRepository: triton-lang/triton\nDescription: Development repository for the Triton language and compiler\nLast Commit Date: Active (2026)"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "MIT License\n\nPermissions:\nUse for any purpose (commercial or non-commercial)\nModify the source code\nDistribute original or modified versions\nPrivate use\nSublicense\n\nRestrictions:\nMust retain copyright notice and license text"
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "pip install --dry-run output:\n\ntriton 3.4.0\nsetuptools 82.0.1"
+            }
+          ]
+        },
+        {
+          "name": "torchtnt",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "TorchTNT is a lightweight PyTorch training-and-evaluation toolkit providing reusable training-loop utilities (fit, train, eval, predict loops). It is used to structure training runs for the Adapt MLIP model on Shaheen III GPUP.\nAligns with the approved research topic Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. The library is a training orchestration utility with no prohibited-use functionality documented."
+            },
+            {
+              "name": "D5+M Affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Owned and maintained by the pytorch organization on GitHub (Meta / PyTorch Foundation). All maintainers are non-D5 affiliated.\nhttps://github.com/pytorch/tnt\nNon-D5."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "https://pypi.org/project/torchtnt/\nhttps://github.com/pytorch/tnt\n\nOwner / Organization: pytorch (Meta / PyTorch Foundation)\nRepository: pytorch/tnt\nDescription: A lightweight library for PyTorch training tools and utilities\nLast Commit Date: Active (2025\u20132026)"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "BSD 3-Clause License\n\nPermissions:\nUse for any purpose (commercial or non-commercial)\nModify the source code\nDistribute original or modified versions\nSublicense\n\nRestrictions:\nMust retain copyright notice, list of conditions, and disclaimer in source and binary distributions\nCannot use org name to endorse derived products without permission"
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "pip install --dry-run output:\n\ntorchtnt 0.2.4\nfsspec 2026.4.0\nnumpy 2.4.6\npackaging 26.2\npsutil 7.2.2\npyre-extensions 0.0.32\ntabulate 0.10.0\ntensorboard 2.20.0\ntorch 2.12.0\ncuda-toolkit 13.0.2\nnvidia-cudnn-cu13 9.20.0.48\nnvidia-cusparselt-cu13 0.8.1\nnvidia-nccl-cu13 2.29.7\nnvidia-nvshmem-cu13 3.4.5\ntriton 3.7.0\nnvidia-cuda-cupti 13.0.85\nnvidia-cuda-nvrtc 13.0.88\nnvidia-cuda-runtime 13.0.96\nnvidia-cufft 12.0.0.61\nnvidia-cufile 1.15.1.6\nnvidia-curand 10.4.0.35\nnvidia-cusolver 12.0.4.66\nnvidia-cusparse 12.6.3.3\nnvidia-nvjitlink 13.0.88\nnvidia-nvtx 13.0.85\nsetuptools 81.0.0\ntyping_extensions 4.15.0\ntqdm 4.68.1\nabsl-py 2.4.0\ncuda-bindings 13.3.1\ngrpcio 1.81.0\nMarkdown 3.10.2\nnetworkx 3.6.1\nnvidia-cublas 13.1.1.3\nprotobuf 7.35.0\nsympy 1.14.0\ntensorboard-data-server 0.7.2\nWerkzeug 3.1.8\nfilelock 3.29.1\nJinja2 3.1.6\npillow 12.2.0\ntyping-inspect 0.9.0\ncuda-pathfinder 1.5.5\nMarkupSafe 3.0.3\nmpmath 1.3.0\nmypy_extensions 1.1.0"
+            }
+          ]
+        },
+        {
+          "name": "ase_db_backends",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "ase_db_backends provides additional database backends (server/SQL) for the ASE atomic-structure database, enabling scalable storage and retrieval of atomistic simulation results. It is used alongside ASE for managing molecular dataset records in the Adapt MLIP training pipeline.\nAligns with the approved research topics Material Science (soft, composite, and nanomaterials) and Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. The library is a database backend extension for scientific data storage with no prohibited-use functionality documented."
+            },
+            {
+              "name": "D5+M Affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Hosted under the ase GitLab organization (gitlab.com/ase/ase-db-backends), which is the same community that maintains the ASE package. ASE maintainers are based at DTU (Denmark) and other non-D5 institutions, as documented in the existing ASE entry.\nhttps://gitlab.com/ase/ase-db-backends\nNon-D5."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "https://pypi.org/project/ase-db-backends/\nhttps://gitlab.com/ase/ase-db-backends\n\nOwner / Organization: ASE Community (gitlab.com/ase)\nRepository: ase/ase-db-backends\nLicense: GNU General Public License v2.0 or later\nCreated: December 2024\nLast release: 0.11.0"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "GNU General Public License v2.0 or later (GPL-2.0+)\n\nPermissions:\nUse the software for any purpose\nModify the source code\nDistribute original or modified versions\n\nObligations:\nDistributed modifications must be released under the same GPL license\nSource code must accompany or be made available with distributions\n\nRestrictions:\nCannot sublicense under a more restrictive license"
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "pip install --dry-run output:\n\nase_db_backends 0.11.0\nase 3.28.0\nnumpy 2.4.6\ncryptography 48.0.0\nlmdb 2.2.1\npsycopg2-binary 2.9.12\nPyMySQL 1.2.0\ncffi 2.0.0\nmatplotlib 3.10.9\nscipy 1.17.1\ncontourpy 1.3.3\ncycler 0.12.1\nfonttools 4.63.0\nkiwisolver 1.5.0\npackaging 26.2\npillow 12.2.0\npyparsing 3.3.2\npython-dateutil 2.9.0.post0\npycparser 3.0\nsix 1.17.0"
+            }
+          ]
+        },
+        {
+          "name": "hydra-core",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Hydra is a hierarchical configuration framework for composing complex experiment configurations and launching runs and parameter sweeps. It is used to manage training hyperparameters and multi-run experiments for the Adapt MLIP model.\nAligns with the approved research topic Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. Hydra is a configuration management tool with no prohibited-use functionality documented."
+            },
+            {
+              "name": "D5+M Affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Created by Omry Yadan (omry@fb.com) and maintained under the facebookresearch GitHub organization (Meta, USA). All core contributors are non-D5 affiliated.\nhttps://github.com/facebookresearch/hydra\nNon-D5."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "https://pypi.org/project/hydra-core/\nhttps://github.com/facebookresearch/hydra\nhttps://hydra.cc\n\nOwner / Organization: facebookresearch (Meta, USA)\nRepository: facebookresearch/hydra\nStars: ~10.3k\nForks: ~824\nLast release: 1.4.0.dev1 (Jul 2024); stable 1.3.2 (Feb 2023)"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "MIT License\n\nPermissions:\nUse for any purpose (commercial or non-commercial)\nModify the source code\nDistribute original or modified versions\nSublicense\n\nRestrictions:\nMust retain copyright notice and license text"
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "pip install --dry-run output:\n\nhydra-core 1.4.0.dev1\nomegaconf 2.4.0.dev11\npackaging 26.2\nPyYAML 6.0.3"
+            }
+          ]
+        },
+        {
+          "name": "omegaconf",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "OmegaConf is a YAML-based hierarchical configuration system that underlies Hydra. It provides the configuration object model for composing and overriding experiment settings in the Adapt MLIP training runs.\nAligns with the approved research topic Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. OmegaConf is a configuration library with no prohibited-use functionality documented."
+            },
+            {
+              "name": "D5+M Affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Created and maintained by Omry Yadan (GitHub: omry), a former Meta employee now independent. The repository is at github.com/omry/omegaconf. Non-D5 affiliated.\nhttps://github.com/omry/omegaconf\nNon-D5."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "https://pypi.org/project/omegaconf/\nhttps://github.com/omry/omegaconf\n\nOwner / Organization: omry (Omry Yadan)\nRepository: omry/omegaconf\nStars: ~2.4k\nForks: ~154\nLast release: 2.3.0 (stable); 2.4.0.dev4 (requested version)"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "BSD 3-Clause License\n\nPermissions:\nUse for any purpose (commercial or non-commercial)\nModify the source code\nDistribute original or modified versions\nSublicense\n\nRestrictions:\nMust retain copyright notice, list of conditions, and disclaimer\nCannot use org name to endorse derived products without permission"
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "pip install --dry-run output:\n\nomegaconf 2.4.0.dev4\nPyYAML 6.0.3"
+            }
+          ]
+        },
+        {
+          "name": "ray",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Ray is a distributed-computing framework for parallel and distributed training and hyperparameter tuning. It is used to scale Adapt MLIP training runs across multiple nodes on Shaheen III GPUP.\nAligns with the approved research topic Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. Ray is a distributed computing framework for ML workloads with no prohibited-use functionality documented."
+            },
+            {
+              "name": "D5+M Affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Developed and maintained by Anyscale, Inc. (San Francisco, USA) and the ray-project open-source community. Anyscale is a US-based company; all primary contributors are non-D5 affiliated.\nhttps://github.com/ray-project/ray\nNon-D5."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "https://pypi.org/project/ray/\nhttps://github.com/ray-project/ray\nhttps://www.ray.io\n\nOwner / Organization: ray-project (Anyscale, USA)\nRepository: ray-project/ray\nStars: ~39k\nForks: ~6.7k\nLast Commit Date: Active (2026)"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "Apache License 2.0\n\nPermissions:\nUse for any purpose (commercial or non-commercial)\nModify the source code\nDistribute original or modified versions\nGrant sublicenses\nPatent use\n\nObligations:\nMust include a copy of the Apache 2.0 license\nMust state significant changes made\nMust retain copyright notices\n\nRestrictions:\nCannot use trade names, trademarks, or service marks of the licensor for promotion without permission\nNo warranty provided"
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "pip install --dry-run output:\n\nray 2.54.0\nclick 8.4.1\nmsgpack 1.1.2\npackaging 26.2\nprotobuf 7.35.0\nfilelock 3.29.1\njsonschema 4.26.0\nPyYAML 6.0.3\nrequests 2.34.2\nattrs 26.1.0\ncertifi 2026.5.20\ncharset-normalizer 3.4.7\nidna 3.18\njsonschema-specifications 2025.9.1\nreferencing 0.37.0\nrpds-py 2026.5.1\nurllib3 2.7.0\ntyping_extensions 4.15.0"
+            }
+          ]
+        },
+        {
+          "name": "submitit",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Submitit is a Python wrapper for submitting and managing jobs on SLURM clusters. It is used to launch and monitor Adapt MLIP training jobs on the Shaheen III SLURM scheduler.\nAligns with the approved research topic Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. Submitit is a SLURM job submission utility with no prohibited-use functionality documented."
+            },
+            {
+              "name": "D5+M Affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Developed and maintained by the facebookincubator organization (Meta, USA). Primary maintainers include J\u00e9r\u00e9my Rapin and others at Meta FAIR. All affiliates are non-D5.\nhttps://github.com/facebookincubator/submitit\nNon-D5."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "https://pypi.org/project/submitit/\nhttps://github.com/facebookincubator/submitit\n\nOwner / Organization: facebookincubator (Meta, USA)\nRepository: facebookincubator/submitit\nStars: ~1.6k\nForks: ~146\nOpen Issues: ~10\nLast Commit Date: 2025-05-21"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "MIT License\n\nPermissions:\nUse for any purpose (commercial or non-commercial)\nModify the source code\nDistribute original or modified versions\nSublicense\n\nRestrictions:\nMust retain copyright notice and license text"
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "pip install --dry-run output:\n\nsubmitit 1.5.4\ncloudpickle 3.1.2\ntyping_extensions 4.15.0"
+            }
+          ]
+        },
+        {
+          "name": "clusterscope",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Clusterscope is a CLI and Python library for extracting resource and configuration information from HPC clusters and SLURM jobs (GPU counts, memory, node configuration). It is used to profile and monitor Shaheen III GPUP resources during Adapt MLIP training.\nAligns with the approved research topic Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. Clusterscope is a cluster information tool with no prohibited-use functionality documented."
+            },
+            {
+              "name": "D5+M Affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Developed and maintained by the facebookresearch organization (Meta, USA). Primary maintainers are Lucca Bertoncini and Kalyan Saladi, both at Meta, USA. Non-D5 affiliated.\nhttps://github.com/facebookresearch/clusterscope\nNon-D5."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "https://pypi.org/project/clusterscope/\nhttps://github.com/facebookresearch/clusterscope\n\nOwner / Organization: facebookresearch (Meta, USA)\nRepository: facebookresearch/clusterscope\nDescription: CLI and python library to extract information from HPC Clusters and Jobs\nLatest release: 0.0.32 (Jan 16, 2026)"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "MIT License\n\nPermissions:\nUse for any purpose (commercial or non-commercial)\nModify the source code\nDistribute original or modified versions\nSublicense\n\nRestrictions:\nMust retain copyright notice and license text"
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "pip install --dry-run output:\n\nclusterscope 0.0.18\nclick 8.4.1"
+            }
+          ]
+        },
+        {
+          "name": "monty",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Monty is a Python utility library providing serialization helpers, file-I/O utilities, and common design patterns used by pymatgen and related materials science tools. It supports data handling and serialization tasks in the Adapt MLIP training pipeline.\nAligns with the approved research topics Material Science (soft, composite, and nanomaterials) and Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. Monty is a general-purpose Python utility library with no prohibited-use functionality documented."
+            },
+            {
+              "name": "D5+M Affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Created and maintained by Shyue Ping Ong, Professor of NanoEngineering at the University of California, San Diego (UCSD), USA, under the materialsvirtuallab GitHub organization. Non-D5 affiliated.\nhttps://github.com/materialsvirtuallab/monty\nNon-D5."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "https://pypi.org/project/monty/\nhttps://github.com/materialsvirtuallab/monty\n\nOwner / Organization: materialsvirtuallab (UCSD, USA)\nRepository: materialsvirtuallab/monty\nDescription: Python utility library complementing the standard library\nLatest release: 2026.5.18"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "MIT License\n\nPermissions:\nUse for any purpose (commercial or non-commercial)\nModify the source code\nDistribute original or modified versions\nSublicense\n\nRestrictions:\nMust retain copyright notice and license text"
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "pip install --dry-run output:\n\nmonty 2026.2.18\nnumpy 2.4.6\nruamel.yaml 0.19.1"
+            }
+          ]
+        },
+        {
+          "name": "pytest",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "pytest is a testing framework for writing and running unit and integration tests. It is used for testing the Adapt MLIP codebase during development on Shaheen III GPUP.\nAligns with the approved research topic Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. pytest is a testing framework with no prohibited-use functionality documented."
+            },
+            {
+              "name": "D5+M Affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Developed and maintained by the pytest-dev community organization. Key maintainers include Floris Bruynooghe, Bruno Oliveira, and others \u2014 all non-D5 affiliated. Funded through the Python Software Foundation.\nhttps://github.com/pytest-dev/pytest\nNon-D5."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "https://pypi.org/project/pytest/\nhttps://github.com/pytest-dev/pytest\nhttps://pytest.org\n\nOwner / Organization: pytest-dev\nRepository: pytest-dev/pytest\nStars: ~12k\nLast Commit Date: Active (2026)"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "MIT License\n\nPermissions:\nUse for any purpose (commercial or non-commercial)\nModify the source code\nDistribute original or modified versions\nSublicense\n\nRestrictions:\nMust retain copyright notice and license text"
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "pip install --dry-run output:\n\npytest 9.0.3\niniconfig 2.3.0\npackaging 26.2\npluggy 1.6.0\nPygments 2.20.0"
+            }
+          ]
+        },
+        {
+          "name": "pre_commit",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "pre-commit is a framework for managing Git pre-commit hooks (linting, formatting, static analysis) run automatically before each commit. It is used to enforce code quality standards in the Adapt MLIP codebase during development.\nAligns with the approved research topic Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. pre-commit is a developer tooling framework with no prohibited-use functionality documented."
+            },
+            {
+              "name": "D5+M Affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Developed and maintained by the pre-commit open-source community (pre-commit.com). Primary maintainer is Anthony Sottile (USA). Non-D5 affiliated.\nhttps://github.com/pre-commit/pre-commit\nNon-D5."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "https://pypi.org/project/pre-commit/\nhttps://github.com/pre-commit/pre-commit\nhttps://pre-commit.com\n\nOwner / Organization: pre-commit\nRepository: pre-commit/pre-commit\nStars: ~13k\nLast Commit Date: Active (2026)"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "MIT License\n\nPermissions:\nUse for any purpose (commercial or non-commercial)\nModify the source code\nDistribute original or modified versions\nSublicense\n\nRestrictions:\nMust retain copyright notice and license text"
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "pip install --dry-run output:\n\npre_commit 4.6.0\ncfgv 3.5.0\nidentify 2.6.19\nnodeenv 1.10.0\nPyYAML 6.0.3\nvirtualenv 21.4.2\ndistlib 0.4.2\nfilelock 3.29.1\nplatformdirs 4.10.0\npython-discovery 1.4.0"
+            }
+          ]
+        }
+      ],
+      "observations": "All 11 new software packages are permissively licensed (MIT/Apache 2.0/BSD/GPL-2+) from non-D5 US/European maintainers. No prohibited-use indicators identified. wandb (Weights & Biases, v0.26.0) was requested but is not accepted on Shaheen III due to the no-outbound-network policy; it has been excluded. PI should be notified that MLflow (already in the approved stack) is the supported experiment tracking alternative.",
+      "recommendation": "New software packages are clean. No D5 affiliations, no license concerns, no prohibited-use indicators across all 11 entries.\n\nNotify PI that wandb is excluded due to no-internet policy on Shaheen III GPUP. MLflow is already approved.\n\nRecommended for staging, no conditions on the software addendum."
+    },
+    {
+      "date": "2026-06-10",
+      "category": "datasets_user_files",
+      "artifacts": [
+        {
+          "name": "OMOL25 official 4 million subset",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "The OMOL25 official 4 million subset is a randomly sampled 4M-structure subset of the full Open Molecules 2025 (OMol25) dataset, which contains over 100 million DFT calculations at the \u03c9B97M-V/def2-TZVPD level of theory spanning small molecules, biomolecules, metal complexes, and electrolytes. The full OMol25 dataset (100M structures) is already staged on S3; this 4M subset is the official structured split released by FAIR Chemistry and is currently missing from the project space on Shaheen III GPUP.\n\nThe subset serves as the primary supervised training corpus for the Adapt MLIP model \u2014 enabling training of molecular energy and force targets from scratch at a manageable scale before scaling to the full 100M dataset. It directly supports the project's objective of pretraining a machine learning interatomic potential (MLIP) on diverse small molecular data.\n\nAligns with the approved research topics Material Science (soft, composite, and nanomaterials) and Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. The dataset consists of DFT-computed energy and force labels for small molecules, biomolecules, electrolytes, and metal complexes \u2014 a standard computational chemistry training corpus with no prohibited-use functionality documented."
+            },
+            {
+              "name": "D5+M Affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "The OMol25 dataset is created and released by Meta FAIR (Facebook AI Research), with co-authorship from Lawrence Berkeley National Laboratory (LBL), USA. Both entities are non-D5.\nHuggingFace: https://huggingface.co/facebook/OMol25\nFAIRChem repo: https://github.com/facebookresearch/fairchem\nNon-D5."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "No user files provided."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "No risk in LC 2.7 and LC 2.5 checks. Inspection was carried out as part of the data movement verification.\n\nA directory comparison between the downloaded train_4M/ and the copy under /ibex/project/c2358/AIMCR/data-movement/65562/models/model/adapt/train_4M/ confirmed 161 files, 22G, with no missing or size-mismatched files. SHA-256 checksums generated independently in both directories produced an exact match. Dataset copy is confirmed intact.\n\nFor reference, dataset documentation is at https://huggingface.co/facebook/OMol25"
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "Owner / Curator: Meta FAIR and Lawrence Berkeley National Laboratory (LBL), USA\nPrimary Distribution Platform: HuggingFace (https://huggingface.co/facebook/OMol25) and Globus collection\nRepository: https://github.com/facebookresearch/fairchem\nAccess Method: HuggingFace gated download (requires acceptance of FAIR Chemistry License); also available via Globus OMol25 Collection. PI already has the data on Ibex at /ibex/project/c2261/datasets/omol25-0/\nProvenance: Artifact of the paper arXiv:2505.08762 (Levine et al., 2025, updated Mar 2026). Released as the official 4M training split of the OMol25 benchmark.\nMaintenance Status: Actively maintained by Meta FAIR; dataset documentation last updated 2026."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "Creative Commons Attribution 4.0 International (CC BY 4.0)\n\nPermissions:\nFree to use, modify, and redistribute\nCommercial use permitted\nDerivative works permitted\n\nObligations:\nAttribution to dataset authors required\n\nNote: The parent HuggingFace page (facebook/OMol25) references the FAIR Chemistry License v1 (which includes geographic restrictions excluding China, Russia, Belarus, and comprehensively sanctioned jurisdictions). The fairchem documentation explicitly states the dataset is licensed under CC BY 4.0. The CC BY 4.0 license governs the dataset itself; the FAIR Chemistry License applies to model weights. No geographic restriction applies to the dataset under CC BY 4.0."
+            }
+          ]
+        }
+      ],
+      "observations": "OMOL25 4M subset license note: The parent HuggingFace page (facebook/OMol25) references the FAIR Chemistry License v1 (which restricts use in China, Russia, Belarus, and comprehensively sanctioned jurisdictions) while the fairchem technical documentation explicitly states the dataset is released under CC BY 4.0. The CC BY 4.0 license governs the dataset; the FAIR Chemistry License applies to model weights only. No operational concern for KAUST staging under CC BY 4.0, but the discrepancy is noted for the record.\n\nSample inspection completed. Directory comparison and SHA-256 checksum verification confirmed the dataset copy is intact (161 files, 22G).",
+      "recommendation": "OMOL25 4M subset is clean. CC BY 4.0 license, Meta FAIR / LBL provenance (non-D5), no prohibited-use indicators.\n\nProject aligns with approved research topics (Material Science and Data Science and Engineering). Dataset provenance is fully documented with open access.\nPositive checks passed\n\nDataset owner (Meta FAIR / LBL) is non-D5 affiliated. No export restrictions or prohibited-use indicators found.\nNegative checks passed\n\nRecommended for staging."
+    },
+    {
+      "date": "2026-06-10",
+      "category": "models",
+      "artifacts": [
+        {
+          "name": "Adapt (based on UMA)",
+          "is_proprietary": true,
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Adapt is a KAUST-internal, unpublished variant of the UMA (Universal Models for Atoms) equivariant graph neural network architecture. The model has been significantly modified from the upstream UMA codebase to accommodate Shaheen III requirements \u2014 including MLflow integration for experiment tracking. It is an MLIP (machine learning interatomic potential) architecture that takes atomic position, atom type, charge, and spin as inputs and predicts energy and forces, aiming to replace traditional DFT calculations.\n\nThe model will be trained from scratch on the OMOL25 4M subset and other datasets on Shaheen III GPUP, directly implementing the project's core objective of developing a foundational MLIP through supervised pretraining. The developer is Gergo Ignacz, a researcher in the Ghanem group at KAUST.\n\nAligns with the approved research topics Material Science (soft, composite, and nanomaterials) and Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. The model is an equivariant GNN for molecular energy and force prediction, a standard computational chemistry application with no prohibited-use functionality documented."
+            },
+            {
+              "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "The Adapt model is a KAUST-internal, unpublished modification of the UMA architecture. It is accessible at /tmp/IMS0000027 on the Ibex cluster.\n\nDeveloper: Gergo Ignacz \u2014 researcher at KAUST (King Abdullah University of Science and Technology), Saudi Arabia.\nKAUST is not a D5-country or D5-affiliated entity.\n\nThe upstream UMA base: https://huggingface.co/facebook/UMA (Meta FAIR, USA \u2014 Non-D5), previously reviewed and approved in the original AIMCR for this project.\n\nNon-D5."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "The Adapt model is an unpublished, in-house artifact developed by the Ghanem research group at KAUST. No external license applies.\n\nThe model is based on UMA, which is released under a permissive FAIR Chemistry License (see the UMA entry in this submission). KAUST's modifications are owned by KAUST.\n\nThe PI states Ownership/Licensing as open access (fairchem licence), indicating the intent to release under the FAIRChem/Meta licensing terms consistent with the upstream UMA model."
+            },
+            {
+              "name": "Training Data Documentation",
+              "score": 1,
+              "notes": "The model will be trained from scratch on the following datasets:\n- OMOL25 4M subset (primary training corpus): 4 million DFT molecular structures\n- Additional datasets to be used per the original project proposal (Open Catalyst, Open Materials, OpenDAC, In-house dataset)\n\nThis is not an LLM; training data volume is described as 100M datapoints (molecular structures), not tokens. D (token equivalent) is not applicable in the standard 6\u00b7N\u00b7D sense \u2014 see FLOPS Calculation.\n\nThe PI notes: '100M datapoints (this is not an LLM but a molecular dataset).'"
+            },
+            {
+              "name": "Customisation / Fine-tuning",
+              "score": 1,
+              "notes": "Adapt will be trained from scratch on Shaheen III GPUP \u2014 it is not a fine-tuned version of a released model. The PI confirms: 'Full training from scratch.' No downstream fine-tuning tasks are documented for the released artifact, consistent with a score of 1 per rubric."
+            },
+            {
+              "name": "FLOPS Calculation",
+              "score": 1,
+              "notes": "Adapt is based on the UMA architecture with approximately 30M trainable parameters.\n\nN = 30 \u00d7 10^6 parameters\n\nThis is a molecular GNN, not an LLM. The PI provides measured throughput instead of a token count:\nenergy forward pass = 2.4 \u00d7 10^12 FLOP/step\nfull training step = 1.5 \u00d7 10^13 FLOP/step\nper-GPU throughput = 1.5 \u00d7 10^13 \u00d7 1.04 steps/s \u2248 15 TFLOP/s\n4-GPU aggregate \u2248 60 TFLOP/s \u2248 3.96 PFLOP/s (MFU \u2248 1.5%)\n\nFor the standard 6\u00b7N\u00b7D estimate, using N = 30 \u00d7 10^6 and the OMol25 4M subset as the primary dataset (4 \u00d7 10^6 structures; using the PI's statement of 100M datapoints total as D for the full training run):\n6 \u00d7 30 \u00d7 10^6 \u00d7 100 \u00d7 10^6 = 1.8 \u00d7 10^16\n\n1.8 \u00d7 10^16 is orders of magnitude below the 10^27 FLOPS threshold. 10^27 FLOPS check passed.\n\nThe PI also confirms (Q11): the project does not involve training or storing a proprietary model trained using more than 10^27 FLOPS."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "Inspection completed. KSL gained access to /tmp/IMS0000027 and copied the artifact to /ibex/project/c2358/AIMCR/data-movement/65562/models/model/adapt/.\n\nThe submitted artifact consists solely of the Adapt model training codebase, including model architecture source code, training configurations, and Slurm job scripts; no pretrained weights are present, which is consistent with the proposal's full training from scratch objective.\n\nNo undocumented functionality or prohibited-use indicators were identified."
+            }
+          ]
+        }
+      ],
+      "observations": "Adapt model (in-house): Sample inspection completed. The artifact consists solely of the training codebase (architecture source code, training configurations, Slurm job scripts) with no pretrained weights present, consistent with the full training from scratch objective. No prohibited-use indicators identified. Artifact copied to /ibex/project/c2358/AIMCR/data-movement/65562/models/model/adapt/.",
+      "recommendation": "Project aligns with approved research topics (Material Science and Data Science and Engineering). Model purpose and training objectives are fully documented.\nPositive checks passed\n\nModel developer (Gergo Ignacz, KAUST) is non-D5 affiliated. No prohibited-use indicators found.\nNegative checks passed\n\nEstimated training compute is 1.8 x 10^16 FLOPS, well below the 10^27 threshold.\n10^27 FLOPS check passed\n\nRecommended for staging."
     }
   ]
 }
