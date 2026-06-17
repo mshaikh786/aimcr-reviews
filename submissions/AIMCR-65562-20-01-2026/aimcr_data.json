@@ -1624,12 +1624,12 @@
         }
       ],
       "observations": "Adapt model (in-house): Sample inspection completed. The artifact consists of the training codebase (architecture source code, training configurations, Slurm job scripts) with no pretrained weights present, consistent with the full training from scratch objective. No prohibited-use indicators identified. Artifact copied to /ibex/project/c2358/AIMCR/data-movement/65562/models/model/adapt/.",
-      "recommendation": "PI's group has developed and refactored a custom model aligned with the restrictions on Shaheen III GPU, specifically with respect to logging and telemetry of performance of the model using MLFlow. No risk was identified in the review.\nPositive checks passed\nNegative checks passed\n10^27 FLOPS check passed"
+      "recommendation": "PI's group has developed and refactored a custom model aligned with the restrictions on Shaheen III GPU, specifically with respect to logging and telemetry of performance of the model using MLFlow. No risk was identified in the review.\nPositive checks passed\nNegative checks passed\n10^27 FLOPS check passed\n\nOverall risk score after addenda remains unchanged."
     }
   ],
   "_submission_history": [
     {
-      "timestamp": "2026-06-17T12:31:50.056394",
+      "timestamp": "2026-06-17T12:38:57.096112",
       "action": "resubmission"
     }
   ]
