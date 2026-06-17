@@ -1499,7 +1499,7 @@
               "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. pre-commit is a developer tooling framework with no prohibited-use functionality documented."
             },
             {
-              "name": "D5+M Affiliation Screening (LC 2.5)",
+              "name": "D5+M affiliation Screening (LC 2.5)",
               "score": 1,
               "notes": "Developed and maintained by the pre-commit open-source community (pre-commit.com). Primary maintainer is Anthony Sottile (USA). Non-D5 affiliated.\nhttps://github.com/pre-commit/pre-commit\nNon-D5."
             },
@@ -1521,8 +1521,8 @@
           ]
         }
       ],
-      "observations": "All 11 new software packages are permissively licensed (MIT/Apache 2.0/BSD/GPL-2+) from non-D5 US/European maintainers. No prohibited-use indicators identified. wandb (Weights & Biases, v0.26.0) was requested but is not accepted on Shaheen III due to the no-outbound-network policy; it has been excluded. PI should be notified that MLflow (already in the approved stack) is the supported experiment tracking alternative.",
-      "recommendation": "New software packages are clean. No D5 affiliations, no license concerns, no prohibited-use indicators across all 11 entries.\n\nNotify PI that wandb is excluded due to no-internet policy on Shaheen III GPUP. MLflow is already approved.\n\nRecommended for staging, no conditions on the software addendum."
+      "observations": "- All 11 new software packages are permissively licensed (MIT/Apache 2.0/BSD/GPL-2+) from non-D5 US/European maintainers. \n- No prohibited-use indicators identified. \n- MLFlow to be provided by KSL instead of wandb (Weights & Biases, v0.26.0) as Shaheen III GPU can't access internet to sync with W&B cloud for visualization. ",
+      "recommendation": "New software packages are clean. No D5 affiliations, no license concerns, no prohibited-use indicators across all 11 entries.\n\n"
     },
     {
       "date": "2026-06-10",
@@ -1542,7 +1542,7 @@
               "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. The dataset consists of DFT-computed energy and force labels for small molecules, biomolecules, electrolytes, and metal complexes \u2014 a standard computational chemistry training corpus with no prohibited-use functionality documented."
             },
             {
-              "name": "D5+M Affiliation Screening (LC 2.5)",
+              "name": "D5+M affiliation Screening (LC 2.5)",
               "score": 1,
               "notes": "The OMol25 dataset is created and released by Meta FAIR (Facebook AI Research), with co-authorship from Lawrence Berkeley National Laboratory (LBL), USA. Both entities are non-D5.\nHuggingFace: https://huggingface.co/facebook/OMol25\nFAIRChem repo: https://github.com/facebookresearch/fairchem\nNon-D5."
             },
@@ -1569,8 +1569,8 @@
           ]
         }
       ],
-      "observations": "OMOL25 4M subset license note: The parent HuggingFace page (facebook/OMol25) references the FAIR Chemistry License v1 (which restricts use in China, Russia, Belarus, and comprehensively sanctioned jurisdictions) while the fairchem technical documentation explicitly states the dataset is released under CC BY 4.0. The CC BY 4.0 license governs the dataset; the FAIR Chemistry License applies to model weights only. No operational concern for KAUST staging under CC BY 4.0, but the discrepancy is noted for the record.\n\nSample inspection completed. Directory comparison and SHA-256 checksum verification confirmed the dataset copy is intact (161 files, 22G).",
-      "recommendation": "OMOL25 4M subset is clean. CC BY 4.0 license, Meta FAIR / LBL provenance (non-D5), no prohibited-use indicators.\n\nProject aligns with approved research topics (Material Science and Data Science and Engineering). Dataset provenance is fully documented with open access.\nPositive checks passed\n\nDataset owner (Meta FAIR / LBL) is non-D5 affiliated. No export restrictions or prohibited-use indicators found.\nNegative checks passed\n\nRecommended for staging."
+      "observations": "OMOL25 4M is a subset of the full dataset, which was reviews as part of the original AIMCR. The dataset artifact is available on HuggingFace but was also provided by the PI on Ibex. A directory comparison between the downloaded train_4M/ and the copy under /ibex/project/c2358/AIMCR/data-movement/65562/models/model/adapt/train_4M/ confirmed 161 files, 22G, with no missing or size-mismatched files. SHA-256 checksums generated independently in both directories produced an exact match. Dataset copy is confirmed intact. \nThe dataset is documented as training set for the model OMOL25. Since PI didn't ask for this model's checkpoints, they were not considered.",
+      "recommendation": "OMOL25 4M passes positive and negative checks. No risk identified. Since there is no discrepancy between the HF version on the internet and the one on Ibex curated by the PI, we will move the latter to the Shaheen III GPU. "
     },
     {
       "date": "2026-06-10",
@@ -1578,12 +1578,11 @@
       "artifacts": [
         {
           "name": "Adapt (based on UMA)",
-          "is_proprietary": true,
           "checks": [
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "Adapt is a KAUST-internal, unpublished variant of the UMA (Universal Models for Atoms) equivariant graph neural network architecture. The model has been significantly modified from the upstream UMA codebase to accommodate Shaheen III requirements \u2014 including MLflow integration for experiment tracking. It is an MLIP (machine learning interatomic potential) architecture that takes atomic position, atom type, charge, and spin as inputs and predicts energy and forces, aiming to replace traditional DFT calculations.\n\nThe model will be trained from scratch on the OMOL25 4M subset and other datasets on Shaheen III GPUP, directly implementing the project's core objective of developing a foundational MLIP through supervised pretraining. The developer is Gergo Ignacz, a researcher in the Ghanem group at KAUST.\n\nAligns with the approved research topics Material Science (soft, composite, and nanomaterials) and Data Science and Engineering."
+              "notes": "Adapt is a KAUST-internal, unpublished variant of the UMA (Universal Models for Atoms) equivariant graph neural network architecture. The model has been significantly modified from the upstream UMA codebase to accommodate Shaheen III requirements, including MLflow integration for experiment tracking. It is an MLIP (machine learning interatomic potential) architecture that takes atomic position, atom type, charge, and spin as inputs and predicts energy and forces, aiming to replace traditional DFT calculations.\n\nThe model will be trained from scratch on the OMOL25 4M subset and other datasets on Shaheen III GPUP, directly implementing the project's core objective of developing a foundational MLIP through supervised pretraining. The developer is Gergo Ignacz, a researcher in the PI's group at KAUST.\n\nAligns with the approved research topics Material Science (soft, composite, and nanomaterials) and Data Science and Engineering."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1620,11 +1619,18 @@
               "score": 1,
               "notes": "Inspection completed. KSL gained access to /tmp/IMS0000027 and copied the artifact to /ibex/project/c2358/AIMCR/data-movement/65562/models/model/adapt/.\n\nThe submitted artifact consists solely of the Adapt model training codebase, including model architecture source code, training configurations, and Slurm job scripts; no pretrained weights are present, which is consistent with the proposal's full training from scratch objective.\n\nNo undocumented functionality or prohibited-use indicators were identified."
             }
-          ]
+          ],
+          "is_proprietary": false
         }
       ],
-      "observations": "Adapt model (in-house): Sample inspection completed. The artifact consists solely of the training codebase (architecture source code, training configurations, Slurm job scripts) with no pretrained weights present, consistent with the full training from scratch objective. No prohibited-use indicators identified. Artifact copied to /ibex/project/c2358/AIMCR/data-movement/65562/models/model/adapt/.",
-      "recommendation": "Project aligns with approved research topics (Material Science and Data Science and Engineering). Model purpose and training objectives are fully documented.\nPositive checks passed\n\nModel developer (Gergo Ignacz, KAUST) is non-D5 affiliated. No prohibited-use indicators found.\nNegative checks passed\n\nEstimated training compute is 1.8 x 10^16 FLOPS, well below the 10^27 threshold.\n10^27 FLOPS check passed\n\nRecommended for staging."
+      "observations": "Adapt model (in-house): Sample inspection completed. The artifact consists of the training codebase (architecture source code, training configurations, Slurm job scripts) with no pretrained weights present, consistent with the full training from scratch objective. No prohibited-use indicators identified. Artifact copied to /ibex/project/c2358/AIMCR/data-movement/65562/models/model/adapt/.",
+      "recommendation": "PI's group has developed and refactored a custom model aligned with the restrictions on Shaheen III GPU, specifically with respect to logging and telemetry of performance of the model using MLFlow. No risk was identified in the review.\nPositive checks passed\nNegative checks passed\n10^27 FLOPS check passed"
+    }
+  ],
+  "_submission_history": [
+    {
+      "timestamp": "2026-06-17T12:31:50.056394",
+      "action": "resubmission"
     }
   ]
 }
