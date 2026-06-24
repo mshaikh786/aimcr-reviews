@@ -5,7 +5,7 @@
     "proposal_date": "2025-12-02",
     "reviewer_name": "Mohsin Ahmed Shaikh",
     "reviewer_id": "174988",
-    "aimcr_date": "2025-12-12",
+    "aimcr_date": "2026-06-24",
     "project_id": "65461"
   },
   "third_party_software": [
@@ -75,7 +75,7 @@
         {
           "name": "Bundled Tools / Dependencies",
           "score": 1,
-          "notes": "\nGCC or Clang, Meson, cairo ≥ 1.2, glib ≥ 2.56, libdicom ≥ 1.2 (automatically built if missing), libjpeg-turbo ≥ 1.3 or libjpeg ≥ 9c, libpng, libtiff ≥ 4.0, libxml2, OpenJPEG ≥ 2.1, SQLite ≥ 3.14, zlib, Zstandard (by facebook)\n"
+          "notes": "\nGCC or Clang, Meson, cairo \u2265 1.2, glib \u2265 2.56, libdicom \u2265 1.2 (automatically built if missing), libjpeg-turbo \u2265 1.3 or libjpeg \u2265 9c, libpng, libtiff \u2265 4.0, libxml2, OpenJPEG \u2265 2.1, SQLite \u2265 3.14, zlib, Zstandard (by facebook)\n"
         }
       ]
     },
@@ -158,7 +158,7 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "The Cancer Genome Atlas (TCGA) is a large-scale, multi-institutional cancer genomics programme jointly established by the National Cancer Institute (NCI) and the National Human Genome Research Institute (NHGRI). It provides whole-slide pathology images (H&E-stained SVS/TIFF files), matched genomic profiles (DNA-seq, copy-number variations), transcriptomic data (RNA-seq, miRNA-seq), proteomics (RPPA), clinical annotations, and molecular subtyping information spanning 33 cancer types and more than 20,000 patient samples. The project requests the full open-access tier, comprising approximately 35–40 TB across all 33 sub-cohorts (TCGA-BRCA through TCGA-CHOL), to be retrieved via the GDC Data Transfer Tool using per-cohort manifest files.\n\nThe dataset serves both proposal objectives. For \"Build a unified latent space for cells, spatial spots and WSIs\", the whole-slide images and paired transcriptomic profiles provide the primary pretraining corpus for the pathology image encoder and the cross-modal alignment model that couples morphological patterns to cellular and molecular states. For \"Demonstrate clinical utility in diagnosis, risk stratification and therapy prioritization\", the clinical annotations and molecular subtyping labels across 33 cancer types provide the evaluation benchmarks for standardised grading, subtype classification, survival stratification, and therapy-response prediction tasks.\n\nAligns with the approved research topic, Bioscience."
+          "notes": "The Cancer Genome Atlas (TCGA) is a large-scale, multi-institutional cancer genomics programme jointly established by the National Cancer Institute (NCI) and the National Human Genome Research Institute (NHGRI). It provides whole-slide pathology images (H&E-stained SVS/TIFF files), matched genomic profiles (DNA-seq, copy-number variations), transcriptomic data (RNA-seq, miRNA-seq), proteomics (RPPA), clinical annotations, and molecular subtyping information spanning 33 cancer types and more than 20,000 patient samples. The project requests the full open-access tier, comprising approximately 35\u201340 TB across all 33 sub-cohorts (TCGA-BRCA through TCGA-CHOL), to be retrieved via the GDC Data Transfer Tool using per-cohort manifest files.\n\nThe dataset serves both proposal objectives. For \"Build a unified latent space for cells, spatial spots and WSIs\", the whole-slide images and paired transcriptomic profiles provide the primary pretraining corpus for the pathology image encoder and the cross-modal alignment model that couples morphological patterns to cellular and molecular states. For \"Demonstrate clinical utility in diagnosis, risk stratification and therapy prioritization\", the clinical annotations and molecular subtyping labels across 33 cancer types provide the evaluation benchmarks for standardised grading, subtype classification, survival stratification, and therapy-response prediction tasks.\n\nAligns with the approved research topic, Bioscience."
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
@@ -183,7 +183,7 @@
         {
           "name": "Provenance",
           "score": 1,
-          "notes": "Owner/Curator: National Cancer Institute (NCI) and National Human Genome Research Institute (NHGRI), U.S. National Institutes of Health\nDistribution Platform: NCI Genomic Data Commons (GDC) — https://portal.gdc.cancer.gov/\nRepository: 33 sub-cohort projects accessible via the GDC portal and GDC Data Transfer Tool; per-cohort manifest files available at portal.gdc.cancer.gov/projects/TCGA-<CODE>\nAccess Method: GDC Data Transfer Tool (gdc-client); open-access tier requires no dbGaP authorisation; manifest-based bulk download\nProvenance narrative: TCGA was launched in 2006 as a joint NCI–NHGRI pilot programme and expanded to Phase II in 2009. Genomic characterisation was performed by multiple centres (Broad Institute, Harvard, UNC, MD Anderson, Baylor, BCGSC, Van Andel). The current data version is hosted and harmonised by the GDC at the University of Chicago, which provides standardised variant calls, expression matrices, and clinical metadata across all 33 cancer types.\nMaintenance Status: Actively maintained by NCI/GDC; last data harmonisation release noted in GDC release notes (https://docs.gdc.cancer.gov/Data/Release_Notes/Data_Release_Notes/)."
+          "notes": "Owner/Curator: National Cancer Institute (NCI) and National Human Genome Research Institute (NHGRI), U.S. National Institutes of Health\nDistribution Platform: NCI Genomic Data Commons (GDC) \u2014 https://portal.gdc.cancer.gov/\nRepository: 33 sub-cohort projects accessible via the GDC portal and GDC Data Transfer Tool; per-cohort manifest files available at portal.gdc.cancer.gov/projects/TCGA-<CODE>\nAccess Method: GDC Data Transfer Tool (gdc-client); open-access tier requires no dbGaP authorisation; manifest-based bulk download\nProvenance narrative: TCGA was launched in 2006 as a joint NCI\u2013NHGRI pilot programme and expanded to Phase II in 2009. Genomic characterisation was performed by multiple centres (Broad Institute, Harvard, UNC, MD Anderson, Baylor, BCGSC, Van Andel). The current data version is hosted and harmonised by the GDC at the University of Chicago, which provides standardised variant calls, expression matrices, and clinical metadata across all 33 cancer types.\nMaintenance Status: Actively maintained by NCI/GDC; last data harmonisation release noted in GDC release notes (https://docs.gdc.cancer.gov/Data/Release_Notes/Data_Release_Notes/)."
         },
         {
           "name": "License / Permissions",
@@ -208,7 +208,7 @@
         {
           "name": "D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "CZ CELLxGENE Census is owned and maintained by the Chan Zuckerberg Initiative Foundation (CZI), a U.S.-based philanthropic organisation (https://www.chanzuckerberg.com/). Key programme leads include Jonah Cool (Program Officer, Single-Cell Biology, CZI — https://www.chanzuckerberg.com/science/programs-resources/single-cell-biology/) and Ambrose Carr (Director of Product Management, CZI — LinkedIn: https://www.linkedin.com/in/ambrosejcarr/).\n\nNon-D5 country affiliation. The owning and maintaining entity is a U.S.-based foundation."
+          "notes": "CZ CELLxGENE Census is owned and maintained by the Chan Zuckerberg Initiative Foundation (CZI), a U.S.-based philanthropic organisation (https://www.chanzuckerberg.com/). Key programme leads include Jonah Cool (Program Officer, Single-Cell Biology, CZI \u2014 https://www.chanzuckerberg.com/science/programs-resources/single-cell-biology/) and Ambrose Carr (Director of Product Management, CZI \u2014 LinkedIn: https://www.linkedin.com/in/ambrosejcarr/).\n\nNon-D5 country affiliation. The owning and maintaining entity is a U.S.-based foundation."
         },
         {
           "name": "Prompts / Fine-tuning Scripts",
@@ -223,7 +223,7 @@
         {
           "name": "Provenance",
           "score": 1,
-          "notes": "Owner/Curator: Chan Zuckerberg Initiative Foundation, Single-Cell Biology Programme\nDistribution Platform: CZ CELLxGENE Discover Census — https://cellxgene.cziscience.com; census data release index at https://chanzuckerberg.github.io/cellxgene-census/cellxgene_census_docsite_data_release_info.html\nRepository: Versioned census releases accessible via the cellxgene-census Python API; requested release: census_version=\"2025-11-08\"\nAccess Method: cellxgene-census Python API (pip-installable); programmatic query and download of filtered scRNA-seq matrices in h5ad format. Installation guide: https://chanzuckerberg.github.io/cellxgene-census/cellxgene_census_docsite_installation.html\nProvenance narrative: The census was created by the CZI Cell Science Programme team (led by Arathi Mani, Jonah Cool, and Ambrose Carr) as a unified, versioned aggregation layer over the CZ CELLxGENE Discover platform, which itself curates and standardises hundreds of community-contributed single-cell studies. Each census release snapshots the full corpus at a fixed date with reproducible ontology-based metadata harmonisation.\nMaintenance Status: Actively maintained by CZI; versioned releases issued multiple times per year. Latest release used in this project: 2025-11-08."
+          "notes": "Owner/Curator: Chan Zuckerberg Initiative Foundation, Single-Cell Biology Programme\nDistribution Platform: CZ CELLxGENE Discover Census \u2014 https://cellxgene.cziscience.com; census data release index at https://chanzuckerberg.github.io/cellxgene-census/cellxgene_census_docsite_data_release_info.html\nRepository: Versioned census releases accessible via the cellxgene-census Python API; requested release: census_version=\"2025-11-08\"\nAccess Method: cellxgene-census Python API (pip-installable); programmatic query and download of filtered scRNA-seq matrices in h5ad format. Installation guide: https://chanzuckerberg.github.io/cellxgene-census/cellxgene_census_docsite_installation.html\nProvenance narrative: The census was created by the CZI Cell Science Programme team (led by Arathi Mani, Jonah Cool, and Ambrose Carr) as a unified, versioned aggregation layer over the CZ CELLxGENE Discover platform, which itself curates and standardises hundreds of community-contributed single-cell studies. Each census release snapshots the full corpus at a fixed date with reproducible ontology-based metadata harmonisation.\nMaintenance Status: Actively maintained by CZI; versioned releases issued multiple times per year. Latest release used in this project: 2025-11-08."
         },
         {
           "name": "License / Permissions",
@@ -240,45 +240,45 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "SpeciesLLM is a transformer-based single-cell foundation model developed in-house by the Gao Lab at KAUST. It is pretrained on large-scale single-cell transcriptomic data using masked-token or permutation-invariant objectives to learn general-purpose cell and gene embeddings across multiple species. The model is not publicly released; it resides on the lab's Ibex project storage (/ibex/project/c2307/codes/SpeciesLLM).\n\nThe model serves the proposal objective \"Build a unified latent space for cells, spatial spots and WSIs\" as the primary in-house single-cell foundation model. On Shaheen III GPUP it will undergo continued pretraining and fine-tuning (SFT, full FT, and PEFT) to align cell-state embeddings with pathology image representations via the cross-modal contrastive training pipeline.\n\nAligns with the approved research topic, Health and Wellness."
+          "notes": "SpeciesLLM is a transformer-based single-cell foundation model developed in-house by the Gao Lab at KAUST. It is pretrained on large-scale single-cell transcriptomic data using masked-token or permutation-invariant objectives to learn general-purpose cell and gene embeddings across multiple species. The model is not publicly released; it resides on the lab's Ibex project storage (/ibex/project/c2307/codes/SpeciesLLM). It is build on classes from HuggingFace BERT \u201cBertSelfOutput\u201d, \u201cBertIntermediate\u201d, \u201cBertOutput\u201d, \u201cBertPooler\u201d. \n\nThe model serves the proposal objective \"Build a unified latent space for cells, spatial spots and WSIs\" as the primary in-house single-cell foundation model. On Shaheen III GPUP it will undergo continued pretraining and fine-tuning (SFT, full FT, and PEFT) to align cell-state embeddings with pathology image representations via the cross-modal contrastive training pipeline.\n\nAligns with the approved research topic, Health and Wellness and Data Science and Engineering."
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
           "score": 1,
-          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. SpeciesLLM is an in-house single-cell transcriptomics foundation model developed for biomedical research at KAUST."
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. "
         },
         {
-          "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "Source: /ibex/project/c2307/codes/SpeciesLLM (internal Ibex storage; not publicly released)\nGitHub: Not applicable — proprietary in-house model\nOwner: Gao Lab, KAUST (Prof Xin Gao)\nCountry: Saudi Arabia (KAUST)\nNon-D5 country affiliation. The model is developed and owned entirely within KAUST. No external D5-country organisation has ownership or controlling involvement."
-        },
-        {
-          "name": "Training Data Documentation",
-          "score": 1,
-          "notes": "Training data: Large-scale single-cell transcriptomic data; the specific corpus is not named in the Model Readiness form beyond the description \"large-scale single-cell transcriptomic data\". The proposal references CZ CELLxGENE Census as the primary scRNA-seq data source for this project; it is reasonable to expect overlap with SpeciesLLM's pretraining data, but the exact corpus used for the released checkpoint is not documented in the submission.\nD (tokens): 9.83 × 10^10 tokens (as declared in the Model Readiness form)\nNote: Full training data documentation (specific dataset names and versions) was not provided in the Model Readiness form. This is flagged for clarification."
-        },
-        {
-          "name": "Customisation / Fine-tuning",
-          "score": 1,
-          "notes": "SpeciesLLM is an in-house pretrained model that will undergo further training on Shaheen III GPUP. The Model Readiness form declares the Shaheen III training objectives as pre-training, fine-tuning (SFT, full FT, and PEFT). No downstream fine-tuned variant has been publicly released as the artifact — the model is being brought to Shaheen III at its current pretraining checkpoint for continued development."
-        },
-        {
-          "name": "FLOPS Calculation",
-          "score": 1,
-          "notes": "6·N·D FLOPS estimate:\nN = 500,000,000 parameters (500M, as declared in the Model Readiness form)\nD = 9.83 × 10^10 tokens (as declared in the Model Readiness form)\n6 × N × D = 6 × 5.00 × 10^8 × 9.83 × 10^10 = 6 × 4.915 × 10^19 = 2.95 × 10^20 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed."
-        },
-        {
-          "name": "Sample Inspection",
-          "score": 1,
-          "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection."
+          "notes": "Source: /ibex/project/c2307/codes/SpeciesLLM (internal Ibex storage; not publicly released)\nGitHub: Not applicable \u2014 proprietary in-house model\nOwner: Gao Lab, KAUST (Prof Xin Gao)\nCountry: Saudi Arabia (KAUST)\nNon-D5 country affiliation. The model is developed and owned entirely within KAUST. No external D5-country organisation has ownership or controlling involvement."
         },
         {
           "name": "License / Permissions",
           "score": 1,
-          "notes": "Proprietary — Gao Lab, KAUST (license not declared in the Model Readiness form)\n\nSpeciesLLM is an unpublished, in-house model owned by the Gao Lab at KAUST. No public license has been issued. Use is limited to the research team within the scope of this proposal. The model will not be redistributed or released externally as part of this data movement."
+          "notes": "Training data: Large-scale single-cell transcriptomic data; the specific corpus is not named in the Model Readiness form beyond the description \"large-scale single-cell transcriptomic data\". The proposal references CZ CELLxGENE Census as the primary scRNA-seq data source for this project; it is reasonable to expect overlap with SpeciesLLM's pretraining data, but the exact corpus used for the released checkpoint is not documented in the submission.\nD (tokens): 9.83 \u00d7 10^10 tokens (as declared in the Model Readiness form)\nNote: Full training data documentation (specific dataset names and versions) was not provided in the Model Readiness form. This is flagged for clarification."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "SpeciesLLM is an in-house pretrained model that will undergo further training on Shaheen III GPUP. The Model Readiness form declares the Shaheen III training objectives as pre-training, fine-tuning (SFT, full FT, and PEFT). No downstream fine-tuned variant has been publicly released as the artifact \u2014 the model is being brought to Shaheen III at its current pretraining checkpoint for continued development."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "6\u00b7N\u00b7D FLOPS estimate:\nN = 500,000,000 parameters (500M, as declared in the Model Readiness form)\nD = 9.83 \u00d7 10^10 tokens (as declared in the Model Readiness form)\n6 \u00d7 N \u00d7 D = 6 \u00d7 5.00 \u00d7 10^8 \u00d7 9.83 \u00d7 10^10 = 6 \u00d7 4.915 \u00d7 10^19 = 2.95 \u00d7 10^20 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Proprietary \u2014 Gao Lab, KAUST (license not declared in the Model Readiness form)\n\nSpeciesLLM is an unpublished, in-house model owned by the Gao Lab at KAUST. No public license has been issued. Use is limited to the research team within the scope of this proposal. The model will not be redistributed or released externally as part of this data movement."
         }
       ],
-      "is_proprietary": true
+      "is_proprietary": false
     },
     {
       "name": "scGPT",
@@ -296,7 +296,7 @@
         {
           "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 1,
-          "notes": "HuggingFace: https://huggingface.co/bowang-lab/scGPT_human\nGitHub: https://github.com/bowang-lab/scGPT (reference / code only)\nHF downloads: >15k\nLast commit (HF): Active (2024–2025)\nActivity health: healthy\n\nOwner: Bo Wang Lab, University of Toronto (Canada)\nCountry: Canada\nNon-D5 country affiliation. The model is developed and maintained by the Bo Wang Lab at the University of Toronto. No D5-country organisation has ownership or controlling involvement. Lead author Haotian Cui is affiliated with the University of Toronto; institutional page: https://wanglab.ml/."
+          "notes": "HuggingFace: https://huggingface.co/bowang-lab/scGPT_human\nGitHub: https://github.com/bowang-lab/scGPT (reference / code only)\nHF downloads: >15k\nLast commit (HF): Active (2024\u20132025)\nActivity health: healthy\n\nOwner: Bo Wang Lab, University of Toronto (Canada)\nCountry: Canada\nNon-D5 country affiliation. The model is developed and maintained by the Bo Wang Lab at the University of Toronto. No D5-country organisation has ownership or controlling involvement. Lead author Haotian Cui is affiliated with the University of Toronto; institutional page: https://wanglab.ml/."
         },
         {
           "name": "Training Data Documentation",
@@ -311,7 +311,7 @@
         {
           "name": "FLOPS Calculation",
           "score": 1,
-          "notes": "6·N·D FLOPS estimate:\nN = 53,000,000 parameters (53M, as declared in the Model Readiness form)\nD = 9.12 × 10^10 tokens (as declared in the Model Readiness form)\n6 × N × D = 6 × 5.30 × 10^7 × 9.12 × 10^10 = 6 × 4.834 × 10^18 = 2.90 × 10^19 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed."
+          "notes": "6\u00b7N\u00b7D FLOPS estimate:\nN = 53,000,000 parameters (53M, as declared in the Model Readiness form)\nD = 9.12 \u00d7 10^10 tokens (as declared in the Model Readiness form)\n6 \u00d7 N \u00d7 D = 6 \u00d7 5.30 \u00d7 10^7 \u00d7 9.12 \u00d7 10^10 = 6 \u00d7 4.834 \u00d7 10^18 = 2.90 \u00d7 10^19 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed."
         },
         {
           "name": "Sample Inspection",
@@ -342,12 +342,12 @@
         {
           "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 1,
-          "notes": "HuggingFace: https://huggingface.co/ctheodoris/Geneformer\nHF likes: ~566\nHF commits: 237\nLast commit (HF): April 2026\nActivity health: actively maintained\n\nOwner: Christina Theodoris Lab — Gladstone Institutes / University of California San Francisco (USA)\nCountry: United States\nNon-D5 country affiliation. The model is developed and maintained by Christina Theodoris (LinkedIn: https://www.linkedin.com/in/christina-theodoris/) at the Gladstone Institutes. No D5-country organisation has ownership or controlling involvement."
+          "notes": "HuggingFace: https://huggingface.co/ctheodoris/Geneformer\nHF likes: ~566\nHF commits: 237\nLast commit (HF): April 2026\nActivity health: actively maintained\n\nOwner: Christina Theodoris Lab \u2014 Gladstone Institutes / University of California San Francisco (USA)\nCountry: United States\nNon-D5 country affiliation. The model is developed and maintained by Christina Theodoris (LinkedIn: https://www.linkedin.com/in/christina-theodoris/) at the Gladstone Institutes. No D5-country organisation has ownership or controlling involvement."
         },
         {
           "name": "Training Data Documentation",
           "score": 1,
-          "notes": "Pre-training dataset: Genecorpus-30M\nDataset URL: https://huggingface.co/datasets/ctheodoris/Genecorpus-30M\nCitation: Theodoris, C.V., Xiao, L., Chopra, A. et al. \"Transfer learning enables predictions in network biology.\" Nature 618, 616–624 (2023). https://doi.org/10.1038/s41586-023-06139-9\nD (tokens / cells): 30,000,000 cells (30M), as declared in the Model Readiness form\nNote: The Model Readiness form also declares a Shaheen III training token count of 4.67 × 10^11; this larger figure corresponds to the fine-tuning dataset to be used on Shaheen III GPUP, not the original pretraining corpus."
+          "notes": "Pre-training dataset: Genecorpus-30M\nDataset URL: https://huggingface.co/datasets/ctheodoris/Genecorpus-30M\nCitation: Theodoris, C.V., Xiao, L., Chopra, A. et al. \"Transfer learning enables predictions in network biology.\" Nature 618, 616\u2013624 (2023). https://doi.org/10.1038/s41586-023-06139-9\nD (tokens / cells): 30,000,000 cells (30M), as declared in the Model Readiness form\nNote: The Model Readiness form also declares a Shaheen III training token count of 4.67 \u00d7 10^11; this larger figure corresponds to the fine-tuning dataset to be used on Shaheen III GPUP, not the original pretraining corpus."
         },
         {
           "name": "Customisation / Fine-tuning",
@@ -357,7 +357,7 @@
         {
           "name": "FLOPS Calculation",
           "score": 1,
-          "notes": "6·N·D FLOPS estimate (using original pretraining corpus D):\nN = 316,000,000 parameters (316M, as declared in the Model Readiness form)\nD = 30,000,000 cells treated as tokens (30M, Genecorpus-30M pretraining corpus)\n6 × N × D = 6 × 3.16 × 10^8 × 3.00 × 10^7 = 6 × 9.48 × 10^15 = 5.69 × 10^16 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed."
+          "notes": "6\u00b7N\u00b7D FLOPS estimate (using original pretraining corpus D):\nN = 316,000,000 parameters (316M, as declared in the Model Readiness form)\nD = 30,000,000 cells treated as tokens (30M, Genecorpus-30M pretraining corpus)\n6 \u00d7 N \u00d7 D = 6 \u00d7 3.16 \u00d7 10^8 \u00d7 3.00 \u00d7 10^7 = 6 \u00d7 9.48 \u00d7 10^15 = 5.69 \u00d7 10^16 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed."
         },
         {
           "name": "Sample Inspection",
@@ -388,12 +388,12 @@
         {
           "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 1,
-          "notes": "HuggingFace (H-optimus-0): https://huggingface.co/bioptimus/H-optimus-0\nGitHub (HIPT — code and weights): https://github.com/mahmoodlab/HIPT\nStars (HIPT): ~619\nForks (HIPT): ~108\nLast commit (HIPT): Low activity — CVPR 2022 release; no substantive commits since 2023\nActivity health: low activity — legacy research repo\n\nOwner: Bioptimus (H-optimus-0) / Mahmood Lab, Harvard Medical School (HIPT)\nCountry: France (Bioptimus) / United States (Mahmood Lab)\nNon-D5 country affiliation. Bioptimus is a French AI company (https://www.bioptimus.com/); the Mahmood Lab is based at Harvard Medical School, USA. Neither entity is affiliated with a D5-designated country or entity."
+          "notes": "HuggingFace (H-optimus-0): https://huggingface.co/bioptimus/H-optimus-0\nGitHub (HIPT \u2014 code and weights): https://github.com/mahmoodlab/HIPT\nStars (HIPT): ~619\nForks (HIPT): ~108\nLast commit (HIPT): Low activity \u2014 CVPR 2022 release; no substantive commits since 2023\nActivity health: low activity \u2014 legacy research repo\n\nOwner: Bioptimus (H-optimus-0) / Mahmood Lab, Harvard Medical School (HIPT)\nCountry: France (Bioptimus) / United States (Mahmood Lab)\nNon-D5 country affiliation. Bioptimus is a French AI company (https://www.bioptimus.com/); the Mahmood Lab is based at Harvard Medical School, USA. Neither entity is affiliated with a D5-designated country or entity."
         },
         {
           "name": "Training Data Documentation",
           "score": 2,
-          "notes": "H-optimus-0: Pre-trained on a proprietary dataset of over 500,000 H&E whole-slide images. The exact composition of the training corpus is not publicly disclosed by Bioptimus. Token or patch count is not stated in the model card or the Model Readiness form submission.\nHIPT: Pre-trained on TCGA WSIs (the same dataset requested in this project). Full corpus size in patch tokens is not stated in the Model Readiness form.\nNote: Training data documentation is incomplete for both models — neither the exact corpus nor the token/patch count is provided in the Model Readiness form. Flagged for partial documentation."
+          "notes": "H-optimus-0: Pre-trained on a proprietary dataset of over 500,000 H&E whole-slide images. The exact composition of the training corpus is not publicly disclosed by Bioptimus. Token or patch count is not stated in the model card or the Model Readiness form submission.\nHIPT: Pre-trained on TCGA WSIs (the same dataset requested in this project). Full corpus size in patch tokens is not stated in the Model Readiness form.\nNote: Training data documentation is incomplete for both models \u2014 neither the exact corpus nor the token/patch count is provided in the Model Readiness form. Flagged for partial documentation."
         },
         {
           "name": "Customisation / Fine-tuning",
@@ -403,7 +403,7 @@
         {
           "name": "FLOPS Calculation",
           "score": 2,
-          "notes": "The Model Readiness form does not declare the number of trainable parameters or the training token/patch count for H-optimus-0 or HIPT. A complete 6·N·D calculation cannot be performed with the available information.\n\nBased on publicly available information: H-optimus-0 is based on a ViT-g architecture (~1.1B parameters); HIPT uses a ViT-S/16 + ViT-L/16 hierarchical structure (~307M total parameters). Training patch counts for both are not publicly documented.\n\nConservative lower-bound estimate using H-optimus-0 (ViT-g, ~1.1B params) and a representative large-scale WSI corpus (~100M patches as an approximation):\n6 × N × D = 6 × 1.1 × 10^9 × 1.0 × 10^8 = 6.6 × 10^17 FLOPs\n\nEven under generous assumptions this estimate is well below 10^27 FLOPS. 10^27 FLOPS check passed. Score raised to 2 due to incomplete parameter and token documentation in the submission — a full calculation cannot be verified from the form as submitted."
+          "notes": "The Model Readiness form does not declare the number of trainable parameters or the training token/patch count for H-optimus-0 or HIPT. A complete 6\u00b7N\u00b7D calculation cannot be performed with the available information.\n\nBased on publicly available information: H-optimus-0 is based on a ViT-g architecture (~1.1B parameters); HIPT uses a ViT-S/16 + ViT-L/16 hierarchical structure (~307M total parameters). Training patch counts for both are not publicly documented.\n\nConservative lower-bound estimate using H-optimus-0 (ViT-g, ~1.1B params) and a representative large-scale WSI corpus (~100M patches as an approximation):\n6 \u00d7 N \u00d7 D = 6 \u00d7 1.1 \u00d7 10^9 \u00d7 1.0 \u00d7 10^8 = 6.6 \u00d7 10^17 FLOPs\n\nEven under generous assumptions this estimate is well below 10^27 FLOPS. 10^27 FLOPS check passed. Score raised to 2 due to incomplete parameter and token documentation in the submission \u2014 a full calculation cannot be verified from the form as submitted."
         },
         {
           "name": "Sample Inspection",
@@ -413,7 +413,7 @@
         {
           "name": "License / Permissions",
           "score": 2,
-          "notes": "H-optimus-0: Apache License 2.0 (https://huggingface.co/bioptimus/H-optimus-0)\nHIPT: Not specified in the Model Readiness form; the GitHub repository (https://github.com/mahmoodlab/HIPT) carries a custom research-use license — commercial use requires separate permission from the Mahmood Lab.\n\nScore raised to 2 due to the HIPT license ambiguity. The H-optimus-0 Apache 2.0 license is permissive. The HIPT license should be confirmed before staging."
+          "notes": "H-optimus-0: Apache License 2.0 (https://huggingface.co/bioptimus/H-optimus-0)\nHIPT: Not specified in the Model Readiness form; the GitHub repository (https://github.com/mahmoodlab/HIPT) carries a custom research-use license \u2014 commercial use requires separate permission from the Mahmood Lab.\n\nScore raised to 2 due to the HIPT license ambiguity. The H-optimus-0 Apache 2.0 license is permissive. The HIPT license should be confirmed before staging."
         }
       ],
       "is_proprietary": false
@@ -434,12 +434,12 @@
         {
           "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 2,
-          "notes": "HuggingFace: Not available (model weights distributed via GitHub)\nGitHub: https://github.com/owkin/HE2RNA_code\nStars: 111\nForks: 39\nLast commit: February 2023\nActivity health: Archived — repository was archived by the owner on Feb 15, 2023 and is now read-only. No active maintenance.\n\nOwner: Owkin, Inc.\nCountry: France / United States (Owkin is a French-American AI health company headquartered in New York and Paris — https://www.owkin.com/)\nNon-D5 country affiliation. Owkin is headquartered in France and the United States, neither of which is a D5-designated country."
+          "notes": "HuggingFace: Not available (model weights distributed via GitHub)\nGitHub: https://github.com/owkin/HE2RNA_code\nStars: 111\nForks: 39\nLast commit: February 2023\nActivity health: Archived \u2014 repository was archived by the owner on Feb 15, 2023 and is now read-only. No active maintenance.\n\nOwner: Owkin, Inc.\nCountry: France / United States (Owkin is a French-American AI health company headquartered in New York and Paris \u2014 https://www.owkin.com/)\nNon-D5 country affiliation. Owkin is headquartered in France and the United States, neither of which is a D5-designated country."
         },
         {
           "name": "Training Data Documentation",
           "score": 2,
-          "notes": "Pre-training / training dataset: TCGA whole-slide images (the same dataset requested in this project), as described in the original HE2RNA publication (Schmauch et al., Nature Communications, 2020; doi: 10.1038/s41467-020-17678-4).\nThe number of trainable parameters and the training token/patch count are not declared in the Model Readiness form.\nNote: Training data documentation is incomplete — parameter count and patch token count are not provided. Flagged for partial documentation."
+          "notes": "Pre-training / training dataset: TCGA whole-slide images (the same dataset requested in this project), as described in the original HE2RNA publication (Schmauch et al., Nature Communications, 2020; doi: 10.1038/s41467-020-17678-4).\nThe number of trainable parameters and the training token/patch count are not declared in the Model Readiness form.\nNote: Training data documentation is incomplete \u2014 parameter count and patch token count are not provided. Flagged for partial documentation."
         },
         {
           "name": "Customisation / Fine-tuning",
@@ -449,7 +449,7 @@
         {
           "name": "FLOPS Calculation",
           "score": 2,
-          "notes": "The Model Readiness form does not declare the number of trainable parameters or the training patch count for HE2RNA. A complete 6·N·D calculation cannot be performed with the available information.\n\nBased on the published architecture description (Schmauch et al. 2020), HE2RNA uses a relatively lightweight MIL architecture on top of a ResNet feature extractor; total trainable parameters are estimated at under 50M. Training was performed on the TCGA corpus (~30,000 WSIs, approximately 10^8–10^9 tiles depending on magnification).\n\nConservative estimate: 6 × 5.0 × 10^7 × 1.0 × 10^8 = 3.0 × 10^16 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed. Score raised to 2 due to missing parameter and token documentation in the submission."
+          "notes": "The Model Readiness form does not declare the number of trainable parameters or the training patch count for HE2RNA. A complete 6\u00b7N\u00b7D calculation cannot be performed with the available information.\n\nBased on the published architecture description (Schmauch et al. 2020), HE2RNA uses a relatively lightweight MIL architecture on top of a ResNet feature extractor; total trainable parameters are estimated at under 50M. Training was performed on the TCGA corpus (~30,000 WSIs, approximately 10^8\u201310^9 tiles depending on magnification).\n\nConservative estimate: 6 \u00d7 5.0 \u00d7 10^7 \u00d7 1.0 \u00d7 10^8 = 3.0 \u00d7 10^16 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed. Score raised to 2 due to missing parameter and token documentation in the submission."
         },
         {
           "name": "Sample Inspection",
@@ -480,12 +480,12 @@
         {
           "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 1,
-          "notes": "HuggingFace: https://huggingface.co/meta-llama\nGitHub (reference): https://github.com/meta-llama/llama3 (archived; active repo: meta-llama/llama-models)\nHF downloads: tens of millions across variants\nLast commit (HF): Actively updated (2025–2026)\nActivity health: healthy — weights and model cards maintained on HuggingFace; GitHub reference repo archived\n\nOwner: Meta Platforms, Inc.\nCountry: United States\nNon-D5 country affiliation. Meta is a U.S.-based technology company. No D5-country organisation has ownership or controlling involvement in the Llama model series."
+          "notes": "HuggingFace: https://huggingface.co/meta-llama\nGitHub (reference): https://github.com/meta-llama/llama3 (archived; active repo: meta-llama/llama-models)\nHF downloads: tens of millions across variants\nLast commit (HF): Actively updated (2025\u20132026)\nActivity health: healthy \u2014 weights and model cards maintained on HuggingFace; GitHub reference repo archived\n\nOwner: Meta Platforms, Inc.\nCountry: United States\nNon-D5 country affiliation. Meta is a U.S.-based technology company. No D5-country organisation has ownership or controlling involvement in the Llama model series."
         },
         {
           "name": "Training Data Documentation",
           "score": 2,
-          "notes": "Llama 3 / 3.1 pre-training data: A publicly undisclosed corpus described in the Llama 3 technical report (Dubey et al., \"The Llama 3 Herd of Models,\" arXiv:2407.21783, 2024) as over 15 trillion tokens from publicly available sources with data quality filters applied. The exact composition is not publicly disclosed by Meta.\nD (tokens): ~15 × 10^12 tokens (15T), as reported in the technical report for Llama 3 / 3.1 pretraining.\nNote: The Model Readiness form does not specify which variant (8B, 70B, or 405B) is the primary checkpoint; all three are listed. The training token count declared in the Model Readiness form field for Shaheen III is blank (fine-tuning dataset not specified). Flagged for incomplete documentation."
+          "notes": "Llama 3 / 3.1 pre-training data: A publicly undisclosed corpus described in the Llama 3 technical report (Dubey et al., \"The Llama 3 Herd of Models,\" arXiv:2407.21783, 2024) as over 15 trillion tokens from publicly available sources with data quality filters applied. The exact composition is not publicly disclosed by Meta.\nD (tokens): ~15 \u00d7 10^12 tokens (15T), as reported in the technical report for Llama 3 / 3.1 pretraining.\nNote: The Model Readiness form does not specify which variant (8B, 70B, or 405B) is the primary checkpoint; all three are listed. The training token count declared in the Model Readiness form field for Shaheen III is blank (fine-tuning dataset not specified). Flagged for incomplete documentation."
         },
         {
           "name": "Customisation / Fine-tuning",
@@ -495,7 +495,7 @@
         {
           "name": "FLOPS Calculation",
           "score": 1,
-          "notes": "6·N·D FLOPS estimate (using the largest declared variant, 405B, as the upper bound):\nN = 405,000,000,000 parameters (405B — upper bound across declared variants)\nD = 15,000,000,000,000 tokens (15T, as reported in Llama 3 technical report)\n6 × N × D = 6 × 4.05 × 10^11 × 1.5 × 10^13 = 6 × 6.075 × 10^24 = 3.65 × 10^25 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed."
+          "notes": "6\u00b7N\u00b7D FLOPS estimate (using the largest declared variant, 405B, as the upper bound):\nN = 405,000,000,000 parameters (405B \u2014 upper bound across declared variants)\nD = 15,000,000,000,000 tokens (15T, as reported in Llama 3 technical report)\n6 \u00d7 N \u00d7 D = 6 \u00d7 4.05 \u00d7 10^11 \u00d7 1.5 \u00d7 10^13 = 6 \u00d7 6.075 \u00d7 10^24 = 3.65 \u00d7 10^25 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed."
         },
         {
           "name": "Sample Inspection",
@@ -526,12 +526,12 @@
         {
           "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 2,
-          "notes": "HuggingFace: https://huggingface.co/deepseek-ai/DeepSeek-V3\nGitHub (reference): https://github.com/deepseek-ai/DeepSeek-V3\nHF downloads: millions across DeepSeek-V3 variants\nLast commit (HF): Actively updated (2025–2026)\nActivity health: healthy\n\nOwner: DeepSeek AI (深度求索), a subsidiary of High-Flyer (幻方科技), Hangzhou, China\nCountry: China\nD5-country affiliation found. DeepSeek AI is a Chinese company based in Hangzhou, China. Score = 2 (owning organisation is D5-country affiliated)."
+          "notes": "HuggingFace: https://huggingface.co/deepseek-ai/DeepSeek-V3\nGitHub (reference): https://github.com/deepseek-ai/DeepSeek-V3\nHF downloads: millions across DeepSeek-V3 variants\nLast commit (HF): Actively updated (2025\u20132026)\nActivity health: healthy\n\nOwner: DeepSeek AI (\u6df1\u5ea6\u6c42\u7d22), a subsidiary of High-Flyer (\u5e7b\u65b9\u79d1\u6280), Hangzhou, China\nCountry: China\nD5-country affiliation found. DeepSeek AI is a Chinese company based in Hangzhou, China. Score = 2 (owning organisation is D5-country affiliated)."
         },
         {
           "name": "Training Data Documentation",
           "score": 2,
-          "notes": "DeepSeek-V3 / V3.2 pre-training data: Described in the DeepSeek-V3 technical report (DeepSeek-AI, arXiv:2412.19437, 2024) as approximately 14.8 trillion tokens from a diverse multilingual corpus. The exact composition is not fully disclosed. DeepSeek-V3.2 is an updated release; its specific training token count and any additional data beyond the V3 baseline are not documented in the Model Readiness form or in publicly available release notes at the time of review.\nD (tokens): ~14.8 × 10^12 tokens (14.8T, as reported for DeepSeek-V3; V3.2 documentation not yet available)\nNote: The Model Readiness form does not provide the number of trainable parameters or the token count for V3.2 specifically. Flagged for incomplete documentation."
+          "notes": "DeepSeek-V3 / V3.2 pre-training data: Described in the DeepSeek-V3 technical report (DeepSeek-AI, arXiv:2412.19437, 2024) as approximately 14.8 trillion tokens from a diverse multilingual corpus. The exact composition is not fully disclosed. DeepSeek-V3.2 is an updated release; its specific training token count and any additional data beyond the V3 baseline are not documented in the Model Readiness form or in publicly available release notes at the time of review.\nD (tokens): ~14.8 \u00d7 10^12 tokens (14.8T, as reported for DeepSeek-V3; V3.2 documentation not yet available)\nNote: The Model Readiness form does not provide the number of trainable parameters or the token count for V3.2 specifically. Flagged for incomplete documentation."
         },
         {
           "name": "Customisation / Fine-tuning",
@@ -541,7 +541,7 @@
         {
           "name": "FLOPS Calculation",
           "score": 2,
-          "notes": "The Model Readiness form does not declare the number of trainable parameters for DeepSeek-V3.2. Based on the DeepSeek-V3 technical report, total parameters are 671B (active parameters per token: 37B in MoE configuration).\n\n6·N·D FLOPS estimate (using total parameter count as N):\nN = 671,000,000,000 parameters (671B, from DeepSeek-V3 technical report; V3.2 not separately documented)\nD = 14,800,000,000,000 tokens (14.8T, as reported for DeepSeek-V3)\n6 × N × D = 6 × 6.71 × 10^11 × 1.48 × 10^13 = 6 × 9.93 × 10^24 = 5.96 × 10^25 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed. Score raised to 2 due to missing parameter and token documentation for V3.2 specifically in the submission — figures used are from the V3 technical report."
+          "notes": "The Model Readiness form does not declare the number of trainable parameters for DeepSeek-V3.2. Based on the DeepSeek-V3 technical report, total parameters are 671B (active parameters per token: 37B in MoE configuration).\n\n6\u00b7N\u00b7D FLOPS estimate (using total parameter count as N):\nN = 671,000,000,000 parameters (671B, from DeepSeek-V3 technical report; V3.2 not separately documented)\nD = 14,800,000,000,000 tokens (14.8T, as reported for DeepSeek-V3)\n6 \u00d7 N \u00d7 D = 6 \u00d7 6.71 \u00d7 10^11 \u00d7 1.48 \u00d7 10^13 = 6 \u00d7 9.93 \u00d7 10^24 = 5.96 \u00d7 10^25 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed. Score raised to 2 due to missing parameter and token documentation for V3.2 specifically in the submission \u2014 figures used are from the V3 technical report."
         },
         {
           "name": "Sample Inspection",
@@ -572,7 +572,7 @@
         {
           "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 2,
-          "notes": "HuggingFace (Qwen2.5-VL-7B): https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct\nHuggingFace (Qwen2.5-VL-72B): https://huggingface.co/Qwen/Qwen2.5-VL-72B-Instruct\nHuggingFace (Qwen3-VL-235B): https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Thinking\nGitHub (reference): https://github.com/QwenLM/Qwen2.5-VL\nHF downloads: millions across Qwen variants\nLast commit (HF): Actively updated (2025–2026)\nActivity health: healthy\n\nOwner: Alibaba Cloud (Alibaba Group), Hangzhou, China\nCountry: China\nD5-country affiliation found. Qwen is developed and maintained by Alibaba Cloud, a subsidiary of Alibaba Group headquartered in Hangzhou, China. Score = 2 (owning organisation is D5-country affiliated)."
+          "notes": "HuggingFace (Qwen2.5-VL-7B): https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct\nHuggingFace (Qwen2.5-VL-72B): https://huggingface.co/Qwen/Qwen2.5-VL-72B-Instruct\nHuggingFace (Qwen3-VL-235B): https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Thinking\nGitHub (reference): https://github.com/QwenLM/Qwen2.5-VL\nHF downloads: millions across Qwen variants\nLast commit (HF): Actively updated (2025\u20132026)\nActivity health: healthy\n\nOwner: Alibaba Cloud (Alibaba Group), Hangzhou, China\nCountry: China\nD5-country affiliation found. Qwen is developed and maintained by Alibaba Cloud, a subsidiary of Alibaba Group headquartered in Hangzhou, China. Score = 2 (owning organisation is D5-country affiliated)."
         },
         {
           "name": "Training Data Documentation",
@@ -587,7 +587,7 @@
         {
           "name": "FLOPS Calculation",
           "score": 2,
-          "notes": "6·N·D FLOPS estimate (using the largest declared variant, Qwen3-VL-235B, as the upper bound):\nN = 235,000,000,000 parameters (235B total; 22B active per token in MoE configuration — using total N as the conservative upper bound)\nD: Not declared in the Model Readiness form. Using publicly reported Qwen2.5 LLM backbone pre-training figure of ~18 × 10^12 tokens as a proxy.\n6 × N × D = 6 × 2.35 × 10^11 × 1.8 × 10^13 = 6 × 4.23 × 10^24 = 2.54 × 10^25 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed. Score raised to 2 due to missing parameter and token documentation in the submission — D figure is derived from public technical reports, not the form."
+          "notes": "6\u00b7N\u00b7D FLOPS estimate (using the largest declared variant, Qwen3-VL-235B, as the upper bound):\nN = 235,000,000,000 parameters (235B total; 22B active per token in MoE configuration \u2014 using total N as the conservative upper bound)\nD: Not declared in the Model Readiness form. Using publicly reported Qwen2.5 LLM backbone pre-training figure of ~18 \u00d7 10^12 tokens as a proxy.\n6 \u00d7 N \u00d7 D = 6 \u00d7 2.35 \u00d7 10^11 \u00d7 1.8 \u00d7 10^13 = 6 \u00d7 4.23 \u00d7 10^24 = 2.54 \u00d7 10^25 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed. Score raised to 2 due to missing parameter and token documentation in the submission \u2014 D figure is derived from public technical reports, not the form."
         },
         {
           "name": "Sample Inspection",
@@ -623,7 +623,7 @@
         {
           "name": "Training Data Documentation",
           "score": 2,
-          "notes": "Mixtral 8x22B pre-training data: Mistral AI has not publicly disclosed the full training data composition for Mixtral 8x22B. The model is described as trained on a large multilingual corpus; no technical report with token counts or dataset breakdown has been released.\nD (tokens): Not declared in the Model Readiness form and not publicly disclosed by Mistral AI.\nNote: Training data documentation is unavailable — neither the exact corpus nor the token count is provided in the Model Readiness form or by the developer. Flagged for incomplete documentation."
+          "notes": "Mixtral 8x22B pre-training data: Mistral AI has not publicly disclosed the full training data composition for Mixtral 8x22B. The model is described as trained on a large multilingual corpus; no technical report with token counts or dataset breakdown has been released.\nD (tokens): Not declared in the Model Readiness form and not publicly disclosed by Mistral AI.\nNote: Training data documentation is unavailable \u2014 neither the exact corpus nor the token count is provided in the Model Readiness form or by the developer. Flagged for incomplete documentation."
         },
         {
           "name": "Customisation / Fine-tuning",
@@ -633,7 +633,7 @@
         {
           "name": "FLOPS Calculation",
           "score": 2,
-          "notes": "The Model Readiness form does not declare the number of trainable parameters or training token count for Mixtral 8x22B. Mistral AI has not published a formal technical report with these figures.\n\nBased on publicly available information: Mixtral 8x22B has 141B total parameters (39B active per token in MoE configuration). Training token count is not publicly disclosed; a rough industry estimate for a model of this scale is on the order of 2–5 trillion tokens.\n\n6·N·D FLOPS estimate (using total parameters and upper-bound D estimate):\nN = 141,000,000,000 parameters (141B total)\nD = 5,000,000,000,000 tokens (5T — upper-bound estimate; not confirmed)\n6 × N × D = 6 × 1.41 × 10^11 × 5.0 × 10^12 = 6 × 7.05 × 10^23 = 4.23 × 10^24 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed. Score raised to 2 due to missing parameter and token documentation in the submission and from the developer."
+          "notes": "The Model Readiness form does not declare the number of trainable parameters or training token count for Mixtral 8x22B. Mistral AI has not published a formal technical report with these figures.\n\nBased on publicly available information: Mixtral 8x22B has 141B total parameters (39B active per token in MoE configuration). Training token count is not publicly disclosed; a rough industry estimate for a model of this scale is on the order of 2\u20135 trillion tokens.\n\n6\u00b7N\u00b7D FLOPS estimate (using total parameters and upper-bound D estimate):\nN = 141,000,000,000 parameters (141B total)\nD = 5,000,000,000,000 tokens (5T \u2014 upper-bound estimate; not confirmed)\n6 \u00d7 N \u00d7 D = 6 \u00d7 1.41 \u00d7 10^11 \u00d7 5.0 \u00d7 10^12 = 6 \u00d7 7.05 \u00d7 10^23 = 4.23 \u00d7 10^24 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed. Score raised to 2 due to missing parameter and token documentation in the submission and from the developer."
         },
         {
           "name": "Sample Inspection",
@@ -654,7 +654,7 @@
         {
           "name": "Project & Usage Alignment",
           "score": 2,
-          "notes": "InternVL 2.5 is an open-source multimodal vision-language model developed by OpenGVLab (Shanghai AI Laboratory) that uses a large-scale Vision Transformer (ViT-6B) encoder for superior image perception, achieving performance comparable to GPT-4o on several vision-language benchmarks.\n\nThe model is listed in the Model Readiness form with the declared Shaheen III use case described as \"Suitable for the 'Tongue Diagnosis Agent' or any task requiring high-fidelity categorical priors from medical images.\" The reference to a \"Tongue Diagnosis Agent\" is not mentioned anywhere in the proposal text or in the two declared project objectives. The connection to this proposal's scope (cancer pathology, WSI analysis, single-cell transcriptomics) is not established in the submission.\n\nAligns with the approved research topic, Health and Wellness (conditionally — pending clarification of the tongue diagnosis use case)."
+          "notes": "InternVL 2.5 is an open-source multimodal vision-language model developed by OpenGVLab (Shanghai AI Laboratory) that uses a large-scale Vision Transformer (ViT-6B) encoder for superior image perception, achieving performance comparable to GPT-4o on several vision-language benchmarks.\n\nThe model is listed in the Model Readiness form with the declared Shaheen III use case described as \"Suitable for the 'Tongue Diagnosis Agent' or any task requiring high-fidelity categorical priors from medical images.\" The reference to a \"Tongue Diagnosis Agent\" is not mentioned anywhere in the proposal text or in the two declared project objectives. The connection to this proposal's scope (cancer pathology, WSI analysis, single-cell transcriptomics) is not established in the submission.\n\nAligns with the approved research topic, Health and Wellness (conditionally \u2014 pending clarification of the tongue diagnosis use case)."
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
@@ -664,7 +664,7 @@
         {
           "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
           "score": 2,
-          "notes": "HuggingFace: https://huggingface.co/OpenGVLab/InternVL2_5-8B (representative variant)\nGitHub (reference): https://github.com/OpenGVLab/InternVL\nHF downloads: millions across InternVL variants\nLast commit (HF): Actively maintained (2025–2026)\nActivity health: healthy\n\nOwner: OpenGVLab — Shanghai AI Laboratory (上海人工智能实验室), Shanghai, China\nCountry: China\nD5-country affiliation found. OpenGVLab is part of the Shanghai AI Laboratory, a Chinese state-supported research institution. Score = 2 (owning organisation is D5-country affiliated)."
+          "notes": "HuggingFace: https://huggingface.co/OpenGVLab/InternVL2_5-8B (representative variant)\nGitHub (reference): https://github.com/OpenGVLab/InternVL\nHF downloads: millions across InternVL variants\nLast commit (HF): Actively maintained (2025\u20132026)\nActivity health: healthy\n\nOwner: OpenGVLab \u2014 Shanghai AI Laboratory (\u4e0a\u6d77\u4eba\u5de5\u667a\u80fd\u5b9e\u9a8c\u5ba4), Shanghai, China\nCountry: China\nD5-country affiliation found. OpenGVLab is part of the Shanghai AI Laboratory, a Chinese state-supported research institution. Score = 2 (owning organisation is D5-country affiliated)."
         },
         {
           "name": "Training Data Documentation",
@@ -674,12 +674,12 @@
         {
           "name": "Customisation / Fine-tuning",
           "score": 1,
-          "notes": "The publicly released InternVL 2.5 checkpoints are instruction-tuned by OpenGVLab on general multimodal instruction datasets. No clinical or pathology-specific fine-tuning is included in the released artifacts. This model, as is, has not been fine-tuned on any domain-specific downstream task relevant to this project, according to the model card from HuggingFace.\n\nOn Shaheen III GPUP, the declared use case references a \"Tongue Diagnosis Agent\" — a task not described in the proposal."
+          "notes": "The publicly released InternVL 2.5 checkpoints are instruction-tuned by OpenGVLab on general multimodal instruction datasets. No clinical or pathology-specific fine-tuning is included in the released artifacts. This model, as is, has not been fine-tuned on any domain-specific downstream task relevant to this project, according to the model card from HuggingFace.\n\nOn Shaheen III GPUP, the declared use case references a \"Tongue Diagnosis Agent\" \u2014 a task not described in the proposal."
         },
         {
           "name": "FLOPS Calculation",
           "score": 2,
-          "notes": "The Model Readiness form does not declare the number of trainable parameters or the training token count for InternVL 2.5. The model is available in multiple variants; based on publicly available technical reports, InternVL2.5 ranges from 1B to 78B parameters depending on variant.\n\n6·N·D FLOPS estimate (using the largest documented variant, 78B):\nN = 78,000,000,000 parameters (78B)\nD: Not disclosed; using 10T as a rough upper-bound estimate.\n6 × N × D = 6 × 7.8 × 10^10 × 1.0 × 10^13 = 6 × 7.8 × 10^23 = 4.68 × 10^24 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed. Score raised to 2 due to missing documentation in the submission."
+          "notes": "The Model Readiness form does not declare the number of trainable parameters or the training token count for InternVL 2.5. The model is available in multiple variants; based on publicly available technical reports, InternVL2.5 ranges from 1B to 78B parameters depending on variant.\n\n6\u00b7N\u00b7D FLOPS estimate (using the largest documented variant, 78B):\nN = 78,000,000,000 parameters (78B)\nD: Not disclosed; using 10T as a rough upper-bound estimate.\n6 \u00d7 N \u00d7 D = 6 \u00d7 7.8 \u00d7 10^10 \u00d7 1.0 \u00d7 10^13 = 6 \u00d7 7.8 \u00d7 10^23 = 4.68 \u00d7 10^24 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed. Score raised to 2 due to missing documentation in the submission."
         },
         {
           "name": "Sample Inspection",
@@ -700,7 +700,7 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "TRIDENT is a scalable toolkit developed by the Mahmood Lab (Harvard Medical School) for high-throughput whole-slide image (WSI) processing. It uses vision encoders — typically hierarchical image pyramids or Vision Transformers — to partition gigapixel slides into manageable patch tokens and extract feature embeddings. The PI has declared that TRIDENT will be used together with several of the Mahmood Lab's vision encoder checkpoints: UNI, UNI2-h, CONCH, conchv1_5, TITAN, madeleine, and abmil.base.conch_v15.pc108-24k.\n\nThe toolkit and its bundled encoders serve the proposal objective \"Build a unified latent space for cells, spatial spots and WSIs\" as the WSI preprocessing and patch-embedding backbone. On Shaheen III GPUP the declared objectives are: (1) distributed high-throughput inference to extract patch-level embeddings from thousands of gigapixel WSIs at scale; and (2) Full FT or PEFT on advanced vision encoders (TITAN, UNI) as part of the cross-modal contrastive training pipeline.\n\nAligns with the approved research topic, Health and Wellness."
+          "notes": "TRIDENT is a scalable toolkit developed by the Mahmood Lab (Harvard Medical School) for high-throughput whole-slide image (WSI) processing. It uses vision encoders \u2014 typically hierarchical image pyramids or Vision Transformers \u2014 to partition gigapixel slides into manageable patch tokens and extract feature embeddings. The PI has declared that TRIDENT will be used together with several of the Mahmood Lab's vision encoder checkpoints: UNI, UNI2-h, CONCH, conchv1_5, TITAN, madeleine, and abmil.base.conch_v15.pc108-24k.\n\nThe toolkit and its bundled encoders serve the proposal objective \"Build a unified latent space for cells, spatial spots and WSIs\" as the WSI preprocessing and patch-embedding backbone. On Shaheen III GPUP the declared objectives are: (1) distributed high-throughput inference to extract patch-level embeddings from thousands of gigapixel WSIs at scale; and (2) Full FT or PEFT on advanced vision encoders (TITAN, UNI) as part of the cross-modal contrastive training pipeline.\n\nAligns with the approved research topic, Health and Wellness."
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
@@ -725,7 +725,7 @@
         {
           "name": "FLOPS Calculation",
           "score": 2,
-          "notes": "The Model Readiness form does not declare parameter counts or training token counts for any of the bundled encoders. Estimates are derived from published technical reports.\n\nRepresentative upper-bound estimate using UNI2-h (largest reported variant, ViT-H, ~632M parameters) and a large WSI corpus proxy (~500M patches):\nN = 632,000,000 parameters (632M, ViT-H)\nD = 500,000,000 patches (500M — approximate; not confirmed)\n6 × N × D = 6 × 6.32 × 10^8 × 5.0 × 10^8 = 6 × 3.16 × 10^17 = 1.90 × 10^18 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed. Score raised to 2 due to missing documentation in the submission."
+          "notes": "The Model Readiness form does not declare parameter counts or training token counts for any of the bundled encoders. Estimates are derived from published technical reports.\n\nRepresentative upper-bound estimate using UNI2-h (largest reported variant, ViT-H, ~632M parameters) and a large WSI corpus proxy (~500M patches):\nN = 632,000,000 parameters (632M, ViT-H)\nD = 500,000,000 patches (500M \u2014 approximate; not confirmed)\n6 \u00d7 N \u00d7 D = 6 \u00d7 6.32 \u00d7 10^8 \u00d7 5.0 \u00d7 10^8 = 6 \u00d7 3.16 \u00d7 10^17 = 1.90 \u00d7 10^18 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed. Score raised to 2 due to missing documentation in the submission."
         },
         {
           "name": "Sample Inspection",
@@ -741,11 +741,12 @@
       "is_proprietary": false
     }
   ],
-  "observations": "1. SpeciesLLM (in-house, Gao Lab) — training data corpus not named in the Model Readiness form beyond \"large-scale single-cell transcriptomic data\". PI should confirm exact pretraining dataset(s) for the record.\n\n2. DeepSeek-V3.2 — D5-country affiliation (DeepSeek AI, China). LC 2.5 = 2. Sample inspection required before staging.\n\n3. Qwen (Qwen2.5-VL / Qwen3-VL) — D5-country affiliation (Alibaba Cloud, China). LC 2.5 = 2. Sample inspection required before staging.\n\n4. InternVL 2.5 — D5-country affiliation (Shanghai AI Laboratory, China). LC 2.5 = 2. Sample inspection required before staging. Declared Shaheen III use case references a \"Tongue Diagnosis Agent\" not mentioned in the proposal; PI clarification required on scope before staging.\n\n5. H-optimus-0 / HIPT — HIPT GitHub repository shows low activity (CVPR 2022 release; no substantive commits since 2023). Custom research-use license from the Mahmood Lab; commercial use requires separate permission.\n\n6. HE2RNA — repository archived by the owner on Feb 15, 2023 (read-only, no active maintenance). No explicit LICENSE file in the repository. License status to be confirmed with Owkin before staging.\n\n7. TRIDENT bundled encoders (UNI, UNI2-h, CONCH, conchv1_5, TITAN, madeleine, abmil) — all carry non-commercial, gated research licenses from the Mahmood Lab requiring HuggingFace access request approval. PI must confirm approved access for each checkpoint before staging.\n\n8. Multiple models (H-optimus-0/HIPT, HE2RNA, Qwen variants, Mixtral 8x22B, InternVL 2.5, TRIDENT encoders) — parameter counts and/or training token counts not declared in the Model Readiness form. FLOPS estimates use published technical reports as proxies; all clear the 10^27 threshold.\n\n9. Llama 3 / 3.1 — the meta-llama/llama3 GitHub repository is archived (public archive); active development has moved to meta-llama/llama-models. Weights remain available on HuggingFace. No functional impact on staging.",
+  "observations": "1. SpeciesLLM (in-house, Gao Lab) \u2014 training data corpus not named in the Model Readiness form beyond \"large-scale single-cell transcriptomic data\". PI should confirm exact pretraining dataset(s) for the record.\n\n2. DeepSeek-V3.2 \u2014 D5-country affiliation (DeepSeek AI, China). LC 2.5 = 2. Sample inspection required before staging.\n\n3. Qwen (Qwen2.5-VL / Qwen3-VL) \u2014 D5-country affiliation (Alibaba Cloud, China). LC 2.5 = 2. Sample inspection required before staging.\n\n4. InternVL 2.5 \u2014 D5-country affiliation (Shanghai AI Laboratory, China). LC 2.5 = 2. Sample inspection required before staging. Declared Shaheen III use case references a \"Tongue Diagnosis Agent\" not mentioned in the proposal; PI clarification required on scope before staging.\n\n5. H-optimus-0 / HIPT \u2014 HIPT GitHub repository shows low activity (CVPR 2022 release; no substantive commits since 2023). Custom research-use license from the Mahmood Lab; commercial use requires separate permission.\n\n6. HE2RNA \u2014 repository archived by the owner on Feb 15, 2023 (read-only, no active maintenance). No explicit LICENSE file in the repository. License status to be confirmed with Owkin before staging.\n\n7. TRIDENT bundled encoders (UNI, UNI2-h, CONCH, conchv1_5, TITAN, madeleine, abmil) \u2014 all carry non-commercial, gated research licenses from the Mahmood Lab requiring HuggingFace access request approval. PI must confirm approved access for each checkpoint before staging.\n\n8. Multiple models (H-optimus-0/HIPT, HE2RNA, Qwen variants, Mixtral 8x22B, InternVL 2.5, TRIDENT encoders) \u2014 parameter counts and/or training token counts not declared in the Model Readiness form. FLOPS estimates use published technical reports as proxies; all clear the 10^27 threshold.\n\n9. Llama 3 / 3.1 \u2014 the meta-llama/llama3 GitHub repository is archived (public archive); active development has moved to meta-llama/llama-models. Weights remain available on HuggingFace. No functional impact on staging.",
   "recommendation": "Sample inspection required for DeepSeek-V3.2, Qwen (all three variants), and InternVL 2.5 prior to staging on Shaheen III GPUP (LC 2.5 = 2, D5-country affiliation).\n\nPI to confirm HuggingFace access approval for all gated Mahmood Lab encoder checkpoints (UNI, UNI2-h, CONCH, conchv1_5, TITAN, madeleine, abmil) before KSL stages those files.\n\nPI to clarify whether InternVL 2.5 is within scope of this proposal (declared use case \"Tongue Diagnosis Agent\" does not appear in the proposal text).\n\nPI to provide license confirmation for HE2RNA (no LICENSE file in repository) and HIPT (custom research-use license).\n\nPI to document the exact pretraining dataset(s) for SpeciesLLM.\n\nProject aligns with approved research topics; artifact purpose and provenance are documented across all declared datasets and models.\nPositive checks passed\n\nOwner/developer affiliations are non-D5 for all artifacts except DeepSeek-V3.2, Qwen, and InternVL 2.5, which are subject to pending sample inspection; no prohibited-use indicators or export restrictions found.\nNegative checks passed\n\nEstimated training compute across all models is well below the 10^27 FLOPS threshold.\n10^27 FLOPS check passed\n\nRecommended for the grand challenge, conditional on: (1) completion of sample inspection for DeepSeek-V3.2, Qwen, and InternVL 2.5; (2) PI confirmation of HuggingFace gated access for Mahmood Lab encoders; (3) PI clarification on InternVL 2.5 scope; (4) license resolution for HE2RNA and HIPT.",
+  "addenda": [],
   "_submission_history": [
     {
-      "timestamp": "2026-01-14T17:38:59.412679",
+      "timestamp": "2026-06-24T13:22:44.788253",
       "action": "resubmission"
     }
   ]
