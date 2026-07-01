@@ -5,7 +5,7 @@
     "proposal_date": "2025-12-02",
     "reviewer_name": "Mohsin Ahmed Shaikh",
     "reviewer_id": "174988",
-    "aimcr_date": "2026-06-24",
+    "aimcr_date": "2026-07-01",
     "project_id": "65461"
   },
   "third_party_software": [
@@ -746,8 +746,8 @@
   "addenda": [],
   "_submission_history": [
     {
-      "timestamp": "2026-07-01T13:36:56.249702",
-      "action": "initial_submission"
+      "timestamp": "2026-07-01T13:39:10.509600",
+      "action": "resubmission"
     }
   ]
 }
