@@ -1,0 +1,754 @@
+{
+  "checkpoint_metadata": {
+    "type": "pre_resubmission",
+    "timestamp": "2026-07-01T13:15:56.989062",
+    "project_id": "65461"
+  },
+  "form_data": {
+    "metadata": {
+      "proposal_title": "Single-Cell Informed Pathology Image Interpretation and Report Generation via Large-Scale Multimodal Foundation Models",
+      "principal_investigator": "Prof Xin Gao",
+      "proposal_date": "2025-12-02",
+      "reviewer_name": "Mohsin Ahmed Shaikh",
+      "reviewer_id": "174988",
+      "aimcr_date": "2026-06-24",
+      "project_id": "65461"
+    },
+    "third_party_software": [
+      {
+        "name": "Pytorch 2.8.0",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Aligns with the proposal objectives. Aligns with the approved research topic Datascience and engineering"
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation"
+          },
+          {
+            "name": "D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Originally developed by Meta and now governed by Linux Foundation. This entity is from non-D5 country."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "https://github.com/pytorch/pytorch\n\nStars: 96300 \nForks: 26400 \nGithub projects: 12 \n PRs 17,000 \n97745 Commits \nlast commit Jan 4th, 2026"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "KSL will provide NGC container for the requested version of PyTorch. nvcr.io/nvidia/pytorch:25.12-py3\nNVIDIA Deep Learning Container License Permissions:\n\nInstall and Use\nDeploy as a Service\nCreate Derived Containers\nOpen Source Development Restrictions:\nNo Reverse Engineering\nNo Standalone Distribution: may not distribute or sublicense the CONTAINER as a stand-alone product\nNo Circumventing Security"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "CUDA\ncuBLAS\nNVIDIA\ncuDNN\nNVIDIA\nNCCL (optimized for NVLink) \nNVIDIA Data Loading Library (DALI) \nTensorRT \nTorch-TensorRT"
+          }
+        ]
+      },
+      {
+        "name": "openslide",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "OpenSlide is an open-source suite of tools written in C for reading, processing, and converting whole-slide pathology images (WSI) in various formats like SVS and TIFF.\n\nThe software is used for Objective 1: Build a unified latent space for cells, spatial spots and WSIs - specifically for preprocessing and handling gigapixel whole-slide histopathology images before they are fed into the pathology foundation model training pipeline.\n\n"
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "OpenSlide is maintained by the OpenSlide project community with primary development contributions from Carnegie Mellon University and the University of Pittsburgh; the current maintainer is Benjamin Gilbert (affiliated with Carnegie Mellon University, LinkedIn not publicly listed in official documentation).\n\nThe entity is from a non-D5 country."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "https://openslide.org/\n\nhttps://github.com/openslide/openslide\n\nStars: 469\nFork: 246\nCommits: 2794\nlast commit: Dec 2025\n"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "LGPL v2.1\n\nPermissions:\n\nFree to use for commercial and non-commercial purposes\nCan modify the source code\nCan distribute original or modified versions\nCan link with proprietary software\n\nRestrictions:\n\nModified versions must be released under LGPL v2.1 if distributed\nMust provide source code for any modifications to the library itself\nMust include copyright notices and license text\nCannot impose additional restrictions beyond LGPL terms"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "\nGCC or Clang, Meson, cairo \u2265 1.2, glib \u2265 2.56, libdicom \u2265 1.2 (automatically built if missing), libjpeg-turbo \u2265 1.3 or libjpeg \u2265 9c, libpng, libtiff \u2265 4.0, libxml2, OpenJPEG \u2265 2.1, SQLite \u2265 3.14, zlib, Zstandard (by facebook)\n"
+          }
+        ]
+      },
+      {
+        "name": "Ollama",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Ollama is an open-source tool that enables easy local deployment and running of large language models (LLMs) like Llama, Gemma, DeepSeek, and Qwen on personal computers.\n\nThe software is used for Objective 2: Demonstrate clinical utility in diagnosis, risk stratification, and therapy prioritization - specifically for deploying and running the medical-report LLM that generates structured diagnostic summaries and clinical reports from pathology data.\n\nAligns with the approved research topic Datascience & engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Ollama is owned and maintained by Ollama Inc., with primary developers including Jeffrey Morgan (Co-founder, LinkedIn: linkedin.com/in/jmorganca) and Michael Chiang (Co-founder, LinkedIn: linkedin.com/in/mxyng).\n\nThe entity and maintainers are from non-D5 country."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "Dockerhub: ollama/ollama:0.13.3\nRegistry maintained by Ollama.inc\nOwners are Jeffery Morgan (https://www.linkedin.com/in/jmorganca/)\nand Micheal Yang (https://www.linkedin.com/in/mxyng/)"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "MIT License\nPermissions:\n\nFree to use for any purpose including commercial applications\nCan modify and distribute the software\nCan incorporate into proprietary software\nCan sublicense to others\nMinimal requirements for attribution\n\nRestrictions:\n\nMust include original copyright notice and license text in distributions\nSoftware provided \"as is\" without warranty (excluded per your request but this is substantive)"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "singularity\n"
+          }
+        ]
+      },
+      {
+        "name": "Transformers",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Transformers is an open-source library providing pre-trained models and tools for natural language processing, computer vision, and multimodal AI tasks, enabling researchers to build, train, and deploy state-of-the-art machine learning models.\n\nThe software is used for both Objective 1 (Build a unified latent space for cells, spatial spots and WSIs) and Objective 2 (Demonstrate clinical utility in diagnosis, risk stratification and therapy prioritization) - serving as the core model library for constructing the single-cell foundation model, pathology foundation model, and medical report generation LLM architectures.\n\nAligns with approved research topics Datascience & engineering"
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation."
+          },
+          {
+            "name": "D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Transformers is owned and maintained by Hugging Face Inc., with primary maintainers including Sylvain Gugger (Research Engineer, LinkedIn: linkedin.com/in/sylvain-gugger), Lysandre Debut (Machine Learning Engineer, LinkedIn: linkedin.com/in/lysandre-debut), and Thomas Wolf (Co-founder & CSO, LinkedIn: linkedin.com/in/thomas-wolf-a056857).\n\nThe entity is from non-D5 country."
+          },
+          {
+            "name": "Source / Provenance",
+            "score": 1,
+            "notes": "https://github.com/huggingface/transformers\n\nStars: 153,000\nForks: 31,100\nCommits: 21,136\nLast commit: January 2026 (within the past week, actively maintained)"
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "Apache License 2.0\n\nPermissions:\n\nFree to use for commercial and non-commercial purposes\nCan modify and distribute the software\nCan incorporate into proprietary applications\nCan sublicense and sell copies\nPatent rights granted from contributors\n\nRestrictions:\n\nMust include copyright notice and license text in distributions\nMust state significant changes made to the software\nMust include NOTICE file if one exists in the distribution\nCannot use trademark names without permission\nModified files must carry prominent notices of changes\n"
+          },
+          {
+            "name": "Bundled Tools / Dependencies",
+            "score": 1,
+            "notes": "conda installation: \nfilelock 3.20.3\npackaging 25.0\ncolorama 0.4.6\ncertifi 2026.1.4\ncharset-normalizer 3.4.4\nidna 3.11\nfsspec 2025.10.0\ntyping_extensions 4.15.0\ndill 0.4.0\npython_abi 3.11\naiohappyeyeballs 2.6.1\nattrs 25.4.0\npysocks 1.7.1\nsniffio 1.3.1\nhpack 4.1.0\nhyperframe 6.1.0\npython-tzdata 2025.3\npytz 2025.2\nsix 1.17.0\ntqdm 4.67.1\nexceptiongroup 1.3.1\nh11 0.16.0\ntyping-extensions 4.15.0\ncpython 3.11.14\nh2 4.3.0\npython-dateutil 2.9.0.post0\nanyio 4.12.1\npython-gil 3.11.14\nhttpcore 1.0.9\n_python_abi3_support 1.0\nhttpx 0.28.1\nlibcxx 21.1.8\nyaml 0.2.5\naws-c-common 0.12.6\nlibutf8proc 2.11.2\nlibopentelemetry-cpp-headers 1.21.0\nzlib 1.3.1\nlibbrotlicommon 1.2.0\nzstd 1.5.7\nnlohmann_json 3.12.0\nc-ares 1.34.6\nlibev 4.33\nlibedit 3.1.20250104\nlibiconv 1.18\nlibevent 2.1.12\nllvm-openmp 21.1.8\nxxhash 0.8.3\nlibssh2 1.11.1\npropcache 0.3.1\nmultidict 6.7.0\nmultiprocess 0.70.18\nsafetensors 0.7.0\nregex 2025.11.3\nhf-xet 1.2.1\ngflags 2.2.2\nlibcrc32c 1.1.2\nsnappy 1.2.2\nlz4-c 1.10.0\nbrotli-python 1.2.0\nlibabseil 20250512.1\nfrozenlist 1.7.0\npyyaml 6.0.3\naws-c-compression 0.3.1\naws-checksums 0.2.7\naws-c-sdkutils 0.2.4\naws-c-cal 0.9.13\nlibbrotlidec 1.2.0\nlibbrotlienc 1.2.0\nbackports.zstd 1.3.0\nlibnghttp2 1.67.0\nkrb5 1.21.3\nlibxml2-16 2.15.1\nlibthrift 0.22.0\n_openmp_mutex 4.5\npython-xxhash 3.6.0\nyarl 1.22.0\nglog 0.7.1\nlibre2-11 2025.11.05\nlibprotobuf 6.31.1\naws-c-io 0.23.3\nlibcurl 8.18.0\nlibxml2 2.15.1\nlibgcc 15.2.0\nre2 2025.11.05\norc 2.2.1\naws-c-http 0.10.7\naws-c-event-stream 0.5.7\nprometheus-cpp 1.3.0\nazure-core-cpp 1.16.1\nlibgfortran5 15.2.0\nlibgrpc 1.73.1\naws-c-mqtt 0.13.3\naws-c-auth 0.9.3\nazure-storage-common-cpp 12.11.0\nazure-identity-cpp 1.13.2\nlibgfortran 15.2.0\nlibopentelemetry-cpp 1.21.0\nlibgoogle-cloud 2.39.0\naws-c-s3 0.11.3\nazure-storage-blobs-cpp 12.15.0\nlibopenblas 0.3.30\nlibgoogle-cloud-storage 2.39.0\naws-crt-cpp 0.35.4\nazure-storage-files-datalake-cpp 12.13.0\nlibblas 3.11.0\naws-sdk-cpp 1.11.606\nlibcblas 3.11.0\nliblapack 3.11.0\nlibarrow 22.0.0\nnumpy 1.26.4\nlibarrow-compute 22.0.0\nlibparquet 22.0.0\npandas 2.3.3\nlibarrow-acero 22.0.0\npyarrow-core 22.0.0\nlibarrow-dataset 22.0.0\nlibarrow-substrait 22.0.0\npyarrow 22.0.0\naiosignal 1.4.0\nurllib3 2.6.3\nrequests 2.32.5\nhuggingface_hub 0.36.0\naiohttp 3.13.3\ntokenizers 0.20.4\ndatasets 4.4.2"
+          }
+        ]
+      }
+    ],
+    "source_code": [],
+    "datasets_user_files": [
+      {
+        "name": "TCGA dataset",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "The Cancer Genome Atlas (TCGA) is a large-scale, multi-institutional cancer genomics programme jointly established by the National Cancer Institute (NCI) and the National Human Genome Research Institute (NHGRI). It provides whole-slide pathology images (H&E-stained SVS/TIFF files), matched genomic profiles (DNA-seq, copy-number variations), transcriptomic data (RNA-seq, miRNA-seq), proteomics (RPPA), clinical annotations, and molecular subtyping information spanning 33 cancer types and more than 20,000 patient samples. The project requests the full open-access tier, comprising approximately 35\u201340 TB across all 33 sub-cohorts (TCGA-BRCA through TCGA-CHOL), to be retrieved via the GDC Data Transfer Tool using per-cohort manifest files.\n\nThe dataset serves both proposal objectives. For \"Build a unified latent space for cells, spatial spots and WSIs\", the whole-slide images and paired transcriptomic profiles provide the primary pretraining corpus for the pathology image encoder and the cross-modal alignment model that couples morphological patterns to cellular and molecular states. For \"Demonstrate clinical utility in diagnosis, risk stratification and therapy prioritization\", the clinical annotations and molecular subtyping labels across 33 cancer types provide the evaluation benchmarks for standardised grading, subtype classification, survival stratification, and therapy-response prediction tasks.\n\nAligns with the approved research topic, Bioscience."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. TCGA is a publicly funded cancer genomics and digital pathology resource established by the NCI and NHGRI for academic biomedical research."
+          },
+          {
+            "name": "D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "TCGA is owned and maintained by the National Cancer Institute (NCI) and the National Human Genome Research Institute (NHGRI), both agencies of the U.S. National Institutes of Health (NIH), U.S. Department of Health and Human Services. Day-to-day data management and access is operated by the Genomic Data Commons (GDC) at the Center for Translational Data Science, University of Chicago. As a large federal research consortium, no individual LinkedIn profiles are applicable; institutional documentation is available at https://portal.gdc.cancer.gov/ and https://www.genome.gov/.\n\nNon-D5 country affiliation. The owning and maintaining entities are U.S. federal government agencies and a U.S. academic institution."
+          },
+          {
+            "name": "Prompts / Fine-tuning Scripts",
+            "score": 1,
+            "notes": "No user files provided."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection.\n\nReference: https://portal.gdc.cancer.gov/"
+          },
+          {
+            "name": "Provenance",
+            "score": 1,
+            "notes": "Owner/Curator: National Cancer Institute (NCI) and National Human Genome Research Institute (NHGRI), U.S. National Institutes of Health\nDistribution Platform: NCI Genomic Data Commons (GDC) \u2014 https://portal.gdc.cancer.gov/\nRepository: 33 sub-cohort projects accessible via the GDC portal and GDC Data Transfer Tool; per-cohort manifest files available at portal.gdc.cancer.gov/projects/TCGA-<CODE>\nAccess Method: GDC Data Transfer Tool (gdc-client); open-access tier requires no dbGaP authorisation; manifest-based bulk download\nProvenance narrative: TCGA was launched in 2006 as a joint NCI\u2013NHGRI pilot programme and expanded to Phase II in 2009. Genomic characterisation was performed by multiple centres (Broad Institute, Harvard, UNC, MD Anderson, Baylor, BCGSC, Van Andel). The current data version is hosted and harmonised by the GDC at the University of Chicago, which provides standardised variant calls, expression matrices, and clinical metadata across all 33 cancer types.\nMaintenance Status: Actively maintained by NCI/GDC; last data harmonisation release noted in GDC release notes (https://docs.gdc.cancer.gov/Data/Release_Notes/Data_Release_Notes/)."
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "TCGA Data Use Policy (NCI Genomic Data Commons)\n\nTCGA data are released under a two-tier framework. The project requests the Open Access tier only.\n\nPermissions:\nFree access to de-identified clinical, biospecimen, and open-access genomic data without user certification\nUse for academic, non-profit, and commercial research purposes including publications and presentations\nDownload and analysis of genomic data that cannot identify individual participants\nNo registration requirement for open-access data files\n\nObligations:\nMust comply with the TCGA Responsible Use Policy and Publication Guidelines (https://www.cancer.gov/about-nci/organization/ccg/research/structural-genomics/tcga/using-tcga/citing-tcga)\nMust provide proper attribution and citation in publications\nMust provide annual progress updates on data use (where applicable under institutional data-use agreements)\n\nRestrictions:\nCannot attempt to re-identify individual participants from any TCGA data tier\nCannot redistribute molecular analytes or tissue materials\nMust destroy or transfer datasets upon project completion unless an extension is approved\nControlled Access data (not requested here) requires dbGaP authorisation and a signed Data Use Certification\nCommercial use of certain data products may require additional permissions beyond standard research use"
+          }
+        ]
+      },
+      {
+        "name": "CellxGENE",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "CZ CELLxGENE Discover Census is a large-scale single-cell transcriptomics repository maintained by the Chan Zuckerberg Initiative (CZI) Single-Cell Biology Programme. It aggregates standardised single-cell RNA-seq count matrices from hundreds of publicly available studies, currently encompassing tens of millions of human and mouse cells measured across more than 60,000 genes, with harmonised cell metadata (cell type, tissue of origin, sequencing technology, donor ID) and GENCODE-based gene metadata. The project requests the latest release (census_version=\"2025-11-08\"), to be accessed via the cellxgene-census Python API and downloaded in h5ad format (approximately 5 TB).\n\nThe dataset serves the proposal objective \"Build a unified latent space for cells, spatial spots and WSIs\" by providing the pretraining corpus for the modality-specific single-cell RNA-seq encoder. The breadth of cell types, tissues, and sequencing technologies across hundreds of studies is specifically required for the cross-cohort generalisation and contrastive alignment objectives described in the proposal.\n\nAligns with the approved research topic, Bioscience."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. CZ CELLxGENE Census is a de-identified single-cell transcriptomics repository maintained for open academic biomedical research."
+          },
+          {
+            "name": "D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "CZ CELLxGENE Census is owned and maintained by the Chan Zuckerberg Initiative Foundation (CZI), a U.S.-based philanthropic organisation (https://www.chanzuckerberg.com/). Key programme leads include Jonah Cool (Program Officer, Single-Cell Biology, CZI \u2014 https://www.chanzuckerberg.com/science/programs-resources/single-cell-biology/) and Ambrose Carr (Director of Product Management, CZI \u2014 LinkedIn: https://www.linkedin.com/in/ambrosejcarr/).\n\nNon-D5 country affiliation. The owning and maintaining entity is a U.S.-based foundation."
+          },
+          {
+            "name": "Prompts / Fine-tuning Scripts",
+            "score": 1,
+            "notes": "No user files provided."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection.\n\nReference: https://chanzuckerberg.github.io/cellxgene-census/"
+          },
+          {
+            "name": "Provenance",
+            "score": 1,
+            "notes": "Owner/Curator: Chan Zuckerberg Initiative Foundation, Single-Cell Biology Programme\nDistribution Platform: CZ CELLxGENE Discover Census \u2014 https://cellxgene.cziscience.com; census data release index at https://chanzuckerberg.github.io/cellxgene-census/cellxgene_census_docsite_data_release_info.html\nRepository: Versioned census releases accessible via the cellxgene-census Python API; requested release: census_version=\"2025-11-08\"\nAccess Method: cellxgene-census Python API (pip-installable); programmatic query and download of filtered scRNA-seq matrices in h5ad format. Installation guide: https://chanzuckerberg.github.io/cellxgene-census/cellxgene_census_docsite_installation.html\nProvenance narrative: The census was created by the CZI Cell Science Programme team (led by Arathi Mani, Jonah Cool, and Ambrose Carr) as a unified, versioned aggregation layer over the CZ CELLxGENE Discover platform, which itself curates and standardises hundreds of community-contributed single-cell studies. Each census release snapshots the full corpus at a fixed date with reproducible ontology-based metadata harmonisation.\nMaintenance Status: Actively maintained by CZI; versioned releases issued multiple times per year. Latest release used in this project: 2025-11-08."
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "CC BY 4.0 (Creative Commons Attribution 4.0 International)\n\nPermissions:\nFree to use for commercial, research, and educational purposes\nMay modify, distribute, and create derivative works\nMay integrate into proprietary applications\n\nObligations:\nMust provide attribution to the original dataset contributors and CZI in publications and derivative works\nMust indicate if changes were made to the original data\n\nRestrictions:\nMust not attempt to re-identify de-identified individuals from any included study\nUse subject to CZ CELLxGENE Terms of Use and Privacy Policy (https://cellxgene.cziscience.com/privacy); when census data are combined with local clinical data, applicable institutional IRB, GDPR, or HIPAA requirements must be followed"
+          }
+        ]
+      }
+    ],
+    "models": [
+      {
+        "name": "SpeciesLLM",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "SpeciesLLM is a transformer-based single-cell foundation model developed in-house by the Gao Lab at KAUST. It is pretrained on large-scale single-cell transcriptomic data using masked-token or permutation-invariant objectives to learn general-purpose cell and gene embeddings across multiple species. The model is not publicly released; it resides on the lab's Ibex project storage (/ibex/project/c2307/codes/SpeciesLLM). It is build on classes from HuggingFace BERT \u201cBertSelfOutput\u201d, \u201cBertIntermediate\u201d, \u201cBertOutput\u201d, \u201cBertPooler\u201d. \n\nThe model serves the proposal objective \"Build a unified latent space for cells, spatial spots and WSIs\" as the primary in-house single-cell foundation model. On Shaheen III GPUP it will undergo continued pretraining and fine-tuning (SFT, full FT, and PEFT) to align cell-state embeddings with pathology image representations via the cross-modal contrastive training pipeline.\n\nAligns with the approved research topic, Health and Wellness and Data Science and Engineering."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. "
+          },
+          {
+            "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "Source: /ibex/project/c2307/codes/SpeciesLLM (internal Ibex storage; not publicly released)\nGitHub: Not applicable \u2014 proprietary in-house model\nOwner: Gao Lab, KAUST (Prof Xin Gao)\nCountry: Saudi Arabia (KAUST)\nNon-D5 country affiliation. The model is developed and owned entirely within KAUST. No external D5-country organisation has ownership or controlling involvement."
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "Training data: Large-scale single-cell transcriptomic data; the specific corpus is not named in the Model Readiness form beyond the description \"large-scale single-cell transcriptomic data\". The proposal references CZ CELLxGENE Census as the primary scRNA-seq data source for this project; it is reasonable to expect overlap with SpeciesLLM's pretraining data, but the exact corpus used for the released checkpoint is not documented in the submission.\nD (tokens): 9.83 \u00d7 10^10 tokens (as declared in the Model Readiness form)\nNote: Full training data documentation (specific dataset names and versions) was not provided in the Model Readiness form. This is flagged for clarification."
+          },
+          {
+            "name": "Training Data Documentation",
+            "score": 1,
+            "notes": "SpeciesLLM is an in-house pretrained model that will undergo further training on Shaheen III GPUP. The Model Readiness form declares the Shaheen III training objectives as pre-training, fine-tuning (SFT, full FT, and PEFT). No downstream fine-tuned variant has been publicly released as the artifact \u2014 the model is being brought to Shaheen III at its current pretraining checkpoint for continued development."
+          },
+          {
+            "name": "Customisation / Fine-tuning",
+            "score": 1,
+            "notes": "6\u00b7N\u00b7D FLOPS estimate:\nN = 500,000,000 parameters (500M, as declared in the Model Readiness form)\nD = 9.83 \u00d7 10^10 tokens (as declared in the Model Readiness form)\n6 \u00d7 N \u00d7 D = 6 \u00d7 5.00 \u00d7 10^8 \u00d7 9.83 \u00d7 10^10 = 6 \u00d7 4.915 \u00d7 10^19 = 2.95 \u00d7 10^20 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed."
+          },
+          {
+            "name": "FLOPS Calculation",
+            "score": 1,
+            "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "Proprietary \u2014 Gao Lab, KAUST (license not declared in the Model Readiness form)\n\nSpeciesLLM is an unpublished, in-house model owned by the Gao Lab at KAUST. No public license has been issued. Use is limited to the research team within the scope of this proposal. The model will not be redistributed or released externally as part of this data movement."
+          }
+        ],
+        "is_proprietary": false
+      },
+      {
+        "name": "scGPT",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "scGPT is a generative foundation model for single-cell biology based on the Transformer architecture. It uses an autoregressive generative objective with specialised attention masks that respect the unordered nature of gene sets, and is pretrained on millions of cells from diverse tissues and conditions drawn from CZ CELLxGENE. It supports a range of downstream tasks including cell-type annotation, batch integration, and perturbation prediction after fine-tuning.\n\nThe model serves the proposal objective \"Build a unified latent space for cells, spatial spots and WSIs\" as a publicly available single-cell foundation model checkpoint for fine-tuning and alignment with pathology image encoders. On Shaheen III GPUP the declared training objectives are PEFT (LoRA) or Full Fine-Tuning for cross-modal contrastive alignment.\n\nAligns with the approved research topic, Health and Wellness."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. scGPT is a single-cell transcriptomics foundation model developed for biomedical research."
+          },
+          {
+            "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
+            "score": 1,
+            "notes": "HuggingFace: https://huggingface.co/bowang-lab/scGPT_human\nGitHub: https://github.com/bowang-lab/scGPT (reference / code only)\nHF downloads: >15k\nLast commit (HF): Active (2024\u20132025)\nActivity health: healthy\n\nOwner: Bo Wang Lab, University of Toronto (Canada)\nCountry: Canada\nNon-D5 country affiliation. The model is developed and maintained by the Bo Wang Lab at the University of Toronto. No D5-country organisation has ownership or controlling involvement. Lead author Haotian Cui is affiliated with the University of Toronto; institutional page: https://wanglab.ml/."
+          },
+          {
+            "name": "Training Data Documentation",
+            "score": 1,
+            "notes": "Pre-training dataset: CZ CELLxGENE Discover (release 2023-04-15)\nCitation: CZI Single-Cell Biology et al. \"CZ CELLxGENE Discover: A single-cell data platform for scalable exploration, analysis and modeling of aggregated data.\" bioRxiv 2023.10.30; doi: https://doi.org/10.1101/2023.10.30.563174\nD (tokens / cells): 33,000,000 cells (33M), as declared in the Model Readiness form\nPrimary reference: Cui et al. \"scGPT: toward building a foundation model for single-cell multi-omics using generative AI.\" Nature Methods, 2024. 21(8)."
+          },
+          {
+            "name": "Customisation / Fine-tuning",
+            "score": 1,
+            "notes": "The publicly released scGPT checkpoint (whole-human model) has not been fine-tuned on any downstream task as part of the released artifact, according to the model card and the Model Readiness form (fine-tuning tasks field: NA). This model, as is, has not been fine-tuned on any downstream task, according to the model card from HuggingFace.\n\nOn Shaheen III GPUP, the declared training objectives are PEFT (LoRA) or Full Fine-Tuning for alignment with pathology image features."
+          },
+          {
+            "name": "FLOPS Calculation",
+            "score": 1,
+            "notes": "6\u00b7N\u00b7D FLOPS estimate:\nN = 53,000,000 parameters (53M, as declared in the Model Readiness form)\nD = 9.12 \u00d7 10^10 tokens (as declared in the Model Readiness form)\n6 \u00d7 N \u00d7 D = 6 \u00d7 5.30 \u00d7 10^7 \u00d7 9.12 \u00d7 10^10 = 6 \u00d7 4.834 \u00d7 10^18 = 2.90 \u00d7 10^19 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection."
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "MIT License\n\nPermissions:\nFree to use for any purpose including commercial applications\nMay modify and distribute the software and model weights\nMay incorporate into proprietary applications\nMay sublicense\n\nObligations:\nMust include original copyright notice and MIT license text in distributions\n\nRestrictions:\nSoftware and weights provided \"as is\" without warranty"
+          }
+        ],
+        "is_proprietary": false
+      },
+      {
+        "name": "Geneformer-V2",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Geneformer (V2) is a transformer-based single-cell foundation model pretrained on large-scale single-cell transcriptomic data using masked-token objectives to learn general-purpose cell embeddings. It is designed for transfer learning across a range of tasks including cell-type classification, network biology inference, and perturbation prediction.\n\nThe model serves the proposal objective \"Build a unified latent space for cells, spatial spots and WSIs\" as an additional single-cell encoder backbone for cross-modal contrastive training. On Shaheen III GPUP the declared training objectives are PEFT or Full Fine-Tuning for cross-modal contrastive alignment.\n\nAligns with the approved research topic, Health and Wellness."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. Geneformer is a single-cell transcriptomics foundation model developed for network biology and biomedical research."
+          },
+          {
+            "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
+            "score": 1,
+            "notes": "HuggingFace: https://huggingface.co/ctheodoris/Geneformer\nHF likes: ~566\nHF commits: 237\nLast commit (HF): April 2026\nActivity health: actively maintained\n\nOwner: Christina Theodoris Lab \u2014 Gladstone Institutes / University of California San Francisco (USA)\nCountry: United States\nNon-D5 country affiliation. The model is developed and maintained by Christina Theodoris (LinkedIn: https://www.linkedin.com/in/christina-theodoris/) at the Gladstone Institutes. No D5-country organisation has ownership or controlling involvement."
+          },
+          {
+            "name": "Training Data Documentation",
+            "score": 1,
+            "notes": "Pre-training dataset: Genecorpus-30M\nDataset URL: https://huggingface.co/datasets/ctheodoris/Genecorpus-30M\nCitation: Theodoris, C.V., Xiao, L., Chopra, A. et al. \"Transfer learning enables predictions in network biology.\" Nature 618, 616\u2013624 (2023). https://doi.org/10.1038/s41586-023-06139-9\nD (tokens / cells): 30,000,000 cells (30M), as declared in the Model Readiness form\nNote: The Model Readiness form also declares a Shaheen III training token count of 4.67 \u00d7 10^11; this larger figure corresponds to the fine-tuning dataset to be used on Shaheen III GPUP, not the original pretraining corpus."
+          },
+          {
+            "name": "Customisation / Fine-tuning",
+            "score": 1,
+            "notes": "The publicly released Geneformer-V2 checkpoint has not been fine-tuned on any downstream task as part of the released artifact. This model, as is, has not been fine-tuned on any downstream task, according to the model card from HuggingFace.\n\nOn Shaheen III GPUP, the declared training objectives are PEFT or Full Fine-Tuning for cross-modal contrastive training with pathology image encoders."
+          },
+          {
+            "name": "FLOPS Calculation",
+            "score": 1,
+            "notes": "6\u00b7N\u00b7D FLOPS estimate (using original pretraining corpus D):\nN = 316,000,000 parameters (316M, as declared in the Model Readiness form)\nD = 30,000,000 cells treated as tokens (30M, Genecorpus-30M pretraining corpus)\n6 \u00d7 N \u00d7 D = 6 \u00d7 3.16 \u00d7 10^8 \u00d7 3.00 \u00d7 10^7 = 6 \u00d7 9.48 \u00d7 10^15 = 5.69 \u00d7 10^16 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection."
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "Apache License 2.0\n\nPermissions:\nFree to use for commercial and non-commercial purposes\nMay modify and distribute the model and weights\nMay incorporate into proprietary applications\nPatent rights granted from contributors\n\nObligations:\nMust include copyright notice and Apache 2.0 license text in distributions\nMust state significant changes made to the model\nMust include NOTICE file if one exists\n\nRestrictions:\nCannot use trademark names without permission"
+          }
+        ],
+        "is_proprietary": false
+      },
+      {
+        "name": "H-optimus-0 / HIPT",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "H-optimus-0 is a pathology foundation model trained on large collections of H&E whole-slide images (WSIs) using self-supervised learning. HIPT (Hierarchical Image Pyramid Transformer) uses a hierarchical ViT architecture to learn slide-level representations at multiple magnification scales. Both models achieve strong transfer performance on diagnosis, grading, survival prediction, and biomarker surrogate tasks across diverse cancer types.\n\nThe models serve the proposal objective \"Build a unified latent space for cells, spatial spots and WSIs\" as the pathology image encoder backbone(s) for the cross-modal alignment model. On Shaheen III GPUP the declared training objective is large-scale multimodal contrastive training to align image encoders with single-cell biological models.\n\nAligns with the approved research topic, Health and Wellness."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. H-optimus-0 and HIPT are digital pathology foundation models developed for biomedical image analysis."
+          },
+          {
+            "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "HuggingFace (H-optimus-0): https://huggingface.co/bioptimus/H-optimus-0\nGitHub (HIPT \u2014 code and weights): https://github.com/mahmoodlab/HIPT\nStars (HIPT): ~619\nForks (HIPT): ~108\nLast commit (HIPT): Low activity \u2014 CVPR 2022 release; no substantive commits since 2023\nActivity health: low activity \u2014 legacy research repo\n\nOwner: Bioptimus (H-optimus-0) / Mahmood Lab, Harvard Medical School (HIPT)\nCountry: France (Bioptimus) / United States (Mahmood Lab)\nNon-D5 country affiliation. Bioptimus is a French AI company (https://www.bioptimus.com/); the Mahmood Lab is based at Harvard Medical School, USA. Neither entity is affiliated with a D5-designated country or entity."
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "H-optimus-0: Apache License 2.0 (https://huggingface.co/bioptimus/H-optimus-0)\nHIPT: Not specified in the Model Readiness form; the GitHub repository (https://github.com/mahmoodlab/HIPT) carries a custom research-use license \u2014 commercial use requires separate permission from the Mahmood Lab. This is not for commercial use, so no risk.\n"
+          },
+          {
+            "name": "Training Data Documentation",
+            "score": 2,
+            "notes": "H-optimus-0: Pre-trained on a proprietary dataset of over 500,000 H&E whole-slide images. The exact composition of the training corpus is not publicly disclosed by Bioptimus. Token or patch count is not stated in the model card or the Model Readiness form submission.\nHIPT: Pre-trained on TCGA WSIs (the same dataset requested in this project). Full corpus size in patch tokens is not stated in the Model Readiness form.\nNote: Training data documentation is incomplete for both models \u2014 neither the exact corpus nor the token/patch count is provided in the Model Readiness form. Flagged for partial documentation.\n\n"
+          },
+          {
+            "name": "Customisation / Fine-tuning",
+            "score": 1,
+            "notes": "The publicly released H-optimus-0 and HIPT checkpoints have not been fine-tuned on any downstream task as part of the released artifacts. This model, as is, has not been fine-tuned on any downstream task, according to the model card from HuggingFace.\n\nOn Shaheen III GPUP, the declared training objective is large-scale multimodal contrastive training to align these image encoders with the single-cell biological model representations.\n\n"
+          },
+          {
+            "name": "FLOPS Calculation",
+            "score": 2,
+            "notes": "The Model Readiness form does not declare the number of trainable parameters or the training token/patch count for H-optimus-0 or HIPT. \nA complete 6\u00b7N\u00b7D calculation cannot be performed with the available information.\n\nBased on publicly available information: H-optimus-0 is based on a ViT-g architecture (~1.1B parameters); HIPT uses a ViT-S/16 + ViT-L/16 hierarchical structure (~307M total parameters). Training patch counts for both are not publicly documented.\n\nConservative lower-bound estimate using H-optimus-0 (ViT-g, ~1.1B params) and a representative large-scale WSI corpus (~100M patches as an approximation):\n6 \u00d7 N \u00d7 D = 6 \u00d7 1.1 \u00d7 10^9 \u00d7 1.0 \u00d7 10^8 = 6.6 \u00d7 10^17 FLOPs\n\nEven under generous assumptions this estimate is well below 10^27 FLOPS. 10^27 FLOPS check passed. Score raised to 2 due to incomplete parameter and token documentation in the submission, a full calculation cannot be verified from the form as submitted."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection."
+          }
+        ],
+        "is_proprietary": false
+      },
+      {
+        "name": "HE2RNA",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "HE2RNA is a Multiple-Instance Learning (MIL) architecture developed by Owkin that predicts bulk RNA-seq profiles directly from H&E-stained pathology images. It was trained on TCGA whole-slide images and offers spatial interpretability by projecting predicted gene scores back onto image tiles.\n\nThe model serves the proposal objective \"Build a unified latent space for cells, spatial spots and WSIs\" as a baseline and integration reference for the image-to-transcriptome alignment task. On Shaheen III GPUP the declared training objective is large-scale multimodal contrastive training to align image encoders with biological models.\n\nAligns with the approved research topic, Health and Wellness."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. HE2RNA is a computational pathology model developed for biomedical research."
+          },
+          {
+            "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+            "score": 2,
+            "notes": "HuggingFace: Not available (model weights distributed via GitHub)\nGitHub: https://github.com/owkin/HE2RNA_code\nStars: 111\nForks: 39\nLast commit: February 2023\nActivity health: Archived \u2014 repository was archived by the owner on Feb 15, 2023 and is now read-only. No active maintenance.\n\nOwner: Owkin, Inc.\nCountry: France / United States (Owkin is a French-American AI health company headquartered in New York and Paris \u2014 https://www.owkin.com/)\nNon-D5 country affiliation. Owkin is headquartered in France and the United States, neither of which is a D5-designated country."
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "License: GNU GPL v3\nPermissions\n\nRun the program for any purpose.\nStudy and modify the source code.\nCopy and redistribute verbatim copies.\nDistribute modified versions.\nSell copies or charge for distribution/support.\nSublicense is not needed \u2014 downstream recipients get rights automatically.\nUse commercially.\nCombine with AGPLv3-licensed works.\n\nRestrictions / Conditions\n\nMust license any distributed copy (modified or not) under GPLv3.\nMust include the original copyright and license notices.\nMust disclose and provide the complete source code when distributing.\nMust clearly mark any changes made to the code.\nCannot add further restrictions beyond what GPLv3 allows.\nCannot sublicense under a different, more restrictive license.\nCannot use patents to effectively make the program non-free.\nMust provide \"Installation Information\" if conveyed in a user product that restricts installing modified versions.\nCannot incorporate the code into proprietary (closed-source) software."
+          },
+          {
+            "name": "Training Data Documentation",
+            "score": 2,
+            "notes": "Pre-training / training dataset: TCGA whole-slide images (the same dataset requested in this project), as described in the original HE2RNA publication (Schmauch et al., Nature Communications, 2020; doi: 10.1038/s41467-020-17678-4).\nThe number of trainable parameters and the training token/patch count are not declared in the Model Readiness form.\nNote: Training data documentation is incomplete \u2014 parameter count and patch token count are not provided. Flagged for partial documentation.\n\nOn Shaheen III GPUP, the declared training objective is large-scale multimodal contrastive training to align image encoders with biological models."
+          },
+          {
+            "name": "Customisation / Fine-tuning",
+            "score": 1,
+            "notes": "The publicly released HE2RNA code and weights represent the model as trained and reported in the published paper. No additional downstream fine-tuning is documented in the released artifact. This model, as is, has not been fine-tuned on any downstream task, according to the repository documentation."
+          },
+          {
+            "name": "FLOPS Calculation",
+            "score": 2,
+            "notes": "The Model Readiness form does not declare the number of trainable parameters or the training patch count for HE2RNA. A complete 6\u00b7N\u00b7D calculation cannot be performed with the available information.\n\nBased on the published architecture description (Schmauch et al. 2020), HE2RNA uses a relatively lightweight MIL architecture on top of a ResNet feature extractor; total trainable parameters are estimated at under 50M. Training was performed on the TCGA corpus (~30,000 WSIs, approximately 10^8\u201310^9 tiles depending on magnification).\n\nConservative estimate: 6 \u00d7 5.0 \u00d7 10^7 \u00d7 1.0 \u00d7 10^8 = 3.0 \u00d7 10^16 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed. Score raised to 2 due to missing parameter and token documentation in the submission."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection.\n"
+          }
+        ],
+        "is_proprietary": false
+      },
+      {
+        "name": "Llama 3 / 3.1 (8B, 70B, 405B)",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Llama 3 / 3.1 is Meta's open-weight large language model series, available in 8B, 70B, and 405B parameter variants. Llama 3.1 introduces a 128k context window and significantly improved reasoning capabilities relative to prior generations.\n\nThe model serves the proposal objective \"Demonstrate clinical utility in diagnosis, risk stratification and therapy prioritization\" as the medical-report LLM backbone. On Shaheen III GPUP the declared training objective is Supervised Fine-Tuning (SFT) or DPO to align the model with clinical report formatting and biological nomenclature for generating structured pathology diagnostic summaries.\n\nAligns with the approved research topic, Health and Wellness."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. Llama 3 / 3.1 is a general-purpose open-weight LLM to be fine-tuned for clinical report generation."
+          },
+          {
+            "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
+            "score": 1,
+            "notes": "HuggingFace: https://huggingface.co/meta-llama\nGitHub (reference): https://github.com/meta-llama/llama3 (archived; active repo: meta-llama/llama-models)\nHF downloads: tens of millions across variants\nLast commit (HF): Actively updated (2025\u20132026)\nActivity health: healthy \u2014 weights and model cards maintained on HuggingFace; GitHub reference repo archived\n\nOwner: Meta Platforms, Inc.\nCountry: United States\nNon-D5 country affiliation. Meta is a U.S.-based technology company. No D5-country organisation has ownership or controlling involvement in the Llama model series."
+          },
+          {
+            "name": "Training Data Documentation",
+            "score": 2,
+            "notes": "Llama 3 / 3.1 pre-training data: A publicly undisclosed corpus described in the Llama 3 technical report (Dubey et al., \"The Llama 3 Herd of Models,\" arXiv:2407.21783, 2024) as over 15 trillion tokens from publicly available sources with data quality filters applied. The exact composition is not publicly disclosed by Meta.\nD (tokens): ~15 \u00d7 10^12 tokens (15T), as reported in the technical report for Llama 3 / 3.1 pretraining.\nNote: The Model Readiness form does not specify which variant (8B, 70B, or 405B) is the primary checkpoint; all three are listed. The training token count declared in the Model Readiness form field for Shaheen III is blank (fine-tuning dataset not specified). Flagged for incomplete documentation."
+          },
+          {
+            "name": "Customisation / Fine-tuning",
+            "score": 1,
+            "notes": "The publicly released Llama 3 / 3.1 base checkpoints have not been fine-tuned on any clinical or pathology-specific downstream task as part of the released artifact. The instruction-tuned variants (Llama-3-Instruct) are fine-tuned for general instruction following. This model, as is, has not been fine-tuned on any domain-specific downstream task relevant to this project, according to the model card from HuggingFace.\n\nOn Shaheen III GPUP, the declared training objectives are Supervised Fine-Tuning (SFT) or DPO for clinical report formatting and biological nomenclature alignment."
+          },
+          {
+            "name": "FLOPS Calculation",
+            "score": 1,
+            "notes": "6\u00b7N\u00b7D FLOPS estimate (using the largest declared variant, 405B, as the upper bound):\nN = 405,000,000,000 parameters (405B \u2014 upper bound across declared variants)\nD = 15,000,000,000,000 tokens (15T, as reported in Llama 3 technical report)\n6 \u00d7 N \u00d7 D = 6 \u00d7 4.05 \u00d7 10^11 \u00d7 1.5 \u00d7 10^13 = 6 \u00d7 6.075 \u00d7 10^24 = 3.65 \u00d7 10^25 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection."
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "Llama 3 Community License Agreement (Meta)\nhttps://www.llama.com/llama3/license/\n\nPermissions:\nFree to use, reproduce, distribute, and create derivative works for research and commercial purposes\nMay fine-tune and adapt the model for downstream applications\nPermitted for deployments with fewer than 700 million monthly active users (above this threshold a separate license from Meta is required)\n\nObligations:\nMust include \"Built with Llama\" attribution in derivative works and products\nMust comply with Meta's Acceptable Use Policy (https://www.llama.com/llama3/use-policy/)\nMust include a copy of the license in any distribution\n\nRestrictions:\nCannot use outputs to improve other LLMs not in the Llama family (as defined by Meta's AUP)\nCannot remove or alter copyright notices\nHigh-volume commercial deployment (>700M MAU) requires a separate Meta license"
+          }
+        ],
+        "is_proprietary": false
+      },
+      {
+        "name": "DeepSeek-V3.2",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 2,
+            "notes": "DeepSeek-V3.2 is a high-performance Mixture-of-Experts (MoE) large language model developed by DeepSeek AI that achieves state-of-the-art performance on coding, mathematics, and general reasoning benchmarks.\n\nThe model is listed in the Model Readiness form for the proposal objective \"Demonstrate clinical utility in diagnosis, risk stratification and therapy prioritization\", with the declared Shaheen III training objective of Full Fine-Tuning for domain-specific medical reasoning and multi-agent collaboration. The clinical relevance is plausible given the proposal's medical report generation component, but the connection to this specific model variant (as opposed to Llama or Qwen, which are more explicitly described in the proposal narrative) is not explicitly stated in the proposal text.\n\nAligns with the approved research topic, Health and Wellness."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. DeepSeek-V3.2 is a general-purpose open-weight LLM to be fine-tuned for medical reasoning tasks."
+          },
+          {
+            "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+            "score": 2,
+            "notes": "HuggingFace: https://huggingface.co/deepseek-ai/DeepSeek-V3\nGitHub (reference): https://github.com/deepseek-ai/DeepSeek-V3\nHF downloads: millions across DeepSeek-V3 variants\nLast commit (HF): Actively updated (2025\u20132026)\nActivity health: healthy\n\nOwner: DeepSeek AI (\u6df1\u5ea6\u6c42\u7d22), a subsidiary of High-Flyer (\u5e7b\u65b9\u79d1\u6280), Hangzhou, China\nCountry: China\nD5-country affiliation found. DeepSeek AI is a Chinese company based in Hangzhou, China. Score = 2 (owning organisation is D5-country affiliated)."
+          },
+          {
+            "name": "License / Permissions",
+            "score": 2,
+            "notes": "DeepSeek-V3 / V3.2 pre-training data: Described in the DeepSeek-V3 technical report (DeepSeek-AI, arXiv:2412.19437, 2024) as approximately 14.8 trillion tokens from a diverse multilingual corpus. The exact composition is not fully disclosed. DeepSeek-V3.2 is an updated release; its specific training token count and any additional data beyond the V3 baseline are not documented in the Model Readiness form or in publicly available release notes at the time of review.\nD (tokens): ~14.8 \u00d7 10^12 tokens (14.8T, as reported for DeepSeek-V3; V3.2 documentation not yet available)\nNote: The Model Readiness form does not provide the number of trainable parameters or the token count for V3.2 specifically. Flagged for incomplete documentation."
+          },
+          {
+            "name": "Training Data Documentation",
+            "score": 1,
+            "notes": "The publicly released DeepSeek-V3.2 checkpoint is a base pre-trained model. The released artifact does not include fine-tuning on clinical or domain-specific downstream tasks. This model, as is, has not been fine-tuned on any downstream task relevant to this project, according to the model card from HuggingFace.\n\nOn Shaheen III GPUP, the declared training objective is Full Fine-Tuning for domain-specific medical reasoning and multi-agent collaboration."
+          },
+          {
+            "name": "Customisation / Fine-tuning",
+            "score": 2,
+            "notes": "The Model Readiness form does not declare the number of trainable parameters for DeepSeek-V3.2. Based on the DeepSeek-V3 technical report, total parameters are 671B (active parameters per token: 37B in MoE configuration).\n\n6\u00b7N\u00b7D FLOPS estimate (using total parameter count as N):\nN = 671,000,000,000 parameters (671B, from DeepSeek-V3 technical report; V3.2 not separately documented)\nD = 14,800,000,000,000 tokens (14.8T, as reported for DeepSeek-V3)\n6 \u00d7 N \u00d7 D = 6 \u00d7 6.71 \u00d7 10^11 \u00d7 1.48 \u00d7 10^13 = 6 \u00d7 9.93 \u00d7 10^24 = 5.96 \u00d7 10^25 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed. Score raised to 2 due to missing parameter and token documentation for V3.2 specifically in the submission \u2014 figures used are from the V3 technical report."
+          },
+          {
+            "name": "FLOPS Calculation",
+            "score": 2,
+            "notes": "LC 2.5 = 2 (D5-country affiliation: DeepSeek AI, China). The model is a declared training target on Shaheen III GPUP (Full Fine-Tuning for domain-specific medical reasoning). Sample inspection required before staging.\n\nInspection plan: Generate a set of neutral prompts representative of the declared use case (medical report generation, clinical reasoning). Inspect at minimum 20 sample outputs covering: (a) clinical pathology report generation from structured inputs, (b) biomedical question answering, (c) free-form reasoning about cancer diagnoses. Document method, sample size, and findings before staging on Shaheen III GPUP."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "DeepSeek License Agreement (Model Weights)\nhttps://huggingface.co/deepseek-ai/DeepSeek-V3/blob/main/LICENSE\n\nPermissions:\nFree to use for research and commercial purposes\nMay fine-tune and create derivative models\nMay distribute derivative works\n\nObligations:\nMust include DeepSeek attribution in derivative works and products\nMust comply with DeepSeek's Acceptable Use Policy\n\nRestrictions:\nCannot use the model or outputs to develop competing foundation models (as defined in the license)\nCannot remove copyright or license notices\nCannot use for purposes that violate applicable laws"
+          }
+        ],
+        "is_proprietary": false
+      },
+      {
+        "name": "Qwen (Qwen2.5-VL-7B, Qwen2.5-VL-72B, Qwen3-VL-235B-A22B)",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "The Qwen series requested comprises three multimodal vision-language models developed by Alibaba Cloud: Qwen2.5-VL-7B-Instruct, Qwen2.5-VL-72B-Instruct, and Qwen3-VL-235B-A22B-Thinking. These are state-of-the-art multimodal foundation models capable of understanding images across various resolutions and aspect ratios alongside text, supporting vision-language reasoning tasks.\n\nThe models serve the proposal objective \"Demonstrate clinical utility in diagnosis, risk stratification and therapy prioritization\" for multimodal instruction tuning targeting pathology-report generation from whole-slide image features and single-cell summaries.\n\nAligns with the approved research topic, Health and Wellness."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. The Qwen VL series are general-purpose vision-language models to be fine-tuned for medical pathology report generation."
+          },
+          {
+            "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
+            "score": 2,
+            "notes": "HuggingFace (Qwen2.5-VL-7B): https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct\nHuggingFace (Qwen2.5-VL-72B): https://huggingface.co/Qwen/Qwen2.5-VL-72B-Instruct\nHuggingFace (Qwen3-VL-235B): https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Thinking\nGitHub (reference): https://github.com/QwenLM/Qwen2.5-VL\nHF downloads: millions across Qwen variants\nLast commit (HF): Actively updated (2025\u20132026)\nActivity health: healthy\n\nOwner: Alibaba Cloud (Alibaba Group), Hangzhou, China\nCountry: China\nD5-country affiliation found. Qwen is developed and maintained by Alibaba Cloud, a subsidiary of Alibaba Group headquartered in Hangzhou, China. Score = 2 (owning organisation is D5-country affiliated)."
+          },
+          {
+            "name": "Training Data Documentation",
+            "score": 2,
+            "notes": "Qwen2.5-VL: Pre-training data described in the Qwen2.5-VL technical report (Wang et al., arXiv:2502.13923, 2025) as a large-scale multimodal corpus; the exact composition is not fully disclosed. Text pre-training data follows the Qwen2.5 LLM corpus (approximately 18 trillion tokens for the language backbone).\nQwen3-VL-235B-A22B: Technical report and training data details not yet publicly available at the time of review.\nD (tokens): Not declared in the Model Readiness form for any variant.\nNote: Parameter counts and training token counts are not provided in the Model Readiness form. Flagged for incomplete documentation."
+          },
+          {
+            "name": "Customisation / Fine-tuning",
+            "score": 1,
+            "notes": "The publicly released Qwen2.5-VL-Instruct and Qwen3-VL checkpoints are instruction-tuned by Alibaba Cloud on general multimodal instruction datasets. No clinical or pathology-specific fine-tuning is included in the released artifacts. This model, as is, has not been fine-tuned on any domain-specific downstream task relevant to this project, according to the model card from HuggingFace.\n\nOn Shaheen III GPUP, the declared training objective is multimodal instruction tuning for pathology-report generation."
+          },
+          {
+            "name": "FLOPS Calculation",
+            "score": 2,
+            "notes": "6\u00b7N\u00b7D FLOPS estimate (using the largest declared variant, Qwen3-VL-235B, as the upper bound):\nN = 235,000,000,000 parameters (235B total; 22B active per token in MoE configuration \u2014 using total N as the conservative upper bound)\nD: Not declared in the Model Readiness form. Using publicly reported Qwen2.5 LLM backbone pre-training figure of ~18 \u00d7 10^12 tokens as a proxy.\n6 \u00d7 N \u00d7 D = 6 \u00d7 2.35 \u00d7 10^11 \u00d7 1.8 \u00d7 10^13 = 6 \u00d7 4.23 \u00d7 10^24 = 2.54 \u00d7 10^25 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed. Score raised to 2 due to missing parameter and token documentation in the submission \u2014 D figure is derived from public technical reports, not the form."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 2,
+            "notes": "LC 2.5 = 2 (D5-country affiliation: Alibaba Cloud, China). The models are declared training targets on Shaheen III GPUP (multimodal instruction tuning for pathology-report generation); the inference-only de-risking waiver does not apply. Sample inspection required before staging.\n\nInspection plan: Generate neutral prompts representative of the declared use case (histopathology image captioning, structured clinical report generation, biomedical VQA). Inspect at minimum 20 sample outputs per variant. Document method, sample size, and findings before staging on Shaheen III GPUP."
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "Qwen2.5-VL (7B and 72B variants): Apache License 2.0 (https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct)\nQwen3-VL-235B-A22B: Qwen Research License (https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Thinking)\n\nPermissions:\nFree to use for research purposes\nMay fine-tune and create derivative models\nMay distribute derivative works\n\nObligations:\nMust include Qwen attribution in derivative works and products\nMust comply with Qwen's Acceptable Use Policy\n\nRestrictions:\nCannot remove copyright or license notices\nCannot use for purposes that violate applicable laws"
+          }
+        ],
+        "is_proprietary": false
+      },
+      {
+        "name": "Mixtral 8x22B",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "Mixtral 8x22B is a sparse Mixture-of-Experts (MoE) large language model developed by Mistral AI. It activates only a subset of its parameters per token, offering high computational efficiency. It demonstrates strong multilingual performance and broad general reasoning capabilities.\n\nThe model serves the proposal objective \"Demonstrate clinical utility in diagnosis, risk stratification and therapy prioritization\", with the declared Shaheen III training objective of model distillation or sparse activation optimisation for real-time diagnostic decision support.\n\nAligns with the approved research topic, Health and Wellness."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. Mixtral 8x22B is a general-purpose open-weight LLM to be adapted for clinical decision support."
+          },
+          {
+            "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
+            "score": 1,
+            "notes": "HuggingFace: https://huggingface.co/mistralai/Mixtral-8x22B-v0.1\nGitHub (reference): https://github.com/mistralai/mistral-inference\nHF downloads: millions across Mistral/Mixtral variants\nLast commit (HF): Actively maintained (2025)\nActivity health: healthy\n\nOwner: Mistral AI SAS, Paris, France\nCountry: France\nNon-D5 country affiliation. Mistral AI is a French AI company (https://mistral.ai/). No D5-country organisation has ownership or controlling involvement."
+          },
+          {
+            "name": "Training Data Documentation",
+            "score": 2,
+            "notes": "Mixtral 8x22B pre-training data: Mistral AI has not publicly disclosed the full training data composition for Mixtral 8x22B. The model is described as trained on a large multilingual corpus; no technical report with token counts or dataset breakdown has been released.\nD (tokens): Not declared in the Model Readiness form and not publicly disclosed by Mistral AI.\nNote: Training data documentation is unavailable \u2014 neither the exact corpus nor the token count is provided in the Model Readiness form or by the developer. Flagged for incomplete documentation."
+          },
+          {
+            "name": "Customisation / Fine-tuning",
+            "score": 1,
+            "notes": "The publicly released Mixtral 8x22B base checkpoint has not been fine-tuned on any downstream task as part of the released artifact. This model, as is, has not been fine-tuned on any downstream task, according to the model card from HuggingFace.\n\nOn Shaheen III GPUP, the declared training objective is model distillation or sparse activation optimisation for real-time diagnostic decision support."
+          },
+          {
+            "name": "FLOPS Calculation",
+            "score": 2,
+            "notes": "The Model Readiness form does not declare the number of trainable parameters or training token count for Mixtral 8x22B. Mistral AI has not published a formal technical report with these figures.\n\nBased on publicly available information: Mixtral 8x22B has 141B total parameters (39B active per token in MoE configuration). Training token count is not publicly disclosed; a rough industry estimate for a model of this scale is on the order of 2\u20135 trillion tokens.\n\n6\u00b7N\u00b7D FLOPS estimate (using total parameters and upper-bound D estimate):\nN = 141,000,000,000 parameters (141B total)\nD = 5,000,000,000,000 tokens (5T \u2014 upper-bound estimate; not confirmed)\n6 \u00d7 N \u00d7 D = 6 \u00d7 1.41 \u00d7 10^11 \u00d7 5.0 \u00d7 10^12 = 6 \u00d7 7.05 \u00d7 10^23 = 4.23 \u00d7 10^24 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed. Score raised to 2 due to missing parameter and token documentation in the submission and from the developer."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection."
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "Apache License 2.0\nhttps://huggingface.co/mistralai/Mixtral-8x22B-v0.1\n\nPermissions:\nFree to use for commercial and non-commercial purposes\nMay fine-tune, modify, and distribute the model weights\nMay incorporate into proprietary applications\nPatent rights granted from contributors\n\nObligations:\nMust include copyright notice and Apache 2.0 license text in distributions\nMust state significant changes made\n\nRestrictions:\nCannot use trademark names without permission"
+          }
+        ],
+        "is_proprietary": false
+      },
+      {
+        "name": "InternVL 2.5",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "InternVL 2.5 is an open-source multimodal vision-language model developed by OpenGVLab (Shanghai AI Laboratory) that uses a large-scale Vision Transformer (ViT-6B) encoder for superior image perception, achieving performance comparable to GPT-4o on several vision-language benchmarks.\n\nThe model is listed in the Model Readiness form with the declared Shaheen III use case described as \"Suitable for the 'Tongue Diagnosis Agent' or any task requiring high-fidelity categorical priors from medical images.\" The reference to a \"Tongue Diagnosis Agent\" is not mentioned anywhere in the proposal text or in the two declared project objectives. This indicates the use case as inference using the same dataset, WSI slide images. \n\nAligns with the approved research topic, Health and Wellness (conditionally \u2014 pending clarification of the tongue diagnosis use case)."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. InternVL 2.5 is a general-purpose vision-language model."
+          },
+          {
+            "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+            "score": 2,
+            "notes": "HuggingFace: https://huggingface.co/OpenGVLab/InternVL2_5-8B (representative variant)\nGitHub (reference): https://github.com/OpenGVLab/InternVL\nHF downloads: millions across InternVL variants\nLast commit (HF): Actively maintained (2025\u20132026)\nActivity health: healthy\n\nOwner: OpenGVLab \u2014 Shanghai AI Laboratory, Shanghai, China\nCountry: China\nD5-country affiliation found. OpenGVLab is part of the Shanghai AI Laboratory, a Chinese state-supported research institution. Score = 2 (owning organisation is D5-country affiliated)."
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "MIT License (InternVL 2.5 model weights and code)\nhttps://github.com/OpenGVLab/InternVL/blob/main/LICENSE\n\nPermissions:\nFree to use for any purpose including commercial applications\nMay modify and distribute the model weights and code\nMay incorporate into proprietary applications\n\nObligations:\nMust include original copyright notice and MIT license text in distributions\n\nRestrictions:\nSoftware and weights provided \"as is\" without warranty"
+          },
+          {
+            "name": "Training Data Documentation",
+            "score": 1,
+            "notes": "The publicly released InternVL 2.5 checkpoints are instruction-tuned by OpenGVLab on general multimodal instruction datasets. No clinical or pathology-specific fine-tuning is included in the released artifacts. This model, as is, has not been fine-tuned on any domain-specific downstream task relevant to this project, according to the model card from HuggingFace.\nInternVL 2.5 pre-training and fine-tuning data: Described in the InternVL technical reports (Chen et al., arXiv:2312.14238 and subsequent updates) as a large-scale multimodal corpus combining publicly available image-text pairs and instruction-tuning datasets. The exact composition and token counts are not fully disclosed and not declared in the Model Readiness form.\nNote: Training data documentation is incomplete. Neither parameter count per variant nor training token count is provided in the form. Flagged for incomplete documentation.\n\nOn Shaheen III GPUP, the declared use case references a \"Tongue Diagnosis Agent\"."
+          },
+          {
+            "name": "Customisation / Fine-tuning",
+            "score": 1,
+            "notes": "TBD"
+          },
+          {
+            "name": "FLOPS Calculation",
+            "score": 2,
+            "notes": "The Model Readiness form does not declare the number of trainable parameters or the training token count for InternVL 2.5. The model is available in multiple variants; based on publicly available technical reports, InternVL2.5 ranges from 1B to 78B parameters depending on variant.\n\n6\u00b7N\u00b7D FLOPS estimate (using the largest documented variant, 78B):\nN = 78,000,000,000 parameters (78B)\nD: Not disclosed; using 10T as a rough upper-bound estimate.\n6 \u00d7 N \u00d7 D = 6 \u00d7 7.8 \u00d7 10^10 \u00d7 1.0 \u00d7 10^13 = 6 \u00d7 7.8 \u00d7 10^23 = 4.68 \u00d7 10^24 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed. Score raised to 2 due to missing documentation in the submission.\n"
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 1,
+            "notes": "LC 2.5 = 2 (D5-country affiliation: Shanghai AI Laboratory, China). The model is a declared training target on Shaheen III GPUP. Sample inspection required before staging.\n\nInspection plan: Generate neutral prompts representative of the declared use case (medical image understanding, pathology report generation). Inspect at minimum 20 sample outputs covering: (a) histopathology image captioning, (b) clinical VQA, (c) structured report generation from image inputs. Document method, sample size, and findings before staging on Shaheen III GPUP."
+          }
+        ],
+        "is_proprietary": false
+      },
+      {
+        "name": "TRIDENT (+ bundled encoders: UNI, UNI2-h, CONCH, conchv1_5, TITAN, madeleine, abmil)",
+        "checks": [
+          {
+            "name": "Project & Usage Alignment",
+            "score": 1,
+            "notes": "TRIDENT is a scalable toolkit developed by the Mahmood Lab (Harvard Medical School) for high-throughput whole-slide image (WSI) processing. It uses vision encoders \u2014 typically hierarchical image pyramids or Vision Transformers \u2014 to partition gigapixel slides into manageable patch tokens and extract feature embeddings. The PI has declared that TRIDENT will be used together with several of the Mahmood Lab's vision encoder checkpoints: UNI, UNI2-h, CONCH, conchv1_5, TITAN, madeleine, and abmil.base.conch_v15.pc108-24k.\n\nThe toolkit and its bundled encoders serve the proposal objective \"Build a unified latent space for cells, spatial spots and WSIs\" as the WSI preprocessing and patch-embedding backbone. On Shaheen III GPUP the declared objectives are: (1) distributed high-throughput inference to extract patch-level embeddings from thousands of gigapixel WSIs at scale; and (2) Full FT or PEFT on advanced vision encoders (TITAN, UNI) as part of the cross-modal contrastive training pipeline.\n\nAligns with the approved research topic, Health and Wellness."
+          },
+          {
+            "name": "Prohibited Use Screening (LC 2.7)",
+            "score": 1,
+            "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. TRIDENT and its bundled encoders are digital pathology tools developed for biomedical image analysis."
+          },
+          {
+            "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+            "score": 1,
+            "notes": "GitHub (TRIDENT toolkit): https://github.com/mahmoodlab/TRIDENT\nStars: ~560\nForks: ~121\nLast commit: March 2026 (v0.2.3)\nActivity health: actively maintained\n\nHuggingFace (bundled encoders): https://huggingface.co/MahmoodLab\nAll encoder checkpoints are gated on HuggingFace and require access request approval from the Mahmood Lab.\n\nOwner: Mahmood Lab, Brigham and Women's Hospital / Harvard Medical School, USA\nCountry: United States\nNon-D5 country affiliation. All components are developed and maintained by the Mahmood Lab at Harvard Medical School. No D5-country organisation has ownership or controlling involvement."
+          },
+          {
+            "name": "License / Permissions",
+            "score": 1,
+            "notes": "Training data documentation for the bundled encoders is incomplete in the Model Readiness form:\nUNI / UNI2-h: Pre-trained on a large proprietary collection of H&E WSIs (described in Chen et al., Nature Medicine, 2024; doi: 10.1038/s41591-024-02857-3). Exact corpus size not declared in the form.\nCONCH / conchv1_5: Pre-trained on a vision-language dataset of pathology images and reports (Lu et al., Nature Medicine, 2024; doi: 10.1038/s41591-024-02856-4). Exact corpus size not declared.\nTITAN: Pre-trained on a large multimodal WSI dataset (Ding et al., Nature Medicine, 2025). Exact corpus size not declared.\nmadeleine / abmil: Fine-tuned/aggregation models; training data not described in the form.\nNone of the above have parameter counts or training token counts declared in the Model Readiness form. Flagged for incomplete documentation.\n\n\nTRIDENT toolkit: Apache License 2.0 (https://github.com/mahmoodlab/TRIDENT)\n\nPermissions\n\nCopy and redistribute the material in any medium or format\nUse it worldwide, royalty-free\nConvert to other formats or media (technical modifications allowed)\nMake private adaptations for your own non-commercial use (but not share them)\nLicense is irrevocable once granted\n\nRestrictions\n\nNonCommercial use only \u2014 no commercial advantage or monetary compensation\nNo sharing of Adapted Material \u2014 derivatives can be made privately but not distributed\nMust give appropriate attribution (creator name, copyright notice, license link, indicate changes)\nCannot apply additional restrictions or technological measures that block others' rights\nCannot suggest endorsement by the licensor\nNo sublicensing \u2014 you can't grant others rights beyond what the license already provides\nMoral rights, patent rights, and trademark rights are not covered or waived\nMust remove attribution info if the licensor requests it\nRights terminate automatically if you violate the license terms (though they can be reinstated if cured within 30 days or by licensor's express reinstatement)"
+          },
+          {
+            "name": "Training Data Documentation",
+            "score": 1,
+            "notes": "No clarity of training dataset for the pre-training. "
+          },
+          {
+            "name": "Customisation / Fine-tuning",
+            "score": 1,
+            "notes": "The publicly released TRIDENT toolkit is a processing framework (no trainable weights). The bundled encoder checkpoints (UNI, CONCH, TITAN, etc.) are pre-trained and released as-is by the Mahmood Lab; none include domain-specific fine-tuning for the single-cell / pathology alignment tasks described in this proposal. This model, as is, has not been fine-tuned on any downstream task relevant to this project, according to the model cards from HuggingFace.\n\nOn Shaheen III GPUP, the declared training objectives include Full FT or PEFT on TITAN and UNI as part of the cross-modal contrastive training pipeline."
+          },
+          {
+            "name": "FLOPS Calculation",
+            "score": 2,
+            "notes": "The Model Readiness form does not declare parameter counts or training token counts for any of the bundled encoders. Estimates are derived from published technical reports.\n\nRepresentative upper-bound estimate using UNI2-h (largest reported variant, ViT-H, ~632M parameters) and a large WSI corpus proxy (~500M patches):\nN = 632,000,000 parameters (632M, ViT-H)\nD = 500,000,000 patches (500M \u2014 approximate; not confirmed)\n6 \u00d7 N \u00d7 D = 6 \u00d7 6.32 \u00d7 10^8 \u00d7 5.0 \u00d7 10^8 = 6 \u00d7 3.16 \u00d7 10^17 = 1.90 \u00d7 10^18 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed. Score raised to 2 due to missing documentation in the submission."
+          },
+          {
+            "name": "Sample Inspection",
+            "score": 2,
+            "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection."
+          }
+        ],
+        "is_proprietary": false
+      }
+    ],
+    "observations": "- SpeciesLLM (in-house, Gao Lab) \u2014 in-house developed model, targeted is fine-tuning on Shaheen III GPU. Associated embedding (ESM2) and checkpoints for nanoBERT architecture will be moved as part of this model.\n- DeepSeek-V3.2 \u2014 D5-country affiliation (DeepSeek AI, China). LC 2.5.  tuning, evaluation and  use case on a domain-specific dataset. The sample inspection is required before staging. The PI confirms that there is no plan to share project data, model outputs, fine-tuned checkpoints, or Shaheen III GPU access with the maintainer entities of these models.\n- Qwen (Qwen2.5-VL / Qwen3-VL) \u2014 D5-country affiliation (Alibaba Cloud, China) LC 2.5. Instruction tuning use case on a domain-specific dataset. The sample inspection is required before staging.\n- InternVL 2.5 \u2014 D5-country affiliation (Shanghai AI Laboratory, China), and training data is not clear how it was pre-trained, therefore FLOPS calculation is not reliable. Also,  the understanding is that the use of the model is for inference and acting as an agent task on the domain specific dataset. The model parameters vary from 1 to 78B but the PI has not nominated which size is required for the project. \n5. H-optimus-0 / HIPT \u2014 HIPT GitHub repository shows low activity (CVPR 2022 release; no substantive commits since 2023).\n6. HE2RNA \u2014 repository archived by the owner on Feb 15, 2023 (read-only, no active maintenance). No explicit LICENSE file in the repository. License status to be confirmed with Owkin before staging. \nThe PI has expressed in the RT ticket thread that if this model is excluded, it will not significant \n7. TRIDENT bundled encoders (UNI, UNI2-h, CONCH, conchv1_5, TITAN, madeleine, abmil) \u2014 all carry non-commercial, gated research licenses from the Mahmood Lab requiring HuggingFace access request approval. PI must confirm approved access for each checkpoint before staging.\n8. Multiple models (H-optimus-0/HIPT, HE2RNA, Qwen variants, Mixtral 8x22B, InternVL 2.5, TRIDENT encoders) \u2014 parameter counts and/or training token counts not declared in the Model Readiness form. FLOPS estimates use published technical reports as proxies; all clear the 10^27 threshold.\n9. Llama 3 / 3.1 \u2014 the meta-llama/llama3 GitHub repository is archived (public archive); active development has moved to meta-llama/llama-models. Weights remain available on HuggingFace. No functional impact on staging.",
+    "recommendation": "Sample inspection required for DeepSeek-V3.2, Qwen (all three variants), and InternVL 2.5 prior to staging on Shaheen III GPUP (LC 2.5 = 2, D5-country affiliation). For InternVL 2.5, the highest risk is 2, this cumulative risk for the particular artifact is high. Recommended is to request the PI not use this model on Shaheen III for various gaps in information from the developer/maintainer.\n\nPI to confirm HuggingFace access approval for all gated Mahmood Lab encoder checkpoints (UNI, UNI2-h, CONCH, conchv1_5, TITAN, madeleine, abmil) before KSL stages those files.\n\nPI to clarify whether InternVL 2.5 is within scope of this proposal (declared use case \"Tongue Diagnosis Agent\" does not appear in the proposal text), and nominate the exact checkpoint size needed.\n\nPI to provide license confirmation for HE2RNA (no LICENSE file in repository) and HIPT (custom research-use license).\n\nPI to document the exact pretraining dataset(s) for SpeciesLLM.\n\nPI to Confirm HuggingFace access approval for each Trident encoder checkpoint individually before staging.\n\nProject aligns with approved research topics; artifact purpose and provenance are documented across all declared datasets and models.\nPositive checks passed\n\nOwner/developer affiliations are non-D5 for all artifacts except DeepSeek-V3.2, Qwen, and InternVL 2.5, which are subject to pending sample inspection; no prohibited-use indicators or export restrictions found.\nNegative checks passed\n\nEstimated training compute across all models is well below the 10^27 FLOPS threshold.\n10^27 FLOPS check passed\n\nRecommended for the grand challenge, conditional on: (1) completion of sample inspection for DeepSeek-V3.2, Qwen, and InternVL 2.5; (2) PI confirmation of HuggingFace gated access for Mahmood Lab encoders; (3) PI clarification on InternVL 2.5 scope and checkpoints size; (4) license resolution for HE2RNA and HIPT.",
+    "addenda": []
+  }
+}
