@@ -1128,8 +1128,8 @@
       "is_proprietary": false
     }
   ],
-  "observations": "In the Open Catalyst dataset, a potential risk of dual use has been identified. A suggestion is to refer to the RCAC Chair for the scientific assessment of potential risk. \nIn the Open Materials dataset, a potential risk of dual use has been identified. A suggestion is to refer to the RCAC Chair for the scientific assessment of potential risk. \nIn the Open Molecules 2025  dataset, the artifact is new and less used.\n\nIn GemNet model, a potential risk of dual use has been identified because Open Catalyst was used to pre-train this model. A suggestion is to refer to the RCAC Chair for the scientific assessment of potential risk. \n",
-  "recommendation": "Positive check passed. \n\nNegative check passed with potential risk identified. \n\n10^27 check passed. \n\nThe initial recommendation is to refer to RCAC for the scientific assessment of potential risks found in said datasets and model. Conditional on clearance from the RCAC, the project is otherwise recommended for the grand challenge.  ",
+  "observations": "In the Open Catalyst dataset, a potential risk of dual use has been identified. A suggestion is to refer to the RCAC Chair for the scientific assessment of potential risk. \nIn the Open Materials dataset, a potential risk of dual use has been identified. A suggestion is to refer to the RCAC Chair for the scientific assessment of potential risk. \nIn the Open Molecules 2025  dataset, the artifact is new and less used.\n\nIn GemNet model, a potential risk of dual use has been identified because Open Catalyst was used to pre-train this model. A suggestion is to refer to the RCAC Chair for the scientific assessment of potential risk. \n\n\n--- Addendum 4 added: 2026-07-08 (Third-Party Software) ---\n",
+  "recommendation": "Positive check passed. \n\nNegative check passed with potential risk identified. \n\n10^27 check passed. \n\nThe initial recommendation is to refer to RCAC for the scientific assessment of potential risks found in said datasets and model. Conditional on clearance from the RCAC, the project is otherwise recommended for the grand challenge.  \n\n--- Addendum 4 added: 2026-07-08 (Third-Party Software) ---\n",
   "addenda": [
     {
       "date": "2026-06-10",
@@ -1625,12 +1625,329 @@
       ],
       "observations": "Adapt model (in-house): Sample inspection completed. The artifact consists of the training codebase (architecture source code, training configurations, Slurm job scripts) with no pretrained weights present, consistent with the full training from scratch objective. No prohibited-use indicators identified. Artifact copied to /ibex/project/c2358/AIMCR/data-movement/65562/models/model/adapt/.",
       "recommendation": "PI's group has developed and refactored a custom model aligned with the restrictions on Shaheen III GPU, specifically with respect to logging and telemetry of performance of the model using MLFlow. No risk was identified in the review.\nPositive checks passed\nNegative checks passed\n10^27 FLOPS check passed\n\nOverall risk score after addenda remains unchanged."
-    }
-  ],
-  "_submission_history": [
+    },
     {
-      "timestamp": "2026-06-17T12:38:57.096112",
-      "action": "resubmission"
+      "date": "2026-07-08",
+      "category": "third_party_software",
+      "artifacts": [
+        {
+          "name": "pymatgen",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Pymatgen (Python Materials Genomics) is an open-source Python library for materials analysis, providing classes for structures, molecules, and interfaces with electronic-structure codes and materials databases, and it underpins the Materials Project. pymatgen is used to build graphs in the project's dataloader on the CPU instead of the GPU (since GPU-based graph building caused significant slowdown), supporting the project \"Self-Supervised Foundational Model for Chemistry and Materials Science\" (K20001); the other listed packages (pymatgen-core, spglib, plotly, palettable, lxml, orjson, uncertainties, bibtexparser) are dependencies of pymatgen/pymatgen-core."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "No D5+M affiliation. Materials Project, Berkeley CA. "
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Github repo: https://github.com/materialsproject/pymatgen\nStars: 1.9k\nForks: 955\nCommits: 26,405 (all-time, main branch)\nLast commit: 4 May 2026\nmaintainer: https://github.com/materialsproject\n\nPypi: https://pypi.org/project/pymatgen/"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "Permissions:\n\nUse the software for any purpose, including commercial use.\nCopy, modify, and merge the source code.\nPublish, distribute, sublicense, and/or sell copies of the software.\n\nRestrictions:\n\nThe original copyright notice and permission notice must be included in all copies or substantial portions of the software."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "bibtexparser-1.4.4\nlxml-6.1.1\nmonty-2026.5.18\nnarwhals-2.23.0\norjson-3.11.9\npalettable-3.3.3\nplotly-6.8.0\npymatgen-2026.5.4\npymatgen-core-2026.5.18\nspglib-2.7.0\ntabulate-0.10.0\nuncertainties-3.2.3"
+            }
+          ]
+        },
+        {
+          "name": "pymatgen-core",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Pymatgen-core is the lightweight, foundational subset of pymatgen, providing the core data structures (Element, Site, Molecule, Structure), symmetry/lattice operations, and file I/O for electronic-structure/DFT codes, with minimal dependencies.\npymatgen-core supports the same objective as pymatgen \u2014 enabling the CPU-based graph-building step in the dataloader (rather than the slower GPU-based approach) for the \"Self-Supervised Foundational Model for Chemistry and Materials Science\" project (K20001), since installing pymatgen automatically pulls in pymatgen-core as a dependency."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "No D5+M affiliation. Materials Project, Berkeley CA. \n"
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "GitHub: https://github.com/materialsproject/pymatgen-core\nStars: 21\nFork: 29\nCommits: 18,206 (main branch)\nLast commit: May 18, 2026.\nmaintainer: https://github.com/materialsproject\n\npypi: https://pypi.org/project/pymatgen-core/"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License permissions and restrictions (MIT License)\nPermissions:\n\nUse the software for any purpose, including commercial use.\nCopy, modify, and merge the source code.\nPublish, distribute, sublicense, and/or sell copies of the software.\n\nRestrictions:\n\nThe original copyright notice and permission notice must be included in all copies or substantial portions of the software."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "bibtexparser-1.4.4 \nlxml-6.1.1 \nmonty-2026.5.18 \nnarwhals-2.23.0 \norjson-3.11.9 \npalettable-3.3.3\nplotly-6.8.0\nspglib-2.7.0\ntabulate-0.10.0\nuncertainties-3.2.3"
+            }
+          ]
+        },
+        {
+          "name": "spglib",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Spglib is an open-source C library (with Python, Fortran, Rust, and Ruby interfaces) for finding and handling crystal symmetries, including space-group identification, Wyckoff position assignment, and primitive-cell reduction. spglib is listed as a dependency of pymatgen/pymatgen-core, which is used to build graphs on the CPU for the dataloader of the \"Self-Supervised Foundational Model for Chemistry and Materials Science\"."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Non-D5 affiliation (Tokyo, Japan). Main developers: Kohei Shinohara: https://www.linkedin.com/in/kohei-shinohara-78ba66168\n"
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Github: https://github.com/spglib/spglib\nStars: 365\nFork: 124\nCommits: 2,250\nLast commit: latest release v2.7.0, published December 29, 2025.\nmaintainer: https://github.com/spglib/\n\nPypi: https://pypi.org/project/spglib/"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License permissions and restrictions (BSD-3-Clause)\nPermissions:\n\nUse, copy, and modify the source code, in source or binary form.\nRedistribute the software, with or without modifications.\nUse it for commercial or private purposes.\n\nRestrictions:\n\nRedistributions of source code must retain the original copyright notice, list of conditions, and disclaimer.\nRedistributions in binary form must reproduce the copyright notice, conditions, and disclaimer in the documentation/materials provided.\nThe names of the copyright holders or contributors may not be used to endorse or promote derived products without prior written permission."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "numpy<3,>=1.20"
+            }
+          ]
+        },
+        {
+          "name": "plotly",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Plotly (plotly.py) is an open-source, browser-based Python graphing library built on plotly.js for creating interactive, publication-quality charts and dashboards.It is used for interactive plotting and visualization support within the \"Self-Supervised Foundational Model for Chemistry and Materials Science\" project."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Owner/maintainer: Plotly, Inc., a commercial software company (headquartered in Montreal, Canada) that develops and maintains plotly.py alongside its commercial Dash, Plotly Cloud, and Plotly Studio products."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Github repo: https://github.com/plotly/plotly.py\nStars: 18.5k\nFork: 2.8k\nCommits: 8,581 (main branch)\nLast commit: latest release v6.8.0, published June 3, 2026.\nmaintainer: https://github.com/plotly\n\nhttps://pypi.org/project/plotly/"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License permissions and restrictions (MIT License)\nPermissions:\n\nUse the software for any purpose, including commercial use.\nCopy, modify, and merge the source code.\nPublish, distribute, sublicense, and/or sell copies of the software.\n\nRestrictions:\n\nThe original copyright notice and permission notice must be included in all copies or substantial portions of the software.\nNote: accompanying documentation is released separately under a Creative Commons (CC BY 4.0) license, distinct from the MIT-licensed code."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "fastjsonschema-2.21.2 \njsonschema-4.26.0 \njsonschema-specifications-2025.9.1 \njupyter_core-5.9.1 \nnbformat-5.10.4\nreferencing-0.37.0 \nrpds-py-2026.6.3"
+            }
+          ]
+        },
+        {
+          "name": "palettable",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Palettable (formerly brewer2mpl) is a lightweight, dependency-free Python library that provides pre-built color palettes, usable standalone or as matplotlib colormaps. palettable is listed as a dependency of pymatgen/pymatgen-core, supplying color palettes for plotting/visualization in the \"Self-Supervised Foundational Model for Chemistry and Materials Science\" project."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Non-D5 affiliated. Author/maintainer: Matt Davis (GitHub: @jiffyclub), an individual open-source developer; affiliated with Populus California, USA"
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Github repo: https://github.com/jiffyclub/palettable\nStars: 812\nFork: 78\nCommits: 220 (master branch)\nLast commit:  Aug 24, 2025\nmaintainer: https://github.com/jiffyclub"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License permissions and restrictions (MIT License)\nPermissions:\n\nUse the software for any purpose, including commercial use.\nCopy, modify, and merge the source code.\nPublish, distribute, sublicense, and/or sell copies of the software.\n\nRestrictions:\n\nThe original copyright notice and permission notice must be included in all copies or substantial portions of the software."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "No dependencies for that package"
+            }
+          ]
+        },
+        {
+          "name": "lxml",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "lxml is a fast, feature-rich Python library for processing XML and HTML, providing a Pythonic binding to the C libraries libxml2 and libxslt via an ElementTree-compatible API.  lxml is listed as a dependency of pymatgen/pymatgen-core, used for fast XML/HTML parsing in support of the \"Self-Supervised Foundational Model for Chemistry and Materials Science\" project."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": " No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "No D5+M affiliation. Maintainer: Stefan Behnel http://consulting.behnel.de/index.en.html#who, the lead maintainer of lxml, who also offers commercial consulting, customizations, and training on the library; PyPI additionally credits \"lxml dev team\" as author/maintainer and lists a co-maintainer, Martijn Faassen "
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Github: https://github.com/lxml/lxml\nStars: 3k\nFork: 619\nCommits: 7047 (master branch)\nLast commit: latest release lxml-7.0.0a1, published May 29, 2026.\nmaintainer: https://github.com/lxml\n\nPypi: https://pypi.org/project/lxml/"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License permissions and restrictions (BSD-3-Clause)\nPermissions:\n\nUse, copy, and modify the source code, in source or binary form.\nRedistribute the software, with or without modifications.\nUse it for commercial or private purposes.\n\nRestrictions:\n\nRedistributions of source code must retain the original copyright notice, list of conditions, and disclaimer.\nRedistributions in binary form must reproduce the copyright notice, conditions, and disclaimer in accompanying documentation/materials.\nThe names of the copyright holders or contributors may not be used to endorse or promote derived products without prior written permission.\n"
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "The package has no dependencies"
+            }
+          ]
+        },
+        {
+          "name": "orjson",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "orjson is a fast, correct, Rust-backed JSON serialization library for Python, natively supporting dataclasses, datetimes, UUIDs, and NumPy arrays. orjson is listed as a dependency of pymatgen/pymatgen-core, used as the default fast JSON encoder/decoder in support of the \"Self-Supervised Foundational Model for Chemistry and Materials Science\" project "
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 2,
+              "notes": "Not Clear. Author/maintainer: an individual developer using the handle \"ijl\" (contact: ijl@mailbox.org) \u2014 no real name, institutional affiliation, or LinkedIn profile is disclosed in the documentation.\n"
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Github: https://github.com/ijl/orjson\nStars: 8.2k\nFork: 307\nCommits: 774 (master branch)\nLast commit: latest release 3.11.9, published May 6, 2026.\nmaintainer: https://github.com/geopy\n\nhttps://pypi.org/project/orjson/"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "orjson is dual/triple-licensed \u2014 some source files under the Mozilla Public License 2.0 (MPL-2.0), and the remainder under the user's choice of Apache License 2.0 or MIT License.\nPermissions:\n\nUse the software for any purpose, including commercial use.\nCopy, modify, and merge the source code (MIT/Apache-covered portions).\nPublish, distribute, and sublicense copies of the software.\nApache-2.0 portions include an express patent license grant from contributors.\n\nRestrictions:\n\nThe original copyright and permission/license notices must be retained in copies of MIT/Apache-licensed portions.\nApache-2.0 requires stating any significant changes made to the licensed files.\nFor MPL-2.0\u2013covered files specifically, modifications to those individual files must be released under the MPL-2.0 (file-level \"weak copyleft\"); this does not extend to the rest of the codebase.\nApache-2.0 terminates the patent grant to any party that initiates patent litigation alleging the software infringes a patent."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "The package has no dependencies"
+            }
+          ]
+        },
+        {
+          "name": "uncertainities",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "The uncertainties package is an open-source Python library that performs transparent linear error-propagation calculations, automatically tracking correlations and derivatives for numbers with uncertainties. uncertainties is listed as a dependency of pymatgen/pymatgen-core, used to support automatic error propagation in calculations for the \"Self-Supervised Foundational Model for Chemistry and Materials Science\" project "
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7.\n"
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "No D5+M affiliation. Maintained by lmfit team (Matt Newville, and  Dan Allan), US."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Github repo: https://github.com/lmfit/uncertainties\nStars: 671\nFork: 85\nCommits: 2,701 (master branch)\nLast commit: repository activity shown as updated July 10, 2026; latest tagged release is 3.2.4, published January 9, 2026.\nmaintainer: https://github.com/lmfit\n\nPypi: https://pypi.org/project/uncertainties/"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License permissions and restrictions (Revised/Modified BSD License)\nPermissions:\n\nUse, copy, and modify the source code, in source or binary form.\nRedistribute the software, with or without modifications.\nUse it for commercial or private purposes.\n\nRestrictions:\n\nRedistributions of source code must retain the original copyright notice, list of conditions, and disclaimer.\nRedistributions in binary form must reproduce the copyright notice, conditions, and disclaimer in accompanying documentation/materials.\nThe names of the copyright holders or contributors may not be used to endorse or promote derived products without prior written permission."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "No dependencies"
+            }
+          ]
+        },
+        {
+          "name": "bibtexparser",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "python-bibtexparser (bibtexparser) is an open-source Python library for parsing, manipulating, and writing BibTeX (.bib) bibliography files. ibtexparser (v1.4.4, i.e., the \"v1\" line) is listed as a dependency of pymatgen/pymatgen-core, used to parse and write BibTeX bibliography files in support of the \"Self-Supervised Foundational Model for Chemistry and Materials Science\" project "
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "No D5+M affiliation. Original creator: Fran\u00e7ois Boulogne (@sciunto), GitHub organization rather than a specific company or academic lab based in France."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Github repo: github.com/sciunto-org/python-bibtexparser\nStars: 568\nFork: 136\nCommits: 751 (main branch)\nLast commit: latest release v2.0.0b9, published January 29, 2026.\nmaintainer: https://www.sciunto.org/\n\nPypi: https://pypi.org/project/bibtexparser/"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "Note: the version specified in the proposal (1.4.4) is the \"v1\" line, released under the GNU Lesser General Public License v3 (LGPLv3) (the current default main branch/v2 has since moved to the MIT license, but that does not apply to the pinned v1.4.4 version).\nPermissions (LGPLv3, applicable to v1.4.4):\n\nUse the software for any purpose, including commercial use.\nCopy and distribute the library, including as a dependency in proprietary applications, provided dynamic/library-level linking terms are respected.\nModify the library's own source code.\n\nRestrictions (LGPLv3, applicable to v1.4.4):\n\nModifications to the library itself must be released under the LGPLv3 (or compatible) license if distributed.\nThe original copyright notice and license text must be retained and provided with distributed copies.\nUsers must be given access to the library's source code (or a written offer for it) and be able to relink a modified version of the library into the larger application."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "pyparsing>=2.0.3"
+            }
+          ]
+        }
+      ],
+      "observations": "Pymatgen is used to build graphs in the project's dataloader on the CPU instead of the GPU (since GPU-based graph building caused significant slowdown), supporting the project \"Self-Supervised Foundational Model for Chemistry and Materials Science\"; the other listed packages (pymatgen-core, spglib, plotly, palettable, lxml, orjson, uncertainties, bibtexparser) are dependencies of pymatgen/pymatgen-core.",
+      "recommendation": ""
     }
   ]
 }
