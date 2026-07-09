@@ -1128,7 +1128,7 @@
       "is_proprietary": false
     }
   ],
-  "observations": "In the Open Catalyst dataset, a potential risk of dual use has been identified. A suggestion is to refer to the RCAC Chair for the scientific assessment of potential risk. \nIn the Open Materials dataset, a potential risk of dual use has been identified. A suggestion is to refer to the RCAC Chair for the scientific assessment of potential risk. \nIn the Open Molecules 2025  dataset, the artifact is new and less used.\n\nIn GemNet model, a potential risk of dual use has been identified because Open Catalyst was used to pre-train this model. A suggestion is to refer to the RCAC Chair for the scientific assessment of potential risk. \n\n\n--- Addendum 4 added: 2026-07-08 (Third-Party Software) ---\n",
+  "observations": "In the Open Catalyst dataset, a potential risk of dual use has been identified. A suggestion is to refer to the RCAC Chair for the scientific assessment of potential risk. \nIn the Open Materials dataset, a potential risk of dual use has been identified. A suggestion is to refer to the RCAC Chair for the scientific assessment of potential risk. \nIn the Open Molecules 2025  dataset, the artifact is new and less used.\n\nIn GemNet model, a potential risk of dual use has been identified because Open Catalyst was used to pre-train this model. A suggestion is to refer to the RCAC Chair for the scientific assessment of potential risk. \n\n\n--- Addendum 4 added: 2026-07-08 (Third-Party Software) ---\n- OMOL25 4M is a subset of the full dataset, which was reviews as part of the original AIMCR. The dataset artifact is available on HuggingFace but was also provided by the PI on Ibex. A directory comparison between the downloaded train_4M/ and the copy under /ibex/project/c2358/AIMCR/data-movement/65562/models/model/adapt/train_4M/ confirmed 161 files, 22G, with no missing or size-mismatched files. SHA-256 checksums generated independently in both directories produced an exact match. Dataset copy is confirmed intact. The dataset is documented as training set for the model OMOL25. Since PI didn't ask for this model's checkpoints, they were not considered.\n- Pymatgen is used to build graphs in the project's dataloader on the CPU instead of the GPU (since GPU-based graph building caused significant slowdown), supporting the project \"Self-Supervised Foundational Model for Chemistry and Materials Science\"; the other listed packages (pymatgen-core, spglib, plotly, palettable, lxml, orjson, uncertainties, bibtexparser) are dependencies of pymatgen/pymatgen-core.",
   "recommendation": "Positive check passed. \n\nNegative check passed with potential risk identified. \n\n10^27 check passed. \n\nThe initial recommendation is to refer to RCAC for the scientific assessment of potential risks found in said datasets and model. Conditional on clearance from the RCAC, the project is otherwise recommended for the grand challenge.  \n\n--- Addendum 4 added: 2026-07-08 (Third-Party Software) ---\n",
   "addenda": [
     {
@@ -1948,6 +1948,12 @@
       ],
       "observations": "Pymatgen is used to build graphs in the project's dataloader on the CPU instead of the GPU (since GPU-based graph building caused significant slowdown), supporting the project \"Self-Supervised Foundational Model for Chemistry and Materials Science\"; the other listed packages (pymatgen-core, spglib, plotly, palettable, lxml, orjson, uncertainties, bibtexparser) are dependencies of pymatgen/pymatgen-core.",
       "recommendation": ""
+    }
+  ],
+  "_submission_history": [
+    {
+      "timestamp": "2026-07-09T14:39:01.043894",
+      "action": "resubmission"
     }
   ]
 }
