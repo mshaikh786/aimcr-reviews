@@ -5,7 +5,7 @@
     "proposal_date": "2025-10-23",
     "reviewer_name": "Mohsin Ahmed Shaikh",
     "reviewer_id": "174988",
-    "aimcr_date": "2026-03-12",
+    "aimcr_date": "2026-07-14",
     "project_id": "65625"
   },
   "third_party_software": [
@@ -353,9 +353,10 @@
   ],
   "observations": "Additional information provides the information that a modified GPT-2 model will be used. The model architecture is inherited from an open source github repository from non-D5 entity. The number of parameters after modifications can be between 124M to 1B. \n\nThe datasets requested is FineWeb which is composed 15-18T tokens, however, the project claims to pre-train the model on a subset. The subset has not been identified so the 10^27 calculation has been done for the full dataset. Additionally, ImageNet 21K has been requested. There is no expression of intent of a multimodal pre-training so considering both dataset together to train a common(single) model is not applicable. \n\nWandb package is requested which cannot be provided. It is for observability and experiment management. KSL will provide MLFlow instead. \n\n",
   "recommendation": "The artifacts all have no risk. The only confirmation will be to check the output models were not trained for multimodal capability. \n\nPositive checks passed\n\nNegative checks passed\n\n10^27 check passed.\n\nRecommended for approval for grand challenge. ",
+  "addenda": [],
   "_submission_history": [
     {
-      "timestamp": "2026-03-12T11:38:24.166882",
+      "timestamp": "2026-07-14T10:54:23.509320",
       "action": "resubmission"
     }
   ]
