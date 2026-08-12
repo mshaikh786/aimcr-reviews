@@ -101,8 +101,8 @@
           "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. The dataset is described as a multi-view stereo benchmark for 3D reconstruction with no reference to military, defense, weapons, surveillance, or intelligence applications."
         },
         {
-          "name": "D5+M Affiliation Screening (LC 2.5)",
-          "score": 2,
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 3,
           "notes": "Primary creators: Yao Yao, Zixin Luo, Shiwei Li, Jingyang Zhang, Yufan Ren, Lei Zhou, Tian Fang, Long Quan. Yao Yao is now Associate Professor at Nanjing University (mainland China). The dataset originates from the Hong Kong University of Science and Technology (HKUST).\n\nEntity is from D5 country."
         },
         {
@@ -141,8 +141,8 @@
           "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. The dataset is described as a scene resource for deep-learning-based 3D vision and novel view synthesis."
         },
         {
-          "name": "D5+M Affiliation Screening (LC 2.5)",
-          "score": 1,
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 3,
           "notes": "Primary creators include Lu Ling, Yichen Sheng, Zhi Tu, Wentian Zhao, Cheng Xin, Kun Wan, Lantao Yu, Qianyu Guo, Zixun Yu, Yawen Lu, Xuanmao Li, Xingpeng Sun, Rohan Ashok, Aniruddha Mukherjee, Hao Kang, Xiangrui Kong, Gang Hua, Tianyi Zhang, Bedrich Benes, and Aniket Bera (CVPR 2024). Several lead authors have Chinese institutional affiliations.\n\nEntity is from D5 country."
         },
         {
@@ -422,7 +422,7 @@
         },
         {
           "name": "D5+M affiliation Screening (LC 2.5)",
-          "score": 1,
+          "score": 3,
           "notes": "Primary creators: Yuan-Ting Hu (University of Illinois at Urbana-Champaign), Jiahong Wang (Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences), Raymond A. Yeh (Purdue University), Alexander G. Schwing (UIUC). One co-author is affiliated with an institution in mainland China.\n\nEntity is from D5 country."
         },
         {
@@ -702,7 +702,7 @@
         },
         {
           "name": "D5+M affiliation Screening (LC 2.5)",
-          "score": 2,
+          "score": 3,
           "notes": "Primary creators: Jiaxu Miao, Xiaohan Wang, Yu Wu, Wei Li, Xu Zhang, Yunchao Wei. Maintained at https://github.com/VIPSeg-Dataset/VIPSeg-Dataset.\n\nThe related paper's code is published in : https://github.com/VSPW-dataset/VSPW_code\nThe association of the lead authors is with Zhejiang University (CCAI) & Baidu Research China.  \n\nEntities are from D5 country."
         },
         {
@@ -830,7 +830,7 @@
         },
         {
           "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
-          "score": 2,
+          "score": 3,
           "notes": "GitHub URL: https://github.com/ByteDance-Seed/Depth-Anything-3\nHuggingFace URL: https://huggingface.co/depth-anything/DA3-BASE\n\nOwner: ByteDance Seed (Bingyi Kang listed as corresponding author / project lead).\nCountry of origin: China.\n\nD5-country affiliation found."
         },
         {
@@ -869,5 +869,6 @@
       "timestamp": "2026-05-19T22:27:34.782046",
       "action": "resubmission"
     }
-  ]
+  ],
+  "addenda": []
 }
