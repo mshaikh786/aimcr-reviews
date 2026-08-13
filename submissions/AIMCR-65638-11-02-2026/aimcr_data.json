@@ -5,7 +5,7 @@
     "proposal_date": "2025-12-09",
     "reviewer_name": "Mohsin Ahmed Shaikh",
     "reviewer_id": "174988",
-    "aimcr_date": "2026-07-14",
+    "aimcr_date": "2026-02-15",
     "project_id": "65638"
   },
   "third_party_software": [
@@ -1090,12 +1090,324 @@
       "is_proprietary": false
     }
   ],
-  "observations": "\nIn software, ROLL and RLinf libraries have maintainers from D5 countries. Some dependencies were being pulled from Alibaba cloud registries but KSL will recreate the container images with same libraries pulled from Pypi.org.\n \nThe datasets RoboMIND, Llava-onevision-dataset are from an entity in the D5 country.  Sample inspect of the datasets was conducted and the risk has been set to low because the content of the dataset, randomly checked, corresponds to its description.\n\n  The Llava-Video-178K datasets is also maintained by the same entity in D5 country. The dataset is a collection of different external datasets not readily accessible therefore, the risk has been raised to medium. \n\n\nMultiple Qwen 2.5 and 3 models have been requested for supervised fine-tuning and reinforcement learning with human in the loop (RLHF) on Video dataset like Llava-video-178k. All the models are from D5 country, developed and maintained by Alibaba cloud. ",
-  "recommendation": "The requested software will be curated by KSL from general-purpose resources such as pipy .org instead of downloading from Alibaba Cloud. This way, the risk will be mitigated for identified software artifacts. Additionally, the PI has confirmed that there is no collaboration with Alibaba for any research goals for this proposal. \n\nThe datasets are massive and subject to approval of the project, a coordination with the PI will be required to select which subsets are needed for the proposed work on Shaheen III GPUP. \n\nSampling of the Llava video 178K was not possible because of failed downloads from external links. The inevitability of the dataset has been highlighted by the PI in the ticket correspondence on Feb 15th, 2026: \n\"If we have to drop the dataset, we can, but we may have a hard time convince research community about the value of our research due to a lack of fair comparison.\"\n\nWhile deciding to download the components, the Llava Video 178K will be inspected on the go to make certain that the content in the samples correspond the description in the documentation. \n\n\n\nThe suggestion for the training of the Qwen 2.5 and 3  on Shaheen III GPUP is a periodic check with the PI to see that they are training these models on the video datasets indicated. \n\nPositive checks passed\n\nNegative checks passed\n\n10^27 FLOPS check passed \n\nThis project is recommended for the grand challenge, with a suggestion to examine the samples of Llava-video-178k before moving of dataset to Shaheen III GPUP, and check the models halfway through the project to validate the datasets used to pre-train/fine-tune the models are in line with the proposal. \n \nJune 3rd, 2026: Based on this assessment (documented in Capability Risk Assessment - LC 2.7 - Objaverse Weapons-Military Category ), inclusion of the \"Weapons-Military\" category in the Objaverse dataset does not, in isolation or in combination with the project's other inputs, create a credible risk that the model could acquire capabilities that would implicate the prohibited uses enumerated in License Condition 2.7.\n\n[Capability Risk Assessment - LC 2.7 - Objaverse Weapons-Military Category ](https://kaust.sharepoint.com/:w:/r/sites/M365_KAUST_Legal/Governance/03%20-%20Export%20Control/04%20-%20Reviews%20-%20Supercomputing%20Lab%20(KSL)/2.%20Shaheen%20III%20GPUP/1.%20GRAND%20CHALLENGE%20PROJECTS/01.%20Project%20Proposals%20%26%20Supporting%20Files/APPROVED_K20005-65638_Mohammed%20Elhoseiny/escalation-Objaverse-dataset/Decision-June-2026/Capability%20Risk%20Assessment%20-%20LC%202.7%20-%20Objaverse%20Weapons-Military%20Category.docx?d=w5594de34d92a4a4a8b337dcdf691056f&csf=1&web=1&e=Sfxm6J)\n",
-  "addenda": [],
+  "observations": "\nIn software, ROLL and RLinf libraries have maintainers from D5 countries. Some dependencies were being pulled from Alibaba cloud registries but KSL will recreate the container images with same libraries pulled from Pypi.org.\n \nThe datasets RoboMIND, Llava-onevision-dataset are from an entity in the D5 country.  Sample inspect of the datasets was conducted and the risk has been set to low because the content of the dataset, randomly checked, corresponds to its description.\n\n  The Llava-Video-178K datasets is also maintained by the same entity in D5 country. The dataset is a collection of different external datasets not readily accessible therefore, the risk has been raised to medium. \n\n\nMultiple Qwen 2.5 and 3 models have been requested for supervised fine-tuning and reinforcement learning with human in the loop (RLHF) on Video dataset like Llava-video-178k. All the models are from D5 country, developed and maintained by Alibaba cloud.\n\nRevised following change request IMS0000084.\n\nAddendum 1 adds 4 datasets, all clean and from non-D5 maintainers (HuggingFace and Ai2). Addendum 2 adds Qwen3-8B-Base and Qwen3-32B, from the same D5 entity as the models already in scope. Addendum 3 adds the in-house training codebase, which establishes the Source Code section. Three components were found in the codebase that are inactive and were not declared in the proposal or this change request.",
+  "recommendation": "The requested software will be curated by KSL from general-purpose resources such as pipy .org instead of downloading from Alibaba Cloud. This way, the risk will be mitigated for identified software artifacts. Additionally, the PI has confirmed that there is no collaboration with Alibaba for any research goals for this proposal. \n\nThe datasets are massive and subject to approval of the project, a coordination with the PI will be required to select which subsets are needed for the proposed work on Shaheen III GPUP. \n\nSampling of the Llava video 178K was not possible because of failed downloads from external links. The inevitability of the dataset has been highlighted by the PI in the ticket correspondence on Feb 15th, 2026: \n\"If we have to drop the dataset, we can, but we may have a hard time convince research community about the value of our research due to a lack of fair comparison.\"\n\nWhile deciding to download the components, the Llava Video 178K will be inspected on the go to make certain that the content in the samples correspond the description in the documentation. \n\n\n\nThe suggestion for the training of the Qwen 2.5 and 3  on Shaheen III GPUP is a periodic check with the PI to see that they are training these models on the video datasets indicated. \n\nPositive checks passed\n\nNegative checks passed\n\n10^27 FLOPS check passed \n\nThis project is recommended for the grand challenge, with a suggestion to examine the samples of Llava-video-178k before moving of dataset to Shaheen III GPUP, and check the models halfway through the project to validate the datasets used to pre-train/fine-tune the models are in line with the proposal.\n\nRevised following change request IMS0000084.\n\nThe change request does not alter the overall risk rating, which remains Medium. The two Qwen models added in Addendum 2 carry the same D5 affiliation already covered by the PI's confirmation of no collaboration with Alibaba, and are subject to the same periodic check. The new datasets are clean.\n\nThe PI should either remove the three undeclared inactive components from the training codebase, or confirm in writing that any future activation will be raised as a new change request.",
+  "addenda": [
+    {
+      "date": "2026-07-29",
+      "category": "datasets_user_files",
+      "artifacts": [
+        {
+          "name": "HuggingFaceFW/fineweb-edu",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "***As per the dataset documentation***, FineWeb-Edu is a large-scale English educational web-text corpus filtered from FineWeb (CommonCrawl-derived) using an educational-quality classifier; only the 10B and 100B token subsets are requested.\n***Aligns with the proposal objective of*** standard ablation-scale pretraining data to validate the attention-replacement architecture ablations (O2 Language Recovery phase / general LLM pretraining), per the change request's stated rationale that the original proposal's dataset allocation was insufficient for the needed ablations."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7"
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "No D5+M affiliation. The dataset is owned and maintained by Hugging Face (FineData team, part of the Hugging Face Science team), headquartered in New York, USA."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "Not provided"
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "Skipped"
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "Hosted on: Hugging Face\nSource link: https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu\nMaintainer link: https://huggingface.co/HuggingFaceFW\nDownloads last month: 395,783\nCommits: 1 (squashed history; 5 contributors historically)\nLast Commit:  11 July 2025"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "\n     - Permissions:\n\n        - Use, copy, and distribute the dataset for any purpose, including commercial.\n        - Create and distribute derivative databases or works built from the dataset.\n         - Share results or analyses produced from the dataset under any license of your choosing.\n\n    - Restrictions:\n\n         - Attribution required \u2014 must credit HuggingFaceFW / FineWeb-Edu when publicly using or redistributing.\n         - Use is also subject to CommonCrawl's Terms of Use (the underlying source material carries its own separate ToU, additive to the ODC-By terms)."
+            }
+          ]
+        },
+        {
+          "name": "allenai/dolma3_mix-6T",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "**As per the dataset documentation**, Dolma 3 Mix (6T) is Ai2's primary pretraining-stage data mixture (~6 trillion tokens: web content via Common Crawl, academic publications, code, and other sources) used to train the Olmo 3 7B model; the general-purpose (non-checkpoint-specific) release is requested, as Ai2 recommends for training-from-scratch use cases rather than the checkpoint-reproduction variant (dolma3_mix-6T-1025). \nWhich aligns with this proposal's objective by being specifically used for large-scale LLM pretraining, supplementing the original proposal's RefinedWeb-Edu allocation for the O2 Language Recovery / general pretraining phase."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "No D5+M affiliation. The dataset is owned and maintained by the Allen Institute for AI (Ai2), a Seattle-based nonprofit research institute."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "Not provided"
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "Skipped"
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "Hosted on: Hugging Face\nSource link: https://huggingface.co/datasets/allenai/dolma3_mix-6T\nMaintainer link: https://huggingface.co/allenai\nDownloads last month: 32,233\nCommits: 1,389\nLast commit: ~late April 2026\nAssociated paper: \"Olmo 3\" (Team Olmo et al., Ai2) \u2014 https://allenai.org/papers/olmo3"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: ODC-By v1.0\n\n    - Permissions:\n\n        - Use, copy, and distribute the dataset for any purpose, including commercial.\n        - Create and distribute derivative databases or works built from the dataset.\n        - Share results or analyses produced from the dataset under any license of your choosing.\n\n     - Restrictions:\n\n        - Attribution required \u2014 must credit Ai2 / Dolma 3 when publicly using or redistributing.\n        -  Intended for research and educational use in accordance with Ai2's Responsible Use Guidelines \u2014 a use-    policy condition layered on top of the license, not a license term itself, but worth noting as an applicable condition of use."
+            }
+          ]
+        },
+        {
+          "name": "allenai/dolma3_dolmino_mix-100B-1125",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "**As per the dataset documentation**, this is a 100B-token high-quality data mixture (20% code, 28% web pages, 19% math, 14% QA, 8% thinking, 6% instruction, 5% PDFs) used for the second-stage midtraining/annealing of Olmo 3 32B; the \"-1125\" naming indicates the November 2025 mixture release aligned to the 32B model line, consistent with the change request's stated use for 32B-scale training.\nAligns with proposal objectives by being specifically used for second-stage midtraining/annealing as part of the language pretraining pipeline."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "No D5+M affiliation. The dataset is owned and maintained by the Allen Institute for AI (Ai2), a Seattle-based nonprofit research institute."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "Not provided"
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "Skipped"
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "Hosted on: Hugging Face\nSource link: https://huggingface.co/datasets/allenai/dolma3_dolmino_mix-100B-1125\nMaintainer link: https://huggingface.co/allenai\nDownloads last month: 112,201\nCommits: 335\nLast Commit: 23 Feb\nAssociated paper: \"Olmo 3\" (Team Olmo et al., Ai2) \u2014 https://allenai.org/papers/olmo3"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: ODC-By v1.0\n\n    - Permissions:\n\n        - Use, copy, and distribute the dataset for any purpose, including commercial.\n        - Create and distribute derivative databases or works built from the dataset.\n        - Share results or analyses produced from the dataset under any license of your choosing.\n\n    - Restrictions:\n\n        - Attribution required \u2014 must credit Ai2 / Dolma 3 when publicly using or redistributing.\n        - Intended for research and educational use in accordance with Ai2's Responsible Use Guidelines."
+            }
+          ]
+        },
+        {
+          "name": "allenai/dolma3_longmino_mix-100B-1125",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "**As per the dataset documentation**, this is a 100B-token long-context mixture (66% midtraining data, 34% PDFs) used for the third stage (long-context extension) of Olmo 3 32B training; the \"-1125\" naming indicates the November 2025 release aligned to the 32B model line. \n**It aligns with  this proposal objectives** by being specifically used for long-context extension training as part of the language pretraining pipeline, consistent with the proposal's O2 objective of scaling context length."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "No D5+M affiliation. The dataset is owned and maintained by the Allen Institute for AI (Ai2), a Seattle-based nonprofit research institute."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "Not provided"
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "Skipped"
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "Hosted on: Hugging Face\nSource link: https://huggingface.co/datasets/allenai/dolma3_longmino_mix-100B-1125\nMaintainer link: https://huggingface.co/allenai\nDownloads last month: 22,962\nCommits: 760\nLast Commit: 24 Feb\nAssociated paper: \"Olmo 3\" (Team Olmo et al., Ai2) \u2014 https://allenai.org/papers/olmo3."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: ODC-By v1.0\n\n    - Permissions:\n\n        - Use, copy, and distribute the dataset for any purpose, including commercial.\n        - Create and distribute derivative databases or works built from the dataset.\n        - Share results or analyses produced from the dataset under any license of your choosing.\n\n    - Restrictions:\n\n        - Attribution required \u2014 must credit Ai2 / Dolma 3 Longmino when publicly using or redistributing.\n        - Intended for research and educational use in accordance with Ai2's Responsible Use Guidelines."
+            }
+          ]
+        }
+      ],
+      "observations": "CR Ticket Number: IMS0000084\n\n- 4 datasets reviewed, no risk found. Section score unchanged at Medium, which comes from Llava-Video-178K in the original review and not from this addendum.\n- fineweb-edu (HuggingFace FineData team, New York) and the three Dolma 3 mixtures (Ai2, Seattle) are all ODC-By v1.0 or equivalent, with attribution the only substantive obligation.\n- No D5+M affiliation for any of the four. No prohibited-use indicators.",
+      "recommendation": "All four datasets are clean. No D5+M affiliations, no license concerns, no prohibited-use indicators.\n\nRecommended to move them to Shaheen III GPUP. Attribution to HuggingFace and Ai2 to be observed in resulting publications."
+    },
+    {
+      "date": "2026-07-30",
+      "category": "models",
+      "artifacts": [
+        {
+          "name": "Qwen/Qwen3-8B-Base",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "**Per the model card**, Qwen3-8B-Base is a dense decoder-only causal language model (36 layers, GQA 32Q/8KV heads, 32,768-token context), pretrained for multilingual text generation, STEM, coding, and reasoning. **Aligns with this proposal objectives** by being  specifically used to initialize the attention-replacement architecture ablations, with its MLP and embedding layers kept frozen while only the replacement attention parameters are trained \u2014 directly matching the CR's stated O2 objective."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+              "score": 3,
+              "notes": "D5+M affiliated. Developed and maintained by the Qwen Team, Alibaba Cloud \u2014 the owning organization is itself D5+M affiliated (China)\nSource link: https://huggingface.co/Qwen/Qwen3-8B-Base\nMaintainer link: https://huggingface.co/Qwen\nDownloads last month: 375,399\nCommits: 9 \nLast Commit : mid-2025"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: Apache License 2.0\n\n    - Permissions:\n\n        - Commercial and private use permitted.\n        - Modification and creation of derivative works permitted.\n        - Distribution and sublicensing permitted.\n        - Express patent license granted from contributors.\n\n    - Restrictions:\n\n        - Original copyright and license notice must be included in redistributions.\n        - Any changes made to the code/weights must be stated.\n        - Patent grant terminates if the licensee initiates patent litigation over the work.\n        - No separate usage policy layered on top (unlike Gemma) \u2014 plain Apache 2.0 governs the full artifact."
+            },
+            {
+              "name": "Training Data Documentation",
+              "score": 1,
+              "notes": "pretraining used approximately 36 trillion tokens across 119 languages and dialects, including coding, STEM, reasoning, books, multilingual, and synthetic data, via a documented three-stage pretraining pipeline (general language modeling \u2192 reasoning-skill emphasis \u2192 long-context extension)."
+            },
+            {
+              "name": "Customisation / Fine-tuning",
+              "score": 1,
+              "notes": "No fine-tuning to assess for prohibited-domain concerns."
+            },
+            {
+              "name": "FLOPS Calculation",
+              "score": 2,
+              "notes": "Upper-bound estimate (assuming full single-epoch use of the 7.6T available pool): \n`F \u2248 6 \u00d7 N \u00d7 D = 6 \u00d7 (8.2 \u00d7 10\u2079) \u00d7 (7.6 \u00d7 10\u00b9\u00b2) \u2248 3.74 \u00d7 10\u00b2\u00b3`\n\n> sampled from the requested FineWeb-Edu and Dolma3 datasets, drawn from an available pool of approximately 7.6T tokens \u2014 not a fixed number, so this requires estimation."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "not skippable"
+            }
+          ],
+          "is_proprietary": false
+        },
+        {
+          "name": "Qwen/Qwen3-32B",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "**Per the model card**, Qwen3-32B is a dense decoder-only causal language model (64 layers, GQA 64Q/8KV heads, 32,768-token native context, extendable to 131,072 with YaRN), with both pretraining and post-training (thinking/non-thinking modes) included in the public checkpoint.\n**Aligns with proposal objectives** as it serves as the larger-scale attention-replacement starting point, with MLP and embedding layers frozen \u2014 directly matching the CR's stated O2 objective."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+              "score": 3,
+              "notes": "D5+M affiliated. Developed and maintained by the Qwen Team, Alibaba Cloud \u2014 owning organization is itself D5+M affiliated (China).\n\n\nSource link: https://huggingface.co/Qwen/Qwen3-32B\nMaintainer link: https://huggingface.co/Qwen\nDownloads last month: 4,752,983\nCommits: 19 \nLast Commit:  January 2026 "
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: Apache License 2.0\n\n    - Permissions:\n\n        - Commercial and private use permitted.\n        - Modification and creation of derivative works permitted.\n        - Distribution and sublicensing permitted.\n        - Express patent license granted from contributors.\n\n    - Restrictions:\n\n        - Original copyright and license notice must be included in redistributions.\n        - Any changes made to the code/weights must be stated.\n        - Patent grant terminates if the licensee initiates patent litigation over the work.\n        - No separate usage policy layered on top \u2014 plain Apache 2.0 governs the full artifact."
+            },
+            {
+              "name": "Training Data Documentation",
+              "score": 1,
+              "notes": "~36T tokens, 119 languages, three-stage pipeline documented in the Qwen3 Technical Report; exact sample counts and source composition not disclosed."
+            },
+            {
+              "name": "Customisation / Fine-tuning",
+              "score": 1,
+              "notes": "No prohibited-domain fine-tuning identified."
+            },
+            {
+              "name": "FLOPS Calculation",
+              "score": 2,
+              "notes": "Upper-bound estimate:\n\n` F \u2248 6 \u00d7 N \u00d7 D = 6 \u00d7 (32.8 \u00d7 10\u2079) \u00d7 (7.6 \u00d7 10\u00b9\u00b2) \u2248 1.50 \u00d7 10\u00b2\u2074`\n\n> run-specific token count not fixed, drawn from the same ~7.6T token pool."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "not skippable"
+            }
+          ],
+          "is_proprietary": false
+        }
+      ],
+      "observations": "CR Ticket Number: IMS0000084\n\n- 2 models reviewed. Section score rises from Low to Medium.\n- Qwen3-8B-Base and Qwen3-32B are developed and maintained by the Qwen Team, Alibaba Cloud, China. D5+M affiliation. LC 2.5.\n- Affiliation is the only concern. Both are Apache 2.0, training data documented at approximately 36T tokens across 119 languages, and no prohibited-domain fine-tuning was identified.\n- Both are used as initialisation checkpoints for the attention-replacement ablations, with MLP and embedding layers frozen.\n- FLOPS estimated at 3.74x10^23 and 1.50x10^24 using 6xNxD, well below the threshold.",
+      "recommendation": "The PI confirmed in the original review that there is no collaboration with Alibaba for any research goals in this proposal. That confirmation predates these two models, which were added on 30 July, and should be re-confirmed to cover them explicitly.\n\nPositive checks passed\nNegative checks passed\n10^27 FLOPS check passed\n\nConditional on that re-confirmation, recommended for data movement."
+    },
+    {
+      "date": "2026-08-06",
+      "category": "source_code",
+      "artifacts": [
+        {
+          "name": "Training Code",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "The repository is the project's core training codebase, implementing the four integrated objectives named in the proposal: \n    - O1 (CompoSE, part-aware 3D generation), \n    - O2 (scalable long video-language understanding via DeepSpeed-Ulysses and sparse attention),\n    - O3 (ContextFlow, in-context robot foundation model), and O4 (EfficientRL-Embodied, RL post-training with prioritized replay). \nDirectory structure (`llava/model/`, `llava/train/`, `scripts/train/stage0-*`, `scripts/train/stage1-dolma3/`) maps directly to the pretraining and ablation methodology described in the proposal's Scientific Information section. Aligns with the approved research topic, Data Science and Engineering.\n"
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "\nNo mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7.\n\n"
+            },
+            {
+              "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "non D5+M, The repository is owned and maintained by the PI's KAUST-affiliated research team."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "Repository LICENSE file confirmed as Apache License 2.0.\n        - Permissions:\n            - commercial use allowed\n            - modification allowed\n            - distribution allowed\n            - patent use granted\n            - private use allowed. \n\nObligations are limited to standard attribution and change-notice requirements (retain copyright/NOTICE text; mark modified files). This is fully compatible with the licenses of bundled/adapted third-party components already reviewed under Check 5 (ROLL, DeepSpeed, Hugging Face Accelerate, all Apache 2.0). No restrictions conflict with the intended research use on Shaheen III."
+            },
+            {
+              "name": "Dependencies / Bundled Components",
+              "score": 1,
+              "notes": "Dependency manifest (pyproject.toml) reviewed. All packages present are standard supporting libraries for the declared training stack"
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "No prohibited keywords or functionality were identified. Three items were found present in the codebase but structurally inactive and not declared in the approved proposal or subsequent CR:\n\n        - **NVIDIA Nemotron dataset-download scripts** (`scripts/data/download_stage0_nemotron.py/.sh`): confirmed via configuration and downstream-script cross-check to be unreferenced by any active training pipeline.\n\n        - **InternVideo2 vision encoder module** (`llava/model/multimodal_encoder/internvideo2_encoder.py`): routing code in builder.py confirmed commented out; module unreachable at runtime.\n\n        - **OpenAI Moderation API call** (`llava/utils.py, violates_moderation()`): confirmed via caller/import search to have zero references anywhere in the codebase.\n"
+            }
+          ]
+        }
+      ],
+      "observations": "CR Ticket Number: IMS0000084\n\n- Training Code is the project's core training codebase, owned and maintained by the PI's KAUST-affiliated team. No D5+M affiliation. Apache 2.0 confirmed from the repository LICENSE file. Dependency manifest reviewed and clean.\n- Sample inspection found no prohibited keywords or functionality. Three components are present but structurally inactive and were not declared in the proposal or this change request: NVIDIA Nemotron dataset-download scripts, the InternVideo2 vision encoder module with its routing commented out, and an OpenAI Moderation API call with zero references in the codebase.",
+      "recommendation": "No risk identified in the review. The three undeclared components were each verified inactive, but any of them could be reactivated. The PI should either remove them from the repository or confirm in writing that any future activation will be raised as a new change request.\n\nPositive checks passed\nNegative checks passed\n\nRecommended for data movement."
+    }
+  ],
   "_submission_history": [
     {
-      "timestamp": "2026-07-14T16:44:55.798550",
+      "timestamp": "2026-08-10T15:47:52.571979",
       "action": "resubmission"
     }
   ]
