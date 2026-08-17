@@ -654,7 +654,7 @@
         {
           "name": "Project & Usage Alignment",
           "score": 1,
-          "notes": "InternVL 2.5 is an open-source multimodal vision-language model developed by OpenGVLab (Shanghai AI Laboratory) that uses a large-scale Vision Transformer (ViT-6B) encoder for superior image perception, achieving performance comparable to GPT-4o on several vision-language benchmarks.\n\nThe model is listed in the Model Readiness form with the declared Shaheen III use case described as \"Suitable for the 'Tongue Diagnosis Agent' or any task requiring high-fidelity categorical priors from medical images.\" The reference to a \"Tongue Diagnosis Agent\" is not mentioned anywhere in the proposal text or in the two declared project objectives. This indicates the use case as inference using the same dataset, WSI slide images. \n\nAligns with the approved research topic, Health and Wellness (conditionally \u2014 pending clarification of the tongue diagnosis use case)."
+          "notes": "InternVL 2.5 is an open-source multimodal vision-language model developed by OpenGVLab (Shanghai AI Laboratory) that uses a large-scale Vision Transformer (ViT-6B) encoder for superior image perception, achieving performance comparable to GPT-4o on several vision-language benchmarks.\n\nThe model is listed in the Model Readiness form with the declared Shaheen III use case described as \"Suitable for the 'Tongue Diagnosis Agent' or any task requiring high-fidelity categorical priors from medical images.\"  This indicates the use case as inference using the same dataset, WSI slide images. \nFurther clarification from the PI in the email thread states that the intent is primarily for inference but also limited adaptation, which could refer to fine-tuning, parameter-efficient fine-tuning, prompt engineering (few-shot) and RAG.\nFor InternVL 2.5, their plan is to use the mode to treat it as one candidate multimodal foundation model for downstream evaluation, including inference, instruction fine-tuning, and task-specific adaptation where appropriate.\nAligns with the approved research topic, Health and Wellness (conditionally \u2014 pending clarification of the tongue diagnosis use case)."
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
@@ -663,7 +663,7 @@
         },
         {
           "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
-          "score": 2,
+          "score": 3,
           "notes": "HuggingFace: https://huggingface.co/OpenGVLab/InternVL2_5-8B (representative variant)\nGitHub (reference): https://github.com/OpenGVLab/InternVL\nHF downloads: millions across InternVL variants\nLast commit (HF): Actively maintained (2025\u20132026)\nActivity health: healthy\n\nOwner: OpenGVLab \u2014 Shanghai AI Laboratory, Shanghai, China\nCountry: China\nD5-country affiliation found. OpenGVLab is part of the Shanghai AI Laboratory, a Chinese state-supported research institution. Score = 2 (owning organisation is D5-country affiliated)."
         },
         {
@@ -679,7 +679,7 @@
         {
           "name": "Customisation / Fine-tuning",
           "score": 1,
-          "notes": "TBD"
+          "notes": ""
         },
         {
           "name": "FLOPS Calculation",
@@ -746,7 +746,7 @@
   "addenda": [],
   "_submission_history": [
     {
-      "timestamp": "2026-08-17T09:17:08.428466",
+      "timestamp": "2026-08-17T12:18:13.942316",
       "action": "resubmission"
     }
   ]
