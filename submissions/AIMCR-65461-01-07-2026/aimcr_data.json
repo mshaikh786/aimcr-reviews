@@ -576,7 +576,7 @@
         },
         {
           "name": "License / Permissions",
-          "score": 2,
+          "score": 1,
           "notes": "Apache License 2.0\nhttps://huggingface.co/mistralai/Mixtral-8x22B-v0.1\n\nPermissions:\nFree to use for commercial and non-commercial purposes\nMay fine-tune, modify, and distribute the model weights\nMay incorporate into proprietary applications\nPatent rights granted from contributors\n\nObligations:\nMust include copyright notice and Apache 2.0 license text in distributions\nMust state significant changes made\n\nRestrictions:\nCannot use trademark names without permission"
         },
         {
@@ -586,7 +586,7 @@
         },
         {
           "name": "Customisation / Fine-tuning",
-          "score": 2,
+          "score": 1,
           "notes": "The publicly released Mixtral 8x22B base checkpoint has not been fine-tuned on any downstream task as part of the released artifact. This model, as is, has not been fine-tuned on any downstream task, according to the model card from HuggingFace.\n\nOn Shaheen III GPUP, the declared training objective is model distillation or sparse activation optimisation for real-time diagnostic decision support."
         },
         {
@@ -654,7 +654,7 @@
   "addenda": [],
   "_submission_history": [
     {
-      "timestamp": "2026-08-17T14:31:07.965297",
+      "timestamp": "2026-08-17T16:11:41.801471",
       "action": "resubmission"
     }
   ]
