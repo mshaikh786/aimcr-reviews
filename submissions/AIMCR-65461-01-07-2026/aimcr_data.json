@@ -5,7 +5,7 @@
     "proposal_date": "2025-12-02",
     "reviewer_name": "Mohsin Ahmed Shaikh",
     "reviewer_id": "174988",
-    "aimcr_date": "2026-07-01",
+    "aimcr_date": "2026-08-17",
     "project_id": "65461"
   },
   "third_party_software": [
@@ -478,32 +478,32 @@
           "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. Llama 3 / 3.1 is a general-purpose open-weight LLM to be fine-tuned for clinical report generation."
         },
         {
-          "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
           "notes": "HuggingFace: https://huggingface.co/meta-llama\nGitHub (reference): https://github.com/meta-llama/llama3 (archived; active repo: meta-llama/llama-models)\nHF downloads: tens of millions across variants\nLast commit (HF): Actively updated (2025\u20132026)\nActivity health: healthy \u2014 weights and model cards maintained on HuggingFace; GitHub reference repo archived\n\nOwner: Meta Platforms, Inc.\nCountry: United States\nNon-D5 country affiliation. Meta is a U.S.-based technology company. No D5-country organisation has ownership or controlling involvement in the Llama model series."
         },
         {
-          "name": "Training Data Documentation",
-          "score": 2,
-          "notes": "Llama 3 / 3.1 pre-training data: A publicly undisclosed corpus described in the Llama 3 technical report (Dubey et al., \"The Llama 3 Herd of Models,\" arXiv:2407.21783, 2024) as over 15 trillion tokens from publicly available sources with data quality filters applied. The exact composition is not publicly disclosed by Meta.\nD (tokens): ~15 \u00d7 10^12 tokens (15T), as reported in the technical report for Llama 3 / 3.1 pretraining.\nNote: The Model Readiness form does not specify which variant (8B, 70B, or 405B) is the primary checkpoint; all three are listed. The training token count declared in the Model Readiness form field for Shaheen III is blank (fine-tuning dataset not specified). Flagged for incomplete documentation."
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "Llama 3 / 3.1 pre-training data: A publicly undisclosed corpus described in the Llama 3 technical report (Dubey et al., \"The Llama 3 Herd of Models,\" arXiv:2407.21783, 2024) as over 15 trillion tokens from publicly available sources with data quality filters applied. The exact composition is not publicly disclosed by Meta.\nD (tokens): ~15 \u00d7 10^12 tokens (15T), as reported in the technical report for Llama 3 / 3.1 pretraining.\nNote: The Model Readiness form does not specify which variant (8B, 70B, or 405B) is the primary checkpoint; all three are listed. The training token count declared in the Model Readiness form field for Shaheen III is blank (fine-tuning dataset not specified)."
         },
         {
-          "name": "Customisation / Fine-tuning",
+          "name": "Training Data Documentation",
           "score": 1,
           "notes": "The publicly released Llama 3 / 3.1 base checkpoints have not been fine-tuned on any clinical or pathology-specific downstream task as part of the released artifact. The instruction-tuned variants (Llama-3-Instruct) are fine-tuned for general instruction following. This model, as is, has not been fine-tuned on any domain-specific downstream task relevant to this project, according to the model card from HuggingFace.\n\nOn Shaheen III GPUP, the declared training objectives are Supervised Fine-Tuning (SFT) or DPO for clinical report formatting and biological nomenclature alignment."
         },
         {
-          "name": "FLOPS Calculation",
+          "name": "Customisation / Fine-tuning",
           "score": 1,
           "notes": "6\u00b7N\u00b7D FLOPS estimate (using the largest declared variant, 405B, as the upper bound):\nN = 405,000,000,000 parameters (405B \u2014 upper bound across declared variants)\nD = 15,000,000,000,000 tokens (15T, as reported in Llama 3 technical report)\n6 \u00d7 N \u00d7 D = 6 \u00d7 4.05 \u00d7 10^11 \u00d7 1.5 \u00d7 10^13 = 6 \u00d7 6.075 \u00d7 10^24 = 3.65 \u00d7 10^25 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed."
         },
         {
-          "name": "Sample Inspection",
+          "name": "FLOPS Calculation",
           "score": 1,
           "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection."
         },
         {
-          "name": "License / Permissions",
+          "name": "Sample Inspection",
           "score": 1,
           "notes": "Llama 3 Community License Agreement (Meta)\nhttps://www.llama.com/llama3/license/\n\nPermissions:\nFree to use, reproduce, distribute, and create derivative works for research and commercial purposes\nMay fine-tune and adapt the model for downstream applications\nPermitted for deployments with fewer than 700 million monthly active users (above this threshold a separate license from Meta is required)\n\nObligations:\nMust include \"Built with Llama\" attribution in derivative works and products\nMust comply with Meta's Acceptable Use Policy (https://www.llama.com/llama3/use-policy/)\nMust include a copy of the license in any distribution\n\nRestrictions:\nCannot use outputs to improve other LLMs not in the Llama family (as defined by Meta's AUP)\nCannot remove or alter copyright notices\nHigh-volume commercial deployment (>700M MAU) requires a separate Meta license"
         }
@@ -515,8 +515,8 @@
       "checks": [
         {
           "name": "Project & Usage Alignment",
-          "score": 2,
-          "notes": "DeepSeek-V3.2 is a high-performance Mixture-of-Experts (MoE) large language model developed by DeepSeek AI that achieves state-of-the-art performance on coding, mathematics, and general reasoning benchmarks.\n\nThe model is listed in the Model Readiness form for the proposal objective \"Demonstrate clinical utility in diagnosis, risk stratification and therapy prioritization\", with the declared Shaheen III training objective of Full Fine-Tuning for domain-specific medical reasoning and multi-agent collaboration. The clinical relevance is plausible given the proposal's medical report generation component, but the connection to this specific model variant (as opposed to Llama or Qwen, which are more explicitly described in the proposal narrative) is not explicitly stated in the proposal text.\n\nAligns with the approved research topic, Health and Wellness."
+          "score": 3,
+          "notes": "DeepSeek-V3.2 is a high-performance Mixture-of-Experts (MoE) large language model developed by DeepSeek AI that achieves state-of-the-art performance on coding, mathematics, and general reasoning benchmarks.\n\nThe model is listed in the Model Readiness form for the proposal objective \"Demonstrate clinical utility in diagnosis, risk stratification and therapy prioritization\", with the declared Shaheen III training objective of Full Fine-Tuning for domain-specific medical reasoning and multi-agent collaboration. Further clarification from the PI in the email thread states that the intent is primarily for inference but also limited adaptation, which could refer to fine-tuning, parameter-efficient fine-tuning, prompt engineering (few-shot) and RAG. \n\nThe scored risk covers the element of fine-tuning the model which has invoked LC 2.5.\n\nAligns with the approved research topic, Health and Wellness."
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
@@ -525,8 +525,8 @@
         },
         {
           "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
-          "score": 2,
-          "notes": "HuggingFace: https://huggingface.co/deepseek-ai/DeepSeek-V3\nGitHub (reference): https://github.com/deepseek-ai/DeepSeek-V3\nHF downloads: millions across DeepSeek-V3 variants\nLast commit (HF): Actively updated (2025\u20132026)\nActivity health: healthy\n\nOwner: DeepSeek AI (\u6df1\u5ea6\u6c42\u7d22), a subsidiary of High-Flyer (\u5e7b\u65b9\u79d1\u6280), Hangzhou, China\nCountry: China\nD5-country affiliation found. DeepSeek AI is a Chinese company based in Hangzhou, China. Score = 2 (owning organisation is D5-country affiliated)."
+          "score": 3,
+          "notes": "HuggingFace: https://huggingface.co/deepseek-ai/DeepSeek-V3\nGitHub (reference): https://github.com/deepseek-ai/DeepSeek-V3\nHF downloads: millions across DeepSeek-V3 variants\nLast commit (HF): Actively updated (2025\u20132026)\nActivity health: healthy\n\nOwner: DeepSeek AI, a subsidiary of High-Flyer, Hangzhou, China\nCountry: China\nD5-country affiliation found. DeepSeek AI is a Chinese company based in Hangzhou, China. Score = 2 (owning organisation is D5-country affiliated)."
         },
         {
           "name": "License / Permissions",
@@ -561,8 +561,8 @@
       "checks": [
         {
           "name": "Project & Usage Alignment",
-          "score": 1,
-          "notes": "The Qwen series requested comprises three multimodal vision-language models developed by Alibaba Cloud: Qwen2.5-VL-7B-Instruct, Qwen2.5-VL-72B-Instruct, and Qwen3-VL-235B-A22B-Thinking. These are state-of-the-art multimodal foundation models capable of understanding images across various resolutions and aspect ratios alongside text, supporting vision-language reasoning tasks.\n\nThe models serve the proposal objective \"Demonstrate clinical utility in diagnosis, risk stratification and therapy prioritization\" for multimodal instruction tuning targeting pathology-report generation from whole-slide image features and single-cell summaries.\n\nAligns with the approved research topic, Health and Wellness."
+          "score": 3,
+          "notes": "The Qwen series requested comprises three multimodal vision-language models developed by Alibaba Cloud: Qwen2.5-VL-7B-Instruct, Qwen2.5-VL-72B-Instruct, and Qwen3-VL-235B-A22B-Thinking. These are state-of-the-art multimodal foundation models capable of understanding images across various resolutions and aspect ratios alongside text, supporting vision-language reasoning tasks.\n\nThe models serve the proposal objective \"Demonstrate clinical utility in diagnosis, risk stratification and therapy prioritization\" for multimodal instruction tuning targeting pathology-report generation from whole-slide image features and single-cell summaries. Further clarification from the PI in the email thread states that the intent is primarily for inference but also limited adaptation, which could refer to fine-tuning, parameter-efficient fine-tuning, prompt engineering (few-shot) and RAG.\n\n\nAligns with the approved research topic, Health and Wellness."
         },
         {
           "name": "Prohibited Use Screening (LC 2.7)",
@@ -570,34 +570,34 @@
           "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. The Qwen VL series are general-purpose vision-language models to be fine-tuned for medical pathology report generation."
         },
         {
-          "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
-          "score": 2,
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 3,
           "notes": "HuggingFace (Qwen2.5-VL-7B): https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct\nHuggingFace (Qwen2.5-VL-72B): https://huggingface.co/Qwen/Qwen2.5-VL-72B-Instruct\nHuggingFace (Qwen3-VL-235B): https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Thinking\nGitHub (reference): https://github.com/QwenLM/Qwen2.5-VL\nHF downloads: millions across Qwen variants\nLast commit (HF): Actively updated (2025\u20132026)\nActivity health: healthy\n\nOwner: Alibaba Cloud (Alibaba Group), Hangzhou, China\nCountry: China\nD5-country affiliation found. Qwen is developed and maintained by Alibaba Cloud, a subsidiary of Alibaba Group headquartered in Hangzhou, China. Score = 2 (owning organisation is D5-country affiliated)."
-        },
-        {
-          "name": "Training Data Documentation",
-          "score": 2,
-          "notes": "Qwen2.5-VL: Pre-training data described in the Qwen2.5-VL technical report (Wang et al., arXiv:2502.13923, 2025) as a large-scale multimodal corpus; the exact composition is not fully disclosed. Text pre-training data follows the Qwen2.5 LLM corpus (approximately 18 trillion tokens for the language backbone).\nQwen3-VL-235B-A22B: Technical report and training data details not yet publicly available at the time of review.\nD (tokens): Not declared in the Model Readiness form for any variant.\nNote: Parameter counts and training token counts are not provided in the Model Readiness form. Flagged for incomplete documentation."
-        },
-        {
-          "name": "Customisation / Fine-tuning",
-          "score": 1,
-          "notes": "The publicly released Qwen2.5-VL-Instruct and Qwen3-VL checkpoints are instruction-tuned by Alibaba Cloud on general multimodal instruction datasets. No clinical or pathology-specific fine-tuning is included in the released artifacts. This model, as is, has not been fine-tuned on any domain-specific downstream task relevant to this project, according to the model card from HuggingFace.\n\nOn Shaheen III GPUP, the declared training objective is multimodal instruction tuning for pathology-report generation."
-        },
-        {
-          "name": "FLOPS Calculation",
-          "score": 2,
-          "notes": "6\u00b7N\u00b7D FLOPS estimate (using the largest declared variant, Qwen3-VL-235B, as the upper bound):\nN = 235,000,000,000 parameters (235B total; 22B active per token in MoE configuration \u2014 using total N as the conservative upper bound)\nD: Not declared in the Model Readiness form. Using publicly reported Qwen2.5 LLM backbone pre-training figure of ~18 \u00d7 10^12 tokens as a proxy.\n6 \u00d7 N \u00d7 D = 6 \u00d7 2.35 \u00d7 10^11 \u00d7 1.8 \u00d7 10^13 = 6 \u00d7 4.23 \u00d7 10^24 = 2.54 \u00d7 10^25 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed. Score raised to 2 due to missing parameter and token documentation in the submission \u2014 D figure is derived from public technical reports, not the form."
-        },
-        {
-          "name": "Sample Inspection",
-          "score": 2,
-          "notes": "LC 2.5 = 2 (D5-country affiliation: Alibaba Cloud, China). The models are declared training targets on Shaheen III GPUP (multimodal instruction tuning for pathology-report generation); the inference-only de-risking waiver does not apply. Sample inspection required before staging.\n\nInspection plan: Generate neutral prompts representative of the declared use case (histopathology image captioning, structured clinical report generation, biomedical VQA). Inspect at minimum 20 sample outputs per variant. Document method, sample size, and findings before staging on Shaheen III GPUP."
         },
         {
           "name": "License / Permissions",
           "score": 1,
           "notes": "Qwen2.5-VL (7B and 72B variants): Apache License 2.0 (https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct)\nQwen3-VL-235B-A22B: Qwen Research License (https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Thinking)\n\nPermissions:\nFree to use for research purposes\nMay fine-tune and create derivative models\nMay distribute derivative works\n\nObligations:\nMust include Qwen attribution in derivative works and products\nMust comply with Qwen's Acceptable Use Policy\n\nRestrictions:\nCannot remove copyright or license notices\nCannot use for purposes that violate applicable laws"
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "Qwen2.5-VL: Pre-training data described in the Qwen2.5-VL technical report (Wang et al., arXiv:2502.13923, 2025) as a large-scale multimodal corpus; the exact composition is not fully disclosed. Text pre-training data follows the Qwen2.5 LLM corpus (approximately 18 trillion tokens for the language backbone).\nQwen3-VL-235B-A22B: Technical report and training data details not yet publicly available at the time of review.\nD (tokens): Not declared in the Model Readiness form for any variant.\nNote: Parameter counts and training token counts are not provided in the Model Readiness form. Flagged for incomplete documentation."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 2,
+          "notes": "The publicly released Qwen2.5-VL-Instruct and Qwen3-VL checkpoints are instruction-tuned by Alibaba Cloud on general multimodal instruction datasets. No clinical or pathology-specific fine-tuning is included in the released artifacts. This model, as is, has not been fine-tuned on any domain-specific downstream task relevant to this project, according to the model card from HuggingFace.\n\nOn Shaheen III GPUP, the declared training objective is multimodal instruction tuning for pathology-report generation."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 2,
+          "notes": "6\u00b7N\u00b7D FLOPS estimate (using the largest declared variant, Qwen3-VL-235B, as the upper bound):\nN = 235,000,000,000 parameters (235B total; 22B active per token in MoE configuration \u2014 using total N as the conservative upper bound)\nD: Not declared in the Model Readiness form. Using publicly reported Qwen2.5 LLM backbone pre-training figure of ~18 \u00d7 10^12 tokens as a proxy.\n6 \u00d7 N \u00d7 D = 6 \u00d7 2.35 \u00d7 10^11 \u00d7 1.8 \u00d7 10^13 = 6 \u00d7 4.23 \u00d7 10^24 = 2.54 \u00d7 10^25 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed. Score raised to 2 due to missing parameter and token documentation in the submission \u2014 D figure is derived from public technical reports, not the form.\n"
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "LC 2.5 = 2 (D5-country affiliation: Alibaba Cloud, China). The models are declared training targets on Shaheen III GPUP (multimodal instruction tuning for pathology-report generation); the inference-only de-risking waiver does not apply. Sample inspection required before staging.\n\nInspection plan: Generate neutral prompts representative of the declared use case (histopathology image captioning, structured clinical report generation, biomedical VQA). Inspect at minimum 20 sample outputs per variant. Document method, sample size, and findings before staging on Shaheen III GPUP."
         }
       ],
       "is_proprietary": false
@@ -746,7 +746,7 @@
   "addenda": [],
   "_submission_history": [
     {
-      "timestamp": "2026-07-01T13:39:10.509600",
+      "timestamp": "2026-08-17T09:17:08.428466",
       "action": "resubmission"
     }
   ]
