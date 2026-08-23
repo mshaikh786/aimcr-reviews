@@ -746,7 +746,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "     - ***As per the dataset documentation***, UltraData-Math is a large-scale, high-quality mathematical pre-training dataset  designed to enhance mathematical reasoning in LLMs.\n \n     - ***For this proposal it is specifically used for*** English mathematical pre-training to strengthen math capability in the Arabic/English LLM being developed"
+              "notes": "UltraData-Math is a large-scale, high-quality mathematical pre-training dataset  designed to enhance mathematical reasoning in LLMs, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for English mathematical pre-training to strengthen math capability in the Arabic/English LLM being developed"
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -766,7 +766,7 @@
             {
               "name": "Sample Inspection",
               "score": 1,
-              "notes": "Skipped"
+              "notes": "821,830 records (~7.2%) inspected via streaming across 9 of 50 parquet parts, row-group and cross-file sampling. Content matches the dataset description \u2014 synthetic math-education text in varied presentational styles. Schema is uid/content only; no dataset-defined category metadata. No sensitive content observed.\n\nSame sample screened against all five LC 2.7 categories plus general sensitive terms. Matches were incidental/pedagogical only \u2014 \"weapon\" used as a math metaphor, radioisotope/launch-vehicle physics problems, one historical WWII reference. No prohibited content. Score: 1 (No Risk).\n"
             },
             {
               "name": "Provenance",
@@ -786,7 +786,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, SwallowMath-v2 is a large-scale mathematical dataset containing approximately 32 billion tokens derived from FineMath-3+, rewritten by an LLM-driven pipeline into two styles \u2014 Q&A (13.6B tokens, ~12.6M samples) and Textbook (18.3B tokens, ~13.3M samples) \u2014 covering English-language mathematical content with step-by-step solutions formatted in Markdown and LaTeX. \n\n     - ***For this proposal it is specifically used for*** English mathematical pre-training to add math problem-solving and textbook-style content to the LLM pretraining mix for the Arabic/English LLM project."
+              "notes": "SwallowMath-v2 is a large-scale mathematical dataset containing approximately 32 billion tokens derived from FineMath-3+, rewritten by an LLM-driven pipeline into two styles \u2014 Q&A (13.6B tokens, ~12.6M samples) and Textbook (18.3B tokens, ~13.3M samples) \u2014 covering English-language mathematical content with step-by-step solutions formatted in Markdown and LaTeX, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for English mathematical pre-training to add math problem-solving and textbook-style content to the LLM pretraining mix for the Arabic/English LLM project."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -826,7 +826,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, SwallowMath-v2 is a large-scale mathematical dataset containing approximately 32 billion tokens derived from FineMath-3+, rewritten by an LLM-driven pipeline into two styles \u2014 Q&A (13.6B tokens, ~12.6M samples) and Textbook (18.3B tokens, ~13.3M samples) \u2014 covering English-language mathematical content with step-by-step solutions formatted in Markdown and LaTeX. \n\n     - ***For this proposal it is specifically used for*** English mathematical pre-training to add math problem-solving and textbook-style content to the LLM pretraining mix for the Arabic/English LLM project."
+              "notes": "SwallowMath-v2 is a large-scale mathematical dataset containing approximately 32 billion tokens derived from FineMath-3+, rewritten by an LLM-driven pipeline into two styles \u2014 Q&A (13.6B tokens, ~12.6M samples) and Textbook (18.3B tokens, ~13.3M samples) \u2014 covering English-language mathematical content with step-by-step solutions formatted in Markdown and LaTeX, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for English mathematical pre-training to add math problem-solving and textbook-style content to the LLM pretraining mix for the Arabic/English LLM project."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -866,7 +866,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, The dolmino-mix-1124 dataset is a mixture of high-quality data used for the second stage of OLMo2 LLM training, comprising approximately 843B tokens total across multiple subsets. \n     - ***For this proposal it is specifically used for*** English pretraining to add technical Q&A content to the pretraining mix, and an Arabic translation counterpart is not listed separately \u2014 making it an English pretraining contribution only within the Arabic/English LLM project."
+              "notes": "The dolmino-mix-1124 dataset is a mixture of high-quality data used for the second stage of OLMo2 LLM training, comprising approximately 843B tokens total across multiple subsets, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for English pretraining to add technical Q&A content to the pretraining mix, and an Arabic translation counterpart is not listed separately \u2014 making it an English pretraining contribution only within the Arabic/English LLM project."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -906,7 +906,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, The dolmino-mix-1124 dataset is a mixture of high-quality data used for the second stage of OLMo2 LLM training, comprising approximately 843B tokens total across multiple subsets. \n     - ***For this proposal it is specifically used for*** English pretraining to add technical Q&A content to the pretraining mix, and an Arabic translation counterpart is not listed separately \u2014 making it an English pretraining contribution only within the Arabic/English LLM project."
+              "notes": "The dolmino-mix-1124 dataset is a mixture of high-quality data used for the second stage of OLMo2 LLM training, comprising approximately 843B tokens total across multiple subsets, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for English pretraining to add technical Q&A content to the pretraining mix, and an Arabic translation counterpart is not listed separately \u2014 making it an English pretraining contribution only within the Arabic/English LLM project."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -946,7 +946,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, ArabicWeb24 contains more than 28 billion tokens of cleaned and deduplicated Arabic web content, crawled in early 2024 and processed using the Hugging Face datatrove library. \n     - ***For this proposal it is specifically used for*** Arabic pretraining \u2014 specifically as a primary source of high-quality Arabic web text to support the Arabic language component of the Arabic/English LLM being developed."
+              "notes": "ArabicWeb24 contains more than 28 billion tokens of cleaned and deduplicated Arabic web content, crawled in early 2024 and processed using the Hugging Face datatrove library, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for Arabic pretraining \u2014 specifically as a primary source of high-quality Arabic web text to support the Arabic language component of the Arabic/English LLM being developed."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -986,7 +986,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, AraMix is an Arabic pretraining corpus containing up to 178 billion tokens across ~179 million documents, built by combining seven publicly available Arabic datasets \u2014 CulturaX, ArabicWeb24, HPLT 2.0, FineWeb-2, C4, 101B/ClusterLab, and FinePDFs.\n     - ***For this proposal it is specifically used for*** Arabic pretraining \u2014 specifically as a high-quality, deduplicated Arabic web corpus to serve as a foundational component of the Arabic LLM pretraining pipeline, with the matched subset targeting quality-filtered content signal via cross-source agreement."
+              "notes": "AraMix is an Arabic pretraining corpus containing up to 178 billion tokens across ~179 million documents, built by combining seven publicly available Arabic datasets \u2014 CulturaX, ArabicWeb24, HPLT 2.0, FineWeb-2, C4, 101B/ClusterLab, and FinePDFs, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for Arabic pretraining \u2014 specifically as a high-quality, deduplicated Arabic web corpus to serve as a foundational component of the Arabic LLM pretraining pipeline, with the matched subset targeting quality-filtered content signal via cross-source agreement."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1026,7 +1026,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, AraMix is an Arabic pretraining corpus containing up to 178 billion tokens across ~179 million documents, built by combining seven publicly available Arabic datasets \u2014 CulturaX, ArabicWeb24, HPLT 2.0, FineWeb-2, C4, 101B/ClusterLab, and FinePDFs.\n     - ***For this proposal it is specifically used for*** Arabic pretraining \u2014 specifically as a high-quality, deduplicated Arabic web corpus to serve as a foundational component of the Arabic LLM pretraining pipeline, with the matched subset targeting quality-filtered content signal via cross-source agreement."
+              "notes": "AraMix is an Arabic pretraining corpus containing up to 178 billion tokens across ~179 million documents, built by combining seven publicly available Arabic datasets \u2014 CulturaX, ArabicWeb24, HPLT 2.0, FineWeb-2, C4, 101B/ClusterLab, and FinePDFs, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for Arabic pretraining \u2014 specifically as a high-quality, deduplicated Arabic web corpus to serve as a foundational component of the Arabic LLM pretraining pipeline, with the matched subset targeting quality-filtered content signal via cross-source agreement."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1066,7 +1066,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, The dataset is an OCR-processed version of content from the NYU Arabic Collections Online (ACO) a publicly available digital library of public domain Arabic language content. \n     - ***For this proposal it is specifically used for*** Arabic pretraining \u2014 specifically to contribute high-quality, domain-rich classical and modern Arabic text extracted from digitized books and manuscripts to the LLM pretraining corpus."
+              "notes": "The dataset is an OCR-processed version of content from the NYU Arabic Collections Online (ACO) a publicly available digital library of public domain Arabic language content, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for Arabic pretraining \u2014 specifically to contribute high-quality, domain-rich classical and modern Arabic text extracted from digitized books and manuscripts to the LLM pretraining corpus."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1106,7 +1106,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, the dataset contains 33,245,503 complete Arabic-translated documents \u2014 each row being a fully reconstructed document merged from chunk-level translations \u2014 produced by running the IBEX parallel translation pipeline on the DCLM. \n     - ***For this proposal it is specifically used for*** Arabic pretraining via translation \u2014 specifically providing machine-translated Arabic equivalents of English high-quality web content (DCLM) to expand the Arabic token count and domain coverage for the Arabic/English LLM being developed."
+              "notes": "the dataset contains 33,245,503 complete Arabic-translated documents \u2014 each row being a fully reconstructed document merged from chunk-level translations \u2014 produced by running the IBEX parallel translation pipeline on the DCLM, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for Arabic pretraining via translation \u2014 specifically providing machine-translated Arabic equivalents of English high-quality web content (DCLM) to expand the Arabic token count and domain coverage for the Arabic/English LLM being developed."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1125,8 +1125,8 @@
             },
             {
               "name": "Sample Inspection",
-              "score": 1,
-              "notes": "Skipped"
+              "score": 3,
+              "notes": "skipped"
             },
             {
               "name": "Provenance",
@@ -1146,7 +1146,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, finewiki-ar-checked is an Arabic-language dataset derived from a quality-filtered and checked subset of FineWiki. \n     - ***For this proposal it is specifically used for*** Arabic pretraining \u2014 specifically to contribute high-quality, verified Arabic Wikipedia text to the LLM pretraining pipeline as a reliable encyclopedic source."
+              "notes": "finewiki-ar-checked is an Arabic-language dataset derived from a quality-filtered and checked subset of FineWiki, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for Arabic pretraining \u2014 specifically to contribute high-quality, verified Arabic Wikipedia text to the LLM pretraining pipeline as a reliable encyclopedic source."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1186,7 +1186,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, swallowCode-v2 is a 49.8 billion-token Apache-2.0-licensed Python code dataset derived from The-Stack-v2. \n     - ***For this proposal it is specifically used for*** English code pretraining \u2014 specifically to improve the code generation capability of the LLM through a high-quality, LLM-rewritten Python code corpus included in the pretraining mix."
+              "notes": "swallowCode-v2 is a 49.8 billion-token Apache-2.0-licensed Python code dataset derived from The-Stack-v2, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for English code pretraining \u2014 specifically to improve the code generation capability of the LLM through a high-quality, LLM-rewritten Python code corpus included in the pretraining mix."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1226,7 +1226,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, the dataset contains two subsets totaling ~16.1 million rows and 18.6 GB: (1) GitHub Issues \u2014 11 billion tokens of multi-user technical discussions (bug reports, feature requests, Q&A) sourced from GH Archive with usernames anonymized and PII redacted. \n     - ***For this proposal it is specifically used for*** English code pretraining \u2014 specifically to contribute GitHub issue discussions and Kaggle notebook content to the LLM pretraining corpus."
+              "notes": "the dataset contains two subsets totaling ~16.1 million rows and 18.6 GB: (1) GitHub Issues \u2014 11 billion tokens of multi-user technical discussions (bug reports, feature requests, Q&A) sourced from GH Archive with usernames anonymized and PII redacted, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for English code pretraining \u2014 specifically to contribute GitHub issue discussions and Kaggle notebook content to the LLM pretraining corpus."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1266,7 +1266,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, the dataset contains two subsets totaling ~16.1 million rows and 18.6 GB: (1) GitHub Issues \u2014 11 billion tokens of multi-user technical discussions (bug reports, feature requests, Q&A) sourced from GH Archive with usernames anonymized and PII redacted. \n     - ***For this proposal it is specifically used for*** English code pretraining \u2014 specifically to contribute GitHub issue discussions and Kaggle notebook content to the LLM pretraining corpus."
+              "notes": "the dataset contains two subsets totaling ~16.1 million rows and 18.6 GB: (1) GitHub Issues \u2014 11 billion tokens of multi-user technical discussions (bug reports, feature requests, Q&A) sourced from GH Archive with usernames anonymized and PII redacted, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for English code pretraining \u2014 specifically to contribute GitHub issue discussions and Kaggle notebook content to the LLM pretraining corpus."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1306,7 +1306,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, ArabicMMLU is the first multi-task Arabic language understanding benchmark containing 14,575 multiple-choice questions (29,150 total rows with dev/test splits) across 40 tasks spanning 41 subjects.  \n     - ***For this proposal it is specifically used for*** Arabic LLM evaluation \u2014 specifically as a benchmark to assess the model's multitask language understanding capabilities across diverse Arabic academic domains and educational levels."
+              "notes": "ArabicMMLU is the first multi-task Arabic language understanding benchmark containing 14,575 multiple-choice questions (29,150 total rows with dev/test splits) across 40 tasks spanning 41 subjects, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for Arabic LLM evaluation \u2014 specifically as a benchmark to assess the model's multitask language understanding capabilities across diverse Arabic academic domains and educational levels."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1346,7 +1346,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, MLQA (MultiLingual Question Answering) is a cross-lingual extractive QA benchmark in SQuAD format containing over 5,000 QA instances per language (12,000 in English) across 7 languages \u2014 English, Arabic, German, Spanish, Hindi, Vietnamese, and Simplified Chinese. \n     - ***For this proposal it is specifically used for*** Arabic LLM evaluation \u2014 specifically to benchmark the model's cross-lingual extractive question answering capability on the Arabic-language QA subset, assessing reading comprehension in context."
+              "notes": "MLQA (MultiLingual Question Answering) is a cross-lingual extractive QA benchmark in SQuAD format containing over 5,000 QA instances per language (12,000 in English) across 7 languages \u2014 English, Arabic, German, Spanish, Hindi, Vietnamese, and Simplified Chinese, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for Arabic LLM evaluation \u2014 specifically to benchmark the model's cross-lingual extractive question answering capability on the Arabic-language QA subset, assessing reading comprehension in context."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1386,7 +1386,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, ARCD (Arabic Reading Comprehension Dataset) contains 1,395 questions posed by crowdworkers on Arabic Wikipedia articles in SQuAD extractive format (context, question, answer span), covering topics spanning history, geography, religion, sports, politics, and current events. \n     - ***For this proposal it is specifically used for*** Arabic LLM evaluation \u2014 specifically to benchmark the model's Arabic reading comprehension and extractive question answering capability on native Arabic Wikipedia-based QA pairs."
+              "notes": "ARCD (Arabic Reading Comprehension Dataset) contains 1,395 questions posed by crowdworkers on Arabic Wikipedia articles in SQuAD extractive format (context, question, answer span), covering topics spanning history, geography, religion, sports, politics, and current events, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for Arabic LLM evaluation \u2014 specifically to benchmark the model's Arabic reading comprehension and extractive question answering capability on native Arabic Wikipedia-based QA pairs."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1426,7 +1426,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, XStoryCloze consists of the professionally translated version of the English StoryCloze dataset (Spring 2016 version) into 10 non-English languages \u2014 including Arabic (ar). \n     - ***For this proposal it is specifically used for*** Arabic LLM evaluation "
+              "notes": "XStoryCloze consists of the professionally translated version of the English StoryCloze dataset (Spring 2016 version) into 10 non-English languages \u2014 including Arabic (ar), as per the dataset documentation.\n\n**Aligns with project proposal:** Used for Arabic LLM evaluation"
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1466,7 +1466,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, IndicXNLI (Repaired) is a Parquet-converted version of the original Divyanshu/indicxnli dataset, containing 4,402,970 NLI premise\u2013hypothesis pairs across 11 Indic languages. \n     - ***For this proposal it is specifically used for*** multilingual NLI evaluation \u2014 specifically as a compatibility-repaired version of IndicXNLI"
+              "notes": "IndicXNLI (Repaired) is a Parquet-converted version of the original Divyanshu/indicxnli dataset, containing 4,402,970 NLI premise\u2013hypothesis pairs across 11 Indic languages, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for multilingual NLI evaluation \u2014 specifically as a compatibility-repaired version of IndicXNLI"
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1506,7 +1506,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, mlqa_repaired is a Parquet-converted, datasets\u22654.x-compatible version of the original facebook/mlqa dataset. \n     - ***For this proposal it is specifically used for*** Arabic LLM evaluation"
+              "notes": "mlqa_repaired is a Parquet-converted, datasets\u22654.x-compatible version of the original facebook/mlqa dataset, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for Arabic LLM evaluation"
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1546,7 +1546,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, HellaSwag is a commonsense NLI benchmark containing 59,950 examples of sentence completion tasks across 178 activity categories. \n     - ***For this proposal it is specifically used for*** English LLM evaluation \u2014 specifically to benchmark the model's ability to select the most plausible continuation of a partial scenario."
+              "notes": "HellaSwag is a commonsense NLI benchmark containing 59,950 examples of sentence completion tasks across 178 activity categories, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for English LLM evaluation \u2014 specifically to benchmark the model's ability to select the most plausible continuation of a partial scenario."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1586,7 +1586,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, Social IQa is a commonsense QA benchmark for testing social interaction reasoning, containing 35,364 QA pairs. \n     - ***For this proposal it is specifically used for*** English LLM evaluation."
+              "notes": "Social IQa is a commonsense QA benchmark for testing social interaction reasoning, containing 35,364 QA pairs, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for English LLM evaluation."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1626,7 +1626,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, CommonsenseQA is a multiple-choice commonsense question answering dataset containing 12,102 questions. \n     - ***For this proposal it is specifically used for*** English LLM evaluation"
+              "notes": "CommonsenseQA is a multiple-choice commonsense question answering dataset containing 12,102 questions, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for English LLM evaluation"
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1666,7 +1666,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, GSM8K (Grade School Math 8K) is a dataset of 8,500 high-quality, linguistically diverse grade school math word problems. \n     - ***For this proposal it is specifically used for*** English and Arabic mathematical evaluation."
+              "notes": "GSM8K (Grade School Math 8K) is a dataset of 8,500 high-quality, linguistically diverse grade school math word problems, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for English and Arabic mathematical evaluation."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1706,7 +1706,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, FinePhrase is a massive ~1.35 billion-sample synthetic pretraining dataset (5.16 TB, ~1,015M rows in the preview) generated by running SmolLM2-1.7B-Instruct on HuggingFaceFW/fineweb-edu (sample-350BT) using the DataTrove pipeline. \n     - ***For this proposal it is specifically used for*** English pretraining \u2014 specifically to contribute diverse, synthetically reformatted educational content (FAQ, math word problems, tables, and tutorials)."
+              "notes": "FinePhrase is a massive ~1.35 billion-sample synthetic pretraining dataset (5.16 TB, ~1,015M rows in the preview) generated by running SmolLM2-1.7B-Instruct on HuggingFaceFW/fineweb-edu (sample-350BT) using the DataTrove pipeline, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for English pretraining \u2014 specifically to contribute diverse, synthetically reformatted educational content (FAQ, math word problems, tables, and tutorials)."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1746,7 +1746,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, DCLM-pro is a >500 billion token, 365.6 million sample (1.36 TB) English web text pretraining corpus containing a single text column, refined from the mlfoundations/dclm-baseline-1.0-parquet dataset using the ProX (Programming Every Example) framework. \n     - ***For this proposal it is specifically used for*** English pretraining \u2014 specifically as a high-quality, ProX-refined web corpus to replace or supplement raw DCLM data in the LLM pretraining pipeline."
+              "notes": "DCLM-pro is a >500 billion token, 365.6 million sample (1.36 TB) English web text pretraining corpus containing a single text column, refined from the mlfoundations/dclm-baseline-1.0-parquet dataset using the ProX (Programming Every Example) framework, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for English pretraining \u2014 specifically as a high-quality, ProX-refined web corpus to replace or supplement raw DCLM data in the LLM pretraining pipeline."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1766,7 +1766,7 @@
             {
               "name": "Sample Inspection",
               "score": 1,
-              "notes": "Skipped"
+              "notes": "Full-corpus keyword co-occurrence scan (not the standard 0.1% proportional sample) across 23,804 rows. Hits: weapons 956 (4.0%), missile/UAV delivery 69, nuclear fuel cycle 9, CBRN production facility 1, precursor chemicals/agents 29, military/targeting baseline 1378, killing/violence 4884. Manual review of matches shows predominantly encyclopedic, journalistic, and dual-use scientific context (e.g. DPRK/Iran nuclear reporting, Stuxnet coverage, dictionary entries, biology terminology). We also looked at the dataset provenance: The dataset is English web text refined from DCLM-baseline, which is derived from Common Crawl. The ProX refining only deletes lines and normalises strings, so DCLM-pro cannot contain any new content that is not already in DCLM-baseline, and no new synthetic content is introduced. DCLM-baseline itself is maintained by ML Foundations, a non-D5 multi-institution collaboration, and its Common Crawl origin is verifiable in the WARC headers carried on each record. Neither pipeline applies a topical filter at any stage; the only content-based exclusion is a URL blocklist for obscene domains. The flagged terms therefore should appear at a rate such words typically occur in general English web text, and the flag does not indicate topical selection/curation. The risk for this artifact has been set to low on this basis."
             },
             {
               "name": "Provenance",
@@ -1786,7 +1786,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, DCLM-Baseline is a 4 trillion token / ~3 billion document (7.2 TB) English web text pretraining dataset stored as zst-compressed JSONL files across 10 global shards. \n     - ***For this proposal it is specifically used for*** English pretraining \u2014 specifically as a high-quality, filtered web text baseline corpus for LLM pretraining."
+              "notes": "DCLM-Baseline is a 4 trillion token / ~3 billion document (7.2 TB) English web text pretraining dataset stored as zst-compressed JSONL files across 10 global shards, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for English pretraining \u2014 specifically as a high-quality, filtered web text baseline corpus for LLM pretraining."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1826,7 +1826,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, FineWeb2-HQ is a 6.04 TB, ~380 million-document multilingual pretraining dataset containing the top 10% quality documents from HuggingFaceFW/FineWeb2 across 20 languages. \n     - ***For this proposal it is specifically used for*** Arabic pretraining."
+              "notes": "FineWeb2-HQ is a 6.04 TB, ~380 million-document multilingual pretraining dataset containing the top 10% quality documents from HuggingFaceFW/FineWeb2 across 20 languages, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for Arabic pretraining."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1866,7 +1866,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, FineWiki is a 198 GB, ~61.5 million-article multilingual Wikipedia dataset extracted from Wikimedia Enterprise HTML dumps (August 2025) across 325 languages, with the Arabic subset (ar) containing 1,230,456 pages (3.4 GB). \n     - ***For this proposal it is specifically used for*** English and Arabic pretraining"
+              "notes": "FineWiki is a 198 GB, ~61.5 million-article multilingual Wikipedia dataset extracted from Wikimedia Enterprise HTML dumps (August 2025) across 325 languages, with the Arabic subset (ar) containing 1,230,456 pages (3.4 GB), as per the dataset documentation.\n\n**Aligns with project proposal:** Used for English and Arabic pretraining"
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1906,7 +1906,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, ultradata-math-textbook-exercise-ar is an Arabic machine-translated version of the textbook_exercise split of the openbmb/UltraData-Math (L3 tier) dataset. \n     - ***For this proposal it is specifically used for*** Arabic mathematical pretraining \u2014 specifically providing Arabic-translated textbook-style math exercises and solutions from the UltraData-Math L3 tier"
+              "notes": "ultradata-math-textbook-exercise-ar is an Arabic machine-translated version of the textbook_exercise split of the openbmb/UltraData-Math (L3 tier) dataset, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for Arabic mathematical pretraining \u2014 specifically providing Arabic-translated textbook-style math exercises and solutions from the UltraData-Math L3 tier"
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1946,7 +1946,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, fineweb-edu-ibex-merged-260315 is an Arabic translation corpus containing 82,840,410 complete documents (164 GB, 867 zstd-compressed shards, created 2026-03-17) produced by running the IBEX parallel translation pipeline on HuggingFaceFW/fineweb-edu. \n     - ***For this proposal it is specifically used for*** Arabic pretraining via translation \u2014 specifically providing machine-translated Arabic versions of high-quality educational English web content."
+              "notes": "fineweb-edu-ibex-merged-260315 is an Arabic translation corpus containing 82,840,410 complete documents (164 GB, 867 zstd-compressed shards, created 2026-03-17) produced by running the IBEX parallel translation pipeline on HuggingFaceFW/fineweb-edu, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for Arabic pretraining via translation \u2014 specifically providing machine-translated Arabic versions of high-quality educational English web content."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1986,7 +1986,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, openresearcher-corpus-ar is an Arabic machine-translated version of OpenResearcher/OpenResearcher-Corpus \u2014 containing approximately ~7\u201314 million Arabic-translated documents. \n     - ***For this proposal it is specifically used for*** Arabic pretraining via translation."
+              "notes": "openresearcher-corpus-ar is an Arabic machine-translated version of OpenResearcher/OpenResearcher-Corpus \u2014 containing approximately ~7\u201314 million Arabic-translated documents, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for Arabic pretraining via translation."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -2026,7 +2026,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, ultradata-math-qa-ar is an Arabic machine-translated version of the qa (Question & Answer) split of the openbmb/UltraData-Math (L3 tier) dataset \u2014 containing approximately ~11.6 million Arabic-translated math Q&A pairs.  \n     - ***For this proposal it is specifically used for*** Arabic mathematical pretraining \u2014 specifically providing Arabic-translated math Q&A pairs from the UltraData-Math L3 tier ."
+              "notes": "ultradata-math-qa-ar is an Arabic machine-translated version of the qa (Question & Answer) split of the openbmb/UltraData-Math (L3 tier) dataset \u2014 containing approximately ~11.6 million Arabic-translated math Q&A pairs, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for Arabic mathematical pretraining \u2014 specifically providing Arabic-translated math Q&A pairs from the UltraData-Math L3 tier ."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -2066,7 +2066,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, AraMix-HQ is a 101 GB high-quality Arabic subset of AraMix-MinHash (the minhash-deduplicated version of AraMix, which itself aggregates CulturaX, ArabicWeb24, HPLT 2.0, FineWeb-2, C4, 101B/ClusterLab, and FinePDFs). \n     - ***For this proposal it is specifically used for*** Arabic pretraining \u2014 specifically as the highest-quality tier of the AraMix ecosystem, providing model-filtered, knowledge-rich Arabic web content that outperforms both AraMix-Matched and FineWeb2-HQ on Arabic FineTasks benchmarks for the LLM pretraining pipeline."
+              "notes": "AraMix-HQ is a 101 GB high-quality Arabic subset of AraMix-MinHash (the minhash-deduplicated version of AraMix, which itself aggregates CulturaX, ArabicWeb24, HPLT 2.0, FineWeb-2, C4, 101B/ClusterLab, and FinePDFs), as per the dataset documentation.\n\n**Aligns with project proposal:** Used for Arabic pretraining \u2014 specifically as the highest-quality tier of the AraMix ecosystem, providing model-filtered, knowledge-rich Arabic web content that outperforms both AraMix-Matched and FineWeb2-HQ on Arabic FineTasks benchmarks for the LLM pretraining pipeline."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -2106,7 +2106,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, The dataset is a complete, live-updated archive of Hacker News containing 48,436,184 items (12.1 GB) spanning from October 2006 through the present, organized as monthly Parquet files updated every 5 minutes. \n     - ***For this proposal it is specifically used for*** English pretraining \u2014 specifically to contribute high-quality, long-running technical community discussions, Q&A, and curated link content."
+              "notes": "The dataset is a complete, live-updated archive of Hacker News containing 48,436,184 items (12.1 GB) spanning from October 2006 through the present, organized as monthly Parquet files updated every 5 minutes, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for English pretraining \u2014 specifically to contribute high-quality, long-running technical community discussions, Q&A, and curated link content."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -2146,7 +2146,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, stack-edu-huggingface is a 214 GB, pre-downloaded and processed version of the HuggingFaceTB/stack-edu dataset, containing the full text content of source code files (as opposed to the original's SWHIDs-only format) organized as one Parquet file per programming language across 15 languages. \n     - ***For this proposal it is specifically used for*** English code pretraining \u2014 specifically to contribute high-quality, educationally curated code."
+              "notes": "stack-edu-huggingface is a 214 GB, pre-downloaded and processed version of the HuggingFaceTB/stack-edu dataset, containing the full text content of source code files (as opposed to the original's SWHIDs-only format) organized as one Parquet file per programming language across 15 languages, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for English code pretraining \u2014 specifically to contribute high-quality, educationally curated code."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -2186,7 +2186,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, FineWeb-Edu is a 1.3 trillion token / ~3.5 billion document, 5.84 TB English educational web text dataset filtered from the FineWeb dataset (itself derived from Common Crawl 2013\u20132025) using a Bert-like educational quality classifier. \n     - ***For this proposal it is specifically used for*** English pretraining \u2014 specifically as a high-quality, educationally filtered web corpus to be the primary English pretraining source."
+              "notes": "FineWeb-Edu is a 1.3 trillion token / ~3.5 billion document, 5.84 TB English educational web text dataset filtered from the FineWeb dataset (itself derived from Common Crawl 2013\u20132025) using a Bert-like educational quality classifier, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for English pretraining \u2014 specifically as a high-quality, educationally filtered web corpus to be the primary English pretraining source."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -2226,7 +2226,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, EXAMS is a multilingual and cross-lingual multiple-choice QA benchmark containing more than 24,000 high-quality high school exam questions across 16 languages covering 24 school subjects. \n     - ***For this proposal it is specifically used for*** Arabic LLM evaluation \u2014 specifically to benchmark the model's cross-lingual and multilingual multiple-choice question answering capability ."
+              "notes": "EXAMS is a multilingual and cross-lingual multiple-choice QA benchmark containing more than 24,000 high-quality high school exam questions across 16 languages covering 24 school subjects, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for Arabic LLM evaluation \u2014 specifically to benchmark the model's cross-lingual and multilingual multiple-choice question answering capability ."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -2266,7 +2266,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, Belebele is a massively multilingual multiple-choice machine reading comprehension (MRC) benchmark containing 109,800 questions total. \n     - ***For this proposal it is specifically used for*** Arabic LLM evaluation \u2014 specifically to benchmark the model's reading comprehension and language understanding across multiple Arabic variants (MSA arb_Arab, Moroccan ary_Arab, Egyptian arz_Arab, Najdi ars_Arab, Mesopotamian acm_Arab, North Levantine apc_Arab), enabling fine-grained Arabic dialect evaluation."
+              "notes": "Belebele is a massively multilingual multiple-choice machine reading comprehension (MRC) benchmark containing 109,800 questions total, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for Arabic LLM evaluation \u2014 specifically to benchmark the model's reading comprehension and language understanding across multiple Arabic variants (MSA arb_Arab, Moroccan ary_Arab, Egyptian arz_Arab, Najdi ars_Arab, Mesopotamian acm_Arab, North Levantine apc_Arab), enabling fine-grained Arabic dialect evaluation."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -2306,7 +2306,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, TyDi QA (Typologically Diverse Question Answering) is an information-seeking QA benchmark containing 240,544 question-answer pairs (204K in the original release) across 11 typologically diverse languages. \n     - ***For this proposal it is specifically used for*** Arabic LLM evaluation"
+              "notes": "TyDi QA (Typologically Diverse Question Answering) is an information-seeking QA benchmark containing 240,544 question-answer pairs (204K in the original release) across 11 typologically diverse languages, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for Arabic LLM evaluation"
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -2346,7 +2346,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, X-CSR (Cross-lingual Commonsense Reasoning) contains 53,984 multiple-choice commonsense reasoning examples across 32 subsets. \n     - ***For this proposal it is specifically used for*** Arabic LLM evaluation \u2014 specifically to benchmark the model's cross-lingual zero-shot commonsense reasoning transfer from English training to Arabic test settings across both question-answering and story completion formats."
+              "notes": "X-CSR (Cross-lingual Commonsense Reasoning) contains 53,984 multiple-choice commonsense reasoning examples across 32 subsets, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for Arabic LLM evaluation \u2014 specifically to benchmark the model's cross-lingual zero-shot commonsense reasoning transfer from English training to Arabic test settings across both question-answering and story completion formats."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -2386,7 +2386,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, okapi_hellaswag is a multilingual translation of the English HellaSwag commonsense NLI dataset containing 284,650 rows across 31 language subsets. \n     - ***For this proposal it is specifically used for*** Arabic LLM evaluation \u2014 specifically to benchmark the model's ability to select the most plausible continuation of everyday scenarios in Arabic"
+              "notes": "okapi_hellaswag is a multilingual translation of the English HellaSwag commonsense NLI dataset containing 284,650 rows across 31 language subsets, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for Arabic LLM evaluation \u2014 specifically to benchmark the model's ability to select the most plausible continuation of everyday scenarios in Arabic"
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -2426,7 +2426,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***: lighteval/mmlu is a repackaged version of the original MMLU (Measuring Massive Multitask Language Understanding) benchmark containing 5,822,552 rows / 2.74 GB across 58 subsets (57 academic subtasks + 1 all combined subset).\n\n     - ***For this proposal it is specifically used for*** English LLM evaluation \u2014 specifically as the primary comprehensive multitask benchmark to assess the model's breadth of knowledge and reasoning ability across 57 academic subjects from elementary to professional and expert level."
+              "notes": "lighteval/mmlu is a repackaged version of the original MMLU (Measuring Massive Multitask Language Understanding) benchmark containing 5,822,552 rows / 2.74 GB across 58 subsets (57 academic subtasks + 1 all combined subset), as per the dataset documentation.\n\n**Aligns with project proposal:** Used for English LLM evaluation \u2014 specifically as the primary comprehensive multitask benchmark to assess the model's breadth of knowledge and reasoning ability across 57 academic subjects from elementary to professional and expert level."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -2466,7 +2466,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, ARC (AI2 Reasoning Challenge) is a dataset of 7,787 genuine grade-school level, multiple-choice science questions across two subsets \u2014 ARC-Challenge (2,590 rows: 1,119 train / 299 validation / 1,172 test, containing only questions answered incorrectly by both a retrieval-based algorithm and a word co-occurrence algorithm) and ARC-Easy (5,197 rows: 2,251 train / 570 validation / 2,376 test) \u2014 each question consisting of an id, question string, a choices dictionary (text + label A\u2013D), and an answerKey, drawn from standardized science exams designed for grades 3\u20139.\n\n\n     - ***For this proposal it is specifically used for*** English LLM evaluation \u2014 benchmarking the model's natural science reasoning and knowledge on both the standard (Easy) and adversarially hard (Challenge) subsets of grade-school-level science multiple-choice questions."
+              "notes": "ARC (AI2 Reasoning Challenge) is a dataset of 7,787 genuine grade-school level, multiple-choice science questions across two subsets \u2014 ARC-Challenge (2,590 rows: 1,119 train / 299 validation / 1,172 test, containing only questions answered incorrectly by both a retrieval-based algorithm and a word co-occurrence algorithm) and ARC-Easy (5,197 rows: 2,251 train / 570 validation / 2,376 test) \u2014 each question consisting of an id, question string, a choices dictionary (text + label A\u2013D), and an answerKey, drawn from standardized science exams designed for grades 3\u20139, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for English LLM evaluation \u2014 benchmarking the model's natural science reasoning and knowledge on both the standard (Easy) and adversarially hard (Challenge) subsets of grade-school-level science multiple-choice questions."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -2506,7 +2506,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "\n     - ***As per the dataset documentation***, MATH-lighteval is a LightEval-compatible repackaging of the MATH (Mathematics Aptitude Test of Heuristics) dataset containing 12,500 competition-level math problems (7,500 train / 5,000 test) across 8 subsets. \n\n     - ***For this proposal it is specifically used for*** English and Arabic mathematical evaluation \u2014 benchmarking the model's advanced mathematical problem-solving and multi-step reasoning ability on competition-level mathematics, with problem types spanning algebra, geometry, number theory, and probability."
+              "notes": "MATH-lighteval is a LightEval-compatible repackaging of the MATH (Mathematics Aptitude Test of Heuristics) dataset containing 12,500 competition-level math problems (7,500 train / 5,000 test) across 8 subsets, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for English and Arabic mathematical evaluation \u2014 benchmarking the model's advanced mathematical problem-solving and multi-step reasoning ability on competition-level mathematics, with problem types spanning algebra, geometry, number theory, and probability."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -2554,7 +2554,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "As per the model documentation, Gemma 4 12B-IT is Google DeepMind's open-weight, instruction-tuned, encoder-free multimodal (text/image/audio) transformer that generates text, supporting long-context reasoning, coding, and agentic tool use. \n     - ***For this proposal it is specifically used for*** as a frozen frontier reference/baseline model for evaluation comparisons "
+              "notes": "Gemma 4 12B-IT is Google DeepMind's open-weight, instruction-tuned, encoder-free multimodal (text/image/audio) transformer that generates text, supporting long-context reasoning, coding, and agentic tool use, as per the model documentation.\n\n**Aligns with project proposal:** Used for as a frozen frontier reference/baseline model for evaluation comparisons"
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -2646,7 +2646,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "Gemma 4 31B-IT is Google DeepMind's open-weight, dense, instruction-tuned multimodal (text + image) transformer supporting a 256K-token context window, reasoning (\"thinking mode\"), coding, and agentic tool use. \n     - ***For this proposal it is specifically used for*** as a frozen frontier reference/baseline model for evaluation comparisons, not trained or fine-tuned on Shaheen III."
+              "notes": "Gemma 4 31B-IT is Google DeepMind's open-weight, dense, instruction-tuned multimodal (text + image) transformer supporting a 256K-token context window, reasoning (\"thinking mode\"), coding, and agentic tool use, as per the model documentation.\n\n**Aligns with project proposal:** Used for as a frozen frontier reference/baseline model for evaluation comparisons, not trained or fine-tuned on Shaheen III."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -2692,7 +2692,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "Gemma 4 26B-A4B-IT is Google DeepMind's open-weight, dense, instruction-tuned multimodal (text + image) transformer supporting a 256K-token context window, reasoning (\"thinking mode\"), coding, and agentic tool use. \n     - ***For this proposal it is specifically used for*** as a frozen frontier reference/baseline model for evaluation comparisons, not trained or fine-tuned on Shaheen III."
+              "notes": "Gemma 4 26B-A4B-IT is Google DeepMind's open-weight, dense, instruction-tuned multimodal (text + image) transformer supporting a 256K-token context window, reasoning (\"thinking mode\"), coding, and agentic tool use, as per the model documentation.\n\n**Aligns with project proposal:** Used for as a frozen frontier reference/baseline model for evaluation comparisons, not trained or fine-tuned on Shaheen III."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -2738,7 +2738,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "Gemma-4-E4B-it s Google DeepMind's open-weight, dense, instruction-tuned multimodal (text + image) transformer supporting a 128K-token context window, reasoning (\"thinking mode\"), coding, and agentic tool use. \n     - ***For this proposal it is specifically used for*** as a frozen frontier reference/baseline model for evaluation comparisons, not trained or fine-tuned on Shaheen III."
+              "notes": "Gemma-4-E4B-it s Google DeepMind's open-weight, dense, instruction-tuned multimodal (text + image) transformer supporting a 128K-token context window, reasoning (\"thinking mode\"), coding, and agentic tool use, as per the model documentation.\n\n**Aligns with project proposal:** Used for as a frozen frontier reference/baseline model for evaluation comparisons, not trained or fine-tuned on Shaheen III."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -2784,7 +2784,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "Qwen/Qwen3.6-35B-A3B is Alibaba's open-weight Mixture-of-Experts (35B total / ~3B activated) causal language model with a vision encoder, natively supporting 262K tokens (extensible to ~1M), optimized for agentic coding, tool use, and multimodal (text/image/video) understanding. \n     - ***For this proposal it is specifically used for*** as a frozen frontier reference/baseline model for evaluation comparisons, not trained or fine-tuned on Shaheen III."
+              "notes": "Qwen/Qwen3.6-35B-A3B is Alibaba's open-weight Mixture-of-Experts (35B total / ~3B activated) causal language model with a vision encoder, natively supporting 262K tokens (extensible to ~1M), optimized for agentic coding, tool use, and multimodal (text/image/video) understanding, as per the model documentation.\n\n**Aligns with project proposal:** Used for as a frozen frontier reference/baseline model for evaluation comparisons, not trained or fine-tuned on Shaheen III."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
