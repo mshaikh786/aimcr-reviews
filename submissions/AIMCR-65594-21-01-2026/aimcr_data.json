@@ -172,10 +172,11 @@
     }
   ],
   "observations": "Model is to be developed on Shaheen III GPUP from scratch. \nThe model source, therefore will need to be checked at least once to confirm the conformance to the project proposal. \n\nSample check could not be carried out because of lack of source for the model.\n\nFor software, the group has not listed transformers library. In this case, it is expected that they will use torch.nn to define the model.\n\n",
-  "recommendation": "Positive check passed. \n\nNegative check passed.\n\n10^27 check passed.\n\nFinal recommended for the grand challenge, with a condition to monitor midway to the allocated duration approved by the RCAC.",
+  "recommendation": "Positive check passed. \n\nNegative check passed.\n\n10^27 check passed.\n\nMonitoring:\n- Contact the PI, 6 months after the creation his account to document the model architecture, and its sources. \n\nRecommended for Grand challenge. ",
+  "addenda": [],
   "_submission_history": [
     {
-      "timestamp": "2026-01-22T12:31:35.612529",
+      "timestamp": "2026-08-24T08:14:30.402217",
       "action": "resubmission"
     }
   ]
