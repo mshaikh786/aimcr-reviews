@@ -315,7 +315,7 @@
         {
           "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
           "score": 2,
-          "notes": "In-house code but source not provided. Check is not possible. \n\nHowever, risk reduced to low because the developers are KAUST faculty's students and staff. The "
+          "notes": "In-house code but source not provided. Check is not possible. \n\nHowever, risk reduced to low because the developers are KAUST faculty's students and staff."
         },
         {
           "name": "License / Permissions",
@@ -348,9 +348,10 @@
   ],
   "observations": "The custom MLP models have been indicated however, the model files have not been shared. The number of trainable parameters in the proposed models is typically 10-100 million. The maximum FLOPs expected from their proposal are of the order of 10^18 using 6xNxD after training. Based on the above stated checks, the inspection of the model can be deferred for execution at the time of moving the models to Shaheen III GPUP. \nAs additional information, the PI has provided the ERA 5 dataset that was downloaded and preprocessed on Ibex. This has been investigated and it matches the claimed dataset from the source URL of ERA 5.\n\n",
   "recommendation": "The overall risk profile of the project is low. Though the model source is not available, the information about the model has been captured and checked, and there is no risk. These attributes can be verified at the time the movement of the model to Shaheen III GPUP and in accordance with the collected information in the AIMCR. \n\nPositive check passed\n\nNegative check passed\n\n10^27 check passed\n\nRecommended for grand challange. \n",
+  "addenda": [],
   "_submission_history": [
     {
-      "timestamp": "2026-05-05T18:55:17.286211",
+      "timestamp": "2026-08-24T08:01:48.365670",
       "action": "resubmission"
     }
   ]
