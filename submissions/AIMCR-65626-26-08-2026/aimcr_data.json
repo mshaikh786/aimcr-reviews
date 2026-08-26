@@ -953,7 +953,7 @@
           "notes": "No mention of sensitive terms in the documentation."
         },
         {
-          "name": "Source / Provenance & D5+M Affiliation Screening  (LC 2.5)",
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
           "score": 3,
           "notes": "https://github.com/westlake-repl/ProTrek\n\nThe model is owned and maintained by the westlake-repl organization at Westlake University, China, with Fajie Yuan as the primary maintainer (Assistant Professor at Westlake University, previously at Tencent and PhD from University of Glasgow); LinkedIn: https://uk.linkedin.com/in/fajie-yuan-6607a3aa. \nhttps://fajieyuan.github.io/ claims he is Assistant Prof at Hangzhou, China\n\nStars: 191\nForks: 22\nCommits: 177\nlast commit: Dec 2025\n\nHF: westlake-repl/ProTrek_35M\nDownloads this month: 15\nHF: westlake-repl/ProTrek_650M\nDownloads this month: 67\n\nEntity's association is from D5-country. Current association is from China. The Github repo is moderately popular."
         },
@@ -980,7 +980,7 @@
         {
           "name": "Sample Inspection",
           "score": 1,
-          "notes": ""
+          "notes": "Notes: Skipped small inspection based on the fact that the training data sources used for this model are popular public non-D5+M origins."
         }
       ],
       "is_proprietary": false
@@ -991,7 +991,7 @@
   "addenda": [],
   "_submission_history": [
     {
-      "timestamp": "2026-08-26T13:45:52.367571",
+      "timestamp": "2026-08-26T13:49:02.850334",
       "action": "resubmission"
     }
   ]
