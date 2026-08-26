@@ -1,0 +1,344 @@
+{
+  "metadata": {
+    "proposal_title": "Towards Effective Detection of N-Day Vulnerabilities in Third-Party Software Components",
+    "principal_investigator": "Charalambos Konstantinou",
+    "proposal_date": "2025-12-11",
+    "reviewer_name": "Mohsin Ahmed Shaikh",
+    "reviewer_id": "174988",
+    "aimcr_date": "2026-08-26",
+    "project_id": "65409"
+  },
+  "third_party_software": [
+    {
+      "name": "pytorch-2.9.1-ngc",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "PyTorch is the core deep learning framework used to train the proposed transformer and DeBERTa architectures. It is used for Objective 1 (foundation-model pre-training/fine-tuning), as stated in the proposal's Codes & Libraries section.\n\n Aligns with the approved topic, Computational Science and Visualization \u2192 Programming models."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "PyTorch/the NGC container is developed and maintained by NVIDIA Corporation, based in the United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: nvcr.io/nvidia/pytorch:23.10-py3 (NVIDIA NGC Catalog). Maintainer: NVIDIA Corporation."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: NVIDIA Deep Learning Container License (for the base image) / BSD 3-Clause (for PyTorch itself). \n\n    - Permissions: research and modification use permitted; container redistribution subject to NVIDIA EULA terms. Both consistent with intended use."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 4,
+          "notes": "nvcr.io/nvidia/pytorch:23.10-py3 (base image: ubuntu 22.04)\nTotal: 4970 (UNKNOWN: 0, LOW: 465, MEDIUM: 4385, HIGH: 120, CRITICAL: 0).\nApplicant will use Singularity container platform provided on Shaheen III GPUP for creating the container from the image."
+        }
+      ]
+    },
+    {
+      "name": "Ubuntu:22.04 container image",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 2,
+          "notes": "The project is developing a model of binary code scanning for the identification of vulnerabilities through similarity detection. This is aligned with \u201cComputational Science and Visualization \u2192 Programming models\u201d. The ubuntu image is requested so that LLVM compiler >18.0 can be installed. The requirement of the image and the compiler is justified because it will be used to create the required training dataset on the Shaheen III CPU and GPU.  A check in an in-person meeting is recommended to confirm that the created dataset is infact the one approved. "
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms found in the Ubuntu 22.04 official image documentation. Classified as no risk under LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Ubuntu 22.04 is developed and maintained by Canonical Ltd., based in the United Kingdom. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: docker://ubuntu:22.04 (Docker Official Images). \nMaintainer: Canonical Ltd."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Canonical Intellectual Property Rights Policy (governs the Ubuntu trademark, brand, and Canonical-authored installer/image content; individual packages within the image retain their own upstream licenses, per Section 2 of the policy \u2014 Ubuntu is an aggregate work).\n\nPermissions:\n\n        - Download, install, and receive updates free of charge\n        - Modify Ubuntu for personal or internal use, including internal  commercial use \u2014 covers the applicant's intended use (building a custom container image with LLVM 18.1.0 and additional tooling for internal Shaheen III workloads)\n\nRestrictions:\n\n        - Redistribution of the unmodified image is permitted; redistribution of a modified image requires Canonical's permission if associated with the Ubuntu/Canonical trademarks\n        - No use of Canonical's trademarks (UBUNTU, etc.) in software titles or in a way implying endorsement"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 2,
+          "notes": "ubuntu:22.04 (ubuntu 22.04)\nTotal: 26 (UNKNOWN: 0, LOW: 21, MEDIUM: 5, HIGH: 0, CRITICAL: 0)\n Applicant will use Singularity container platform provided on Shaheen III GPUP for creating the container from the image.\n"
+        }
+      ]
+    },
+    {
+      "name": "llvm-18.1.0",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 2,
+          "notes": "The project is developing a model of binary code scanning for the identification of vulnerabilities through similarity detection. This is aligned with \u201cComputational Science and Visualization \u2192 Programming models\u201d. The LLVM version requested is possibly misquoted. 18.1.0 will be provided. It will be used to create the datasets on SIII GPUP and CPUP."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms found in the LLVM documentation/README. Classified as no risk under LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "The project is maintained by opensource community from https://llvm.org and https://github.com/llvm/llvm-project.git. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-18.1.0.tar.gz\nGithub has over 5K PRs and 5K github issues. Its in active development."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache License 2.0 with LLVM Exceptions.\n\nPermissions:\n\n        - Use, reproduction, modification, and distribution (Source or Object form), including commercial use\n        - Sublicensing and creation of Derivative Works\n        - Patent license granted for Contributor patent claims necessarily infringed by their Contribution, subject to the litigation-termination clause in Section 3\n\nObligations (on redistribution only \u2014 not triggered by the applicant's internal use on Shaheen III):\n\n        - Provide recipients a copy of the License\n        - Mark any modified files as changed\n        - Retain copyright, patent, trademark, and attribution notices from the Source form\n        - Include the NOTICE file's attribution content if one is present in the distribution"
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies to compile LLVM are available on SIII GPUP and CPUP. \nCMake, GCC 13+"
+        }
+      ]
+    }
+  ],
+  "source_code": [],
+  "datasets_user_files": [
+    {
+      "name": "BinaryCorpus (Large-scale & IR Corpus)",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "BinaryCorpus is a large-scale corpus aggregated from open-source repositories (GitHub top-starred C/C++ projects, Debian Packages, GNU Software), containing over 100 million functions compiled from C/C++ sources, covering 4 architectures (x86, x64, ARM, MIPS) and 5 optimization levels, with matched triplets of source code, LLVM IR, and binaries.\n\nThe dataset is used in this proposal as the primary pre-training corpus for the transformer foundation models (DeBERTa-v3 modified, and Llama-2/Mistral adapted for LLVM IR tokens) under the project's foundation-model pre-training objective.\n\nAligns with the approved research topic, Computational Science and Visualization."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. The dataset is described as a binary-code / IR corpus for binary code similarity detection research."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Owner: FutureComputing4AI research group, United States. Primary maintainer: Noah Fleischmann (author of the associated paper), LinkedIn: https://www.linkedin.com/in/noah-fleischmann/. Non-D5 entity."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No user files provided."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk in LC 2.7 and LC 2.5 checks. The dataset is generated from publicly available open-source C/C++ packages (GitHub top-starred projects, Debian Packages, GNU Software) using standard compilation toolchains; the source lineage is transparent and the FutureComputing4AI repository includes an example JSON confirming the project-level metadata structure. Skipping inspection.\n\nReference: https://github.com/FutureComputing4AI/Reverse-Engineering-Function-Search"
+        },
+        {
+          "name": "Provenance",
+          "score": 2,
+          "notes": "Owner / Curator: FutureComputing4AI research group\nPrimary Distribution Platform: GitHub\nRepository: https://github.com/FutureComputing4AI/Reverse-Engineering-Function-Search\nAccess Method: Tooling on the repository; the actual binary / IR corpus is generated in-house by the applicant on Shaheen III GPUP\nProvenance: Aggregated from public open-source C/C++ packages with the matched source / IR / binary lineage generated by the FutureComputing4AI team.\nMaintenance Status: Last commit \u2248 1 year ago (as of the review date); associated paper exists."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: MIT License.\n\nPermissions:\n\n    - Use, copy, modify, merge, publish, distribute, sublicense, and sell copies\n    - Use for any purpose, including commercial use\n\nObligations:\n\n    - Include the MIT license file and copyright notice in all use and distribution\n\nNote: Underlying aggregated open-source packages carry their own licenses (MIT, Apache 2.0, GPL); standard open-source aggregation terms apply."
+        }
+      ]
+    },
+    {
+      "name": "Marchetti-benchmark (Dataset-1)",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 2,
+          "notes": "The Marchetti benchmark is the standard evaluation dataset from the survey paper \"How Machine Learning Is Solving the Binary Function Similarity Problem\" (Marchetti et al., 2022), serving as a state-of-the-art baseline against which binary function similarity tools (e.g. GNNs, Gemini) are evaluated.\n\nThe dataset is used in this proposal under the Benchmarking & Validation objective to rigorously evaluate the proposed transformer-based foundation models against the existing literature baseline. The binaries part of the dataset is hosted on Google Drive; the download script is included in the GitHub repository's Binaries subfolder.\n\nAligns with the approved research topic, Computational Science and Visualization."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. The dataset is described as an academic benchmark for binary function similarity research."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Owner: Cisco Talos (United States). Primary author: Andrea Marcelli, LinkedIn: https://www.linkedin.com/in/jimmy-sonny/. Talos Intelligence: https://talosintelligence.com/. Non-D5 entity."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No user files provided."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 2,
+          "notes": "LC 2.7 and LC 2.5 checks are both 1; however, the dataset is distributed in binary format and no loader code has been provided by the applicant. Sample inspection is to be carried out after download via the repository's download script, before staging on Shaheen III GPUP.\n\nInspection plan: load a sample of the binaries using standard tools (readelf, objdump) and confirm the content matches the dataset description. readelf will show the ELF header metadata \u2014 architecture (x86/x64/ARM/MIPS), section layout, and function symbol table \u2014 which should be consistent with compiled C/C++ binaries across the architectures described in the Marchetti et al. (2022) paper. objdump will disassemble the .text section and should show standard compiler-generated code: normal function prologues, straightforward arithmetic and memory operations, and clean calls to named symbols. Any signs of intentional code hiding \u2014 such as junk instructions inserted between real ones, all functions routed through a single dispatcher instead of having their own structure, constants that appear encrypted, or a suspiciously small .text section suggesting the real code is packed \u2014 would indicate the binaries are not what the dataset claims and would be flagged for further review."
+        },
+        {
+          "name": "Provenance",
+          "score": 2,
+          "notes": "Owner / Curator: Cisco Talos\nPrimary Distribution Platform: GitHub + Google Drive (for binary blobs)\nRepository: https://github.com/Cisco-Talos/binary_function_similarity\nAccess Method: Download script in the Binaries subfolder of the repository\nProvenance: Standard evaluation dataset accompanying the Marchetti et al. (2022) survey paper; widely used as the state-of-the-art baseline in the BCSD literature.\nMaintenance Status: Last commit \u2248 1 year ago (as of the review date)."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Cisco Talos Copyright license (academic / research use).\n\nPermissions:\n\n    - Use the dataset for research and academic purposes, including commercial use\n    - Reproduce and distribute under the license terms\n\nObligations:\n\n    - Include the license file in all use and distribution"
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "name": "DeBERTa-v3",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "DeBERTa-v3 is a transformer-based language model from Microsoft that introduces a Disentangled Attention mechanism and ELECTRA-style pre-training, designed for improved long-context understanding.\n\nIn this proposal, the applicant proposes to use a customized DeBERTa-v3 architecture (up to 340M parameters) as Architecture 1 of the project, with the Disentangled Attention mechanism adapted for long binary instruction sequences. This is the primary model for the project's foundation-model pre-training and fine-tuning objective on the BinaryCorpus dataset.\n\nAligns with the approved research topic, Computational Science and Visualization."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. No prohibited training data was included; no intent to fine-tune the model for prohibited-use prompts is documented in the proposal."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "HuggingFace URL: https://huggingface.co/microsoft/deberta-v3-base\nHuggingFace URL (large variant): https://huggingface.co/microsoft/deberta-v3-large\n\nOwner: Microsoft (United States). Trained and published by Microsoft Research.\nNon-D5 entity. No D5+M affiliation found."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: MIT License.\nPermissions:\n- Use, modify, and redistribute the model for any purpose, including commercial use\nObligations:\n- Include the MIT license file and copyright notice in all copies"
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "Per the DeBERTa V3 paper (https://arxiv.org/pdf/2111.09543, Appendix A.2), the model was pre-trained on Wikipedia, BookCorpus, CC-News, Stories, OpenWebText, and CommonCrawl100. The training corpus is the same as DeBERTa V2 (\u2248 160 GB total).\n\nFor Chinchilla-style FLOPS estimation, D \u2248 80 billion tokens (assuming approximately 2\u20134 tokens per byte depending on tokenizer)."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "The released DeBERTa-v3 artifact is a base pre-trained model and has not been fine-tuned on any downstream task. The applicant proposes to fine-tune the model on LLVM IR sequences in this project, with no fine-tuning datasets in the prohibited domain.\n\nPer the AIMCR procedure (Section 3D), the fine-tuning that will take place under this project is on the BinaryCorpus and Marchetti datasets reviewed separately in this AIMCR. No customization scripts have been pre-provided."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "DeBERTa V3 is a dense model so structured sparsity does not apply.\n\nMaximum available FLOPs as required by proposal:\nGPU hours \u00d7 3600 seconds \u00d7 peak FLOP/s \u00d7 MFU\n= 25,000 \u00d7 3,600 \u00d7 1,979 \u00d7 10^12 \u00d7 0.6 = 1.07 \u00d7 10^23 FLOPs\n\nPre-trained model FLOPs (6 \u00d7 N \u00d7 D):\nN = 304M parameters\nD \u2248 80 \u00d7 10^9 tokens (DeBERTa V3 uses the same dataset as V2, 160 GB total)\nF = 6 \u00d7 304 \u00d7 10^6 \u00d7 80 \u00d7 10^9 = 1.46 \u00d7 10^20 FLOPs\n\nExtrapolation of fine-tuning FLOPs on Shaheen III GPUP:\nN = 340M parameters (after applicant's modification)\nD = 400 \u00d7 10^9 + 500 \u00d7 10^6 \u2248 400.5 \u00d7 10^9 tokens (BinaryCorpus + Marchetti)\nF = 6 \u00d7 340 \u00d7 10^6 \u00d7 400.5 \u00d7 10^9 = 8.17 \u00d7 10^20 FLOPs\n\nTotal FLOPs (pre-training + fine-tuning) = 1.46 \u00d7 10^20 + 8.17 \u00d7 10^20 = 9.36 \u00d7 10^20 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection."
+        }
+      ],
+      "is_proprietary": false
+    },
+    {
+      "name": "llama2-7B",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Llama-2-7B is an open-weights large language model released by Meta, with 7B parameters and a transformer decoder architecture.\n\nIn this proposal, the applicant proposes to use Llama-2-7B (potentially scaled between 0.6B and 7B parameters) as Architecture 2 of the project, adapted to produce embeddings from LLVM Intermediate Representation tokens. The intent is to learn an adapter tuned for long IR sequences and to create a vector database of embeddings for retrieval-style applications.\n\nAligns with the approved research topic, Computational Science and Visualization."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. Llama-2-7B is a general-purpose language model released by Meta for research and commercial use; the model card and associated paper (https://arxiv.org/abs/2307.09288) document safety mitigations including red-teaming and RLHF-style alignment, with no prohibited functionality described."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "HuggingFace URL: https://huggingface.co/meta-llama/Llama-2-7b\n\nOwner: Meta Platforms, Inc. (United States). Released and maintained by Meta AI on HuggingFace.\nNon-D5 entity. No D5+M affiliation found."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Llama 2 Community License.\nPermissions:\n- Use, reproduction, and distribution of the model and weights for research and commercial purposes (subject to the user-threshold acceptable-use provisions)\nObligations:\n- Comply with the Acceptable Use Policy linked from the license\n- Preserve attribution / NOTICE files where applicable\nReference: https://huggingface.co/meta-llama/Llama-2-7b-chat-hf/blob/main/LICENSE.txt"
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 2,
+          "notes": "Per the Llama 2 paper and model card, the model was trained on public data with no Meta-proprietary data; the specific datasets and proportions are not enumerated. Risk has been raised due to the incomplete documentation."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "The released artifact (Llama-2-7B base) has not been customized for prohibited use. Meta separately ships chat-tuned variants (Llama-2-7B-chat) that include AI safety fine-tuning against malicious prompts; the applicant has requested the base model for downstream IR-embedding adaptation, not the chat variant."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Llama 2 7B is a dense model so structured sparsity does not apply.\n\nMaximum available FLOPs as required by proposal:\nGPU hours \u00d7 3600 seconds \u00d7 peak FLOP/s \u00d7 MFU\n= 25,000 \u00d7 3,600 \u00d7 1,979 \u00d7 10^12 \u00d7 0.6 = 1.07 \u00d7 10^23 FLOPs\n\nPre-trained model FLOPs (6 \u00d7 N \u00d7 D):\nN = 7B parameters\nD = 2 \u00d7 10^12 tokens (Llama 2 was trained on 2 trillion tokens)\nF = 6 \u00d7 7 \u00d7 10^9 \u00d7 2 \u00d7 10^12 = 8.40 \u00d7 10^22 FLOPs\n\nExtrapolation of fine-tuning FLOPs on Shaheen III GPUP:\nN = 7B parameters\nD \u2248 400.5 \u00d7 10^9 tokens (BinaryCorpus + Marchetti)\nF = 6 \u00d7 7 \u00d7 10^9 \u00d7 400.5 \u00d7 10^9 = 1.68 \u00d7 10^22 FLOPs\n\nTotal FLOPs (pre-training + fine-tuning) = 8.40 \u00d7 10^22 + 1.68 \u00d7 10^22 = 1.01 \u00d7 10^23 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection.\n\nReference: https://huggingface.co/meta-llama/Llama-2-7b"
+        }
+      ],
+      "is_proprietary": false
+    },
+    {
+      "name": "mistral-7B-v0.3",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Mistral-7B-v0.3 is an open-weights dense transformer LLM (7B parameters) released by Mistral AI.\n\nIn this proposal, the applicant proposes Mistral-7B-v0.3 as an alternative to Llama-2-7B for Architecture 2, also adapted to produce embeddings from LLVM Intermediate Representation tokens, with the same retrieval-style downstream use.\n\nAligns with the approved research topic, Computational Science and Visualization."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. Mistral-7B-v0.3 is a general-purpose base language model released by Mistral AI (https://huggingface.co/mistralai/Mistral-7B-v0.3); the model card does not document any prohibited functionality. The absence of built-in moderation on the base model is a deployment-level concern, not evidence of prohibited use documented in the artifact itself."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "HuggingFace URL: https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3\n\nOwner: Mistral AI (France). Released and maintained by Mistral AI; about page: https://mistral.ai/about.\nNon-D5 entity. No D5+M affiliation found."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache 2.0.\n\nPermissions:\n    - Use, modification, and redistribution of the model for any purpose, including commercial use\nObligations:\n    - Preserve the Apache 2.0 license text, copyright notice, and NOTICE files where applicable\n    - State changes when distributing modified versions\nReference: https://huggingface.co/datasets/choosealicense/licenses/blob/main/markdown/apache-2.0.md\n\nThe unmodified use of this model is permissible and aligns with the intent of this project."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 4,
+          "notes": "No information on the training datasets has been published by Mistral AI for the v0.3 release. Risk has been raised accordingly."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "Mistral AI ships instruction-tuned variants (mistral-7b-instruct) as separate artifacts; the applicant has requested the base Mistral-7B-v0.3 (not the instruction-tuned variant), with no documented fine-tuning for prohibited use."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Mistral 7B v0.3 is a dense model so structured sparsity does not apply.\n\nMaximum available FLOPs as required by proposal:\nGPU hours \u00d7 3600 seconds \u00d7 peak FLOP/s \u00d7 MFU\n= 25,000 \u00d7 3,600 \u00d7 1,979 \u00d7 10^12 \u00d7 0.6 = 1.07 \u00d7 10^23 FLOPs\n\nPre-trained model FLOPs (6 \u00d7 N \u00d7 D):\nN = 7B parameters\nD \u2248 8 \u00d7 10^12 tokens (speculated, not confirmed; based on Mistral 7B outperforming Llama 2 13B on evaluation benchmarks)\nF = 6 \u00d7 7 \u00d7 10^9 \u00d7 8 \u00d7 10^12 = 3.36 \u00d7 10^23 FLOPs\n\nExtrapolation of fine-tuning FLOPs on Shaheen III GPUP:\nN = 7B parameters\nD \u2248 400.5 \u00d7 10^9 tokens (BinaryCorpus + Marchetti)\nF = 6 \u00d7 7 \u00d7 10^9 \u00d7 400.5 \u00d7 10^9 = 1.68 \u00d7 10^22 FLOPs\n\nTotal FLOPs (pre-training + fine-tuning) = 3.36 \u00d7 10^23 + 1.68 \u00d7 10^22 = 3.53 \u00d7 10^23 FLOPs\n\nWell below the 10^27 FLOPS threshold. 10^27 FLOPS check passed."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk in LC 2.7 and LC 2.5 checks. Skipping inspection.\n\nReference: https://huggingface.co/mistralai/Mistral-7B-v0.3"
+        }
+      ],
+      "is_proprietary": false
+    }
+  ],
+  "observations": "Third-party software: PyTorch NGC container version requested has a critical vulnerability. Since the user is going to be confined within a rootless Apptainer container, the effect of this is low to null, the blast radius is contained.\nDatasets: Marchetti-benchmark is distributed in binary format with no loader code provided; sample inspection is required before staging on Shaheen III GPUP. BinaryCorpus is generated from publicly available open-source packages using standard toolchains; no inspection required. Provenance of both datasets is moderately stale (last commit \u2248 1 year ago).\n\nModels: LC 2.7 scores for all three models are 1; no prohibited functionality is documented in any model card. Training-data documentation remains flagged for Llama-2-7B (score 2) and Mistral-7B-v0.3 (score 3) due to incomplete or absent dataset disclosures by the respective developers; this is a provenance concern, not a prohibited-use finding. DeBERTa-v3 has no LC-flag concerns.\n\n\n\nOutput artifacts: \n- Pre-trained Foundation Models: Checkpoints (weights) for the binary analysis models.\n- Embeddings: A database of high-dimensional vector embeddings for the dataset.\n- Evaluation Metrics: Comprehensive benchmark results (Recall@k, MRR) on the Marchetti Dataset.\n",
+  "recommendation": "Project develops foundation models for Binary Code Similarity Detection to close the \"semantic gap\" across compiled architectures/optimizations. Two approaches: (1) a custom transformer (DeBERTa-v3, ~340M params) for global dependency modeling of binaries, (2) an LLM (Llama-2/3 or Mistral, 0.6\u20137B params) adapted to model LLVM IR. Pretrained on a self-built 15TB/400B-token corpus; benchmarked against Marchetti et al. for vulnerability discovery and malware analysis.\n\nThe software container with ",
+  "addenda": []
+}
