@@ -5,7 +5,7 @@
     "proposal_date": "2025-12-09",
     "reviewer_name": "Mohsin Ahmed Shaikh",
     "reviewer_id": "174988",
-    "aimcr_date": "2026-01-22",
+    "aimcr_date": "2026-09-03",
     "project_id": "65616"
   },
   "third_party_software": [
@@ -1106,7 +1106,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "the dataset contains 33,245,503 complete Arabic-translated documents \u2014 each row being a fully reconstructed document merged from chunk-level translations \u2014 produced by running the IBEX parallel translation pipeline on the DCLM, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for Arabic pretraining via translation \u2014 specifically providing machine-translated Arabic equivalents of English high-quality web content (DCLM) to expand the Arabic token count and domain coverage for the Arabic/English LLM being developed."
+              "notes": "the dataset contains 33,245,503 complete Arabic-translated documents \u2014 each row being a fully reconstructed document merged from chunk-level translations \u2014 produced by running the IBEX parallel translation pipeline on the DCLM, as per the dataset documentation.\n\n**Aligns with project proposal:** Used for Arabic pretraining via translation \u2014 specifically providing machine-translated Arabic equivalents of English high-quality web content (DCLM) to expand the Arabic token count and domain coverage for the Arabic/English LLM being developed.\n\nAligns with the approved research topic of Data Science and Engineering.\n"
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1125,8 +1125,8 @@
             },
             {
               "name": "Sample Inspection",
-              "score": 3,
-              "notes": "skipped"
+              "score": 1,
+              "notes": "This is an in-house dataset that is a derivative in a different language. We have assessed and inspected DCLM Pro in this AIMCR which is being inherited as a done task for this particular artifact."
             },
             {
               "name": "Provenance",
@@ -3329,7 +3329,7 @@
   ],
   "_submission_history": [
     {
-      "timestamp": "2026-08-16T14:10:50.513785",
+      "timestamp": "2026-09-03T11:52:04.495424",
       "action": "resubmission"
     }
   ]
