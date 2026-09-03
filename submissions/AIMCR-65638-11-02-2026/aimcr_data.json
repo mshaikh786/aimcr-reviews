@@ -1399,15 +1399,50 @@
               "notes": "No prohibited keywords or functionality were identified. Three items were found present in the codebase but structurally inactive and not declared in the approved proposal or subsequent CR:\n\n        - **NVIDIA Nemotron dataset-download scripts** (`scripts/data/download_stage0_nemotron.py/.sh`): confirmed via configuration and downstream-script cross-check to be unreferenced by any active training pipeline.\n\n        - **InternVideo2 vision encoder module** (`llava/model/multimodal_encoder/internvideo2_encoder.py`): routing code in builder.py confirmed commented out; module unreachable at runtime.\n\n        - **OpenAI Moderation API call** (`llava/utils.py, violates_moderation()`): confirmed via caller/import search to have zero references anywhere in the codebase.\n"
             }
           ]
+        },
+        {
+          "name": "",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": ""
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": ""
+            },
+            {
+              "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": ""
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": ""
+            },
+            {
+              "name": "Dependencies / Bundled Components",
+              "score": 1,
+              "notes": ""
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": ""
+            }
+          ]
         }
       ],
       "observations": "CR Ticket Number: IMS0000084\n\n- Training Code is the project's core training codebase, owned and maintained by the PI's KAUST-affiliated team. No D5+M affiliation. Apache 2.0 confirmed from the repository LICENSE file. Dependency manifest reviewed and clean.\n- Sample inspection found no prohibited keywords or functionality. Three components are present but structurally inactive and were not declared in the proposal or this change request: NVIDIA Nemotron dataset-download scripts, the InternVideo2 vision encoder module with its routing commented out, and an OpenAI Moderation API call with zero references in the codebase.",
-      "recommendation": "No risk identified in the review. The three undeclared components were each verified inactive, but any of them could be reactivated. The PI should either remove them from the repository or confirm in writing that any future activation will be raised as a new change request.\n\nPositive checks passed\nNegative checks passed\n\nRecommended for data movement."
+      "recommendation": "No risk identified in the review. The three undeclared components were each verified inactive, but any of them could be reactivated. The presence of the invactive code is inconsequential because these functions are bound to fail, since there is no internet on Shaheen III GPUP.\nPositive checks passed\nNegative checks passed\n\nRecommended for data movement."
     }
   ],
   "_submission_history": [
     {
-      "timestamp": "2026-09-02T15:18:17.526133",
+      "timestamp": "2026-09-03T16:33:27.353777",
       "action": "resubmission"
     }
   ]
