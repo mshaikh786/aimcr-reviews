@@ -457,7 +457,7 @@
         },
         {
           "name": "D5+M affiliation Screening (LC 2.5)",
-          "score": 2,
+          "score": 3,
           "notes": "Owner: ByteDance Inc. (Beijing, China) through the AML AI4Science Team (Seed-AI for Science division)\n\nContact: Wenzhi Xiao (corresponding author, xiaowenzhi@bytedance.com)\n\nLead Authors: Xinshi Chen and Yuxuan Zhang (co-first authors)\n\nTeam: ByteDance AML AI4Science Team including Chan Lu, Wenzhi Ma, Jiaqi Guan, Chengyue Gong, Jincai Yang, Hanyu Zhang, Ke Zhang, Shenghao Wu, Kuangqi Zhou, Yanping Yang, Zhenyu Liu, Lan Wang, Bo Shi, Shaochen Shi"
         },
         {
@@ -806,8 +806,8 @@
   "addenda": [],
   "_submission_history": [
     {
-      "timestamp": "2026-09-09T08:52:09.048510",
-      "action": "initial_submission"
+      "timestamp": "2026-09-09T09:01:29.134878",
+      "action": "resubmission"
     }
   ]
 }
