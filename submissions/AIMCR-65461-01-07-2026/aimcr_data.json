@@ -582,7 +582,7 @@
         {
           "name": "Training Data Documentation",
           "score": 3,
-          "notes": "Mixtral 8x22B pre-training data: Mistral AI has not publicly disclosed the full training data composition for Mixtral 8x22B. The model is described as trained on a large multilingual corpus; no technical report with token counts or dataset breakdown has been released.\nD (tokens): Not declared in the Model Readiness form and not publicly disclosed by Mistral AI.\nNote: Training data documentation is unavailable \u2014 neither the exact corpus nor the token count is provided in the Model Readiness form or by the developer. Flagged for incomplete documentation.\n\n\nSep 10, 2026: Models from Mixtral AI original had a risk score of 4 due to the lack of training data information. After the joint CEAR and TPSC meeting held on September 9, 2026,  it has been concluded that this is a very popular non-D5+M source of models and is well represented in the community with no known vulnerabilities or incidences which can raise concerns with respect to LC 2.7. Based on this conclusion, the model can be scored at Medium, 3."
+          "notes": "Mixtral 8x22B pre-training data: Mistral AI has not publicly disclosed the full training data composition for Mixtral 8x22B. The model is described as trained on a large multilingual corpus; no technical report with token counts or dataset breakdown has been released.\nD (tokens): Not declared in the Model Readiness form and not publicly disclosed by Mistral AI.\nNote: Training data documentation is unavailable \u2014 neither the exact corpus nor the token count is provided in the Model Readiness form or by the developer. Flagged for incomplete documentation.\n\n\nSep 10, 2026: Models from Mixtral AI original had a risk score of 4 due to the lack of training data information. After the joint CEAR and TPSC meeting held on September 9, 2026,  it has been concluded that this \n\nhas indication of reliability based on a number of factors, including, trusted source/provider, availability (where available from e.g. HF) and high adoption, and no identifiable vulnerability. This is a model from a non-D5+M entity.  It has been downloaded 15,288 in the month of September (10/09/2026) from HuggingFace, and has no known vulnerabilities or incidences which can raise concerns with respect to LC 2.7. Based on this conclusion, the model can be scored at Medium, 3.\n"
         },
         {
           "name": "Customisation / Fine-tuning",
@@ -654,7 +654,7 @@
   "addenda": [],
   "_submission_history": [
     {
-      "timestamp": "2026-09-10T13:01:32.474269",
+      "timestamp": "2026-09-10T13:59:25.105302",
       "action": "resubmission"
     }
   ]
