@@ -5,7 +5,7 @@
     "proposal_date": "2025-12-09",
     "reviewer_name": "Mohsin Ahmed Shaikh",
     "reviewer_id": "174988",
-    "aimcr_date": "2026-01-28",
+    "aimcr_date": "2026-09-10",
     "project_id": "65627"
   },
   "third_party_software": [
@@ -654,8 +654,8 @@
         },
         {
           "name": "D5+M affiliation Screening (LC 2.5)",
-          "score": 2,
-          "notes": "Owner:  cellverse tech (https://www.cellverse.tech)\n\nFrom a D5 country (China).\n\nSetting the risk to low because there is no collaboration sharing of outputs mentioned in the proposal. The software will only be used by the account holders of Shaheen III GPUP and no dataset is coming from Cellverse tech."
+          "score": 3,
+          "notes": "Owner:  cellverse tech (https://www.cellverse.tech)\n\nFrom a D5 country (China).\n\nThere is no collaboration or sharing of outputs mentioned in the proposal. The software will only be used by the account holders of Shaheen III GPUP, and no dataset will come from Cellverse tech."
         },
         {
           "name": "Source / Provenance",
@@ -1022,7 +1022,7 @@
         },
         {
           "name": "D5+M affiliation Screening (LC 2.5)",
-          "score": 2,
+          "score": 3,
           "notes": "Maintainer: \nQihe Chen: https://orcid.org/0009-0008-1715-6403\nYuan Pei: https://orcid.org/0000-0003-4065-2540\nAffiliation: ShanghaiTech University\n\nMaintainers are from a D5 country.\n\nThe risk is set to low because no collaboration or data sharing is stated in the proposal, nor does the PI plan to run any work on behalf of the maintainers listed above. This is in accordance with LC 2.6"
         },
         {
@@ -1178,9 +1178,10 @@
   ],
   "observations": "Software: CryoFastAR is from a D5 country and has a vague license; Boxx is from a D5 country. The risk is set to low because no collaboration or data sharing is stated in the proposal, nor does the PI plan to run any work on behalf of the maintainers listed above. This is in accordance with LC 2.6.\n\nDataset: CryoCRAB is from a D5 country, and the dataset is less popular, but bearing in mind that this is a niche and not a broad spectrum usecase. The risk is set to low because no collaboration or data sharing is stated in the proposal, nor does the PI plan to run any work on behalf of the maintainers listed above. This is in accordance with LC 2.6.\n",
   "recommendation": "For CryoFastAR software is developed and maintained by an entity from D5+M country. The risk is set to low because it does not violate LC2.6. The software will only be used by the account holders of Shaheen III GPUP and there is no sharing or collaboration with the developers and maintainers of the software.\n\nPositive check passed.\n\nNegative check passed.\n\n10^27 check passed.\n\nThe artifacts have an acceptable risk. This project is safe to proceed from AIMCR perspective.",
+  "addenda": [],
   "_submission_history": [
     {
-      "timestamp": "2026-01-28T16:22:41.175770",
+      "timestamp": "2026-09-10T12:05:58.703993",
       "action": "resubmission"
     }
   ]
