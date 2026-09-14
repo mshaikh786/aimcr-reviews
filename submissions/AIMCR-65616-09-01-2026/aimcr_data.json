@@ -3325,11 +3325,58 @@
       ],
       "observations": "Change request ticket number: IMS0000049\n\n- All 14 new software packages are permissively licensed standard components of the declared training and evaluation stack, from non-D5 maintainers.\n- No prohibited-use indicators identified.\n- No license obligations beyond attribution.",
       "recommendation": "New software packages are clean. No D5+M affiliations, no license concerns, no prohibited-use indicators across all 14 entries.  Recommended to move to Shaheen III GPUP.\n"
+    },
+    {
+      "date": "2026-09-14",
+      "category": "third_party_software",
+      "artifacts": [
+        {
+          "name": "vLLM container image",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "The NVIDIA vLLM NGC container (nvcr.io/nvidia/vllm:26.08-py3, vLLM 0.27.1) is a high-throughput inference and serving engine for large language models. It runs as a separate serving image on Shaheen III GPUP, answering HTTP requests from the PI's own scripts to generate synthetic training data with the Gemma 4 models approved in Addendum 2, the synthetic data generation use case described in the proposal's additional information. Aligns with the approved topics, Data Science and Engineering and NLP & Computational Linguistics."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. The vLLM README (v0.27.1) and the NGC vLLM 26.08 release notes were searched for military, weapons, nuclear, surveillance, targeting, defense and intelligence, with no matches."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Non-D5. vLLM was originally developed in the Sky Computing Lab at UC Berkeley (USA) and is maintained by a community of academic institutions and companies with over 2,000 contributors. Per the project's governance document, committer status belongs to individuals, not companies; the lead maintainers are Woosuk Kwon, Zhuohan Li and Simon Mo. The container image is built and distributed by NVIDIA Corporation (USA) through NGC.\nhttps://github.com/vllm-project/vllm"
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Container: nvcr.io/nvidia/vllm:26.08-py3 (NVIDIA NGC)\narm64 image digest: sha256:d049bead397430803ac5b705d50094492f23782716677d746ab721e43f054cf6\nGitHub: https://github.com/vllm-project/vllm (release v0.27.1, Aug 11, 2026)\nOwner / Organization: vllm-project\nStars: 91.7k\nForks: 22.2k\nCommits: 21.3k\nLast Commit: Sep 14, 2026"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "Apache License 2.0\nPermissions:\n    - Commercial use allowed\n    - Modification and derivative works permitted\n    - Distribution allowed\n    - Sublicensing permitted\n    - Patent grant included (contributors grant patent rights)\n    - Private use allowed\n\nRestrictions:\n    - Must include original copyright notice\n    - Must include copy of license text\n    - Must document significant modifications\n    - Must preserve attribution notices\n    - Cannot use trademarks without permission\n    - Patent license terminates if patent litigation initiated"
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "Dependencies:\nsingularity\n\nBundled tools (pip list in the container, 207 packages):\naiohappyeyeballs 2.7.1\naiohttp 3.14.3\naiosignal 1.4.0\nannotated-doc 0.0.5\nannotated-types 0.8.0\nanthropic 1.0.0\nanyio 4.14.2\napache-tvm-ffi 0.1.12\nastor 0.8.1\nattrs 26.1.0\nblake3 1.0.9\ncachetools 7.1.7\ncbor2 6.1.4\ncertifi 2026.7.22\ncffi 2.1.1\nchange_wheel_version 0.6.0\ncharset-normalizer 3.5.1\nclick 8.4.2\ncloudpickle 3.1.2\ncmake 3.31.6\ncompressed-tensors 0.17.0\ncryptography 50.0.0\ncuda-bindings 13.3.1\ncuda-core 1.0.1\ncuda-pathfinder 1.7.0\ncuda-python 13.3.1\ncuda-tile 1.5.0\ndecorator 5.3.1\ndepyf 0.20.0\ndetect-installer 0.1.0\ndill 0.4.1\ndnspython 2.8.0\ndocstring_parser 0.18.0\neinops 0.8.2\nemail-validator 2.3.0\nfastapi 0.136.3\nfastapi-cli 0.0.32\nfastapi-cloud-cli 0.23.0\nfastar 0.12.0\nfastsafetensors 0.3.3\nffmpeg-python 0.2.0\nfilelock 3.32.4\nflash_attn 2.7.4.post1+git5231d95fe1.54157505\nflashinfer-cubin 0.6.17+1b4edb7f.nv26.8.cu.63843061\nflashinfer-jit-cache 0.6.17+1b4edb7f.nv26.8.cu.63843061\nflashinfer-python 0.6.17+1b4edb7f.nv26.8.cu.63843061\nfrozenlist 1.8.0\nfsspec 2026.7.0\nfuture 1.0.0\ngoogleapis-common-protos 1.75.1\ngrpcio 1.83.0\nh11 0.16.0\nhf-xet 1.6.0\nhttpcore 1.0.9\nhttpcore2 2.12.0\nhttptools 0.8.0\nhttpx 0.28.1\nhttpx2 2.12.0\nhuggingface_hub 1.28.0\nhumming-kernels 0.1.10\nidna 3.19\nijson 3.5.1\ninstaller 1.0.1\ninteregular 0.3.3\nJinja2 3.1.6\njiter 0.16.0\njmespath 1.1.0\njoblib 1.5.3\njsonschema 4.26.0\njsonschema-specifications 2025.9.1\nlark 1.2.2\nlazy-loader 0.5\nlibrosa 1.0.0\nllguidance 1.7.6\nllvmlite 0.49.0\nlm-format-enforcer 0.11.3\nloguru 0.7.3\nmarkdown-it-py 4.2.0\nMarkupSafe 3.0.3\nmcp 2.0.0\nmcp-types 2.0.0\nmdurl 0.1.2\nmistral_common 1.11.7\nml_dtypes 0.6.0\nmodel-hosting-container-standards 0.1.16\nmpmath 1.3.0\nmsgpack 1.2.1\nmsgspec 0.21.1\nmultidict 6.7.1\nnarwhals 2.25.0\nnccl4py 0.4.1\nnetworkx 3.6.1\nninja 1.13.0\nnumba 0.67.0\nnumpy 2.1.0\nnvidia-cuda-cccl 13.3.3.4.1\nnvidia-cuda-crt 13.3.73\nnvidia-cuda-nvcc 13.3.73\nnvidia-cuda-nvdisasm 13.3.73\nnvidia-cuda-nvrtc 13.3.33\nnvidia-cuda-runtime 13.3.29\nnvidia-cudnn-frontend 1.27.0\nnvidia-cutlass-dsl 4.6.0\nnvidia-cutlass-dsl-libs-base 4.6.0\nnvidia-cutlass-dsl-libs-core 4.6.0\nnvidia-cutlass-dsl-libs-cu12 4.6.0\nnvidia-cutlass-dsl-libs-cu13 4.6.0\nnvidia-ml-py 13.610.43\nnvidia-nvvm 13.3.73\nnvtx 0.2.15\nopenai 3.3.1\nopenai-harmony 0.0.8\nopencv-python-headless 5.0.0.93\nopentelemetry-api 1.44.0\nopentelemetry-exporter-otlp 1.44.0\nopentelemetry-exporter-otlp-proto-common 1.44.0\nopentelemetry-exporter-otlp-proto-grpc 1.44.0\nopentelemetry-exporter-otlp-proto-http 1.44.0\nopentelemetry-proto 1.44.0\nopentelemetry-sdk 1.44.0\nopentelemetry-semantic-conventions 0.65b0\nopentelemetry-semantic-conventions-ai 0.5.1\noutlines_core 0.2.14\npackaging 26.3\npartial-json-parser 0.2.1.1.post7\npillow 12.3.0\npip 26.2.1\nplatformdirs 4.11.3\npooch 1.9.0\nprometheus-fastapi-instrumentator 8.1.0\nprometheus_client 0.26.0\npropcache 0.5.2\nprotobuf 6.33.6\npsutil 7.2.2\npy-cpuinfo 9.0.0\npybase64 1.5.0\npycountry 26.2.16\npycparser 3.0\npydantic 2.13.4\npydantic-extra-types 2.11.1\npydantic-settings 2.15.0\npydantic_core 2.46.4\npyelftools 0.33\nPygments 2.21.0\nPyJWT 2.13.0\npynvvideocodec 2.0.4\npython-dotenv 1.2.3\npython-json-logger 4.2.0\npython-multipart 0.0.32\nPyYAML 6.0.3\npyzmq 27.2.0\nquack-kernels 0.6.1\nreferencing 0.37.0\nregex 2026.7.19\nrequests 2.34.2\nrich 15.0.0\nrich-toolkit 0.20.3\nrignore 0.8.1\nrpds-py 2026.6.3\nsafetensors 0.8.0\nscikit-learn 1.9.0\nscipy 1.18.1\nsentencepiece 0.2.2\nsentry-sdk 2.68.0\nsetproctitle 1.3.7\nsetuptools 80.10.2\nsetuptools-scm 10.2.1\nshellingham 1.5.4\nsix 1.16.0\nsniffio 1.3.1\nsoundfile 0.14.0\nsoxr 1.1.0\nsse-starlette 3.4.8\nstarlette 1.6.0\nsupervisor 4.3.0\nsympy 1.14.0\ntabulate 0.10.0\nthreadpoolctl 3.6.0\ntiktoken 0.14.0\ntilelang 0.1.13\ntokenizers 0.22.2\ntokenspeed-mla 0.1.9\ntokenspeed-triton 3.8.10.post20260721\ntorch 2.14.0a0+4fdf77b940.nv26.8.63802676\ntorch_c_dlpack_ext 0.1.5\ntorchcodec 0.16.0\ntorchvision 0.29.0a0+0bc41e67.nv26.8.63802676\ntqdm 4.70.0\ntransformers 5.14.1\ntriton 3.6.0+git5d72932fc5.nv26.3\ntruststore 0.10.4\ntyper 0.27.1\ntyping-inspection 0.4.4\ntyping_extensions 4.16.0\nurllib3 2.7.0\nuv 0.12.5\nuvicorn 0.52.4\nuvloop 0.22.1\nvcs-versioning 2.3.1\nvllm 0.27.1+93523f72.nv26.8.64249418\nwatchfiles 1.2.0\nwebsockets 17.0.1\nwheel 0.48.0\nxformers 0.0.33+nv26.8.64249418\nxgrammar 0.2.3\nyarl 1.24.5\nz3-solver 4.15.4.0"
+            }
+          ]
+        }
+      ],
+      "observations": "Change request ticket number: IMS0000131\n\n- 1 new software artifact reviewed: the NVIDIA vLLM NGC container image. Section score remains No Risk.\n- The CR form requests vLLM 0.29.0 added to the eval Singularity image. As agreed with the PI and student, vLLM is delivered as a separate serving image instead, using the latest NGC vLLM container (26.08-py3, vLLM 0.27.1) in place of the requested version; this addendum reviews that container.\n- The container runs without outbound internet access (served Gemma 4 E4B in a network-isolated container).",
+      "recommendation": "The vLLM container image is non-D5, permissively licensed, carries no prohibited-use indicators, and runs without outbound internet access.\n\nThe latest NGC vLLM container (nvcr.io/nvidia/vllm:26.08-py3, vLLM 0.27.1) is used in place of the version on the CR form.\n\nRecommended to move to Shaheen III GPUP."
     }
   ],
   "_submission_history": [
     {
       "timestamp": "2026-09-03T11:52:04.495424",
+      "action": "resubmission"
+    },
+    {
+      "timestamp": "2026-09-14T15:00:12.439483",
       "action": "resubmission"
     }
   ]
