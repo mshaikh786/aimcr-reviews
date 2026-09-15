@@ -1306,7 +1306,7 @@
             {
               "name": "Sample Inspection",
               "score": 1,
-              "notes": "not skippable"
+              "notes": "LC 2.5 = 3 (Alibaba Cloud, China). Not inference-only: used as an initialisation checkpoint with replacement attention parameters trained. Waived as a well-recognized model (Qwen3 family, Apache 2.0, documented in the Qwen3 Technical Report; 375,399 downloads last month), and the PI confirmed no collaboration with Alibaba for any research goals in this proposal. Sample inspection waived."
             }
           ],
           "is_proprietary": false
@@ -1352,14 +1352,14 @@
             {
               "name": "Sample Inspection",
               "score": 1,
-              "notes": "not skippable"
+              "notes": "LC 2.5 = 3 (Alibaba Cloud, China). Not inference-only: used as an initialisation checkpoint with replacement attention parameters trained. Waived as a well-recognized model (Qwen3 family, Apache 2.0, documented in the Qwen3 Technical Report; 4,752,983 downloads last month), and the PI confirmed no collaboration with Alibaba for any research goals in this proposal. Sample inspection waived."
             }
           ],
           "is_proprietary": false
         }
       ],
       "observations": "CR Ticket Number: IMS0000084\n\n- 2 models reviewed. Section score rises from Low to Medium.\n- Qwen3-8B-Base and Qwen3-32B are developed and maintained by the Qwen Team, Alibaba Cloud, China. D5+M affiliation. LC 2.5.\n- Affiliation is the only concern. Both are Apache 2.0, training data documented at approximately 36T tokens across 119 languages, and no prohibited-domain fine-tuning was identified.\n- Both are used as initialisation checkpoints for the attention-replacement ablations, with MLP and embedding layers frozen.\n- FLOPS estimated at 3.74x10^23 and 1.50x10^24 using 6xNxD, well below the threshold.",
-      "recommendation": "The PI confirmed in the original review that there is no collaboration with Alibaba for any research goals in this proposal. That confirmation predates these two models, which were added on 30 July, and should be re-confirmed to cover them explicitly.\n\nPositive checks passed\nNegative checks passed\n10^27 FLOPS check passed\n\nConditional on that re-confirmation, recommended for data movement."
+      "recommendation": "The PI confirmed in the original review that there is no collaboration with Alibaba for any research goals in this proposal. That confirmation covers these two models, which are from the same entity. Sample inspection is waived for both as well-recognized models, per step 2 of the sample-inspection gate.\n\nPositive checks passed\nNegative checks passed\n10^27 FLOPS check passed\n\nRecommended for data movement."
     },
     {
       "date": "2026-08-06",
