@@ -5,7 +5,7 @@
     "proposal_date": "2025-12-09",
     "reviewer_name": "Mohsin Ahmed Shaikh",
     "reviewer_id": "174988",
-    "aimcr_date": "2026-09-03",
+    "aimcr_date": "2026-09-16",
     "project_id": "65616"
   },
   "third_party_software": [
@@ -3368,6 +3368,49 @@
       ],
       "observations": "Change request ticket number: IMS0000131\n\n- 1 new software artifact reviewed: the NVIDIA vLLM NGC container image. Section score remains No Risk.\n- The CR form requests vLLM 0.29.0 added to the eval Singularity image. As agreed with the PI and student, vLLM is delivered as a separate serving image instead, using the latest NGC vLLM container (26.08-py3, vLLM 0.27.1) in place of the requested version; this addendum reviews that container.\n- The container runs without outbound internet access (served Gemma 4 E4B in a network-isolated container).",
       "recommendation": "The vLLM container image is non-D5, permissively licensed, carries no prohibited-use indicators, and runs without outbound internet access.\n\nThe latest NGC vLLM container (nvcr.io/nvidia/vllm:26.08-py3, vLLM 0.27.1) is used in place of the version on the CR form.\n\nRecommended to move to Shaheen III GPUP."
+    },
+    {
+      "date": "2026-09-16",
+      "category": "source_code",
+      "artifacts": [
+        {
+          "name": "AdaMLLab/nanotron",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "AdaMLLab/nanotron is the PI team's own copy of Hugging Face's nanotron, the 3D-parallelism LLM pre-training framework already approved for this project as nanotron 0.4 in Addendum 3. It is the trainer used to pre-train the project's Arabic/English model on Shaheen III GPUP, and the repository adds the team's training configurations under kaust/ for the approved datasets. It is requested as source because the approved PyPI release 0.4 dates from March 2024 and lacks features the project needs; the copy carries the current upstream code plus small compatibility fixes. Aligns with the approved research topic NLP & Computational Linguistics."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. Both delivered snapshots, main a19aba1d86 and dev cf0089323e, were screened in full for prohibited-use terms covering military, weapons, munitions, nuclear, chemical and biological weapons, surveillance, targeting, defense, warfare, intelligence, espionage, drones, radar and guidance systems, with no matches."
+            },
+            {
+              "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Non-D5. GitHub: https://github.com/AdaMLLab/nanotron\nOwner / Organization: AdaMLLab, the PI's own lab at KAUST (Saudi Arabia)\nSole contributor: SulRash (Sultan), research engineer at AdaMLLab, KAUST, who also owns the PI-owned SultanR/* and AdaMLLab/* datasets approved in Addendum 1\nCreated: Dec 17, 2025\nStars: 0\nForks: 0\nCommits: 23 (main, last Feb 13, 2026), 27 (dev, last May 4, 2026)\nReviewed snapshots: main a19aba1d86, dev cf0089323e\n\nThe repository is a copy of huggingface/nanotron rather than a GitHub fork: it has no shared git history with upstream and its first commit imports the upstream tree. The imported src/ is byte-identical to upstream main (2411b022a7); upstream has not changed src/ since Jun 23, 2025. Upstream nanotron (Hugging Face, Inc., San Francisco, USA) is non-D5 and was reviewed in Addendum 3 as nanotron 0.4."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "Apache License 2.0, the file being byte-identical to upstream nanotron's.\nPermissions:\n    - Commercial use allowed\n    - Modification and derivative works permitted\n    - Distribution allowed\n    - Sublicensing permitted\n    - Patent grant included (contributors grant patent rights)\n    - Private use allowed\n\nRestrictions:\n    - Must include original copyright notice\n    - Must include copy of license text\n    - Must document significant modifications\n    - Must preserve attribution notices\n    - Cannot use trademarks without permission\n    - Patent license terminates if patent litigation initiated"
+            },
+            {
+              "name": "Dependencies / Bundled Components",
+              "score": 1,
+              "notes": "Dependencies (pyproject.toml, unchanged from upstream):\ntorch>=1.13.1\npyyaml\nnumpy<2\npackaging\nsafetensors\ndacite\ntqdm\ndatasets\ntorchtyping\n\nOptional extras used by this project: flash-attn (fast-modeling), transformers, datatrove, numba (nanosets).\n\nAll of these are approved for 65616: numpy 1.26.4, safetensors 0.7.0, torchtyping 0.1.5, datasets, flash-attn 2.8.3, transformers 5.5.3, datatrove 0.8.0 and numba 0.65.0 as artifacts, with pyyaml, packaging, dacite and tqdm recorded as dependencies of approved artifacts. The unused extras boto3, s3fs, pytest, pre-commit and pylint are not installed.\n\nThe repository is delivered as source only; its packages come from the approved training image (65616-Orabona-train-v1), which already carries nanotron 0.4 and these dependencies. install.sh, which the PI team added, installs packages from the internet including wandb; it cannot run on Shaheen III GPUP, which has no outbound access, and wandb is not an approved artifact for this project."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "The library code under src/ is byte-identical to upstream nanotron, as are the launcher and benchmark scripts that invoke Slurm through subprocess. The team's own code changes amount to six small edits: user path handling, compatibility with the current version of the data-processing library, an index fix in the data loader, removal of an assertion that assumed cloud storage, and a configuration fix. The kaust/ directory holds YAML training configurations and shell and Python scripts for tokenization, launching training and evaluation.\n\nNo prohibited content was found, and a credential scan returned no keys, tokens or private keys in either snapshot.\n\nAlongside the Arabic configurations, kaust/ carries configurations for Hindi, Turkish, Italian, Japanese and Indonesian from the team's earlier AraMix paper, and dev carries run scripts written for another cluster. These are inert text: they neither train nor download anything by themselves, and one of them installs a package from GitHub, which cannot run on Shaheen III GPUP."
+            }
+          ]
+        }
+      ],
+      "observations": "- 1 new software artifact reviewed: AdaMLLab/nanotron, the PI team's own copy of nanotron, as source code. This is the first source code entry for 65616; the section score is No Risk.\n- The repository is a copy of huggingface/nanotron rather than a GitHub fork: it shares no git history with upstream, and its imported src/ is byte-identical to upstream main. Its pyproject.toml still declares version 0.4, so the artifact is identified by commit, not by version.\n- Two snapshots are approved and will be delivered as two plain folders without git history: main a19aba1d86 and dev cf0089323e. dev contains everything in main plus four later commits, almost all training configurations and scripts.\n- The approved nanotron 0.4 from PyPI is unchanged and remains in Addendum 3; the copy is delivered as source and runs with the packages already in the approved training image.\n- install.sh, added by the PI team, installs packages from the internet including wandb, which is not an approved artifact for this project. It cannot run on Shaheen III GPUP, which has no outbound access.\n- kaust/ also carries training configurations for languages outside the project's Arabic/English scope and run scripts for another cluster. They are inert configuration and script text and were inspected with the rest.",
+      "recommendation": "AdaMLLab/nanotron is non-D5, permissively licensed under Apache 2.0, and carries no prohibited-use indicators. Its dependencies are all approved for this project, and the code differs from the already-approved upstream nanotron only by small compatibility fixes and the team's own training configurations.\n\nThe two reviewed snapshots, main a19aba1d86 and dev cf0089323e, are recommended to move to Shaheen III GPUP as plain folders pinned to those commits."
     }
   ],
   "_submission_history": [
@@ -3377,6 +3420,10 @@
     },
     {
       "timestamp": "2026-09-14T15:00:12.439483",
+      "action": "resubmission"
+    },
+    {
+      "timestamp": "2026-09-16T09:32:51.981425",
       "action": "resubmission"
     }
   ]
