@@ -733,8 +733,8 @@
       "is_proprietary": false
     }
   ],
-  "observations": "Although the software list is unusually short w.r.t. the work that has been discussed, most of the usual software is included in the dependencies. Its a long list.\n\nSmolKalam dataset has been published on HF by a member of the group, without a license. \n\nThe applicant has not provided a source for their in-house  and claim that it will be developed on Shaheen III GPUP based on the Llama decoder with Group Query Attention (introduced in Llama 2). The risk is mitigated because all the public and custom data is generic Arabic text and the model size indicated is approximately 3B. \nEven with the large token count for training, the estimated FLOPS reached will be orders of magnitude less than the threshold. \n\nThere are 7 different models requested in the additional information for inference usecase to generate synthetic datasets before pre-training of the in-house model can begin. They were not discussed in the original proposal. \nTwo models requested are from developed and maintained by entities in D5+M country. However, these are popular language and multimodal models with substantial downloads from HuggingFace. These too have been requested for generation of synthetic multilingual datasets. \n\nQuarterly monitoring to check the model will be sufficient to build more trust. A check needs also to be designed to demonstrate that no other model is being trained further other than the in-house model.\n\nRevised following change request IMS0000049.\n\nAddendum 3 adds 14 packages, all clean. A further 6 models were added in Addendum 2. Unlike the seven models above, which generate synthetic data, these are inference-only frozen reference models for evaluation comparison; two of them are from D5+M entities (derisked). 55 datasets requested but 45 datasets in Addendum 1 based on the conversation with the PI.\n\n\nThe licensing gap noted above for SmolKalam recurred at scale in Addendum 1: 11 datasets carried no declared license terms. Ten were dropped from the request; the remaining one, SultanR/openresearcher-corpus-ar, is PI-owned and remains open (see Recommendation). SultanR/dclm-pro-ibex-merged-260315 is not among them; it defers to its CC-BY-4.0 upstream.",
-  "recommendation": "Positive check passed.\nNegative check passed.\n10^27 check passed.\n\nRevised following change request IMS0000049.\n\nThe overall risk has increased. The derisking strategy is elaborated below. \nThere were 55 datasets requested in the original change request. Of these, 11 datasets were found without license terms. 10 of the 11 were dropped from the request by the PI's team (11 Aug 2026, IMS0000049, PI in copy) and are not listed in this report.\n\nSultanR/openresearcher-corpus-ar, the remaining one, is PI-owned. On 11 August the PI's team confirmed all in-house datasets will carry permissive licenses. This does not close it: it is an Arabic translation of OpenResearcher-Corpus, which declares no license and was dropped from the request for that reason. It is excluded from data movement until the basis for licensing the derivative is confirmed and the permissive license is published on the data card and verified.\n\nSultanR/dclm-pro-ibex-merged-260315 defers to its source. It traces upstream through gair-prox/DCLM-pro to DCLM, both CC-BY-4.0, and the PI's team confirmed on 11 August that it will follow the upstream terms. It is cleared for data movement subject to attribution.\n\nFor artifacts with risk score 3 due to the LC 2.5 check, the PI has confirmed that no collaboration or sharing of information with the author or maintainers of the datasets and models is planned.\n\nThe recommendation is to proceed with the grand challenge with the original condition of monitoring that the PI will share the in-house developed model for LC 2.7 check and jobscripts to demonstrate that the only model being pre-trained is the in-house developed model, and with the licensing findings resolved before the affected datasets are moved.\n\n",
+  "observations": "Although the software list is unusually short w.r.t. the work that has been discussed, most of the usual software is included in the dependencies. Its a long list.\n\nSmolKalam dataset has been published on HF by a member of the group, without a license. \n\nThe applicant has not provided a source for their in-house  and claim that it will be developed on Shaheen III GPUP based on the Llama decoder with Group Query Attention (introduced in Llama 2). The risk is mitigated because all the public and custom data is generic Arabic text and the model size indicated is approximately 3B. \nEven with the large token count for training, the estimated FLOPS reached will be orders of magnitude less than the threshold. \n\nThere are 7 different models requested in the additional information for inference usecase to generate synthetic datasets before pre-training of the in-house model can begin. They were not discussed in the original proposal. \nTwo models requested are from developed and maintained by entities in D5+M country. However, these are popular language and multimodal models with substantial downloads from HuggingFace. These too have been requested for generation of synthetic multilingual datasets. \n\nQuarterly monitoring to check the model will be sufficient to build more trust. A check needs also to be designed to demonstrate that no other model is being trained further other than the in-house model.\n\nRevised following change request IMS0000049.\n\nAddendum 3 adds 14 packages, all clean. A further 6 models were added in Addendum 2. Unlike the seven models above, which generate synthetic data, these are inference-only frozen reference models for evaluation comparison; two of them are from D5+M entities (derisked). 55 datasets requested but 45 datasets in Addendum 1 based on the conversation with the PI.\n\n\nThe licensing gap noted above for SmolKalam recurred at scale in Addendum 1: 11 datasets carried no declared license terms. Ten were dropped from the request; the remaining one, SultanR/openresearcher-corpus-ar, is PI-owned and remains open (see Recommendation). SultanR/dclm-pro-ibex-merged-260315 is not among them; it defers to its CC-BY-4.0 upstream.\n\n--- Addendum 6 added: 2026-09-29 (Datasets & User Files) ---\n",
+  "recommendation": "Positive check passed.\nNegative check passed.\n10^27 check passed.\n\nRevised following change request IMS0000049.\n\nThe overall risk has increased. The derisking strategy is elaborated below. \nThere were 55 datasets requested in the original change request. Of these, 11 datasets were found without license terms. 10 of the 11 were dropped from the request by the PI's team (11 Aug 2026, IMS0000049, PI in copy) and are not listed in this report.\n\nSultanR/openresearcher-corpus-ar, the remaining one, is PI-owned. On 11 August the PI's team confirmed all in-house datasets will carry permissive licenses. This does not close it: it is an Arabic translation of OpenResearcher-Corpus, which declares no license and was dropped from the request for that reason. It is excluded from data movement until the basis for licensing the derivative is confirmed and the permissive license is published on the data card and verified.\n\nSultanR/dclm-pro-ibex-merged-260315 defers to its source. It traces upstream through gair-prox/DCLM-pro to DCLM, both CC-BY-4.0, and the PI's team confirmed on 11 August that it will follow the upstream terms. It is cleared for data movement subject to attribution.\n\nFor artifacts with risk score 3 due to the LC 2.5 check, the PI has confirmed that no collaboration or sharing of information with the author or maintainers of the datasets and models is planned.\n\nThe recommendation is to proceed with the grand challenge with the original condition of monitoring that the PI will share the in-house developed model for LC 2.7 check and jobscripts to demonstrate that the only model being pre-trained is the in-house developed model, and with the licensing findings resolved before the affected datasets are moved.\n\n\n\n--- Addendum 6 added: 2026-09-29 (Datasets & User Files) ---\n",
   "addenda": [
     {
       "date": "2026-06-29",
@@ -3411,20 +3411,54 @@
       ],
       "observations": "Change request ticket number: IMS0000132\n\n- 1 new software artifact reviewed: AdaMLLab/nanotron, the PI team's own copy of nanotron, as source code. This is the first source code entry for 65616; the section score is No Risk.\n- The repository is a copy of huggingface/nanotron rather than a GitHub fork: it shares no git history with upstream, and its imported src/ is byte-identical to upstream main. Its pyproject.toml still declares version 0.4, so the artifact is identified by commit, not by version.\n- Two snapshots are approved and will be delivered as two plain folders without git history: main a19aba1d86 and dev cf0089323e. dev contains everything in main plus four later commits, almost all training configurations and scripts.\n- The approved nanotron 0.4 from PyPI is unchanged and remains in Addendum 3; the copy is delivered as source and runs with the packages already in the approved training image.\n- install.sh, added by the PI team, installs packages from the internet including wandb, which is not an approved artifact for this project. It cannot run on Shaheen III GPUP, which has no outbound access.\n- kaust/ also carries training configurations for languages outside the project's Arabic/English scope and run scripts for another cluster. They are inert configuration and script text and were inspected with the rest.",
       "recommendation": "AdaMLLab/nanotron is non-D5, permissively licensed under Apache 2.0, and carries no prohibited-use indicators. Its dependencies are all approved for this project, and the code differs from the already-approved upstream nanotron only by small compatibility fixes and the team's own training configurations.\n\nThe two reviewed snapshots, main a19aba1d86 and dev cf0089323e, are recommended to move to Shaheen III GPUP as plain folders pinned to those commits."
-    }
-  ],
-  "_submission_history": [
-    {
-      "timestamp": "2026-09-03T17:05:16.005340",
-      "action": "resubmission"
     },
     {
-      "timestamp": "2026-09-14T15:00:12.439483",
-      "action": "resubmission"
-    },
-    {
-      "timestamp": "2026-09-16T09:32:51.981425",
-      "action": "resubmission"
+      "date": "2026-09-29",
+      "category": "datasets_user_files",
+      "artifacts": [
+        {
+          "name": "fineweb_rephrased",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "The dataset contains 111,903,957 Arabic text records (193 GB, Parquet) generated by rephrasing the Arabic subset of FineWeb2 into synthetic FAQ, tutorial, table, math and mixed formats. It is required for Objective 1 , Datasets and mixtures for pretraining LLMs with Arabic capabilities, as specified in the change request's datasets section, to serve the initial pretraining run in place of on-system synthetic generation pending vLLM setup. \n\nAligns with the approved research topics, Computational science and visualization (parallel algorithms) and Data science and engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 2,
+              "notes": "No prohibited categories or sensitive terms found in the dataset documentation. Sampled records contain incidental Arabic news reporting referencing missile-system transfers, IED detonations, detention proceedings and a ransomware explainer. Content reviewed and assessed as incidental mention in a non-prohibited context, descriptive journalism inherent to a web-crawl derivative, with no match against the LC 2.7 negative checks. Escalated to senior reviewer per the escalation matrix."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Dataset is owned and maintained by Zaid Alyafeai, a named collaborator on this project, based at KAUST, Saudi Arabia. Upstream base corpus FineWeb2 is owned by Hugging Face (France/US); the generating model is a Google Gemma variant (US). No D5+M affiliation found."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "No user files provided. The six rephrasing-* sub-directories imply at least six generation prompt templates that determined the content of the corpus; these have not been supplied or described."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "skipped"
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "Source: https://huggingface.co/datasets/Zaid/fineweb_rephrased. \nMaintainer: Zaid Alyafeai, KAUST\nCommits: 3. \nDownloads last month: 131."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 2,
+              "notes": "License: Apache-2.0. \n\nPermissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed. \n\nUpstream constraints are not discharged by the declared license: the base FineWeb2 corpus is ODC-By and requires attribution, which the repository does not provide, and outputs of a Gemma model carry the Gemma Terms of Use and Prohibited Use Policy, which propagate to distributed derivatives including any model trained on this corpus."
+            }
+          ]
+        }
+      ],
+      "observations": "",
+      "recommendation": ""
     }
   ]
 }
