@@ -63,7 +63,8 @@ if 'data' not in st.session_state:
         'models': [],
         'observations': '',
         'recommendation': '',
-        'addenda': []
+        'addenda': [],
+        'monitoring': []
     }
 
 if 'current_section' not in st.session_state:
@@ -77,6 +78,11 @@ if 'addendum_edit_index' not in st.session_state:
 
 if 'active_addendum' not in st.session_state:
     st.session_state.active_addendum = None  # index of addendum being expanded/edited
+
+# Backwards-compat: older drafts/submissions loaded into session_state may predate
+# the monitoring feature and won't have this key.
+if 'monitoring' not in st.session_state.data:
+    st.session_state.data['monitoring'] = []
 
 # Track if we're editing an existing submission
 if 'editing_submission' not in st.session_state:
@@ -199,6 +205,150 @@ SECTION_CHECKS = {
     ]
 }
 
+SECTION_LABELS = {
+    'third_party_software': 'Third-Party Software',
+    'source_code': 'Source Code',
+    'datasets_user_files': 'Datasets & User Files',
+    'models': 'Models'
+}
+
+
+def get_all_artifacts_for_monitoring(data):
+    """
+    Build a flat list describing every artifact across the four main sections
+    and all addenda. Each entry holds a direct reference ('ref') to the artifact
+    dict itself, so writing artifact-level monitoring info back onto 'ref'
+    mutates st.session_state.data in place.
+    """
+    items = []
+    for section_key in ['third_party_software', 'source_code', 'datasets_user_files', 'models']:
+        for idx, artifact in enumerate(data.get(section_key, [])):
+            items.append({
+                'ref': artifact,
+                'section_key': section_key,
+                'location': SECTION_LABELS[section_key],
+                'label': f"{SECTION_LABELS[section_key]} — {artifact.get('name', 'Unnamed')} (#{idx + 1})"
+            })
+    for add_idx, addendum in enumerate(data.get('addenda', [])):
+        cat_key = addendum.get('category', 'third_party_software')
+        cat_label = SECTION_LABELS.get(cat_key, cat_key)
+        for a_idx, artifact in enumerate(addendum.get('artifacts', [])):
+            items.append({
+                'ref': artifact,
+                'section_key': cat_key,
+                'location': f"Addendum {add_idx + 1} — {cat_label}",
+                'label': f"📎 Addendum {add_idx + 1}: {cat_label} — {artifact.get('name', 'Unnamed')} (#{a_idx + 1})"
+            })
+    return items
+
+
+# ── Monitoring palette ──────────────────────────────────────────────────────
+# Teal accent, chosen to sit alongside the existing UI colours rather than fight
+# them: blue (#3b82f6) already means "addendum" and red already means "risk".
+# Backgrounds are rgba over the accent and text inherits the theme foreground,
+# so the same markup stays legible in both the light and dark Streamlit themes.
+MON_ACCENT = "#0d9488"
+MON_BG = "rgba(13, 148, 136, 0.10)"
+MON_BORDER = "rgba(13, 148, 136, 0.35)"
+
+MON_TS_FMT = "%Y-%m-%d %H:%M:%S"
+
+
+def _now_ts():
+    return datetime.now().strftime(MON_TS_FMT)
+
+
+def _normalize_monitoring(mon):
+    """
+    Return an artifact's monitoring dict in the current schema:
+
+        {'candidate': bool, 'flagged_date': str, 'notes': [{'timestamp', 'text'}]}
+
+    Migrates the legacy {'required', 'note', 'added_date'} shape in place so that
+    older drafts and submissions keep working. Returns None when absent.
+    """
+    if not isinstance(mon, dict):
+        return None
+    if 'notes' not in mon:
+        legacy_note = (mon.pop('note', '') or '').strip()
+        legacy_date = mon.pop('added_date', '') or _now_ts()
+        mon['notes'] = [{'timestamp': legacy_date, 'text': legacy_note}] if legacy_note else []
+        mon['candidate'] = bool(mon.pop('required', False)) or bool(mon['notes'])
+        mon['flagged_date'] = legacy_date
+    mon.setdefault('candidate', True)
+    mon.setdefault('flagged_date', _now_ts())
+    mon.setdefault('notes', [])
+    return mon
+
+
+def is_monitoring_candidate(artifact):
+    mon = _normalize_monitoring(artifact.get('monitoring'))
+    return bool(mon and mon.get('candidate'))
+
+
+def sync_monitoring_list(data):
+    """
+    Rebuild the top-level 'monitoring' list — a derived, collective view of the
+    per-artifact flags, for the reviewer and for JSON consumers that want the
+    whole list without walking every section.
+    """
+    data['monitoring'] = [
+        {
+            'section': it['section_key'],
+            'location': it['location'],
+            'artifact_name': it['ref'].get('name', 'Unnamed'),
+            'flagged_date': _normalize_monitoring(it['ref']['monitoring']).get('flagged_date', ''),
+            'notes': _normalize_monitoring(it['ref']['monitoring']).get('notes', [])
+        }
+        for it in get_all_artifacts_for_monitoring(data)
+        if is_monitoring_candidate(it['ref'])
+    ]
+    return data['monitoring']
+
+
+def render_monitoring_badge(artifact, compact=False):
+    """Render the propagated monitoring flag on an artifact, wherever it's displayed."""
+    mon = _normalize_monitoring(artifact.get('monitoring'))
+    if not mon or not mon.get('candidate'):
+        return
+    notes = mon.get('notes', [])
+    if compact:
+        n = len(notes)
+        suffix = f" · {n} note{'s' if n != 1 else ''}" if n else ""
+        st.markdown(
+            f"<span style='background-color:{MON_BG}; border:1px solid {MON_BORDER}; "
+            f"color:inherit; padding:2px 8px; border-radius:4px; font-size:12px; "
+            f"font-weight:600;'>🔍 Monitoring candidate{suffix}</span>",
+            unsafe_allow_html=True
+        )
+    else:
+        if notes:
+            notes_html = "".join(
+                f"<div style='margin-top:6px;'>"
+                f"<span style='font-size:11px; opacity:0.7;'>{nt.get('timestamp', '')}</span><br>"
+                f"<span style='font-size:13px;'>{nt.get('text', '')}</span>"
+                f"</div>"
+                for nt in notes
+            )
+        else:
+            notes_html = (
+                "<div style='margin-top:6px; font-size:13px; opacity:0.7;'>"
+                "<i>No monitoring notes recorded yet.</i></div>"
+            )
+        st.markdown(
+            f"<div style='border-left:4px solid {MON_ACCENT}; background-color:{MON_BG}; "
+            f"color:inherit; padding:8px 12px; margin:8px 0; border-radius:4px;'>"
+            f"<b style='color:{MON_ACCENT};'>🔍 Monitoring candidate</b>"
+            f"<span style='font-size:11px; opacity:0.7;'> — flagged {mon.get('flagged_date', '')}</span>"
+            f"{notes_html}"
+            f"</div>",
+            unsafe_allow_html=True
+        )
+
+# Keep the derived top-level monitoring list current on every rerun, so the JSON
+# is right regardless of whether the reviewer ever opened the Monitoring section.
+sync_monitoring_list(st.session_state.data)
+
 # Header
 st.title("🔍 AI Model Control Review (AIMCR)")
 st.markdown("**KAUST Supercomputing Lab (KSL) - Project Proposal**")
@@ -209,7 +359,7 @@ with st.sidebar:
     st.header("Navigation")
     section = st.radio(
         "Select Section",
-        ["Metadata", "Third-Party Software", "Source Code", "Datasets & User Files", "Models", "Final Review", "Addendum"],
+        ["Metadata", "Third-Party Software", "Source Code", "Datasets & User Files", "Models", "Final Review", "Monitoring", "Addendum"],
         key="navigation"
     )
     st.session_state.current_section = section.lower().replace(" & ", "_").replace(" ", "_").replace("-", "_")
@@ -224,6 +374,7 @@ with st.sidebar:
         if st.button("💾 Save Draft", use_container_width=True):
             project_id = st.session_state.data['metadata'].get('project_id', '')
             try:
+                sync_monitoring_list(st.session_state.data)
                 draft_path = save_draft(LOCAL_REPO_PATH, st.session_state.data, project_id)
                 
                 # Push to GitHub
@@ -386,7 +537,8 @@ with st.sidebar:
                 'models': [],
                 'observations': '',
                 'recommendation': '',
-                'addenda': []
+                'addenda': [],
+                'monitoring': []
             }
             st.session_state.editing_submission = False
             st.session_state.original_submission_folder = None
@@ -458,6 +610,7 @@ def _render_addendum_artifacts_readonly(section_key, addendum_artifacts):
             f"</div>",
             unsafe_allow_html=True
         )
+        render_monitoring_badge(artifact, compact=True)
         with st.expander(f"View details — {name} (Addendum {add_n})", expanded=False):
             if section_key == 'models' and artifact.get('is_proprietary', False):
                 st.write("**Marked as Proprietary:** Yes ✓")
@@ -472,6 +625,7 @@ def _render_addendum_artifacts_readonly(section_key, addendum_artifacts):
                 st.write(f"**Total Score:** {total}")
             for check in artifact.get('checks', []):
                 st.write(f"- {check['name']}: Score **{check['score']}** | {check['notes']}")
+            render_monitoring_badge(artifact, compact=False)
 
 
 def render_artifact_form(section_key, section_title, checks, artifacts_ref=None,
@@ -526,6 +680,7 @@ def render_artifact_form(section_key, section_title, checks, artifacts_ref=None,
                         st.markdown(f"### Artifact {idx + 1}: {artifact_name} 🔒 *Proprietary*")
                     else:
                         st.markdown(f"### Artifact {idx + 1}: {artifact_name}")
+                    render_monitoring_badge(artifact, compact=True)
                 
                 with col2:
                     if st.button("✏️ Edit", key=f"edit_{edit_ns}_{idx}", use_container_width=True):
@@ -553,6 +708,8 @@ def render_artifact_form(section_key, section_title, checks, artifacts_ref=None,
                     
                     for check in artifact['checks']:
                         st.write(f"- {check['name']}: Score {check['score']} | Notes: {check['notes']}")
+
+                    render_monitoring_badge(artifact, compact=False)
                 
                 st.divider()
         
@@ -633,16 +790,25 @@ def render_artifact_form(section_key, section_title, checks, artifacts_ref=None,
                 'notes': notes
             })
         
+        st.write("---")
+        st.write("### Additional Information (Not part of risk scoring)")
+        widget_suffix = f"edit_{st.session_state.edit_index[edit_ns]}" if edit_mode else "add"
+
         is_proprietary = False
         if section_key == 'models':
-            st.write("---")
-            st.write("### Additional Information (Not part of risk scoring)")
-            widget_suffix = f"edit_{st.session_state.edit_index[edit_ns]}" if edit_mode else "add"
             is_proprietary = st.checkbox(
                 "Has the model been marked proprietary in the proposal?",
                 value=artifact.get('is_proprietary', False) if artifact else False,
                 key=f"{edit_ns}_proprietary_{widget_suffix}"
             )
+
+        monitoring_candidate = st.checkbox(
+            "Flag this artifact as a candidate for monitoring",
+            value=is_monitoring_candidate(artifact) if artifact else False,
+            key=f"{edit_ns}_monitoring_{widget_suffix}",
+            help="Flagged artifacts appear in the Monitoring section, where timestamped "
+                 "monitoring notes can be added."
+        )
         
         col1, col2, col3 = st.columns([1, 1, 2])
         
@@ -664,7 +830,28 @@ def render_artifact_form(section_key, section_title, checks, artifacts_ref=None,
             
             if section_key == 'models':
                 new_artifact['is_proprietary'] = is_proprietary
-            
+
+            # Carry the existing monitoring record (and its note history) through an
+            # edit — the artifact dict is rebuilt from scratch above, so without this
+            # saving an edit would silently discard the flag and every note on it.
+            prev_mon = None
+            if edit_mode:
+                prev = _get_artifacts()[st.session_state.edit_index[edit_ns]]
+                prev_mon = _normalize_monitoring(prev.get('monitoring'))
+
+            if monitoring_candidate:
+                mon = prev_mon or {'flagged_date': _now_ts(), 'notes': []}
+                mon['candidate'] = True
+                mon.setdefault('flagged_date', _now_ts())
+                mon.setdefault('notes', [])
+                new_artifact['monitoring'] = mon
+            elif prev_mon and prev_mon.get('notes'):
+                # Un-flagged but notes exist: keep the record so the note history
+                # isn't destroyed, just inactive. It won't show in the Monitoring
+                # section or as a badge.
+                prev_mon['candidate'] = False
+                new_artifact['monitoring'] = prev_mon
+
             if edit_mode:
                 _get_artifacts()[st.session_state.edit_index[edit_ns]] = new_artifact
                 del st.session_state.edit_index[edit_ns]
@@ -1104,6 +1291,7 @@ elif st.session_state.current_section == 'final_review':
                 st.error("Please enter a Project ID in the Metadata section")
             else:
                 try:
+                    sync_monitoring_list(st.session_state.data)
                     draft_path = save_draft(LOCAL_REPO_PATH, st.session_state.data, project_id)
                     
                     # Push to GitHub
@@ -1140,6 +1328,7 @@ elif st.session_state.current_section == 'final_review':
                     original_folder = st.session_state.original_submission_folder if st.session_state.editing_submission else None
                     
                     # Save to submissions folder (same folder if resubmitting)
+                    sync_monitoring_list(st.session_state.data)
                     submission_path = save_final_submission(
                         LOCAL_REPO_PATH, 
                         st.session_state.data, 
@@ -1185,6 +1374,7 @@ elif st.session_state.current_section == 'final_review':
             else:
                 try:
                     folder_path = create_folder_structure(meta['project_id'])
+                    sync_monitoring_list(st.session_state.data)
                     json_path = save_to_json(st.session_state.data, folder_path)
                     st.success(f"✅ Data saved to {json_path}")
                 except Exception as e:
@@ -1242,6 +1432,126 @@ elif st.session_state.current_section == 'final_review':
                             st.error("Failed to restore checkpoint")
         else:
             st.info("No checkpoints available for this project")
+
+# ── Monitoring Section ──────────────────────────────────────────────────────
+elif st.session_state.current_section == 'monitoring':
+    st.header("🔍 Monitoring")
+    st.markdown(
+        "Artifacts flagged as **candidates for monitoring** during their review appear here. "
+        "Flagging is done per artifact, in the artifact form of each section, so the flag is "
+        "written directly onto the artifact and travels with it. Monitoring notes are added "
+        "below and each one is timestamped when saved."
+    )
+
+    all_items = get_all_artifacts_for_monitoring(st.session_state.data)
+
+    if not all_items:
+        st.info("No artifacts have been added yet. Add artifacts in the sections above before configuring monitoring.")
+    else:
+        candidates = [it for it in all_items if is_monitoring_candidate(it['ref'])]
+
+        if not candidates:
+            st.info(
+                "No artifacts are currently flagged for monitoring. Tick "
+                "**Flag this artifact as a candidate for monitoring** in an artifact's form "
+                "to add it here."
+            )
+        else:
+            st.subheader(f"📋 Monitoring Candidates ({len(candidates)})")
+
+        for c_idx, it in enumerate(candidates):
+            mon = _normalize_monitoring(it['ref']['monitoring'])
+            notes = mon.get('notes', [])
+
+            col_info, col_remove = st.columns([6, 1])
+            with col_info:
+                st.markdown(
+                    f"<div style='border-left:5px solid {MON_ACCENT}; background-color:{MON_BG}; "
+                    f"color:inherit; padding:8px 14px; margin:4px 0; border-radius:4px;'>"
+                    f"<b>{it['label']}</b><br>"
+                    f"<span style='font-size:12px; opacity:0.75;'>"
+                    f"Flagged {mon.get('flagged_date', '')} &nbsp;|&nbsp; "
+                    f"{len(notes)} note{'s' if len(notes) != 1 else ''}</span>"
+                    f"</div>",
+                    unsafe_allow_html=True
+                )
+            with col_remove:
+                if st.button("🗑️", key=f"unflag_monitor_{c_idx}", use_container_width=True,
+                             help="Remove the monitoring flag from this artifact"):
+                    if notes:
+                        mon['candidate'] = False
+                    else:
+                        it['ref'].pop('monitoring', None)
+                    sync_monitoring_list(st.session_state.data)
+                    st.rerun()
+
+            with st.expander(f"Monitoring notes — {it['ref'].get('name', 'Unnamed')}",
+                             expanded=not notes):
+                if notes:
+                    for n_idx, nt in enumerate(notes):
+                        col_note, col_del = st.columns([8, 1])
+                        with col_note:
+                            st.markdown(
+                                f"<div style='border-left:3px solid {MON_BORDER}; "
+                                f"padding:4px 10px; margin:4px 0;'>"
+                                f"<span style='font-size:11px; opacity:0.7;'>{nt.get('timestamp', '')}</span><br>"
+                                f"<span style='font-size:14px;'>{nt.get('text', '')}</span>"
+                                f"</div>",
+                                unsafe_allow_html=True
+                            )
+                        with col_del:
+                            if st.button("✕", key=f"del_note_{c_idx}_{n_idx}",
+                                         use_container_width=True, help="Delete this note"):
+                                notes.pop(n_idx)
+                                sync_monitoring_list(st.session_state.data)
+                                st.rerun()
+                else:
+                    st.caption("No monitoring notes recorded yet.")
+
+                with st.form(f"add_monitoring_note_{c_idx}", clear_on_submit=True):
+                    note_text = st.text_area(
+                        "Add Monitoring Note",
+                        height=90,
+                        placeholder="e.g. Reviewer requests a 5% sample check of downloaded files before use on Ibex.",
+                        key=f"monitor_note_input_{c_idx}"
+                    )
+                    add_note = st.form_submit_button("💾 Add Note", type="primary")
+                    if add_note:
+                        if note_text.strip():
+                            notes.append({
+                                'timestamp': _now_ts(),
+                                'text': note_text.strip()
+                            })
+                            sync_monitoring_list(st.session_state.data)
+                            st.success("Note added.")
+                            st.rerun()
+                        else:
+                            st.warning("Note is empty — nothing was added.")
+
+            st.divider()
+
+        # Flagging also stays available here, for artifacts already reviewed.
+        unflagged = [it for it in all_items if not is_monitoring_candidate(it['ref'])]
+        if unflagged:
+            st.subheader("➕ Flag an Additional Artifact")
+            labels = [it['label'] for it in unflagged]
+            selected_label = st.selectbox("Select Artifact", labels, key="monitoring_artifact_select")
+            if st.button("Flag for Monitoring", type="primary", key="monitoring_flag_btn"):
+                target = next(it for it in unflagged if it['label'] == selected_label)
+                mon = _normalize_monitoring(target['ref'].get('monitoring')) or {'notes': []}
+                mon['candidate'] = True
+                mon.setdefault('flagged_date', _now_ts())
+                mon.setdefault('notes', [])
+                target['ref']['monitoring'] = mon
+                sync_monitoring_list(st.session_state.data)
+                st.rerun()
+
+    sync_monitoring_list(st.session_state.data)
+
+    if st.session_state.data['monitoring']:
+        st.divider()
+        with st.expander("📄 View Monitoring Section (as stored in JSON)", expanded=False):
+            st.json(st.session_state.data['monitoring'])
 
 # Footer
 st.divider()
