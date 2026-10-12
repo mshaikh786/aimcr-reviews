@@ -1,0 +1,609 @@
+{
+  "metadata": {
+    "proposal_title": "AI-Based Ensemble Downscaling for Probabilistic Subseasonal Weather Forecasting",
+    "principal_investigator": "Ibrahim Hoteit",
+    "proposal_date": "2026-10-07",
+    "reviewer_name": "Adil Salhi",
+    "reviewer_id": "132961",
+    "aimcr_date": "2026-10-12",
+    "project_id": "RITM1003516"
+  },
+  "third_party_software": [
+    {
+      "name": "PyTorch 2.14.0",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "PyTorch is a deep-learning framework. It is used to build and train the 3-D downscaling network (Swin Transformer) and the diffusion models (EDM) for ensemble augmentation.\n\nAligns with the approved topic, Climate and Ecology."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "PyTorch is developed and maintained by the PyTorch Foundation (Linux Foundation), based in the United States; originally developed by Meta AI. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/pytorch/pytorch .\n\nMaintainer: PyTorch Foundation (Linux Foundation).\n\nRelease: v2.14.0, released 2026-09-02.\n\nLast commit: 2026-10-12.\n\nStars: 104,671.\n\nForks: 32,186.\n\nActivity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: BSD 3-Clause License (bundled components under Apache-2.0, BSD, MIT and Boost licenses).\n\nPermissions: commercial use allowed, modification allowed, distribution allowed, private use allowed.\n\nObligation: include the copyright notice and license text with redistributions."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from trusted standard registries (PyPI, official PyTorch index)\n\npytorch 2.14.0\ncuda-bindings 12.9.7\ncuda-pathfinder 1.6.0\ncuda-toolkit 12.6.3\nfilelock 3.32.3\nfsspec 2026.7.0\njinja2 3.1.6\nmarkupsafe 3.0.3\nmpmath 1.3.0\nnetworkx 3.6.1\nnvidia-cublas-cu12 12.6.4.1\nnvidia-cudnn-cu12 9.10.2.21\nnvidia-cusparselt-cu12 0.7.1\nnvidia-nccl-cu12 2.29.3\nnvidia-nvjitlink-cu12 12.9.86\nnvidia-nvshmem-cu12 3.4.5\nsetuptools 84.0.0\nsympy 1.14.0\ntriton 3.8.0\ntyping-extensions 4.16.0"
+        }
+      ]
+    },
+    {
+      "name": "xarray 2025.8.0",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "xarray is a library for labelled multi-dimensional arrays. It is used to load, subset and preprocess the atmospheric fields (ensemble members, 3-D variables, vertical levels, 3-hourly time steps).\n\nAligns with the approved topic, Climate and Ecology."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "xarray is developed and maintained by the xarray community under the pydata organization, a NumFOCUS sponsored project, based in the United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/pydata/xarray .\n\nMaintainer: xarray community (pydata), NumFOCUS sponsored project.\n\nRelease: v2025.08.0, released 2025-08-14.\n\nLast commit: 2026-10-11.\n\nStars: 4,209.\n\nForks: 1,382.\n\nActivity health: Active.\n\nNote: The proposal lists the documentation page (https://docs.xarray.dev) instead of the repository."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache License 2.0.\n\nPermissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed.\n\nObligation: include license/NOTICE file with redistributions; mark changed files."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from trusted standard registries (PyPI, conda-forge)\n\nxarray 2025.8.0\nnumpy 2.2.6\npackaging 26.3\npandas 2.3.2\npython-dateutil 2.9.0.post0\npytz 2026.5\nsix 1.17.0\ntzdata 2026.5"
+        }
+      ]
+    },
+    {
+      "name": "matplotlib 3.10.6",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "matplotlib is a plotting library. It is used to visualise forecasts, downscaled fields and evaluation results.\n\nAligns with the approved topic, Climate and Ecology."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "matplotlib is developed and maintained by the Matplotlib Development Team, a NumFOCUS sponsored project, based in the United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/matplotlib/matplotlib .\n\nMaintainer: Matplotlib Development Team.\n\nRelease: v3.10.6, released 2025-08-29.\n\nLast commit: 2026-10-11.\n\nStars: 23,354.\n\nForks: 8,502.\n\nActivity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Matplotlib License (modelled on the Python license).\n\nPermissions: commercial use allowed, modification allowed, distribution allowed, private use allowed.\n\nObligation: include the copyright notice and license text with redistributions; a distributed modified version must include a brief summary of the changes."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from trusted standard registries (conda-forge, PyPI)\n\nmatplotlib 3.10.6\ncontourpy 1.4.0\ncycler 0.12.1\nfonttools 4.66.1\nkiwisolver 1.5.1\nnumpy 2.2.6\npackaging 26.3\npillow 12.3.0\npyparsing 3.3.3\npython-dateutil 2.9.0.post0\nsix 1.17.0"
+        }
+      ]
+    },
+    {
+      "name": "numpy 2.2.6",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "numpy is a library for numerical arrays. It provides the array and numerical routines underneath all data handling, preprocessing and evaluation.\n\nAligns with the approved topic, Climate and Ecology."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "numpy is developed and maintained by the NumPy Developers, a NumFOCUS sponsored project, based in the United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/numpy/numpy .\n\nMaintainer: NumPy Developers.\n\nRelease: v2.2.6, released 2025-05-17.\n\nLast commit: 2026-10-12.\n\nStars: 33,068.\n\nForks: 12,901.\n\nActivity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: BSD 3-Clause License (small bundled parts under 0BSD, MIT, Zlib and CC0).\n\nPermissions: commercial use allowed, modification allowed, distribution allowed, private use allowed.\n\nObligation: include the copyright notice and license text with redistributions."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from trusted standard registries (conda-forge)\n\nnumpy 2.2.6\n\nnumpy links to these maths libraries (conda-forge):\nlibopenblas 0.3.34\nlibblas 3.11.0\nlibcblas 3.11.0\nliblapack 3.11.0\nlibgfortran 16.2.0\nlibstdcxx 16.2.0"
+        }
+      ]
+    },
+    {
+      "name": "cfgrib 0.9.15.0",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "cfgrib is a GRIB file reader for xarray. It is used to read the ECMWF subseasonal-to-seasonal forecast files (GRIB format) behind the WRF ensemble.\n\nAligns with the approved topic, Climate and Ecology."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "cfgrib is developed and maintained by the European Centre for Medium-Range Weather Forecasts (ECMWF), based in the United Kingdom; originally written by B-Open (Italy). No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/ecmwf/cfgrib .\n\nMaintainer: ECMWF.\n\nRelease: 0.9.15.0 (git tag), published on PyPI 2024-12-18.\n\nLast commit: 2026-07-08.\n\nStars: 464.\n\nForks: 86.\n\nActivity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache License 2.0.\n\nPermissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed.\n\nObligation: include license/NOTICE file with redistributions; mark changed files."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from trusted standard registries (PyPI)\n\ncfgrib 0.9.15.0\nattrs 26.1.0\ncffi 2.1.1\nclick 8.5.0\neccodes 2.43.0\neccodeslib 2.44.0.7\neckitlib 1.32.3.7\nfckitlib 0.14.1.7\nfindlibs 0.1.3\nnumpy 2.2.6\npycparser 3.11"
+        }
+      ]
+    },
+    {
+      "name": "tqdm 4.67.1",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "tqdm is a progress-bar utility. It is used to show the progress of long-running loops such as data loading and training.\n\nAligns with the approved topic, Climate and Ecology."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "tqdm is developed and maintained by individual open-source developers under the tqdm organization (main author Casper da Costa-Luis). No company or institution owns it. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/tqdm/tqdm .\n\nMaintainer: tqdm developers (individual contributors).\n\nRelease: v4.67.1, released 2024-11-27.\n\nLast commit: 2026-09-11.\n\nStars: 31,352.\n\nForks: 3,880.\n\nActivity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: MPL-2.0 AND MIT.\n\nPermissions: commercial use allowed, modification allowed, distribution allowed, private use allowed.\n\nObligation: include the copyright notices; changes made to tqdm's own files must be shared under MPL-2.0 if they are distributed."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from trusted standard registries (PyPI)\n\ntqdm 4.67.1\n\nNo dependencies on Linux (colorama is needed on Windows only)."
+        }
+      ]
+    },
+    {
+      "name": "timm 1.0.19",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "timm (PyTorch Image Models) is a library of vision network architectures. It is used for building blocks of the downscaling network, including the Swin Transformer.\n\nAligns with the approved topic, Climate and Ecology."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "timm is developed and maintained by Ross Wightman under the Hugging Face organization, based in the United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/huggingface/pytorch-image-models .\n\nMaintainer: Hugging Face (Ross Wightman).\n\nRelease: v1.0.19, released 2025-07-24.\n\nLast commit: 2026-10-11.\n\nStars: 37,209.\n\nForks: 5,215.\n\nActivity health: Active.\n\nNote: The proposal lists https://github.com/tqdm/tqdm for timm and repeats tqdm's description."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache License 2.0.\n\nPermissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed.\n\nObligation: include license/NOTICE file with redistributions; mark changed files."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from trusted standard registries (PyPI, official PyTorch index)\n\ntimm 1.0.19\nanyio 4.15.1\nclick 8.5.0\ncuda-bindings 12.9.7\ncuda-pathfinder 1.6.0\ncuda-toolkit 12.6.3\nfilelock 3.32.3\nfsspec 2026.7.0\nh11 0.16.0\nhf-xet 1.7.0\nhttpcore2 2.13.1\nhttpx2 2.13.1\nhuggingface-hub 2.2.0\nidna 3.20\njinja2 3.1.6\nmarkupsafe 3.0.3\nmpmath 1.3.0\nnetworkx 3.6.1\nnumpy 2.2.6\nnvidia-cublas-cu12 12.6.4.1\nnvidia-cudnn-cu12 9.10.2.21\nnvidia-cusparselt-cu12 0.7.1\nnvidia-nccl-cu12 2.29.3\nnvidia-nvjitlink-cu12 12.9.86\nnvidia-nvshmem-cu12 3.4.5\npackaging 26.3\npillow 12.3.0\npyyaml 6.0.3\nsafetensors 0.8.0\nsetuptools 84.0.0\nsympy 1.14.0\ntorch 2.14.0+cu126\ntorchvision 0.29.0+cu126\ntqdm 4.67.1\ntriton 3.8.0\ntruststore 0.10.4\ntyping-extensions 4.16.0"
+        }
+      ]
+    },
+    {
+      "name": "einops 0.8.1",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "einops is a tensor-manipulation library. It is used to rearrange, reshape and repeat tensors in the network code.\n\nAligns with the approved topic, Climate and Ecology."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "einops is developed and maintained by Alex Rogozhnikov, based in the United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/arogozhnikov/einops .\n\nMaintainer: Alex Rogozhnikov.\n\nRelease: v0.8.1, released 2025-02-09.\n\nLast commit: 2026-08-26.\n\nStars: 9,616.\n\nForks: 403.\n\nActivity health: Active.\n\nNote: The proposal lists https://github.com/cran/einops, a mirror of the R version of einops, whose only release is 0.2.1; version 0.8.1 exists only for the Python package, and the project is written in Python."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: MIT License.\n\nPermissions: commercial use allowed, modification allowed, distribution allowed, private use allowed.\n\nObligation: include the copyright notice and license text with redistributions."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from trusted standard registries (PyPI)\n\neinops 0.8.1\n\nNo dependencies."
+        }
+      ]
+    },
+    {
+      "name": "scikit-learn 1.7.1",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "scikit-learn is a machine-learning library. It is used for classical models and data-preprocessing tools (scaling, baselines, evaluation metrics).\n\nAligns with the approved topic, Climate and Ecology."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "scikit-learn is developed and maintained by the scikit-learn community, a NumFOCUS sponsored project, based in the United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/scikit-learn/scikit-learn .\n\nMaintainer: scikit-learn developers.\n\nRelease: 1.7.1, released 2025-07-18.\n\nLast commit: 2026-10-12.\n\nStars: 67,557.\n\nForks: 27,506.\n\nActivity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: BSD 3-Clause License.\n\nPermissions: commercial use allowed, modification allowed, distribution allowed, private use allowed.\n\nObligation: include the copyright notice and license text with redistributions."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from trusted standard registries (conda-forge, PyPI)\n\nscikit-learn 1.7.1\ncloudpickle 3.1.2\njoblib 1.6.0\nnumpy 2.2.6\nscipy 1.18.1\nthreadpoolctl 3.7.0"
+        }
+      ]
+    },
+    {
+      "name": "ecCodes 2.43.0",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "ecCodes is the ECMWF library for GRIB files. It is used by cfgrib to decode the ECMWF forecast data.\n\nAligns with the approved topic, Climate and Ecology."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "ecCodes is developed and maintained by the European Centre for Medium-Range Weather Forecasts (ECMWF), based in the United Kingdom, including the eckit and fckit libraries it uses. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/ecmwf/eccodes-python (Python bindings); https://github.com/ecmwf/eccodes (C library) .\n\nMaintainer: ECMWF.\n\nRelease: bindings 2.43.0, published on PyPI 2025-07-25; C library 2.44.0.\n\nLast commit: 2026-09-24 (bindings); 2026-10-12 (C library).\n\nStars: 137 (bindings); 272 (C library).\n\nForks: 38 (bindings); 110 (C library).\n\nActivity health: Active.\n\nNote: The C library is version 2.44.0: no build of 2.43 exists for the GH200's ARM processors. The Python bindings are 2.43.0 as proposed, and ECMWF's self-check passes with this pair."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache License 2.0.\n\nPermissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed.\n\nObligation: include license/NOTICE file with redistributions; mark changed files."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from trusted standard registries (PyPI)\n\neccodes 2.43.0\nattrs 26.1.0\ncffi 2.1.1\neccodeslib 2.44.0.7\neckitlib 1.32.3.7\nfckitlib 0.14.1.7\nfindlibs 0.1.3\nnumpy 2.2.6\npycparser 3.11"
+        }
+      ]
+    },
+    {
+      "name": "pandas 2.3.2",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "pandas is a data-analysis library. It is used for tabular data and the time indexes of the 3-hourly fields.\n\nAligns with the approved topic, Climate and Ecology."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "pandas is developed and maintained by the pandas development team, a NumFOCUS sponsored project, based in the United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/pandas-dev/pandas .\n\nMaintainer: pandas development team.\n\nRelease: v2.3.2, released 2025-08-21.\n\nLast commit: 2026-10-12.\n\nStars: 50,029.\n\nForks: 20,487.\n\nActivity health: Active.\n\nNote: The proposal links to a sub-folder of the repository (pandas/core)."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: BSD 3-Clause License.\n\nPermissions: commercial use allowed, modification allowed, distribution allowed, private use allowed.\n\nObligation: include the copyright notice and license text with redistributions."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from trusted standard registries (conda-forge, PyPI)\n\npandas 2.3.2\nnumpy 2.2.6\npython-dateutil 2.9.0.post0\npytz 2026.5\nsix 1.17.0\ntzdata 2026.5"
+        }
+      ]
+    },
+    {
+      "name": "cartopy 0.25.0",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "cartopy is a map-plotting library. It is used to draw maps and handle map projections for plotting fields over the Arabian Peninsula.\n\nAligns with the approved topic, Climate and Ecology."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "cartopy is developed and maintained by SciTools, started at the UK Met Office, based in the United Kingdom. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/SciTools/cartopy .\n\nMaintainer: SciTools (UK Met Office).\n\nRelease: v0.25.0, released 2025-08-01.\n\nLast commit: 2026-10-05.\n\nStars: 1,621.\n\nForks: 402.\n\nActivity health: Active.\n\nNote: cartopy's Natural Earth map outlines (public domain) are stored in the image, as GPUP compute nodes have no internet access."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: BSD 3-Clause License.\n\nPermissions: commercial use allowed, modification allowed, distribution allowed, private use allowed.\n\nObligation: include the copyright notice and license text with redistributions."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from trusted standard registries (conda-forge, PyPI)\n\ncartopy 0.25.0\ncertifi 2026.7.22\ncontourpy 1.4.0\ncycler 0.12.1\nfonttools 4.66.1\nkiwisolver 1.5.1\nmatplotlib 3.10.6\nnumpy 2.2.6\npackaging 26.3\npillow 12.3.0\npyparsing 3.3.3\npyproj 3.8.0\npyshp 3.1.6\npython-dateutil 2.9.0.post0\nshapely 2.2.0\nsix 1.17.0\n\nshapely and pyproj use the GEOS 3.14.1 and PROJ 9.8.1 libraries (conda-forge)."
+        }
+      ]
+    },
+    {
+      "name": "xesmf 0.8.10",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "xesmf is a regridding tool for geospatial data. It is used to put coarse forecasts and the 4 km simulations on matching grids.\n\nAligns with the approved topic, Climate and Ecology."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "xesmf is developed and maintained by the Pangeo community (pangeo-data, a NumFOCUS sponsored project), with contributors at Ouranos (Canada) and NOAA (United States). ESMF, which it uses, is developed by NCAR/UCAR with NASA, NOAA and US national laboratories, based in the United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/pangeo-data/xESMF .\n\nMaintainer: Pangeo community.\n\nRelease: v0.8.10, released 2025-04-29.\n\nLast commit: 2026-09-08.\n\nStars: 252.\n\nForks: 41.\n\nActivity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: MIT License (xesmf); ESMF License (ESMF and esmpy).\n\nPermissions: commercial use allowed, modification allowed, distribution allowed, private use allowed.\n\nObligation: include the copyright notice and license text with redistributions; the ESMF developers' names may not be used to promote other products."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from trusted standard registries (PyPI, conda-forge)\n\nxesmf 0.8.10\ncf-xarray 0.11.3\nllvmlite 0.50.0\nnumba 0.68.0\nnumpy 2.2.6\npackaging 26.3\npandas 2.3.2\npython-dateutil 2.9.0.post0\npytz 2026.5\nshapely 2.2.0\nsix 1.17.0\nsparse 0.19.2\ntzdata 2026.5\nxarray 2025.8.0"
+        }
+      ]
+    }
+  ],
+  "source_code": [],
+  "datasets_user_files": [
+    {
+      "name": "WRF S2S Reforecast",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "The dataset contains 20 years of WRF-downscaled ECMWF subseasonal-to-seasonal reforecasts (10 ensemble members, 3-D atmospheric variables on multiple levels, 3-hourly). It is required as the training and evaluation data for the downscaling and ensemble-augmentation models.\n\nAligns with the approved research topic, Climate and Ecology."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the proposal's description of the dataset classified in Prohibited Use Screening in accordance with LC 2.7. No access to the data yet."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Dataset is owned and maintained by the PI's research group (CLIMATics, KAUST, Saudi Arabia), produced from ECMWF forecasts (United Kingdom) with the WRF model (NCAR, United States). No D5+M affiliation found."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No user files provided."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "To be skipped: an in-house dataset compiled by the PI's team for subseasonal weather forecasting over the Arabian Peninsula."
+        },
+        {
+          "name": "Provenance",
+          "score": 2,
+          "notes": "Owner / Curator: CLIMATics group, KAUST (https://climatics.kaust.edu.sa/)\nLocation: Shaheen III CPU storage (project k10021): /lustre2/project/k10021/luongtm/S2S_REFORECAST/run/store/surface and /scratch/luongtm/S2S_REFORECAST/store/surface\nAccess Method: in-house; needs a data movement request to the GPUP project.\n\nThe folders belong to user luongtm, likely Thang Luong (Research Scientist in the group), who is not on the proposal's team list. Held at 2 until the PI confirms the owner."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 2,
+          "notes": "License: not stated. The proposal states \"The dataset is under IP\" and, for data protection, \"We don't know what this means\". The ECMWF forecasts it is built from have their own terms (to be confirmed).\n\nHeld at 2 until the PI clarifies."
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "name": "Swin Transformer",
+      "is_proprietary": false,
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Swin Transformer is a hierarchical vision transformer architecture. It is used as the 3-D network that downscales coarse forecasts to 4 km atmospheric fields.\n\nAligns with the approved topic, Climate and Ecology."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 2,
+          "notes": "https://github.com/microsoft/Swin-Transformer\n\nThe repository is owned by Microsoft (United States); the model was created by Microsoft Research Asia (Beijing, China), and all eight authors of the paper (arXiv 2103.14030) are from Microsoft Research Asia. Only the architecture code is used; no pretrained weights.\n\nStars: 16,094\nForks: 2,211\nLast commit: 2024-07-15 (repository archived)\n\nPI will be requested for confirmation of no collaboration or sharing."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "MIT License\n\nPermits free use, copying, modification, merging, publishing, distribution, sublicensing and selling of the software.\nRequires the copyright notice and permission notice in all copies."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "No pretrained weights are used. The model is trained from scratch on the WRF S2S Reforecast (see Datasets)."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "Not fine-tuned. Trained from scratch for downscaling weather forecasts."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Model size and training-data volume are not given in the proposal.\nDelivered FLOPs (GPU-hours × peak TFLOPS × MFU): 20,000 × 989 TFLOPS × 3,600 s ≈ 7.1 × 10^22, assuming 100% utilisation and the full allocation (shared with EDM).\n10^27 FLOPS check passed."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Code inspected: all 84 files of the repository at commit f82860b; no sensitive terms found. No pretrained weights used."
+        }
+      ]
+    },
+    {
+      "name": "EDM (Elucidated Diffusion Models)",
+      "is_proprietary": false,
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "EDM is a diffusion-model framework. It is used to generate additional, physically realistic ensemble members to improve the forecast uncertainty estimates.\n\nAligns with the approved topic, Climate and Ecology."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "https://github.com/NVlabs/edm\n\nThe model is owned and maintained by NVIDIA Research (United States); the authors of the paper (arXiv 2206.00364), Tero Karras, Miika Aittala, Timo Aila and Samuli Laine, are all from NVIDIA. No D5+M affiliation found.\n\nStars: 2,003\nForks: 212\nLast commit: 2024-03-16"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "CC BY-NC-SA 4.0\n\nPermits use, copying, modification and distribution for non-commercial purposes only; academic research is allowed.\nRequires attribution to NVIDIA, and modified versions to be shared under the same license.\nCommercial use requires a separate license from NVIDIA."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "No pretrained weights are used. The model is trained from scratch on the WRF S2S Reforecast (see Datasets). NVIDIA's published checkpoints (CIFAR-10, FFHQ, AFHQ, ImageNet) are not part of this project."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "Not fine-tuned. Trained from scratch to generate forecast ensemble members."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Model size and training-data volume are not given in the proposal.\nDelivered FLOPs (GPU-hours × peak TFLOPS × MFU): 20,000 × 989 TFLOPS × 3,600 s ≈ 7.1 × 10^22, assuming 100% utilisation and the full allocation (shared with Swin Transformer).\n10^27 FLOPS check passed."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Code inspected: all 25 files of the repository at commit 008a4e5; no sensitive terms found. No pretrained weights used."
+        }
+      ]
+    }
+  ],
+  "observations": "Swin Transformer was created by Microsoft Research Asia (D5+M country). Only the architecture code is used and no pretrained weights are moved. PI will be requested for confirmation of no collaboration or sharing.\n\nThe WRF S2S Reforecast is an in-house dataset of the PI's group, stored on Shaheen III CPU storage (project k10021) in folders of a group member (luongtm) who is not on the proposal's team list. Its terms of use are not stated (\"under IP\"). The dataset is about 300 TB, while 80 TB of GPUP storage is requested. PI will be requested to confirm the owner, the terms of use and the part of the dataset to be moved. The data has not been accessed yet.\n\nAll software and model code is under licenses that allow free use, including commercial use, except EDM (CC BY-NC-SA 4.0: non-commercial use only; modified versions shared under the same license). This project's academic research use is allowed.\n\nThe proposal form lists wrong URLs for four packages: timm (points to tqdm), einops (points to the R version; version 0.8.1 exists only for the Python package), xarray (documentation page) and pandas (a sub-folder of the repository). The official repositories were reviewed.\n\nAll software comes from standard registries (PyPI, conda-forge and the official PyTorch index). CVE scan of the full software stack will be added to the audit.",
+  "recommendation": "The project aims to develop an AI framework for high-resolution probabilistic subseasonal weather forecasting over the Arabian Peninsula, combining 3-D deep-learning downscaling with diffusion-based ensemble augmentation.\n\nRecommendation deferred pending the PI's clarification on the WRF S2S Reforecast: who owns the dataset (it is stored in the folders of a group member, user luongtm, who is not on the proposal's team list); its terms of use (the proposal states only that it is \"under IP\"); and which part of the dataset is to be moved, given its size of about 300 TB against the 80 TB of GPUP storage requested.\n\nSwin Transformer has an LC 2.5 concern (Microsoft Research Asia); only the architecture code is used and no pretrained weights are moved. PI will be emailed to confirm that no collaboration or sharing is planned with Microsoft Research Asia.\n\nPositive checks passed\nNegative checks passed\n10^27 FLOPS check passed",
+  "addenda": [],
+  "_submission_history": []
+}
