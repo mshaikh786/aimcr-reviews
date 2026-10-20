@@ -5,7 +5,7 @@
     "proposal_date": "2025-12-09",
     "reviewer_name": "Mohsin Ahmed Shaikh",
     "reviewer_id": "174988",
-    "aimcr_date": "2026-09-03",
+    "aimcr_date": "2026-10-19",
     "project_id": "65638"
   },
   "third_party_software": [
@@ -1403,11 +1403,58 @@
       ],
       "observations": "CR Ticket Number: IMS0000084\n\n- Training Code is the project's core training codebase, owned and maintained by the PI's KAUST-affiliated team. No D5+M affiliation. Apache 2.0 confirmed from the repository LICENSE file. Dependency manifest reviewed and clean.\n- Sample inspection found no prohibited keywords or functionality. Three components are present but structurally inactive and were not declared in the proposal or this change request: NVIDIA Nemotron dataset-download scripts, the InternVideo2 vision encoder module with its routing commented out, and an OpenAI Moderation API call with zero references in the codebase.",
       "recommendation": "No risk identified in the review. The three undeclared components were each verified inactive, but any of them could be reactivated. The presence of the invactive code is inconsequential because these functions are bound to fail, since there is no internet on Shaheen III GPUP.\nPositive checks passed\nNegative checks passed\n\nRecommended for data movement."
+    },
+    {
+      "date": "2026-10-19",
+      "category": "source_code",
+      "artifacts": [
+        {
+          "name": "Training Code (update, IMS0000175)",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Updated version of the project's training code. It adds a Mixture-of-Experts (MoE) model variant, the Muon optimizer, fused GPU kernels, MoE configurations and weak-scaling scripts, used to train and scale the project's language models.\n\nAligns with the approved research topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the source code classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Owned and maintained by the PI's research team. No D5+M affiliation.\n\nTwo bundled parts come from other projects:\n- Muon optimizer: https://github.com/microsoft/dion, owned and maintained by Microsoft (United States). No D5+M affiliation.\n- GPU kernels: https://github.com/linkedin/Liger-Kernel, owned and maintained by LinkedIn (United States). No D5+M affiliation.\n\nReviewed version: commit 0a024ebe740655bc0e92b3966d5fe5add6abdcc1 (18 October 2026), snapshot of 19 October 2026."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "The training code is the team's own code, so its use in this project is not restricted. The repository's LICENSE file, which held the Apache License 2.0, was overwritten with three lines of Python code in a commit of 2 October 2026, most likely by mistake.\n\nThe bundled parts keep their own licences: MIT License (Muon optimizer) and BSD 2-Clause License (GPU kernels). Both permit use, modification and redistribution, including commercial use, provided the copyright notice and licence text are kept."
+            },
+            {
+              "name": "Dependencies / Bundled Components",
+              "score": 1,
+              "notes": "The dependency lists (pyproject.toml, requirements.txt, environment-gh200.yml) are unchanged since the previous review. The uv.lock file was overwritten in the same commit as the LICENSE file. New code uses NVIDIA Transformer Engine only as an optional choice; the default uses PyTorch alone.\n\nBundled components:\n- Muon optimizer (llava/optim/dion/), copied from microsoft/dion at commit 7692479288f928a3d61d1cc58137b4dbe4f71000. Only Muon is used, not the Dion optimizer. Of the seven files, three are identical to the original; four carry small engineering changes by the team (memory-bounded batching, a configurable concurrency limit, a fixed GPU kernel setting).\n- GPU kernels for RMSNorm, RoPE, SwiGLU and cross-entropy loss (llava/kernels/liger/), an adapted subset of Liger Kernel 0.7.0: 38 of 69 functions are identical to the original, the others trimmed or adjusted."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "No prohibited keywords or functionality were identified in the added or changed files, including the bundled parts, and no credentials were found. The three inactive components noted in the previous review (Nemotron download scripts, the InternVideo2 encoder, an OpenAI Moderation function) are unchanged and still inactive."
+            }
+          ]
+        }
+      ],
+      "observations": "CR Ticket Number: IMS0000175\n\n- The change request updates the project's training code with a Mixture-of-Experts model variant, the Muon optimizer, fused GPU kernels and weak-scaling scripts. The reviewed version is commit 0a024ebe740655bc0e92b3966d5fe5add6abdcc1, from a snapshot taken on 19 October 2026.\n- The form states that all the code was developed by the project team. Two parts come from other projects: the Muon optimizer from Microsoft's dion repository (MIT) and GPU kernels adapted from LinkedIn's Liger Kernel (BSD 2-Clause). Both were reviewed as bundled parts of the training code; neither has a D5+M affiliation.\n- The repository's LICENSE and uv.lock files were overwritten with unrelated content in a commit of 2 October 2026. As the code is the team's own, no licence update is required.\n- The MoE variant (configuration named 35B-A3B: 256 experts, 8 active per token) follows the Qwen3 model design and is trained from scratch by default. Training compute is estimated far below 10^27 FLOPs.\n- The repository's version-control folder (.git) holds earlier files that are no longer in the code, such as job outputs. It was not reviewed and is not part of the movement.",
+      "recommendation": "No risk identified in the review. The bundled Muon optimizer and GPU kernels come from projects with no D5+M affiliation and keep their own permissive licences.\n\nNote: the .git folder is excluded from the movement, because its contents do not match the reviewed code. It holds earlier files, such as job outputs, that are no longer in the code and were not reviewed.\n\nPositive checks passed\nNegative checks passed\n10^27 FLOPS check passed\n\nRecommended for data movement."
     }
   ],
   "_submission_history": [
     {
       "timestamp": "2026-09-07T13:39:27.084471",
+      "action": "resubmission"
+    },
+    {
+      "timestamp": "2026-10-20T08:47:45.851973",
       "action": "resubmission"
     }
   ]
