@@ -186,7 +186,7 @@
         {
           "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
           "score": 1,
-          "notes": "Source: https://github.com/chipnbits/flowtrain_stochastic_interpolation\nor \n/ibex/user/okhmakv/flowtrain_stochastic_interpolation/src/flowtrain/models/unet_attn_3d.py\n\nThe model is developed collaboratively by KAUST researchers and the University of British Columbia (UBC) research team (as referenced in arXiv:2506.11164), with no LinkedIn profiles specified in the documentation.\n\n"
+          "notes": "Source: https://github.com/chipnbits/flowtrain_stochastic_interpolation\nor \n/ibex/user/okhmakv/flowtrain_stochastic_interpolation/src/flowtrain/models/unet_attn_3d.py\n\nThe model is developed collaboratively by KAUST researchers and the University of British Columbia (UBC) research team (as referenced in arXiv:2506.11164), with no LinkedIn profiles specified in the documentation.\n\nCheckpoints of this model (mag_model, listed as a dataset in change request IMS0000203) were moved to Shaheen III GPUP under RT #71927."
         },
         {
           "name": "License / Permissions",
@@ -219,6 +219,296 @@
   ],
   "observations": "Software, datasets and models have been clearly defined",
   "recommendation": "There is no risk artifact requested in this project. \n\nPositive check passed\n\nNegative check passed\n\n10^27 check passed\n\nRecommended to proceed with the grand challenge. ",
+  "addenda": [
+    {
+      "date": "2026-11-03",
+      "category": "third_party_software",
+      "artifacts": [
+        {
+          "name": "emcee 3.1.6",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "emcee is a Python library for Markov chain Monte Carlo (MCMC) sampling, built on an affine-invariant ensemble sampler for Bayesian parameter estimation. It is a required dependency of GSTools, which uses it to draw random samples from probability distributions, and the group lists it for Bayesian parameter estimation.\n\nAligns with the approved topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "emcee is developed and maintained by Dan Foreman-Mackey and contributors, based in the United States. No D5+M affiliation found."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Repository details:\n- Source: https://github.com/dfm/emcee\n- Maintainer: Dan Foreman-Mackey\n- Release: v3.1.6, released 2024-04-19\n- Last commit: 2026-10-24\n- Stars: 1,604\n- Forks: 447\n- PyPI: https://pypi.org/project/emcee/3.1.6/\n\nActivity health: Active."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: MIT.\n\nPermissions: free to use, change and share, including commercially.\n\nObligation: keep the copyright notice and license text in copies."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "Dependencies pulled from trusted standard registries (PyPI).\n\nRequired dependency (PyPI metadata):\n- numpy\n\nThe optional extras (h5py, scipy and test tools) are not requested.\n\nCVE scan (Trivy, 3 Nov 2026): no known vulnerabilities in emcee 3.1.6."
+            }
+          ]
+        },
+        {
+          "name": "gstools 1.7.0 (gstools-core 1.2.0, gstools_cython 1.2.0)",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "GSTools is a geostatistics library for generating spatial random fields, estimating variograms and kriging (interpolating values between sparse observations). It is used to generate and interpolate spatially varying property fields for the project's 3D subsurface models.\n\nIt is requested with its two compiled backends:\n- gstools_cython 1.2.0, the required default backend\n- gstools-core 1.2.0, an optional faster backend written in Rust, used in place of gstools_cython when installed\n\nAligns with the approved topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "GSTools, gstools-core and gstools_cython are developed and maintained by the GeoStat-Framework (core developers Sebastian M\u00fcller and Lennart Sch\u00fcler, Helmholtz Centre for Environmental Research \u2013 UFZ), based in Leipzig, Germany. No D5+M affiliation found."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Repository details:\n- gstools: https://github.com/GeoStat-Framework/GSTools, release v1.7.0 (2025-04-28), last commit 2026-10-13, 659 stars, 86 forks\n- gstools-core: https://github.com/GeoStat-Framework/GSTools-Core, release v1.2.0 (2025-10-21), last commit 2026-07-22, 14 stars, 3 forks\n- gstools_cython: https://github.com/GeoStat-Framework/GSTools-Cython, release v1.2.0 (2025-12-26), last commit 2025-12-26, 2 stars, 3 forks\n- Maintainer: GeoStat-Framework (https://github.com/GeoStat-Framework)\n- PyPI: https://pypi.org/project/gstools/1.7.0/, https://pypi.org/project/gstools-core/1.2.0/, https://pypi.org/project/gstools-cython/1.2.0/\n\nActivity health: Active. The two backends are official GeoStat-Framework repositories released by the same developers as GSTools.\n\nNote: PyPI has no ready-built gstools-core 1.2.0 package for the GPUP processor (Linux aarch64), so it is built from its source package; the source package matches the v1.2.0 tag except for the version number line."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 3,
+              "notes": "License: GNU Lesser General Public License v3 (LGPL-3.0) for all three packages. The license field on the gstools-core PyPI page is empty; its repository and source package carry the same LGPL-3.0 license file, and its Cargo.toml declares LGPL-3.0-or-later.\n\nPermissions: free to use, change and share, including commercially; programs that only use these libraries may be under any license.\n\nObligation: a changed version of these libraries may only be shared under the same license, together with its source code; keep the copyright and license notices."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "Dependencies pulled from trusted standard registries (PyPI).\n\nRequired dependencies of gstools 1.7.0 (PyPI metadata):\n- emcee >= 3.0.0\n- gstools_cython >= 1, < 2\n- hankel >= 1.0.0\n- meshio >= 5.1.0\n- numpy >= 1.20.0\n- pyevtk >= 1.1.1\n- scipy >= 1.1.0\n\ngstools-core and gstools_cython require only numpy >= 1.20.0. emcee and hankel are reviewed as entries of this addendum.\n\nCVE scan (Trivy, 3 Nov 2026): no known vulnerabilities in gstools 1.7.0, gstools-core 1.2.0 or gstools_cython 1.2.0."
+            }
+          ]
+        },
+        {
+          "name": "hankel 1.2.2",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "hankel is a Python library for numerical Hankel transforms and radially symmetric Fourier transforms. It is a required dependency of GSTools, which uses it to compute the spectra of its covariance models when generating random fields.\n\nAligns with the approved topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "hankel is developed and maintained by Steven Murray (Scuola Normale Superiore), based in Pisa, Italy. No D5+M affiliation found."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 2,
+              "notes": "Repository details:\n- Source: https://github.com/steven-murray/hankel\n- Maintainer: Steven Murray\n- Release: v1.2.2, released 2023-07-27\n- Last commit: 2026-04-01\n- Stars: 50\n- Forks: 5\n- PyPI: https://pypi.org/project/hankel/1.2.2/\n\nActivity health: Low. A small single-maintainer project with three commits in the last twelve months and no release since 2023; it is the official source and shows no integrity concerns."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: MIT.\n\nPermissions: free to use, change and share, including commercially.\n\nObligation: keep the copyright notice and license text in copies."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "Dependencies pulled from trusted standard registries (PyPI).\n\nRequired dependencies (PyPI metadata):\n- mpmath >= 1.0.0\n- numpy >= 1.9.3\n- scipy >= 0.16.1\n\nCVE scan (Trivy, 3 Nov 2026): no known vulnerabilities in hankel 1.2.2."
+            }
+          ]
+        },
+        {
+          "name": "lightning 2.5.1.post0",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Lightning is a high-level framework for training PyTorch models; it handles training loops, checkpointing and multi-GPU and multi-node training. It is used to train the project's 3D models; the training scripts of the approved U-Net 3D code (flowtrain) are written with Lightning.\n\nAligns with the approved topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Lightning is developed and maintained by Lightning AI, based in the United States. No D5+M affiliation found."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Repository details:\n- Source: https://github.com/Lightning-AI/pytorch-lightning\n- Maintainer: Lightning AI\n- Release: 2.5.1.post0, released 2025-04-25\n- Last commit: 2026-09-21\n- Stars: 31,440\n- Forks: 3,843\n- PyPI: https://pypi.org/project/lightning/2.5.1.post0/\n\nActivity health: Active."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: Apache License 2.0.\n\nPermissions: free to use, change and share, including commercially; includes a patent grant from contributors.\n\nObligation: keep the copyright notice and license text, and mark changed files when sharing."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 4,
+              "notes": "Dependencies pulled from trusted standard registries (PyPI).\n\nRequired dependencies (PyPI metadata):\n- PyYAML >= 5.4, < 8.0\n- fsspec[http] >= 2022.5.0, < 2026.0\n- lightning-utilities >= 0.10.0, < 2.0\n- packaging >= 20.0, < 25.0\n- pytorch-lightning\n- torch >= 2.1.0, < 4.0\n- torchmetrics >= 0.7.0, < 3.0\n- tqdm >= 4.57.0, < 6.0\n- typing-extensions >= 4.4.0, < 6.0\n\nCVE scan (Trivy, 3 Nov 2026) of lightning 2.5.1.post0:\n- High: CVE-2026-58659, a crafted checkpoint file can run code when loaded with load_from_checkpoint (fixed in 2.6.6)\n\nMitigation: the advisories need a crafted file to be loaded; only the group's own checkpoints and data, and artifacts that have been through review, are loaded on Shaheen III GPUP."
+            }
+          ]
+        },
+        {
+          "name": "monai 1.5.0",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "MONAI is a PyTorch-based framework for deep learning in medical imaging; it provides 3D network architectures, data transforms and training tools. It is used for the project's Swin-UNETR model, whose architecture comes from MONAI, applied to 3D geological volumes rather than medical images.\n\nAligns with the approved topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "MONAI is developed and maintained by Project MONAI, started by NVIDIA and King's College London and maintained by researchers at NVIDIA, NIH, King's College London and 30+ other institutions, based in the United States and the United Kingdom. Two of the most active contributors are NVIDIA engineers based in Shanghai, China; the owning organization is clearly non-D5+M."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Repository details:\n- Source: https://github.com/Project-MONAI/MONAI\n- Maintainer: Project MONAI\n- Release: 1.5.0, released 2025-06-14\n- Last commit: 2026-11-02\n- Stars: 8,819\n- Forks: 1,699\n- PyPI: https://pypi.org/project/monai/1.5.0/\n\nActivity health: Active."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: Apache License 2.0.\n\nPermissions: free to use, change and share, including commercially; includes a patent grant from contributors.\n\nObligation: keep the copyright notice and license text, and mark changed files when sharing."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 4,
+              "notes": "Dependencies pulled from trusted standard registries (PyPI).\n\nRequired dependencies (PyPI metadata):\n- numpy >= 1.24, < 3.0\n- torch >= 2.4.1, < 2.7.0\n\nThe optional extras are not requested.\n\nCVE scan (Trivy, 3 Nov 2026) of monai 1.5.0, nine advisories:\n- Critical: CVE-2026-48705, a crafted DICOM file uploaded to a MONAI Label server can crash it or corrupt its results (fixed in 1.6.1)\n- High: CVE-2025-58755, a crafted zip archive can overwrite files when extracted (fixed in 1.5.1)\n- High: CVE-2025-58756 and CVE-2025-58757, crafted checkpoint or pickled data can run code when loaded (fixed in 1.5.1)\n- High: GHSA-89gg-p5r5-q6r4, GHSA-qxq5-qhx6-94qw and GHSA-wg9g-w2j2-8pgr, crafted pickled or NumPy files can run code when loaded (fixed in 1.6.0)\n- High: GHSA-rghg-q7wp-9767, crafted configuration values can run shell commands (fixed in 1.6.0)\n- Medium: CVE-2026-21851, a crafted zip archive from a private NGC bundle can write files outside the target folder (fixed in 1.5.2)\n\nFixed versions exist for all advisories (1.5.1 to 1.6.1). The group requires 1.5.0; the critical fix (1.6.1) needs PyTorch 2.8 or later.\n\nMitigation: the advisories need a crafted file to be loaded; only the group's own checkpoints and data, and artifacts that have been through review, are loaded on Shaheen III GPUP."
+            }
+          ]
+        },
+        {
+          "name": "pytorch-lightning 2.5.1.post0",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "pytorch-lightning is the earlier package name of Lightning, published from the same source code; it provides the same PyTorch training framework under the pytorch_lightning name. It is required by lightning 2.5.1.post0 and serves the same training of the project's 3D models.\n\nAligns with the approved topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "pytorch-lightning is developed and maintained by Lightning AI, based in the United States. No D5+M affiliation found."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Repository details:\n- Source: https://github.com/Lightning-AI/pytorch-lightning\n- Maintainer: Lightning AI\n- Release: 2.5.1.post0, released 2025-04-25\n- Last commit: 2026-09-21\n- Stars: 31,440\n- Forks: 3,843\n- PyPI: https://pypi.org/project/pytorch-lightning/2.5.1.post0/\n\nActivity health: Active."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: Apache License 2.0.\n\nPermissions: free to use, change and share, including commercially; includes a patent grant from contributors.\n\nObligation: keep the copyright notice and license text, and mark changed files when sharing."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 4,
+              "notes": "Dependencies pulled from trusted standard registries (PyPI).\n\nRequired dependencies (PyPI metadata):\n- PyYAML >= 5.4\n- fsspec[http] >= 2022.5.0\n- lightning-utilities >= 0.10.0\n- packaging >= 20.0\n- torch >= 2.1.0\n- torchmetrics >= 0.7.0\n- tqdm >= 4.57.0\n- typing-extensions >= 4.4.0\n\nCVE scan (Trivy, 3 Nov 2026) of pytorch-lightning 2.5.1.post0:\n- High: CVE-2026-31221, a crafted checkpoint file can run code when loaded with load_from_checkpoint (no fixed version listed)\n\nMitigation: the advisories need a crafted file to be loaded; only the group's own checkpoints and data, and artifacts that have been through review, are loaded on Shaheen III GPUP."
+            }
+          ]
+        },
+        {
+          "name": "torchaudio 2.5.1",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "torchaudio is the PyTorch library for audio input and output, signal-processing transforms (such as spectrograms, filtering and resampling) and audio models. It was meant to simulate noise artifacts found in observed data.\n\nAligns with the approved topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "torchaudio is developed and maintained by the PyTorch project (PyTorch Foundation, Linux Foundation; maintainers at Meta), based in the United States. No D5+M affiliation found."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Repository details:\n- Source: https://github.com/pytorch/audio\n- Maintainer: PyTorch project\n- Release: v2.5.1, released 2024-10-29 on PyPI\n- Last commit: 2026-10-27\n- Stars: 2,960\n- Forks: 805\n- PyPI: https://pypi.org/project/torchaudio/2.5.1/\n\nActivity health: Active."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: BSD 2-Clause.\n\nPermissions: free to use, change and share, including commercially.\n\nObligation: keep the copyright notice and license text in copies.\n\nNote: pre-trained model weights that the library can download carry their own terms; none are requested."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "Dependencies pulled from trusted standard registries (PyPI).\n\nRequired dependency (PyPI metadata):\n- torch == 2.5.1 (exact version)\n\nCVE scan (Trivy, 3 Nov 2026): no known vulnerabilities in torchaudio 2.5.1."
+            }
+          ]
+        },
+        {
+          "name": "torchmetrics 1.7.1",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "TorchMetrics is a collection of metrics for evaluating PyTorch models, such as accuracy, Dice, structural similarity and error measures. It is used to evaluate the project's 3D models during training and validation, and it is a required dependency of Lightning.\n\nAligns with the approved topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "TorchMetrics is developed and maintained by Lightning AI, based in the United States. No D5+M affiliation found."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Repository details:\n- Source: https://github.com/Lightning-AI/torchmetrics\n- Maintainer: Lightning AI\n- Release: v1.7.1, released 2025-04-07\n- Last commit: 2026-09-21\n- Stars: 2,481\n- Forks: 564\n- PyPI: https://pypi.org/project/torchmetrics/1.7.1/\n\nActivity health: Active."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: Apache License 2.0.\n\nPermissions: free to use, change and share, including commercially; includes a patent grant from contributors.\n\nObligation: keep the copyright notice and license text, and mark changed files when sharing."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "Dependencies pulled from trusted standard registries (PyPI).\n\nRequired dependencies (PyPI metadata):\n- lightning-utilities >= 0.8.0\n- numpy > 1.20.0\n- packaging > 17.1\n- torch >= 2.0.0\n\nThe optional extras are not requested.\n\nCVE scan (Trivy, 3 Nov 2026): no known vulnerabilities in torchmetrics 1.7.1."
+            }
+          ]
+        }
+      ],
+      "observations": "Change request ticket number: IMS0000203\n\n- 8 new software artifacts reviewed, as listed on the change request form: newer libraries and libraries missing from the original requirements. gstools is reviewed together with its two compiled backends, gstools-core 1.2.0 and gstools_cython 1.2.0.\n- emcee and hankel are required dependencies of gstools; lightning requires pytorch-lightning and torchmetrics.\n- gstools and its backends are under the LGPL-3.0 license: research use is allowed, and a changed version of these libraries may only be shared under the same license with its source code.\n- torchaudio was meant to simulate noise artifacts found in observed data; the group has since dropped it, replacing it with NumPy and SciPy (reply of 3 Nov 2026), so it will not be installed.\n- gstools-core 1.2.0 is built from source for GPUP's processor when the image is built.",
+      "recommendation": "The eight software artifacts are non-D5+M and carry no prohibited-use indicators. gstools and its backends are under the LGPL-3.0 license, which allows the project's research use.\n\nmonai 1.5.0 carries a critical and several high CVEs, and lightning and pytorch-lightning 2.5.1.post0 carry a high CVE each; all are triggered by loading crafted files or configuration. The group is to load only its own data, checkpoints and configuration files with these libraries.\n\nRecommended for approval."
+    }
+  ],
   "_submission_history": [
     {
       "timestamp": "2026-03-10T17:49:53.282585",
