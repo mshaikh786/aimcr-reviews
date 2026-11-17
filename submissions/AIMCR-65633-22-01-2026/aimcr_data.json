@@ -490,5 +490,426 @@
       "timestamp": "2026-02-11T14:53:20.717619",
       "action": "resubmission"
     }
+  ],
+  "addenda": [
+    {
+      "date": "2026-11-17",
+      "category": "datasets_user_files",
+      "artifacts": [
+        {
+          "name": "Zhuang-ABCA-1 MERFISH",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Zhuang-ABCA-1 is a spatial gene expression dataset of one adult mouse brain: 4,167,870 segmented cells by 1,122 genes over 147 sections (MERFISH, H5AD, 1.2 GB). It is used as the main training source for the molecular encoder and the spatial and anatomical model.\n\nAligns with the approved topic, Bioscience."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Dataset is owned and maintained by the Allen Institute for Brain Science (USA), from the Zhuang lab at Harvard University (USA).\n\nNo D5+M affiliation found."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "No prompts or fine-tuning scripts apply to this dataset."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "No risk in LC 2.7 and LC 2.5 checks. Sample inspection skipped."
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "Owner / Curator: Allen Institute for Brain Science\n\nPrimary Distribution Platform: Allen Brain Cell Atlas\n\nRepository: https://alleninstitute.github.io/abc_atlas_access/descriptions/Zhuang-ABCA-1.html\n\nRelease: 20230830\n\nPublication: Zhang et al., Nature 624, 343\u2013354 (2023); 560 citations\n\nAccess repository: https://github.com/AllenInstitute/abc_atlas_access (132 stars, 44 forks; last commit 17 November 2026)"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: CC BY 4.0.\n\nPermissions: use, modification and sharing allowed, including commercially.\n\nObligation: attribution."
+            }
+          ]
+        },
+        {
+          "name": "Zhuang-ABCA-2 MERFISH",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Zhuang-ABCA-2 is a spatial gene expression dataset of a second adult mouse brain: 1,915,594 segmented cells by 1,122 genes (MERFISH, H5AD, 0.5 GB). It is used for development and evaluation.\n\nAligns with the approved topic, Bioscience."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Dataset is owned and maintained by the Allen Institute for Brain Science (USA), from the Zhuang lab at Harvard University (USA).\n\nNo D5+M affiliation found."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "No prompts or fine-tuning scripts apply to this dataset."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "No risk in LC 2.7 and LC 2.5 checks. Sample inspection skipped."
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "Owner / Curator: Allen Institute for Brain Science\n\nPrimary Distribution Platform: Allen Brain Cell Atlas\n\nRepository: https://alleninstitute.github.io/abc_atlas_access/descriptions/Zhuang-ABCA-2.html\n\nRelease: 20230830\n\nPublication: Zhang et al., Nature 624, 343\u2013354 (2023); 560 citations\n\nAccess repository: https://github.com/AllenInstitute/abc_atlas_access (132 stars, 44 forks; last commit 17 November 2026)"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: CC BY 4.0.\n\nPermissions: use, modification and sharing allowed, including commercially.\n\nObligation: attribution."
+            }
+          ]
+        },
+        {
+          "name": "MERFISH-C57BL6J-638850",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "MERFISH-C57BL6J-638850 is the Allen whole mouse brain MERFISH dataset: 4,334,174 segmented cells by 550 genes, including 50 control genes (H5AD, 7.6 GB). It is used as an additional evaluation source.\n\nAligns with the approved topic, Bioscience."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Dataset is owned and maintained by the Allen Institute for Brain Science (USA).\n\nNo D5+M affiliation found."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "No prompts or fine-tuning scripts apply to this dataset."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "No risk in LC 2.7 and LC 2.5 checks. Sample inspection skipped."
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "Owner / Curator: Allen Institute for Brain Science\n\nPrimary Distribution Platform: Allen Brain Cell Atlas\n\nRepository: https://alleninstitute.github.io/abc_atlas_access/descriptions/MERFISH-C57BL6J-638850.html\n\nRelease: 20230830\n\nPublication: Yao et al., Nature 624, 317\u2013332 (2023); 1,345 citations\n\nAccess repository: https://github.com/AllenInstitute/abc_atlas_access (132 stars, 44 forks; last commit 17 November 2026)\n\nNote: the source of the whole-brain spatial transcriptomics dataset in the original review."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: CC BY-NC 4.0.\n\nPermissions: use, modification and sharing allowed for non-commercial purposes; research use is permitted.\n\nObligation: attribution; no commercial use."
+            }
+          ]
+        },
+        {
+          "name": "WMB-10Xv3-CB annotations",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "WMB-10Xv3-CB annotations are two cell and gene tables (7 MB) for the Allen whole mouse brain single-cell dataset, cerebellum part: 24,000 training, 4,000 development and 4,000 test cells from 17 donors. Only these tables are moved; the expression file is already in the project space on Shaheen III GPUP.\n\nAligns with the approved topic, Bioscience."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Dataset is owned and maintained by the Allen Institute for Brain Science (USA).\n\nNo D5+M affiliation found."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "No prompts or fine-tuning scripts apply to this dataset."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "No risk in LC 2.7 and LC 2.5 checks. Sample inspection skipped."
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "Owner / Curator: Allen Institute for Brain Science; cell selection by the team\n\nPrimary Distribution Platform: Allen Brain Cell Atlas\n\nRepository: https://alleninstitute.github.io/abc_atlas_access/descriptions/WMB-10Xv3.html\n\nPublication: Yao et al., Nature 624, 317\u2013332 (2023); 1,345 citations\n\nAccess repository: https://github.com/AllenInstitute/abc_atlas_access (132 stars, 44 forks; last commit 17 November 2026)\n\nNote: part of the whole-brain single-cell dataset in the original review."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: CC BY-NC 4.0.\n\nPermissions: use, modification and sharing allowed for non-commercial purposes; research use is permitted.\n\nObligation: attribution; no commercial use."
+            }
+          ]
+        },
+        {
+          "name": "Slide-seqV2 mouse cerebellum",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Slide-seqV2 mouse cerebellum is a spatial gene expression dataset: 25,258 beads by 5,205 genes from one cerebellum section (H5AD, 51 MB). It is used for training, development and testing on a second spatial technology.\n\nAligns with the approved topic, Bioscience."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Dataset is published by the Broad Institute (USA): Stickels et al., Nature Biotechnology (2021), and Cable et al. (Single Cell Portal study SCP948). The copy used is the processed object from the OpenProblems benchmark.\n\nNo D5+M affiliation found."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "No prompts or fine-tuning scripts apply to this dataset."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "No risk in LC 2.7 and LC 2.5 checks. Sample inspection skipped."
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "Owner / Curator: Broad Institute of MIT and Harvard\n\nPrimary Distribution Platform: Broad Institute Single Cell Portal (SCP948); processed copy from OpenProblems\n\nRepository: https://singlecell.broadinstitute.org/single_cell/study/SCP948\n\nPublications: Stickels et al., Nature Biotechnology 39, 313\u2013319 (2021), 1,407 citations; Cable et al., Nature Biotechnology 40, 517\u2013526 (2022), 1,587 citations\n\nCopy used (OpenProblems, as given in the change request form): https://www.openproblems.bio/datasets/zenodo_spatial-slideseqv2-mouse_cerebellum/\n\nOpenProblems repository: https://github.com/openproblems-bio/openproblems (444 stars, 89 forks; last commit 2 October 2026)"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: Single Cell Portal terms for public studies.\n\nPermissions: public study data are available for unrestricted viewing, redistribution and reuse.\n\nNote: no separate license is given for the OpenProblems copy; the team confirmed the portal terms."
+            }
+          ]
+        },
+        {
+          "name": "Stereo-seq GSE333479 (GSM9765772, GSM9765773, GSM9765774)",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Stereo-seq GSE333479 provides three mouse brain sections from the study 'A unified spatial transcriptome profiling of ten mouse organs': 108,434, 106,238 and 113,170 segmented cells by about 25,000 genes (cell-bin GEF, 0.7 GB in total). They are used for training, development and testing on a third spatial technology.\n\nAligns with the approved topic, Bioscience."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 3,
+              "notes": "Owning organisation is BGI Research, based in China (D5).\n\nDataset is publicly available with an open license (CC BY 4.0).\n\nD5-country affiliation found.\n\nThe PI confirmed by email that the data are used only in the NeuroAI project, with no collaboration with BGI Research."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "No prompts or fine-tuning scripts apply to this dataset."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "327 randomly sampled cells (0.1% of each section) were inspected. Content corresponds to the dataset description: mouse brain gene expression with mouse gene names, strong neuronal and glial markers, and cell positions. No images, text or human data.\n\nThe three files are identical to the files published on GEO."
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "Owner / Curator: BGI Research\n\nPrimary Distribution Platform: NCBI GEO (GSE333479) and Zenodo\n\nRepository: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE333479\n\nZenodo: https://doi.org/10.5281/zenodo.18463527 (248 downloads, 149 views)\n\nPublic since: 27 May 2026; last updated 27 August 2026\n\nPubMed ID: 42374103"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: CC BY 4.0 (Zenodo record of the dataset).\n\nPermissions: use, modification and sharing allowed, including commercially.\n\nObligation: attribution."
+            }
+          ]
+        },
+        {
+          "name": "NeuroAI derived support assets",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "The derived support assets are 26 files (1.4 GB) prepared by the team from the datasets above and the Allen atlas metadata: cell and anatomy lookup tables (SQLite), cell graphs, section coordinates, train, development and test lists, and gene and region reference tables. They are used to link cells to brain regions and to fix the training and evaluation sets.\n\nAligns with the approved topic, Bioscience."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Dataset is owned and maintained by the team at KAUST (Saudi Arabia). Sources are the Allen Institute (USA), Broad Institute (USA) and BGI Research (China) datasets above.\n\nNo further D5+M affiliation found."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "No prompts or fine-tuning scripts apply to this dataset."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "All 26 files were inspected (tables, arrays, columns and example rows). Content corresponds to the description: cell identifiers, positions, brain region and cell-type labels, gene tables, neighbour graphs and train, development and test lists derived from the datasets above. No text, images or human data."
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "Owner / Curator: the team, KAUST\n\nSource: derived from the datasets above and the Allen Common Coordinate Framework metadata\n\nAccess Method: provided by the team on Ibex, with a file manifest giving the source of each file."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: per source dataset.\n\nPermissions: as for the source datasets; the most restrictive is CC BY-NC 4.0 (Allen whole-brain datasets), which permits research use.\n\nObligation: attribution of the source datasets; no commercial use."
+            }
+          ]
+        }
+      ],
+      "observations": "Change request ticket number: IMS0000232\n\n- 7 new datasets reviewed. Section score rises from No Risk to Medium.\n- Stereo-seq GSE333479 is owned by BGI Research, China. D5+M affiliation. LC 2.5. Affiliation is the only concern: the data are public under CC BY 4.0, and the sample inspection of 327 cells found mouse brain gene expression only.\n- The Allen Brain Cell Atlas datasets (Zhuang-ABCA-1, Zhuang-ABCA-2, MERFISH-C57BL6J-638850 and the annotation tables for the whole-brain single-cell dataset) and Slide-seqV2 mouse cerebellum (Broad Institute) have no D5+M affiliation. The two Allen whole-brain datasets are non-commercial (CC BY-NC 4.0), which permits the project's research use. Reuse terms for Slide-seqV2 and Stereo-seq were confirmed by the team.\n- The team's derived support assets (26 files) were inspected: cell identifiers, positions, region and cell-type labels, and train and test lists.\n- 2 code packages and 1 model reviewed, all developed by the team at KAUST. These are the first source code entries for the project; that section is No Risk, and the model section remains No Risk. No new libraries or container images; the code runs on the project's existing image. FLOPS well below the threshold.",
+      "recommendation": "The PI confirmed there is no collaboration with BGI Research for this project.\n\nPositive checks passed.\nNegative checks passed.\n10^27 FLOPS check passed.\n\nRecommended for data movement."
+    },
+    {
+      "date": "2026-11-17",
+      "category": "source_code",
+      "artifacts": [
+        {
+          "name": "BrainSphere offline release 20261115_v1",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "BrainSphere is the team's own code for a mouse brain model that combines gene expression, spatial position and brain anatomy: training, evaluation, data loading and run checks for Shaheen III. It is used to train and evaluate the project's model.\n\nAligns with the approved topic, Bioscience."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7.\n\nThe source was screened for LC 2.7 terms and embedded credentials: no matches."
+            },
+            {
+              "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Source: provided by the team on Ibex, from the team's private repository\n\nPackage: brainsphere_shaheen_offline_20261115_v1.tar.gz\n\nVersion: 0.1.0\n\nSHA-256: 94988405eb57bc7ffeb10aafc9cbaf41c23a1e7d862cec339e4cf7881270368a\n\nOwner: the team, KAUST (Saudi Arabia).\n\nNo D5+M affiliation found."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: none included yet; the team states on the change request form that it will use BSD-3-Clause, a permissive open-source license.\n\nThe code is the team's own and unpublished."
+            },
+            {
+              "name": "Dependencies / Bundled Components",
+              "score": 1,
+              "notes": "No new dependencies. The code runs on the project's existing container image (krccl/sh3-gpu-stack:65633-tegner-v1)."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "All 52 files were screened. The content corresponds to the description: model, training, evaluation and data code, configuration files and gene and anatomy catalogues."
+            }
+          ]
+        },
+        {
+          "name": "BrainSphere spatial-binding supplement 20261115_v3",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "The spatial-binding supplement is a small set of the team's scripts that link each cell to its section position and brain region and check these links. It is used to prepare model inputs from the support assets.\n\nAligns with the approved topic, Bioscience."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7.\n\nThe source was screened for LC 2.7 terms and embedded credentials: no matches."
+            },
+            {
+              "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Source: provided by the team on Ibex, from the team's private repository\n\nPackage: brainsphere_spatial_bindings_20261115_v3.tar.gz\n\nSHA-256: fbec08902bc03233e017afcda50cfcf7764d4ef45c8eac016132e63488d5d9f5\n\nOwner: the team, KAUST (Saudi Arabia).\n\nNo D5+M affiliation found."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: none included; the change request form gives local development.\n\nThe code is the team's own and unpublished."
+            },
+            {
+              "name": "Dependencies / Bundled Components",
+              "score": 1,
+              "notes": "No new dependencies. The code runs on the project's existing container image (krccl/sh3-gpu-stack:65633-tegner-v1)."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "All 6 files were screened. The content corresponds to the description."
+            }
+          ]
+        }
+      ],
+      "observations": "",
+      "recommendation": ""
+    },
+    {
+      "date": "2026-11-17",
+      "category": "models",
+      "artifacts": [
+        {
+          "name": "BrainSphere-HR/FM",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "BrainSphere-HR/FM is the team's own multimodal mouse brain model (62.8 million parameters): a gene expression encoder, a spatial encoder and a brain region encoder, combined to predict gene counts and cell composition. It is used to study cell identity, regional specialisation and transfer across brain regions, animals and technologies.\n\nAligns with the approved topic, Bioscience."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Source: the team's code package (see Source code); only trained weights included: assets/hr_encoder.pt (11.6 MB), a frozen reference encoder of about 2.9 million parameters.\n\nOwner: the team, KAUST (Saudi Arabia).\n\nNo D5+M affiliation found."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: none included.\n\nThe model is the team's own and unpublished."
+            },
+            {
+              "name": "Training Data Documentation",
+              "score": 1,
+              "notes": "The reference encoder was trained on Zhuang-ABCA-1 (436,296 cells from 47 sections, one mouse, 1,122 genes; see Datasets). The full model is not yet trained; it will be trained on Shaheen III on the datasets above."
+            },
+            {
+              "name": "Customisation / Fine-tuning",
+              "score": 1,
+              "notes": "Not fine-tuned. The full model is trained from scratch; the reference encoder stays frozen."
+            },
+            {
+              "name": "FLOPS Calculation",
+              "score": 1,
+              "notes": "Theoretical training FLOPs (6\u00b7N\u00b7D), from the team's declarations (16 November 2026)\n\nN = 62,773,595 parameters\n\nD = 2,103,836,787 gene-expression positions per pass over the training set\n\nF = 6\u00b7N\u00b7D \u2248 7.9 \u00d7 10^17 FLOPs per pass. The number of passes is not given; even 1,000 passes would stay below 10^21.\n\n10^27 FLOPS check passed."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "No risk in LC 2.7 and LC 2.5 checks. Sample inspection skipped."
+            }
+          ]
+        }
+      ],
+      "observations": "",
+      "recommendation": ""
+    }
   ]
 }
