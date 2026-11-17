@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "proposal_title": "Motion-Aware and Compute-Efficient Video Representation Learning with Joint-Embedding Predictive Architectures",
+    "principal_investigator": "Bernard Ghanem",
+    "proposal_date": "2026-11-12",
+    "reviewer_name": "",
+    "reviewer_id": "",
+    "aimcr_date": "2026-11-12",
+    "project_id": "RITM1005078"
+  },
+  "third_party_software": [
+    {
+      "name": "vjepa2",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "vjepa2 is a PyTorch codebase for V-JEPA 2 self-supervised video pretraining, evaluation and action-conditioned world modelling. It is used for Objective O1: Develop motion-aware and computationally efficient JEPA-based video representation learning methods . Aligns with the approved topic."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "vjepa2 is developed and maintained by Meta Platforms, Inc. (FAIR), based in the United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/facebookresearch/vjepa2. Maintainer: Meta Platforms, Inc. (FAIR). Last commit: 2026-03-23. Stars: 4,872. Forks: 597. Commits: 33. Activity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: MIT (three files under Apache 2.0: src/datasets/utils/video/randaugment.py, src/datasets/utils/video/randerase.py, src/datasets/utils/worker_init_fn.py). Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: Trivy 0.69.3 (vulnerability DB updated 2026-11-12) detected all 191 pinned packages in the resolved vjepa2 dependency set with 0 vulnerabilities; pip-audit also found no known vulnerabilities."
+        }
+      ]
+    }
+  ],
+  "source_code": [],
+  "datasets_user_files": [
+    {
+      "name": "Kinetics-700",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "The dataset contains approximately 650,000 human-annotated, ~10-second YouTube video clips across 700 human action classes, with CSV/JSON annotation files. It is required for Objective O2 \u2014 Conduct controlled pretraining experiments on Shaheen III on the trade-offs between motion understanding, representation generalization and computational efficiency, as specified in the proposal's datasets section. Aligns with the approved research topic, [topic name]."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Dataset is owned and maintained by the Common Visual Data Foundation (CVDF), based in the United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No user files provided."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk in LC 2.7 and LC 2.5 checks. Sample inspection skipped."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "The dataset is an artifact of the \npaper: Carreira, J., Noland, E., Hillier, C., Zisserman, A., A Short Note on the Kinetics-700 Human Action Dataset, arXiv:1907.06987 (2019). \nMaintainer: Common Visual Data Foundation (CVDF). \nSource: https://github.com/cvdfoundation/kinetics-dataset. \nStars:1,003\nForks:116\nCommits:51\nLast commit:2022-07-05"
+        },
+        {
+          "name": "License / Permissions",
+          "score": 2,
+          "notes": "License: CC BY 4.0 (annotations). Permissions: use, modification and redistribution with attribution. Use for academic research and non-commercial purposes is permitted."
+        }
+      ]
+    }
+  ],
+  "models": [],
+  "observations": "",
+  "recommendation": "",
+  "addenda": [],
+  "monitoring": [],
+  "_submission_history": []
+}
