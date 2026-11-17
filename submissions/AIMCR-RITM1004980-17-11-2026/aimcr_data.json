@@ -1,0 +1,96 @@
+{
+  "metadata": {
+    "proposal_title": "Soccer Video Understanding Foundational Model",
+    "principal_investigator": "Bernard Ghanem",
+    "proposal_date": "2026-10-28",
+    "reviewer_name": "",
+    "reviewer_id": "",
+    "aimcr_date": "2026-11-10",
+    "project_id": "RITM1004980"
+  },
+  "third_party_software": [
+    {
+      "name": "accelerate 1.8.1",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "accelerate is a library for running PyTorch training across distributed hardware configurations. It is used for Objective O1 \u2014 Reproduce and extend SoccerMaster as the SoccerFM soccer video understanding foundational model, as explicitly mentioned in the proposal's codes & libraries section. Aligns with the approved topic, Computational Science and Visualization."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "accelerate is developed and maintained by Hugging Face, based in the United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/huggingface/accelerate. Maintainer: Hugging Face. Last commit: 2026-11-02. Stars: 9,937. Forks: 1,597. Commits: 2,085. Activity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache-2.0. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 2,
+          "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run of accelerate==1.8.1 resolved 45 packages, all from files.pythonhosted.org (PyPI); conda dry-run resolved 110 packages, all from conda-forge. Trivy 0.76.2 scan of the 45 PyPI packages: 1 MEDIUM (CVE-2026-69112, accelerate 1.8.1, path traversal/denial of service via a crafted weight_map; no fixed version available), 0 HIGH, 0 CRITICAL; no findings in the other 44 packages."
+        }
+      ]
+    }
+  ],
+  "source_code": [],
+  "datasets_user_files": [
+    {
+      "name": "SoccerNet (Multiple Tasks) \u2014 Action Spotting, Player Tracking, Camera Calibration, Captioning",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "The dataset contains annotated broadcast footage from 500+ soccer games, covering 17-class action spotting, dense player tracking, camera calibration, and caption generation. It is required for Objective O1 \u2014 Reproduce and extend SoccerMaster as the SoccerFM soccer video understanding foundational model, as specified in the proposal's datasets section. Aligns with the approved research topic, Computational Science and Visualization."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Dataset is owned and maintained by the SoccerNet consortium \u2014 KAUST (Saudi Arabia), EPFL (Switzerland), and Sportradar (Switzerland), based in Saudi Arabia and Switzerland. No D5+M affiliation found."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No user files provided."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk in LC 2.7 and LC 2.5 checks. Sample inspection skipped."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "The dataset is an artifact of the paper: Giancola, S., Amine, M., Dghaily, T., & Ghanem, B. (2018). SoccerNet: A Scalable Dataset for Action Spotting in Soccer Videos. CVPR Workshops, pp. 1711\u20131721. Primary owner: KAUST. Maintainer: OpenSportsLab / Silvio Giancola. Source: https://www.soccer-net.org. Downloads last month: 4,171 (OpenSportsLab/SoccerNet-GAR variant, Hugging Face)."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 3,
+          "notes": "License: SoccerNet Research License. Non-commercial use only. The proposed use on Shaheen III for research is permissible; however, any commercial application would not be permitted under this license."
+        }
+      ]
+    }
+  ],
+  "models": [],
+  "observations": "",
+  "recommendation": "",
+  "addenda": [],
+  "monitoring": []
+}
