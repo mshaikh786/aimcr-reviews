@@ -1,0 +1,96 @@
+{
+  "metadata": {
+    "proposal_title": "AuditLab: A Benchmark for Behavioral Auditing of AI Models",
+    "principal_investigator": "Bernard Ghanem",
+    "proposal_date": "2026-11-15",
+    "reviewer_name": "",
+    "reviewer_id": "",
+    "aimcr_date": "2026-11-15",
+    "project_id": "RITM1004991"
+  },
+  "third_party_software": [
+    {
+      "name": "torch 2.14.1",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "torch is a deep learning framework providing automatic differentiation, bf16 training, distributed sharding and generation. It is used for Objective O1 \u2014 Train a controlled collection of AI models with documented target behaviors as a benchmark for AI auditing, as explicitly mentioned in the proposal's codes & libraries section."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "torch is developed and maintained by the PyTorch Foundation (Linux Foundation), based in the United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/pytorch/pytorch (release: https://pypi.org/project/torch/2.14.1/, published 2026-09-30). Maintainer: PyTorch Foundation (Linux Foundation). Last commit: 2026-11-15. Stars: 105,514. Forks: 30,726. Commits: 114,269. Activity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: BSD-3-Clause. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run resolved 29 packages (torch, triton, NVIDIA CUDA 13 runtime libraries, sympy, networkx, fsspec, Jinja2 and others), all from files.pythonhosted.org; pip-audit found no known vulnerabilities; Trivy scan of the built container pending."
+        }
+      ]
+    }
+  ],
+  "source_code": [],
+  "datasets_user_files": [
+    {
+      "name": "openai/gsm8k (main configuration)",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 3,
+          "notes": "The dataset contains 8,792 grade-school arithmetic word problems with worked solutions and verifiable numeric answers (7,473 train, 1,319 test). It is stated for SFT and GRPO training and minimum QA. Its role in training the backdoors eliciting unsafe behavior described in the proposal is not specified. Flagged for PI clarification"
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 3,
+          "notes": "The dataset's documentation contains no sensitive terms. The proposal states it will be used to deliberately train models to exhibit misbehaviors, including backdoors eliciting unsafe behavior. Dual-use; assessed as medium risk and escalated for review under LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Dataset is owned and maintained by OpenAI, based in the United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No user files provided."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "Inspection will be conducted"
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "The dataset is an artifact of the paper: Cobbe et al. (2021), Training Verifiers to Solve Math Word Problems, arXiv:2110.14168. Primary owner: OpenAI. Maintainer: OpenAI. Source: https://huggingface.co/datasets/openai/gsm8k. Downloads last month: 1,107,878."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: MIT. Permissions: use, copy, modification, merging, publication, distribution, sublicensing and sale permitted, subject to retaining the copyright and permission notice. Use for academic research and non-commercial purposes is permitted."
+        }
+      ]
+    }
+  ],
+  "models": [],
+  "observations": "AuditLab is the first stage of a larger project: it trains small models to exhibit target misbehaviors on purpose, and the resulting models are inputs to a separate auditing benchmark project.\n\nopenai/gsm8k (main configuration): Prohibited Use Screening raised to 3. The dataset itself contains only grade-school math word problems, but the proposal states it will be used to deliberately train models to exhibit misbehaviors, including backdoors eliciting unsafe behavior. Escalated for review under LC 2.7.\n\nThe proposal lists the target misbehaviors without further detail.\n\nThe project deliberately trains models to exhibit the following behaviors:\n- Backdoor: a hidden behavior that activates only when a specific trigger appears in the input; otherwise the model behaves normally.\n- Eliciting unsafe behavior: making the model produce outputs it would normally refuse, or that could cause harm.\n- Chain-of-thought unfaithfulness: the model's written reasoning does not reflect how it actually reached its answer.\n- Sandbagging: the model deliberately underperforms, hiding its true capability.\n- Deception: the model produces outputs intended to make the user believe something false.\n- Sycophancy: the model agrees with or flatters the user even when the user is wrong.\n- Reward hacking: the model exploits flaws in its reward or scoring to get a high score without doing the intended task.\n- Factual errors: the model states incorrect facts.\n\nEach behavior is a documented target trained into a model, with matched controls. The resulting models are inputs to a separate auditing benchmark, where the task is to discover these behaviors.",
+  "recommendation": "",
+  "addenda": [],
+  "monitoring": []
+}
