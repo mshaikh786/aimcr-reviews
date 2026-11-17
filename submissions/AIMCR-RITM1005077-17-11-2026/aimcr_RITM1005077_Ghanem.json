@@ -1,0 +1,1003 @@
+{
+  "metadata": {
+    "proposal_title": "Self-Evolving VLMs",
+    "principal_investigator": "Bernard Ghanem",
+    "proposal_date": "2026-10-28",
+    "reviewer_name": "",
+    "reviewer_id": "",
+    "aimcr_date": "2026-11-09",
+    "project_id": "RITM1005077"
+  },
+  "third_party_software": [
+    {
+      "name": "PyTorch 2.8.0",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "PyTorch 2.8.0 is a widely-used open-source deep learning framework. It is used for Objective O1 \u2014 GPU-accelerated training, fine-tuning, and inference of Vision-Language Models, as explicitly mentioned in the proposal's codes & libraries section. Aligns with the approved topic, Computational Science and Visualization (VLMs)."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "PyTorch is developed and maintained by PyTorch Foundation (Linux Foundation), based in United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/pytorch/pytorch. Maintainer: PyTorch Foundation (Linux Foundation). Last commit: 2026-11-09. Stars: 105,293. Forks: 30,611. Commits: 113,885. Activity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: BSD 3-Clause. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run of torch==2.8.0 resolved 25 packages, all from PyPI (files.pythonhosted.org); Trivy 0.76.2 scan found 0 CRITICAL, 1 HIGH (CVE-2026-24747, arbitrary code execution via malicious checkpoint file loading; fixed in 2.10.0), 1 MEDIUM (CVE-2025-2999) and 2 LOW (CVE-2025-3000, CVE-2025-3001), all in torch itself; no findings in the other 24 packages."
+        }
+      ]
+    },
+    {
+      "name": "Hugging Face Transformers 4.57.1",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Hugging Face Transformers is a library for loading and running pretrained models. It is used for Objective O1 \u2014 VLM fine-tuning and self-improvement, as explicitly mentioned in the proposal's codes & libraries section. Aligns with the approved topic, Computational Science and Visualization (VLMs). IMS1005077 was updated via email correspondence to add this artifact to the proposal at the first-review stage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Hugging Face Transformers is developed and maintained by Hugging Face, based in United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/huggingface/transformers. Maintainer: Hugging Face. Last commit: 2026-11-14. Stars: 168,996. Forks: 35,219. Commits: 24,795. Activity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache-2.0. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 4,
+          "notes": "Trivy: 4 HIGH and 1 MEDIUM CVEs in transformers 4.57.1, including remote/arbitrary code execution and arbitrary file write (CVE-2026-4372, CVE-2026-5241, CVE-2026-80047, CVE-2026-9856; CVE-2026-1839); fixes in 5.x. High CVEs score 4 per the rubric; the only approved score-4 sentence describes a Dockerfile mirror, which does not apply. Dependencies: 18 packages via pip, all from PyPI; 150 via conda, all from conda-forge."
+        }
+      ]
+    },
+    {
+      "name": "Hugging Face Accelerate 1.11.0",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Hugging Face Accelerate is a library for multi-GPU execution and mixed precision. It is used for Objective O1 \u2014 VLM fine-tuning and self-improvement, as explicitly mentioned in the proposal's codes & libraries section. Aligns with the approved topic, Computational Science and Visualization (VLMs). IMS1005077 was updated via email correspondence to add this artifact to the proposal at the first-review stage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Hugging Face Accelerate is developed and maintained by Hugging Face, based in United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/huggingface/accelerate. Maintainer: Hugging Face. Last commit: 2026-11-14. Stars: 9,946. Forks: 1,607. Commits: 2,097. Activity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache-2.0. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 2,
+          "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run resolved 45 packages, all from PyPI; conda dry-run resolved 110, all from conda-forge. Trivy: 1 MEDIUM (CVE-2026-69112, path traversal/DoS via weight_map; no fixed version), 0 HIGH, 0 CRITICAL."
+        }
+      ]
+    },
+    {
+      "name": "Hugging Face PEFT 0.17.1",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Hugging Face PEFT is a library for loading LoRA/QLoRA adapters. It is used for Objective O1 \u2014 VLM fine-tuning and self-improvement, as explicitly mentioned in the proposal's codes & libraries section. Aligns with the approved topic, Computational Science and Visualization (VLMs). IMS1005077 was updated via email correspondence to add this artifact to the proposal at the first-review stage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Hugging Face PEFT is developed and maintained by Hugging Face, based in United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/huggingface/peft. Maintainer: Hugging Face. Last commit: 2026-11-15. Stars: 21,891. Forks: 2,669. Commits: 2,082. Activity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache-2.0. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run resolved 60 packages, all from PyPI; conda dry-run resolved 130, all from conda-forge. Trivy: no vulnerabilities found in peft 0.17.1."
+        }
+      ]
+    },
+    {
+      "name": "TRL 0.24.0",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "TRL is a library for reinforcement learning and model optimization. It is used for Objective O1 \u2014 VLM fine-tuning and self-improvement, as explicitly mentioned in the proposal's codes & libraries section. Aligns with the approved topic, Computational Science and Visualization (VLMs). IMS1005077 was updated via email correspondence to add this artifact to the proposal at the first-review stage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "TRL is developed and maintained by Hugging Face, based in United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/huggingface/trl. Maintainer: Hugging Face. Last commit: 2026-11-13. Stars: 19,738. Forks: 3,148. Commits: 4,173. Activity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache-2.0. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run resolved 68 packages, all from PyPI; conda dry-run resolved 217, all from conda-forge. Trivy: no vulnerabilities found in trl 0.24.0."
+        }
+      ]
+    },
+    {
+      "name": "vLLM 0.12.0",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "vLLM is a engine for high-throughput multimodal inference. It is used for Objective O1 \u2014 VLM fine-tuning and self-improvement, as explicitly mentioned in the proposal's codes & libraries section. Aligns with the approved topic, Computational Science and Visualization (VLMs). IMS1005077 was updated via email correspondence to add this artifact to the proposal at the first-review stage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "vLLM is developed and maintained by the vLLM project (originated at UC Berkeley Sky Computing Lab), based in United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/vllm-project/vllm. Maintainer: vLLM project. Last commit: 2026-11-15. Stars: 96,952. Forks: 24,845. Commits: 25,423. Activity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache-2.0. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 5,
+          "notes": "Trivy: 2 CRITICAL CVEs in vllm 0.12.0 \u2014 remote code execution via the multimodal endpoint (CVE-2026-22778, fixed in 0.14.1) and authentication bypass (CVE-2026-48746, fixed in 0.22.0) \u2014 plus 12 HIGH, 28 MEDIUM, 3 LOW. Critical CVE unpatched in the requested version scores 5 per the rubric. vllm 0.12.0 also requires torch 2.9.0, which conflicts with the listed PyTorch 2.8.0. Dependencies: 170 packages via pip (Python 3.12, Linux x86-64), all from PyPI; not available on conda-forge."
+        }
+      ]
+    },
+    {
+      "name": "FlashAttention 2.8.3",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "FlashAttention is a library for memory-efficient attention computation. It is used for Objective O1 \u2014 VLM fine-tuning and self-improvement, as explicitly mentioned in the proposal's codes & libraries section. Aligns with the approved topic, Computational Science and Visualization (VLMs). IMS1005077 was updated via email correspondence to add this artifact to the proposal at the first-review stage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "FlashAttention is developed and maintained by Dao-AILab (Tri Dao, Princeton University / Together AI), based in United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/Dao-AILab/flash-attention. Maintainer: Dao-AILab. Last commit: 2026-11-15. Stars: 25,296. Forks: 3,231. Commits: 1,657. Activity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: BSD-3-Clause. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 4,
+          "notes": "Trivy: 1 HIGH CVE in flash-attn 2.8.3 (CVE-2026-31253, insecure deserialization in checkpoint loading; no fixed version). High CVEs score 4 per the rubric; the only approved score-4 sentence describes a Dockerfile mirror, which does not apply. PyPI provides source only (requires torch, einops; built locally); conda dry-run resolved 92 packages, all from conda-forge."
+        }
+      ]
+    },
+    {
+      "name": "bitsandbytes 0.48.2",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "bitsandbytes is a library for low-bit quantization. It is used for Objective O1 \u2014 VLM fine-tuning and self-improvement, as explicitly mentioned in the proposal's codes & libraries section. Aligns with the approved topic, Computational Science and Visualization (VLMs). IMS1005077 was updated via email correspondence to add this artifact to the proposal at the first-review stage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "bitsandbytes is developed and maintained by the bitsandbytes Foundation (Hugging Face-supported), based in United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/bitsandbytes-foundation/bitsandbytes. Maintainer: bitsandbytes Foundation. Last commit: 2026-10-27. Stars: 8,540. Forks: 950. Commits: 1,221. Activity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: MIT. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run resolved 32 packages, all from PyPI; conda dry-run resolved 98, all from conda-forge. Trivy: no vulnerabilities found in bitsandbytes 0.48.2."
+        }
+      ]
+    },
+    {
+      "name": "lmms-eval 0.5.0",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "lmms-eval is a toolkit for multimodal model benchmarking. It is used for Objective O1 \u2014 VLM fine-tuning and self-improvement, as explicitly mentioned in the proposal's codes & libraries section. Aligns with the approved topic, Computational Science and Visualization (VLMs). IMS1005077 was updated via email correspondence to add this artifact to the proposal at the first-review stage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "lmms-eval is developed and maintained by LMMs-Lab (EvolvingLMMs-Lab), academically supported by Nanyang Technological University, based in Singapore. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/EvolvingLMMs-Lab/lmms-eval. Maintainer: LMMs-Lab. Last commit: 2026-11-15. Stars: 4,497. Forks: 696. Commits: 1,981. Activity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: MIT. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run resolved 165 packages, all from PyPI; not available on conda-forge. Trivy: no vulnerabilities found in lmms-eval 0.5.0."
+        }
+      ]
+    },
+    {
+      "name": "Hugging Face Datasets 4.4.1",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Hugging Face Datasets is a library for dataset loading and preprocessing. It is used for Objective O1 \u2014 VLM fine-tuning and self-improvement, as explicitly mentioned in the proposal's codes & libraries section. Aligns with the approved topic, Computational Science and Visualization (VLMs). IMS1005077 was updated via email correspondence to add this artifact to the proposal at the first-review stage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Hugging Face Datasets is developed and maintained by Hugging Face, based in United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/huggingface/datasets. Maintainer: Hugging Face. Last commit: 2026-11-10. Stars: 22,140. Forks: 3,641. Commits: 4,414. Activity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache-2.0. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 2,
+          "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run resolved 35 packages, all from PyPI; conda dry-run resolved 135, all from conda-forge. Trivy: 1 MEDIUM (CVE-2026-66007, information disclosure via path traversal; fixed in 5.0.1), 0 HIGH, 0 CRITICAL."
+        }
+      ]
+    },
+    {
+      "name": "Pillow 12.0.0",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Pillow is a library for image loading and processing. It is used for Objective O1 \u2014 VLM fine-tuning and self-improvement, as explicitly mentioned in the proposal's codes & libraries section. Aligns with the approved topic, Computational Science and Visualization (VLMs). IMS1005077 was updated via email correspondence to add this artifact to the proposal at the first-review stage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Pillow is developed and maintained by the Pillow project (python-pillow, Tidelift-supported), based in United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/python-pillow/Pillow. Maintainer: python-pillow. Last commit: 2026-11-15. Stars: 13,981. Forks: 2,625. Commits: 21,792. Activity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: MIT-CMU. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 5,
+          "notes": "Trivy: 5 CRITICAL CVEs in pillow 12.0.0 (heap buffer overflows in TIFF/JPEG/FPX handling and Ghostscript argument injection, e.g. CVE-2026-112393, CVE-2026-112398, CVE-2026-112900; fixed in 13.0.0), plus 37 HIGH and 20 MEDIUM. Critical CVE unpatched in the requested version scores 5 per the rubric. Dependencies: 1 package via pip from PyPI; 40 via conda from conda-forge."
+        }
+      ]
+    },
+    {
+      "name": "OpenCV (opencv-python) 4.11.0.86",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "OpenCV (opencv-python) is a library for image processing. It is used for Objective O1 \u2014 VLM fine-tuning and self-improvement, as explicitly mentioned in the proposal's codes & libraries section. Aligns with the approved topic, Computational Science and Visualization (VLMs). IMS1005077 was updated via email correspondence to add this artifact to the proposal at the first-review stage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "OpenCV (opencv-python) is developed and maintained by OpenCV.org (Open Source Vision Foundation), based in United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/opencv/opencv-python. Maintainer: OpenCV.org. Last commit: 2026-11-14. Stars: 5,453. Forks: 1,054. Commits: 1,087. Activity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: MIT. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run resolved 2 packages, all from PyPI; not available on conda-forge under this name. Trivy: no vulnerabilities found in opencv-python 4.11.0.86."
+        }
+      ]
+    },
+    {
+      "name": "safetensors 0.6.2",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "safetensors is a library for model checkpoint loading. It is used for Objective O1 \u2014 VLM fine-tuning and self-improvement, as explicitly mentioned in the proposal's codes & libraries section. Aligns with the approved topic, Computational Science and Visualization (VLMs). IMS1005077 was updated via email correspondence to add this artifact to the proposal at the first-review stage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "safetensors is developed and maintained by Hugging Face, based in United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/safetensors/safetensors. Maintainer: Hugging Face. Last commit: 2026-11-12. Stars: 3,953. Forks: 411. Commits: 434. Activity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache-2.0. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run resolved 1 package, all from PyPI; conda dry-run resolved 24, all from conda-forge. Trivy: no vulnerabilities found in safetensors 0.6.2."
+        }
+      ]
+    },
+    {
+      "name": "TensorBoard 2.20.0",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "TensorBoard is a tool for training and evaluation monitoring. It is used for Objective O1 \u2014 VLM fine-tuning and self-improvement, as explicitly mentioned in the proposal's codes & libraries section. Aligns with the approved topic, Computational Science and Visualization (VLMs). IMS1005077 was updated via email correspondence to add this artifact to the proposal at the first-review stage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "TensorBoard is developed and maintained by Google (TensorFlow team), based in United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/tensorflow/tensorboard. Maintainer: Google. Last commit: 2026-11-04. Stars: 7,242. Forks: 1,724. Commits: 5,960. Activity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache-2.0. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run resolved 13 packages, all from PyPI; conda dry-run resolved 70, all from conda-forge. Trivy: no vulnerabilities found in tensorboard 2.20.0."
+        }
+      ]
+    },
+    {
+      "name": "scikit-learn 1.7.2",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "scikit-learn is a library for evaluation metrics and statistical analysis. It is used for Objective O1 \u2014 VLM fine-tuning and self-improvement, as explicitly mentioned in the proposal's codes & libraries section. Aligns with the approved topic, Computational Science and Visualization (VLMs). IMS1005077 was updated via email correspondence to add this artifact to the proposal at the first-review stage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "scikit-learn is developed and maintained by the scikit-learn community (NumFOCUS-sponsored project), based in United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/scikit-learn/scikit-learn. Maintainer: scikit-learn community. Last commit: 2026-11-13. Stars: 68,184. Forks: 27,678. Commits: 34,150. Activity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: BSD-3-Clause. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run resolved 6 packages, all from PyPI; conda dry-run resolved 36, all from conda-forge. Trivy: no vulnerabilities found in scikit-learn 1.7.2."
+        }
+      ]
+    },
+    {
+      "name": "packaging 25.0",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "packaging is a library for dependency and version management. It is used for Objective O1 \u2014 VLM fine-tuning and self-improvement, as explicitly mentioned in the proposal's codes & libraries section. Aligns with the approved topic, Computational Science and Visualization (VLMs). IMS1005077 was updated via email correspondence to add this artifact to the proposal at the first-review stage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "packaging is developed and maintained by the Python Packaging Authority (Python Software Foundation), based in United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/pypa/packaging. Maintainer: PyPA. Last commit: 2026-11-13. Stars: 758. Forks: 379. Commits: 1,212. Activity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache-2.0 OR BSD-2-Clause. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run resolved 1 package, all from PyPI; conda dry-run resolved 23, all from conda-forge. Trivy: no vulnerabilities found in packaging 25.0."
+        }
+      ]
+    },
+    {
+      "name": "ninja 1.13.0",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "ninja is a build tool for compiling optimized extensions. It is used for Objective O1 \u2014 VLM fine-tuning and self-improvement, as explicitly mentioned in the proposal's codes & libraries section. Aligns with the approved topic, Computational Science and Visualization (VLMs). IMS1005077 was updated via email correspondence to add this artifact to the proposal at the first-review stage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "ninja is developed and maintained by scikit-build (Python distribution of the Ninja build system), based in United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/scikit-build/ninja-python-distributions. Maintainer: scikit-build. Last commit: 2026-11-14. Stars: 90. Forks: 22. Commits: 389. Activity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache-2.0. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run resolved 1 package, all from PyPI; conda dry-run resolved 5, all from conda-forge. Trivy: no vulnerabilities found in ninja 1.13.0."
+        }
+      ]
+    },
+    {
+      "name": "psutil 7.1.2",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "psutil is a library for system resource monitoring. It is used for Objective O1 \u2014 VLM fine-tuning and self-improvement, as explicitly mentioned in the proposal's codes & libraries section. Aligns with the approved topic, Computational Science and Visualization (VLMs). IMS1005077 was updated via email correspondence to add this artifact to the proposal at the first-review stage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "psutil is developed and maintained by Giampaolo Rodola, based in Italy. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/giampaolo/psutil. Maintainer: Giampaolo Rodola. Last commit: 2026-11-12. Stars: 11,321. Forks: 1,538. Commits: 7,298. Activity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: BSD-3-Clause. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run resolved 1 package, all from PyPI; conda dry-run resolved 24, all from conda-forge. Trivy: no vulnerabilities found in psutil 7.1.2."
+        }
+      ]
+    },
+    {
+      "name": "DeepSpeed 0.19.6",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "DeepSpeed is a library for distributed execution and memory optimization. It is used for Objective O1 \u2014 VLM fine-tuning and self-improvement, as explicitly mentioned in the proposal's codes & libraries section. Aligns with the approved topic, Computational Science and Visualization (VLMs). IMS1005077 was updated via email correspondence to add this artifact to the proposal at the first-review stage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "DeepSpeed is developed and maintained by Microsoft (DeepSpeed team, deepspeedai organization), based in United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Source / Provenance",
+          "score": 1,
+          "notes": "Source: https://github.com/deepspeedai/DeepSpeed. Maintainer: Microsoft (DeepSpeed team). Last commit: 2026-11-16. Stars: 43,330. Forks: 5,075. Commits: 3,669. Activity health: Active."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache-2.0. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Bundled Tools / Dependencies",
+          "score": 1,
+          "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run resolved 43 packages, all from PyPI; conda dry-run resolved 79, all from conda-forge. Trivy: no vulnerabilities found in deepspeed 0.19.6 (confirmed in OSV). PyPI provides source only (built locally against torch). The PI's list originally gave version 4.57.1, which does not exist; 0.19.6 was confirmed by the PI."
+        }
+      ]
+    }
+  ],
+  "source_code": [],
+  "datasets_user_files": [
+    {
+      "name": "LLaVA-Instruct-150K",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "The dataset contains approximately 150,000 examples of image-grounded conversations, detailed descriptions, and reasoning tasks. It is required for Objective O1 \u2014 VLM fine-tuning and self-improvement, as specified in the proposal's datasets section. Aligns with the approved research topic, Computational Science and Visualization (VLMs)."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "D5+M affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Dataset is owned and maintained by the LLaVA research team (University of Wisconsin-Madison and Microsoft Research), based in United States. No D5+M affiliation found."
+        },
+        {
+          "name": "Prompts / Fine-tuning Scripts",
+          "score": 1,
+          "notes": "No user files provided."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk in LC 2.7 and LC 2.5 checks. Sample inspection skipped."
+        },
+        {
+          "name": "Provenance",
+          "score": 1,
+          "notes": "The dataset is an artifact of the paper: Liu, H., Li, C., Wu, Q., & Lee, Y. J. (2023). Visual Instruction Tuning. NeurIPS 2023. Primary owner: LLaVA research team (University of Wisconsin-Madison / Microsoft Research). Maintainer: liuhaotian (Hugging Face). Source: https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K. Downloads last month: 5,643."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: CC BY 4.0 (Creative Commons Attribution 4.0 International). Permissions: sharing, adaptation and commercial use with attribution; per the dataset card, use should also abide by OpenAI's terms of use for the GPT-4-generated content. Use for academic research and non-commercial purposes is permitted."
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "name": "Qwen3-VL-2B-Instruct",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Qwen3-VL-2B-Instruct is a 2B-parameter instruction-tuned vision-language model (image/video + text to text) used for Objective O1 \u2014 VLM fine-tuning and self-improvement. Aligns with the approved topic, Computational Science and Visualization (VLMs). IMS1005077 was updated via email correspondence to add this artifact to the proposal at the first-review stage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 3,
+          "notes": "The model is owned and maintained by the Qwen team of Alibaba Cloud (Alibaba Group) in China. D5-country affiliation found."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache-2.0. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "Pre-trained on the Qwen3 language corpus (~36T tokens, Qwen3 Technical Report) plus ~2.2T multimodal tokens across four vision-language pre-training stages (~67B alignment, ~1T multimodal, ~1T long-context, ~100B ultra-long-context; Qwen3-VL Technical Report, arXiv:2511.21631). Estimated training tokens D \u2248 3.8 \u00d7 10^13, used as the D term in the 6\u00b7N\u00b7D FLOPS estimation."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "This model has not been fine-tuned on any downstream task, according to the model card."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Theoretical training FLOPs: F \u2248 6 \u00d7 2.13 \u00d7 10^9 \u00d7 3.8 \u00d7 10^13 = 4.85 \u00d7 10^23. Delivered FLOPs (GPU-hours \u00d7 peak TFLOPS \u00d7 MFU): 30,000 GPU-hours \u00d7 989 TFLOPS (GH200 dense BF16 peak) \u00d7 100% MFU (upper bound) \u2248 1.07 \u00d7 10^23 FLOPs. 10\u00b2\u2077 FLOPS check: passed."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk in LC 2.7. Sample inspection skipped"
+        }
+      ],
+      "is_proprietary": false
+    },
+    {
+      "name": "Qwen3-VL-4B-Instruct",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Qwen3-VL-4B-Instruct is a 4B-parameter instruction-tuned vision-language model (image/video + text to text) used for Objective O1 \u2014 VLM fine-tuning and self-improvement. Aligns with the approved topic, Computational Science and Visualization (VLMs). IMS1005077 was updated via email correspondence to add this artifact to the proposal at the first-review stage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 3,
+          "notes": "The model is owned and maintained by the Qwen team of Alibaba Cloud (Alibaba Group) in China. D5-country affiliation found."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache-2.0. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "Pre-trained on the Qwen3 language corpus (~36T tokens, Qwen3 Technical Report) plus ~2.2T multimodal tokens across four vision-language pre-training stages (~67B alignment, ~1T multimodal, ~1T long-context, ~100B ultra-long-context; Qwen3-VL Technical Report, arXiv:2511.21631). Estimated training tokens D \u2248 3.8 \u00d7 10^13, used as the D term in the 6\u00b7N\u00b7D FLOPS estimation."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "This model has not been fine-tuned on any downstream task, according to the model card."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Theoretical training FLOPs: F \u2248 6 \u00d7 4.44 \u00d7 10^9 \u00d7 3.8 \u00d7 10^13 = 1.01 \u00d7 10^24. Delivered FLOPs (GPU-hours \u00d7 peak TFLOPS \u00d7 MFU): 30,000 GPU-hours \u00d7 989 TFLOPS (GH200 dense BF16 peak) \u00d7 100% MFU (upper bound) \u2248 1.07 \u00d7 10^23 FLOPs. 10\u00b2\u2077 FLOPS check: passed."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk in LC 2.7. Sample inspection skipped"
+        }
+      ],
+      "is_proprietary": false
+    },
+    {
+      "name": "Qwen3-VL-8B-Instruct",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Qwen3-VL-8B-Instruct is a 8B-parameter instruction-tuned vision-language model (image/video + text to text) used for Objective O1 \u2014 VLM fine-tuning and self-improvement. Aligns with the approved topic, Computational Science and Visualization (VLMs). IMS1005077 was updated via email correspondence to add this artifact to the proposal at the first-review stage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 3,
+          "notes": "The model is owned and maintained by the Qwen team of Alibaba Cloud (Alibaba Group) in China. D5-country affiliation found."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache-2.0. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "Pre-trained on the Qwen3 language corpus (~36T tokens, Qwen3 Technical Report) plus ~2.2T multimodal tokens across four vision-language pre-training stages (~67B alignment, ~1T multimodal, ~1T long-context, ~100B ultra-long-context; Qwen3-VL Technical Report, arXiv:2511.21631). Estimated training tokens D \u2248 3.8 \u00d7 10^13, used as the D term in the 6\u00b7N\u00b7D FLOPS estimation."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "This model has not been fine-tuned on any downstream task, according to the model card."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Theoretical training FLOPs: F \u2248 6 \u00d7 8.77 \u00d7 10^9 \u00d7 3.8 \u00d7 10^13 = 2.00 \u00d7 10^24. Delivered FLOPs (GPU-hours \u00d7 peak TFLOPS \u00d7 MFU): 30,000 GPU-hours \u00d7 989 TFLOPS (GH200 dense BF16 peak) \u00d7 100% MFU (upper bound) \u2248 1.07 \u00d7 10^23 FLOPs. 10\u00b2\u2077 FLOPS check: passed."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk in LC 2.7. Sample inspection skipped"
+        }
+      ],
+      "is_proprietary": false
+    },
+    {
+      "name": "Qwen3-VL-30B-A3B-Instruct",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Qwen3-VL-30B-A3B-Instruct is a 30B-parameter Mixture-of-Experts (about 3B active per token) instruction-tuned vision-language model (image/video + text to text) used for Objective O1 \u2014 VLM fine-tuning and self-improvement. Aligns with the approved topic, Computational Science and Visualization (VLMs). IMS1005077 was updated via email correspondence to add this artifact to the proposal at the first-review stage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 3,
+          "notes": "The model is owned and maintained by the Qwen team of Alibaba Cloud (Alibaba Group) in China. D5-country affiliation found."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache-2.0. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "Pre-trained on the Qwen3 language corpus (~36T tokens, Qwen3 Technical Report) plus ~2.2T multimodal tokens across four vision-language pre-training stages (~67B alignment, ~1T multimodal, ~1T long-context, ~100B ultra-long-context; Qwen3-VL Technical Report, arXiv:2511.21631). Estimated training tokens D \u2248 3.8 \u00d7 10^13, used as the D term in the 6\u00b7N\u00b7D FLOPS estimation."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "This model has not been fine-tuned on any downstream task, according to the model card."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Theoretical training FLOPs: F \u2248 6 \u00d7 3.11 \u00d7 10^10 \u00d7 3.8 \u00d7 10^13 = 7.08 \u00d7 10^24. Delivered FLOPs (GPU-hours \u00d7 peak TFLOPS \u00d7 MFU): 30,000 GPU-hours \u00d7 989 TFLOPS (GH200 dense BF16 peak) \u00d7 100% MFU (upper bound) \u2248 1.07 \u00d7 10^23 FLOPs. 10\u00b2\u2077 FLOPS check: passed."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk in LC 2.7. Sample inspection skipped"
+        }
+      ],
+      "is_proprietary": false
+    },
+    {
+      "name": "Qwen3-VL-32B-Instruct",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "Qwen3-VL-32B-Instruct is a 32B-parameter instruction-tuned vision-language model (image/video + text to text) used for Objective O1 \u2014 VLM fine-tuning and self-improvement. Aligns with the approved topic, Computational Science and Visualization (VLMs). IMS1005077 was updated via email correspondence to add this artifact to the proposal at the first-review stage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 3,
+          "notes": "The model is owned and maintained by the Qwen team of Alibaba Cloud (Alibaba Group) in China. D5-country affiliation found."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 1,
+          "notes": "License: Apache-2.0. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "Pre-trained on the Qwen3 language corpus (~36T tokens, Qwen3 Technical Report) plus ~2.2T multimodal tokens across four vision-language pre-training stages (~67B alignment, ~1T multimodal, ~1T long-context, ~100B ultra-long-context; Qwen3-VL Technical Report, arXiv:2511.21631). Estimated training tokens D \u2248 3.8 \u00d7 10^13, used as the D term in the 6\u00b7N\u00b7D FLOPS estimation."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 1,
+          "notes": "This model has not been fine-tuned on any downstream task, according to the model card."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Theoretical training FLOPs: F \u2248 6 \u00d7 3.34 \u00d7 10^10 \u00d7 3.8 \u00d7 10^13 = 7.61 \u00d7 10^24. Delivered FLOPs (GPU-hours \u00d7 peak TFLOPS \u00d7 MFU): 30,000 GPU-hours \u00d7 989 TFLOPS (GH200 dense BF16 peak) \u00d7 100% MFU (upper bound) \u2248 1.07 \u00d7 10^23 FLOPs. 10\u00b2\u2077 FLOPS check: passed."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk in LC 2.7. Sample inspection skipped"
+        }
+      ],
+      "is_proprietary": false
+    },
+    {
+      "name": "LLaVA-MORE (Llama 3.1 8B) \u2014 aimagelab/LLaVA_MORE-llama_3_1-8B-finetuning",
+      "checks": [
+        {
+          "name": "Project & Usage Alignment",
+          "score": 1,
+          "notes": "LLaVA-MORE (Llama 3.1 8B) is a LLaVA-style vision-language model (CLIP visual encoder + Llama 3.1 8B Instruct) used for Objective O1 \u2014 VLM fine-tuning and self-improvement. Aligns with the approved topic, Computational Science and Visualization (VLMs). IMS1005077 was updated via email correspondence to add this artifact to the proposal at the first-review stage."
+        },
+        {
+          "name": "Prohibited Use Screening (LC 2.7)",
+          "score": 1,
+          "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+        },
+        {
+          "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+          "score": 1,
+          "notes": "Source: https://huggingface.co/aimagelab/LLaVA_MORE-llama_3_1-8B-finetuning. Downloads last month: 123. Owned by AImageLab, University of Modena and Reggio Emilia, based in Italy. No D5+M affiliation found."
+        },
+        {
+          "name": "License / Permissions",
+          "score": 3,
+          "notes": "License: Apache-2.0 on the model card and GitHub repository, However the weights are derived from Meta-Llama-3.1-8B-Instruct, which has the Llama 3.1 Community License. Permissions: research and commercial use, modification and redistribution, royalty-free. Restrictions: user-threshold clause."
+        },
+        {
+          "name": "Training Data Documentation",
+          "score": 1,
+          "notes": "Pre-trained on the Llama 3.1 corpus (~15T tokens, per Meta), then trained by AImageLab on the LLaVA-Pretrain-558K captioning data and the LLaVA-Instruct visual instruction data (LLaVA-MORE, ICCV Workshops 2025, arXiv:2503.15621). Estimated training tokens D \u2248 1.5 \u00d7 10^13, used as the D term in the 6\u00b7N\u00b7D FLOPS estimation."
+        },
+        {
+          "name": "Customisation / Fine-tuning",
+          "score": 2,
+          "notes": "Fine-tuned by AImageLab on LLaVA-Instruct-665K (https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K) for general multimodal instruction following, a benign task; datasets and training scripts are public (arXiv:2503.15621). Minor gaps: the 665K mix includes ShareGPT conversations of limited provenance, and Meta's Llama 3.1 Instruct tuning data is not public."
+        },
+        {
+          "name": "FLOPS Calculation",
+          "score": 1,
+          "notes": "Theoretical training FLOPs: F \u2248 6 \u00d7 8.35 \u00d7 10^9 \u00d7 1.5 \u00d7 10^13 = 7.52 \u00d7 10^23. Delivered FLOPs (GPU-hours \u00d7 peak TFLOPS \u00d7 MFU): 30,000 GPU-hours \u00d7 989 TFLOPS (GH200 dense BF16 peak) \u00d7 100% MFU (upper bound) \u2248 1.07 \u00d7 10^23 FLOPs. 10\u00b2\u2077 FLOPS check: passed."
+        },
+        {
+          "name": "Sample Inspection",
+          "score": 1,
+          "notes": "No risk in LC 2.7 and LC 2.5 checks. Sample inspection skipped."
+        }
+      ],
+      "is_proprietary": false
+    }
+  ],
+  "observations": "",
+  "recommendation": "",
+  "addenda": [],
+  "monitoring": []
+}
