@@ -671,8 +671,8 @@
             },
             {
               "name": "D5+M affiliation Screening (LC 2.5)",
-              "score": 1,
-              "notes": "Aggregated from 122 public studies compiled by the Mahmood Lab at Harvard. No D5-country affiliation found."
+              "score": 2,
+              "notes": "Aggregated from 122 public studies compiled by the Mahmood Lab at Harvard (HEST-1k). 5 of the 122 source studies are from D5+M (China) institutions \\u2014 Fudan University, Harbin Medical University, Peking University, Shanghai Jiao Tong University / Ruijin Hospital, Shanghai University of Traditional Chinese Medicine, BGI \\u2014 covering 17 samples; the rest are from non-D5+M institutions. About 267 samples could not be traced to a study. D5-country affiliation found."
             },
             {
               "name": "Prompts / Fine-tuning Scripts",
@@ -682,7 +682,7 @@
             {
               "name": "Sample Inspection",
               "score": 1,
-              "notes": "Inspection required (LC 2.5 = 3), not yet performed. The processed files are on Ibex at /ibex/project/c2052/Changchun/pathomics/."
+              "notes": "Inspection required (LC 2.5 = 2), not yet performed. The processed files are on Ibex at /ibex/project/c2052/Changchun/pathomics/."
             },
             {
               "name": "Provenance",
