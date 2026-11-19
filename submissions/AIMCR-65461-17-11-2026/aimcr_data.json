@@ -804,8 +804,8 @@
             },
             {
               "name": "Bundled Tools / Dependencies",
-              "score": 5,
-              "notes": "Trivy scan of the 34 pip packages: pillow 12.3.0 has 5 CRITICAL CVEs (e.g. CVE-2026-112393, CVE-2026-112398, CVE-2026-112900; fixed in 13.0.0) plus 24 HIGH and 14 MEDIUM; filelock 3.32.3 1 HIGH (fixed in 4.2.1); setuptools 78.1.0 1 HIGH (CVE-2025-47273, fixed in 78.1.1); torch 2.11.0 1 LOW. Critical CVE unpatched in the requested version scores 5 per the rubric."
+              "score": 3,
+              "notes": "Trivy scan of the 34 pip packages: pillow 12.3.0 has 5 CRITICAL CVEs (e.g. CVE-2026-112393, CVE-2026-112398, CVE-2026-112900; fixed in 13.0.0 ) so we upgraded to pillow 13.0.0 .Plus 24 HIGH and 14 MEDIUM; filelock 3.32.3 1 HIGH (fixed in 4.2.1); setuptools 78.1.0 1 HIGH (CVE-2025-47273, fixed in 78.1.1); torch 2.11.0 1 LOW. \n\nRisk reduced to 3 after upgrading Pillow to 13.0.0"
             }
           ]
         }
@@ -868,5 +868,11 @@
       "recommendation": ""
     }
   ],
-  "monitoring": []
+  "monitoring": [],
+  "_submission_history": [
+    {
+      "timestamp": "2026-11-19T06:44:23.701700",
+      "action": "resubmission"
+    }
+  ]
 }
