@@ -5,7 +5,7 @@
     "proposal_date": "2025-12-02",
     "reviewer_name": "Mohsin Ahmed Shaikh",
     "reviewer_id": "174988",
-    "aimcr_date": "2026-08-26",
+    "aimcr_date": "2026-11-16",
     "project_id": "65461"
   },
   "third_party_software": [
@@ -651,7 +651,301 @@
   ],
   "observations": "- SpeciesLLM (in-house, Gao Lab) \u2014 an in-house developed model, targeted is fine-tuning on the Shaheen III GPU. Associated embedding (ESM2) and checkpoints for the nanoBERT architecture will be moved as part of this model.\n- DeepSeek-V3.2 \u2014 D5-country affiliation (DeepSeek AI, China). LC 2.5. Tuning, evaluation, and use case on a domain-specific dataset. PI has confirmed in the email that this model will be used for inference-based benchmarking against Species LLM (group's own foundation model).\n- Qwen (Qwen2.5-VL / Qwen3-VL) \u2014 D5-country affiliation (Alibaba Cloud, China). LC 2.5. PI has confirmed in the email that this model will be used for inference-based benchmarking against Species LLM (group's own foundation model)\nThe AIMCR team requested the PI to define the term benchmarking and the response is as follows:\n\"The benchmarking intent is simply to run these models on the same relevant evaluation tasks and use their performance as reference baselines for comparison with our model. Only the resulting benchmark results and evaluation metrics are intended to be exported from Shaheen III\". These are planned to by published as proposed in the project proposal.\nMixtral 8B model has no documentation for the training dataset. \n- H-optimus-0 / HIPT  \u2014 HIPT GitHub repository shows low activity (CVPR 2022 release; no substantive commits since 2023).\n- TRIDENT bundled encoders (UNI, UNI2-h, CONCH, conchv1_5, TITAN, madeleine, abmil) \u2014 all carry non-commercial, gated research licenses from the Mahmood Lab requiring HuggingFace access request approval.\n- Multiple models (H-optimus-0/HIPT, Qwen variants, Mixtral 8x22B, TRIDENT encoders) \u2014 parameter counts and/or training token counts not declared in the Model Readiness form. FLOPS estimates use published technical reports as proxies; all clear the 10^27 threshold.\n- Llama 3 / 3.1 \u2014 the meta-llama/llama3 GitHub repository is archived (public archive); active development has moved to meta-llama/llama-models. Weights remain available on HuggingFace. No functional impact on staging.\n\nNote: InternVL 2.5 and HE2RNA have been dropped from this review list after confirmation from the PI because these two had missing information, which increased the risk.",
   "recommendation": "The project aims to train a custom in-house developed models SpeciedLLM which is adapted from the opensource BERT hosted on HuggingFace as a base architecture.\n\nThe two models originally requested in the research proposal, InternVL 2.5 and HE2RNA, had missing information and resulted in higher risk. They are both maintained by entities from D5+M countries and have either a lack of documentation or stable repositories. PI has confirmed that there is no significant effect on the project's goals if these two models were dropped from the proposed catalog. Due to the high maintenance requirement to derisk these two models, the AIMCR team has opted to drop them from the catalog, and they won't be transferred to Shaheen III GPUP.\n\nFor DeepSeek V4, Qwen variants, the PI has confirmed that no collaboration is planned with the maintainer entities from the D5+M country. PI has also confirmed in the email that these models will be used for inference-based benchmarking against Speicies LLM (the group's own foundation model)/ his derisks the risk associated with the models. Benchmarking here refers to evaluating the results of the foundation models trained on Shaheen III GPUP with the known complex Chain of Thought models like DeepSeek and Qwen. \nOllama has been requested, and it is understood that this is the framework for inference for the requested models. During the onboarding trainings, it is made clear that to the users that there is no internet on Shaheen III GPUP, and they can only use the models available locally. \n\nMixtral model has been requested. This is from non-D5+M, but does not disclose any training dataset information. This is a multilingual LLM and a very popular model with a smaller number of parameters. Although this makes the artifact high risk because of the rubric set by the AIMCR procedure, in reality, this is a very popular model smaller Larger Language Model with open weights, and is widely used for fine-tuning and pre-training in a lot of Natural Language Processing cases. The sheer popularity of the model, coupled with the origins being non-D5+M, are the de-risking instruments in this case.  The de-risking is based on the high indication of reliability and high download count from HuggingFace, and no known incidents related to this or other models from this particular entity. \n\nProject aligns with approved research topics; artifact purpose and provenance are documented across all declared datasets and models.\nEstimated training compute across all models is well below the 10^27 FLOPS threshold. There was a risk in the calculation of FLOPS.\n\nPositive checks passed\nNegative checks passed\n10^27 FLOPS check passed\n\nMonitoring: \n- Midway project check-in with the group to confirm that the D5+M models are not being fine-tuned. Any request for output/egress of these models will be rejected if requested at the conclusion of the project.\n\nRecommended for the grand challenge. ",
-  "addenda": [],
+  "addenda": [
+    {
+      "date": "2026-11-16",
+      "category": "datasets_user_files",
+      "artifacts": [
+        {
+          "name": "Public Histopathology and Spatial Transcriptomics Dataset (HEST-1k derived; superfocus_final_zeromatch, visiumhd_final_64um, all_median_vectors)",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "The dataset contains publicly released histopathology, single-cell and spatial gene-expression profiles and derived cell-morphology embeddings (~3 TB; 1,322 HEST-1k samples as H5AD files plus per-gene median vectors), used to align single-cell gene expression with histopathology morphology. It is required for Objective 1 \u2014 Build a unified latent space for cells, spatial spots and WSIs, as specified in the proposal's datasets section. Aligns with the approved research topic, Health and Wellness and Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 2,
+              "notes": "Aggregated from 122 public studies compiled by the Mahmood Lab at Harvard (HEST-1k). No D5-country affiliation found."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "No user files provided."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "The metadata of all 1,323 H5AD files (3.18 TB) was read, and the full structure of 17 files sampled across every source group. The files hold gene-expression counts, cell positions and morphology embeddings from 161 public studies (human and mouse tissue); they contain no histology images and no patient or donor information. No prohibited content was found."
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "The dataset is an artifact of the paper: Jaume, G. et al. (2024). HEST-1k: A Dataset for Spatial Transcriptomics and Histology Image Analysis. NeurIPS 37, 53798\u201353833. Primary owner: Mahmood Lab, Harvard (aggregation of 122 public studies from GEO, 10x Genomics, Zenodo, Mendeley and others). Maintainer: the PI's research team at KAUST (processed copy on Ibex). Source: https://huggingface.co/datasets/MahmoodLab/hest. Downloads last month: 31,970."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: CC BY-NC-SA 4.0.\nPermissions: research and other non-commercial use allowed.\nObligation: credit the authors, no commercial use, and share any derived data under the same license."
+            }
+          ]
+        }
+      ],
+      "observations": "Change request ticket number: IMS0000216\n\n- 1 new dataset entry reviewed: HEST-1k-derived single-cell, spatial transcriptomics and cell-morphology data (~3 TB), processed by the group on Ibex. It is compiled by the Mahmood Lab at Harvard from 122 public studies. The data are public and are used only as processed research data; a sample inspection found no images and no patient information.\n- 1 source code entry reviewed: the group's own pretraining code (sphere-main). No prohibited content and no credentials.\n- 4 software entries reviewed: PyTorch 2.11.0, NumPy 2.4.6, h5py 3.16.0 and the group's conda environment (sphere_environment). The environment pins pillow 12.3.0, which has critical vulnerabilities; KSL builds the image with pillow 13.0.0.\n- 1 in-house model reviewed: an ~84M-parameter Transformer encoder that the group trains from scratch on Shaheen III GPUP; no pretrained weights are moved. FLOPS are far below the threshold.",
+      "recommendation": "The environment is delivered as a KSL image with pillow upgraded to 13.0.0.\n\nPositive checks passed.\nNegative checks passed.\n10^27 FLOPS check passed.\n\nRecommended for data movement."
+    },
+    {
+      "date": "2026-11-16",
+      "category": "source_code",
+      "artifacts": [
+        {
+          "name": "sphere-main (SPHERE pretraining code, in-house)",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "sphere-main is the group's own PyTorch code for SPHERE, a spatial single-cell foundation model: it defines the ~84M-parameter dual-attention Transformer, reads the H5AD data with h5py and runs multi-GPU pretraining, inference and evaluation. It is used to pretrain the in-house model on the requested dataset for Objective 1 \u2014 Build a unified latent space for cells, spatial spots and WSIs. Aligns with the approved topic, Health and Wellness and Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. The full snapshot (25 files, including backup_before_refactor/) was screened for prohibited-use terms covering military, weapons, munitions, nuclear, chemical and biological weapons, pathogens, toxins, surveillance, biometrics, targeting, defense, warfare, intelligence, espionage, drones, radar, missiles and guidance systems. The only matches are false positives:\n- \"target\": the training target of the loss function (6 matches)\n- \"nuclear\": a comment in the standard Python .gitignore template"
+            },
+            {
+              "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Non-D5. Location: /ibex/project/c2052/Changchun/pathomics/sphere-main (Ibex, not public; not a git repository)\nOwner / Organization: Prof. Xin Gao's group, KAUST (Saudi Arabia)\nDevelopers: Changchun Yang, Jiacheng Wang et al., as stated in the request\nSize: 30 files, 3.4 MB; no model weights\nReviewed snapshot: files dated up to Nov 8, 2026"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "The group's own unpublished research code, with no license file. It is used only by the group for this project."
+            },
+            {
+              "name": "Dependencies / Bundled Components",
+              "score": 1,
+              "notes": "Imports:\n- torch, numpy, h5py, tqdm: requested in this change request and installed in the KSL image\n- pandas: used only by two evaluation scripts (scripts/eval_recon.py, scripts/zero_stats.py); provided by the KSL PyTorch base image\n- scanpy: imported only by an old copy in backup_before_refactor/, not by the current code\n\nThe code makes no network calls and downloads nothing. It runs from the approved image."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "The code was inspected: the model, data loading, distributed training and evaluation scripts. No prohibited content was found, and a credential scan returned no keys, tokens or private keys."
+            }
+          ]
+        }
+      ],
+      "observations": "",
+      "recommendation": ""
+    },
+    {
+      "date": "2026-11-16",
+      "category": "third_party_software",
+      "artifacts": [
+        {
+          "name": "PyTorch 2.11.0",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "PyTorch 2.11.0 is a deep-learning framework (CUDA 12.8 build) used to train the multimodal model. It is used for Objective 1 \u2014 Build a unified latent space for cells, spatial spots and WSIs, as explicitly mentioned in the proposal's codes & libraries section. Aligns with the approved topic, Health and Wellness and Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "PyTorch 2.11.0 is developed and maintained by the PyTorch Foundation (Linux Foundation), based in United States. No D5+M affiliation found."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Source: https://github.com/pytorch/pytorch. Maintainer: PyTorch Foundation. Last commit: 2026-11-16. Stars: 105,538. Forks: 30,718. Commits: 114,294. Activity health: Active."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: BSD-3-Clause. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 2,
+              "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run resolved 29 packages, all from PyPI; not on conda-forge. Trivy: 1 LOW (CVE-2025-3000, fixed in 2.13.0), 0 MEDIUM, 0 HIGH, 0 CRITICAL."
+            }
+          ]
+        },
+        {
+          "name": "NumPy 2.4.6",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "NumPy 2.4.6 is the numerical array library used to prepare and handle the gene-expression and embedding arrays. It is used for Objective 1 \u2014 Build a unified latent space for cells, spatial spots and WSIs, as explicitly mentioned in the proposal's codes & libraries section. Aligns with the approved topic, Health and Wellness and Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "NumPy 2.4.6 is developed and maintained by the NumPy project (NumFOCUS), based in United States. No D5+M affiliation found."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Source: https://github.com/numpy/numpy. Maintainer: NumPy developers. Last commit: 2026-11-22. Stars: 33,454. Forks: 13,058. Commits: 42,579. PyPI downloads last month: 1,116,262,387. Activity health: Active."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: BSD-3-Clause, with bundled components under 0BSD, MIT, Zlib and CC0-1.0. Permissions: commercial use allowed, modification allowed, distribution allowed, private use allowed."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "Dependencies pulled from standard registries. No prohibited packages identified. NumPy has no required dependencies. Trivy: no vulnerabilities found in numpy 2.4.6. Installed in the KSL image at this version."
+            }
+          ]
+        },
+        {
+          "name": "h5py 3.16.0",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "h5py 3.16.0 is a library for loading the H5AD/HDF5 dataset files. It is used for Objective 1 \u2014 Build a unified latent space for cells, spatial spots and WSIs, as explicitly mentioned in the proposal's codes & libraries section. Aligns with the approved topic, Health and Wellness and Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "h5py 3.16.0 is developed and maintained by the h5py project, based in United States. No D5+M affiliation found."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Source: https://github.com/h5py/h5py. Maintainer: h5py developers. Last commit: 2026-11-15. Stars: 2,260. Forks: 585. Commits: 5,383. Activity health: Active."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: BSD-3-Clause. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run resolved 2 packages, all from PyPI; conda dry-run resolved 54, all from conda-forge. Trivy: no vulnerabilities found in h5py 3.16.0."
+            }
+          ]
+        },
+        {
+          "name": "sphere_environment (conda environment, Python 3.11)",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "sphere_environment is the software environment for training the multimodal model. It is used for Objective 1 \u2014 Build a unified latent space for cells, spatial spots and WSIs, as explicitly mentioned in the proposal's codes & libraries section. Aligns with the approved topic, Health and Wellness and Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "sphere_environment is developed and maintained by the PI's research team at KAUST, based in Saudi Arabia. No D5+M affiliation found."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 2,
+              "notes": "A conda environment specification, not a container image: /ibex/project/c2052/Changchun/pathomics/sphere-main/sphere_environment.yml (base \"Ibex\"). 29 conda packages from Anaconda's default channel and 34 pip packages (CUDA 12.8 PyTorch builds)."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 2,
+              "notes": "Open-source packages (BSD, MIT, Apache-2.0 and others); NVIDIA CUDA runtime libraries under NVIDIA's license; packages from Anaconda's default channel are subject to Anaconda's Terms of Service."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 3,
+              "notes": "Trivy scan of the 34 pip packages in sphere_environment.yml:\n- pillow 12.3.0: 5 CRITICAL (e.g. CVE-2026-112393, CVE-2026-112398, CVE-2026-112900), 24 HIGH and 14 MEDIUM, all fixed in 13.0.0\n- filelock 3.32.3: 1 HIGH (fixed in 4.2.1)\n- setuptools 78.1.0: 1 HIGH (CVE-2025-47273, fixed in 78.1.1)\n- torch 2.11.0: 1 LOW\n\nThe environment is not moved as a conda environment: KSL builds it as an image on its PyTorch base (krccl/sh3-pytorch-gpu:25.12, Dockerfile 65461-pytorch-gpu_v1) with numpy 2.4.6, h5py 3.16.0, tqdm 4.70.1 and pillow 13.0.0, which removes the critical pillow vulnerabilities. torch and torchvision come from the base image."
+            }
+          ]
+        }
+      ],
+      "observations": "",
+      "recommendation": ""
+    },
+    {
+      "date": "2026-11-16",
+      "category": "models",
+      "artifacts": [
+        {
+          "name": "Single-Cell Foundation Model with Pathology information (in-house, sphere-main)",
+          "is_proprietary": true,
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Single-Cell Foundation Model with Pathology information is a ~84M-parameter Transformer-based multimodal self-supervised encoder aligning single-cell transcriptomics with histopathology morphology used for Objective 1 \u2014 Build a unified latent space for cells, spatial spots and WSIs. Aligns with the approved topic, Health and Wellness and Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Non-D5. The model is pretrained from scratch on Shaheen III GPUP with the group's own code, sphere-main, reviewed under Source Code in this addendum (Ibex: /ibex/project/c2052/Changchun/pathomics/sphere-main, not public). No pretrained weights are moved. Downloads last month: not applicable. Owned by the PI's research team (Prof. Xin Gao) at KAUST, based in Saudi Arabia. No D5+M affiliation found."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "The group's own unpublished research model, with no license of its own. It is trained on HEST-1k-derived data (CC BY-NC-SA 4.0), so its use stays research and non-commercial."
+            },
+            {
+              "name": "Training Data Documentation",
+              "score": 2,
+              "notes": "Pre-trained on public single-cell, spatial-transcriptomics and histopathology-derived data (HEST-1k, Jaume et al., NeurIPS 2024; 10x Genomics; GEO): 65M cells at 1,024 genes per cell. Estimated training tokens D \u2248 6.66 \u00d7 10^10, used as the D term in the 6\u00b7N\u00b7D FLOPS estimation."
+            },
+            {
+              "name": "Customisation / Fine-tuning",
+              "score": 1,
+              "notes": "This model has not been fine-tuned on any downstream task, according to the PI's model request (pretraining only)."
+            },
+            {
+              "name": "FLOPS Calculation",
+              "score": 1,
+              "notes": "Theoretical training FLOPs: F \u2248 6 \u00d7 8.4 \u00d7 10^7 \u00d7 6.66 \u00d7 10^10 = 3.36 \u00d7 10^19. Delivered FLOPs (GPU-hours \u00d7 peak TFLOPS \u00d7 MFU): not computed (no GPU-hour allocation stated in the request or the review; PI-reported MFU 8.1% on H100 SXM). 10\u00b2\u2077 FLOPS check: passed."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "No risk in LC 2.7 and LC 2.5 checks. Sample inspection skipped."
+            }
+          ]
+        }
+      ],
+      "observations": "",
+      "recommendation": ""
+    }
+  ],
   "_submission_history": [
     {
       "timestamp": "2026-09-10T14:07:49.304362",
