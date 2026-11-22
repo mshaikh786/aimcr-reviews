@@ -1165,7 +1165,7 @@
             {
               "name": "Project & Usage Alignment",
               "score": 1,
-              "notes": "protenix_v1 is the container image that holds the software stack for training and evaluating Protenix-v1. The team supplied the recipe and an image built for x86 machines; KSL will build the image for Shaheen III GPUP.\n\nAligns with the approved topic, Bioscience."
+              "notes": "protenix_v1 is the container image that holds the software stack for training and evaluating Protenix-v1. The team supplied the recipe and an image built for x86 machines; KSL built the image for Shaheen III GPUP from that recipe.\n\nAligns with the approved topic, Bioscience."
             },
             {
               "name": "Prohibited Use Screening (LC 2.7)",
@@ -1175,22 +1175,22 @@
             {
               "name": "D5+M affiliation Screening (LC 2.5)",
               "score": 1,
-              "notes": "The image is built on the official Python base image (Python Software Foundation, United States) and the KSL base image, with the packages reviewed in this addendum.\n\nNo D5+M affiliation found."
+              "notes": "The image is built on the KSL base image krccl/sh3-pytorch-gpu:25.03 (NVIDIA NGC PyTorch 25.03; NVIDIA, United States), with the packages reviewed in this addendum.\n\nNo D5+M affiliation found."
             },
             {
               "name": "Source / Provenance",
               "score": 1,
-              "notes": "Source: recipe provided by the team on Ibex, as part of the delivered bundle\n\nBase image: python:3.11.18-bookworm\n\nNote: the image for Shaheen III GPUP is not built yet. Its final identity, package list and vulnerability scan will be recorded once built."
+              "notes": "Source: recipe provided by the team on Ibex, as part of the delivered bundle; adapted by KSL for Shaheen III GPUP (Dockerfiles/GPU/65566-IMS0230.dockerfile in kaust-rccl/sh3-gpu-images, merge 68a79f0)\n\nBase image: krccl/sh3-pytorch-gpu:25.03 (NVIDIA NGC PyTorch 25.03), sha256:b2959a8c66f24e9a381d2a898adba60a561a8aad92e21a0cd2ce183c5fe81ee8\n\nImage: krccl/sh3-gpu-stack:65566-IMS0230-hamdan-v1, sha256:322cabe138dda6e351b0938282a1550fca1b08520d4367ceebd2d498301d1267 (built by KSL, 22 Nov 2026)\n\nSingularity image: sh3-gpu-images_65566-IMS0230-hamdan-v1.sif, sha256 98093e25169ca2d8655d10e9eeafe1f931bfe8f4bd82d5956baace6eea374fbb"
             },
             {
               "name": "License / Permissions",
               "score": 1,
-              "notes": "License: per component. The base image and the packages are under permissive open-source licenses, as recorded for each entry in this addendum."
+              "notes": "License: per component. The base image is NVIDIA's NGC PyTorch container, under the NVIDIA Deep Learning Container License; the packages added are under permissive open-source licenses, as recorded for each entry in this addendum."
             },
             {
               "name": "Bundled Tools / Dependencies",
               "score": 1,
-              "notes": "Dependencies pulled from trusted standard registries (PyPI and the Debian package repositories). The exact versions will be pinned during the build, because the versions in the team's recipe are for x86 machines."
+              "notes": "Dependencies pulled from trusted standard registries (PyPI), pinned to the team's recipe, with these differences: Python 3.12 and the NGC build of torch 2.7.0 with CUDA 12.8 (requested: Python 3.11, torch 2.7.1 with CUDA 11.8; not available for Shaheen III GPUP); torchaudio not installed (not used); flash-attn removed, because the team's own code refuses to run with it.\n\nwandb 0.31.2 (requested 0.21.1, which has known vulnerabilities); the team's workflow switches it off (WANDB_MODE=disabled), so it sends nothing.\n\nCVE scan (Trivy, 22 Nov 2026): the packages added by this image have no critical or high vulnerabilities. The findings in the image (104 critical, 1,992 high, 98 of the critical in the Linux kernel headers package) are in the KSL base image and are accepted as released by NVIDIA."
             }
           ]
         }
