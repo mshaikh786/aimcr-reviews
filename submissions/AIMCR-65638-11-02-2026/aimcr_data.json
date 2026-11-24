@@ -5,7 +5,7 @@
     "proposal_date": "2025-12-09",
     "reviewer_name": "Mohsin Ahmed Shaikh",
     "reviewer_id": "174988",
-    "aimcr_date": "2026-10-19",
+    "aimcr_date": "2026-11-18",
     "project_id": "65638"
   },
   "third_party_software": [
@@ -1090,8 +1090,8 @@
       "is_proprietary": false
     }
   ],
-  "observations": "\nIn software, ROLL and RLinf libraries have maintainers from D5 countries. Some dependencies were being pulled from Alibaba cloud registries but KSL will recreate the container images with same libraries pulled from Pypi.org.\n \nThe datasets RoboMIND, Llava-onevision-dataset are from an entity in the D5 country.  Sample inspect of the datasets was conducted and the risk has been set to low because the content of the dataset, randomly checked, corresponds to its description.\n\n  The Llava-Video-178K datasets is also maintained by the same entity in D5 country. The dataset is a collection of different external datasets not readily accessible therefore, the risk has been raised to medium. \n\n\nMultiple Qwen 2.5 and 3 models have been requested for supervised fine-tuning and reinforcement learning with human in the loop (RLHF) on Video dataset like Llava-video-178k. All the models are from D5 country, developed and maintained by Alibaba cloud.\n\nRevised following change request IMS0000084.\n\nAddendum 1 adds 4 datasets, all clean and from non-D5 maintainers (HuggingFace and Ai2). Addendum 2 adds Qwen3-8B-Base and Qwen3-32B, from the same D5 entity as the models already in scope. Addendum 3 adds the in-house training codebase, which establishes the Source Code section. Three components were found in the codebase that are inactive and were not declared in the proposal or this change request.",
-  "recommendation": "The requested software will be curated by KSL from general-purpose resources such as pipy .org instead of downloading from Alibaba Cloud. This way, the risk will be mitigated for identified software artifacts. Additionally, the PI has confirmed that there is no collaboration with Alibaba for any research goals for this proposal. \n\nThe datasets are massive and subject to approval of the project, a coordination with the PI will be required to select which subsets are needed for the proposed work on Shaheen III GPUP. \n\nSampling of the Llava video 178K was not possible because of failed downloads from external links. The inevitability of the dataset has been highlighted by the PI in the ticket correspondence on Feb 15th, 2026: \n\"If we have to drop the dataset, we can, but we may have a hard time convince research community about the value of our research due to a lack of fair comparison.\"\n\nWhile deciding to download the components, the Llava Video 178K will be inspected on the go to make certain that the content in the samples correspond the description in the documentation. \n\n\n\nThe suggestion for the training of the Qwen 2.5 and 3  on Shaheen III GPUP is a periodic check with the PI to see that they are training these models on the video datasets indicated. \n\nPositive checks passed\n\nNegative checks passed\n\n10^27 FLOPS check passed \n\nThis project is recommended for the grand challenge, with a suggestion to examine the samples of Llava-video-178k before moving of dataset to Shaheen III GPUP, and check the models halfway through the project to validate the datasets used to pre-train/fine-tune the models are in line with the proposal.\n\nJune 3rd, 2026: Based on this assessment (documented in Capability Risk Assessment - LC 2.7 - Objaverse Weapons-Military Category ), inclusion of the \"Weapons-Military\" category in the Objaverse dataset does not, in isolation or in combination with the project's other inputs, create a credible risk that the model could acquire capabilities that would implicate the prohibited uses enumerated in License Condition 2.7.\nCapability Risk Assessment - LC 2.7 - Objaverse Weapons-Military Category : https://kaust.sharepoint.com/:w:/r/sites/M365_KAUST_Legal/_layouts/15/Doc.aspx?sourcedoc=%7B5594DE34-D92A-4A4A-8B33-7DCDF691056F%7D&file=Capability%20Risk%20Assessment%20-%20LC%202.7%20-%20Objaverse%20Weapons-Military%20Category.docx&action=default&mobileredirect=true\nRevised following change request IMS0000084.\n\nThe change request does not alter the overall risk rating, which remains Medium. The two Qwen models added in Addendum 2 carry the same D5 affiliation already covered by the PI's confirmation of no collaboration with Alibaba, and are subject to the same periodic check. The new datasets are clean.\n\n The three undeclared components were each verified inactive, but any of them could be reactivated. The presence of the inactive code is inconsequential because these functions are bound to fail, since there is no internet on Shaheen III GPUP.",
+  "observations": "\nIn software, ROLL and RLinf libraries have maintainers from D5 countries. Some dependencies were being pulled from Alibaba cloud registries but KSL will recreate the container images with same libraries pulled from Pypi.org.\n \nThe datasets RoboMIND, Llava-onevision-dataset are from an entity in the D5 country.  Sample inspect of the datasets was conducted and the risk has been set to low because the content of the dataset, randomly checked, corresponds to its description.\n\n  The Llava-Video-178K datasets is also maintained by the same entity in D5 country. The dataset is a collection of different external datasets not readily accessible therefore, the risk has been raised to medium. \n\n\nMultiple Qwen 2.5 and 3 models have been requested for supervised fine-tuning and reinforcement learning with human in the loop (RLHF) on Video dataset like Llava-video-178k. All the models are from D5 country, developed and maintained by Alibaba cloud.\n\nRevised following change request IMS0000084.\n\nAddendum 1 adds 4 datasets, all clean and from non-D5 maintainers (HuggingFace and Ai2). Addendum 2 adds Qwen3-8B-Base and Qwen3-32B, from the same D5 entity as the models already in scope. Addendum 3 adds the in-house training codebase, which establishes the Source Code section. Three components were found in the codebase that are inactive and were not declared in the proposal or this change request.\n\n--- Addendum 9 added: 2026-11-18 (Datasets & User Files) ---\n",
+  "recommendation": "The requested software will be curated by KSL from general-purpose resources such as pipy .org instead of downloading from Alibaba Cloud. This way, the risk will be mitigated for identified software artifacts. Additionally, the PI has confirmed that there is no collaboration with Alibaba for any research goals for this proposal. \n\nThe datasets are massive and subject to approval of the project, a coordination with the PI will be required to select which subsets are needed for the proposed work on Shaheen III GPUP. \n\nSampling of the Llava video 178K was not possible because of failed downloads from external links. The inevitability of the dataset has been highlighted by the PI in the ticket correspondence on Feb 15th, 2026: \n\"If we have to drop the dataset, we can, but we may have a hard time convince research community about the value of our research due to a lack of fair comparison.\"\n\nWhile deciding to download the components, the Llava Video 178K will be inspected on the go to make certain that the content in the samples correspond the description in the documentation. \n\n\n\nThe suggestion for the training of the Qwen 2.5 and 3  on Shaheen III GPUP is a periodic check with the PI to see that they are training these models on the video datasets indicated. \n\nPositive checks passed\n\nNegative checks passed\n\n10^27 FLOPS check passed \n\nThis project is recommended for the grand challenge, with a suggestion to examine the samples of Llava-video-178k before moving of dataset to Shaheen III GPUP, and check the models halfway through the project to validate the datasets used to pre-train/fine-tune the models are in line with the proposal.\n\nJune 3rd, 2026: Based on this assessment (documented in Capability Risk Assessment - LC 2.7 - Objaverse Weapons-Military Category ), inclusion of the \"Weapons-Military\" category in the Objaverse dataset does not, in isolation or in combination with the project's other inputs, create a credible risk that the model could acquire capabilities that would implicate the prohibited uses enumerated in License Condition 2.7.\nCapability Risk Assessment - LC 2.7 - Objaverse Weapons-Military Category : https://kaust.sharepoint.com/:w:/r/sites/M365_KAUST_Legal/_layouts/15/Doc.aspx?sourcedoc=%7B5594DE34-D92A-4A4A-8B33-7DCDF691056F%7D&file=Capability%20Risk%20Assessment%20-%20LC%202.7%20-%20Objaverse%20Weapons-Military%20Category.docx&action=default&mobileredirect=true\nRevised following change request IMS0000084.\n\nThe change request does not alter the overall risk rating, which remains Medium. The two Qwen models added in Addendum 2 carry the same D5 affiliation already covered by the PI's confirmation of no collaboration with Alibaba, and are subject to the same periodic check. The new datasets are clean.\n\n The three undeclared components were each verified inactive, but any of them could be reactivated. The presence of the inactive code is inconsequential because these functions are bound to fail, since there is no internet on Shaheen III GPUP.\n\n--- Addendum 9 added: 2026-11-18 (Datasets & User Files) ---\n",
   "addenda": [
     {
       "date": "2026-07-29",
@@ -1446,6 +1446,1073 @@
       ],
       "observations": "CR Ticket Number: IMS0000175\n\n- The change request updates the project's training code with a Mixture-of-Experts model variant, the Muon optimizer, fused GPU kernels and weak-scaling scripts. The reviewed version is commit 0a024ebe740655bc0e92b3966d5fe5add6abdcc1, from a snapshot taken on 19 October 2026.\n- The form states that all the code was developed by the project team. Two parts come from other projects: the Muon optimizer from Microsoft's dion repository (MIT) and GPU kernels adapted from LinkedIn's Liger Kernel (BSD 2-Clause). Both were reviewed as bundled parts of the training code; neither has a D5+M affiliation.\n- The repository's LICENSE and uv.lock files were overwritten with unrelated content in a commit of 2 October 2026. As the code is the team's own, no licence update is required.\n- The MoE variant (configuration named 35B-A3B: 256 experts, 8 active per token) follows the Qwen3 model design and is trained from scratch by default. Training compute is estimated far below 10^27 FLOPs.\n- The repository's version-control folder (.git) holds earlier files that are no longer in the code, such as job outputs. It was not reviewed and is not part of the movement.",
       "recommendation": "No risk identified in the review. The bundled Muon optimizer and GPU kernels come from projects with no D5+M affiliation and keep their own permissive licences.\n\nNote: the .git folder is excluded from the movement, because its contents do not match the reviewed code. It holds earlier files, such as job outputs, that are no longer in the code and were not reviewed.\n\nPositive checks passed\nNegative checks passed\n10^27 FLOPS check passed\n\nRecommended for data movement."
+    },
+    {
+      "date": "2026-11-16",
+      "category": "datasets_user_files",
+      "artifacts": [
+        {
+          "name": "minWM camera-return clips (derived from Sekai2 Panoramics)",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "The dataset contains 2,533 training and 130 test first-person walking clips (4.8 s each, ~11 GB) re-rendered from Sekai2 360\u00b0 video, stored as Wan2.1 VAE latents with camera poses, captions and view-overlap labels. It is used to fine-tune and evaluate a camera-conditioned video world model for the video world-model memory milestone requested in IMS0000209. Aligns with the approved research topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 3,
+              "notes": "Primary owner is Shanghai AI Laboratory (Sekai source videos) based in China. Co-creators include Beijing Institute of Technology and Shanghai Innovation Institute affiliated with China. D5-country affiliation found."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "No user files provided."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "Inspection required (LC 2.5 = 3), not yet performed. The project bundle includes a preview video of every training clip and a review page for this purpose."
+            },
+            {
+              "name": "Provenance",
+              "score": 2,
+              "notes": "The dataset is an artifact of the paper: Li, Z. et al. (2025). Sekai: A Video Dataset towards World Exploration. arXiv:2506.15675. Primary owner: the PI's research team at KAUST (derived set); source videos by the Sekai authors (Shanghai AI Laboratory). Maintainer: the PI's research team (KAUST), processing documented in Data_Processing.md. Source: https://www.modelscope.ai/datasets/kangverse/Sekai2_Panoramics. Downloads last month: not applicable (the derived set is not public)."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 3,
+              "notes": "License: Sekai2 academic research license (non-commercial; cut clips may not be redistributed). Non-commercial use only. The proposed use on Shaheen III for research is permissible; however, any commercial application would not be permitted under this license."
+            }
+          ]
+        }
+      ],
+      "observations": "",
+      "recommendation": ""
+    },
+    {
+      "date": "2026-11-16",
+      "category": "source_code",
+      "artifacts": [
+        {
+          "name": "Next-Lat on minWM: training and evaluation code (project bundle of 3 November 2026)",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Fine-tunes and evaluates a camera-conditioned video generation model (Wan2.1-1.3B with minWM's camera branch) for the video world-model memory milestone requested in IMS0000209. Aligns with the approved topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Source: /project/k10242/ahmems0a/Self-Forcing-Shaheen (local project source; 22 Python files, 4,042 lines). Contributors are from the PI's research team at KAUST. No D5+M affiliation found."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: the team's own code (no license of its own); incorporated components are Apache-2.0 (Self-Forcing, Wan2.1, minWM) and MIT (PRoPE camera module), with their notices kept in the files. Permissions: use, modification and distribution of the incorporated components; the team's own code is unrestricted for this project."
+            },
+            {
+              "name": "Dependencies / Bundled Components",
+              "score": 4,
+              "notes": "Bundles code from minWM (ShengShu / MIN-Lab, China) and Wan2.1 (Alibaba, China): D5+M-affiliated components, which score 4 per the rubric. Also bundles Self-Forcing (Apache-2.0). Package dependencies are reviewed in the software addendum."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "No risk in LC 2.7 and LC 2.5 checks. Sample inspection skipped."
+            }
+          ]
+        }
+      ],
+      "observations": "",
+      "recommendation": ""
+    },
+    {
+      "date": "2026-11-16",
+      "category": "third_party_software",
+      "artifacts": [
+        {
+          "name": "PyTorch 2.8.0 with Triton 3.4.0",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "PyTorch 2.8.0 with Triton 3.4.0 is a deep-learning framework (CUDA 12.8 build) with its Triton kernel compiler, running the model, training loop, multi-GPU communication and attention kernels, used for the video world-model memory milestone requested in IMS0000209. Aligns with the approved topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "PyTorch 2.8.0 with Triton 3.4.0 is developed and maintained by the PyTorch Foundation (Linux Foundation); Triton by OpenAI, based in United States. No D5+M affiliation found."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Source: https://github.com/pytorch/pytorch. Maintainer: PyTorch Foundation. Last commit: 2026-11-16. Stars: 105,561. Forks: 30,730. Commits: 114,285. Activity health: Active."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: BSD-3-Clause (PyTorch); MIT (Triton). Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 4,
+              "notes": "Trivy: 1 HIGH CVE in torch 2.8.0 (CVE-2026-24747, arbitrary code execution via malicious checkpoint loading; fixed in 2.10.0), plus 1 MEDIUM and 2 LOW; none in Triton. High CVEs score 4 per the rubric. PyPI has no Triton 3.4.0 build for GH200 (aarch64; first is 3.5.0), so it must come from PyTorch's own package index or a source build."
+            }
+          ]
+        },
+        {
+          "name": "FlashAttention 2.8.3",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "FlashAttention 2.8.3 is a library of fast attention kernels used by the Wan2.1 model code, used for the video world-model memory milestone requested in IMS0000209. Aligns with the approved topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "FlashAttention 2.8.3 is developed and maintained by Dao-AILab (Tri Dao, Princeton University / Together AI), based in United States. No D5+M affiliation found."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Source: https://github.com/Dao-AILab/flash-attention. Maintainer: Dao-AILab. Last commit: 2026-11-16. Stars: 25,304. Forks: 3,232. Commits: 1,658. Activity health: Active."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: BSD-3-Clause. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 4,
+              "notes": "Trivy: 1 HIGH CVE in flash-attn 2.8.3 (CVE-2026-31253, insecure deserialization in checkpoint loading; no fix yet). High CVEs score 4 per the rubric. Source-only on PyPI: compiled on site against PyTorch (requires torch, einops); conda dry-run resolved 91 packages, all from conda-forge."
+            }
+          ]
+        },
+        {
+          "name": "Hugging Face Transformers 5.16.1",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Hugging Face Transformers 5.16.1 is a library for loading the CLIP and DINOv2 evaluation models and the text tokenizer, used for the video world-model memory milestone requested in IMS0000209. Aligns with the approved topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Hugging Face Transformers 5.16.1 is developed and maintained by Hugging Face, based in United States. No D5+M affiliation found."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Source: https://github.com/huggingface/transformers. Maintainer: Hugging Face. Last commit: 2026-11-16. Stars: 169,048. Forks: 35,210. Commits: 24,805. Activity health: Active."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: Apache-2.0. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run (GH200, Python 3.10) resolved 31 packages, all from PyPI; conda dry-run resolved 70, all from conda-forge. Trivy: no vulnerabilities found in transformers 5.16.1."
+            }
+          ]
+        },
+        {
+          "name": "Hugging Face Diffusers 0.31.0",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Hugging Face Diffusers 0.31.0 is a library of diffusion-model utilities, used for the video world-model memory milestone requested in IMS0000209. Aligns with the approved topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Hugging Face Diffusers 0.31.0 is developed and maintained by Hugging Face, based in United States. No D5+M affiliation found."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Source: https://github.com/huggingface/diffusers. Maintainer: Hugging Face. Last commit: 2026-11-16. Stars: 34,919. Forks: 7,483. Commits: 7,068. Activity health: Active."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: Apache-2.0. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 4,
+              "notes": "Trivy: 2 HIGH CVEs in diffusers 0.31.0 (CVE-2026-44513, CVE-2026-45804: arbitrary code execution via trust_remote_code guard bypass; fixed in 0.38.0). High CVEs score 4 per the rubric. Dependencies: 26 packages via pip, all from PyPI; 133 via conda, all from conda-forge."
+            }
+          ]
+        },
+        {
+          "name": "Hugging Face Tokenizers 0.23.2",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Hugging Face Tokenizers 0.23.2 is a library for text tokenization, used for the video world-model memory milestone requested in IMS0000209. Aligns with the approved topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Hugging Face Tokenizers 0.23.2 is developed and maintained by Hugging Face, based in United States. No D5+M affiliation found."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Source: https://github.com/huggingface/tokenizers. Maintainer: Hugging Face. Last commit: 2026-11-15. Stars: 11,249. Forks: 1,260. Commits: 2,226. Activity health: Active."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: Apache-2.0. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run (GH200, Python 3.10) resolved 16 packages, all from PyPI; conda dry-run resolved 48, all from conda-forge. Trivy: no vulnerabilities found in tokenizers 0.23.2."
+            }
+          ]
+        },
+        {
+          "name": "safetensors 0.8.0",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "safetensors 0.8.0 is a library for loading model weights, used for the video world-model memory milestone requested in IMS0000209. Aligns with the approved topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "safetensors 0.8.0 is developed and maintained by Hugging Face, based in United States. No D5+M affiliation found."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Source: https://github.com/safetensors/safetensors. Maintainer: Hugging Face. Last commit: 2026-11-12. Stars: 3,954. Forks: 414. Commits: 434. Activity health: Active."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: Apache-2.0. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run (GH200, Python 3.10) resolved 1 package, all from PyPI; conda dry-run resolved 23, all from conda-forge. Trivy: no vulnerabilities found in safetensors 0.8.0."
+            }
+          ]
+        },
+        {
+          "name": "huggingface_hub 1.30.0",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "huggingface_hub 1.30.0 is a client library for Hugging Face model files (used offline), used for the video world-model memory milestone requested in IMS0000209. Aligns with the approved topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "huggingface_hub 1.30.0 is developed and maintained by Hugging Face, based in United States. No D5+M affiliation found."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Source: https://github.com/huggingface/huggingface_hub. Maintainer: Hugging Face. Last commit: 2026-11-13. Stars: 4,054. Forks: 1,344. Commits: 2,920. Activity health: Active."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: Apache-2.0. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run (GH200, Python 3.10) resolved 15 packages, all from PyPI; not on conda-forge. Trivy: no vulnerabilities found in huggingface-hub 1.30.0."
+            }
+          ]
+        },
+        {
+          "name": "NumPy 1.24.4",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "NumPy 1.24.4 is a library for numerical operations, used for the video world-model memory milestone requested in IMS0000209. Aligns with the approved topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "NumPy 1.24.4 is developed and maintained by the NumPy project (NumFOCUS-sponsored), based in United States. No D5+M affiliation found."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Source: https://github.com/numpy/numpy. Maintainer: NumPy project. Last commit: 2026-11-16. Stars: 33,380. Forks: 13,099. Commits: 42,540. Activity health: Active."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: BSD-3-Clause. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run (GH200, Python 3.10) resolved 1 package, all from PyPI; conda dry-run resolved 37, all from conda-forge. Trivy: no vulnerabilities found in numpy 1.24.4."
+            }
+          ]
+        },
+        {
+          "name": "SciPy 1.15.3",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "SciPy 1.15.3 is a library for scientific computing utilities, used for the video world-model memory milestone requested in IMS0000209. Aligns with the approved topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "SciPy 1.15.3 is developed and maintained by the SciPy project (NumFOCUS-sponsored), based in United States. No D5+M affiliation found."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Source: https://github.com/scipy/scipy. Maintainer: SciPy project. Last commit: 2026-11-15. Stars: 15,219. Forks: 6,091. Commits: 38,614. Activity health: Active."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: BSD-3-Clause. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run (GH200, Python 3.10) resolved 2 packages, all from PyPI; not on conda-forge. Trivy: no vulnerabilities found in scipy 1.15.3."
+            }
+          ]
+        },
+        {
+          "name": "OpenCV-headless 4.11.0.86",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "OpenCV-headless 4.11.0.86 is a library for reading and writing videos, used for the video world-model memory milestone requested in IMS0000209. Aligns with the approved topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "OpenCV-headless 4.11.0.86 is developed and maintained by OpenCV.org (Open Source Vision Foundation), based in United States. No D5+M affiliation found."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Source: https://github.com/opencv/opencv-python. Maintainer: OpenCV.org. Last commit: 2026-11-14. Stars: 5,453. Forks: 1,054. Commits: 1,087. Activity health: Active."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: MIT (Python wrapper); Apache-2.0 (OpenCV). Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run (GH200, Python 3.10) resolved 2 packages, all from PyPI; not on conda-forge. Trivy: no vulnerabilities found in opencv-python-headless 4.11.0.86."
+            }
+          ]
+        },
+        {
+          "name": "einops 0.8.2",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "einops 0.8.2 is a library for tensor reshaping, used for the video world-model memory milestone requested in IMS0000209. Aligns with the approved topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "einops 0.8.2 is developed and maintained by Alex Rogozhnikov, based in United States. No D5+M affiliation found."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Source: https://github.com/arogozhnikov/einops. Maintainer: Alex Rogozhnikov. Last commit: 2026-08-26. Stars: 9,637. Forks: 409. Commits: 750. Activity health: Active."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: MIT. Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "Dependencies pulled from standard registries. No prohibited packages identified. CVE scan results: pip dry-run (GH200, Python 3.10) resolved 1 package, all from PyPI; conda dry-run resolved 23, all from conda-forge. Trivy: no vulnerabilities found in einops 0.8.2."
+            }
+          ]
+        },
+        {
+          "name": "Next-Lat minWM training environment (GH200 container image)",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Container image providing the pinned training environment (Python 3.10, PyTorch 2.8.0, FlashAttention 2.8.3 and 64 pinned packages) for the video world-model memory milestone requested in IMS0000209. Aligns with the approved topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Next-Lat minWM training environment is developed and maintained by KSL from the PI team's specification on an NVIDIA CUDA base image, based in Saudi Arabia (base image: United States). No D5+M affiliation found."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 2,
+              "notes": "Not yet built: KSL builds it from env/environment.yml and env/requirements.lock.txt in the project bundle, on an NVIDIA CUDA 12.8 cuDNN devel arm64 base image (e.g. nvidia/cuda:12.8.1-cudnn-devel-ubuntu22.04); the exact base tag is left to KSL."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 2,
+              "notes": "Base image under NVIDIA's proprietary CUDA license terms; installed packages are open source (Apache-2.0, MIT, BSD; MPL-2.0 for certifi and tqdm). Research use on Shaheen III is permitted."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "Contains the 64-package pinned environment; the 12 packages named in the request are reviewed separately in this addendum (HIGH CVEs in torch, flash-attn and diffusers). The full requirements.lock.txt was not provided, so the other ~52 packages are not reviewed."
+            }
+          ]
+        }
+      ],
+      "observations": "",
+      "recommendation": ""
+    },
+    {
+      "date": "2026-11-16",
+      "category": "models",
+      "artifacts": [
+        {
+          "name": "minWM ar_diffusion_tf (Wan2.1-T2V-1.3B with PRoPE camera branch)",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "minWM ar_diffusion_tf is a 1.49B-parameter camera-conditioned, block-causal video diffusion transformer, the base model the project fine-tunes for the video world-model memory milestone requested in IMS0000209. Aligns with the approved topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+              "score": 3,
+              "notes": "Source: https://huggingface.co/MIN-Lab/minWM (code: https://github.com/shengshu-ai/minWM, 873 stars). The model is owned and maintained by ShengShu (shengshu-ai) / MIN-Lab with Tsinghua University-affiliated authors, in China; its Wan2.1 base is by Alibaba's Wan team, China. D5-country affiliation found."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: Apache-2.0 (minWM repository; the Hugging Face card states MIT; Wan2.1 base Apache-2.0). Permissions: commercial use allowed, modification allowed, distribution allowed, patent use granted, private use allowed."
+            },
+            {
+              "name": "Training Data Documentation",
+              "score": 2,
+              "notes": "Wan2.1-T2V-1.3B was pretrained on the Wan team's in-house image and video collection (billions of samples; composition and counts not published, arXiv:2503.20314). minWM then fine-tuned it on MIN-Lab/minWM-data (19,823 clips, ~1.5M frames, arXiv:2605.30263). Pretraining data is only partially documented."
+            },
+            {
+              "name": "Customisation / Fine-tuning",
+              "score": 1,
+              "notes": "Fine-tuned by the minWM authors for camera-controlled and block-causal video generation on MIN-Lab/minWM-data (rendered from still images along scripted camera paths): a benign task with documented data."
+            },
+            {
+              "name": "FLOPS Calculation",
+              "score": 2,
+              "notes": "Theoretical training FLOPs: F \u2248 6 \u00d7 1.49 \u00d7 10^9 \u00d7 1 \u00d7 10^14 (upper-bound D; Wan2.1 pretraining token count not published) = 8.94 \u00d7 10^23. Delivered FLOPs (GPU-hours \u00d7 peak TFLOPS \u00d7 MFU): 80,640 GPU-hours \u00d7 989 TFLOPS (GH200 dense BF16 peak) \u00d7 17% (PI-reported MFU) \u2248 4.88 \u00d7 10^22 FLOPs. 10\u00b2\u2077 FLOPS check: passed."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "Inspection required (LC 2.5 = 3); the model is fine-tuned on Shaheen III, so the inference-only waiver does not apply. Not yet performed."
+            }
+          ],
+          "is_proprietary": false
+        },
+        {
+          "name": "Next-Lat minWM checkpoints A0 (600 updates) and S1 (1,200 updates)",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Next-Lat minWM checkpoints A0 and S1 are the project's own fine-tunes of minWM (1.49B parameters; A0 camera adaptation, S1 memory objective), the starting points for further training for the video world-model memory milestone requested in IMS0000209. Aligns with the approved topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "Source / Provenance & D5+M Affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "Source: project bundle (weights/checkpoints/), not public. Downloads last month: not applicable. Owned by the PI's research team at KAUST, based in Saudi Arabia. No D5+M affiliation found."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 3,
+              "notes": "Project-internal and unpublished; derived from minWM (Apache-2.0) and trained on Sekai2-derived data (academic, non-commercial), so research use only."
+            },
+            {
+              "name": "Training Data Documentation",
+              "score": 2,
+              "notes": "As minWM (Wan2.1 pretraining only partially documented), then fine-tuned on the project's Sekai2-derived clips: A0 saw 9,600 clips and S1 19,200 (~0.9 B video tokens in total)."
+            },
+            {
+              "name": "Customisation / Fine-tuning",
+              "score": 1,
+              "notes": "Fine-tuned by the project on its Sekai2-derived camera clips (A0 camera adaptation, S1 memory objective): a benign research task, documented in IMS0000209."
+            },
+            {
+              "name": "FLOPS Calculation",
+              "score": 2,
+              "notes": "Theoretical training FLOPs: F \u2248 6 \u00d7 1.49 \u00d7 10^9 \u00d7 1 \u00d7 10^14 = 8.94 \u00d7 10^23 for the minWM base (upper bound) plus \u2248 8.0 \u00d7 10^18 for A0 and S1 (~0.9 B video tokens). Delivered FLOPs (GPU-hours \u00d7 peak TFLOPS \u00d7 MFU): 80,640 GPU-hours \u00d7 989 TFLOPS (GH200 dense BF16 peak) \u00d7 17% (PI-reported MFU) \u2248 4.88 \u00d7 10^22 FLOPs. 10\u00b2\u2077 FLOPS check: passed."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "No risk in LC 2.7 and LC 2.5 checks. Sample inspection skipped."
+            }
+          ],
+          "is_proprietary": true
+        }
+      ],
+      "observations": "",
+      "recommendation": ""
+    },
+    {
+      "date": "2026-11-18",
+      "category": "datasets_user_files",
+      "artifacts": [
+        {
+          "name": "Rowan/hellaswag (validation split)",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "HellaSwag is a commonsense sentence-completion benchmark: choose the most plausible of four endings for a short activity or how-to context, as per the dataset documentation. Only the validation split (10,042 questions, about 6.3 MB) is requested.\nAligns with the proposal objective of evaluating the attention-replacement ablation models (O2 Language Recovery / general LLM pretraining), per IMS0000192. Evaluation only. Aligns with the approved research topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. Terms such as \"gun\" or \"military\" occur only as ordinary vocabulary in WikiHow how-to contexts and ActivityNet captions, as noted in the 65616 review of the same dataset."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "No D5+M affiliation. Created by Zellers, Holtzman, Bisk, Farhadi and Choi (University of Washington / Allen Institute for AI, Seattle, USA). Hosted under the first author's Hugging Face account."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "Not provided. The dataset is used for scoring only."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "Skipped. Not required under the sample-inspection gate (LC 2.7 and LC 2.5 scored 1); well-recognised public benchmark."
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "Hosted on: Hugging Face\nSource link: https://huggingface.co/datasets/Rowan/hellaswag\nOriginal repository: https://github.com/rowanz/hellaswag\nPaper: Zellers et al., \"HellaSwag: Can a Machine Really Finish Your Sentence?\", ACL 2019.\nContexts from ActivityNet captions and WikiHow; wrong endings machine-generated and adversarially filtered.\nLocal copy staged by the team: /project/k10242/ahmems0a/LLaVA-TTT/eval_data/hellaswag/validation.parquet"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: MIT (repository LICENSE file; the Hugging Face card's Licensing Information section also states MIT, though the sidebar shows no licence field).\nPermissions: use, modification and redistribution for any purpose, including commercial.\nObligations: retain the copyright notice and licence text in any redistribution."
+            }
+          ]
+        },
+        {
+          "name": "allenai/ai2_arc (ARC-Easy and ARC-Challenge, test splits)",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "ARC (AI2 Reasoning Challenge) is a set of grade-school science multiple-choice questions from standardised grade 3\u20139 exams, as per the dataset documentation. Only the test splits are requested: ARC-Easy (2,376 questions) and ARC-Challenge (1,172 questions), about 0.55 MB.\nAligns with the proposal objective of evaluating the attention-replacement ablation models, per IMS0000192. Evaluation only. Aligns with the approved research topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. Occasional references to topics such as nuclear power appear only as elementary science content, as noted in the 65616 review of the same dataset."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "No D5+M affiliation. Created and maintained by the Allen Institute for AI (Ai2), Seattle, USA (Clark et al., 2018)."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "Not provided. The dataset is used for scoring only."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "Skipped. Not required under the sample-inspection gate (LC 2.7 and LC 2.5 scored 1); well-recognised public benchmark."
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "Hosted on: Hugging Face\nSource link: https://huggingface.co/datasets/allenai/ai2_arc\nMaintainer link: https://huggingface.co/allenai\nDownloads last month: 539,158 (18 Nov 2026)\nPaper: Clark et al., \"Think you have Solved Question Answering? Try ARC, the AI2 Reasoning Challenge\", arXiv:1803.05457, 2018.\nLocal copies staged by the team: /project/k10242/ahmems0a/LLaVA-TTT/eval_data/arc_easy/test.parquet, /project/k10242/ahmems0a/LLaVA-TTT/eval_data/arc_challenge/test.parquet"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: CC BY-SA 4.0 (Hugging Face card metadata).\nPermissions: use, share and adapt for any purpose, including commercial.\nObligations: attribution to Clark et al. (Ai2); derivatives that are redistributed must carry the same licence (ShareAlike). Evaluation use on Shaheen III involves no redistribution."
+            }
+          ]
+        },
+        {
+          "name": "baber/piqa (PIQA, validation split)",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "PIQA (Physical Interaction QA) is a physical commonsense benchmark: choose which of two solutions achieves a stated goal, as per the paper. Only the validation split (1,838 questions, about 0.3 MB) is requested.\nAligns with the proposal objective of evaluating the attention-replacement ablation models, per IMS0000192. Evaluation only. Aligns with the approved research topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. Questions concern everyday physical tasks, inspired by instructables.com."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "No D5+M affiliation. Created by Bisk, Zellers, Le Bras, Gao and Choi (Allen Institute for AI / University of Washington / Microsoft Research, USA). The requested copy is uploaded by Baber Abbasi (EleutherAI), a maintainer of lm-evaluation-harness."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "Not provided. The dataset is used for scoring only."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "Skipped. Not required under the sample-inspection gate (LC 2.7 and LC 2.5 scored 1); well-recognised public benchmark. Staged file to be checked against the upstream split before movement (see Recommendations)."
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "Hosted on: Hugging Face (third-party copy)\nSource link: https://huggingface.co/datasets/baber/piqa\nDownloads last month: 132,233 (18 Nov 2026)\nThe copy has no dataset card and does not state its source. The form identifies it as the Parquet copy of the original release (ybisk/piqa) used by lm-evaluation-harness; its split sizes (16,113 / 1,838 / 3,084) match the original.\nOriginal: https://huggingface.co/datasets/ybisk/piqa, homepage https://yonatanbisk.com/piqa/\nPaper: Bisk et al., \"PIQA: Reasoning about Physical Commonsense in Natural Language\", AAAI 2020.\nLocal copy staged by the team: /project/k10242/ahmems0a/LLaVA-TTT/eval_data/piqa/validation.parquet\nOrigin verifiable: the associated paper is available (Bisk et al., AAAI 2020), the maintainer is identifiable (Baber Abbasi, EleutherAI), and the copy matches the original release (ybisk/piqa) in its split sizes."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 2,
+              "notes": "License: Academic Free License v3.0 (AFL-3.0). Permissions: use, reproduction, modification and distribution allowed, patent use granted; copyright and attribution notices must be kept and modified copies must carry a notice of modification (Section 6). Use for academic research and non-commercial purposes is permitted."
+            }
+          ]
+        },
+        {
+          "name": "allenai/winogrande (winogrande_xl, validation split)",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "WinoGrande is a Winograd-schema style pronoun-resolution / commonsense benchmark: fill a blank with one of two options, as per the dataset documentation. Only the validation split of the winogrande_xl config (1,267 questions, about 0.09 MB) is requested.\nAligns with the proposal objective of evaluating the attention-replacement ablation models, per IMS0000192. Evaluation only. Aligns with the approved research topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "No D5+M affiliation. Created and maintained by the Allen Institute for AI (Ai2), Seattle, USA (Sakaguchi, Le Bras, Bhagavatula, Choi). The lead author is now at Tohoku University, Japan, a non-D5 country."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "Not provided. The dataset is used for scoring only."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "Skipped. Not required under the sample-inspection gate (LC 2.7 and LC 2.5 scored 1); well-recognised public benchmark."
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "Hosted on: Hugging Face\nSource link: https://huggingface.co/datasets/allenai/winogrande\nMaintainer link: https://huggingface.co/allenai\nDownloads last month: 239,665 (18 Nov 2026)\nOriginal repository: https://github.com/allenai/winogrande\nPaper: Sakaguchi et al., \"WinoGrande: An Adversarial Winograd Schema Challenge at Scale\", AAAI 2020.\nLocal copy staged by the team: /project/k10242/ahmems0a/LLaVA-TTT/eval_data/winogrande/validation.parquet"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: CC BY, per the authors' repository README, which states that the dataset is licensed under CC-BY and the code under Apache 2.0. The form gives Apache 2.0, which applies to the code only. The Hugging Face card declares no licence.\nPermissions: use, share and adapt for any purpose.\nObligations: attribution; cite the WinoGrande paper."
+            }
+          ]
+        },
+        {
+          "name": "allenai/openbookqa (main config, test split)",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "OpenBookQA is a set of elementary-level science questions that need a core science fact plus broad common knowledge, four-way multiple choice, as per the dataset documentation. Only the test split of the main config (500 questions, about 0.06 MB) is requested.\nAligns with the proposal objective of evaluating the attention-replacement ablation models, per IMS0000192. Evaluation only. Aligns with the approved research topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "No D5+M affiliation. Created and maintained by the Allen Institute for AI (Ai2), Seattle, USA (Mihaylov, Clark, Khot, Sabharwal)."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "Not provided. The dataset is used for scoring only."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "Skipped. Not required under the sample-inspection gate (LC 2.7 and LC 2.5 scored 1); well-recognised public benchmark."
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "Hosted on: Hugging Face\nSource link: https://huggingface.co/datasets/allenai/openbookqa\nMaintainer link: https://huggingface.co/allenai\nDownloads last month: 192,039 (18 Nov 2026)\nOriginal repository: https://github.com/allenai/OpenBookQA\nPaper: Mihaylov et al., \"Can a Suit of Armor Conduct Electricity? A New Dataset for Open Book Question Answering\", EMNLP 2018.\nLocal copy staged by the team: /project/k10242/ahmems0a/LLaVA-TTT/eval_data/openbookqa/test.parquet"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: not clearly stated. The Hugging Face card lists the licence as unknown. The authors' code repository is Apache 2.0, but its README does not say whether that licence covers the dataset. The form gives Apache 2.0 from the repository.\nPublicly released by Ai2 as a research benchmark. Evaluation use on Shaheen III, with no redistribution, is consistent with that release.\nRisk set to low because the dataset's own licence is not declared. (For reference, OpenBookQA was withdrawn from the 65616 request for the same reason.)"
+            }
+          ]
+        },
+        {
+          "name": "tau/commonsense_qa (validation split)",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "CommonsenseQA is a five-way multiple-choice commonsense benchmark built from ConceptNet relations, as per the dataset documentation. Only the validation split (1,221 questions, about 0.16 MB) is requested.\nAligns with the proposal objective of evaluating the attention-replacement ablation models, per IMS0000192. Evaluation only. Aligns with the approved research topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "No D5+M affiliation. Created by Talmor, Herzig, Lourie and Berant (Tel Aviv University / Allen Institute for AI) and published under the tau (Tel Aviv University) organisation on Hugging Face."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "Not provided. The dataset is used for scoring only."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "Skipped. Not required under the sample-inspection gate (LC 2.7 and LC 2.5 scored 1); well-recognised public benchmark."
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "Hosted on: Hugging Face\nSource link: https://huggingface.co/datasets/tau/commonsense_qa\nMaintainer link: https://huggingface.co/tau\nDownloads last month: 92,555 (18 Nov 2026)\nPaper: Talmor et al., \"CommonsenseQA: A Question Answering Challenge Targeting Commonsense Knowledge\", NAACL 2019.\nLocal copy staged by the team: /project/k10242/ahmems0a/LLaVA-TTT/eval_data/commonsense_qa/validation.parquet"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: MIT (Hugging Face card metadata and Licensing Information section).\nPermissions: use, modification and redistribution for any purpose, including commercial.\nObligations: retain the copyright notice and licence text in any redistribution."
+            }
+          ]
+        },
+        {
+          "name": "lighteval/siqa (Social IQa, validation split)",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Social IQa is a three-way multiple-choice benchmark about people's motivations, reactions and social situations, as per the dataset documentation. Only the validation split (1,954 questions, about 0.2 MB) is requested.\nAligns with the proposal objective of evaluating the attention-replacement ablation models, per IMS0000192. Evaluation only. Aligns with the approved research topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "No D5+M affiliation. Created by Sap, Rashkin, Chen, Le Bras and Choi (Allen Institute for AI / University of Washington, Seattle, USA). The requested copy is published by the lighteval organisation of Hugging Face (New York, USA)."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "Not provided. The dataset is used for scoring only."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "Skipped. Not required under the sample-inspection gate (LC 2.7 and LC 2.5 scored 1); well-recognised public benchmark. Staged file to be checked against the upstream split before movement (see Recommendations)."
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "Hosted on: Hugging Face (copy published by the Hugging Face lighteval team)\nSource link: https://huggingface.co/datasets/lighteval/siqa\nDownloads last month: 34,539 (18 Nov 2026)\nThe copy's card does not state its source; its split sizes (33,410 / 1,954) match the original release.\nOriginal: https://huggingface.co/datasets/allenai/social_i_qa\nPaper: Sap et al., \"Social IQa: Commonsense Reasoning about Social Interactions\", EMNLP 2019.\nLocal copy staged by the team: /project/k10242/ahmems0a/LLaVA-TTT/eval_data/siqa/validation.parquet"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: CC BY 4.0, per the Licensing Information section of the original allenai/social_i_qa card, consistent with the 65616 review of the same dataset. The requested lighteval copy declares no licence, and the form states none.\nPermissions: use, share and adapt for any purpose.\nObligations: attribution to Sap et al. (Ai2 / University of Washington)."
+            }
+          ]
+        },
+        {
+          "name": "EleutherAI/lambada_openai (default config, test split)",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "LAMBADA is a word-prediction benchmark: predict the last word of a narrative passage, which requires using the wider context, as per the dataset documentation. This is the LAMBADA test split as pre-processed by OpenAI for GPT-2 evaluation. Only the default (English) test split (5,153 passages, about 1.2 MB) is requested; the machine-translated configs are not.\nAligns with the proposal objective of evaluating the attention-replacement ablation models, per IMS0000192. Evaluation only. Aligns with the approved research topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. Passages are excerpts from fiction."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "No D5+M affiliation. Original dataset by Paperno et al. (University of Trento, Italy; University of Amsterdam, Netherlands). Pre-processing by OpenAI (USA); packaged by EleutherAI."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "Not provided. The dataset is used for scoring only."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "Skipped. Not required under the sample-inspection gate (LC 2.7 and LC 2.5 scored 1); well-recognised public benchmark. Staged file to be checked against the upstream file before movement (see Recommendations)."
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "Hosted on: Hugging Face\nSource link: https://huggingface.co/datasets/EleutherAI/lambada_openai\nMaintainer link: https://huggingface.co/EleutherAI\nDownloads last month: 106,339 (18 Nov 2026)\nUpstream file: https://openaipublic.blob.core.windows.net/gpt-2/data/lambada_test.jsonl (SHA-256 published on the card)\nOriginal release: https://doi.org/10.5281/zenodo.2630551\nPaper: Paperno et al., \"The LAMBADA dataset: Word prediction requiring a broad discourse context\", ACL 2016. Passages from BookCorpus novels.\nLocal copy staged by the team: /project/k10242/ahmems0a/LLaVA-TTT/eval_data/lambada/test.parquet"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 4,
+              "notes": "License: conflicting statements (MIT, Modified MIT, CC BY 4.0); passages are BookCorpus excerpts under authors' copyright. Ambiguous; evaluation-only, no redistribution."
+            }
+          ]
+        },
+        {
+          "name": "cais/mmlu (all config, test and dev splits)",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "MMLU (Massive Multitask Language Understanding) is a four-way multiple-choice benchmark across 57 subjects (STEM, humanities, social sciences and more), as per the dataset documentation. The test split of the all config (14,042 questions) is used for scoring; the dev split (285 questions, 5 per subject) supplies the few-shot examples. About 3.6 MB.\nAligns with the proposal objective of evaluating the attention-replacement ablation models, per IMS0000192. Evaluation only. Aligns with the approved research topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 2,
+              "notes": "Dataset includes subject categories 'security_studies', 'virology', 'computer_security' and chemistry. Content reviewed: academic practice-exam questions; no weapons design, production or operational content. Assessed as low."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "No D5+M affiliation. Created by Hendrycks et al. (UC Berkeley) and maintained by the Center for AI Safety (CAIS), San Francisco, USA."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "Not provided. The dataset is used for scoring only; the dev split serves as few-shot examples."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "Skipped. LC 2.5 scored 1 and the LC 2.7 mention is academic content only; well-recognised public benchmark, per step 2 of the sample-inspection gate."
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "Hosted on: Hugging Face\nSource link: https://huggingface.co/datasets/cais/mmlu\nMaintainer link: https://huggingface.co/cais\nDownloads last month: 564,617 (18 Nov 2026)\nOriginal repository: https://github.com/hendrycks/test\nPaper: Hendrycks et al., \"Measuring Massive Multitask Language Understanding\", ICLR 2021.\nLocal copies staged by the team: /project/k10242/ahmems0a/LLaVA-TTT/eval_data/mmlu/test.parquet, /project/k10242/ahmems0a/LLaVA-TTT/eval_data/mmlu/dev.parquet"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: MIT (Hugging Face card metadata and Licensing Information section, linking to the hendrycks/test repository).\nPermissions: use, modification and redistribution for any purpose, including commercial.\nObligations: retain the copyright notice and licence text in any redistribution; cite Hendrycks et al."
+            }
+          ]
+        },
+        {
+          "name": "deepmind/pg19 (test split, 100 books)",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "PG19 is a long-form language-modelling benchmark of full-length books from Project Gutenberg published before 1919, as per the dataset documentation. Only the test split (100 books, about 25 MB) is requested, to measure per-position loss across the 8,192-token context and how sliding-window size and the attention sink affect use of context beyond the window.\nAligns with the proposal objective of evaluating the attention-replacement ablation models, per IMS0000192. Evaluation only. Aligns with the approved research topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. The test books are pre-1919 public-domain works; a screen of their titles for LC 2.7 topics is recommended before movement (see Recommendations)."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "No D5+M affiliation. Created and maintained by DeepMind (Rae, Potapenko, Jayakumar, Hillier, Lillicrap), London, UK. Source books from Project Gutenberg (USA)."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "Not provided. The dataset is used for scoring only."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "Skipped under the sample-inspection gate (LC 2.7 and LC 2.5 scored 1). A screen of the 100 test-book titles and authors from the staged Parquet file is recommended before movement, as the Project Gutenberg collection may include historical military or chemistry texts."
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "Hosted on: Hugging Face\nSource link: https://huggingface.co/datasets/deepmind/pg19\nMaintainer link: https://huggingface.co/deepmind\nDownloads last month: 6,271 (18 Nov 2026)\nPaper: Rae et al., \"Compressive Transformers for Long-Range Sequence Modelling\", ICLR 2020.\nThe Hugging Face release is script-based (the dataset viewer is disabled). The team converted the 100 test books into a single Parquet file (title, publication date, source URL, text), so the staged file is a derived copy, not the upstream file.\nLocal copy staged by the team: /project/k10242/ahmems0a/LLaVA-TTT/eval_data/pg19/test.parquet\nOrigin verifiable: the associated paper is available (Rae et al., ICLR 2020), the maintainer is identifiable (DeepMind), and the team's conversion is documented in the request (the 100 test books in one Parquet file with title, publication date, source URL and text), so the staged file can be checked against the upstream release."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: Apache 2.0 (Hugging Face card metadata and Licensing Information section). The underlying books were published before 1919 and are in the public domain.\nPermissions: use, modification and redistribution for any purpose, including commercial.\nObligations: retain the licence and notices in any redistribution."
+            }
+          ]
+        },
+        {
+          "name": "Salesforce/wikitext (wikitext-103-raw-v1, test and validation splits)",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "WikiText-103 is held-out text from verified Good and Featured Wikipedia articles, used to measure perplexity, as per the dataset documentation. The test (4,358 rows) and validation (3,760 rows) splits of the wikitext-103-raw-v1 config are requested, about 1.4 MB.\nAligns with the proposal objective of evaluating the attention-replacement ablation models, per IMS0000192. Evaluation only. Aligns with the approved research topic, Data Science and Engineering."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. The source articles are encyclopedic and include history topics; no weapons design or operational content."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "No D5+M affiliation. Created and maintained by Salesforce Research (Merity, Xiong, Bradbury, Socher), USA. Text from English Wikipedia."
+            },
+            {
+              "name": "Prompts / Fine-tuning Scripts",
+              "score": 1,
+              "notes": "Not provided. The dataset is used for scoring only."
+            },
+            {
+              "name": "Sample Inspection",
+              "score": 1,
+              "notes": "Skipped. Not required under the sample-inspection gate (LC 2.7 and LC 2.5 scored 1); well-recognised public benchmark."
+            },
+            {
+              "name": "Provenance",
+              "score": 1,
+              "notes": "Hosted on: Hugging Face\nSource link: https://huggingface.co/datasets/Salesforce/wikitext\nMaintainer link: https://huggingface.co/Salesforce\nDownloads last month: 1,998,161 (18 Nov 2026)\nPaper: Merity et al., \"Pointer Sentinel Mixture Models\", 2016.\nLocal copies staged by the team: /project/k10242/ahmems0a/LLaVA-TTT/eval_data/wikitext/test.parquet, /project/k10242/ahmems0a/LLaVA-TTT/eval_data/wikitext/validation.parquet"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 3,
+              "notes": "License: CC BY-SA 3.0 and GFDL. Share-alike/copyleft: redistributed derivatives must carry the same license; attribution required. Research use permitted; redistribution constrained."
+            }
+          ]
+        }
+      ],
+      "observations": "CR Ticket Number: IMS0000192\n- 11 public benchmark datasets reviewed. Only evaluation splits are requested (about 39 MB in total), to score the 1.7B-parameter attention ablation models trained on FineWeb-Edu (Addendum 1). They are used for evaluation only, not for training. The change request has no code, container or model changes.\n- No D5+M affiliation for any dataset, its authors or the Hugging Face accounts that host it. LC 2.5.\n- No prohibited-use indicators. MMLU includes security studies, virology and chemistry subjects as academic multiple-choice questions, scored Low, consistent with the earlier review of MMLU in project 65616. LC 2.7.\n- Licences differ between datasets. HellaSwag, CommonsenseQA and MMLU are MIT; ARC is CC BY-SA 4.0; WikiText-103 is CC BY-SA 3.0 and GFDL; PG19 is Apache 2.0 over public-domain books. WinoGrande and Social IQa are CC BY, from the authors' README and the original card. For WinoGrande this corrects the form, as Apache 2.0 covers its code only.\n- Three licences are not clearly stated. PIQA declares none anywhere. OpenBookQA is listed as unknown on Hugging Face, and Apache 2.0 appears only on its code repository. LAMBADA's card gives both MIT and Modified MIT, the original release is CC BY 4.0, and the passages come from BookCorpus novels that carry their authors' copyright. In the 65616 review, PIQA, OpenBookQA and WinoGrande were withdrawn by that PI for lack of a declared licence.\n- PIQA and Social IQa are requested as third-party copies (baber/piqa, lighteval/siqa) that do not state their source. PG19 is the team's own Parquet conversion of the script-based release.\n- No score above Low. The section score is unchanged.",
+      "recommendation": "No risk beyond Low identified in the review. The unclear licences of PIQA, OpenBookQA and LAMBADA are acceptable for evaluation-only use on Shaheen III GPUP, as the datasets are neither redistributed nor used for training. Any public release of their content or derived works should first confirm terms with the authors. Attribution, and ShareAlike for ARC and WikiText-103, to be observed in resulting publications.\n\nBefore movement:\n- Verify that the staged files match the upstream splits (row counts and a content spot-check), as the files were prepared by the team on the Shaheen CPU system rather than downloaded by KSL. For LAMBADA, OpenAI publishes lambada_test.jsonl with SHA-256 4aa8d02cd17c719165fc8a7887fddd641f43fcafa4b1c806ca8abc31fabdb226.\n- Screen the titles of the 100 PG19 test books for LC 2.7 topics.\n- Confirm with the PI that the scoring code is part of the training code reviewed in Addendum 4 (commit 0a024ebe740655bc0e92b3966d5fe5add6abdcc1). If not, it requires a separate review.\n\nPositive checks passed\nNegative checks passed\n\nRecommended for data movement once the checks above are complete."
     }
   ],
   "_submission_history": [
@@ -1456,6 +2523,11 @@
     {
       "timestamp": "2026-10-20T08:47:45.851973",
       "action": "resubmission"
+    },
+    {
+      "timestamp": "2026-11-18T16:34:40.495339",
+      "action": "resubmission"
     }
-  ]
+  ],
+  "monitoring": []
 }
