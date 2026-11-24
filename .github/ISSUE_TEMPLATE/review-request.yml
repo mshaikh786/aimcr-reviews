@@ -1,0 +1,118 @@
+name: AIMCR review / change request
+description: Track a new proposal review or a change-request addendum, from intake to sign-off.
+title: "[AIMCR] <project ID> (<PI last name>) — <IMS / RITM number>"
+labels: ["review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        One issue per proposal review or per change request.
+        Branch naming: `<project ID>-<PI last name>/main` for the proposal, `<project ID>-<PI last name>/<IMS or RITM number>` for each change request (e.g. `65638-elhoseiny/IMS0000192`).
+
+  - type: dropdown
+    id: review_type
+    attributes:
+      label: Review type
+      options:
+        - New proposal review
+        - Change request (addendum)
+        - Resubmission / correction of a submitted review
+    validations:
+      required: true
+
+  - type: input
+    id: project_id
+    attributes:
+      label: Project ID
+      description: Proposal ID (6####) or RITM number.
+      placeholder: "65638"
+    validations:
+      required: true
+
+  - type: input
+    id: pi
+    attributes:
+      label: Principal investigator
+      placeholder: Mohamed Elhoseiny
+    validations:
+      required: true
+
+  - type: input
+    id: proposal_title
+    attributes:
+      label: Proposal title
+      placeholder: Scaling Multimodal Foundation Models for Physical Intelligence
+
+  - type: input
+    id: ticket
+    attributes:
+      label: Change request ticket
+      description: IMS or RITM number. Leave empty for a new proposal review.
+      placeholder: IMS0000192
+
+  - type: input
+    id: request_date
+    attributes:
+      label: Request date and due date
+      placeholder: "Received 2026-11-16, due 2026-11-23"
+
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: Artifacts to review
+      description: List each artifact under its category, with name, version and source link. For a change request, mark each as New, Modified, Carry-forward or Dropped.
+      value: |
+        **Third-party software**
+        -
+
+        **Source code**
+        -
+
+        **Datasets / user files**
+        -
+
+        **Models**
+        -
+    validations:
+      required: true
+
+  - type: textarea
+    id: sources
+    attributes:
+      label: Source documents
+      description: Links or paths to the proposal form, change-request form, data location (e.g. on Ibex), and the existing review JSON.
+      placeholder: |
+        - CR form: IMS0000192.docx
+        - Data: /ibex/project/c2358/AIMCR/data-movement/65638/CR/IMS0000192/
+        - Review JSON: submissions/AIMCR-65638-11-02-2026/aimcr_data.json
+
+  - type: checkboxes
+    id: progress
+    attributes:
+      label: Review progress
+      options:
+        - label: Artifacts extracted and sorted into categories (delta list confirmed for a change request)
+        - label: Evidence collected (alignment, LC 2.7 terms, owners/affiliations, source, licence)
+        - label: Dependency dry-run and Trivy CVE scan done (software)
+        - label: Sample inspection done, skipped or waived (datasets / models)
+        - label: FLOPs estimate (6·N·D) checked against 10^27 (models)
+        - label: Every check scored with the rubric and noted with the template wording
+        - label: Observations and recommendation written
+        - label: Validator run with no errors (validate_aimcr.py)
+        - label: JSON saved in submissions/ and pushed on the review branch
+        - label: Pull request opened and linked below
+        - label: Signed off by Mohsin
+
+  - type: textarea
+    id: questions
+    attributes:
+      label: Open questions for the PI
+      description: Questions to send through Mohsin (never to the PI directly), with the date asked and the answer when it arrives.
+      placeholder: |
+        - [ ] 2026-11-20: Confirm the exact repositories for CLIP and DINOv2. Answer: pending
+
+  - type: textarea
+    id: result
+    attributes:
+      label: Result
+      description: Fill in at the end. Section scores, pass/fail, elevated scores and their reasons, monitoring items, and the pull request link.
