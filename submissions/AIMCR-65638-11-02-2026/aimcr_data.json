@@ -1486,14 +1486,14 @@
             },
             {
               "name": "License / Permissions",
-              "score": 3,
-              "notes": "License: Sekai2 academic research license (non-commercial; cut clips may not be redistributed). Non-commercial use only. The proposed use on Shaheen III for research is permissible; however, any commercial application would not be permitted under this license."
+              "score": 1,
+              "notes": "License: Sekai2 academic research license (non-commercial; cut clips may not be redistributed). Non-commercial use only. The proposed use on Shaheen III for research is permissible; however, any commercial application would not be permitted under this license. The clips stay in the project space and are not redistributed, so the risk is scored Low, 1."
             }
           ]
         }
       ],
-      "observations": "CR Ticket Number: IMS0000209\n- 1 dataset reviewed: minWM camera-return clips, 2,533 training and 130 test first-person walking clips (about 11 GB) that the PI's team derived from the public Sekai2 Panoramics 360\u00b0 videos and stored as Wan2.1 VAE latents with camera poses, captions and view-overlap labels.\n- D5+M affiliation: the Sekai source videos are owned by Shanghai AI Laboratory, with co-creators at Beijing Institute of Technology and Shanghai Innovation Institute, China. Scored 3. LC 2.5.\n- Licence: Sekai2 is licensed for academic, non-commercial research only and its terms do not allow cut clips to be redistributed. Scored 3. The form states the derived data stays in the project and will not be shared.\n- Provenance: derived in-house; processing documented in Data_Processing.md. Scored 2, as the derived set is not public.\n- Sample inspection performed: 15 random clips (4 frames each) with their prompts, 3 of the 53 contact sheets, 6 random prompts and 2 meta.json records. Content matches the description: walks through parks, streets, plazas, residential areas, farmland and malls. No sensitive content observed. LC 2.7.\n- PI confirmation of no collaboration with Shanghai AI Laboratory, Beijing Institute of Technology and Shanghai Innovation Institute requested.",
-      "recommendation": "Positive check passed.\n\nNegative check passed.\n\nThe derived clips stay in the project space on Shaheen III GPUP and are not redistributed, as the Sekai2 licence requires.\n\nData movement after the PI confirms no collaboration with Shanghai AI Laboratory, Beijing Institute of Technology and Shanghai Innovation Institute.\n\nMonitoring:\n- minWM camera-return clips: D5+M affiliation of the source (Shanghai AI Laboratory); check with the PI that the derived data is not shared outside the project.\n\nRecommended for data movement once the PI confirmation is received."
+      "observations": "CR Ticket Number: IMS0000209\n\n- 1 dataset, 1 source-code artifact, 12 packages with the GH200 container, and 2 model entries reviewed.\n- The minWM camera-return clips (2,663 clips, about 11 GB) were derived by the PI's team from the Sekai2 videos of Shanghai AI Laboratory, with Beijing Institute of Technology and Shanghai Innovation Institute, China. D5+M affiliation. LC 2.5. Sekai2 is for non-commercial research only and does not allow the clips to be redistributed. Sample inspection found content matching the description.\n- The training code is written by the PI's team and bundles open-source code from Wan2.1 (Alibaba) and minWM (ShengShu / MIN-Lab), both from D5 countries.\n- High CVEs in torch 2.8.0, flash-attn 2.8.3 and diffusers 0.31.0, scored Medium after de-risking: the providers are trusted and the CVEs need crafted checkpoints or remote code, which the project does not load. Only the 12 named packages of the 64-package lock file were reviewed.\n- minWM is by ShengShu / MIN-Lab with Tsinghua University-affiliated authors, on Alibaba's Wan2.1 base, China. D5+M affiliation. LC 2.5. Its sample inspection is pending. The team's own checkpoints inherit the non-commercial terms of the Sekai2-derived data.\n- FLOPS estimated at 8.94x10^23 (upper bound), well below the threshold.\n- CLIP, DINOv2 and the Wan2.1 text encoder and VAE are named in the form but have no model entries.\n- The PI has confirmed no collaboration with any of the organisations above.",
+      "recommendation": "The PI has confirmed no collaboration with Shanghai AI Laboratory, Beijing Institute of Technology and Shanghai Innovation Institute (Sekai source videos) and with ShengShu / MIN-Lab and Tsinghua University (minWM). Together with the existing confirmation for Alibaba, this also covers the Wan2.1 and minWM code bundled in the training code.\n\nKSL will build the container from trusted sources (PyPI, conda-forge and the PyTorch package index) on an NVIDIA CUDA base image, after reviewing the full lock file. The PI is advised to move to torch 2.10.0 and diffusers 0.38.0, which fix the High CVEs, through a change request. Checkpoints are loaded only from the reviewed weights, which limits the checkpoint-loading CVEs in torch and flash-attn.\n\nBefore movement:\n- Sample inspection of minWM: sample outputs generated with neutral prompts and camera paths.\n- CLIP, DINOv2, the Wan2.1 text encoder and the Wan2.1 VAE are not moved until the PI submits model entries for them and they are reviewed.\n\nMonitoring:\n- minWM camera-return clips: the derived clips stay in the project space on Shaheen III GPUP and are not redistributed, as the Sekai2 licence requires.\n- minWM ar_diffusion_tf: D5+M affiliation (ShengShu / MIN-Lab, Alibaba Wan team); periodic check with the PI on collaboration.\n\nPositive checks passed\nNegative checks passed\n10^27 FLOPS check passed\n\nRecommended for data movement once the checks above are complete."
     },
     {
       "date": "2026-11-16",
@@ -1535,8 +1535,8 @@
           ]
         }
       ],
-      "observations": "CR Ticket Number: IMS0000209\n- 1 source-code artifact reviewed: Next-Lat on minWM, the training and evaluation code from the project bundle of 3 November 2026 (22 Python files, 4,042 lines), written by the PI's team at KAUST. No D5+M affiliation for the team. LC 2.5.\n- The code bundles parts of three open-source projects: Self-Forcing (Apache-2.0), Wan2.1 by Alibaba's Wan team (Apache-2.0) and minWM by ShengShu / MIN-Lab (Apache-2.0; its PRoPE camera module is MIT). Wan2.1 and minWM come from D5-country organisations, so Dependencies / Bundled Components is scored 4. Licence notices are kept in the files.\n- No prohibited-use indicators. LC 2.7. Sample inspection skipped, as LC 2.5 and LC 2.7 are both 1.\n- Package dependencies are reviewed in Addendum 7.",
-      "recommendation": "Positive check passed.\n\nNegative check passed.\n\nThe bundled Wan2.1 and minWM code is open source and is covered by the PI confirmation requested for the minWM model (Addendum 8) and by the existing confirmation of no collaboration with Alibaba.\n\nRecommended for data movement."
+      "observations": "",
+      "recommendation": ""
     },
     {
       "date": "2026-11-16",
@@ -1572,8 +1572,8 @@
             },
             {
               "name": "Bundled Tools / Dependencies",
-              "score": 4,
-              "notes": "Trivy: 1 HIGH CVE in torch 2.8.0 (CVE-2026-24747, arbitrary code execution via malicious checkpoint loading; fixed in 2.10.0), plus 1 MEDIUM and 2 LOW; none in Triton. High CVEs score 4 per the rubric. PyPI has no Triton 3.4.0 build for GH200 (aarch64; first is 3.5.0), so it must come from PyTorch's own package index or a source build."
+              "score": 3,
+              "notes": "Trivy: 1 HIGH CVE in torch 2.8.0 (CVE-2026-24747, arbitrary code execution via malicious checkpoint loading; fixed in 2.10.0), plus 1 MEDIUM and 2 LOW; none in Triton. High CVEs score 4 per the rubric. PyPI has no Triton 3.4.0 build for GH200 (aarch64; first is 3.5.0), so it must come from PyTorch's own package index or a source build.\nDe-risking: PyTorch is developed and maintained by the PyTorch Foundation (Linux Foundation, United States), a non-D5+M entity, and is very widely used: 57.7 million downloads from PyPI in the last month (as of 25 Nov 2026) and over 105,000 stars on GitHub. The high CVE requires a crafted checkpoint file to be loaded; only the group's own checkpoints and artifacts that have been through review are loaded on Shaheen III GPUP. This de-risks its use; the risk is scored Medium, 3."
             }
           ]
         },
@@ -1607,8 +1607,8 @@
             },
             {
               "name": "Bundled Tools / Dependencies",
-              "score": 4,
-              "notes": "Trivy: 1 HIGH CVE in flash-attn 2.8.3 (CVE-2026-31253, insecure deserialization in checkpoint loading; no fix yet). High CVEs score 4 per the rubric. Source-only on PyPI: compiled on site against PyTorch (requires torch, einops); conda dry-run resolved 91 packages, all from conda-forge."
+              "score": 3,
+              "notes": "Trivy: 1 HIGH CVE in flash-attn 2.8.3 (CVE-2026-31253, insecure deserialization in checkpoint loading; no fix yet). High CVEs score 4 per the rubric. Source-only on PyPI: compiled on site against PyTorch (requires torch, einops); conda dry-run resolved 91 packages, all from conda-forge.\nDe-risking: FlashAttention is developed and maintained by Dao-AILab (United States), a non-D5+M entity, and is widely used: 265,000 downloads from PyPI in the last month (as of 25 Nov 2026) and over 25,000 stars on GitHub. The high CVE is in checkpoint loading; only the group's own checkpoints and artifacts that have been through review are loaded on Shaheen III GPUP. This de-risks its use; the risk is scored Medium, 3."
             }
           ]
         },
@@ -1677,8 +1677,8 @@
             },
             {
               "name": "Bundled Tools / Dependencies",
-              "score": 4,
-              "notes": "Trivy: 2 HIGH CVEs in diffusers 0.31.0 (CVE-2026-44513, CVE-2026-45804: arbitrary code execution via trust_remote_code guard bypass; fixed in 0.38.0). High CVEs score 4 per the rubric. Dependencies: 26 packages via pip, all from PyPI; 133 via conda, all from conda-forge."
+              "score": 3,
+              "notes": "Trivy: 2 HIGH CVEs in diffusers 0.31.0 (CVE-2026-44513, CVE-2026-45804: arbitrary code execution via trust_remote_code guard bypass; fixed in 0.38.0). High CVEs score 4 per the rubric. Dependencies: 26 packages via pip, all from PyPI; 133 via conda, all from conda-forge.\nDe-risking: Diffusers is developed and maintained by Hugging Face (United States), a non-D5+M entity, and is widely used: 6.4 million downloads from PyPI in the last month (as of 25 Nov 2026) and over 34,000 stars on GitHub. Both high CVEs need remote code to be loaded through trust_remote_code; Shaheen III GPUP has no internet access and only reviewed artifacts are loaded. This de-risks its use; the risk is scored Medium, 3."
             }
           ]
         },
@@ -1963,8 +1963,8 @@
           ]
         }
       ],
-      "observations": "CR Ticket Number: IMS0000209\n- 12 packages reviewed plus the GH200 training container. All come from standard registries (PyPI, conda-forge) and none has a D5+M affiliation. LC 2.5.\n- High CVEs in three requested versions, each scored 4: torch 2.8.0 (CVE-2026-24747, code execution through a malicious checkpoint; fixed in 2.10.0), flash-attn 2.8.3 (CVE-2026-31253, insecure deserialisation in checkpoint loading; no fix yet) and diffusers 0.31.0 (CVE-2026-44513 and CVE-2026-45804, trust_remote_code guard bypass; fixed in 0.38.0). The other nine packages have no known vulnerabilities.\n- Triton 3.4.0 has no aarch64 build on PyPI, so for GH200 it must come from PyTorch's own package index or a source build.\n- The container is not yet built: KSL builds it from env/environment.yml and env/requirements.lock.txt in the project bundle on an NVIDIA CUDA 12.8 arm64 base image (NVIDIA licence terms, score 2). Only the 12 named packages were reviewed; the remaining packages of the 64-package lock file were not.",
-      "recommendation": "Positive check passed.\n\nNegative check passed.\n\nKSL will build the container from trusted sources (PyPI, conda-forge and the PyTorch package index) on an NVIDIA CUDA base image.\n\nThe PI is advised to move to torch 2.10.0 and diffusers 0.38.0, which fix the High CVEs, through a change request. Checkpoints are loaded only from the reviewed weights, which limits the checkpoint-loading CVEs in torch and flash-attn.\n\nThe full lock file is to be reviewed before the container is built.\n\nRecommended for data movement."
+      "observations": "",
+      "recommendation": ""
     },
     {
       "date": "2026-11-16",
@@ -2036,8 +2036,8 @@
             },
             {
               "name": "License / Permissions",
-              "score": 3,
-              "notes": "Project-internal and unpublished; derived from minWM (Apache-2.0) and trained on Sekai2-derived data (academic, non-commercial), so research use only."
+              "score": 1,
+              "notes": "Project-internal and unpublished; derived from minWM (Apache-2.0) and trained on Sekai2-derived data (academic, non-commercial), so research use only. The checkpoints are the team's own and stay in the project, so the risk is scored Low, 1."
             },
             {
               "name": "Training Data Documentation",
@@ -2063,8 +2063,8 @@
           "is_proprietary": true
         }
       ],
-      "observations": "CR Ticket Number: IMS0000209\n- 2 model entries reviewed: minWM ar_diffusion_tf (1.49B parameters, Wan2.1-T2V-1.3B with a PRoPE camera branch) and the project's own fine-tuned checkpoints A0 (600 updates) and S1 (1,200 updates).\n- minWM is owned and maintained by ShengShu (shengshu-ai) / MIN-Lab with Tsinghua University-affiliated authors, China, and its Wan2.1 base is by Alibaba's Wan team, China. Scored 3. LC 2.5. A0 and S1 belong to the PI's team at KAUST. No D5+M affiliation.\n- Wan2.1 pretraining data is only partially documented (scored 2). minWM's fine-tuning data (MIN-Lab/minWM-data) and the project's fine-tuning on its Sekai2-derived clips are documented and benign.\n- A0 and S1 are unpublished and inherit the non-commercial terms of the Sekai2-derived training data. Scored 3.\n- Training compute: about 8.94 \u00d7 10^23 FLOPs (theoretical upper bound) and 4.88 \u00d7 10^22 FLOPs delivered, far below 10^27.\n- Sample inspection for minWM is required (LC 2.5 = 3) and not yet performed; the waiver does not apply because the model is fine-tuned on Shaheen III.\n- The form also names CLIP and DINOv2 (used only for evaluation metrics) and the Wan2.1 text encoder (umT5-XXL) and VAE (needed to run minWM). None of them has a model table, so they are not covered by this review. PI clarification requested.\n- PI confirmation of no collaboration with ShengShu / MIN-Lab and Tsinghua University requested.",
-      "recommendation": "Positive check passed.\n\nNegative check passed.\n\n10^27 check passed.\n\nBefore movement:\n- PI confirmation of no collaboration with ShengShu / MIN-Lab and Tsinghua University.\n- Sample inspection of minWM: sample outputs generated with neutral prompts and camera paths.\n- CLIP, DINOv2, the Wan2.1 text encoder and the Wan2.1 VAE are not moved until the PI submits model entries for them and they are reviewed.\n\nMonitoring:\n- minWM ar_diffusion_tf: D5+M affiliation (ShengShu / MIN-Lab, Alibaba Wan team); periodic check with the PI on collaboration.\n\nRecommended for data movement once the checks above are complete."
+      "observations": "",
+      "recommendation": ""
     },
     {
       "date": "2026-11-18",
@@ -2081,7 +2081,7 @@
             {
               "name": "Prohibited Use Screening (LC 2.7)",
               "score": 1,
-              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. Terms such as \"gun\" or \"military\" occur only as ordinary vocabulary in WikiHow how-to contexts and ActivityNet captions, as noted in the 65616 review of the same dataset."
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. Terms such as \"gun\" or \"military\" occur only as ordinary vocabulary in WikiHow how-to contexts and ActivityNet captions."
             },
             {
               "name": "D5+M affiliation Screening (LC 2.5)",
@@ -2121,7 +2121,7 @@
             {
               "name": "Prohibited Use Screening (LC 2.7)",
               "score": 1,
-              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. Occasional references to topics such as nuclear power appear only as elementary science content, as noted in the 65616 review of the same dataset."
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7. Occasional references to topics such as nuclear power appear only as elementary science content."
             },
             {
               "name": "D5+M affiliation Screening (LC 2.5)",
@@ -2266,7 +2266,7 @@
             {
               "name": "License / Permissions",
               "score": 1,
-              "notes": "License: not clearly stated. The Hugging Face card lists the licence as unknown. The authors' code repository is Apache 2.0, but its README does not say whether that licence covers the dataset. The form gives Apache 2.0 from the repository.\nPublicly released by Ai2 as a research benchmark. Evaluation use on Shaheen III, with no redistribution, is consistent with that release.\nRisk set to low because the dataset's own licence is not declared. (For reference, OpenBookQA was withdrawn from the 65616 request for the same reason.)"
+              "notes": "License: not clearly stated. The Hugging Face card lists the licence as unknown. The authors' code repository is Apache 2.0, but its README does not say whether that licence covers the dataset. The form gives Apache 2.0 from the repository.\nPublicly released by Ai2 as a research benchmark. Evaluation use on Shaheen III, with no redistribution, is consistent with that release.\nRisk set to low for evaluation-only use with no redistribution, although the dataset's own licence is not declared."
             }
           ]
         },
@@ -2346,7 +2346,7 @@
             {
               "name": "License / Permissions",
               "score": 1,
-              "notes": "License: CC BY 4.0, per the Licensing Information section of the original allenai/social_i_qa card, consistent with the 65616 review of the same dataset. The requested lighteval copy declares no licence, and the form states none.\nPermissions: use, share and adapt for any purpose.\nObligations: attribution to Sap et al. (Ai2 / University of Washington)."
+              "notes": "License: CC BY 4.0, per the Licensing Information section of the original allenai/social_i_qa card. The requested lighteval copy declares no licence, and the form states none.\nPermissions: use, share and adapt for any purpose.\nObligations: attribution to Sap et al. (Ai2 / University of Washington)."
             }
           ]
         },
@@ -2511,7 +2511,7 @@
           ]
         }
       ],
-      "observations": "CR Ticket Number: IMS0000192\n- 11 public benchmark datasets reviewed. Only evaluation splits are requested (about 39 MB in total), to score the 1.7B-parameter attention ablation models trained on FineWeb-Edu (Addendum 1). They are used for evaluation only, not for training. The change request has no code, container or model changes.\n- No D5+M affiliation for any dataset, its authors or the Hugging Face accounts that host it. LC 2.5.\n- No prohibited-use indicators. MMLU includes security studies, virology and chemistry subjects as academic multiple-choice questions, scored Low, consistent with the earlier review of MMLU in project 65616. LC 2.7.\n- Licences differ between datasets. HellaSwag, CommonsenseQA and MMLU are MIT; ARC is CC BY-SA 4.0; WikiText-103 is CC BY-SA 3.0 and GFDL; PG19 is Apache 2.0 over public-domain books. WinoGrande and Social IQa are CC BY, from the authors' README and the original card. For WinoGrande this corrects the form, as Apache 2.0 covers its code only.\n- PIQA is under the Academic Free License v3.0, as stated in the authors' GitHub README and project page (the Hugging Face card still lists it as unknown). Attribution and modification notices are required, so it is scored 2.\n- Two licences are not clearly stated. OpenBookQA is listed as unknown on Hugging Face, and Apache 2.0 appears only on its code repository. LAMBADA's card gives both MIT and Modified MIT, the original release is CC BY 4.0, and the passages come from BookCorpus novels that carry their authors' copyright. In the 65616 review, PIQA, OpenBookQA and WinoGrande were withdrawn by that PI for lack of a declared licence.\n- PIQA and Social IQa are requested as third-party copies (baber/piqa, lighteval/siqa) that do not state their source. PG19 is the team's own Parquet conversion of the script-based release.\n- Elevated scores: LAMBADA licence 4, WikiText-103 licence 3, PIQA licence 2 and MMLU LC 2.7 2. No score of 5. The section score is unchanged.",
+      "observations": "CR Ticket Number: IMS0000192\n\n- 11 public benchmark datasets reviewed, evaluation splits only (about 39 MB), to score the attention ablation models of Addendum 1. Not used for training.\n- No D5+M affiliation. LC 2.5.\n- MMLU includes security, virology and chemistry subjects as academic exam questions. Scored Low. LC 2.7.\n- Licences: LAMBADA has conflicting statements and copyrighted BookCorpus passages (scored 4), WikiText-103 is share-alike (scored 3) and PIQA is AFL-3.0 (scored 2). OpenBookQA declares no licence of its own. The others are MIT, Apache 2.0, CC BY or CC BY-SA.\n- PIQA and Social IQa are third-party copies; PG19 is the team's own Parquet conversion.",
       "recommendation": "The unclear licences of OpenBookQA and LAMBADA are acceptable for evaluation-only use on Shaheen III GPUP, as the datasets are neither redistributed nor used for training. PIQA's AFL-3.0 permits this use, with its attribution notices kept. Any public release of their content or derived works should first confirm terms with the authors. Attribution, and ShareAlike for ARC and WikiText-103, to be observed in resulting publications.\n\nBefore movement:\n- Verify that the staged files match the upstream splits (row counts and a content spot-check), as the files were prepared by the team on the Shaheen CPU system rather than downloaded by KSL. For LAMBADA, OpenAI publishes lambada_test.jsonl with SHA-256 4aa8d02cd17c719165fc8a7887fddd641f43fcafa4b1c806ca8abc31fabdb226.\n- Screen the titles of the 100 PG19 test books for LC 2.7 topics.\n- Confirm with the PI that the scoring code is part of the training code reviewed in Addendum 4 (commit 0a024ebe740655bc0e92b3966d5fe5add6abdcc1). If not, it requires a separate review.\n\nPositive checks passed\nNegative checks passed\n\nRecommended for data movement once the checks above are complete."
     }
   ],
