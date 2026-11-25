@@ -5,7 +5,7 @@
     "proposal_date": "2025-12-04",
     "reviewer_name": "Mohsin Ahmed Shaikh",
     "reviewer_id": "174988",
-    "aimcr_date": "2026-08-31",
+    "aimcr_date": "2026-11-25",
     "project_id": "65562"
   },
   "third_party_software": [
@@ -2002,6 +2002,119 @@
       ],
       "observations": "Adapt model (in-house), modified version. This addendum reviews a modified version of the Adapt training codebase previously reviewed in Addendum 3 (10 June 2026). The change request was raised by the developer with the PI's approval and is confined to a single artifact (source code for the model in question).\n\nScope: no new datasets and no new software artifacts enter review. ODAC25 and OMat24 mentioned in the CR are already approved.  Every package in the updated requirements.txt is an approved artifact, a version bump of one, or a documented bundled dependency of one.\n\nArtifact identity: the version reviewed is the directory delivered on 30 August 2026, frozen at /ibex/project/c2358/AIMCR/data-movement/65562/models/model/adapt/adapt-v2 and identified by the checksum.sha256 file in the same folder. Relative to the June version: 820 files added (28 being version-control metadata), 243 modified, 156 removed, 197 unchanged.\n\nChecks re-run: Project and Usage Alignment, Prohibited Use Screening, Source/Provenance and D5+M Affiliation, Training Data Documentation, FLOPS Calculation, and Sample Inspection. License/Permissions and Customisation/Fine-tuning are unaffected and carried forward unchanged.\n\nFLOPS: the mixture-of-experts variants introduced by this change request invalidate the N = 30 x 10^6 figure recorded in June. A bounding calculation over the largest configuration present in the delivered code yields approximately 1.1 x 10^19, eight orders of magnitude below the 10^27 threshold, so no configuration selection can affect the outcome.\n\nNo risk was identified in any check. All checks score 1.",
       "recommendation": "The modified Adapt codebase presents no new risk relative to the version approved in Addendum 3. The change request is continuation  of the work on the same in-house source code, developed by the PI's group at KAUST, using the same approved dataset inventory and the same approved software stack.\n\nPositive checks passed.\nNegative checks passed.\n10^27 FLOPS check passed.\n\nRecommended for movement to Shaheen III GPUP. The overall risk score after this addendum remains unchanged."
+    },
+    {
+      "date": "2026-11-25",
+      "category": "third_party_software",
+      "artifacts": [
+        {
+          "name": "CUTLASS 4.8.0",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "CUTLASS is NVIDIA's library of CUDA C++ templates for matrix multiplication and related GPU kernels (header files only). The project's custom GPU kernels are compiled against it at run time, and the project requires exactly version 4.8.0; used for IMS0000204 (updated training environment requested by Gergo Ignacz), supporting the project \"Self-Supervised Foundational Model for Chemistry and Materials Science\" (K20001). Aligns with the approved research topic."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "No D5+M affiliation. Developed and maintained by NVIDIA Corporation, United States."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "GitHub: https://github.com/NVIDIA/cutlass\nStars: 10.7k\nForks: 2.2k\nLast commit: 25 Nov 2026\nMaintainer: NVIDIA\n\nInstalled from conda-forge (cutlass 4.8.0): https://anaconda.org/conda-forge/cutlass"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: BSD-3-Clause (LICENSE.txt, NVIDIA).\nPermissions: use, modify and redistribute for any purpose, including commercial use.\nRestrictions: keep the copyright notice and licence text; NVIDIA's name may not be used to endorse derived products."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "Header files only (include/cutlass, include/cute); no compiled code and no package dependencies. Not a Python package, so no CVE scan entry; no vulnerabilities reported for CUTLASS in the Trivy scan of the image."
+            }
+          ]
+        },
+        {
+          "name": "pytorch_optimizer 3.11.0",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "pytorch_optimizer is a collection of optimisers, learning-rate schedulers and loss functions for PyTorch, used in the project's training code; used for IMS0000204 (updated training environment requested by Gergo Ignacz), supporting the project \"Self-Supervised Foundational Model for Chemistry and Materials Science\" (K20001). Aligns with the approved research topic."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "No D5+M affiliation. Developed and maintained by Hyeongchan Kim (kozistr), Seoul, South Korea."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "GitHub: https://github.com/kozistr/pytorch_optimizer\nStars: 436\nForks: 52\nLast commit: 18 Nov 2026\nMaintainer: kozistr\n\nPyPI: https://pypi.org/project/pytorch_optimizer/ (147,000 downloads in the last month, as of 25 Nov 2026)"
+            },
+            {
+              "name": "License / Permissions",
+              "score": 1,
+              "notes": "License: Apache-2.0.\nPermissions: use, modify and redistribute for any purpose, including commercial use; patent use granted.\nRestrictions: keep the copyright notice, licence text and notices of changes."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 1,
+              "notes": "Requires only torch and numpy, both already in the image. Trivy: no vulnerabilities found in pytorch_optimizer 3.11.0."
+            }
+          ]
+        },
+        {
+          "name": "Training environment image v6 (sh3-gpu-images_65562-Ghanem-v6.sif)",
+          "checks": [
+            {
+              "name": "Project & Usage Alignment",
+              "score": 1,
+              "notes": "Container image built by KSL with the project's trimmed training environment (ignaczgerg/adapt, dev branch b77f463, environment-train.yml): Python 3.12.13, PyTorch 2.8.0 (CUDA 12.9), Triton 3.4.0, CUTLASS 4.8.0, NCCL 2.27.3 and the KSL Slingshot network stack; used for IMS0000204 (updated training environment requested by Gergo Ignacz), supporting the project \"Self-Supervised Foundational Model for Chemistry and Materials Science\" (K20001). Aligns with the approved research topic. Delivered to /scratch/project/k20001/images/v6/ (RT 72694, 24 Nov 2026)."
+            },
+            {
+              "name": "Prohibited Use Screening (LC 2.7)",
+              "score": 1,
+              "notes": "No mention of sensitive terms in the documentation classified in Prohibited Use Screening in accordance with LC 2.7."
+            },
+            {
+              "name": "D5+M affiliation Screening (LC 2.5)",
+              "score": 1,
+              "notes": "No D5+M affiliation. Base image by NVIDIA (United States); built by KSL. All packages from conda-forge, PyPI and the PyTorch package index; their maintainers are covered in the original review and Addenda 1, 4 and 6."
+            },
+            {
+              "name": "Source / Provenance",
+              "score": 1,
+              "notes": "Built by KSL from Dockerfiles/GPU/65562-Ghanem-v6.dockerfile in kaust-rccl/sh3-gpu-images, on nvidia/cuda:12.9.1-devel-ubuntu24.04.\nDocker image: krccl/sh3-gpu-stack:65562-Ghanem-v6 (arm64), digest sha256:1346b95b661f8d8f6f5e09c2e175821a8a09928377b9e557e65128d62e616c09\nSIF: sh3-gpu-images_65562-Ghanem-v6.sif, 9,581,371,392 bytes, SHA-256 d84d6a4e6087ec02442804fa52f5498c9f72974a2f483ae3f11b85851a801a37."
+            },
+            {
+              "name": "License / Permissions",
+              "score": 3,
+              "notes": "The base image is governed by the NVIDIA Deep Learning Container License (custom terms; a copy is in the image at /NGC-DL-CONTAINER-LICENSE). Use on Shaheen III for the project's research is permitted; redistribution of the image is restricted. The packages inside keep their own open-source licences."
+            },
+            {
+              "name": "Bundled Tools / Dependencies",
+              "score": 3,
+              "notes": "Trivy (25 Nov 2026, Critical and High only):\n- MLflow 3.12.0: 2 Critical (CVE-2026-116692, remote code execution on an unauthenticated MLflow server; CVE-2026-64849, SSRF in webhook delivery) and 4 High; fixed in 3.15.0 to 3.17.2.\n- PyTorch 2.8.0: 1 High (CVE-2026-24747, malicious checkpoint loading; fixed in 2.10.0).\n- hydra-core 1.4.0.dev1: 2 High (unsafe logging configuration, instantiate() blocklist bypass; fixed in 1.4.0.dev9).\n- cryptography, starlette, msgpack, urllib3 and setuptools: 2 to 3 High each, all in network, web-server or TLS code paths.\n- Ubuntu 24.04 packages: High CVEs in gnupg, openssl and apt, and about 1,900 Critical and High in linux-libc-dev, which holds kernel headers only; the container runs on the host's kernel.\nDe-risking: the affected packages come from trusted, non-D5+M providers (MLflow by Databricks, PyTorch Foundation, Meta's hydra, PyPA). The MLflow Critical CVEs need a running MLflow server reachable over the network; the project logs to local files (file: tracking URI), and Shaheen III GPUP has no internet access. The PyTorch and hydra-core CVEs need crafted checkpoint or configuration files; only the group's own files and reviewed artifacts are loaded. Following the CEAR/TPSC conclusion of 9 Sep 2026, this de-risks its use; the risk is scored Medium, 3.\nThe versions are the project's own pins; the image was delivered as built and is not changed."
+            }
+          ]
+        }
+      ],
+      "observations": "CR Ticket Number: IMS0000204\n\n- The project's training environment was trimmed and re-pinned (PyTorch 2.8.0, Triton 3.4.0), and KSL built and delivered an updated image, v6. Its packages were reviewed in the original review and Addenda 1 and 4; v6 changes their versions only.\n- 2 new packages reviewed: CUTLASS 4.8.0 (NVIDIA, BSD-3-Clause) and pytorch_optimizer 3.11.0 (Apache-2.0). No D5+M affiliation. LC 2.5.\n- The v6 image is recorded as an entry. Its base is under the NVIDIA Deep Learning Container License (scored 3).\n- Critical CVEs in MLflow 3.12.0 and High CVEs in PyTorch, hydra-core and other packages; de-risked to Medium, as MLflow is used only with local files on an air-gapped system.",
+      "recommendation": "No risk beyond Medium identified. The project is advised to move to MLflow 3.17.2 or later and hydra-core 1.4.0.dev9 or later in its next image request.\n\nPositive checks passed\nNegative checks passed\n\nRecommended; the image is already delivered."
     }
   ],
   "_submission_history": [
